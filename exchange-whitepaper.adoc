@@ -1,4 +1,4 @@
-= Bitsquare - The peer-to-peer bitcoin exchange
+= Bisq - The peer-to-peer bitcoin exchange
 :toc:
 :toclevels: 4
 :toc-placement!:
@@ -7,25 +7,25 @@ toc::[]
 
 == Introduction
 
-Bitsquare is an *open source* peer-to-peer application that allows anyone to buy and sell Bitcoin in exchange to *national currencies* or *alternative crypto currencies*.
+Bisq is an *open source* peer-to-peer application that allows anyone to buy and sell Bitcoin in exchange to *national currencies* or *alternative crypto currencies*.
 
-Unlike existing exchanges, Bitsquare is *fully decentralized* and *censorship resistant* using alternative protection mechanisms:
+Unlike existing exchanges, Bisq is *fully decentralized* and *censorship resistant* using alternative protection mechanisms:
 
  - escrow transaction employing 2-of-3 multisignature address
  - security deposits to incentivise following the trade protocol
  - a decentralized arbitration system helps resolve disputes
 
-Bitsquare protects user's *privacy* by using a custom *P2P network over Tor*, in which every user is a participating node. An all-in-one *desktop application* (for Linux, OS X and Windows) provides an intuitive user interface and executes the trading protocol.
+Bisq protects user's *privacy* by using a custom *P2P network over Tor*, in which every user is a participating node. An all-in-one *desktop application* (for Linux, OS X and Windows) provides an intuitive user interface and executes the trading protocol.
 
 == Motivation
 
-Bitcoin is a *censorship resistant* payment system, because it avoids dependence on trusted third parties. Currently, the process of acquiring Bitcoin does not follow the same principles due to the lack of a fully decentralized solution. Bitsquare aims to fill this gap.
+Bitcoin is a *censorship resistant* payment system, because it avoids dependence on trusted third parties. Currently, the process of acquiring Bitcoin does not follow the same principles due to the lack of a fully decentralized solution. Bisq aims to fill this gap.
 
 === Core values
 
 There is a variety of Bitcoin exchanges out there, but all of those are operating in a traditional way where the user needs to trust a centralized system with his funds and expose his data and financial privacy. The vulnerability of such models has been demonstrated numerous times—most notably by https://en.bitcoin.it/wiki/Mt._Gox[Mt. Gox]. But theft and server hacks are not the only issue: centralized exchanges are vulnerable to coin-tracing on a mass scale, which is a serious violation for users' privacy.
 
-The key point of *decentralization* is the https://www.youtube.com/watch?v=7S1IqaSLrq8[lack of single points of failure], control or censorship. Bitsquare holds these values in every aspect of the project:
+The key point of *decentralization* is the https://www.youtube.com/watch?v=7S1IqaSLrq8[lack of single points of failure], control or censorship. Bisq holds these values in every aspect of the project:
 
  - Infrastructure (P2P network - there are no servers)
  - Never hold user's funds (neither bitcoins nor fiat)
@@ -41,15 +41,15 @@ Furthermore we consider *privacy* as a fundamental https://en.wikipedia.org/wiki
 
 === Comparison to related projects
 
-One may describe Bitsquare as a *fully decentralized* version of https://localbitcoins.com/[LocalBitcoins], where:
+One may describe Bisq as a *fully decentralized* version of https://localbitcoins.com/[LocalBitcoins], where:
 
  - no central place exists to collect user data
  - no servers exist to attract adversaries
- - no trust is needed in the service provider (Bitsquare)
+ - no trust is needed in the service provider (Bisq)
  - users have exclusive ownership of their funds
  - users do not rely on a reputation system, which can be manipulated
 
-Bitsquare resembles other decentralized projects, such as http://openbazaar.org/[OpenBazaar] or https://voluntary.net/bitmarkets/[Bitmarkets], which employ similar protection mechanisms. However, those projects behave as Ebay-style marketplaces rather than (crypto-)currency exchanges.
+Bisq resembles other decentralized projects, such as http://openbazaar.org/[OpenBazaar] or https://voluntary.net/bitmarkets/[Bitmarkets], which employ similar protection mechanisms. However, those projects behave as Ebay-style marketplaces rather than (crypto-)currency exchanges.
 
 == Overview
 
@@ -87,14 +87,14 @@ For protecting against several fraud and attack scenarios we use different solut
 
 === Business model
 
-Bitsquare is not a company, but an open-source project that aims to fill a gap in the cryptocurrency ecosystem: to provide an exchange platform which follows the same principles as Bitcoin itself. A unique incentive mechanism is set up to support the project:
+Bisq is not a company, but an open-source project that aims to fill a gap in the cryptocurrency ecosystem: to provide an exchange platform which follows the same principles as Bitcoin itself. A unique incentive mechanism is set up to support the project:
 
  - transaction fees go in part to the developers and in part to the arbitrators
  - in the event of disputes, arbitrators collect the security deposit of the losing party (or in some cases half the deposit of each party)
 
 === Technology
 
-The Bitsquare application is built in Java 8 with JavaFX for the GUI. For interaction with the Bitcoin network the https://bitcoinj.github.io/[bitcoinj] library is used. For decentralized messaging and data storage a custom flooding (gossiping) network over Tor is used.
+The Bisq application is built in Java 8 with JavaFX for the GUI. For interaction with the Bitcoin network the https://bitcoinj.github.io/[bitcoinj] library is used. For decentralized messaging and data storage a custom flooding (gossiping) network over Tor is used.
 
 ==== P2P network
 
@@ -117,7 +117,7 @@ You can find more details about the P2P network https://web.archive.org/web/2017
 
 ==== Wallet
 
-Bitsquare protects the privacy between trades by separating each trade with a different set of addresses. No addresses will be used across multiple trades avoiding coin merge and de-anonymisation vectors. The user needs to further take care when doing the deposit from and withdrawal to his external wallet to avoid loss of privacy due coin merge (e.g. usage of Coin Join solutions).
+Bisq protects the privacy between trades by separating each trade with a different set of addresses. No addresses will be used across multiple trades avoiding coin merge and de-anonymisation vectors. The user needs to further take care when doing the deposit from and withdrawal to his external wallet to avoid loss of privacy due coin merge (e.g. usage of Coin Join solutions).
 
 Wallet key features:
 
@@ -140,7 +140,7 @@ Initially the fees will be kept to a minimum. Later as the trading community gro
 
 To make the payment process fast we do not wait for transaction confirmation of fees. A double spend of the fees is potentially possible but highly unlikely, due to the difficulty of its execution and its low profitability. There will be a second verification at the end of the trade process where a double spend would be detected and that could be used for local blacklisting.
 
-Bitsquare operates with the following fees:
+Bisq operates with the following fees:
 
  - Create offer fee: 0.001 BTC (paid to the arbitrators, mining fee is included)
  - Take offer fee: same as create offer fee (and also paid to the arbitrators)
@@ -150,13 +150,13 @@ Bitsquare operates with the following fees:
 
 === Trading protocol
 
-The desktop application implements the protocol for the trading process. When broadcasting an offer, the offering peer agrees to accept any take-offer request which fulfills the terms defined in the offer. The take-offer process requires that the Bitsquare applications of both traders are running (it can run in background). They do not need to be physically present at their computer, but the software needs to be online to react to the take offer request.
+The desktop application implements the protocol for the trading process. When broadcasting an offer, the offering peer agrees to accept any take-offer request which fulfills the terms defined in the offer. The take-offer process requires that the Bisq applications of both traders are running (it can run in background). They do not need to be physically present at their computer, but the software needs to be online to react to the take offer request.
 
 The Bitcoin buyer should wait for at least 1 blockchain confirmation as protection against double spend, before starting the transfer of the national currency (or alternative cryptocurrency). The Bitcoin seller will release the deposit after he has confirmed the receipt of the national currency. link:images/payment-protocol.png[Here] is a detailed graphical overview of the trade protocol.
 
 === Arbitration
 
-Bitsquare relies on a decentralized arbitration system to ensure that traders fulfill their obligations. See the https://bisq.network/docs/arbitration-system.pdf[arbitration system] document for more details on how this system works.
+Bisq relies on a decentralized arbitration system to ensure that traders fulfill their obligations. See the https://bisq.network/docs/arbitration-system.pdf[arbitration system] document for more details on how this system works.
 
 === Fraud reports
 
@@ -164,16 +164,16 @@ A fraud report is used to warn about fraud from bank chargebacks, stolen payment
 
 === Limitations and risks
 
-==== within Bitsquare
+==== within Bisq
 
  - Only non-reversible payment transfer methods are supported to minimize the risk of https://en.bitcoin.it/wiki/Payment_methods[chargebacks]
  - You can trade at most 1 Bitcoin per transaction
  - You must already have a small amount of Bitcoin to execute a trade (for paying the security deposit, trade fee and Bitcoin mining fee)
- - The Bitsquare application must be running (can run in background), in order to allow the user's offer to be taken.
+ - The Bisq application must be running (can run in background), in order to allow the user's offer to be taken.
  - Bitcoin is always one part of the exchanged currencies. One cannot trade alternative cryptocurrencies for national currencies.
  - Arbitrators need to lock away 2 Bitcoins, which are only returned when they step back from their service.
 
-==== outside Bitsquare
+==== outside Bisq
 
  - Depending on the payment method: Personally identifying information will be revealed to the trading partner and stored in the contract as part of the payment transfer.
  - The speed of the trade process depends on the duration of the payment transfer.
@@ -183,13 +183,13 @@ A fraud report is used to warn about fraud from bank chargebacks, stolen payment
 
 ==== Identity verification
 
-Bitsquare does not carry out identity verification of users. However, in the event of a dispute, the assigned arbitrator may need to check the identity of the traders. This information is only visible
+Bisq does not carry out identity verification of users. However, in the event of a dispute, the assigned arbitrator may need to check the identity of the traders. This information is only visible
 
 to that arbitrator and to at most one senior arbitrator. Users may request that identity verification is carried out over encrypted channels, e.g. using Tox instead of Skype. See the https://bisq.network/docs/risk-analysis.pdf[risk analysis] document for more information.
 
 ==== Reputation system
 
-Bitsquare does not use a reputation system, as such systems can easily be manipulated, e.g. by a Sybil attack.
+Bisq does not use a reputation system, as such systems can easily be manipulated, e.g. by a Sybil attack.
 
 == Example use cases
 
@@ -198,10 +198,10 @@ Bitsquare does not use a reputation system, as such systems can easily be manipu
  1. Trader selects the arbitrators he want to accept in case of disputes or stick with the default selection of all matching arbitrators.
  2. Trader sets up a payment method account.
  3. Buyer deposits bitcoins from external wallet (for security deposit, create-offer fee and mining fee)
- 4. Buyer publishes the offer. Create-offer-fee gets paid to one of his selected arbitrators. The security deposit will be locked in his local Bitsquare trading wallet in case someone takes the offer.
+ 4. Buyer publishes the offer. Create-offer-fee gets paid to one of his selected arbitrators. The security deposit will be locked in his local Bisq trading wallet in case someone takes the offer.
  5. Seller deposits bitcoins from external wallet (for security deposit, take-offer fee, mining fee and the trade amount)
  6. Seller takes offer. The software sends his security deposit and Bitcoin trade amount to a 2-of-3 multisig address.
- 7. Buyer transfers the national currency (or alternative cryptocurrency) amount directly to Seller outside Bitsquare (e.g. via online banking web page or altcoin wallet)
+ 7. Buyer transfers the national currency (or alternative cryptocurrency) amount directly to Seller outside Bisq (e.g. via online banking web page or altcoin wallet)
  8. Seller confirms upon payment receipt and releases Bitcoin from the escrow address
  9. Buyer withdraws trade amount and his refunded security deposit to an external wallet
  10. Seller withdraws his refunded security deposit to an external wallet
@@ -210,7 +210,7 @@ Bitsquare does not use a reputation system, as such systems can easily be manipu
 
  1. The traders started a trade but for whatever reason it got stalled.
  2. After the max. allowed trade period (depends on the payment method: e.g. OKPay: 1 day, SEPA: 8 days) the software displays an "Open dispute" button, which is otherwise not visible. Any trader can requests arbitration by pressing that button.
- 3. Bitsquare provides a chat like communication system for disputes (and support tickets in case of software bugs) only between the trader and the arbitrator. The initiating trader will see his first (system) message he has sent to the arbitrator requesting a dispute.
+ 3. Bisq provides a chat like communication system for disputes (and support tickets in case of software bugs) only between the trader and the arbitrator. The initiating trader will see his first (system) message he has sent to the arbitrator requesting a dispute.
  4. The arbitrator receives the dispute request and the software send a dispute message to the other trader, informing him that his peer has started a dispute. The two traders cannot communicate directly with each other and cannot see the communication of the other trader with the arbitrator.
  5. Traders and arbitrator communicate in real time, end-to-end encrypted.
  6. Arbitrator follows a protocol to request additional information from both parties and renders his decision based on acquired evidence.
@@ -305,4 +305,4 @@ There will never be 100% safety when using any exchange; the same is true for ce
 
 To limit potential losses the maximum trading volume is restricted. This will help reduce the risk of a stolen bank account being used because only a small amount of the money could be exchanged for Bitcoin before the theft is discovered, so the platform is less attractive for criminals. A limit of 1 BTC is initially applied. If real life experience allows us we will raise that limit over time.
 
-While Bitsquare is developed to offer the right to privacy, it is not intended to facilitate criminal behavior and the team does not endorse such activities. In the event of disputes, arbitrators may need to verify the identity of the traders.
+While Bisq is developed to offer the right to privacy, it is not intended to facilitate criminal behavior and the team does not endorse such activities. In the event of disputes, arbitrators may need to verify the identity of the traders.
