@@ -2,6 +2,9 @@
 :toc:
 :toclevels: 4
 :toc-placement!:
+:uri-payment-protocol: images/payment-protocol.png
+:uri-risk-analysis: https://bisq.network/docs/risk-analysis.pdf
+:uri-arbitration-system: https://bisq.network/docs/arbitration-system.pdf
 
 toc::[]
 
@@ -57,7 +60,7 @@ This graphical overview shows the basic high-level flow of the trade process. Se
 
 image::images/trade-process-overview.png[Trade process overview]
 
-These https://vimeo.com/getbitsquare/[videos] demonstrate the current software and give a more detailed explanation of the trade process. A detailed graphical representation of the link:images/payment-protocol.png[trade protocol] should help to explain the way the payment process is executed. A document also discusses the possible https://bisq.network/docs/risk-analysis.pdf[risks, attacks and protection mechanisms]. An https://bisq.network/docs/arbitration-system.pdf[arbitration system] will serve as primary protection mechanism and is also described in a separate document.
+These https://vimeo.com/getbitsquare/[videos] demonstrate the current software and give a more detailed explanation of the trade process. A detailed graphical representation of the link:{uri-payment-protocol}[trade protocol] should help to explain the way the payment process is executed. A document also discusses the possible {uri-risk-analysis}[risks, attacks and protection mechanisms]. An {uri-arbitration-system}[arbitration system] will serve as primary protection mechanism and is also described in a separate document.
 
 === Main characteristics
 
@@ -152,15 +155,15 @@ Bisq operates with the following fees:
 
 The desktop application implements the protocol for the trading process. When broadcasting an offer, the offering peer agrees to accept any take-offer request which fulfills the terms defined in the offer. The take-offer process requires that the Bisq applications of both traders are running (it can run in background). They do not need to be physically present at their computer, but the software needs to be online to react to the take offer request.
 
-The Bitcoin buyer should wait for at least 1 blockchain confirmation as protection against double spend, before starting the transfer of the national currency (or alternative cryptocurrency). The Bitcoin seller will release the deposit after he has confirmed the receipt of the national currency. link:images/payment-protocol.png[Here] is a detailed graphical overview of the trade protocol.
+The Bitcoin buyer should wait for at least 1 blockchain confirmation as protection against double spend, before starting the transfer of the national currency (or alternative cryptocurrency). The Bitcoin seller will release the deposit after he has confirmed the receipt of the national currency. link:{uri-payment-protocol}[Here] is a detailed graphical overview of the trade protocol.
 
 === Arbitration
 
-Bisq relies on a decentralized arbitration system to ensure that traders fulfill their obligations. See the https://bisq.network/docs/arbitration-system.pdf[arbitration system] document for more details on how this system works.
+Bisq relies on a decentralized arbitration system to ensure that traders fulfill their obligations. See the {uri-arbitration-system}[arbitration system] document for more details on how this system works.
 
 === Fraud reports
 
-A fraud report is used to warn about fraud from bank chargebacks, stolen payment accounts or arbitration fee fraud. The arbitration system can not help in these cases because the Bitcoin payment has already been released by the time the fraud is discovered. The fraud report only serves to prevent repeated scam with the same payment account and Tor onion address. More details can be found in the https://bisq.network/docs/risk-analysis.pdf[risk analysis] document.
+A fraud report is used to warn about fraud from bank chargebacks, stolen payment accounts or arbitration fee fraud. The arbitration system can not help in these cases because the Bitcoin payment has already been released by the time the fraud is discovered. The fraud report only serves to prevent repeated scam with the same payment account and Tor onion address. More details can be found in the {uri-risk-analysis}[risk analysis] document.
 
 === Limitations and risks
 
@@ -222,7 +225,7 @@ Bisq does not use a reputation system, as such systems can easily be manipulated
 
 Alice wants to buy Bitcoin for national currency. When Alice creates a new offer she needs to define the amount of Bitcoin to buy or sell, the price and a minimum amount she is willing to trade. The other data included in an offer, like the acceptable arbitrators or the acceptable payment account countries and method, will be derived from the account settings.
 
-To avoid potential collusion between the arbitrator and one of the trading parties the arbitrator will be selected in an unbiased and verifiable way. This will minimize the chance that a trader forces the selection to a preferred arbitrator. The selection mechanism is described in the https://bisq.network/docs/arbitration-system.pdf[arbitration system] document.
+To avoid potential collusion between the arbitrator and one of the trading parties the arbitrator will be selected in an unbiased and verifiable way. This will minimize the chance that a trader forces the selection to a preferred arbitrator. The selection mechanism is described in the {uri-arbitration-system}[arbitration system] document.
 
 ==== Create offer
 
@@ -293,7 +296,7 @@ The creator of an offer can remove the offer at any time, as long as the offer i
 
 At the middle of the timeout period for completing a trade a warning notification is displayed to both traders, reminding them to check the status of their transaction. As soon the timeout is reached (depending on the payment method) either trader can open a dispute and contact the assigned arbitrator. When opening a dispute, the software sends a request to the arbitrator with the contract attached. The chat-like communication system allows encrypted real time messaging between the traders and the arbitrator. The traders cannot communicate directly to each other.
 
-The arbitrator will investigate the case and request additional information and proofs to each trader. After the arbitrator has rendered his decision, he unlocks the multi-signature address using his key and the key of the winning party, transferring the Bitcoin amount to the "rightful owner" based on the available evidence. The arbitrator collects the security deposit of the losing party and refunds the deposit of the other party. Thus, the winning party will have no costs, while the losing party will lose his security deposit. In cases where the problem was caused by external circumstances (e.g. bank has blocked the transfer, etc.), the arbitrator can decide, based on the available evidence, to take half of each security deposits as his payment and refund the rest back to the traders. More details about the arbitration system can be found in the https://bisq.network/docs/arbitration-system.pdf[arbitration system] document.
+The arbitrator will investigate the case and request additional information and proofs to each trader. After the arbitrator has rendered his decision, he unlocks the multi-signature address using his key and the key of the winning party, transferring the Bitcoin amount to the "rightful owner" based on the available evidence. The arbitrator collects the security deposit of the losing party and refunds the deposit of the other party. Thus, the winning party will have no costs, while the losing party will lose his security deposit. In cases where the problem was caused by external circumstances (e.g. bank has blocked the transfer, etc.), the arbitrator can decide, based on the available evidence, to take half of each security deposits as his payment and refund the rest back to the traders. More details about the arbitration system can be found in the {uri-arbitration-system}[arbitration system] document.
 
 === Disclaimer
 
