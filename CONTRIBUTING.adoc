@@ -1,0 +1,20 @@
+= Contributing to bisq-network Git repositories
+
+This document contains general contributor guidelines that apply to all bisq-network Git repositories.
+
+== Configure Git user name and email metadata
+
+See https://help.github.com/articles/setting-your-username-in-git/ for instructions.
+
+== Sign commits with GPG
+
+See https://github.com/blog/2144-gpg-signature-verification for background and
+https://help.github.com/articles/signing-commits-with-gpg/ for instructions.
+
+== Write well-formed commit messages
+
+See https://chris.beams.io/posts/git-commit/#seven-rules.
+
+== Use an editor that supports Editorconfig
+
+You'll find a link:.editorconfig[`.editorconfig`] file in all bisq-network repositories. These settings ensure consistent management of whitespace, line-endings and more. See http://editorconfig.org for details.
