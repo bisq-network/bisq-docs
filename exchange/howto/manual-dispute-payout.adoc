@@ -20,11 +20,11 @@ If the approach above does not work, and you believe there is no way to issue th
 
 === Step 1. Review dispute details
 
-In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have recieved the trading amount payout:
+In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have recieved the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
 
 image:images/determine-winner.png[determining who was the winner]
 
-If the seller was the winner, you will need to work with the seller to issue the manual payout, meaning you will need the seller's public and private key pair as opposed to the seller's. For simplicity's sake, the instructions below assume the seller as the winner. You will need to adjust these instructions accordingly if it was in fact the buyer who was the winner.
+If the seller was the winner, you will need to work with the seller to issue the manual payout, meaning you will need the seller's public and private key pair as opposed to the buyer's. For simplicity's sake, the instructions in the remainder of this document assume the seller as the winner. You will need to adjust these instructions accordingly if it was in fact the buyer who was the winner.
 
 While looking at the closing chat message, *take note of the payout amounts for both buyer and seller*. You will need these values in steps below.
 
