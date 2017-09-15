@@ -34,7 +34,7 @@ Next, click the `Details` button on the dispute ticket, and *take note of the BT
 
 image:images/buyer-seller-address.png[buyer and seller addresses]
 
-Next, click the `View contract in JSON format` button and *take note of the `SellerMultiSigPubKeyHex` value*:
+Next, click the `View contract in JSON format` button and *take note of both the `BuyerMultiSigPubKeyHex` and `SellerMultiSigPubKeyHex` values*—you will need both when filling out the payout form:
 
 image:images/get-pubkey-hex.png[get pubkey hex value]
 
@@ -115,9 +115,9 @@ sellerPrivateKeyAsHex:: The seller's private key (leave empty if seller was not 
 
 arbitratorPrivateKeyAsHex:: The arbitrator's private key
 
-buyerPubKeyAsHex:: The buyer's public key (leave empty if buyer was not the winner)
+buyerPubKeyAsHex:: The buyer's public key
 
-sellerPubKeyAsHex:: The seller's public key (leave empty if buyer was not the winner)
+sellerPubKeyAsHex:: The seller's public key
 
 arbitratorPubKeyAsHex:: The arbitrator's public key
 
