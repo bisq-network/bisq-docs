@@ -79,9 +79,9 @@ You can now *reset your wallet password*.
 
 === Step 3. Get trader's private key
 
-First, navigate back to the trade dispute ticket in question. Be sure to click on the *winner's* dispute ticket (as determined in the first step of these instructions) and click `cmd-U` to re-open the ticket.
+First, navigate back to the trade dispute ticket in question. *Re-open both buyer and seller tickets* by clicking on each and pressing `cmd-U`.
 
-Send the trader their public key (as determined in the steps above) and a link to the [trader instructions] section of this document below. Ask them to follow those instructions and to respond to you with their private key value once they have it.
+Click on the winning trader's dispute ticket and *send the trader their public key* (as determined in the steps above) *as well as a link to the <<trader-instructions>> section of this document*. Ask them to follow those instructions and to respond to you with their private key value once they have it.
 
 When you have the trader's private key, move on to the next step.
 
@@ -125,7 +125,7 @@ P2SHMultiSigOutputScript:: The P2SH multi-sig output script hex value as copied 
 
 When all values have been entered (and double-checked!), click `Sign and publish transaction` to issue the payout.
 
-When you have confirmed that the payout transaction worked as expected, *let the trader know and close out the ticket*.
+When you have confirmed that the payout transaction worked as expected, *let the trader know and close out the re-opened buyer and seller tickets*.
 
 
 == Trader instructions
