@@ -11,10 +11,10 @@ The instructions that follow assume that a trade dispute has already been opened
 
 One reason that a payout transaction may not go through is because the "winner" of the dispute (i.e. the trader who is being awarded the trading amount) has not come online since the ticket has been closed. It is necessary for the winner's Bisq client to come online in order to actually sign their part of of the 2-of-3 multi-sig transaction. If you believe this is the problem, you should *not* jump straight to a manual payout. You should first:
 
- 1. Re-open the ticket using `cmd-U`
- 2. Re-close the ticket, this time checking the "Use loser as publisher" checkbox.
+ 1. Re-open both buyer and seller tickets for this trade using `cmd-U`
+ 2. Re-close the ticket of the "losing" (i.e. the trader who is *not* receiving the trade amount, this time checking the "Use loser as publisher" checkbox.
 
-Assuming that the loser comes online, their client will be used to sign the multi-sig transaction and the payout will be issue to the winner.
+Assuming that the loser comes online, their client will be used to sign the multi-sig transaction and the payout will be issued to the winner.
 
 If the approach above does not work, and you believe there is no way to issue the payout transaction using normal mechanisms in the Bisq client and protocol, then continue below with the instructions to issue a manual payout.
 
@@ -101,7 +101,7 @@ sellerPayoutAmount:: The amount in BTC the seller should be paid out, e.g. `0.06
 
 arbitratorPayoutAmount:: This value should always be `0`, as we no longer issue payouts to arbitrators
 
-Tx fee:: The BTC value of the `txFee` in Satoshis as taken from the JSON contract details above, e.g. `0.00036`
+Tx fee:: The value of the `txFee` taken from the JSON contract details above, after converting from Satoshis to BTC, e.g. `36000` Satoshis => `0.00036` BTC
 
 buyerAddressString:: The buyer's bitcoin address
 
@@ -131,7 +131,7 @@ When you have confirmed that the payout transaction worked as expected, *let the
 == Trader instructions
 
 [WARNING]
-The instructions below require you to share sensitive private key information with your arbitrator in order to assist in a manual multi-sig payout. This is necessary only in extraordinary situations, e.g. when a bug or network issue has caused the normal, automated multi-sig payout process to fail. In the unlikely event that you do need to follow these instructions, *you should never share private key information with anyone other than your arbitrator*, and *you should send your private key information only via the Bisq support ticket chat interface*.
+The instructions below require you to share sensitive private key information with your arbitrator in order to assist in a manual multi-sig payout. This is necessary only in extraordinary situations, e.g. when a bug or network issue has caused the normal, automated multi-sig payout process to fail. In the unlikely event that you do need to follow these instructions, *you should never share private key information with anyone other than your arbitrator*, and *you should send your private key information only via the Bisq support ticket chat interface*. Also note that the private key the arbitrator is requesting from you is specific to the trade in question. All other trades and funds in your Bisq wallet have different addresses and different private keys.
 
 === Step 1. Get your public key from your arbitrator
 
@@ -167,9 +167,9 @@ Then *click `Copy to clipboard`*.
 
 Open the text editor of your choice, e.g. TextEdit on macOS or Notepad on Windows, and *paste the copied wallet data text* into it.
 
-In the text editor, *search for the public key value your arbitrator provided* in step one above.
+In the text editor, *search for the public key value your arbitrator provided* in step one above. You're looking for an entry that reads `DeterministicKey{pub HEX="..."`, where `...` is the public key. It should be the first search result in the file.
 
-When you have found it, select and *copy the _next_ line in the file*—the one that that reads `priv HEX=...`. *This value is your private key*.
+When you have found this entry, select and *copy the `priv HEX=...` value* that immediately follows the `pub HEX` value. *This value is your private key*.
 
 Close the text editor. When prompted, *do not save the file*.
 
