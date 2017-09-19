@@ -10,8 +10,7 @@ We maintain a data structure for countries, regions (continents) and languages. 
 
 === Step 1: Add an entry to the `regionByCountryCodeMap` in the class `CountryUtil`
 
-In `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined. +
-Please add a comment for the full name as well. Add newly added countries at the end of the list.
+In class `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined. Please add a comment for the full name as well. Add newly added countries at the end of the list.
 
 First entry (key) is the ISO 3166 code of the country. Second entry (value) is region code as defined in regionCodeToNameMap [*]
 
@@ -30,10 +29,9 @@ regionCodeToNameMap.put("OC", "Oceania");
 
 In class `io.bisq.common.locale.LocaleUtil` at method `getAllLocales` add the locale entry with the language if known (otherwise use English and annotate with a comment that the language is not set). If multiple languages are supported in that country use the most common language.
 
-First parameter is ISO 639-1 code (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Second parameter is the ISO 3166 country code (as used above). +
-Please add a comment for the full name as well. Add new added countries at the end of the list.
+First parameter is ISO 639-1 code (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Second parameter is the ISO 3166 country code (as used above). Third parameter leave empty. Please add a comment for the full name as well. Add new added countries at the end of the list.
 
 E.g.: `allLocales.add(new Locale("es", "PR", "")); // Puerto Rico`
 
 
-=== Step 2: Make a pull request to the Development branch
+=== Step 3: Make a pull request to the Development branch
