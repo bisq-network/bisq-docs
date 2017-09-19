@@ -12,10 +12,11 @@ Otherwise please provide the country code (2 letter ISO 3166 code), continent an
 
 There are 2 classes containing the relevant data:
 
-In `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined.  +
+In `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined. +
 Please add a comment for the full name as well. Add new added countries at the end of the list.
 
 First entry (key) is the ISO 3166 code of the country. Second entry (value) is region code as defined in regionCodeToNameMap [*]
+
 E.g.: `regionByCountryCodeMap.put("PR", "NA"); // Puerto Rico / North America`
 
 
