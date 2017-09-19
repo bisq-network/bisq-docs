@@ -1,0 +1,73 @@
+= How to list a token
+:toc:
+
+== Introduction
+
+This document describes the process how to submit a request for adding a new Altcoin or token (we use the general term token in that document) to the currency list in Bisq. Adding a token does not mean any endorsement from the Bisq community. For making decisions in case of controversial requests we use the Bisq DAO voting process.Please don't send promotional/background information about the token but only fulfill the formal requirements below. The maintainers of the GH repository have the authority to merge or reject the PR based on the formal requirements but not on "political" objections (e.g. consider the token as scam-coin,...).
+
+Please note that Bisq is not implementing technically any token infrastructure (wallet, full nodes, block explorer,...) but only supports that the users can add the token address to a payment account and then during the trade process the users exchange the Altcoin address. The process of sending and receiving the Altcoin is not part of our system (users use their own Altcoin wallets).
+
+Already added token which have been traded at least once or which have provided a PR for the address validation will be kept. All other token will be removed when we start introducing that requirements.This document replaces the process described in the Bisq forum[https://forum.bisq.io/t/how-to-add-your-favorite-Altcoin/46].
+
+
+== Prerequisites
+
+=== 1. There need to be an active block explorer available.
+
+=== 2. The ticker symbol must not conflict with one of the national currency ISO 4217 ticker symbols listed at: https://en.wikipedia.org/wiki/ISO_4217
+
+=== 3. The ticker symbol must not conflict with one of the top 100 crypto-currency ticker symbols at time when the PR gets created listed at: https://coinmarketcap.com/currencies/
+
+=== 4. Be sure that the requirements to add the token does not cause extra effort for Bisq like adding additional input fields (e.g. if the address alone is not sufficient for the trade).
+
+=== 5. The arbitrator need to be able to see the transaction in the block explorer by using the receiver address. In case that is not possible as a result of enhanced privacy features (Zcash, Monero, CryptoNote coins,...) a suggested solution need to be added to the PR (e.g. in Zcash we support only transparent addresses not z-addresses; in Monero we require that the user is using a Monero wallet which supports transaction keys to enable 3rd party audits of the transaction which is used in case of a dispute). As such additional cased require additional effort (popup with background info) it will be up to Bisq contributors to add a PR for the popup and translation strings. Of course the code or the popup can be part of the PR as well but a more detailed description is out of scope of that document.
+
+
+== Instructions
+
+=== Step 1. Make a pull request (PR) in Github (GH) to the Development branch.
+
+=== Step 2. Fill out the below form and paste it to the PR.
+
+----
+- Ticker symbol (e.g. LTC): ...
+- Official token name (e.g. Litecoin): ...
+- Official block explorer URL: ...
+- Is it an Altcoin (dedicated blockchain) or a token (anything else) (e.g. Altcoin): ...
+- Official token project URL: ...
+----
+
+=== Step 3. Add address validation code:
+
+Add code for address validation to method 'validate' in class 'io.bisq.gui.util.validationAltCoinAddressValidator'.
+
+=== Step 4. Add unit test for address validation:
+
+Add unit tests for different addresses of the token to class 'io.bisq.gui.util.AltCoinAddressValidatorTest' and be sure the tests don't fail.
+
+=== Step 5. Add entry to currency list:
+
+Add entry for the token to method 'createAllSortedCryptoCurrenciesList' in class 'io.bisq.common.locale.CurrencyUtil'.
+First parameter is ticker, second parameter token name and optional third parameter a boolean for the isAsset parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is ordered alphabetic by token name. Add the entry at the correct position.
+
+Examples:
+'result.add(new CryptoCurrency("XMR", "Monero"));                  // token with dedicated blockchain'
+'result.add(new CryptoCurrency("MT", "Mycelium Token", true));     // token issued on other blockchain'
+
+
+== Caveats
+
+=== Controversial tokens may be put to a vote
+
+* Any BSQ token holder can request that a decision for adding the token will be decided in the voting process of the Bisq DAO (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc[TODO link to DAO phase 0 doc]).
+* If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: not available atm).
+* Any BSQ token holder can request a voting to remove an already supported token.
+* If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to voted on it) the result will be used to accept or reject the token. Not reaching the quorum means a rejection.
+* For requesting again a token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+
+=== Adding a new token will be part of the normal release cycle.
+
+=== Inactive tokens will be de-listed
+
+* Any token need to have at least been traded once in the past 4 months. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
+* At each new release we will check if already added token have been traded in the last 4 months. If this requirement are not met the token will be removed. Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where users demand for the token is documented,...).
