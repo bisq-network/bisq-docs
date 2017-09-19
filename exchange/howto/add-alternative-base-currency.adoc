@@ -26,7 +26,7 @@ The Altcoin needs to support P2SH for MultiSig.
 
 Because Bisq is based on BitcoinJ the Altcoin needs to have an implementation of BitcoinJ.
 
-=== Support of `libdohj` approach
+=== Support of libdohj approach
 
 The support of BitcoinJ need to follow the link:https://github.com/bisq-network/libdohj[libdohj] approach (e.g. we don't want to ship an additional alternative BitcoinJ library).
 
@@ -58,7 +58,7 @@ The Bisq brand must not be used in a public mainnet test phase. Re-brand the Bis
 
 Make a pull request in Github to the Bisq `Development` branch.
 
-If the PR gets merged the seed node operators and arbitrators will be assigned according the Bisq DAO process (requires lock up BSQ as bond).
+If the PR gets merged the seed node operators and arbitrators will be assigned according the Bisq DAO process (requires lock up BSQ tokens as bond).
 
 
 == Caveats
@@ -68,7 +68,7 @@ If the PR gets merged the seed node operators and arbitrators will be assigned a
 * Any BSQ token holder can request that a decision for supporting the new base currency in Bisq should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc TODO: add link, not available atm).
 * If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: add link, not available atm).
 * If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the Altcoin. Not reaching the quorum results in a rejection.
-* For requesting again a Altcoin which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+* For requesting again an Altcoin which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
 * Any BSQ Altcoin holder can also request a voting to remove an already supported base currency.
 
 
