@@ -3,13 +3,13 @@
 
 == Introduction
 
-This document describes the process how to submit a request for adding a new Altcoin or token to the currency list in Bisq.
-Adding a coin/token does not mean any endorsement from the Bisq community. For making decisions in case of controversial requests we use the Bisq DAO voting process.
+This document describes the process how to submit a request for adding a new Altcoin or token to the currency list in Bisq. +
+Adding a coin/token does not mean any endorsement from the Bisq community. For making decisions in case of controversial requests we use the Bisq DAO voting process. +
 Please don't send promotional/background information about the coin/token but only fulfill the formal requirements below.
 
 Please note that Bisq is not implementing technically any coin/token infrastructure (wallet, full nodes, block explorer,...) but only supports that the users can add the altoin address to a payment account and then during the trade process the users exchange the Altcoin address. The process of sending and receiving the Altcoin is not part of our system (users use their own Altcoin wallets).
 
-Already added coins/tokens which have been traded at least once or which have provided a PR for the address validation will be kept. All other coins/tokens will be removed when we start introducing that requirements.
+Already added coins/tokens which have been traded at least once or which have provided a PR for the address validation will be kept. All other coins/tokens will be removed when we start introducing that requirements. +
 This document replaces the process described in the Bisq forum [1].
 
 == Process
@@ -60,7 +60,7 @@ See: link to DAO phase 0 doc. (TODO)
 
 == References
 
-[1] https://forum.bisq.io/t/how-to-add-your-favorite-Altcoin/46
-[2] https://github.com/bisq-network/exchange/blob/Development/gui/src/main/java/io/bisq/gui/util/validation/AltCoinAddressValidator.java
-[3] https://github.com/bisq-network/exchange/blob/Development/gui/src/test/java/io/bisq/gui/util/validation/AltCoinAddressValidatorTest.java
-[4] https://github.com/bisq-network/exchange/blob/master/common/src/main/java/io/bisq/common/locale/CurrencyUtil.java#L86
+[1] https://forum.bisq.io/t/how-to-add-your-favorite-Altcoin/46 +
+[2] https://github.com/bisq-network/exchange/blob/Development/gui/src/main/java/io/bisq/gui/util/validation/AltCoinAddressValidator.java +
+[3] https://github.com/bisq-network/exchange/blob/Development/gui/src/test/java/io/bisq/gui/util/validation/AltCoinAddressValidatorTest.java +
+[4] https://github.com/bisq-network/exchange/blob/master/common/src/main/java/io/bisq/common/locale/CurrencyUtil.java#L86 +
