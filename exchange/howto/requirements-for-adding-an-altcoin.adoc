@@ -24,7 +24,7 @@ This document replaces the process described in the Bisq forum [1].
 * Any BSQ token holder can request a voting to remove an already supported coin/token.
 * If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to voted on it) the result will be used to accept or reject the coin/token. Not reaching the quorum means a rejection.
 * Adding a new coin/token will be part of the normal release cycle.
-* At each new release we will check if already added coins/tokens have reached the min. usage requirements (see below). If those requirements are not met the coin/token will be removed. Adding the token again requires an statement about the changed circumstances (e.g. link to discussions where user demand for the coin/token is documented,...).
+* At each new release we will check if already added coins/tokens have reached the min. usage requirements (see below). If those requirements are not met the coin/token will be removed. Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where users demand for the coin/token is documented,...).
 * For requesting again a coin/token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
 * PR which fail to fulfill the formal requirements (e.g. failing address validation unit tests) will result that the coin/token will be blocked for 3 months.
 
