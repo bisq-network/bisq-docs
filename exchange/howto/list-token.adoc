@@ -22,15 +22,15 @@ There need to be an active block explorer available.
 
 The ticker symbol must not conflict with one of the national currency ISO 4217 ticker symbols listed at: https://en.wikipedia.org/wiki/ISO_4217
 
-=== The ticker sbmol does not conflict with other cryptocurrency tickers
+=== The ticker symbol does not conflict with other crypto-currency tickers
 
-The ticker symbol must not conflict with one of the top 100 crypto-currency ticker symbols at time when the PR gets created listed at: https://coinmarketcap.com/currencies/
+The ticker symbol must not conflict with one of the top 100 crypto-currency ticker symbols listed at: https://coinmarketcap.com/currencies  at the time when the PR gets created
 
 === The token does not need extra requirements
 
 Be sure that the requirements to add the token does not cause extra effort for Bisq like adding additional input fields (e.g. if the address alone is not sufficient for the trade).
 
-=== With looking up the receiver's address in a block explorer the arbitrator can verify the transaction.
+=== Arbitrator need to be able to see the transaction in the block explorer
 
 The arbitrator need to be able to see the transaction in the block explorer by using the receiver address. In case that is not possible as a result of enhanced privacy features (Zcash, Monero, CryptoNote coins,...) a suggested solution need to be added to the PR (e.g. in Zcash we support only transparent addresses not z-addresses; in Monero we require that the user is using a Monero wallet which supports transaction keys to enable 3rd party audits of the transaction which is used in case of a dispute). As such additional cased require additional effort (popup with background info) it will be up to Bisq contributors to add a PR for the popup and translation strings. Of course the code or the popup can be part of the PR as well but a more detailed description is out of scope of that document.
 
@@ -43,12 +43,12 @@ Add code for address validation to method `validate` in class `io.bisq.gui.util.
 
 === Step 2. Add unit test for address validation:
 
-Add unit tests for different addresses of the token to class `io.bisq.gui.util.AltCoinAddressValidatorTest` and be sure the tests don't fail.
+Add unit tests with different addresses of the token to class `io.bisq.gui.util.AltCoinAddressValidatorTest` and be sure the tests don't fail.
 
 === Step 3. Add entry to currency list:
 
 Add entry for the token to method `createAllSortedCryptoCurrenciesList` in class `io.bisq.common.locale.CurrencyUtil`.
-First parameter is ticker, second parameter token name and optional third parameter a boolean for the isAsset parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is ordered alphabetic by token name. Add the entry at the correct position.
+First parameter is ticker, second parameter token name and the optional third parameter is the boolean `isAsset` parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is ordered alphabetic by token name. Add your entry at the correct position.
 
 Examples:
 ----
@@ -58,7 +58,7 @@ result.add(new CryptoCurrency("MT", "Mycelium Token", true));     // token issue
 
 === Step 4. Fill out form
 
-Copy the below form, paste it into the PR (next step) and fill out the form.
+Copy the below form template, paste it into the PR (next step) and fill out the form.
 
 ----
 - Ticker symbol (e.g. LTC): ...
@@ -77,16 +77,16 @@ Make a pull request in Github to the Bisq `Development` branch.
 
 === Controversial tokens may be put to a vote
 
-* Any BSQ token holder can request that a decision for adding the token should be decided in the voting process of the Bisq DAO (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the link:TODO-link-to-DAO-phase-0-doc[DAO phase 0 doc]).
-* If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: not available atm).
-* If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to voted on it) the result will be used to accept or reject the token. Not reaching the quorum means a rejection.
+* Any BSQ token holder can request that a decision for adding the token should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc TODO: add link, not available atm).
+* If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: add link, not available atm).
+* If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the token. Not reaching the quorum results in a rejection.
 * For requesting again a token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
 * Any BSQ token holder can also request a voting to remove an already supported token.
 
 === Inactive tokens will be de-listed
 
-* At each new release we will check if already added token have been traded in the past 4 months. If this requirement are not met the token will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
-* Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where users demand for the token is documented,...).
+* At each new release we will check if already added tokens have been traded in the past 4 months. If this requirement is not met the token will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
+* Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where demand for the token is documented,...).
 
 === Getting an added token into production might take a bit
 
