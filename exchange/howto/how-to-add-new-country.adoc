@@ -12,20 +12,20 @@ Otherwise please provide the country code (2 letter ISO 3166 code), continent an
 
 There are 2 classes containing the relevant data:
 
-In io.bisq.common.locale.CountryUtil there is a static initializer where the country and the region (continent) is defined.  +
+In `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined.  +
 Please add a comment for the full name as well. Add new added countries at the end of the list.
 
 First entry (key) is the ISO 3166 code of the country. Second entry (value) is region code as defined in regionCodeToNameMap [*]
-E.g.: regionByCountryCodeMap.put("PR", "NA"); // Puerto Rico / North America
+E.g.: `regionByCountryCodeMap.put("PR", "NA"); // Puerto Rico / North America`
 
 
-The second class to edit is: io.bisq.common.locale.LocaleUtil. +
-At method getAllLocales add the language if known (otherwise use English and annotate with a comment that the language is not set. If multiple languages are supported in that country use the most common language.
+The second class to edit is: `io.bisq.common.locale.LocaleUtil`. +
+At method `getAllLocales` add the language if known (otherwise use English and annotate with a comment that the language is not set. If multiple languages are supported in that country use the most common language.
 
 First entry (key) is ISO 639-1 code (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Second entry (value) is the ISO 3166 country code (as used above). +
 Please add a comment for the full name as well. Add new added countries at the end of the list.
 
-E.g.: allLocales.add(new Locale("es", "PR", "")); // Puerto Rico
+E.g.: `allLocales.add(new Locale("es", "PR", "")); // Puerto Rico`
 
 
 Please make a pull request to the Development branch.
