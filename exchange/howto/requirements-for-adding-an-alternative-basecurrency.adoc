@@ -1,0 +1,61 @@
+= Requirements for making a request for adding an alternative base currency
+:toc:
+
+== Introduction
+
+This document describes the process how to submit a request for adding an alternative base currency (we refer as Altcoin in that document) to be supported in Bisq. +
+Adding an Altcoin does not mean any endorsement from the Bisq community. For making decisions in case of politically controversial requests we use the Bisq DAO voting process. +
+
+
+== Process
+
+* Any request has to be done via a pull request (PR) in Github (GH) to the Development branch.
+* The request needs to fulfill the requirements as described below.
+* Anyone can file such a PR.
+* Anyone can comment or object against the PR.
+* The maintainers of the GH repository have the authority to merge or reject the PR based on the formal requirements but not on "political" objections (e.g. consider the Altcoin as scamcoin,...).
+* Any BSQ token holder can request that a decision for adding the Altcoin will be decided in the voting process of the Bisq DAO [*].
+* If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: not available atm).
+* Any BSQ token holder can request a voting to remove an already supported Altcoin.
+* If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to voted on it) the result will be used to accept or reject the Altcoin. Not reaching the quorum means a rejection.
+* Adding a new Altcoin will be part of the normal release cycle.
+* At each new release we will check if already supported Altcoin have reached the min. usage requirements (see below). If those requirements are not met the Altcoin will be removed from the base currency selection combo-box as well seed nodes and arbitrators will be not supported anymore after a fade out period of 3 weeks. The code base though can be kept. Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where users demand for the Altcoin is documented,...).
+* For requesting again an Altcoin which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+
+[*] The Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented.
+See: link to DAO phase 0 doc. (TODO)
+
+
+== Technical pre conditions [*]
+
+* The Altcoin needs to have a Java implementation.
+* The Altcoin needs to support P2SH.
+* Because Bisq is based on BitcoinJ the Altcoin needs to have an implementation of BitcoinJ.
+* The support of BitcoinJ need to follow the libdohj approach [2] (e.g. we don't want to ship an additional alternative BitcoinJ library).
+
+[*] Supporting Altcoins which don't have BitcoinJ support would result in a huge effort for integrating it into Bisq and is not considered to be feasible at the near future. Mid term we might move to a new model based on Bitcoin Core in SPV mode with RPC interface and then non BitcoinJ or  Java implementations might become more feasible to get supported.
+
+
+== Further requirements
+
+* The Altcoin needs to have been already added to Bisq and have fulfilled the requirements described in the relevant document [1].
+* The PR needs to add all the required implementation and integration code for libdohj, BicoinJ and Bisq.
+* It needs to set all the required parameters (fees, limits,...).
+* The fork has to be tested and deployed by the requester and they has to proof that there is community interest and interest in trading the Altcoin.
+* The Bisq brand must not be used in a public mainnet test phase. Please re-brand the name and logo.
+* The network for the test run must not conflict with the official Bisq network.
+* The fork need to be tested on mainnet for at least 2 months.
+* There have to be min. 20 trades been executed in that test period.
+* In the test period the requester operates the seed nodes and sets up an arbitrator and communicates that clearly to their users that it is not connected to Bisq.
+* If the PR gets merged the seed node operators and arbitrators will be assigned according the Bisq DAO process (requires lock up BSQ as bond).
+
+
+== Min. usage requirements
+
+* Any alternative base currency need to have at least been traded once in the past 4 months. The Bisq trade statistics are taken as reference. Removal of a not-traded alternative base currency will not be announced beside in the release notes of the new release.
+
+
+== References
+
+[1] https://github.com/bisq-network/docs/blob/add_new_altcoins/exchange/howto/requirements-for-adding-an-altcoin.adoc +
+[2] https://github.com/bisq-network/libdohj +
