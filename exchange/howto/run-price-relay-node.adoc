@@ -93,7 +93,7 @@ Once you see the onion address is published copy it and pass it to the developer
 
 ==== Step 1.5. Backup private key for onion address
 
- Go to var/lib/tor and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same price relay node with the private key.
+ Go to `/var/lib/tor` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same price relay node with the private key.
 
 
 === Step 2. Set up price relay node:
