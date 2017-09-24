@@ -16,18 +16,18 @@ The second task could (and should in future) be done also by any other nodes but
 
 The seed node addresses (onion address) are hard coded in the application but can be overruled if the user adds a seed node address as program argument. Any user can run therefor their own seed node and connect to it.
 
-Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. At the moment we only have a simple script checking if the node is available and sending out an email to 2 contributors if it fails. In future we want to have a monitor node which checks the quality of service of all the seed nodes. Currently we trust that all operators do their best to provide a reliable service without defining exactly the metrics for the quality of service.
+Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node need to support at least 30 connections. At the moment we only have a simple script checking if the node is available and sending out an email to 2 contributors if it fails. In future we want to have a monitor node which checks the quality of service of all the seed nodes. Currently we trust that all operators do their best to provide a reliable service without defining exactly the metrics for the quality of service.
 
 Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
 
 A default seed node can be blocked by a network message in case the seed node does not fulfill the required quality.
 
-_side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute.
+_side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute._
 
 
 === Duties of the seed node operator
 
-The operator of a seed node need to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and normal log file occasionally. He has to have a professional level of operational security to operate the node.
+The operator of a seed node need to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
 
 
 == Setup instructions
@@ -82,9 +82,12 @@ Once all the renaming is done you can finally start the seed node and it will be
 
 == Bond
 
-We define a Bond in BSQ of 2000 BSQ for the privilege to run a seed node. In case of severe failures of service (malicious or carelessness)  the bond would be confiscated (burned).
+We define a Bond of 2000 BSQ for the privilege to run a seed node. In case of severe failures of service (malicious or carelessness)  the bond would be confiscated (burned).
 
 
 == Payment
 
 For the service the contributor provides by running and maintaining a seed node as well as a compensation for the server costs we define a payment of 200 BSQ per month.
+
+
+TODO: discuss bond and payment
