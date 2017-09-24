@@ -1,0 +1,145 @@
+= How to run a price relay node
+:toc:
+
+== Introduction
+
+Bisq price relay nodes are used for retrieving market price from several crypto currency market price providers as well as mining fee estimation. The currently supported market price providers are:
+
+. link:https://bitcoinaverage.com/[Bitcoin Average] for BTC-Fiat prices
+. link:https://poloniex.com/[Poloniex] for BTC-Altcoin prices
+. link:https://coinmarketcap.com/[Coinmarketcap] for BTC-Altcoin prices if not available at Poloniex
+
+The mining fee estimation is delivered by:
+
+. link:https://bitcoinfees.21.co/[21] for mining fee estimation
+
+_Please note that the fee estimation function might get separated in future into its own node._
+
+
+=== Background:
+
+There are several reasons why the Bisq application does not connect directly to those providers:
+
+. For Bitcoin Average it requires a paid plan. The API key cannot be shared in an open source project. The requirement that each user would request and pay for an API key would be a usability killer.
+
+. Most providers are using Cloud Flare which require interactive Captchas to connect over Tor. API calls are not possible therefor with Tor. We want to make all network connections over Tor be default.
+
+For those 2 reasons we changed in earlier updates to the model to operate a price relay node running as Tor hidden service which connects to the service providers in clear mode and contains the API key for Bitcoin Average.
+
+The price relay carry an important security aspect: If the trader is using a percentage based price in the offer the actual trade price will be calculated using the current market price taken from the market price providers. If a node would deliver wrong data it could lead to a wrong trade price. Both traders check the calculated price by themselves but if both are connected to the same malicious provider it would result in a wrong trade price. Connection is doen randomly to one of the providers in the list. We have as well a check for the age of the price and if the price is older than 30 min. the market price will be ignored. If no price is available percentage based offers cannot be taken. A monitor service checking all price relay nodes and comparing their values for outliers is an important feature we need to add soon.
+
+The price relay is a simple http server and has to be set up to be accessible as Tor hidden service. Additionally if the operator wants he can open it to clear net (at least one node is useful for regtest-without-tor dev setup to get delivered market prices). We don't recommend to advertise that to not get too much traffic from non-Bisq users. There is not authentication scheme for Bisq users which make the service vulnerable for abuse. An authentication scheme for a P2P/open source environment is a challenge on its own but considered important to get explored.
+
+
+== Price relay node operators
+
+The price relay node addresses (onion address) are hard coded in the application but can be overruled if the user adds a price relay node address as program argument. Any user can run therefor their own price relay node and connect to it. Though they require an API key for Bitcoin Average.
+
+Some contributors of Bisq are running the default price relay nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default price relay node and it requires that a certain quality of service is met. The operator also need to acquire an API key for Bitcoin Average. Currently we trust that all operators do their best to provide a reliable service without defining exactly the metrics for the quality of service.
+
+Contributors running a price relay node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
+
+A default price relay node can be blocked by a network message in case the node does not fulfill the required quality.
+
+
+=== Duties of the price relay node operator
+
+The operator of a price relay node need to be responsive in case of price relay node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). Requirements are rather low, we recommend 1 GB of RAM for one price relay node. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
+
+
+== Setup instructions
+
+=== Step 1. Setup Tor
+
+Install latest Tor binaries (at Debian Tor it got installed as user debian-tor).
+
+==== Step 1.1. Edit torrc file.
+
+Got to `/etc/tor` and edit the `torrc` file
+
+---
+HiddenServiceDir /var/lib/tor/
+HiddenServicePort 80 127.0.0.1:8080
+---
+
+Optionally you can edit the torsocks.conf.
+
+
+==== Step 1.2. Create start script
+
+start_tor.sh: +
+---
+#!/bin/bash
+
+# sudo -u debian-tor
+nohup sudo -u debian-tor tor > /dev/null 2>errors_tor.log &
+---
+
+==== Step 1.3. Start Tor
+
+Start tor:
+`sh start_tor.sh`
+
+Wait about 1 minute until the hidden service is published. You should see it in the logs, otherwise go to `/var/lib/tor/` and check if the hostname file is available there.
+
+
+==== Step 1.4. Copy the onion address
+
+Once you see the onion address is published copy it and pass it to the developers so it can be added to the hard coded list of nodes (in class: `io.bisq.core.provider.ProvidersRepository`).
+
+
+==== Step 1.5. Backup private key for onion address
+
+ Go to `/var/lib/tor/` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same price relay node with the private key.
+
+
+=== Step 2. Set up price relay node:
+
+====  Step 2.1. Check out Bisq and build it according to the link:https://github.com/bisq-network/exchange/blob/master/doc/build.md[build.md] file.
+
+_Note: We will soon separate the price relay to its own project._
+
+==== Step 2.2. Acquire an API key from Bitcoin Average
+
+==== Step 2.3. Create 2 sh files for the price relay node:
+
+start_node.sh: +
+`nohup sh loop.sh &`
+
+loop.sh: +
+---
+#!/bin/bash
+while true
+do
+echo `date`  "(Re)-starting node"
+java -jar provider.jar [bitcoinAveragePrivKey] [bitcoinAveragePubKey] > /dev/null 2>errors.log
+echo `date` "node terminated unexpectedly!!"
+sleep 3
+done
+---
+
+Replace [bitcoinAveragePrivKey] and [bitcoinAveragePubKey] with your API keys.
+
+==== Step 2.4. Start the price relay node
+
+`sh start_node.sh`
+
+==== Step 2.5. Test if the services are available via Tor hidden service
+
+http://YOUR_ONION_ADDRESS.onion:8080/getFees
+http://YOUR_ONION_ADDRESS.onion:8080/getAllMarketPrices
+
+Optional if you support clear net access, test it with your IP/domain.
+
+
+== Bond
+
+We define a Bond of 2000 BSQ for the privilege to run a price relay node. In case of severe failures of service (malicious or carelessness)  the bond would be confiscated (burned).
+
+
+== Payment
+
+For the service the contributor provides by running and maintaining a price relay node as well as a compensation for the server costs we define a payment of 150 BSQ per month.
+
+
+TODO: discuss bond and payment (price relay node are cheaper as lower RAm requirements and no issues are known in running them, therefor a lower payment than a seed node)
