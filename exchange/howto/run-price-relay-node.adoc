@@ -107,7 +107,9 @@ _Note: We will soon separate the price relay to its own project._
 ==== Step 2.3. Create 2 sh files for the price relay node:
 
 start_node.sh: +
-`nohup sh loop.sh &`
+----
+nohup sh loop.sh &
+----
 
 loop.sh: +
 ----
@@ -127,22 +129,22 @@ Replace [bitcoinAveragePrivKey] and [bitcoinAveragePubKey] with your API keys.
 
 `sh start_node.sh`
 
-==== Step 2.5. Test if the services are available via Tor hidden service
+==== Step 2.5. Test if the services are available via Tor hidden service in Tor browser
 
-http://YOUR_ONION_ADDRESS.onion:8080/getFees
+http://YOUR_ONION_ADDRESS.onion:8080/getFees +
 http://YOUR_ONION_ADDRESS.onion:8080/getAllMarketPrices
 
-Optional if you support clear net access, test it with your IP/domain.
+Optional: If you support clear net access, test it with your IP/domain.
 
 
 == Bond
 
-We define a Bond of 2000 BSQ for the privilege to run a price relay node. In case of severe failures of service (malicious or carelessness)  the bond would be confiscated (burned).
+We define a Bond of 2000 BSQ for the privilege to run a price relay node. In case of severe failures of service (malicious or carelessness) the bond would be confiscated (burned).
 
 
 == Payment
 
-For the service the contributor provides by running and maintaining a price relay node as well as a compensation for the server costs we define a payment of 200 BSQ per month.
+For the service the contributor provides by running and maintaining a price relay node as well as a compensation for the server and API key costs we define a payment of 200 BSQ per month.
 
 
 TODO: discuss bond and payment
