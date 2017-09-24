@@ -131,8 +131,8 @@ Replace [bitcoinAveragePrivKey] and [bitcoinAveragePubKey] with your API keys.
 
 ==== Step 2.5. Test if the services are available via Tor hidden service in Tor browser
 
-http://YOUR_ONION_ADDRESS.onion:8080/getFees +
-http://YOUR_ONION_ADDRESS.onion:8080/getAllMarketPrices
+http://YOUR_ONION_ADDRESS.onion/getFees +
+http://YOUR_ONION_ADDRESS.onion/getAllMarketPrices
 
 Optional: If you support clear net access, test it with your IP/domain.
 
