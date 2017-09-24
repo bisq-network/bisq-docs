@@ -88,12 +88,12 @@ Wait about 1 minute until the hidden service is published. You should see it in 
 
 ==== Step 1.4. Copy the onion address
 
-Once you see the onion address is published copy it and pass it to the developers so it can be added to the hard coded list of nodes (in class: `io.bisq.core.provider.ProvidersRepository`).
+Once you see the onion address is published copy it and pass it to the developers so it can be added to the hard coded list of nodes (in class: `io.bisq.core.provider.ProvidersRepository`) or make a PR to that class.
 
 
 ==== Step 1.5. Backup private key for onion address
 
- Go to `/var/lib/tor/` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same price relay node with the private key.
+ Go to `/var/lib/tor` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same price relay node with the private key.
 
 
 === Step 2. Set up price relay node:
