@@ -50,6 +50,15 @@ A default price relay node can be blocked by a network message in case the node 
 The operator of a price relay node need to be responsive in case of price relay node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). Requirements are rather low, we recommend 1 GB of RAM for one price relay node. He should check the error logs occasionally. He has to have a professional level of operational security to operate the node.
 
 
+== System requirements for hosting machine
+
+. 1 GB of RAM
+. 10 GB disk space (SSD)
+. 1 TB network traffic
+. UPS (uninterruptible power supply)
+. Uptime of > 99.9%
+
+
 == Setup instructions
 
 === Step 1. Setup Tor
