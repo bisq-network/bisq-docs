@@ -30,6 +30,15 @@ _Side note: The seed nodes on Linux get a out of memory error after running a fe
 The operator of a seed node need to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
 
 
+== System requirements for hosting machine
+
+. 2 GB of RAM
+. 10 GB disk space (SSD)
+. 2 TB network traffic
+. UPS (uninterruptible power supply)
+. Uptime of > 99.9%
+
+
 == Setup instructions
 
 === Step 1. Install latest JDK
