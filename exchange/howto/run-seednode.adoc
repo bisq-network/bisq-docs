@@ -56,7 +56,7 @@ start_btc_ONION_ADDRESS.sh: +
 `nohup sh loop_btc_ONION_ADDRESS.sh &`
 
 loop_btc_ONION_ADDRESS.sh: +
-`java -jar SeedNode.jar --maxConnections=30 --baseCurrencyNetwork=BTC_MAINNET --nodePort=8000 --myAddress=ONION_ADDRESS.onion:8000 --appName=seed_BTC_MAINNET_ONION_ADDRESS >/dev/null 2>error_seed_BTC_MAINNET_ONION_ADDRESS.log`
+`java -Xmx1700m -jar SeedNode.jar --maxConnections=30 --baseCurrencyNetwork=BTC_MAINNET --nodePort=8000 --myAddress=ONION_ADDRESS.onion:8000 --appName=seed_BTC_MAINNET_ONION_ADDRESS >/dev/null 2>error_seed_BTC_MAINNET_ONION_ADDRESS.log`
 
 ==== Step 2.2. Start the start_btc_ONION_ADDRESS.sh
 
