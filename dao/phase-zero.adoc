@@ -14,7 +14,7 @@ October 19, 2017
 
 = Introduction
 
-Bisq’s peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq’s community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization,_ to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
+Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization,_ to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
 
 *Audience.* This document is intended primarily for Bisq users and contributors, but has been written to be understood by anyone familiar with the Bitcoin ecosystem. If you are interested in working to improve Bisq, or simply interested in where the project is going, read on.
 
@@ -32,7 +32,7 @@ Bisq’s peer-to-peer bitcoin exchange network has been in operation for 18 mont
 
 *Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the https://github.com/bisq-network/docs[bisq-network/docs] repository. Alternatively, post questions in the https://forum.bisq.io[Bisq Forum], chat with us in the https://bisq-slack.herokuapp.com/[Bisq Slack workspace] or email the authors directly.
 
-*Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the bisq-network/docs repository to be notified of changes or subscribe to this document’s dedicated https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
+*Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the bisq-network/docs repository to be notified of changes or subscribe to this document's dedicated https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
 
 *Related materials.* A companion slide deck based on this document is available https://docs.google.com/presentation/d/1G5_6Kju2OoItZ5lD0jnskqLdOV2dAJpdB6WOjmq9hRk/edit#[here], a 15-minute interview recapping the Phase Zero plan is available https://www.youtube.com/watch?v=AvXWToT-dcQ[here], and video of a 50-minute talk based on this document will be available soon.
 
@@ -53,17 +53,17 @@ Bisq is *not a company*. Bisq is *free software* released under version 3 of the
 
 == Why Bisq exists
 
-Bisq’s mission is to provide a *secure*, *private* and *censorship-resistant* way of exchanging bitcoin for national currencies and other cryptocurrencies over the internet.
+Bisq's mission is to provide a *secure*, *private* and *censorship-resistant* way of exchanging bitcoin for national currencies and other cryptocurrencies over the internet.
 
-When we say *secure*, we are referring to the safety of users’ funds. Today, most bitcoin exchanges are _centralized_, requiring users to store their bitcoins—for at least some amount of time—on exchange servers. When thousands of users do this, it creates extreme incentives for those servers to be hacked and for those users’ bitcoins to be stolen. And time and time again these hacks and thefts are exactly what happen.
+When we say *secure*, we are referring to the safety of users' funds. Today, most bitcoin exchanges are _centralized_, requiring users to store their bitcoins—for at least some amount of time—on exchange servers. When thousands of users do this, it creates extreme incentives for those servers to be hacked and for those users' bitcoins to be stolen. And time and time again these hacks and thefts are exactly what happen.
 
-When we say *private*, we are referring to users’ ability to control access to their own information. Today, most centralized exchanges require users to divulge personally identifying information in order to set up an account, and then in turn link users’ trading activity to their respective identities. This practice creates extreme risks for users that their personal details and financial information will be stolen, leaked or otherwise used against their own best interests.
+When we say *private*, we are referring to users' ability to control access to their own information. Today, most centralized exchanges require users to divulge personally identifying information in order to set up an account, and then in turn link users' trading activity to their respective identities. This practice creates extreme risks for users that their personal details and financial information will be stolen, leaked or otherwise used against their own best interests.
 
-When we say *censorship-resistant*, we are referring to users’ ability to voluntarily trade with one another without interference from a third party. Today, centralized bitcoin exchanges are highly susceptible to such interference. By their nature, they must operate within one legal jurisdiction or another, putting them at risk of being fined or shut down if they do not comply with the laws and other rules of that jurisdiction, which may include restrictions on who can trade and what can be traded, and almost always include requirements to collect personal information as described above.
+When we say *censorship-resistant*, we are referring to users' ability to voluntarily trade with one another without interference from a third party. Today, centralized bitcoin exchanges are highly susceptible to such interference. By their nature, they must operate within one legal jurisdiction or another, putting them at risk of being fined or shut down if they do not comply with the laws and other rules of that jurisdiction, which may include restrictions on who can trade and what can be traded, and almost always include requirements to collect personal information as described above.
 
-What’s needed is an exchange where *users keep control of funds*, that *is private by default*, and that *defends freedom of transaction*. We built Bisq to meet these needs.
+What's needed is an exchange where *users keep control of funds*, that *is private by default*, and that *defends freedom of transaction*. We built Bisq to meet these needs.
 
-Where Bitcoin’s motto is “be your own bank,” Bisq’s is “*be your own exchange.*”
+Where Bitcoin's motto is "be your own bank," Bisq's is "*be your own exchange.*"
 
 == How Bisq works
 
@@ -73,12 +73,12 @@ Imagine you want to buy bitcoin (BTC) in exchange for US dollars (USD). In Bisq 
 
  . You download and run the Bisq application on your laptop or desktop computer
  . You configure Bisq with your USD payment method details
- . You browse Bisq’s offer book for existing offers to sell BTC for USD
- . You take an existing offer, agreeing to buy the seller’s BTC for your USD
- . You send USD from your bank to the seller’s bank and indicate you have done so in Bisq
- . You and the seller wait for your USD payment to arrive at the seller’s bank
+ . You browse Bisq's offer book for existing offers to sell BTC for USD
+ . You take an existing offer, agreeing to buy the seller's BTC for your USD
+ . You send USD from your bank to the seller's bank and indicate you have done so in Bisq
+ . You and the seller wait for your USD payment to arrive at the seller's bank
  . The seller receives your USD and indicates they have done so in Bisq
- . You receive the the seller’s bitcoin and the trade is complete
+ . You receive the the seller's bitcoin and the trade is complete
 
 These steps can vary in a number of ways depending on whether you wish to buy or sell bitcoin, whether you are the _maker_ or the _taker_ of an offer, which payment methods you have access to, and so on. But in any case, the steps above are rather different than those one would follow to complete a similar trade on a centralized exchange.
 
@@ -86,7 +86,7 @@ These steps can vary in a number of ways depending on whether you wish to buy or
 
 Beyond the obvious difference that Bisq is a desktop application and not a browser-based web application, the first difference experienced traders will notice is that there is *no automatic order matching* on the Bisq exchange. Rather, Bisq users manually search for and select specific offers they wish to take. This approach enables truly peer-to-peer trade settlement, and ensures that users are in control of which counterparties they trade with.
 
-Bisq is also unique among decentralized bitcoin exchanges in the way it coordinates *out-of-band fiat payments*. Bisq does not directly integrate with banks or other national currency payment systems in any way. Rather, Bisq’s trading protocol orchestrates the process of buyer and seller working together to settle fiat payments _outside of_ the Bisq application, as demonstrated in steps 5–7 of the trading example above.
+Bisq is also unique among decentralized bitcoin exchanges in the way it coordinates *out-of-band fiat payments*. Bisq does not directly integrate with banks or other national currency payment systems in any way. Rather, Bisq's trading protocol orchestrates the process of buyer and seller working together to settle fiat payments _outside of_ the Bisq application, as demonstrated in steps 5–7 of the trading example above.
 
 These and other differences result in a key tradeoff for Bisq users—one in which *trade settlement takes longer*, but *trading itself is far more secure, private and censorship-resistant*.
 
@@ -106,11 +106,11 @@ These and other differences result in a key tradeoff for Bisq users—one in whi
 
 === How Bisq resists censorship
 
- - Bisq’s network is a *fully distributed P2P network*, and thus difficult to shut down
- - Bisq’s network is *built on top of Tor*, and thus inherits Tor’s own censorship resistance
+ - Bisq's network is a *fully distributed P2P network*, and thus difficult to shut down
+ - Bisq's network is *built on top of Tor*, and thus inherits Tor's own censorship resistance
  - *Bisq is code*, not a company; it is not incorporated, and it cannot be disincorporated
 
-== Bisq’s current status
+== Bisq's current status
 
 === Track record
 
@@ -125,17 +125,17 @@ image::phase-zero/volume.png[Bisq Trading Volume in USD]
 
 === Funding
 
-Bisq is designed to be funded directly by its users through _trading fees_. Trading fees are paid by both buyer and seller on every trade, and are received by each trade’s arbitrator in compensation for the service they provide. As of October 2017, these trading fees total around one bitcoin per month, distributed to two arbitrators who are also the project’s founders and principal developers. These funds are insufficient to cover expenses and as a result the project remains funded in part by founder savings.
+Bisq is designed to be funded directly by its users through _trading fees_. Trading fees are paid by both buyer and seller on every trade, and are received by each trade's arbitrator in compensation for the service they provide. As of October 2017, these trading fees total around one bitcoin per month, distributed to two arbitrators who are also the project's founders and principal developers. These funds are insufficient to cover expenses and as a result the project remains funded in part by founder savings.
 
-Fortunately, as mentioned above, Bisq trading volumes are growing, and total monthly trading fees are growing along with them. As such, it is reasonable to expect that trading fees will soon be sufficient to cover expenses, and even to compensate additional, non-arbitrator contributors. But as these additional funds come in, a new problem arises with them. As mentioned above, Bisq’s trading fees currently compensate _arbitrators_ in a direct, automatic, and decentralized way, but the current approach is limited in that it _only_ compensates arbitrators. What’s needed is a mechanism that can compensate _all kinds of contributors_ in an equally decentralized fashion.
+Fortunately, as mentioned above, Bisq trading volumes are growing, and total monthly trading fees are growing along with them. As such, it is reasonable to expect that trading fees will soon be sufficient to cover expenses, and even to compensate additional, non-arbitrator contributors. But as these additional funds come in, a new problem arises with them. As mentioned above, Bisq's trading fees currently compensate _arbitrators_ in a direct, automatic, and decentralized way, but the current approach is limited in that it _only_ compensates arbitrators. What's needed is a mechanism that can compensate _all kinds of contributors_ in an equally decentralized fashion.
 
 === Governance
 
-Bisq’s _technology_ is fully decentralized, but its _governance_ is not. Today, the Bisq project consists of a small team of active contributors, where most maintenance, operation and administration duties are carried out by project founders, and where those founders make virtually all major decisions. While this approach has worked well enough to bring the project to its current state, it is no longer sustainable if Bisq is to continue to grow. First, because it does not scale; project founders have become bottlenecks incapable of addressing all user needs. Second, because it introduces _censorship risk_ to have responsibility centralized in a small group of people. What’s needed is a way to decentralize responsibility and high-trust duties away from project founders and into the hands of other competent and reputable contributors.
+Bisq's _technology_ is fully decentralized, but its _governance_ is not. Today, the Bisq project consists of a small team of active contributors, where most maintenance, operation and administration duties are carried out by project founders, and where those founders make virtually all major decisions. While this approach has worked well enough to bring the project to its current state, it is no longer sustainable if Bisq is to continue to grow. First, because it does not scale; project founders have become bottlenecks incapable of addressing all user needs. Second, because it introduces _censorship risk_ to have responsibility centralized in a small group of people. What's needed is a way to decentralize responsibility and high-trust duties away from project founders and into the hands of other competent and reputable contributors.
 
 === Summary: What Bisq needs now
 
-As mentioned above, Bisq’s mission is to provide a secure, private and censorship-resistant way to exchange bitcoin for national currencies and other cryptocurrencies over the internet. Today, Bisq is delivering on the first two aspects of this mission—indeed, we believe Bisq to be among the most secure and private exchange options currently available. Where Bisq falls short on this mission is in the third aspect of _censorship resistance._ Bisq’s P2P architecture, use of Tor as a transport layer, and other built-in protections give the project a significant degree of _technical_ censorship resistance, but with regard to _funding_ and _governance_, the Bisq project remains vulnerable so long as these critical factors remain centralized.
+As mentioned above, Bisq's mission is to provide a secure, private and censorship-resistant way to exchange bitcoin for national currencies and other cryptocurrencies over the internet. Today, Bisq is delivering on the first two aspects of this mission—indeed, we believe Bisq to be among the most secure and private exchange options currently available. Where Bisq falls short on this mission is in the third aspect of _censorship resistance._ Bisq's P2P architecture, use of Tor as a transport layer, and other built-in protections give the project a significant degree of _technical_ censorship resistance, but with regard to _funding_ and _governance_, the Bisq project remains vulnerable so long as these critical factors remain centralized.
 
 To fully realize its mission, what Bisq needs now are four things:
 
@@ -144,7 +144,7 @@ To fully realize its mission, what Bisq needs now are four things:
  3. *A decentralized funding model* to feasibly incentivize those contributors
  4. *A decentralized governance model* to avoid censorship and other centralization risks
 
-In the next section, we’ll see how the Bisq DAO and BSQ token have been designed to address these needs.
+In the next section, we'll see how the Bisq DAO and BSQ token have been designed to address these needs.
 
 == The Bisq DAO and BSQ token
 
@@ -152,7 +152,7 @@ In the next section, we’ll see how the Bisq DAO and BSQ token have been design
 
 We introduce a token, BSQ, designed to facilitate a transfer of value from the traders _using_ Bisq to the contributors _maintaining_ it.
 
-BSQ is Bisq’s own custom implementation of the _colored coin_ concept. From the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00001000 BTC, or 1000 satoshis.
+BSQ is Bisq's own custom implementation of the _colored coin_ concept. From the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00001000 BTC, or 1000 satoshis.
 
 ._Initial distribution of BSQ tokens from BTC donations_
 image::phase-zero/bsq-distribution.png[Initial BSQ distribution]
@@ -168,13 +168,13 @@ Today, without BSQ, traders use Bisq and pay Bisq trading fees in BTC. At the sa
 image::phase-zero/limitations.png[Limitations]
 {empty}
 
-Bisq’s current compensation model has worked well enough so far mainly because the Bisq team has been so small. Bisq’s founders have played most key roles in the system, including that of arbitrator, such that compensating arbitrators with trading fees has, in practice, meant compensating the project’s primary contributors as well. The problem is that this approach breaks down quickly as more contributors get involved, and as explained above, it is critical to the success of the project to grow the number of contributors and to distribute responsibilities amongst them.
+Bisq's current compensation model has worked well enough so far mainly because the Bisq team has been so small. Bisq's founders have played most key roles in the system, including that of arbitrator, such that compensating arbitrators with trading fees has, in practice, meant compensating the project's primary contributors as well. The problem is that this approach breaks down quickly as more contributors get involved, and as explained above, it is critical to the success of the project to grow the number of contributors and to distribute responsibilities amongst them.
 
-What’s needed is a decentralized way to transfer value from traders using Bisq to contributors maintaining it, and there is no practical way to achieve this with Bitcoin alone. Accumulating and distributing trading fees using multisignature addresses and transactions could in theory provide part of the solution, but in practice these tools are still too primitive to achieve the fully decentralized and meritocratic approach required to successfully operate the Bisq DAO.
+What's needed is a decentralized way to transfer value from traders using Bisq to contributors maintaining it, and there is no practical way to achieve this with Bitcoin alone. Accumulating and distributing trading fees using multisignature addresses and transactions could in theory provide part of the solution, but in practice these tools are still too primitive to achieve the fully decentralized and meritocratic approach required to successfully operate the Bisq DAO.
 
 Furthermore, for a system of _compensation_ to be fully decentralized and meritocratic, an equally decentralized and meritocratic system of _governance_ is required in order to decide which contributions should be compensated and which should not; and this, too, is not practical to implement with Bitcoin alone.
 
-It is for these reasons that BSQ is needed. As we’ll see in the the sections that follow, the BSQ token has been designed to overcome the challenges described above and to provide a fully decentralized and meritocratic funding and governance model for Bisq.
+It is for these reasons that BSQ is needed. As we'll see in the the sections that follow, the BSQ token has been designed to overcome the challenges described above and to provide a fully decentralized and meritocratic funding and governance model for Bisq.
 
 === How BSQ is used
 
@@ -202,7 +202,7 @@ image::phase-zero/bsq-creation-destruction.png[How BSQ is issued and destroyed]
 
 === How BSQ decentralizes compensation and enables monetary policy
 
-As we’ve seen above, BSQ is _destroyed_ when traders spend it, and _created_ when contributors earn it. A key benefit of this approach is that spent BSQ need not—indeed, _cannot_—be stored, protected, or later distributed by any individual or group. By eliminating the need to hold and later distribute BSQ, we also eliminate a set of difficult problems and risks, including determining who should maintain control over these funds, and how they should be protected and disbursed.
+As we've seen above, BSQ is _destroyed_ when traders spend it, and _created_ when contributors earn it. A key benefit of this approach is that spent BSQ need not—indeed, _cannot_—be stored, protected, or later distributed by any individual or group. By eliminating the need to hold and later distribute BSQ, we also eliminate a set of difficult problems and risks, including determining who should maintain control over these funds, and how they should be protected and disbursed.
 
 Overall, this approach makes it possible to transfer value from traders to contributors in a decentralized way. The transfer happens _indirectly_ through the process of destruction and creation, but this indirection is precisely what makes it decentralized. The creation side of the transfer is intermediated by voting on compensation requests, but this is not a problem given that voting itself is a decentralized and meritocratic process.
 
@@ -220,7 +220,7 @@ Given current trends, it is important to state explicitly that *BSQ is not assoc
 
 === Risks of launching the Bisq DAO
 
-It is one thing to _design_ a token-based economy like the Bisq DAO; it is another thing to successfully _operationalize_ it. There are a number of risks inherent to simply “going live” with BSQ and the Bisq DAO, including but not limited to the following:
+It is one thing to _design_ a token-based economy like the Bisq DAO; it is another thing to successfully _operationalize_ it. There are a number of risks inherent to simply "going live" with BSQ and the Bisq DAO, including but not limited to the following:
 
  - *Valuation risk:* token value falls too low to be viable (or rises too high too quickly)
  - *Control risk:* any kind of non-meritocratic takeover of stakeholder voting power
@@ -229,7 +229,7 @@ It is one thing to _design_ a token-based economy like the Bisq DAO; it is anoth
  - *Solvency risk:* trading volumes do not grow quickly enough to cover compensation
  - *Stability risk:* implementation errors cause loss of funds or other major problems
 
-Any of these risks could be existential. What’s needed is a conservative and incremental approach to operationalizing the Bisq DAO that accounts for and mitigates these risks. In the next part, we’ll see how the Phase Zero plan is designed to do that.
+Any of these risks could be existential. What's needed is a conservative and incremental approach to operationalizing the Bisq DAO that accounts for and mitigates these risks. In the next part, we'll see how the Phase Zero plan is designed to do that.
 
 
 = Part II: The Phase Zero Plan [[Part-II]]
@@ -238,7 +238,7 @@ _Phase Zero_ is an extended pre-release period for the Bisq DAO in which the BSQ
 
 == Goal
 
-As discussed throughout this document, the goal of the Bisq DAO is to decentralize the funding and governance of the Bisq project. The goal of Phase Zero is to *operationalize the Bisq DAO while minimizing risk*. Like most projects in the cryptocurrency ecosystem, the Bisq DAO is an experiment; we have one shot to get it “right enough” to achieve viability, and there is no need to rush. For these reasons, Phase Zero is designed conservatively, introducing safeguards and approaching the implementation of each aspect of the DAO in an incremental fashion.
+As discussed throughout this document, the goal of the Bisq DAO is to decentralize the funding and governance of the Bisq project. The goal of Phase Zero is to *operationalize the Bisq DAO while minimizing risk*. Like most projects in the cryptocurrency ecosystem, the Bisq DAO is an experiment; we have one shot to get it "right enough" to achieve viability, and there is no need to rush. For these reasons, Phase Zero is designed conservatively, introducing safeguards and approaching the implementation of each aspect of the DAO in an incremental fashion.
 
 == How Phase Zero mitigates risk [[risk-mitigation]]
 
@@ -248,11 +248,11 @@ To address *valuation risk*, we eliminate the possibility of trading BSQ during 
 
 To address *control risk*, we ensure that only those who have contributed value to the project are able to vote during Phase Zero. This, too, is a result of prohibiting BSQ trading: because the only way to acquire BSQ during Phase Zero is to _earn_ it, it becomes impossible to simply purchase voting power. Furthermore, it gives us time during Phase Zero to design and implement a longer-term solution for control risk in which we introduce a reputation factor into the BSQ-based voting process.
 
-To address *censorship risk*, we systematically eliminate formal leadership roles during Phase Zero. We define the roles and responsibilities required to maintain and operate the Bisq network, and we delegate those roles to contributors who have earned enough BSQ to “bond into” them. We make it an explicit exit criteria of Phase Zero that no one contributor is responsible for more than three of these roles, and we ultimately relegate the role of “founder” to an historical one. While this approach does not eliminate the possibility of individual contributors being censored, it does minimize the damage that any given censorship can inflict on the project and maximize the ability for pseudonymous contributors to replace those who have been censored.
+To address *censorship risk*, we systematically eliminate formal leadership roles during Phase Zero. We define the roles and responsibilities required to maintain and operate the Bisq network, and we delegate those roles to contributors who have earned enough BSQ to "bond into" them. We make it an explicit exit criteria of Phase Zero that no one contributor is responsible for more than three of these roles, and we ultimately relegate the role of "founder" to an historical one. While this approach does not eliminate the possibility of individual contributors being censored, it does minimize the damage that any given censorship can inflict on the project and maximize the ability for pseudonymous contributors to replace those who have been censored.
 
 To address *credibility risk*, we use Phase Zero as an opportunity to grow the set of contributors working on Bisq, by incentivizing them to earn BSQ through bounties and compensation requests. We make it an explicit exit criteria of Phase Zero to redistribute enough BSQ from founders to other contributors to fill all bonded contributor roles. This redistribution goal will take time and a considerable volume of contributions from non-founders to achieve; this is the primary reason that, as detailed below in the _Roadmap_ section, we estimate that Phase Zero will take no less than six months to complete.
 
-To address *solvency risk*, we let the current organic growth rate of the exchange continue to play out over the Phase Zero period. By distributing well-defined units of work to a growing number of contributors, we aim to increase development velocity, implementing additional features more quickly and making the Bisq exchange that much more attractive to traders, which should in turn increase trading volume and therefore increase trading fee revenues. In any case, we “buy ourselves time” with Phase Zero to observe actual growth trends and correct course as necessary to ensure that we are growing in a way that will be likely to support the level of BSQ demand required to sustain the Bisq DAO after Phase Zero.
+To address *solvency risk*, we let the current organic growth rate of the exchange continue to play out over the Phase Zero period. By distributing well-defined units of work to a growing number of contributors, we aim to increase development velocity, implementing additional features more quickly and making the Bisq exchange that much more attractive to traders, which should in turn increase trading volume and therefore increase trading fee revenues. In any case, we "buy ourselves time" with Phase Zero to observe actual growth trends and correct course as necessary to ensure that we are growing in a way that will be likely to support the level of BSQ demand required to sustain the Bisq DAO after Phase Zero.
 
 To address *stability risk*, we use the Phase Zero period to thoroughly test the aspects of the Bisq DAO that have already been implemented, and to implement and test the outstanding aspects that remain. As each aspect is implemented, we put it into use during Phase Zero, moving from simplistic prototypes, e.g. tracking voting by spreadsheet, to trust-minimized, production-ready systems, e.g. tracking voting on-chain with Bitcoin transactions. We protect ourselves against critical implementation errors, e.g. those that could cause loss of funds, by issuing BSQ on Bitcoin testnet during Phase Zero.
 
@@ -274,7 +274,7 @@ In addition to writing and publishing this document, we have also adapted its co
 
 A _bounty_ is a well-defined unit of work that potentially any contributor—especially new ones—can work on with as little prior context as possible. We post bounties in the form of <<bounty-issues>> in repositories throughout the bisq-network GitHub organization.
 
-Initially, we post these bounties with a set price in BSQ. As quickly thereafter as possible, we move to an “open price” bounty model in which contributors specify a requested amount of BSQ when submitting compensation requests. This approach is consistent with our overall decentralization goals, and more importantly, creates a desirable set of incentives for contributors to determine what they believe to be a fair price for work, requiring them to ask around, look through prior contribution requests, and to generally “do their homework” as to what work is worth when contributing to Bisq. Ultimately, the open price bounty model is intended to foster a marketplace among contributors doing work and stakeholders voting on that work such that a market price for Bisq work is discovered.
+Initially, we post these bounties with a set price in BSQ. As quickly thereafter as possible, we move to an "open price" bounty model in which contributors specify a requested amount of BSQ when submitting compensation requests. This approach is consistent with our overall decentralization goals, and more importantly, creates a desirable set of incentives for contributors to determine what they believe to be a fair price for work, requiring them to ask around, look through prior contribution requests, and to generally "do their homework" as to what work is worth when contributing to Bisq. Ultimately, the open price bounty model is intended to foster a marketplace among contributors doing work and stakeholders voting on that work such that a market price for Bisq work is discovered.
 
 Completed work for a bounty is, whenever appropriate, submitted as a GitHub pull request. We follow a https://rfc.unprotocols.org/spec:1/C4[C4-based process] in which each repository in the bisq-network GitHub organization has one or more designated _<<maintainer,maintainers>>_ responsible for merging or rejecting pull requests. Merged pull requests do not imply or guarantee in any way that the contributor will be compensated in BSQ for their work. Compensation requests are entirely separate from pull requests.
 
@@ -284,7 +284,7 @@ _Status:_ *waiting* for completion of this document to begin work.
 
 We enumerate and define the _roles_ necessary to operate, maintain and administrate the Bisq project, Bisq network and Bisq DAO, such that responsibilities can be transferred from founders to other reputable contributors. Because each of these of these roles require a degree of trust, filling the role requires putting up a BSQ bond. Initially, founders will use their BSQ stake to bond into these roles, and will then transfer those roles to contributors who (a) wish to take the role over and (b) have earned sufficient BSQ to do so.
 
-_Status:_ *work has been started* in the <<roles-repo>>, where each role has been enumerated in the form of a GitHub issue, but most roles do not yet have a _specification,_ i.e. a detailed description of the responsibilities required to fill that role. The Twitter operator role https://github.com/bisq-network/roles/issues/21[issue] and https://github.com/bisq-network/roles/blob/master/twitter-operator.adoc[specification] are an exception, and provide an early example of what’s to come for the other roles.
+_Status:_ *work has been started* in the <<roles-repo>>, where each role has been enumerated in the form of a GitHub issue, but most roles do not yet have a _specification,_ i.e. a detailed description of the responsibilities required to fill that role. The Twitter operator role https://github.com/bisq-network/roles/issues/21[issue] and https://github.com/bisq-network/roles/blob/master/twitter-operator.adoc[specification] are an exception, and provide an early example of what's to come for the other roles.
 
 === Establish and refine the fair market value of the BSQ token
 
@@ -304,7 +304,7 @@ After the monthly voting period is complete and new BSQ is issued, the total amo
 
 === Distribute responsibility from founders to bonded contributor roles
 
-Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already “have all the keys” and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time. _Status:_ *in progress*; initial bonding levels will be set, and founders will be officially bonded into all roles by October 31st, 2017.
+Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already "have all the keys" and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time. _Status:_ *in progress*; initial bonding levels will be set, and founders will be officially bonded into all roles by October 31st, 2017.
 
 === Grow exchange volume organically
 
@@ -322,7 +322,7 @@ We prohibit buying, selling and spending BSQ tokens during Phase Zero in three w
 
 As a result, *BSQ utility is limited to _earning_, _voting_ and _bonding_ during Phase Zero.* See the <<risk-mitigation,risk mitigation>> section for rationale.
 
-> _A note to past contributors: When you registered as a past contributor, you provided Bisq’s founders with a mainnet BSQ address. As part of the testnet genesis distribution, we will generate a testnet address on your behalf and correlate it with the mainnet address you’ve already given us._
+> _A note to past contributors: When you registered as a past contributor, you provided Bisq's founders with a mainnet BSQ address. As part of the testnet genesis distribution, we will generate a testnet address on your behalf and correlate it with the mainnet address you've already given us._
 
 === Track stake, voting and bonding via spreadsheet
 
@@ -348,13 +348,13 @@ The Bisq DAO is founded as a meritocracy, and we believe it is critical to the l
 
 It is not required to work on an existing bounty issue to contribute to Bisq, and no one is here to tell you what to do. Contributors who have their own ideas are free to work in their own forks on whatever they wish, however they wish, and without any permission from Bisq stakeholders.
 
-With that said, it’s a good idea to consult with stakeholders via the Bisq forum, mailing list, or other communication channels before setting out on any serious contribution effort. Do this in order to ensure your contribution is:
+With that said, it's a good idea to consult with stakeholders via the Bisq forum, mailing list, or other communication channels before setting out on any serious contribution effort. Do this in order to ensure your contribution is:
 
  . something that the relevant maintainer(s) would be likely to merge;
  . something that stakeholders would likely vote to approve as a compensation request;
  . subjected to as as much feedback as possible while still an idea and thus cheap to change or abort.
 
-Remember: _every contributor_ is free to work on whatever they want, including maintainers who may or may not want to review and merge your pull request if they don’t have any prior context for it, or reason to believe it’s worth spending their time on.
+Remember: _every contributor_ is free to work on whatever they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
 
 == Exit criteria
 
@@ -414,7 +414,7 @@ See <<stakeholder-use-cases>>.
 
 == Founder
 
-A _founder_ is one of the individuals responsible for establishing the Bisq project and/or designing the Bisq DAO. Bisq’s founders are Manfred Karrer and Chris Beams. A goal of Phase Zero is to distribute responsibility away from the founder role and into smaller, better-defined roles played by a larger number of (bonded) contributors.
+A _founder_ is one of the individuals responsible for establishing the Bisq project and/or designing the Bisq DAO. Bisq's founders are Manfred Karrer and Chris Beams. A goal of Phase Zero is to distribute responsibility away from the founder role and into smaller, better-defined roles played by a larger number of (bonded) contributors.
 
 See <<founder-use-cases>>.
 
@@ -432,7 +432,7 @@ See <<maintainer-use-cases>>.
 
 === Operator
 
-An _operator_ is a Bisq contributor who runs (“operates”) software necessary to support the Bisq P2P network. Principally, these are Bisq _seed node_ and _price node_ operators, but also include website and DNS operators.
+An _operator_ is a Bisq contributor who runs ("operates") software necessary to support the Bisq P2P network. Principally, these are Bisq _seed node_ and _price node_ operators, but also include website and DNS operators.
 
 === Administrator
 
@@ -449,7 +449,7 @@ There are more than 30 bonded contributor roles in the Bisq project, including A
 
 === bisq-network organization
 
-The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only individuals who have write access to these repositories are their _maintainers._ Work on bug fixes, features and other improvements is done in contributors’ personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the https://rfc.unprotocols.org/spec:1/C4[C4 process].
+The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only individuals who have write access to these repositories are their _maintainers._ Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the https://rfc.unprotocols.org/spec:1/C4[C4 process].
 
 === issues labeled 'bounty' [[bounty-issues]]
 
@@ -502,7 +502,7 @@ Contributors can browse this list to find open bounties they are interested in w
 
 === signal my intent to work on a bounty
 
-Once you have found a bounty issue you would like to work on, it’s a good idea to let others know that you plan to work on it.
+Once you have found a bounty issue you would like to work on, it's a good idea to let others know that you plan to work on it.
 
  . Add a comment to the bounty issue letting others know you plan to work on it
  . If you have questions about the nature of the work, ask! Use the GitHub issue comments, or take the conversation to Slack, the mailing list, or any other medium you prefer.
@@ -561,7 +561,7 @@ Create an issue in the bisq-network/proposals repository, including:
 
 === post bounties
 
-In practice, “posting a bounty” simply means adding the `bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
+In practice, "posting a bounty" simply means adding the `bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
 
 The `bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
 
