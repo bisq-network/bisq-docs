@@ -216,7 +216,7 @@ Of these three roles, the third is the most important from a policy perspective,
 
 === Not an ICO
 
-Given current trends, it is important to state explicitly that *BSQ is not associated with an ICO* (initial coin offering), nor will there be any kind of crowdsale or other crowdfunding event. BSQ is a multifaceted _utility token_ being introduced into an already functioning system to make it function even better.
+Given current trends, it is important to state explicitly that *BSQ is not associated with an ICO* (initial coin offering), nor will there be any kind of crowdsale or other crowdfunding event. BSQ is a utility token being introduced into an already functioning system to make it function even better, and raising a large amount of capital up front is neither required nor desired.
 
 === Risks of launching the Bisq DAO [[risks]]
 
