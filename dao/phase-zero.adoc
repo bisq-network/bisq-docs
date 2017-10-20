@@ -297,7 +297,7 @@ _Status:_ *work has been started* in the <<roles-repo>>, where each role has bee
 
 === Establish and refine the fair market value of the BSQ token
 
-Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing the term from traditional employee stock option valuation processes. This work is one of the first and most important bounty issues, as it is necessary to have a first estimate in hand by the end of October. Beyond our own basic models, we are in communication with a number of cryptoasset analysts to help with this estimation work. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on mainnet.
+Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing the term from traditional valuation processes. This work is one of the first and most important bounty issues, as it is necessary to have an initial estimate in hand by the end of October. Beyond our own basic models, we are in communication with a number of cryptoasset analysts to help with this estimation work. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on mainnet.
 
 _Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further work will continue pending publication of this document and follow-up with analysts.
 
@@ -572,6 +572,8 @@ Create an issue in the bisq-network/proposals repository, including:
 === request to take over an occupied contributor role
 
 == As a founder, I can… [[founder-use-cases,founder use cases]]
+
+// TODO: note diminishing role of founder
 
 === define bonded contributor roles and initial bond amounts
 
