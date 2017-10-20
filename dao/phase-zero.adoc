@@ -317,7 +317,7 @@ After the monthly voting period is complete and new BSQ is issued, the total amo
 
 _Status:_ *pending;* the first rebasing and re-distribution will occur on November 1st, 2017.
 
-=== Distribute responsibility from founders to bonded contributor roles
+=== Distribute responsibility from founders to bonded contributor roles [[distribute-responsibility]]
 
 Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already "have all the keys" and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time.
 
@@ -408,7 +408,7 @@ When the exit criteria for Phase Zero have been met, a vote will be put to stake
 
 == How to get involved
 
-// TODO: write this section
+// FIXME: write this section
 Read the appendices below. +
 Watch the HCPP interview / talk +
 Read C4 / Social architecture. +
@@ -423,9 +423,9 @@ Join us in Slack
 
 == Trader
 
-A _trader_ is anyone who uses Bisq to exchange with others. Traders have no specific role to play during Phase Zero, other than continuing to use Bisq as per usual. When Phase Zero is complete, traders will be able to purchase BSQ tokens and use them to pay for Bisq trading fees at a discounted rate.
+A _trader_ is anyone who uses Bisq to exchange with others. Traders have no specific role to play during Phase Zero, other than continuing to use Bisq as per usual. When Phase Zero is complete, traders will be able to buy BSQ tokens and spend them on Bisq trading fees at a discounted rate.
 
-See <<post-phase-zero-use-cases>> for traders.
+See <<post-phase-zero-use-cases>>.
 
 == Contributor
 
@@ -441,33 +441,33 @@ See <<stakeholder-use-cases>>.
 
 == Founder
 
-A _founder_ is one of the individuals responsible for establishing the Bisq project and/or designing the Bisq DAO. Bisq's founders are Manfred Karrer and Chris Beams. A goal of Phase Zero is to distribute responsibility away from the founder role and into smaller, better-defined roles played by a larger number of (bonded) contributors.
+A _founder_ is one of the individuals responsible for establishing the Bisq project and/or designing the Bisq DAO. Bisq's founders are https://keybase.io/manfredkarrer[Manfred Karrer] and https://keybase.io/cbeams[Chris Beams]. A goal of Phase Zero is to <<distribute-responsibility,distribute responsibility>> away from the founder role and into smaller, better-defined roles played by a larger number of (bonded) contributors.
 
 See <<founder-use-cases>>.
 
 == Bonded contributor
 
-A _bonded contributor_ is a Bisq contributor who has put up a bond in BSQ in order to take on a _high-trust_ role. As a protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest on their BSQ bonds. In compensation for carrying out the specific duties of their role, bonded contributors submit compensation requests no different from any other (non-bonded) contributor.
+A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such a password or private key to perform, and, more generally, include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As a protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
 
 While there are many specific bonded contributor roles, most fall into one of the categories below.
 
 === Maintainer
 
-A _maintainer_ is a bonded contributor who is responsible for a given bisq-network GitHub repository, including managing its issues, reviewing pull requests and releasing new versions of the software in that repository.
+A _maintainer_ is a bonded contributor responsible for a given repository in the <<bisq-network-org>>, including managing its issues, reviewing and merging pull requests and releasing new versions of the software in that repository.
 
 See <<maintainer-use-cases>>.
 
 === Operator
 
-An _operator_ is a Bisq contributor who runs ("operates") software necessary to support the Bisq P2P network. Principally, these are Bisq _seed node_ and _price node_ operators, but also include website and DNS operators.
+An _operator_ is a bonded contributor responsible for running ("operating") software that supports the Bisq P2P network. Examples include Bisq _seed node_ and _price node_ operators, the Bisq website operator, and the BSQ transaction explorer operator. Where practical, maintainer and operator roles may be played by the same contributor.
 
 === Administrator
 
-An _administrator_ is a Bisq contributor who is responsible for a TODO: finish
+An _administrator_ is a bonded contributor responsible for managing ("adminstering") applications and services that support the Bisq project. Examples include GitHub admin, DNS admin, Slack admin, IRC admin and Discourse (forum) admin.
 
 === Other roles not listed here
 
-There are more than 30 bonded contributor roles in the Bisq project, including Arbitrator, DNS admin, Reddit moderator and seed node operator. See the <<roles-repo>> for the full list.
+There are more than 30 bonded contributor roles in the Bisq project. See the <<roles-repo>> for a complete list.
 
 
 = Appendix B: Resources [[Appendix-B]]
@@ -478,7 +478,7 @@ There are more than 30 bonded contributor roles in the Bisq project, including A
 
 // TODO: preface to explain primacy of GitHub as a collaboration tool for the DAO
 
-=== bisq-network organization
+=== bisq-network organization [[bisq-network-org,bisq-network GitHub organization]]
 
 The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only individuals who have write access to these repositories are their _maintainers._ Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the https://rfc.unprotocols.org/spec:1/C4[C4 process].
 
