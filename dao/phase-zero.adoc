@@ -156,6 +156,7 @@ BSQ is Bisq’s own custom implementation of the _colored coin_ concept. From th
 
 ._Initial distribution of BSQ tokens from BTC donations_
 image::phase-zero/bsq-distribution.png[Initial BSQ distribution]
+{empty}
 
 We distribute these 2.5 million BSQ to 144 opted-in _past contributors_ to the Bisq project, as a way of rewarding these individuals for their efforts over the years. Stake is distributed according to the relative value each contributor has added to the project over time. As will be described further below, BSQ tokens are used to vote on and make decisions about the Bisq DAO itself, and by initially distributing BSQ to past contributors, we intentionally establish the Bisq DAO as a _meritocracy_ in which those who have contributed the most value to the project in the past are those who have the most say over its future.
 
@@ -165,6 +166,7 @@ Today, without BSQ, traders use Bisq and pay Bisq trading fees in BTC. At the sa
 
 ._Limitations of Bisq's current funding model_
 image::phase-zero/limitations.png[Limitations]
+{empty}
 
 Bisq’s current compensation model has worked well enough so far mainly because the Bisq team has been so small. Bisq’s founders have played most key roles in the system, including that of arbitrator, such that compensating arbitrators with trading fees has, in practice, meant compensating the project’s primary contributors as well. The problem is that this approach breaks down quickly as more contributors get involved, and as explained above, it is critical to the success of the project to grow the number of contributors and to distribute responsibilities amongst them.
 
