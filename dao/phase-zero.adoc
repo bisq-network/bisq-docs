@@ -14,24 +14,24 @@ October 19, 2017
 
 = Introduction
 
-// TODO: revisit
-Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization,_ to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
+// TODO: operationalize
+Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization_,footnote:[Wikipedia, "Decentralized autonomous organization", https://en.wikipedia.org/wiki/Decentralized_autonomous_organization, October 2017] to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
 
 *Audience.* This document is intended primarily for current and future Bisq contributors, but has been written to be understood by anyone familiar with the Bitcoin ecosystem. If you are interested in working to improve Bisq, or simply interested in where the project is going, read on.
 
 *Organization.* This document is divided into two major parts followed by several appendices:
 
- - *_<<Part-I>>_* provides a complete overview of and rationale for the Bisq project, the Bisq DAO and BSQ token, and concludes with an analysis of risks inherent to launching the Bisq DAO;
+ - *_<<Part-I>>_* provides a overview of and rationale for <<what-bisq-is,the Bisq project>>, <<the-bisq-dao-and-bsq-token,Bisq DAO and BSQ token>>, then concludes with an analysis of <<risks,risks>> inherent to launching the Bisq DAO;
 
- - *_<<Part-II>>_* presents a set of actions, techniques and principles designed to bootstrap the Bisq DAO into operation while minimizing risk, and goes on to specify a set of exit criteria by which Phase Zero can be considered complete;
+ - *_<<Part-II>>_* presents a set of <<actions>>, <<techniques>> and <<principles>> designed to bootstrap the Bisq DAO into operation while <<risk-mitigation,minimizing risk>>, then specifies <<exit-criteria>> for Phase Zero and concludes with a high-level <<roadmap,roadmap>>;
 
- - *_<<Appendix-A>>_* defines the roles individuals play when participating in the Bisq DAO, such as _trader,_ _contributor_ and _stakeholder,_ and defines several categories of high-trust, _bonded contributor roles_ such as _maintainer, operator and administrator;_
+ - *_<<Appendix-A>>_* defines the roles individuals play when participating in the Bisq DAO, such as _<<trader,trader>>, <<contributor,contributor>>_ and _<<stakeholder,stakeholder>>,_ and defines several categories of high-trust, <<bonded-contributor-roles,_bonded contributor roles_>> such as _<<maintainer,maintainer>>, <<operator,operator>>,_ and _<<administrator,administrator>>;_
 
  - *_<<Appendix-B>>_* lists the GitHub repositories and other tools used to maintain and operate the Bisq DAO;
 
- - *_<<Appendix-C>>_* calls out the actions each user role can perform under the Bisq DAO, with specific instructions where appropriate.
+ - *_<<Appendix-C>>_* calls out the actions each Bisq DAO user role can perform during Phase Zero.
 
-*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://forum.bisq.io[Bisq Forum], chat with us in the https://bisq-slack.herokuapp.com/[Bisq Slack workspace] or email the authors directly.
+*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://forum.bisq.io[Bisq Forum], chat with us in <<slack>>, or email the authors directly.
 
 *Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the <<docs-repo>> to be notified of changes or subscribe to this document's https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
 
@@ -119,7 +119,7 @@ After two years of development and testing, Bisq went into production on April 1
 
 === Growth rate [[growth-rate]]
 
-Bisq is still small, but has been growing steadily. The monthly USD volume of bitcoin exchanged through the network has doubled roughly every 3½ months since the project went live, from $36K in April 2016 to $438K in September 2017. This growth has been organic, with minimal marketing.
+Bisq is still small, but has been growing steadily. The USD volume of bitcoin exchanged through the network has doubled roughly every 3½ months since the project went live, from $36K in April 2016 to $438K in September 2017. This growth has been organic, with minimal marketing.
 
 ._Bisq global monthly trading volume in USD, April 2016&ndash;October 2017_
 image::phase-zero/volume.png[Bisq Trading Volume in USD]
@@ -153,7 +153,7 @@ In the next section, we'll see how the Bisq DAO and BSQ token have been designed
 
 We introduce a token, BSQ, designed to facilitate a transfer of value from the traders _using_ Bisq to the contributors _maintaining_ it.
 
-BSQ is Bisq's own custom implementation of the _colored coin_ concept. From the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00001000 BTC, or 1000 satoshis.
+BSQ is Bisq's own custom implementation of the _colored coin_ concept.footnote:[Bitcoin wiki, "Colored coins," https://en.bitcoin.it/wiki/Colored_Coins, November 2015.] From the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00001000 BTC, or 1000 satoshis.
 
 ._Initial distribution of BSQ tokens from BTC donations_
 image::phase-zero/bsq-distribution.png[Initial BSQ distribution]
@@ -219,7 +219,7 @@ Of these three roles, the third is the most important from a policy perspective,
 
 Given current trends, it is important to state explicitly that *BSQ is not associated with an ICO* (initial coin offering), nor will there be any kind of crowdsale or other crowdfunding event. BSQ is a multifaceted _utility token_ being introduced into an already functioning system to make it function even better.
 
-=== Risks of launching the Bisq DAO
+=== Risks of launching the Bisq DAO [[risks]]
 
 It is one thing to _design_ a token-based economy like the Bisq DAO; it is another thing to successfully _operationalize_ it. There are a number of risks inherent to simply "going live" with BSQ and the Bisq DAO, including but not limited to the following:
 
@@ -243,8 +243,6 @@ As discussed throughout this document, the goal of the Bisq DAO is to decentrali
 
 == How Phase Zero mitigates risk [[risk-mitigation]]
 
-In this section, we present Phase Zero in _negative_ terms, i.e. how the plan is designed to minimize the risks described above and avoid undesirable outcomes. In subsequent sections, we present the plan in _positive_ terms, i.e. the specific set of actions, techniques and principles we will follow to carry out the plan.
-
 To address *valuation risk*, we eliminate the possibility of trading BSQ during Phase Zero. A fair market value for the token must still be established in order to compensate contributors, but this value can be estimated initially and then adjusted throughout Phase Zero. On completion of Phase Zero, the value of BSQ will become entirely subject to market forces, but the fact that many contributors worked throughout Phase Zero at a given fair market value should provide a stronger price foundation for BSQ than would be present if we were to simply enable trading from day one.
 
 To address *control risk*, we ensure that only those who have contributed value to the project are able to vote during Phase Zero. This, too, is a result of prohibiting BSQ trading: because the only way to acquire BSQ during Phase Zero is to _earn_ it, it becomes impossible to simply purchase voting power. Furthermore, it gives us time during Phase Zero to design and implement a longer-term solution for control risk in which we introduce a reputation factor into the BSQ-based voting process.
@@ -257,9 +255,7 @@ To address *solvency risk*, we let the current organic growth rate of the exchan
 
 To address *stability risk*, we use the Phase Zero period to thoroughly test the aspects of the Bisq DAO that have already been implemented, and to implement and test the outstanding aspects that remain. As each aspect is implemented, we put it into use during Phase Zero, moving from simplistic prototypes, e.g. tracking voting by spreadsheet, to trust-minimized, production-ready systems, e.g. tracking voting on-chain with Bitcoin transactions. We protect ourselves against critical implementation errors, e.g. those that could cause loss of funds, by issuing BSQ on Bitcoin testnet during Phase Zero.
 
-== Key actions
-
-// TODO: preface
+== Actions [[actions,actions]]
 
 === Identify past contributors
 
@@ -269,7 +265,7 @@ _Status:_ *complete* with 144 contributors opted-in.
 
 === Distribute BSQ to past contributors
 
-On October 6th, 2017, we distributed https://www.blocktrail.com/tBTC/tx/2f194230e23459a9211322c4b1c182cf3f367086e8059aca2f8f44e20dac527a[25 testnet bitcoins] to 144 past contributors across 180 BSQ addresses in the initial https://explorer.bisq.network/testnet/tx.html?tx=2f194230e23459a9211322c4b1c182cf3f367086e8059aca2f8f44e20dac527a[tBSQ genesis distribution]. This action marked the <<inception>> of Phase Zero.
+On October 6th, 2017, we distributed https://www.blocktrail.com/tBTC/tx/2f194230e23459a9211322c4b1c182cf3f367086e8059aca2f8f44e20dac527a[25 testnet bitcoins] to 144 past contributors across 180 BSQ addresses in the initial https://explorer.bisq.network/testnet/tx.html?tx=2f194230e23459a9211322c4b1c182cf3f367086e8059aca2f8f44e20dac527a[tBSQ genesis distribution]. This action marked the <<inception,inception>> of Phase Zero.
 
 _Status:_ *complete.*
 
@@ -285,7 +281,7 @@ A _bounty_ is a well-defined unit of work that potentially any contributor--espe
 
 Initially, we post these bounties with a set price in BSQ. As quickly thereafter as possible, we move to an "open price" bounty model in which contributors specify a requested amount of BSQ when submitting compensation requests. This approach is consistent with our overall decentralization goals, and more importantly, creates a desirable set of incentives for contributors to determine what they believe to be a fair price for work, requiring them to ask around, look through prior contribution requests, and to generally "do their homework" as to what work is worth when contributing to Bisq. Ultimately, the open price bounty model is intended to foster a marketplace among contributors doing work and stakeholders voting on that work such that a market price for Bisq work is discovered.
 
-Completed work for a bounty is, whenever appropriate, submitted as a GitHub pull request. We follow a https://rfc.unprotocols.org/spec:1/C4[C4-based process] in which each repository in the bisq-network GitHub organization has one or more designated _<<maintainer,maintainers>>_ responsible for merging or rejecting pull requests. Merged pull requests do not imply or guarantee in any way that the contributor will be compensated in BSQ for their work. Compensation requests are entirely separate from pull requests.
+Completed work for a bounty is, whenever appropriate, submitted as a GitHub pull request. We follow a _C4_-based process in which each repository in the bisq-network GitHub organization has one or more designated _<<maintainer,maintainers>>_ responsible for merging or rejecting pull requests.footnoteref:[C4,Unprotocols, "Collective Code Construction Contract (C4)", https://rfc.unprotocols.org/spec:1/C4, June 2016] Merged pull requests do not imply or guarantee in any way that the contributor will be compensated in BSQ for their work. Compensation requests are entirely separate from pull requests.
 
 _Status:_ *waiting* for completion of this document to begin work.
 
@@ -303,7 +299,7 @@ _Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further 
 
 === Submit compensation requests and other proposals throughout each month
 
-Status: *in progress.* As of October 2017, all contributions should be captured in one or more compensation requests. See <<contributor-use-cases>> for details.
+_Status:_ *in progress.* As of October 2017, all contributions should be captured in one or more compensation requests. See <<contributor-use-cases>> for details.
 
 === Vote on the last 3 days of each month
 
@@ -325,13 +321,11 @@ _Status:_ *in progress;* initial bonding levels will be set, and founders will b
 
 === Grow exchange volume organically
 
-We keep marketing to a minimum during the Phase Zero period, and observe whether our current <<growth-rate,growth trend>> continues to play out on its own. Rather than focusing on growing our user base, we focus on growing our _contributor_ base. The goal is to foster continued organic growth by making Bisq ever more useful. In any case, we will track the growth trend and adjust course as necessary should it change.
+We keep marketing to a minimum during the Phase Zero period, and observe whether our current <<growth-rate,growth trend>> continues to play out on its own. Rather than focusing on growing our _user_ base, we now focus on growing our _contributor_ base. The goal is to foster continued organic growth by making Bisq ever more useful and relevant. In any case, we will track the growth trend and adjust course as necessary should it change.
 
 _Status:_ *in progress.*
 
-== Special techniques
-
-// TODO: preface
+== Techniques [[techniques,techniques]]
 
 === Prohibit BSQ trading and spending
 
@@ -353,15 +347,11 @@ At the beginning of Phase Zero, we use simplistic, high-trust systems such as sp
 
 Eventually, compensation requests will be modeled around Bitcoin transactions. As Phase Zero begins, however, they are modeled as GitHub issues in the <<proposals-repo>>.
 
-== General principles
-
-// TODO: preface
+== Principles [[principles,principles]]
 
 === Avoid contentious voting
 
-Any conceivable change to the Bisq DAO can be submitted as a proposal, and any proposal can be put to a vote. With that said, the goal should be to vote as infrequently as possible. Where good proposals are submitted, and rough consensus is achieved, no vote is necessary. If rough consensus has not been achieved, then further work is necessary to either improve the proposal or to change minds about it. Voting on a contentious proposal should be seen as a last resort, after all attempts to achieve consensus have failed.
-
-// TODO: add links / footnotes for rough consensus. https://tools.ietf.org/html/rfc7282
+Any conceivable change to the Bisq DAO can be submitted as a proposal, and any proposal can be put to a vote. With that said, the goal should be to vote as infrequently as possible. Where good proposals are submitted, and rough consensus is achieved, no vote is necessary.footnote:[RFC 7282, "On Consensus and Humming in the IETF", https://tools.ietf.org/html/rfc7282, June 2014] If rough consensus has not been achieved, then further work is necessary to either improve the proposal or to change minds about it. Voting on a contentious proposal should be seen as a last resort, after all attempts to achieve consensus have failed.
 
 With the exception of compensation requests (which must be voted on in order for BSQ to be issued), voting should be regarded as a crude tool to be used only when absolutely necessary.
 
@@ -369,7 +359,7 @@ With the exception of compensation requests (which must be voted on in order for
 
 The Bisq DAO is founded as a meritocracy, and we believe it is critical to the long-term success of the project that it remain one. Whenever submitting or voting on a proposal to change the way the DAO works, look closely for unintended consequences that may negatively impact this meritocratic foundation.
 
-=== Work on whatever you want
+=== Work on what you want
 
 It is not required to work on an existing bounty issue to contribute to Bisq, and no one is here to tell you what to do. Contributors who have their own ideas are free to work in their own forks on whatever they wish, however they wish, and without any permission from Bisq stakeholders.
 
@@ -379,9 +369,9 @@ With that said, it's a good idea to consult with stakeholders via the Bisq forum
  . something that stakeholders would likely vote to approve as a compensation request;
  . subjected to as as much feedback as possible while still an idea and thus cheap to change or abort.
 
-Remember: _every contributor_ is free to work on whatever they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
+Remember: _every contributor_ is free to work on what they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
 
-== Exit criteria
+== Exit criteria [[exit-criteria,exit criteria]]
 
 The following criteria must be fulfilled in order to exit Phase Zero:
 
@@ -419,7 +409,7 @@ Join us in Slack
 
 = Appendix A: Roles [[Appendix-A]]
 
-// TODO: preface
+The following are roles that individuals play when using Bisq or otherwise participating in the Bisq DAO. One individual may play any number of these roles, with the exception of _bonded contributor roles_, where no individual may play more than three.
 
 == Trader
 
@@ -445,7 +435,7 @@ A _founder_ is one of the individuals responsible for establishing the Bisq proj
 
 See <<founder-use-cases>>.
 
-== Bonded contributor
+== Bonded contributor roles
 
 A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such a password or private key to perform, and, more generally, include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As a protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
 
@@ -472,20 +462,15 @@ There are more than 30 bonded contributor roles in the Bisq project. See the <<r
 
 = Appendix B: Resources [[Appendix-B]]
 
-// TODO: preface
-
 == GitHub
-
-// TODO: preface to explain primacy of GitHub as a collaboration tool for the DAO
 
 === bisq-network organization [[bisq-network-org,bisq-network GitHub organization]]
 
-The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only individuals who have write access to these repositories are their _maintainers._ Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the https://rfc.unprotocols.org/spec:1/C4[C4 process].
+The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only contributors who have write access to these repositories are their respective <<maintainer,maintainers>>. Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the C4 process.footnoteref:[C4]
 
 === issues labeled 'bounty' [[bounty-issues]]
 
 https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `bounty` in the bisq-network GitHub organization]
-
 
 === roles repository and board [[roles-repo,bisq-network/roles repository]]
 
@@ -512,15 +497,19 @@ https://docs.google.com/spreadsheets/d/1W_Y44gESVsO5zDihWJjYzXkt9SAIhp57wAZrxX2V
 
 == Other
 
+=== Slack
+
+Feel free to discuss the Bisq DAO, BSQ token and Phase Zero plan in the `#dao` channel of the https://bisq-slack.herokuapp.com/[Bisq Slack workspace].
+
 === BSQ transaction explorer
 
 Testnet BSQ transactions can be explored at https://explorer.bisq.network/testnet.
 
-// TODO: add communication tools, e.g. Slack, IRC?
-
 = Appendix C: Use Cases [[Appendix-C]]
 
-// TODO: Add a preface here explaining that it not all use cases are fleshed out yet; that the intention is to enumerate first; fully define later
+What follows are the various actions, or _use cases_ each Bisq DAO user <<roles,role>> can engage in during Phase Zero.
+
+NOTE: This section is a work in progress; use cases have been called out so far as we have identified them, and specific instructions will be filled in as they become clear.
 
 == As a contributor, I can… [[contributor-use-cases,contributor use cases]]
 
@@ -573,8 +562,6 @@ Create an issue in the bisq-network/proposals repository, including:
 
 == As a founder, I can… [[founder-use-cases,founder use cases]]
 
-// TODO: note diminishing role of founder
-
 === define bonded contributor roles and initial bond amounts
 
 === issue monthly BSQ genesis distributions on Bitcoin testnet
@@ -603,7 +590,7 @@ A well-defined bounty is one that clearly states a problem to be solved. If the 
 
 === review and merge pull requests
 
-In accordance with the https://rfc.unprotocols.org/spec:1/C4[C4 process], all contributions to bisq-network repositories should come in the form of pull requests. Repository maintainers should review and comment on pull requests and merge them only if they are correct and well-formed.
+In accordance with the C4 process,footnoteref:[C4] all contributions to bisq-network repositories should come in the form of pull requests. Repository maintainers should review and comment on pull requests and merge them only if they are correct and well-formed.
 
 === publish releases
 
@@ -619,5 +606,4 @@ Maintainers are responsible for publishing releases of the software they maintai
 
 == Other use cases not listed here
 
-// TODO: add links
-Each specific role not listed here--e.g. GitHub administrator or Twitter account operator--defines use cases specific to that role. See the bisq-network/roles board for details.
+Each specific contributor role not listed here--e.g. _GitHub administrator_ or _Twitter account operator_--defines use cases specific to that role. See the <<roles-repo>> for details.
