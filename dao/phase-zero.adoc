@@ -55,7 +55,7 @@ Bisq is *not a company*. Bisq is *free software* released under version 3 of the
 
 Bisq's mission is to provide a *secure*, *private* and *censorship-resistant* way of exchanging bitcoin for national currencies and other cryptocurrencies over the internet.
 
-When we say *secure*, we are referring to the safety of users' funds. Today, most bitcoin exchanges are _centralized_, requiring users to store their bitcoins—for at least some amount of time—on exchange servers. When thousands of users do this, it creates extreme incentives for those servers to be hacked and for those users' bitcoins to be stolen. And time and time again these hacks and thefts are exactly what happen.
+When we say *secure*, we are referring to the safety of users' funds. Today, most bitcoin exchanges are _centralized_, requiring users to store their bitcoins--for at least some amount of time--on exchange servers. When thousands of users do this, it creates extreme incentives for those servers to be hacked and for those users' bitcoins to be stolen. And time and time again these hacks and thefts are exactly what happen.
 
 When we say *private*, we are referring to users' ability to control access to their own information. Today, most centralized exchanges require users to divulge personally identifying information in order to set up an account, and then in turn link users' trading activity to their respective identities. This practice creates extreme risks for users that their personal details and financial information will be stolen, leaked or otherwise used against their own best interests.
 
@@ -86,9 +86,9 @@ These steps can vary in a number of ways depending on whether you wish to buy or
 
 Beyond the obvious difference that Bisq is a desktop application and not a browser-based web application, the first difference experienced traders will notice is that there is *no automatic order matching* on the Bisq exchange. Rather, Bisq users manually search for and select specific offers they wish to take. This approach enables truly peer-to-peer trade settlement, and ensures that users are in control of which counterparties they trade with.
 
-Bisq is also unique among decentralized bitcoin exchanges in the way it coordinates *out-of-band fiat payments*. Bisq does not directly integrate with banks or other national currency payment systems in any way. Rather, Bisq's trading protocol orchestrates the process of buyer and seller working together to settle fiat payments _outside of_ the Bisq application, as demonstrated in steps 5–7 of the trading example above.
+Bisq is also unique among decentralized bitcoin exchanges in the way it coordinates *out-of-band fiat payments*. Bisq does not directly integrate with banks or other national currency payment systems in any way. Rather, Bisq's trading protocol orchestrates the process of buyer and seller working together to settle fiat payments _outside of_ the Bisq application, as demonstrated in steps 5&ndash;7 of the trading example above.
 
-These and other differences result in a key tradeoff for Bisq users—one in which *trade settlement takes longer*, but *trading itself is far more secure, private and censorship-resistant*.
+These and other differences result in a key tradeoff for Bisq users--one in which *trade settlement takes longer*, but *trading itself is far more secure, private and censorship-resistant*.
 
 === How Bisq keeps funds secure
 
@@ -114,13 +114,13 @@ These and other differences result in a key tradeoff for Bisq users—one in whi
 
 === Track record
 
-After two years of development and testing, Bisq went into production on April 19th, 2016—18 months ago at time of writing in October 2017. Since then, the network has processed 5,200 trades worth a total of $4.1MM USD without downtime or major incident.
+After two years of development and testing, Bisq went into production on April 19th, 2016--18 months ago at time of writing in October 2017. Since then, the network has processed 5,200 trades worth a total of $4.1MM USD without downtime or major incident.
 
 === Growth rate [[growth-rate]]
 
 Bisq is still small, but has been growing steadily. The monthly USD volume of bitcoin exchanged through the network has doubled roughly every 3½ months since the project went live, from $36K in April 2016 to $438K in September 2017. This growth has been organic, with minimal marketing.
 
-._Bisq global monthly trading volume in USD, April 2016–October 2017_
+._Bisq global monthly trading volume in USD, April 2016&ndash;October 2017_
 image::phase-zero/volume.png[Bisq Trading Volume in USD]
 
 === Funding
@@ -135,7 +135,7 @@ Bisq's _technology_ is fully decentralized, but its _governance_ is not. Today, 
 
 === Summary: What Bisq needs now
 
-As mentioned above, Bisq's mission is to provide a secure, private and censorship-resistant way to exchange bitcoin for national currencies and other cryptocurrencies over the internet. Today, Bisq is delivering on the first two aspects of this mission—indeed, we believe Bisq to be among the most secure and private exchange options currently available. Where Bisq falls short on this mission is in the third aspect of _censorship resistance._ Bisq's P2P architecture, use of Tor as a transport layer, and other built-in protections give the project a significant degree of _technical_ censorship resistance, but with regard to _funding_ and _governance_, the Bisq project remains vulnerable so long as these critical factors remain centralized.
+As mentioned above, Bisq's mission is to provide a secure, private and censorship-resistant way to exchange bitcoin for national currencies and other cryptocurrencies over the internet. Today, Bisq is delivering on the first two aspects of this mission--indeed, we believe Bisq to be among the most secure and private exchange options currently available. Where Bisq falls short on this mission is in the third aspect of _censorship resistance._ Bisq's P2P architecture, use of Tor as a transport layer, and other built-in protections give the project a significant degree of _technical_ censorship resistance, but with regard to _funding_ and _governance_, the Bisq project remains vulnerable so long as these critical factors remain centralized.
 
 To fully realize its mission, what Bisq needs now are four things:
 
@@ -202,7 +202,7 @@ image::phase-zero/bsq-creation-destruction.png[How BSQ is issued and destroyed]
 
 === How BSQ decentralizes compensation and enables monetary policy
 
-As we've seen above, BSQ is _destroyed_ when traders spend it, and _created_ when contributors earn it. A key benefit of this approach is that spent BSQ need not—indeed, _cannot_—be stored, protected, or later distributed by any individual or group. By eliminating the need to hold and later distribute BSQ, we also eliminate a set of difficult problems and risks, including determining who should maintain control over these funds, and how they should be protected and disbursed.
+As we've seen above, BSQ is _destroyed_ when traders spend it, and _created_ when contributors earn it. A key benefit of this approach is that spent BSQ need not--indeed, _cannot_--be stored, protected, or later distributed by any individual or group. By eliminating the need to hold and later distribute BSQ, we also eliminate a set of difficult problems and risks, including determining who should maintain control over these funds, and how they should be protected and disbursed.
 
 Overall, this approach makes it possible to transfer value from traders to contributors in a decentralized way. The transfer happens _indirectly_ through the process of destruction and creation, but this indirection is precisely what makes it decentralized. The creation side of the transfer is intermediated by voting on compensation requests, but this is not a problem given that voting itself is a decentralized and meritocratic process.
 
@@ -272,7 +272,7 @@ In addition to writing and publishing this document, we have also adapted its co
 
 === Define bounty issues [[define-bounty-issues]]
 
-A _bounty_ is a well-defined unit of work that potentially any contributor—especially new ones—can work on with as little prior context as possible. We post bounties in the form of <<bounty-issues>> in repositories throughout the bisq-network GitHub organization.
+A _bounty_ is a well-defined unit of work that potentially any contributor--especially new ones--can work on with as little prior context as possible. We post bounties in the form of <<bounty-issues>> in repositories throughout the bisq-network GitHub organization.
 
 Initially, we post these bounties with a set price in BSQ. As quickly thereafter as possible, we move to an "open price" bounty model in which contributors specify a requested amount of BSQ when submitting compensation requests. This approach is consistent with our overall decentralization goals, and more importantly, creates a desirable set of incentives for contributors to determine what they believe to be a fair price for work, requiring them to ask around, look through prior contribution requests, and to generally "do their homework" as to what work is worth when contributing to Bisq. Ultimately, the open price bounty model is intended to foster a marketplace among contributors doing work and stakeholders voting on that work such that a market price for Bisq work is discovered.
 
@@ -585,4 +585,4 @@ Maintainers are responsible for publishing releases of the software they maintai
 
 == Other use cases not listed here
 
-Each specific role not listed here—e.g. GitHub administrator or Twitter account operator—defines use cases specific to that role. See the bisq-network/roles board for details.
+Each specific role not listed here--e.g. GitHub administrator or Twitter account operator--defines use cases specific to that role. See the bisq-network/roles board for details.
