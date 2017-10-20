@@ -79,7 +79,7 @@ Imagine you want to buy bitcoin (BTC) in exchange for US dollars (USD). In Bisq 
  . You send USD from your bank to the seller's bank and indicate you have done so in Bisq
  . You and the seller wait for your USD payment to arrive at the seller's bank
  . The seller receives your USD and indicates they have done so in Bisq
- . You receive the the seller's bitcoin and the trade is complete
+ . You receive the seller's bitcoin and the trade is complete
 
 These steps can vary in a number of ways depending on whether you wish to buy or sell bitcoin, whether you are the _maker_ or the _taker_ of an offer, which payment methods you have access to, and so on. But in any case, the steps above are rather different than those one would follow to complete a similar trade on a centralized exchange.
 
@@ -175,7 +175,7 @@ What's needed is a decentralized way to transfer value from traders using Bisq t
 
 Furthermore, for a system of _compensation_ to be fully decentralized and meritocratic, an equally decentralized and meritocratic system of _governance_ is required in order to decide which contributions should be compensated and which should not; and this, too, is not practical to implement with Bitcoin alone.
 
-It is for these reasons that BSQ is needed. As we'll see in the the sections that follow, the BSQ token has been designed to overcome the challenges described above and to provide a fully decentralized and meritocratic funding and governance model for Bisq.
+It is for these reasons that BSQ is needed. As we'll see in the sections that follow, the BSQ token has been designed to overcome the challenges described above and to provide a fully decentralized and meritocratic funding and governance model for Bisq.
 
 === How BSQ is used
 
