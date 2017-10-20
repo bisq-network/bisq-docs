@@ -304,7 +304,7 @@ After the monthly voting period is complete and new BSQ is issued, the total amo
 
 === Distribute responsibility from founders to bonded contributor roles
 
-Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already “have all the keys” and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time. _Status: _*in progress*; initial bonding levels will be set, and founders will be officially bonded into all roles by October 31st, 2017.
+Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already “have all the keys” and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time. _Status:_ *in progress*; initial bonding levels will be set, and founders will be officially bonded into all roles by October 31st, 2017.
 
 === Grow exchange volume organically
 
@@ -362,7 +362,7 @@ The following criteria must be fulfilled in order to exit Phase Zero:
 
  - All bonded contributor roles are filled
  - No one contributor plays more than three bonded roles
- - [TBD] Specific volume growth targetor trend
+ - [TBD] Specific volume growth target or trend
  - [TBD] Specific BSQ fair market value target or trend
 
 See the <<Completion>> section of the <<Roadmap>> for further details.
@@ -383,7 +383,7 @@ When the exit criteria for Phase Zero have been met, a vote will be put to stake
 
 == How to get involved
 
-If you +
+TODO +
 Read the appendices below. +
 Watch the HCPP interview / talk +
 Read C4 / Social architecture. +
@@ -487,6 +487,8 @@ Testnet BSQ transactions can be explored at https://explorer.bisq.network/testne
 
 
 = Appendix C: Use Cases [[Appendix-C]]
+
+// TODO: Add a preface here explaining that it not all use cases are fleshed out yet; that the intention is to enumerate first; fully define later
 
 == As a contributor, I can… [[contributor-use-cases,contributor use cases]]
 
