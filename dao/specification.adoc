@@ -54,19 +54,21 @@ The seed nodes are operated by the developers and the management for the privile
 == Implementation phases
 
 We will deploy the Bisq DAO in several phases, starting with the bare minimum which consists of:
- * Token validation
- * Genesis distribution
- * Trade fee payment
- * BSQ transfer and trading
- * Wallet integration
- * Blockchain explorer
- * Support for lite nodes
- * Emergency measurements
+
+ - Token validation
+ - Genesis distribution
+ - Trade fee payment
+ - BSQ transfer and trading
+ - Wallet integration
+ - Blockchain explorer
+ - Support for lite nodes
+ - Emergency measurements
 
 After that phase we start working on *phase 2* which includes the core features for management and the periodic issuance:
- * Compensation requests
- * Voting on compensation requests and basic DAO parameters
- * Issuance of new BSQ
+
+ - Compensation requests
+ - Voting on compensation requests and basic DAO parameters
+ - Issuance of new BSQ
 
 In* phase 3* we will focus on the implementation of the arbitration and mediation model. The security feature for locking up BSQ funds will be made available for the remaining yet not decentralized areas.
 
@@ -86,19 +88,20 @@ We will use the funds we received on the Bisq donation address [https://blockcha
 Those 25 BTC are equivalent to 2.5M BSQ (2 500 000.000) and will be distributed to all contributors who have provided value to the project according to the value of their contribution until a certain deadline (when we publish the paper). The call for requests will be open for a period of 2 weeks.
 
 A contribution is typically one of the following activities:
- * Software development
- * Communication (promotion, support,...)
- * Project management
- * Conceptual analysis
- * Input for payment methods
- * Administration
- * Translation
- * Design
- * Usability testing
- * Software testing
- * Market makers
- * Advice
- * Others (we will decide on a case to case basis)
+
+ - Software development
+ - Communication (promotion, support,...)
+ - Project management
+ - Conceptual analysis
+ - Input for payment methods
+ - Administration
+ - Translation
+ - Design
+ - Usability testing
+ - Software testing
+ - Market makers
+ - Advice
+ - Others (we will decide on a case to case basis)
 
 Basically any contributed effort exceeding roughly 4 hours will be considered to be included in the group of receivers for the initial distribution. +
 We will announce that call for requests at the https://forum.bisq.io/[Bisq Forum] and contributors need to send an email with the required information to enable verification if the request is justified. +
@@ -196,9 +199,9 @@ In phase 2 we introduce the periodic voting and issuance cycle.
 
 Periods are defined in block height. Each period is separated with a break of 10 blocks to avoid issues with reorgs.
 
- * Publishing compensation requests (3930 blocks, about 27 days)
- * Voting: Approve/decline compensation requests, change DAO parameters (450 blocks, about 3 days)
- * Issuance of new BSQ (happens directly and automatically after the vote result is completed)
+ - Publishing compensation requests (3930 blocks, about 27 days)
+ - Voting: Approve/decline compensation requests, change DAO parameters (450 blocks, about 3 days)
+ - Issuance of new BSQ (happens directly and automatically after the vote result is completed)
 
 The full cycle will last 4380 blocks which is about an average month if one block takes in average 10 min. The intervals are hard coded but if there is demand for it we might implement support for making the periods adjustable so they can be changed by voting.
 
@@ -219,37 +222,38 @@ The UI will display own requests, the active requests of others as well a histor
 The range for allowed amounts for a compensation request payout will be 100 BSQ to 20 000 BSQ. Those values can be adjusted by voting.
 
 *A compensation request needs to contain following data*
- * UID (auto generated unique ID)
- * Contributor’s name or nickname
- * Title (must not conflict with existing)
- * Category (Development, Design, Promotion, Arbitrator, Market maker,…)
- * Description (short paragraph)
- * Link to either Github issues or Bisq Forum for detailed description and deliveries
- * Start date
- * Delivery date
- * Requested funds in BSQ
- * Prepared BSQ issuance transaction (become a valid issuance tx if request gets accepted after voting has completed)
- * Onion address
- * Tx ID of fee payment tx
- * Contributor’s Public key
- * Signature of compensation request (sig of hash of all immutable request data as whitespace stipped json)
+
+ - UID (auto generated unique ID)
+ - Contributor’s name or nickname
+ - Title (must not conflict with existing)
+ - Category (Development, Design, Promotion, Arbitrator, Market maker,…)
+ - Description (short paragraph)
+ - Link to either Github issues or Bisq Forum for detailed description and deliveries
+ - Start date
+ - Delivery date
+ - Requested funds in BSQ
+ - Prepared BSQ issuance transaction (become a valid issuance tx if request gets accepted after voting has completed)
+ - Onion address
+ - Tx ID of fee payment tx
+ - Contributor’s Public key
+ - Signature of compensation request (sig of hash of all immutable request data as whitespace stipped json)
 
 *Data structure of the OP_RETURN compensation request data*
- * 1 byte for type (0x01)
- * 1 byte for version (0x01)
+ - 1 byte for type (0x01)
+ - 1 byte for version (0x01)
 
 ===== Verification rules for compensation request transactions
 
- * There have to be an OP_RETURN output as last output
- * The amount at the OP_RETURN output has to be 0
- * The first byte in the OP_RETURN data need to be the: 0x01 (type)
- * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
- * Size of OP_RETURN data is 2 bytes
- * There have to be a BSQ input for the fee payment
- * BSQ used for fee need to be mature
- * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
- * The block height must be in the correct period
- * It needs to have at least one output to the address defined in the compensation request data
+ - There have to be an OP_RETURN output as last output
+ - The amount at the OP_RETURN output has to be 0
+ - The first byte in the OP_RETURN data need to be the: 0x01 (type)
+ - The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
+ - Size of OP_RETURN data is 2 bytes
+ - There have to be a BSQ input for the fee payment
+ - BSQ used for fee need to be mature
+ - The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ - The block height must be in the correct period
+ - It needs to have at least one output to the address defined in the compensation request data
 
 Contributors need to have the latest version installed when doing a request to be sure to have the same version as the verification nodes.
 
@@ -283,36 +287,38 @@ To avoid that some stakeholder take benefit of voter apathy and are able to make
 
 The stake will use coin age, so early voting is weighted higher. That should disincentive last minute votes. +
 *The weighting will be applied in 3 phases: *
- * First 150 blocks (about 1 day): 100%
- * Next 150 blocks: 50%
- * Last 150 blocks: 15%
+
+ - First 150 blocks (about 1 day): 100%
+ - Next 150 blocks: 50%
+ - Last 150 blocks: 15%
 
 *Data structure of the OP_RETURN vote data:*
- * 1 byte for type (0x02)
- * 1 byte for version (0x01)
- * 20 bytes for hash of voter’s compensation requests collection (details see below)
- * 1 byte for the number of bytes used for compensation requests data (can be 0 if no data, otherwise multiple of 2)
- * 1 or more bytes for a  bitmap that represents if the user has voted on that request
- * 1 or more bytes for a bitmap that represents the vote result (0/1) on that request
- * Optional groups of 2 bytes: 1 byte for parameter code, 1 byte for parameter value
- * Total size: Max. 80 bytes
+
+ - 1 byte for type (0x02)
+ - 1 byte for version (0x01)
+ - 20 bytes for hash of voter’s compensation requests collection (details see below)
+ - 1 byte for the number of bytes used for compensation requests data (can be 0 if no data, otherwise multiple of 2)
+ - 1 or more bytes for a  bitmap that represents if the user has voted on that request
+ - 1 or more bytes for a bitmap that represents the vote result (0/1) on that request
+ - Optional groups of 2 bytes: 1 byte for parameter code, 1 byte for parameter value
+ - Total size: Max. 80 bytes
 
 ===== Verification rules for voting transactions
 
- * There have to be a OP_RETURN output as last output
- * The amount at the OP_RETURN output has to be 0
- * The first byte in the OP_RETURN data need to be the: 0x02 (type)
- * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
- * Size of OP_RETURN data needs to be at least 23 (first 2 bytes are type and version, followed by a 20 byte hash, next byte is number of compensation request votes)
- * The number of compensation request votes need to be even
- * The size of the OP_RETURN data is not even
- * The size of the OP_RETURN data is 23 + 2 * number of compensation request votes
- * There have to be a BSQ input for the fee payment
- * BSQ used for fee need to be mature
- * There have to be exactly 1 BSQ output for the voting weight
- * This BSQ output need to be still unspent when the voting result is calculated
- * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
- * The block height must be in the correct period
+ - There have to be a OP_RETURN output as last output
+ - The amount at the OP_RETURN output has to be 0
+ - The first byte in the OP_RETURN data need to be the: 0x02 (type)
+ - The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
+ - Size of OP_RETURN data needs to be at least 23 (first 2 bytes are type and version, followed by a 20 byte hash, next byte is number of compensation request votes)
+ - The number of compensation request votes need to be even
+ - The size of the OP_RETURN data is not even
+ - The size of the OP_RETURN data is 23 + 2 * number of compensation request votes
+ - There have to be a BSQ input for the fee payment
+ - BSQ used for fee need to be mature
+ - There have to be exactly 1 BSQ output for the voting weight
+ - This BSQ output need to be still unspent when the voting result is calculated
+ - The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ - The block height must be in the correct period
 
 Contributors need to have the latest version installed when participating in voting to be sure to have the same version as the verification nodes.
 
@@ -340,16 +346,16 @@ The voting result can be calculated at each new block, so the user can follow th
 
 ===== Calculate the voting result
 
- * We sort the collection of valid compensation requests by compensation request tx ID
- * We use the index in the sorted list to assign the first bitmap to see on which requests the stakeholder has voted
- * We take the values from the second bitmap for those items where we have a 1 in the first map
- * Once the compensation results are extracted we go on with the optional groups of 2 bytes for the parameters and apply the weighted values by using the BSQ stake like above.
- * In case of invalid parameters we ignore them and go on to the next groups of 2 bytes
- * We check if the vote value is in the permitted range for change. Invalid values get skipped.
- * We check if the vote items have reached the min. quorum (each vote item has its defined quorum in BSQ).
- * We use the BSQ amount of the unspent BSQ change output to apply stake based weighting to the values
- * We use the block height of the voting transaction to apply the time based weighting (earlier votes get higher weight to incentivize early voting). First block has factor 2, last block factor 1. Between we use a linear interpolation.
- * We calculate the weighted average of all values.
+ - We sort the collection of valid compensation requests by compensation request tx ID
+ - We use the index in the sorted list to assign the first bitmap to see on which requests the stakeholder has voted
+ - We take the values from the second bitmap for those items where we have a 1 in the first map
+ - Once the compensation results are extracted we go on with the optional groups of 2 bytes for the parameters and apply the weighted values by using the BSQ stake like above.
+ - In case of invalid parameters we ignore them and go on to the next groups of 2 bytes
+ - We check if the vote value is in the permitted range for change. Invalid values get skipped.
+ - We check if the vote items have reached the min. quorum (each vote item has its defined quorum in BSQ).
+ - We use the BSQ amount of the unspent BSQ change output to apply stake based weighting to the values
+ - We use the block height of the voting transaction to apply the time based weighting (earlier votes get higher weight to incentivize early voting). First block has factor 2, last block factor 1. Between we use a linear interpolation.
+ - We calculate the weighted average of all values.
 
 ==== Issuance of new BSQ
 
@@ -357,10 +363,10 @@ After the vote period and the following break has ended the prepared issuance tr
 
 ===== Verification rules for the issuance transaction
 
- * The BSQ output is equal to that what has been defined in the compensation request
- * The issuance amount need to be in the range of the min. and max. allowed amount
- * The block height must have been in the correct compensation request period
- * The compensation request need to be accepted in the voting process
+ - The BSQ output is equal to that what has been defined in the compensation request
+ - The issuance amount need to be in the range of the min. and max. allowed amount
+ - The block height must have been in the correct compensation request period
+ - The compensation request need to be accepted in the voting process
 
 === Phase 3
 
@@ -404,28 +410,28 @@ There are a few other areas where we will use the same model with locked up BSQ 
 
 ===== Infrastructure
 
- * Seed nodes (they provide also the BSQ transactions for lite nodes)
- * Market price feed provider node: BitcoinAverage price requires a API key and a monthly fee payment. Users can use their own node but then they need to acquire an API key from BitcoinAverage.
+ - Seed nodes (they provide also the BSQ transactions for lite nodes)
+ - Market price feed provider node: BitcoinAverage price requires a API key and a monthly fee payment. Users can use their own node but then they need to acquire an API key from BitcoinAverage.
 
 All the nodes can be overridden by program arguments, so the user can connect to self hosted nodes. To get the privilege to run one of the default nodes (hard-coded onion address) it requires to lock up BSQ funds and to get accepted in the voting process.
 
 ===== Privileged messages
 
 There are a few P2P network messages which require a private key (public key for verification is hard-coded) to broadcast them. They are mainly in place for emergency cases to be able to limit damage or to fix problems. Only the update message is used on a regular base.
- * Send out an application update message
- * Send out an alert message
- * Send a private message to a particular node
- * Ban offers by the peers onion address, offer ID, specific payment account data like name, IBAN,...
+ - Send out an application update message
+ - Send out an alert message
+ - Send a private message to a particular node
+ - Ban offers by the peers onion address, offer ID, specific payment account data like name, IBAN,...
 
 All those messages can be ignored by the user when he sets a program argument (in case of abuse by the key holder the users can go that route and the messages will be ignored and have no effect). +
 To get the privilege to control a private key for one of those messages it requires to lock up BSQ funds and to get accepted in the voting process.
 
 ===== Accounts
 
- * Github account
- * Bisq domain
- * Bisq Trademark
- * Social media accounts (Twitter, Reddit, Slack, IRC, Facebook, Telegram, Mailing List, Newsletter)
+ - Github account
+ - Bisq domain
+ - Bisq Trademark
+ - Social media accounts (Twitter, Reddit, Slack, IRC, Facebook, Telegram, Mailing List, Newsletter)
 
 Most of the social media accounts will be operated by community members. The number of “official” Bisq accounts will be low. +
 On Github we will use a similar ACK/NACK commitment model like it is used in the Bitcoin Core development process. To receive the ACK/NACK privilege will require locked up BSQ funds and to get accepted in the voting process. Same applies for domain and trademark ownership.
