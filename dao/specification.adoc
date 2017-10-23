@@ -237,6 +237,7 @@ The range for allowed amounts for a compensation request payout will be 100 BSQ 
 *Data structure of the OP_RETURN compensation request data*
  * 1 byte for type (0x01)
  * 1 byte for version (0x01)
+
 ===== Verification rules for compensation request transactions
 
  * There have to be an OP_RETURN output as last output
@@ -295,6 +296,7 @@ The stake will use coin age, so early voting is weighted higher. That should dis
  * 1 or more bytes for a bitmap that represents the vote result (0/1) on that request
  * Optional groups of 2 bytes: 1 byte for parameter code, 1 byte for parameter value
  * Total size: Max. 80 bytes
+
 ===== Verification rules for voting transactions
 
  * There have to be a OP_RETURN output as last output
@@ -348,6 +350,7 @@ The voting result can be calculated at each new block, so the user can follow th
  * We use the BSQ amount of the unspent BSQ change output to apply stake based weighting to the values
  * We use the block height of the voting transaction to apply the time based weighting (earlier votes get higher weight to incentivize early voting). First block has factor 2, last block factor 1. Between we use a linear interpolation.
  * We calculate the weighted average of all values.
+
 ==== Issuance of new BSQ
 
 After the vote period and the following break has ended the prepared issuance transactions in the accepted compensation requests become valid as new issuance transactions.
@@ -358,6 +361,7 @@ After the vote period and the following break has ended the prepared issuance tr
  * The issuance amount need to be in the range of the min. and max. allowed amount
  * The block height must have been in the correct compensation request period
  * The compensation request need to be accepted in the voting process
+
 === Phase 3
 
 ==== Mediation and arbitration system
