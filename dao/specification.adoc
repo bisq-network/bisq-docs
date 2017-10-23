@@ -146,7 +146,7 @@ A 1 BTC trade with 1% distance from the market price will use the default fee. I
 A 16% distance to the market price would cause a 4 times increase of the trade fee.
 
 The fee is calculated according to that formula: +
-Math.max(Min. trade fee, Trade amount in BTC * default fee * sqrt(distance to market price in %))
+Math.max(Min. trade fee, Trade amount in BTC *default fee* sqrt(distance to market price in %))
 
 ==== BSQ transfer and trading
 
@@ -286,7 +286,8 @@ The exact definition on what can be voted is not defined at the current state. B
 To avoid that some stakeholder take benefit of voter apathy and are able to make changes with a very low stake we require a quorum for each vote item. Those quorum values will be defined for each vote item. If the vote item does not reach that limit it will be discarded.
 
 The stake will use coin age, so early voting is weighted higher. That should disincentive last minute votes. +
-*The weighting will be applied in 3 phases: *
+
+*The weighting will be applied in 3 phases:*
 
  - First 150 blocks (about 1 day): 100%
  - Next 150 blocks: 50%
@@ -312,7 +313,7 @@ The stake will use coin age, so early voting is weighted higher. That should dis
  - Size of OP_RETURN data needs to be at least 23 (first 2 bytes are type and version, followed by a 20 byte hash, next byte is number of compensation request votes)
  - The number of compensation request votes need to be even
  - The size of the OP_RETURN data is not even
- - The size of the OP_RETURN data is 23 + 2 * number of compensation request votes
+ - The size of the OP_RETURN data is 23 + 2 x number of compensation request votes
  - There have to be a BSQ input for the fee payment
  - BSQ used for fee need to be mature
  - There have to be exactly 1 BSQ output for the voting weight
