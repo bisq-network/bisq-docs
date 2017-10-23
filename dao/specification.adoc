@@ -1,4 +1,8 @@
 = Bisq DAO - More details and technical specification
+:toc:
+:toc-placement!:
+
+toc::[]
 
 === BSQ token
 
