@@ -34,8 +34,11 @@ Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months
 
 *Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the <<docs-repo>> to be notified of changes or subscribe to this document's https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
 
-*Related materials.* A companion slide deck based on this document is available https://docs.google.com/presentation/d/1G5_6Kju2OoItZ5lD0jnskqLdOV2dAJpdB6WOjmq9hRk/edit#[here], a 15-minute interview recapping the Phase Zero plan is available https://www.youtube.com/watch?v=AvXWToT-dcQ[here], and video of a 50-minute talk based on this document will be available soon.
+*Related materials:*
 
+ - Companion https://docs.google.com/presentation/d/1G5_6Kju2OoItZ5lD0jnskqLdOV2dAJpdB6WOjmq9hRk/edit#[slide deck] as delivered at the https://liberate.hcpp.cz/[Hackers Congress 2017] conference in Prague
+ - 15-minute https://www.youtube.com/watch?v=AvXWToT-dcQ[video interview] with World Crypto Network covering Bisq, the Bisq DAO and the Phase Zero plan
+ - Detailed https://github.com/bisq-network/docs/blob/master/dao/specification.adoc[technical specification] for the Bisq DAO and BSQ token
 
 = Part I: Understanding Bisq and the Bisq DAO [[Part-I]]
 
