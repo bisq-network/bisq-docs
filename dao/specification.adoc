@@ -1,7 +1,5 @@
 = Bisq DAO - More details and technical specification
 
-Version 0.5 (last edited: October 19, 2017)
-
 === BSQ token
 
 BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. +
