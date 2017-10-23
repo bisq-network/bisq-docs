@@ -42,7 +42,7 @@ The users of the platform can choose to use BSQ or BTC for paying the trading fe
 
 All those aspects are achieved in a fully decentralized way by the network of Bisq applications utilizing the Bisq DAO protocol, the Bitcoin blockchain and the Bisq P2P network.
 
-The project is designed as a community project with a non-profit foundation as the legal entity holding the domain, trademark, GitHub and social media accounts. Bisq was developed without any external funding but with personal savings, donations and altruistic contributions.
+The project is designed as a community project. Bisq was developed without any external funding but with personal savings, donations and altruistic contributions.
 
 == Motivation
 
@@ -179,12 +179,6 @@ Those who provide these services can request a compensation as contributor.
 
 Bisq is an open source project that develops through the participation of many users and the work of many contributors. The Bisq DAO is a decentralized organization coordinating the value exchange between those who work on the exchange platform and those who use it. Those contributors and stakeholders are the owners and managers of Bisq.
 
-We will create a non-profit foundation to hold the trademark and the domain name. The foundation will not have any operational role in the DAO model, serving mainly as a bridge to legacy financial and legal systems to provide better protection regarding liability.
-
-The foundation will also escrow funds from the genesis distribution to employ 5 full-time contributors for the period between phase 1 (genesis distribution) and phase 2 (issuance and voting), estimated for 3-5 months, as well as a legal contingency fund. The amount in BSQ for those funds are still not decided but will be published before the genesis distribution starts.
-
-The function of the foundation will be dissolved over time once the DAO is fully implemented and Bisq fully decentralized in all aspects.
-
 === How are changes to the DAO being made?
 
 The Bisq DAO is work in progress and is constantly changing in order to better the system.
@@ -193,7 +187,7 @@ Therefore, it should be made clear that the current vision of the Bisq DAO laid 
 
 We hold a stance that code is NOT law, but rather an expression of intent, that requires adoption and improvements over time.
 
-There is no contract between the BSQ stakeholders and the Bisq DAO or foundation. Through a sufficiently high level of decentralization and a strong network, there will be some natural continuity and stability. Radical changes to the system should become harder over time.
+There is no contract between the BSQ stakeholders and the Bisq DAO. Through a sufficiently high level of decentralization and a strong network, there will be some natural continuity and stability. Radical changes to the system should become harder over time.
 
 Bisq users have an inherent influence by agreeing to update to or rejecting newer versions and rules.
 
