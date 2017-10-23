@@ -12,9 +12,9 @@ Technically a BSQ token is the same as Bitcoin but it adds some additional rules
 
 ==== Wallet
 
-The Bisq application provides an integrated BSQ wallet with basic features for receiving and sending BSQ as well as a transaction history screen. The wallet is based on BIP 44 https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki[https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki] [1] and uses the registered coin type 142 https://github.com/satoshilabs/slips/blob/master/slip-0044.md[https://github.com/satoshilabs/slips/blob/master/slip-0044.md] [2]. This provides extra protection against the risk that the BSQ wallet could be used accidentally as a BTC wallet (e.g. restoring from seed words). To avoid that users need to backup 2 different seed words we use the same seed for both the BSQ and the BTC wallet though they are stored in different files. To avoid mistakes to mix up BSQ with normal Bitcoins we use a “B” as address prefix in the user interface. Internally that prefix does not exist, a BSQ address is a normal BTC address and the transactions are normal BTC transactions.
+The Bisq application provides an integrated BSQ wallet with basic features for receiving and sending BSQ as well as a transaction history screen. The wallet is based on  https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki[BIP 44] and uses https://github.com/satoshilabs/slips/blob/master/slip-0044.md[registered coin type 142]. This provides extra protection against the risk that the BSQ wallet could be used accidentally as a BTC wallet (e.g. restoring from seed words). To avoid that users need to backup 2 different seed words we use the same seed for both the BSQ and the BTC wallet though they are stored in different files. To avoid mistakes to mix up BSQ with normal Bitcoins we use a "B" as address prefix in the user interface. Internally that prefix does not exist, a BSQ address is a normal BTC address and the transactions are normal BTC transactions.
 
-The BSQ tokens transactions and balances are represented inside the application but there is also a web based BSQ block explorer https://explorer.bisq.io/[https://explorer.bisq.io/] [3].
+BSQ token transactions and balances are represented inside the application but there is also a web-based https://explorer.bisq.network/[BSQ block explorer].
 
 === Validation rules
 
@@ -26,11 +26,11 @@ We use that possibility to invalidate BSQ intentionally for “burning” tokens
 
 ==== Validation process
 
-The validation of the BSQ tokens requires the full blockchain data from the block containing the genesis transaction. To avoid that users need to download too much data we use a lite-node mode where all BSQ transactions are delivered by the seed nodes at startup. The verification is done on the lite node itself (each Bisq application). Every time a new block is created by the miners, the seed nodes (that operate as full nodes) broadcasting the BSQ transactions contained in that block to the P2P network. The data is broadcasted by multiple seed nodes, and if the data is not consistent the lite node would re-validate from the last snapshot (see below). Such inconsistency is expected in the case of chain reorganisations (reorgs) https://en.bitcoin.it/wiki/Chain_Reorganization[https://en.bitcoin.it/wiki/Chain_Reorganization] [4], but also delivers more resilience in case a seed node is not providing reliable data.
+The validation of the BSQ tokens requires the full blockchain data from the block containing the genesis transaction. To avoid that users need to download too much data we use a lite-node mode where all BSQ transactions are delivered by the seed nodes at startup. The verification is done on the lite node itself (each Bisq application). Every time a new block is created by the miners, the seed nodes (that operate as full nodes) broadcasting the BSQ transactions contained in that block to the P2P network. The data is broadcasted by multiple seed nodes, and if the data is not consistent the lite node would re-validate from the last snapshot (see below). Such inconsistency is expected in the case of https://en.bitcoin.it/wiki/Chain_Reorganization[chain reorganisations] (reorgs), but also delivers more resilience in case a seed node is not providing reliable data.
 
 Furthermore we use snapshots of past blocks which will get distributed with the software release to reduce bandwidth requirements. Thus we do not require to load all BSQ transactions since the genesis transaction but only since the latest snapshot. At certain block-heights (every 100 blocks) the nodes are locally persisting snapshots. Those persisted snapshots will be used after a restart to only request the missing BSQ transactions from the blocks since the latest snapshot up to the actual chain head.
 
-Users can also run themselves a full node either directly from the Bisq application or as a self hosted headless full node. To run a full node requires a Bitcoin Core (bitcoind) full node with RPC enabled. More details how to run a full node can be found in the documentation folder at the source code repository https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md[https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md] [5].
+Users can also run themselves a full node either directly from the Bisq application or as a self hosted headless full node. To run a full node requires a Bitcoin Core (bitcoind) full node with RPC enabled. More details on https://github.com/bisq-network/exchange/blob/master/doc/rpc.md[how to run a full node] can be found in the documentation folder of the source code repository.
 
 The seed nodes are operated by the developers and the management for the privilege to run a default seed node will be a part of the DAO (see phase 3).
 
@@ -67,7 +67,7 @@ Though over time it will turn out that not all of the contributors are intereste
 
 Technically the genesis transaction is a normal BTC transaction with the input from the donation address and outputs to all contributors. There is no requirement for an OP_RETURN output (though maybe we use one for engraving a statement to the genesis transaction).
 
-We will use the funds we received on the Bisq donation address https://blockchain.info/address/1BVxNn3T12veSK6DgqwU4Hdn7QHcDDRag7[https://blockchain.info/address/1BVxNn3T12veSK6DgqwU4Hdn7QHcDDRag7][6] (about 25 BTC) as input to the genesis transaction. Those 25 BTC are equivalent to 2.5M BSQ (2 500 000.000) and will be distributed to all contributors who have provided value to the project according to the value of their contribution until a certain deadline (when we publish the paper). The call for requests will be open for a period of 2 weeks.
+We will use the funds we received via the https://blockchain.info/address/1BVxNn3T12veSK6DgqwU4Hdn7QHcDDRag7[Bisq donation address] (about 25 BTC) as input to the genesis transaction. Those 25 BTC are equivalent to 2.5M BSQ (2 500 000.000) and will be distributed to all contributors who have provided value to the project according to the value of their contribution until a certain deadline (when we publish the paper). The call for requests will be open for a period of 2 weeks.
 
 A contribution is typically one of the following activities:
 
@@ -139,7 +139,7 @@ We do not support raw MultiSig transactions (BIP 11) for BSQ. It has to be explo
 
 ===== Full nodes
 
-A fully validating BSQ node has the requirement to run a Bitcoin Core (bitcoind) node to provide the blockchain data for verification. The communication is done via RPC. The details about the setup can be found in the documentation folder at the source code https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md[https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md] [5]. Every user can run a full node either from the Bisq application or as a specialized headless node locally or on a server and connect to that node only.
+A fully validating BSQ node has the requirement to run a Bitcoin Core (bitcoind) node to provide the blockchain data for verification. The communication is done https://github.com/bisq-network/exchange/blob/master/doc/rpc.md[via RPC]. The details about the setup can be found in the documentation folder of the source code repository. Every user can run a full node either from the Bisq application or as a specialized headless node locally or on a server and connect to that node only.
 
 The full nodes also get a notification from Bitcoin Core at each new block, scan the block for BSQ transactions and broadcast those to the Bisq P2P network. Every transaction with any BSQ input or output (issuance) is considered as BSQ transaction. The full node also listens to network messages from lite nodes which are requesting BSQ blocks from a certain block height. The full node sends back the list of all blocks since that requested height. The bandwidth requirements for that will depend on the number of BSQ transactions but rough estimations suggest that there will be no considerable issues. The Bisq seed nodes are used as full nodes since those are the first nodes to which a user gets connected and we can use the existing connection to transmit the additional data early at startup.
 
@@ -477,15 +477,3 @@ This is the Bitcoin transaction which contains the voting data for timestamping 
 ===== Voting data
 
 This is the data structure published to the P2P network when submitting a vote. It gets created when the user sets his voting options in the UI and confirms to submit the vote.
-
-== References
-
-[1] Marek Palatinus, Pavol Rusnak, “Multi-Account Hierarchy for Deterministic Wallets”, https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki[https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki], April 2017.  +
-[2] Pavol Rusnak, Marek Palatinus; “Registered coin types for BIP-0044”, https://github.com/satoshilabs/slips/blob/master/slip-0044.md[https://github.com/satoshilabs/slips/blob/master/slip-0044.md], June 2017. +
-[3] Bisq, “BSQ Explorer”, https://explorer.bisq.io/[https://explorer.bisq.io], July 2017. +
-[4] Bitcoin wiki, “Chain Reorganization”, https://en.bitcoin.it/wiki/Chain_Reorganization[https://en.bitcoin.it/wiki/Chain_Reorganization], November 2012 +
-[5] Bisq, "Setup or RPC calls to Bitcoin Core", https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md[https://github.com/bitsquare/bitsquare/blob/DAO/doc/rpc.md], June 2017 +
-[6] Blockchain.info, "Bitsquare.io donations:" https://blockchain.info/address/1BVxNn3T12veSK6DgqwU4Hdn7QHcDDRag7[https://blockchain.info/address/1BVxNn3T12veSK6DgqwU4Hdn7QHcDDRag7], July 2017.
-
-
-
