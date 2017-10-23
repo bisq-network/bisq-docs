@@ -6,7 +6,7 @@ toc::[]
 
 == BSQ token
 
-BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. We don't use any existing colored coin implementation because our use case requires some extra features which are not supported by those (e.g. decentralized issuance). Beside that, we did not want to introduce any external dependencies to a company or Altcoin. As Bitcoin is the default base currency in Bisq anyway, and our requirements can be 100% covered by the basic features Bitcoin provides we decided to build our custom colored coin solution on top of the Bitcoin blockchain. We don’t have the ambition to provide a general purpose solution but have designed the model according to the concrete requirements of Bisq DAO.
+BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. We don't use any existing colored coin implementation because our use case requires some extra features which are not supported by those (e.g. decentralized issuance). Beside that, we did not want to introduce any external dependencies to a company or Altcoin. As Bitcoin is the default base currency in Bisq anyway, and our requirements can be 100% covered by the basic features Bitcoin provides we decided to build our custom colored coin solution on top of the Bitcoin blockchain. We don't have the ambition to provide a general purpose solution but have designed the model according to the concrete requirements of Bisq DAO.
 
 Technically a BSQ token is the same as Bitcoin but it adds some additional rules. A BSQ token is denominated as 1000 Bitcoin Satoshi so it can be divided in 1000 subunits, leading to the smallest unit of 0.001 BSQ, which is equivalent to 1 Satoshi. Bitcoin requires that the minimum amount of a transaction output is 2730 Satoshi (dust limit) so for transferring BSQ tokens we inherit that limitation. The smallest possible BSQ amount to transfer is therefore 2.730 BSQ. As BSQ tokens are inherently BTC they will have at least the market value of the Bitcoin Satoshis. So 1 BSQ = 1000 Satoshi >= the market value of 0.00001000 BTC, which equals at a market price of 2500 EUR/BTC, about 0.025 EUR. The real market value of a BSQ token will be decided by the market once trading has started.
 
@@ -22,7 +22,7 @@ BSQ are issued either by the genesis transaction or from an issuance transaction
 
 ==== Fee payments by invalidating tokens
 
-We use that possibility to invalidate BSQ intentionally for “burning” tokens to achieve certain use cases, like the trade fee payment, or fee payments for certain activities, like voting or compensation requests. The “burning” is only an invalidation of the BSQ value but the inherent BTC value stays intact. We use the invalidated BSQ as Bitcoin Satoshis for paying the mining fee. With giving Satoshis (BTC) to miners we are not restricted by the dust limit so we can “burn” amounts as small as 0.001 BSQ = 1 Satoshi (BTC).
+We use that possibility to invalidate BSQ intentionally for "burning" tokens to achieve certain use cases, like the trade fee payment, or fee payments for certain activities, like voting or compensation requests. The "burning" is only an invalidation of the BSQ value but the inherent BTC value stays intact. We use the invalidated BSQ as Bitcoin Satoshis for paying the mining fee. With giving Satoshis (BTC) to miners we are not restricted by the dust limit so we can "burn" amounts as small as 0.001 BSQ = 1 Satoshi (BTC).
 
 ==== Validation process
 
@@ -87,7 +87,7 @@ A contribution is typically one of the following activities:
 
 Basically any contributed effort exceeding roughly 4 hours will be considered to be included in the group of receivers for the initial distribution. We will announce that call for requests at the https://forum.bisq.io/[Bisq Forum] and contributors need to send an email with the required information to enable verification if the request is justified. They should give a short description and if possible references to the work (links to Github, Forum, etc,...) and provide the spent time and the period when their contribution happened. We will apply a factor for giving early contributions higher weight as well as a factor to give long term contributions more weight. This should reflect the higher risk at earlier periods as well as the higher value of long term contributions. The Bisq team will verify those requests and if it is justified and the requested amount reasonable we will add the contributor to the list of receivers. The hours will get multiplied by a factor to the type of contribution (orientated on typical market salaries). We will then sum up all the weighted hours of all verified contributors and use the percentage of each contributor related to the overall sum for calculating the amount of BSQ they will receive from the genesis transaction. So if a contributor has worked 100 hours and the sum of all contributors is 10 000 hours he will receive 1% of the 2 500 000.000 BSQ from the genesis transaction, thus 25 000 BSQ.
 
-The way how the factors are applied, how the requested amounts get adjusted and the total sum will be kept private in the team to protect privacy of the contributors as well as to avoid pointless discussions. The model for distributing the project’s value is a voluntary act of the Bisq team and there is no right for a claim of any contributor as we never gave any guarantee or advertised that as a reward model. We are simply donating back our received donations to those who we think they deserve to get something in return for their support. Also the contributors can request anonymously and it is highly recommended to use GPG. This should protect the privacy of the contributors as far as possible (many will be known due their activity, but at least only the team will know that). For market makers the verification might get a bit more difficult and we will apply a practical approach how to deal with that. They need initially provide only the onion address of their Bisq application and the number of trades they did. If we see a requirement for it there might be an extra software release where the market makers can prove their claims in a way which protects their privacy but gives cryptographic evidence of their request. We will include the top 100 traders and their percentage of BSQ will get calculated by the number of trades.
+The way how the factors are applied, how the requested amounts get adjusted and the total sum will be kept private in the team to protect privacy of the contributors as well as to avoid pointless discussions. The model for distributing the project's value is a voluntary act of the Bisq team and there is no right for a claim of any contributor as we never gave any guarantee or advertised that as a reward model. We are simply donating back our received donations to those who we think they deserve to get something in return for their support. Also the contributors can request anonymously and it is highly recommended to use GPG. This should protect the privacy of the contributors as far as possible (many will be known due their activity, but at least only the team will know that). For market makers the verification might get a bit more difficult and we will apply a practical approach how to deal with that. They need initially provide only the onion address of their Bisq application and the number of trades they did. If we see a requirement for it there might be an extra software release where the market makers can prove their claims in a way which protects their privacy but gives cryptographic evidence of their request. We will include the top 100 traders and their percentage of BSQ will get calculated by the number of trades.
 
 To have some funds for paying contributors in the time between the genesis distribution and the periodic issuance starting with phase 2 we give an estimated amount to the Bisq foundation, which will escrow those funds and pays the contributors. It is estimated that it will take 3 months to get to phase 2 and we calculate payments for 5 full time contributors with the usual market rates for blockchain developers. As we cannot predict the market price we only can make a rough estimation. We will put 150 000 BSQ aside for that. If funds are left over once phase 2 has started we add the remaining funds to the legal contingency fund (see below).
 
@@ -115,9 +115,9 @@ Math.max(Min. trade fee, Trade amount in BTC x default fee x sqrt(distance to ma
 
 ==== BSQ transfer and trading
 
-The BSQ can be sent and received like normal BTC. To avoid to mix up BSQ with normal BTC and risking invalidation of BSQ we use a “B” as address prefix in the user interface. So users who only operate via the UI (as recommended) cannot make mistakes here.
+The BSQ can be sent and received like normal BTC. To avoid to mix up BSQ with normal BTC and risking invalidation of BSQ we use a "B" as address prefix in the user interface. So users who only operate via the UI (as recommended) cannot make mistakes here.
 
-WARNING: It is definitely NOT recommended to “hack” around with custom created transactions. If people are doing that they have to be sure to understand all details of the validation protocol and are fully responsible if case they accidentally burn their BSQ. This document might not cover 100% of all the details, only the source code is the real reference. We will not provide support for such cases and future changes might not take care of special cases used by custom transactions or implementations.
+WARNING: It is definitely NOT recommended to "hack" around with custom created transactions. If people are doing that they have to be sure to understand all details of the validation protocol and are fully responsible if case they accidentally burn their BSQ. This document might not cover 100% of all the details, only the source code is the real reference. We will not provide support for such cases and future changes might not take care of special cases used by custom transactions or implementations.
 
 A BSQ transfer transaction is a normal BTC transaction with mixed inputs of BSQ and BTC. The BTC part is required for the mining fee payment. There is no OP_RETURN output required.
 
@@ -147,7 +147,7 @@ The full nodes also get a notification from Bitcoin Core at each new block, scan
 
 Most users will likely operate in the lite node mode. They have to trust the seed node operators that they are not all colluding and delivering incorrect data. If at least one operator is honest the lite node can detect a conflict and would re-validate each block from the last snapshot.
 
-A lite node requests at startup from the seed node the missing BSQ blocks and then validates those blocks to achieve a local state of valid and unspent BSQ outputs. At each new block they receive the broadcasted messages from multiple seed nodes (min. 4 operated by different developers) and only if all those messages contain the same data the validation will succeed and the block will be added to the local state. In case of chain splits it can be that one of the seed nodes is on another chain and conflicting blocks get propagated. This would trigger a re-validation of all blocks from the latest snapshot for the lite node. The last received block would be considered as the current state but the user get displayed a message that there are conflicts and it is recommended to wait for more than one confirmation before considering a BSQ transaction as valid. Only after all full nodes (seed nodes) have the same state again the lite node will exit the “warning” state. If the user waits for a sufficiently high numbers of confirmation (4-6) he will not risk that his validation was based on an orphaned chain and that he could become victim of a double spend. A seed node which would continuously deliver incompatible data would get investigated and might get removed.
+A lite node requests at startup from the seed node the missing BSQ blocks and then validates those blocks to achieve a local state of valid and unspent BSQ outputs. At each new block they receive the broadcasted messages from multiple seed nodes (min. 4 operated by different developers) and only if all those messages contain the same data the validation will succeed and the block will be added to the local state. In case of chain splits it can be that one of the seed nodes is on another chain and conflicting blocks get propagated. This would trigger a re-validation of all blocks from the latest snapshot for the lite node. The last received block would be considered as the current state but the user get displayed a message that there are conflicts and it is recommended to wait for more than one confirmation before considering a BSQ transaction as valid. Only after all full nodes (seed nodes) have the same state again the lite node will exit the "warning" state. If the user waits for a sufficiently high numbers of confirmation (4-6) he will not risk that his validation was based on an orphaned chain and that he could become victim of a double spend. A seed node which would continuously deliver incompatible data would get investigated and might get removed.
 
 *Snapshots:*
 
@@ -186,7 +186,7 @@ The range for allowed amounts for a compensation request payout will be 100 BSQ 
 *A compensation request needs to contain following data*
 
  - UID (auto generated unique ID)
- - Contributor’s name or nickname
+ - Contributor's name or nickname
  - Title (must not conflict with existing)
  - Category (Development, Design, Promotion, Arbitrator, Market maker,…)
  - Description (short paragraph)
@@ -197,7 +197,7 @@ The range for allowed amounts for a compensation request payout will be 100 BSQ 
  - Prepared BSQ issuance transaction (become a valid issuance tx if request gets accepted after voting has completed)
  - Onion address
  - Tx ID of fee payment tx
- - Contributor’s Public key
+ - Contributor's Public key
  - Signature of compensation request (sig of hash of all immutable request data as whitespace stipped json)
 
 *Data structure of the OP_RETURN compensation request data*
@@ -233,7 +233,7 @@ To make the best decisions require a certain level of information and time. Voti
 
 In the vote period a stakeholder cannot transfer his BSQ tokens which he used for voting, otherwise he would render his vote invalid. For that reason we should keep the vote period rather short to not lock up liquidity for too long. There might be an effect on the market price as if many stakeholder are using their coins for voting there will be less supply and therefore increase the price. Thought that effect should be limited as it is predictable and known in advance and it is just for 3 days and the loss of the vote would also be not too problematic for some stakeholders, if they decide to prefer to trade their tokens instead.
 
-The vote transaction moves BSQ to another address in the voter’s wallet. Though we cannot distinguish if the receiving address really belongs to the same user or if the receiver is someone else. As we cannot verify the ownership of the outputs but only the ownership of the inputs (by signing the tx) we define that voting right is derived from the possession of BSQ tokens in the time period of the voting. The voter could sell his full BSQ inputs but then if the new owner votes it would render the tx for voting invalid as the output is spent. Also a trade transaction is different from a vot transactions so such a transfer of BSQ would require an out of band trade mechanism.
+The vote transaction moves BSQ to another address in the voter's wallet. Though we cannot distinguish if the receiving address really belongs to the same user or if the receiver is someone else. As we cannot verify the ownership of the outputs but only the ownership of the inputs (by signing the tx) we define that voting right is derived from the possession of BSQ tokens in the time period of the voting. The voter could sell his full BSQ inputs but then if the new owner votes it would render the tx for voting invalid as the output is spent. Also a trade transaction is different from a vot transactions so such a transfer of BSQ would require an out of band trade mechanism.
 
 The voting is using an OP_RETURN output to store the vote data. All nodes will collect this data at each block and calculate and display the temporary results. After the vote period and the following break has ended the final result will be calculated.
 
@@ -257,7 +257,7 @@ The stake will use coin age, so early voting is weighted higher. That should dis
 
  - 1 byte for type (0x02)
  - 1 byte for version (0x01)
- - 20 bytes for hash of voter’s compensation requests collection (details see below)
+ - 20 bytes for hash of voter's compensation requests collection (details see below)
  - 1 byte for the number of bytes used for compensation requests data (can be 0 if no data, otherwise multiple of 2)
  - 1 or more bytes for a  bitmap that represents if the user has voted on that request
  - 1 or more bytes for a bitmap that represents the vote result (0/1) on that request
@@ -300,7 +300,7 @@ In rare case we would have 2 compensation requests collections with the same BSQ
 
 It can be assumed that such cases will be very rare but we need to handle it otherwise the bits interpreted for the vote result would have a different meaning.
 
-*Hash of voter’s compensation requests collection:*
+*Hash of voter's compensation requests collection:*
 
 We use the 20 byte hash of a json string of the compensation request data. Whitespace get stripped. The hash function is: RIPEMD160(Sha256(json)).
 
@@ -400,7 +400,7 @@ To get the privilege to control a private key for one of those messages it requi
  - Bisq Trademark
  - Social media accounts (Twitter, Reddit, Slack, IRC, Facebook, Telegram, Mailing List, Newsletter)
 
-Most of the social media accounts will be operated by community members. The number of “official” Bisq accounts will be low.
+Most of the social media accounts will be operated by community members. The number of "official" Bisq accounts will be low.
 
 On Github we will use a similar ACK/NACK commitment model like it is used in the Bitcoin Core development process. To receive the ACK/NACK privilege will require locked up BSQ funds and to get accepted in the voting process. Same applies for domain and trademark ownership.
 
@@ -434,21 +434,21 @@ The newly issued tokens (not genesis tokens) have a maturity period of 1 week (1
 
 === Limitation of growth of the total supply of BSQ tokens per month
 
-The total supply of BSQ tokens will be limited by blockchain height. Initially there will be 2 500 000 BSQ from the genesis transaction. We don’t expect more than 100 000 new BSQ being issued per month. So we use that for the max. monthly growth. This numbers can be adjusted at each release, so he can adopt to the market price. In case of an exploit where the hacker manages to create new BSQ the max. possible damage would be limited by that value. Any BSQ which have been created after exceeding that limit would be considered invalid.
+The total supply of BSQ tokens will be limited by blockchain height. Initially there will be 2 500 000 BSQ from the genesis transaction. We don't expect more than 100 000 new BSQ being issued per month. So we use that for the max. monthly growth. This numbers can be adjusted at each release, so he can adopt to the market price. In case of an exploit where the hacker manages to create new BSQ the max. possible damage would be limited by that value. Any BSQ which have been created after exceeding that limit would be considered invalid.
 
 === Private key for activating emergency measurements
 
-There will be a private key (similar like the other private keys for privileged P2P network messages) for sending out an emergency message to all nodes for deactivating BSQ trade. BSQ tokens are traded only in Bisq. We don’t expect that other exchanges will support BSQ soon as it would require quite a bit of effort for them to support the protocol.
+There will be a private key (similar like the other private keys for privileged P2P network messages) for sending out an emergency message to all nodes for deactivating BSQ trade. BSQ tokens are traded only in Bisq. We don't expect that other exchanges will support BSQ soon as it would require quite a bit of effort for them to support the protocol.
 
 There will be another emergency message for disabling new issuance of tokens. Like with the other privileged P2P network messages the users can ignore those emergency messages by a program argument (in case that the key holder would abuse their power), though in case of a hack users who have ignored those messages would not get considered in a possible compensation program for recovering the losses.
 
 === Predefined policy how to deal with unexpected situations
 
-In case of bugs which would cause the loss of BSQ there will be a reimbursement for the victim by issuing new tokens using the compensation request and voting process (the victim files a compensation request and if accepted by voting can issue themselves the lost BSQ tokens). It requires clear evidence and cooperation of the victim. The lost BSQ (“burned”) have been taken out of circulation and by issuing new tokens we add them again, so we do not inflate the total supply by such a measurement.
+In case of bugs which would cause the loss of BSQ there will be a reimbursement for the victim by issuing new tokens using the compensation request and voting process (the victim files a compensation request and if accepted by voting can issue themselves the lost BSQ tokens). It requires clear evidence and cooperation of the victim. The lost BSQ ("burned") have been taken out of circulation and by issuing new tokens we add them again, so we do not inflate the total supply by such a measurement.
 
 Another case would be if tokens get issued by an exploit or hack. They will get confiscated if it is possible (if they have not been already traded and ownership is not 100% clear anymore). A hard fork adding code to declare certain transactions invalid would be deployed in such a case.
 
-To avoid later discussions about “code is law” we define with that policy clearly that in case of a clear violation to the intended behavior of the DAO we will try to fix it as far it is possible. Confiscation and new issuance are valid tools to achieve that. The network effect and fork risk are in place to avoid any abuse of those emergency measurements.
+To avoid later discussions about "code is law" we define with that policy clearly that in case of a clear violation to the intended behavior of the DAO we will try to fix it as far it is possible. Confiscation and new issuance are valid tools to achieve that. The network effect and fork risk are in place to avoid any abuse of those emergency measurements.
 
 == Definitions
 
