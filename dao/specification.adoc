@@ -2,6 +2,8 @@
 :toc:
 :toc-placement!:
 
+NOTE: This document is a detailed technical specification for the Bisq DAO and BSQ token. For a high-level overview and rationale, please see https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[Phase Zero: A plan for bootstrapping the Bisq DAO].
+
 toc::[]
 
 == BSQ token
