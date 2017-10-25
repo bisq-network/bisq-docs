@@ -30,7 +30,7 @@ Second entry (value) is region code as defined in `regionCodeToNameMap`:
 
 In class `io.bisq.common.locale.LocaleUtil` at method `getAllLocales` add the locale entry with the language if known (otherwise use English and annotate with a comment that the language is not set). If multiple languages are supported in that country use the most common language.
 
-First parameter is ISO 639-1 code (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Second parameter is the ISO 3166 country code (as used above). Third parameter leave empty. Please add a comment for the full name as well. Add new added countries at the end of the list.
+The first parameter is the https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes[ISO 639-1 code]. The second parameter is the ISO 3166 country code (as used above). The third parameter leave empty. Please add a comment for the full name as well. Add new added countries at the end of the list, e.g.:
 
     allLocales.add(new Locale("es", "PR", "")); // Puerto Rico
 
