@@ -1,0 +1,82 @@
+= How to add an alternative base currency
+:toc:
+
+== Introduction
+
+This document describes the process how to submit a request for adding an alternative base currency (we refer as Altcoin in that document) to be supported in Bisq. Adding an Altcoin does not mean any endorsement. For making decisions in case of politically controversial requests we use the Bisq DAO voting process.
+
+Altcoin support is restricted by the technical infrastructure Bisq is based on. Supporting Altcoins which don't have BitcoinJ support would result in a huge implementation effort and it is not considered to be feasible in the near future. Mid term we might move to a new model based on Bitcoin Core in SPV mode with RPC interface and then the requirement for BitcoinJ and Java will get lifted.
+
+
+== Prerequisites
+
+=== Altcoin is already traded in Bisq
+
+The Altcoin needs to have been already added to Bisq.
+
+=== Java
+
+The Altcoin needs to come with a Java implementation.
+
+=== P2SH
+
+The Altcoin needs to support P2SH for MultiSig.
+
+=== BitcoinJ
+
+Because Bisq is based on BitcoinJ the Altcoin needs to have an implementation of BitcoinJ.
+
+=== Support of libdohj approach
+
+The support of BitcoinJ need to follow the link:https://github.com/bisq-network/libdohj[libdohj] approach (e.g. we don't want to ship an additional alternative BitcoinJ library).
+
+
+== Instructions
+
+=== Step 1. Implementation of the libdohj and BicoinJ relevant code and integration into Bisq
+
+The PR needs to add all the required implementation and integration code for libdohj, BicoinJ and Bisq.
+
+=== Step 2. Add all required parameters
+
+All the required parameters (fees, limits,...) need to be defined.
+
+=== Step 3. Rebrand to custom brand for testing once ready for public deployment
+
+The Bisq brand must not be used in a public mainnet test phase. Re-brand the Bisq word mark and logo.
+
+=== Step 4. Test and deploy and get community motivated for trading
+
+ - The fork has to be tested and deployed.
+ - In the test period the requester operates the seed nodes and sets up an arbitrator and communicates clearly to their users that the fork is not operated by Bisq.
+ - The network for the test run must not conflict with the official Bisq network.
+ - The fork need to be tested on mainnet for at least 2 months.
+ - There have to be min. 20 trades been executed in that test period.
+
+
+=== Step 5. Make a pull request
+
+Make a pull request in GitHub to the Bisq `Development` branch.
+
+If the PR gets merged the seed node operators and arbitrators will be assigned according the Bisq DAO process (requires lock up BSQ tokens as bond).
+
+
+== Caveats
+
+=== Controversial Altcoins may be put to a vote
+
+ - Any BSQ token holder can request that a decision for supporting the new base currency in Bisq should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[phase zero] doc).
+ - If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DAO voting document (See https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[phase zero]).
+ - If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the Altcoin. Not reaching the quorum results in a rejection.
+ - For requesting again an Altcoin which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+ - Any BSQ Altcoin holder can also request a voting to remove an already supported base currency.
+
+
+=== Inactive base currencies will be de-listed
+
+ - At each new release we will check if already supported base currencies have been traded in the past 4 months. If this requirement is not met the base currency will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded base currency will not be announced beside in the release notes of the new release.
+ - Adding the base currency again requires a statement about the changed circumstances (e.g. link to discussions where demand for the base currency is documented,...).
+
+=== Getting an new base currency into production might take a bit
+
+Adding a new base currency will be part of the normal release cycle.
