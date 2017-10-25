@@ -18,7 +18,7 @@ This document replaces the process described in the link:https://forum.bisq.io/t
 
 There need to be an active block explorer available.
 
-=== The ticker sbmol does not conflict with national currency tickers
+=== The ticker symbol does not conflict with national currency tickers
 
 The ticker symbol must not conflict with one of the national currency ISO 4217 ticker symbols listed at: https://en.wikipedia.org/wiki/ISO_4217
 
