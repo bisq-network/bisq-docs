@@ -3,12 +3,12 @@
 
 == Introduction
 
-We maintain a data structure for countries, regions (continents) and languages. To add a missing country we invite the requester to make a Github pull request if they are familiar with Java and Github. Otherwise please provide the country code (2 letter ISO 3166 code), continent and language code (2 letter ISO 639-1 code) as described below and post that to the Github issue. That will reduce effort for other contributors when making a PR.
+We maintain a data structure for countries, regions (continents) and languages. To add a missing country we invite the requester to make a GitHub pull request if they are familiar with Java and GitHub. Otherwise please provide the country code (a two-letter ISO 3166 code), continent and language code (a two-letter ISO 639-1 code) as described below and post that to the GitHub issue. That will reduce effort for other contributors when making a pull request.
 
 
 == Instructions
 
-=== Step 1: Add an entry to the `regionByCountryCodeMap` in the class `CountryUtil`
+=== Step 1: Add an entry to the `regionByCountryCodeMap` in the `CountryUtil` class
 
 In class `io.bisq.common.locale.CountryUtil` there is a static initializer where the country and the region (continent) is defined. Please add a comment for the full name as well. Add newly added countries at the end of the list.
 
@@ -25,7 +25,8 @@ regionCodeToNameMap.put("AS", "Asia"); +
 regionCodeToNameMap.put("OC", "Oceania");
 
 
-=== Step 2: Add an entry to the `allLocales` list in class `LocaleUtil`
+
+=== Step 2: Add an entry to the `allLocales` list in `LocaleUtil` class
 
 In class `io.bisq.common.locale.LocaleUtil` at method `getAllLocales` add the locale entry with the language if known (otherwise use English and annotate with a comment that the language is not set). If multiple languages are supported in that country use the most common language.
 
