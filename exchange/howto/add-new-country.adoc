@@ -36,3 +36,5 @@ The first parameter is the https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
 
 === Step 3: Make a pull request to the Development branch
+
+Please see https://github.com/bisq-network/docs/blob/master/CONTRIBUTING.adoc[CONTRIBUTING.md] for detailed instructions.
