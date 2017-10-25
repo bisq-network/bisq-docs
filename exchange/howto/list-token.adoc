@@ -74,7 +74,7 @@ Copy the below form template, paste it into the PR (next step) and fill out the 
 
 === Step 5. Make a pull request
 
-Make a pull request in Github to the Bisq `Development` branch.
+Make a pull request in GitHub to the Bisq `Development` branch.
 
 
 == Caveats
