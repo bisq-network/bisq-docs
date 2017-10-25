@@ -51,9 +51,13 @@ Add entry for the token to method `createAllSortedCryptoCurrenciesList` in class
 First parameter is ticker, second parameter token name and the optional third parameter is the boolean `isAsset` parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is ordered alphabetic by token name. Add your entry at the correct position.
 
 Examples:
+
 ----
-result.add(new CryptoCurrency("XMR", "Monero"));                  // token with dedicated blockchain
-result.add(new CryptoCurrency("MT", "Mycelium Token", true));     // token issued on other blockchain
+// token with dedicated blockchain
+result.add(new CryptoCurrency("XMR", "Monero"));
+
+// token issued on another blockchain
+result.add(new CryptoCurrency("MT", "Mycelium Token", true));
 ----
 
 === Step 4. Fill out form
