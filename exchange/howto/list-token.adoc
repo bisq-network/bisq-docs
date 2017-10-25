@@ -81,16 +81,16 @@ Make a pull request in GitHub to the Bisq `Development` branch.
 
 === Controversial tokens may be put to a vote
 
-* Any BSQ token holder can request that a decision for adding the token should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc TODO: add link, not available atm).
-* If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: add link, not available atm).
-* If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the token. Not reaching the quorum results in a rejection.
-* For requesting again a token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
-* Any BSQ token holder can also request a voting to remove an already supported token.
+ - Any BSQ token holder can request that a decision for adding the token should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc TODO: add link, not available atm).
+ - If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: add link, not available atm).
+ - If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the token. Not reaching the quorum results in a rejection.
+ - For requesting again a token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+ - Any BSQ token holder can also request a voting to remove an already supported token.
 
 === Inactive tokens will be de-listed
 
-* At each new release we will check if already added tokens have been traded in the past 4 months. If this requirement is not met the token will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
-* Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where demand for the token is documented,...).
+ - At each new release we will check if already added tokens have been traded in the past 4 months. If this requirement is not met the token will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
+ - Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where demand for the token is documented,...).
 
 === Getting an added token into production might take a bit
 
