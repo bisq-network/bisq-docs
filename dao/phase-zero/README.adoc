@@ -552,7 +552,17 @@ Once submitted, your request will be added to the [[voting-spreadsheet]] where s
 
 === put a proposal to a vote
 
-=== vote on proposals (including contributor compensation requests)
+=== vote on compensation requests [[vote]]
+
+ . open the <<voting-spreadsheet>>
+ . request editing permissions (if you have not done so already)
+ . find the row for your BSQ address
+ . on that row, select `-1`, `0`, or `1` in the **vote** column for each compensation request, where:
+   - `-1` means you are voting "no" on this compensation request
+   - `0` means you are abstaining from voting on this compensation request
+   - `1` means you are voting "yes" on the compensation request
+
+NOTE: It is important to vote "no" if you believe a request should not be approved! Keep in mind that compensation requests can always be adjusted and submitted again in the next round of voting.
 
 === fill any vacant bonded contributor role
 
