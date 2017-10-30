@@ -478,7 +478,7 @@ https://github.com/bisq-network/docs[https://github.com/bisq-network/docs]
 
 === BSQ stake and vote tracking spreadsheet
 
-https://docs.google.com/spreadsheets/d/1OOC_gDd4UHfNffs3suU2s2aJfZT_G3w8ZXX-BcfO45s/edit#gid=0[BSQ stake and vote tracking] (Google Sheet, not yet publicly visible)
+https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#[BSQ stake and vote tracking] (Google Sheet)
 
 [[bsq-valuation-spreadsheet]]
 === BSQ valuation spreadsheet
