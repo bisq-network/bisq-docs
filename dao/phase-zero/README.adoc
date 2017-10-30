@@ -462,6 +462,10 @@ The repositories in the https://github.com/bisq-network[bisq-network GitHub orga
 
 https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `bounty` in the bisq-network GitHub organization]
 
+=== compensation repository [[compensation-repo,bisq-network/compensation repository]]
+
+https://github.com/bisq-network/compensation[https://github.com/bisq-network/compensation]
+
 === roles repository and board [[roles-repo,bisq-network/roles repository]]
 
 https://github.com/bisq-network/roles[https://github.com/bisq-network/roles]
@@ -476,7 +480,7 @@ https://github.com/bisq-network/docs[https://github.com/bisq-network/docs]
 
 == Spreadsheets
 
-=== BSQ stake and vote tracking spreadsheet
+=== BSQ stake and vote tracking spreadsheet [[voting-spreadsheet]]
 
 https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#[BSQ stake and vote tracking] (Google Sheet)
 
@@ -531,12 +535,16 @@ Pull requests must be well-formed. Follow the guidelines in https://github.com/b
 
 === submit a compensation request
 
-Create an issue in the bisq-network/proposals repository, including:
+To submit a compensation request, create a new issue in the <<compensation-repo>>, and include the following information in the issue description:
 
  - The amount you are requesting in BSQ
  - The address that BSQ should be paid to
- - Links to issues and pull requests that you want to be compensated for
- - Commentary on the work that helps explain it, provide context for it, or communicate the value of it.
+ - Links to issues, pull requests and any other work you want to be compensated for
+ - Comments that help explain what the work is, why it is valuable, etc.
+
+See https://github.com/bisq-network/compensation/issues/1 for an example compensation request.
+
+Once submitted, your request will be added to the [[voting-spreadsheet]] where stakeholders can <<vote,vote>> on it.
 
 === submit a proposal
 
