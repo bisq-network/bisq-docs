@@ -295,7 +295,7 @@ _Status:_ *work has been started* in the <<roles-repo>>, where each role has bee
 
 === Establish and refine the fair market value of the BSQ token
 
-Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing a term from traditional valuation processes. This work is one of the first and most important bounty issues, as it is necessary to have an initial estimate in hand by the first compensation and voting round at the end of October 2017. Beyond our own basic models, we are in communication with a number of cryptoasset analysts to help with this estimation work. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
+Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing a term from traditional valuation processes. This work is one of the first and most important bounty issues, as it is necessary to have an initial estimate in hand by the first compensation and voting round at the beginning of November 2017. Beyond our own basic models, we are in communication with a number of cryptoasset analysts to help with this estimation work. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
 
 _Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further work will continue pending publication of this document and follow-up with analysts.
 
@@ -303,11 +303,11 @@ _Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further 
 
 _Status:_ *in progress.* As of October 2017, all contributions should be captured in one or more compensation requests. See <<contributor-use-cases>> for details.
 
-=== Vote on the last 3 days of each month
+=== Vote on the first 3 days of each month
 
-On the last three days of each month, we vote on contribution requests and other proposals that have been submitted throughout the month.
+On the first three days of each month, stakeholders vote on contribution requests and other proposals that have been submitted throughout the previous month.
 
-_Status:_ *pending.* The first voting period will begin on October 29th, 2017.
+_Status:_ *pending.* The first voting period will begin on November 6th, 2017 (this is an exception from the usual "first 3 days" rule).
 
 === Rebase and re-distribute BSQ on the first day of each month
 
