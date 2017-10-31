@@ -345,9 +345,13 @@ As a result, *BSQ utility is limited to _earning_, _voting_ and _bonding_ during
 
 At the beginning of Phase Zero, we use simplistic, high-trust systems such as spreadsheets to track BSQ stake, voting and bonding, and we issue BSQ on Bitcoin testnet vs mainnet. These are pragmatic decisions designed to allow our small team to move quickly and iterate toward trust-minimized, production-ready solutions. Note that the on-chain systems that will replace these spreadsheets have already been designed, and to a certain degree, already implemented. We will migrate to them as they become ready; in the meantime, spreadsheets are easy for everyone to understand and easy to change as we learn through practice what it really means to operate the Bisq DAO.
 
-=== Submit compensation requests as GitHub issues in the proposals repository
+See <<how-to-vote>> for instructions.
 
-Eventually, compensation requests will be modeled around Bitcoin transactions. As Phase Zero begins, however, they are modeled as GitHub issues in the <<proposals-repo>>.
+=== Submit compensation requests as GitHub issues
+
+Eventually, compensation requests will be modeled around Bitcoin transactions. As Phase Zero begins, however, they are modeled as GitHub issues in the <<compensation-repo>>.
+
+See <<how-to-request-compensation>> for instructions.
 
 == Principles [[principles,principles]]
 
@@ -533,7 +537,7 @@ Once you have found a bounty issue you would like to work on, it's a good idea t
 
 Pull requests must be well-formed. Follow the guidelines in https://github.com/bisq-network/docs/blob/master/CONTRIBUTING.adoc[CONTRIBUTING.md].
 
-=== submit a compensation request
+=== submit a compensation request [[how-to-request-compensation]]
 
 To submit a compensation request, create a new issue in the <<compensation-repo>>, and include the following information in the issue description:
 
@@ -542,9 +546,9 @@ To submit a compensation request, create a new issue in the <<compensation-repo>
  - Links to issues, pull requests and any other work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
 
-See https://github.com/bisq-network/compensation/issues/1 for an example compensation request.
+See https://github.com/bisq-network/compensation/issues/2 for an example compensation request.
 
-Once submitted, your request will be added to the [[voting-spreadsheet]] where stakeholders can <<vote,vote>> on it.
+Once submitted, your request will be added to the <<voting-spreadsheet>> where stakeholders can <<how-to-vote,vote>> on it.
 
 === submit a proposal
 
@@ -552,7 +556,7 @@ Once submitted, your request will be added to the [[voting-spreadsheet]] where s
 
 === put a proposal to a vote
 
-=== vote on compensation requests [[vote]]
+=== vote on compensation requests [[how-to-vote]]
 
  . open the <<voting-spreadsheet>>
  . request editing permissions (if you have not done so already)
