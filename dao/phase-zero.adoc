@@ -313,7 +313,7 @@ _Status:_ *pending.* The first voting period will begin on November 6th, 2017 (t
 
 After the monthly voting period is complete and new BSQ is issued, the total amount of BSQ in circulation grows by the amount of that issuance. On the first of every month, we _rebase_ BSQ stake back down to 2.5 MM BSQ, preserving the proportion of stake allotted to each contributor, and issue a new testnet genesis distribution reflecting the stake change. This is done for two reasons: (1) as an additional safeguard to prohibit BSQ trading during Phase Zero, and (2) to accurately reflect the distribution of the 2.5MM BSQ that will be issued on BSQ mainnet upon completion of Phase Zero.
 
-_Status:_ *pending.* The first rebasing and re-distribution will occur on November 1st, 2017.
+_Status:_ *pending.* The first rebasing and re-distribution will occur on November 9th, 2017 (this is an exception from the usual "1st of the month rule").
 
 === Distribute responsibility from founders to bonded contributor roles [[distribute-responsibility]]
 
