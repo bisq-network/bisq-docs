@@ -301,13 +301,13 @@ _Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further 
 
 === Submit compensation requests and other proposals throughout each month
 
-_Status:_ *in progress.* As of October 2017, all contributions should be captured in one or more compensation requests. See <<contributor-use-cases>> for details.
+_Status:_ *ongoing.* As of October 2017, all contributions should be captured in one or more compensation requests. See <<contributor-use-cases>> for details.
 
 === Vote on the first 3 days of each month
 
 On the first three days of each month, stakeholders vote on contribution requests and other proposals that have been submitted throughout the previous month.
 
-_Status:_ *pending.* The first voting period will begin on November 6th, 2017 (this is an exception from the usual "first 3 days" rule).
+_Status:_ *ongoing.* The first monthly voting round https://github.com/bisq-network/dao/issues/8[was conducted] on November 6th–9th, 2017 (an exception from the usual "first 3 days" rule). The next will occur on December 1st–3rd.
 
 === Rebase and re-distribute BSQ on the first day of each month
 
