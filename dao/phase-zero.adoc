@@ -285,7 +285,7 @@ Initially, we post these bounties with a set price in BSQ. As quickly thereafter
 
 Completed work for a bounty is, whenever appropriate, submitted as a GitHub pull request. We follow a C4-based process in which each repository in the bisq-network GitHub organization has one or more designated _<<maintainer,maintainers>>_ responsible for merging or rejecting pull requests.footnoteref:[C4,Unprotocols, "Collective Code Construction Contract (C4)", https://rfc.unprotocols.org/spec:1/C4, June 2016] Merged pull requests do not imply or guarantee in any way that the contributor will be compensated in BSQ for their work; compensation requests are managed separately from pull requests.
 
-_Status:_ *waiting* for completion of this document to begin work.
+_Status:_ *pending.* See https://github.com/bisq-network/dao/issues/11 for details.
 
 === Define bonded contributor roles
 
@@ -295,9 +295,11 @@ _Status:_ *work has been started* in the <<roles-repo>>, where each role has bee
 
 === Establish and refine the fair market value of the BSQ token
 
-Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing a term from traditional valuation processes. This work is one of the first and most important bounty issues, as it is necessary to have an initial estimate in hand by the first compensation and voting round at the beginning of November 2017. Beyond our own basic models, we are in communication with a number of cryptoasset analysts to help with this estimation work. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
+Given that BSQ trading is prohibited during Phase Zero, it is not possible for normal market forces to discover a price for the BSQ token. Still, an estimated price for BSQ is required in order to compensate contributors, and we call this estimated price the _fair market value_ of BSQ, borrowing a term from traditional valuation processes.
 
-_Status:_ *work has been started* in the <<bsq-valuation-spreadsheet>>; further work will continue pending publication of this document and follow-up with analysts.
+Presently, we are working with a valuation of 1 BSQ == 1 USD. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
+
+_Status:_ *work has begun* in the <<bsq-valuation-spreadsheet>> but is *on hold* for now. See https://github.com/bisq-network/dao/issues/12 for details.
 
 === Submit compensation requests and other proposals throughout each month
 
