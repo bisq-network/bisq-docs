@@ -319,7 +319,7 @@ _Status:_ *in progress.* The first https://github.com/bisq-network/dao/issues/9[
 
 Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already "have all the keys" and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time.
 
-_Status:_ *in progress.* Initial bonding levels will be set, and founders will be officially bonded into all roles by November 30th, 2017.
+_Status:_ *in progress.* Initial bonding levels https://github.com/bisq-network/dao/issues/10[will be set], and founders will be officially bonded into all roles by November 30th, 2017.
 
 === Grow exchange volume organically
 
