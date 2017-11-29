@@ -11,28 +11,33 @@ Bisq seed nodes are used for the connection to the network at the startup of a n
 
 The second task could (and should in future) be done also by any other nodes but because seed nodes are running on servers they deliver a higher level of reliability and better connectivity than an normal network node.
 
+The user connects to one of the seed nodes randomly and if a node fails it tries the next in random node in the list.
+If the first seed node is not available it decreases usability for the user because startup takes longer.
+But more critical is that if a node has bad connectivity it might miss messages like mailbox messages. That would be very bad because if a trader connects to that node he will not see the message the peer or arbitrator has sent him when he was offline. Usually we never had issues with that but it could become a cause for disputes or bug reports if a node would be badly connected.
+
 
 == Seed node operators
 
 The seed node addresses (onion address) are hard coded in the application but can be overruled if the user adds a seed node address as program argument. Any user can run therefor their own seed node and connect to it.
 
-Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node need to support at least 30 connections. At the moment we only have a simple script checking if the node is available and sending out an email to 2 contributors if it fails. In future we want to have a monitor node which checks the quality of service of all the seed nodes. Currently we trust that all operators do their best to provide a reliable service without defining exactly the metrics for the quality of service.
+Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node need to support at least 30 connections.
 
 Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
 
 A default seed node can be blocked by a network message in case the seed node does not fulfill the required quality.
 
-_Side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute._
+_Side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute. If you have sufficient RAM you can increase that limit with --maxMemory=1024 to 1024 MB or more, default value for maxMemory is 500 MB._
 
 
 === Duties of the seed node operator
 
 The operator of a seed node need to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
+Operators need to subscribe to the  Bisq Slack channel 'seednode' and act if their node reports errors.
 
 
 == System requirements for hosting machine
 
-. 2 GB of RAM
+. Min. 2 GB of RAM
 . 10 GB disk space (SSD)
 . 2 TB network traffic
 . UPS (uninterruptible power supply)
@@ -91,8 +96,7 @@ Once all the renaming is done you can finally start the seed node and it will be
 
 == Monitoring
 
-There is a link:https://github.com/ManfredKarrer/exchange/blob/master/doc/seed-node-daemon.md[script for monitoring seed node availability].
-This can and should be used by seed node operators to get notified if there are issues. Anyone is invited to improve that. A monitoring application for delivering more fine grained availability data is planned as well.
+Seed nodes are monitored in the Bisq Slack channel 'monitoring' and errors are sent to the 'seednode' channel. Operators need to subscribe to the 'seednode' channel and act if their node reports errors.
 
 
 == Bond
@@ -102,4 +106,5 @@ We define a Bond of 2000 BSQ for the privilege to run a seed node. In case of se
 
 == Payment
 
-For the service the contributor provides by running and maintaining a seed node as well as a compensation for the server costs we define a payment of 200 BSQ per month.
+For the service the contributor provides by running and maintaining a seed node as well as a compensation for the server costs we define a payment of 50 BSQ per month.
+For the setup we define a payment of 200 BSQ.

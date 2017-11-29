@@ -34,6 +34,11 @@ If the trader is using a percentage based price in the offer the actual trade pr
 The price relay is a simple http server and has to be set up to be accessible as Tor hidden service. Additionally if the operator wants he can open it to clear net (at least one clear net node is useful for supporting the regtest-without-tor dev setup for receiving market prices). We don't recommend to advertise the node address to not get traffic from non-Bisq users. There is no authentication scheme for Bisq users which make the service vulnerable for abuse of DDoS attacks. An authentication scheme for a P2P/open source environment is a challenge on its own but considered important to get explored further.
 
 
+The user connects to one of the nodes randomly and if a node fails it tries the next in random node in the list.
+If the first node is not available it decreases usability for the user because price display at startup takes longer.
+But more critical is that if both nodes are offline percentage based offers cannot be used. Similar if a price node has connection issues with the providers the prices are outdated and likely invalid for other peers when the user engage in a trade.
+
+
 == Price relay node operators
 
 The price relay node addresses (onion address) are hard coded in the application but can be overruled if the user adds a price relay node address as program argument. Any user can run therefor their own price relay node and connect to it. Though they require an API key for Bitcoin Average (cost are 12.- or 35.- USD/month depending on plan).
@@ -48,6 +53,7 @@ A default price relay node can be blocked by a network message in case the node 
 === Duties of the price relay node operator
 
 The operator of a price relay node need to be responsive in case of price relay node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). Requirements are rather low, we recommend 1 GB of RAM for one price relay node. He should check the error logs occasionally. He has to have a professional level of operational security to operate the node.
+Operators need to subscribe to the Bisq Slack channel 'pricenode' and act if their node reports errors.
 
 
 == System requirements for hosting machine
@@ -146,6 +152,11 @@ http://YOUR_ONION_ADDRESS.onion/getAllMarketPrices
 Optional: If you support clear net access, test it with your IP/domain.
 
 
+== Monitoring
+
+Seed nodes are monitored in the Bisq Slack channel 'monitoring' and errors are sent to the 'pricenode' channel. Operators need to subscribe to the 'pricenode' channel and act if their node reports errors.
+
+
 == Bond
 
 We define a Bond of 2000 BSQ for the privilege to run a price relay node. In case of severe failures of service (malicious or carelessness) the bond would be confiscated (burned).
@@ -153,7 +164,5 @@ We define a Bond of 2000 BSQ for the privilege to run a price relay node. In cas
 
 == Payment
 
-For the service the contributor provides by running and maintaining a price relay node as well as a compensation for the server and API key costs we define a payment of 200 BSQ per month.
-
-
-TODO: discuss bond and payment
+For the service the contributor provides by running and maintaining a price relay node as well as a compensation for the server costs we define a payment of 50 BSQ per month.
+For the setup we define a payment of 200 BSQ.
