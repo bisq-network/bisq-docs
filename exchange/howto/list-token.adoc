@@ -9,7 +9,7 @@ Please note that Bisq is not implementing technically any token infrastructure (
 
 Already added token which have been traded at least once or which have provided a PR for the address validation will be kept. All other tokens will be removed with the 0.6 release.
 
-This document replaces the process described in the link:https://forum.bisq.io/t/how-to-add-your-favorite-Altcoin/46[Bisq forum].
+This document replaces the process described in the link:https://bisq.community/t/how-to-add-your-favorite-Altcoin/46[Bisq forum].
 
 
 == Prerequisites

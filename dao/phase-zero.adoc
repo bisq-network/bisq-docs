@@ -30,7 +30,7 @@ Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months
 
  - *_<<Appendix-C>>_* calls out the actions each Bisq DAO user role can perform during Phase Zero.
 
-*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://forum.bisq.io[Bisq Forum], chat with us in <<slack>>, or email the authors directly.
+*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://bisq.community[Bisq Forum], chat with us in <<slack>>, or email the authors directly.
 
 *Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the <<docs-repo>> to be notified of changes or subscribe to this document's https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
 
