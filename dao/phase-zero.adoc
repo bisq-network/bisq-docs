@@ -431,7 +431,7 @@ A _founder_ is one of the individuals responsible for establishing the Bisq proj
 
 See <<founder-use-cases>>.
 
-== Bonded contributor roles
+== Bonded contributor roles [[bonded-contributor-roles]]
 
 A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such a password or private key to perform, and more generally include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
 
@@ -548,12 +548,12 @@ To submit a compensation request, create a new issue in the <<compensation-repo>
  - Links to issues, pull requests and any other work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
 
-See https://github.com/bisq-network/compensation/issues/2 for an example compensation request.
+See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2] for an example compensation request.
 
-https://github.com/bisq-network/roles/blob/master/README.adoc[Prerequisites for bonded roles:] 
+To submit a compensation request for a <<bonded-contributor-roles,bonded contributor role>>, the following prerequisites also apply:
 
- - Complete and up-to-date https://github.com/bisq-network/roles[role specification]
- - Comments in https://github.com/bisq-network/roles/issues[role’s issue] recapturing the previous month by sharing any relevant data and statistics
+ - The role must have a complete and up to date https://github.com/bisq-network/roles[role specification] document
+ - The reporting requirements (if any) for the role must be fulfilled. Usually reporting happens in the form of a comment on the https://github.com/bisq-network/roles/issues[role's dedicated GitHub issue]. See your role specification for details.
 
 Once submitted, your request will be added to the <<voting-spreadsheet>> where stakeholders can <<how-to-vote,vote>> on it.
 
