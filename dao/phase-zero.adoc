@@ -14,7 +14,7 @@ October 19, 2017
 
 = Introduction
 
-Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization_,footnote:[Wikipedia, "Decentralized autonomous organization", https://en.wikipedia.org/wiki/Decentralized_autonomous_organization, October 2017] to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
+Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization_,footnote:[Wikipedia, "Decentralized autonomous organization", https://en.wikipedia.org/wiki/Decentralized_autonomous_organization, October 2017] to support that growth by decentralizing the funding and governance aspects of the project. This document is written to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
 
 *Audience.* This document is intended primarily for current and future Bisq contributors, but has been written to be understood by anyone familiar with the Bitcoin ecosystem. If you are interested in working to improve Bisq, or simply interested in where the project is going, read on.
 
