@@ -311,12 +311,6 @@ On the first three days of each month, stakeholders vote on contribution request
 
 _Status:_ *ongoing.*
 
-=== Rebase and re-distribute BSQ on the first day of each month
-
-After the monthly voting period is complete and new BSQ is issued, the total amount of BSQ in circulation grows by the amount of that issuance. On the first of every month, we _rebase_ BSQ stake back down to 2.5 MM BSQ, preserving the proportion of stake allotted to each contributor, and issue a new testnet genesis distribution reflecting the stake change. This is done for two reasons: (1) as an additional safeguard to prohibit BSQ trading during Phase Zero, and (2) to accurately reflect the distribution of the 2.5MM BSQ that will be issued on BSQ mainnet upon completion of Phase Zero.
-
-_Status:_ *in progress.* The first https://github.com/bisq-network/dao/issues/9[rebasing and re-distribution] will occur on or around November 9th, 2017 (this is an exception from the usual "1st of the month rule").
-
 === Distribute responsibility from founders to bonded contributor roles [[distribute-responsibility]]
 
 Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already "have all the keys" and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time.
