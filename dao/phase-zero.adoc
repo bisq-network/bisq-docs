@@ -273,7 +273,7 @@ _Status:_ *complete.*
 
 === Define and communicate the Phase Zero plan
 
-In addition to writing and publishing this document, we have also adapted its content into a 50-minute talk delivered at the Hackers Congress conference in Prague on October 8th, 2017 (https://docs.google.com/presentation/d/1G5_6Kju2OoItZ5lD0jnskqLdOV2dAJpdB6WOjmq9hRk/edit#slide=id.p[slides], full video online soon). We also recorded a https://www.youtube.com/watch?v=AvXWToT-dcQ[15-minute interview] with World Crypto Network at the same event, recapping that talk. We will continue to tweet, use the Bisq newsletter and blog, give podcast interviews, and engage in other outreach activities to ensure that potential contributors are aware of the Bisq DAO and Phase Zero plan.
+In addition to writing and publishing this document, we have also been engaging in outreach via talks, podcasts and other media to ensure that potential contributors are aware of the Bisq DAO and Phase Zero plan. See this [Twitter thread](https://twitter.com/bisq_network/status/946723541298360320) for a list of these resources.
 
 _Status:_ *in progress.*
 
