@@ -309,7 +309,7 @@ _Status:_ *ongoing.* As of October 2017, all contributions should be captured in
 
 On the first three days of each month, stakeholders vote on contribution requests and other proposals that have been submitted throughout the previous month.
 
-_Status:_ *ongoing.* The first monthly voting round https://github.com/bisq-network/dao/issues/8[was conducted] on November 6th–9th, 2017 (an exception from the usual "first 3 days" rule). The next will occur on December 1st–3rd.
+_Status:_ *ongoing.*
 
 === Rebase and re-distribute BSQ on the first day of each month
 
