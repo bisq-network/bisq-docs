@@ -299,7 +299,7 @@ Given that BSQ trading is prohibited during Phase Zero, it is not possible for n
 
 Presently, we are working with a valuation of 1 BSQ == 1 USD. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
 
-_Status:_ *work has begun* in the <<bsq-valuation-spreadsheet>> but is *on hold* for now. See https://github.com/bisq-network/dao/issues/12 for details.
+_Status:_ *ongoing*.
 
 === Submit compensation requests and other proposals throughout each month
 
@@ -483,11 +483,6 @@ https://github.com/bisq-network/docs[https://github.com/bisq-network/docs]
 === BSQ stake and vote tracking spreadsheet [[voting-spreadsheet]]
 
 https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#[BSQ stake and vote tracking] (Google Sheet)
-
-[[bsq-valuation-spreadsheet]]
-=== BSQ valuation spreadsheet
-
-https://docs.google.com/spreadsheets/d/1W_Y44gESVsO5zDihWJjYzXkt9SAIhp57wAZrxX2VVMI/edit#gid=64607616[BSQ valuation] (Google Sheet, not yet publicly visible)
 
 == Other
 
