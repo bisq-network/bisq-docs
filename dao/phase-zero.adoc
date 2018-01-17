@@ -458,9 +458,9 @@ There are more than 30 bonded contributor roles in the Bisq project. See the <<r
 
 The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only contributors who have write access to these repositories are their respective <<maintainer,maintainers>>. Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the C4 process.footnoteref:[C4]
 
-=== issues labeled 'bounty' [[bounty-issues]]
+=== issues labeled '$BSQ bounty' [[bounty-issues]]
 
-https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `bounty` in the bisq-network GitHub organization]
+https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `$BSQ bounty` in the bisq-network GitHub organization]
 
 === compensation repository [[compensation-repo,bisq-network/compensation repository]]
 
@@ -504,9 +504,9 @@ NOTE: This section is a work in progress; use cases have been called out so far 
 
 === search for open bounties
 
-The following GitHub Issues search query will display all open issues in the bisq-network organization with the label `bounty`:
+The following GitHub Issues search query will display all open issues in the bisq-network organization with the label `$BSQ bounty`:
 
-https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[is:open org:bisq-network label:bounty]
+https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22%24BSQ+bounty%22+[is:open org:bisq-network label:'$BSQ bounty']
 
 Contributors can browse this list to find open bounties they are interested in working on. Note that the list is currently empty. See the <<define-bounty-issues>> section above.
 
@@ -590,9 +590,9 @@ NOTE: It is important to vote "no" if you believe a request should not be approv
 
 === post bounties
 
-In practice, "posting a bounty" simply means adding the `bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
+In practice, "posting a bounty" simply means adding the `$BSQ bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
 
-The `bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
+The `$BSQ bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
 
 A well-defined bounty is one that clearly states a problem to be solved. If the desired solution is already known, the bounty should provide as much detail as necessary about that solution. If the solution is not already known, the maintainer may want to formulate the bounty as a request for a _proposal_ that can be reviewed and discussed, and then a subsequent bounty can address actually implementing that proposed solution.
 
