@@ -39,7 +39,7 @@ The arbitrator need to be able to see the transaction in the block explorer by u
 
 === Step 1. Add address validation code:
 
-Add code for address validation to method `validate` in class `io.bisq.gui.util.validationAltCoinAddressValidator`.
+Add code for address validation to method `validate` in class `io.bisq.gui.util.validation.AltCoinAddressValidator`.
 
 === Step 2. Add unit test for address validation:
 
