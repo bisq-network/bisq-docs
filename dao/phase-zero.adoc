@@ -488,7 +488,7 @@ https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te
 
 === Slack
 
-Feel free to discuss the Bisq DAO, BSQ token and Phase Zero plan in the `#dao` channel of the https://bisq-slack.herokuapp.com/[Bisq Slack workspace].
+Feel free to discuss the Bisq DAO, BSQ token and Phase Zero plan in the `#dao` channel of the https://bisq.network/slack-invite[Bisq Slack workspace].
 
 === BSQ transaction explorer
 
