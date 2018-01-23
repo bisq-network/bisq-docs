@@ -74,7 +74,7 @@ Copy the below form template, paste it into the PR (next step) and fill out the 
 
 === Step 5. Make a pull request
 
-Make a pull request in GitHub to the Bisq `Development` branch.
+Submit a pull request with your changes to the bisq-network/exchange repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-token`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
 
 
 == Caveats
