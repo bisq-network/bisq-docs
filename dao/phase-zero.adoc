@@ -377,6 +377,7 @@ Remember: _every contributor_ is free to work on what they want, including maint
 
 The following criteria must be fulfilled in order to exit Phase Zero:
 
+ - Key DAO features have been implemented, including compensation requests, voting and bonding (see https://github.com/bisq-network/exchange/issues/1264[bisq-network/exchange#1264])
  - All bonded contributor roles are filled
  - No one contributor plays more than three bonded roles
  - [TBD] Specific volume growth target or trend
