@@ -56,7 +56,7 @@ The Bisq brand must not be used in a public mainnet test phase. Re-brand the Bis
 
 === Step 5. Make a pull request
 
-Make a pull request in GitHub to the Bisq `Development` branch.
+Make a pull request in GitHub to the Bisq `master` branch. Submit your pull request from a topic branch in your fork, not from your fork's `master` branch.
 
 If the PR gets merged the seed node operators and arbitrators will be assigned according the Bisq DAO process (requires lock up BSQ tokens as bond).
 

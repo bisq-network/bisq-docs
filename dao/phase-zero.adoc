@@ -14,7 +14,7 @@ October 19, 2017
 
 = Introduction
 
-Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization_,footnote:[Wikipedia, "Decentralized autonomous organization", https://en.wikipedia.org/wiki/Decentralized_autonomous_organization, October 2017] to support that growth by decentralizing the funding and governance aspects of the project. This document is written to to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
+Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months now. Exchange volumes have grown along the way, and now is the time for Bisq's community of contributors to grow along with them. We have designed the Bisq DAO, a _decentralized autonomous organization_,footnote:[Wikipedia, "Decentralized autonomous organization", https://en.wikipedia.org/wiki/Decentralized_autonomous_organization, October 2017] to support that growth by decentralizing the funding and governance aspects of the project. This document is written to provide a clear understanding of both Bisq and the Bisq DAO, and then to lay out a specific plan for bootstrapping the Bisq DAO into operation.
 
 *Audience.* This document is intended primarily for current and future Bisq contributors, but has been written to be understood by anyone familiar with the Bitcoin ecosystem. If you are interested in working to improve Bisq, or simply interested in where the project is going, read on.
 
@@ -30,7 +30,7 @@ Bisq's peer-to-peer bitcoin exchange network has been in operation for 18 months
 
  - *_<<Appendix-C>>_* calls out the actions each Bisq DAO user role can perform during Phase Zero.
 
-*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://forum.bisq.io[Bisq Forum], chat with us in <<slack>>, or email the authors directly.
+*Feedback.* Please ask questions and provide feedback on this document via issues and pull requests in the <<docs-repo>>. Alternatively, post questions in the https://bisq.community[Bisq Forum], chat with us in <<slack>>, or email the authors directly.
 
 *Updates.* This document will remain https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc[open to revision] throughout Phase Zero. Watch the <<docs-repo>> to be notified of changes or subscribe to this document's https://github.com/bisq-network/docs/commits/master/dao/phase-zero.adoc.atom[Atom feed].
 
@@ -273,7 +273,7 @@ _Status:_ *complete.*
 
 === Define and communicate the Phase Zero plan
 
-In addition to writing and publishing this document, we have also adapted its content into a 50-minute talk delivered at the Hackers Congress conference in Prague on October 8th, 2017 (https://docs.google.com/presentation/d/1G5_6Kju2OoItZ5lD0jnskqLdOV2dAJpdB6WOjmq9hRk/edit#slide=id.p[slides], full video online soon). We also recorded a https://www.youtube.com/watch?v=AvXWToT-dcQ[15-minute interview] with World Crypto Network at the same event, recapping that talk. We will continue to tweet, use the Bisq newsletter and blog, give podcast interviews, and engage in other outreach activities to ensure that potential contributors are aware of the Bisq DAO and Phase Zero plan.
+In addition to writing and publishing this document, we have also been engaging in outreach via talks, podcasts and other media to ensure that potential contributors are aware of the Bisq DAO and Phase Zero plan. See this [Twitter thread](https://twitter.com/bisq_network/status/946723541298360320) for a list of these resources.
 
 _Status:_ *in progress.*
 
@@ -299,7 +299,7 @@ Given that BSQ trading is prohibited during Phase Zero, it is not possible for n
 
 Presently, we are working with a valuation of 1 BSQ == 1 USD. As Phase Zero progresses, we expect this estimate and the model behind it to evolve, with the goal of arriving at a maximally credible fair market value for BSQ by the completion of Phase Zero. As mentioned in the risk management section above, this process should significantly mitigate _valuation risk_ when BSQ goes live on Bitcoin mainnet.
 
-_Status:_ *work has begun* in the <<bsq-valuation-spreadsheet>> but is *on hold* for now. See https://github.com/bisq-network/dao/issues/12 for details.
+_Status:_ *ongoing*.
 
 === Submit compensation requests and other proposals throughout each month
 
@@ -309,19 +309,13 @@ _Status:_ *ongoing.* As of October 2017, all contributions should be captured in
 
 On the first three days of each month, stakeholders vote on contribution requests and other proposals that have been submitted throughout the previous month.
 
-_Status:_ *ongoing.* The first monthly voting round https://github.com/bisq-network/dao/issues/8[was conducted] on November 6th–9th, 2017 (an exception from the usual "first 3 days" rule). The next will occur on December 1st–3rd.
-
-=== Rebase and re-distribute BSQ on the first day of each month
-
-After the monthly voting period is complete and new BSQ is issued, the total amount of BSQ in circulation grows by the amount of that issuance. On the first of every month, we _rebase_ BSQ stake back down to 2.5 MM BSQ, preserving the proportion of stake allotted to each contributor, and issue a new testnet genesis distribution reflecting the stake change. This is done for two reasons: (1) as an additional safeguard to prohibit BSQ trading during Phase Zero, and (2) to accurately reflect the distribution of the 2.5MM BSQ that will be issued on BSQ mainnet upon completion of Phase Zero.
-
-_Status:_ *in progress.* The first https://github.com/bisq-network/dao/issues/9[rebasing and re-distribution] will occur on or around November 9th, 2017 (this is an exception from the usual "1st of the month rule").
+_Status:_ *ongoing.*
 
 === Distribute responsibility from founders to bonded contributor roles [[distribute-responsibility]]
 
 Initially, founders use their BSQ stake to assume all bonded contributor roles, reflecting the fact that they do already "have all the keys" and do already carry out most of these duties. As contributors earn sufficient BSQ for bonding, they can approach founders and request to take these roles over. Contributors have a twofold incentive to do so: (1) the BSQ they earn by carrying out the duties of the role, and (2) the interest they earn on their BSQ bond over time.
 
-_Status:_ *in progress.* Initial bonding levels https://github.com/bisq-network/dao/issues/10[will be set], and founders will be officially bonded into all roles by November 30th, 2017.
+_Status:_ *in progress.* Initial bonding levels https://github.com/bisq-network/dao/issues/10[will be set], and founders and other contributors will be officially bonded into all roles by February 1st, 2017.
 
 === Grow exchange volume organically
 
@@ -383,6 +377,7 @@ Remember: _every contributor_ is free to work on what they want, including maint
 
 The following criteria must be fulfilled in order to exit Phase Zero:
 
+ - Key DAO features have been implemented, including compensation requests, voting and bonding (see https://github.com/bisq-network/exchange/issues/1264[bisq-network/exchange#1264])
  - All bonded contributor roles are filled
  - No one contributor plays more than three bonded roles
  - [TBD] Specific volume growth target or trend
@@ -431,7 +426,7 @@ A _founder_ is one of the individuals responsible for establishing the Bisq proj
 
 See <<founder-use-cases>>.
 
-== Bonded contributor roles
+== Bonded contributor roles [[bonded-contributor-roles]]
 
 A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such a password or private key to perform, and more generally include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
 
@@ -464,9 +459,9 @@ There are more than 30 bonded contributor roles in the Bisq project. See the <<r
 
 The repositories in the https://github.com/bisq-network[bisq-network GitHub organization] are where changes to Bisq software and documentation are integrated and staged for release. The only contributors who have write access to these repositories are their respective <<maintainer,maintainers>>. Work on bug fixes, features and other improvements is done in contributors' personal forks of these repositories and changes are then submitted via pull request. Our approach to collaboration is based closely on the C4 process.footnoteref:[C4]
 
-=== issues labeled 'bounty' [[bounty-issues]]
+=== issues labeled '$BSQ bounty' [[bounty-issues]]
 
-https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `bounty` in the bisq-network GitHub organization]
+https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[issues labeled `$BSQ bounty` in the bisq-network GitHub organization]
 
 === compensation repository [[compensation-repo,bisq-network/compensation repository]]
 
@@ -490,16 +485,11 @@ https://github.com/bisq-network/docs[https://github.com/bisq-network/docs]
 
 https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#[BSQ stake and vote tracking] (Google Sheet)
 
-[[bsq-valuation-spreadsheet]]
-=== BSQ valuation spreadsheet
-
-https://docs.google.com/spreadsheets/d/1W_Y44gESVsO5zDihWJjYzXkt9SAIhp57wAZrxX2VVMI/edit#gid=64607616[BSQ valuation] (Google Sheet, not yet publicly visible)
-
 == Other
 
 === Slack
 
-Feel free to discuss the Bisq DAO, BSQ token and Phase Zero plan in the `#dao` channel of the https://bisq-slack.herokuapp.com/[Bisq Slack workspace].
+Feel free to discuss the Bisq DAO, BSQ token and Phase Zero plan in the `#dao` channel of the https://bisq.network/slack-invite[Bisq Slack workspace].
 
 === BSQ transaction explorer
 
@@ -515,9 +505,9 @@ NOTE: This section is a work in progress; use cases have been called out so far 
 
 === search for open bounties
 
-The following GitHub Issues search query will display all open issues in the bisq-network organization with the label `bounty`:
+The following GitHub Issues search query will display all open issues in the bisq-network organization with the label `$BSQ bounty`:
 
-https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3Abounty[is:open org:bisq-network label:bounty]
+https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22%24BSQ+bounty%22+[is:open org:bisq-network label:'$BSQ bounty']
 
 Contributors can browse this list to find open bounties they are interested in working on. Note that the list is currently empty. See the <<define-bounty-issues>> section above.
 
@@ -548,7 +538,12 @@ To submit a compensation request, create a new issue in the <<compensation-repo>
  - Links to issues, pull requests and any other work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
 
-See https://github.com/bisq-network/compensation/issues/2 for an example compensation request.
+See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2] for an example compensation request.
+
+To submit a compensation request for a <<bonded-contributor-roles,bonded contributor role>>, the following prerequisites also apply:
+
+ - The role must have a complete and up to date https://github.com/bisq-network/roles[role specification] document
+ - The reporting requirements (if any) for the role must be fulfilled. Usually reporting happens in the form of a comment on the https://github.com/bisq-network/roles/issues[role's dedicated GitHub issue]. See your role specification for details.
 
 Once submitted, your request will be added to the <<voting-spreadsheet>> where stakeholders can <<how-to-vote,vote>> on it.
 
@@ -596,9 +591,9 @@ NOTE: It is important to vote "no" if you believe a request should not be approv
 
 === post bounties
 
-In practice, "posting a bounty" simply means adding the `bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
+In practice, "posting a bounty" simply means adding the `$BSQ bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
 
-The `bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
+The `$BSQ bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
 
 A well-defined bounty is one that clearly states a problem to be solved. If the desired solution is already known, the bounty should provide as much detail as necessary about that solution. If the solution is not already known, the maintainer may want to formulate the bounty as a request for a _proposal_ that can be reviewed and discussed, and then a subsequent bounty can address actually implementing that proposed solution.
 
