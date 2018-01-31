@@ -43,12 +43,12 @@ Add code for address validation to method `validate` in class `io.bisq.gui.util.
 
 === Step 2. Add unit test for address validation:
 
-Add unit tests with different addresses of the token to class `io.bisq.gui.util.AltCoinAddressValidatorTest` and be sure the tests don't fail.
+Add unit tests with different addresses of the token to class `io.bisq.gui.util.AltCoinAddressValidatorTest` and run the tests to see if they succeed.
 
 === Step 3. Add entry to currency list:
 
 Add entry for the token to method `createAllSortedCryptoCurrenciesList` in class `io.bisq.common.locale.CurrencyUtil`.
-First parameter is ticker, second parameter token name and the optional third parameter is the boolean `isAsset` parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is ordered alphabetic by token name. Add your entry at the correct position.
+First parameter is ticker, second parameter token name and the optional third parameter is the boolean `isAsset` parameter. Set that to true in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens,...). The list is *ordered alphabetic by token name*. Add your entry at the correct position!
 
 Examples:
 
@@ -60,7 +60,17 @@ result.add(new CryptoCurrency("XMR", "Monero"));
 result.add(new CryptoCurrency("MT", "Mycelium Token", true));
 ----
 
-=== Step 4. Fill out form
+=== Step 4. Add entry to TradeStatisticsManager.printAllCurrencyStats:
+
+Open `o.bisq.core.trade.statistics.TradeStatisticsManager` and add at method `printAllCurrencyStats` the entry at the end of the list:
+
+`newlyAdded.add([TOKEN CODE]);`
+
+=== Step 5. Merge latest upstream master branch.
+
+=== Step 6. Compile and run unit tests
+
+=== Step 7. Fill out form at PR
 
 Copy the below form template, paste it into the PR (next step) and fill out the form.
 
@@ -72,9 +82,9 @@ Copy the below form template, paste it into the PR (next step) and fill out the 
 - Official token project URL: ...
 ----
 
-=== Step 5. Make a pull request
+=== Step 8. Make a pull request
 
-Make a pull request in GitHub to the Bisq `Development` branch.
+Make a pull request in GitHub to the Bisq `master` branch.
 
 
 == Caveats
@@ -95,3 +105,7 @@ Make a pull request in GitHub to the Bisq `Development` branch.
 === Getting an added token into production might take a bit
 
 Adding a new token will be part of the normal release cycle.
+
+=== Making a PR with not compiling code or with unit tests failing will lead to a blocking period for 2 weeks
+
+To not waste developer time for reviewing a PR which does not fulfill the very basic requirements we will add a policy to block updated PRs for that token for 2 weeks. The PR will get closed and has to be re-opened after that period with the fixes.
