@@ -483,7 +483,7 @@ https://github.com/bisq-network/docs[https://github.com/bisq-network/docs]
 
 === BSQ stake and vote tracking spreadsheet [[voting-spreadsheet]]
 
-https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#[BSQ stake and vote tracking] (Google Sheet)
+https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[BSQ stake and vote tracking] (Google Sheet)
 
 == Other
 
@@ -545,7 +545,7 @@ To submit a compensation request for a <<bonded-contributor-roles,bonded contrib
  - The role must have a complete and up to date https://github.com/bisq-network/roles[role specification] document
  - The reporting requirements (if any) for the role must be fulfilled. Usually reporting happens in the form of a comment on the https://github.com/bisq-network/roles/issues[role's dedicated GitHub issue]. See your role specification for details.
 
-Once submitted, your request will be added to the <<voting-spreadsheet>> where stakeholders can <<how-to-vote,vote>> on it.
+Once submitted, your request will be added to the https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[voting spreadsheet] where stakeholders can <<how-to-vote,vote>> on it.
 
 === submit a proposal
 
