@@ -95,13 +95,13 @@ The way how the factors are applied, how the requested amounts get adjusted and 
 
 The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as Satoshis (BTC), thus the BTC value is not lost but used as mining fee.
 
-====== A 0.50 BSQ fee payment tx could look like that:
+- A 0.50 BSQ fee payment tx could look like that:
 
- - Input 1: 10.000 BSQ
- - Input 2: 0.1 BTC
- - Output 1: 9.50 BSQ
- - Output 2: 0.09949500 BTC
- - Mining fee: 0.0005 (0.00049500 BTC + 0.00000500 BTC or 0.50 BSQ)
+ * Input 1: 10.000 BSQ
+ * Input 2: 0.1 BTC
+ * Output 1: 9.50 BSQ
+ * Output 2: 0.09949500 BTC
+ * Mining fee: 0.0005 (0.00049500 BTC + 0.00000500 BTC or 0.50 BSQ)
 
 So in that case we only use 9.500 BSQ of the 10.000 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.500 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
 
@@ -119,14 +119,14 @@ WARNING: It is definitely NOT recommended to "hack" around with custom created t
 
 A BSQ transfer transaction is a normal BTC transaction with mixed inputs of BSQ and BTC. The BTC part is required for the mining fee payment. There is no OP_RETURN output required.
 
-====== A typical BSQ transfer transaction could look like that:
+- A typical BSQ transfer transaction could look like that:
 
- - Input 1: 30.00 BSQ (BSQ sender)
- - Input 2: 0.01 BTC (required for mining fee)
- - Output 1: 10.00 BSQ (BSQ receiver)
- - Output 1: 20.00 BSQ (BSQ change output back to sender)
- - Output 2: 0.0095 BTC (change output)
- - Mining fee: 0.0005
+ * Input 1: 30.00 BSQ (BSQ sender)
+ * Input 2: 0.01 BTC (required for mining fee)
+ * Output 1: 10.00 BSQ (BSQ receiver)
+ * Output 1: 20.00 BSQ (BSQ change output back to sender)
+ * Output 2: 0.0095 BTC (change output)
+ * Mining fee: 0.0005
 
 ==== Validation
 
@@ -181,52 +181,52 @@ The contributor will publish the request to the P2P network after the fee tx is 
 
 The range for allowed amounts for a compensation request payout will be 50 BSQ to 50 000 BSQ.
 
-====== A compensation request needs to contain following data
+- A compensation request needs to contain following data
 
- - UID (auto generated unique ID)
- - Contributor's name or nickname
- - Title (must not conflict with existing requests)
- - Creation date
- - Description (short paragraph)
- - Link to either Github issues or Bisq Forum for detailed description and deliveries
- - Requested amount in BSQ
- - BSQ Address
- - Onion address
- - Transaction ID (the compensation request transaction will become a valid issuance tx if request gets accepted after voting has completed)
- - Tx ID of fee payment tx
- - Contributor's Public key
- - Signature of compensation request (signature of hash of all request data excluding signature and tx ID)
- - Version
+ * UID (auto generated unique ID)
+ * Contributor's name or nickname
+ * Title (must not conflict with existing requests)
+ * Creation date
+ * Description (short paragraph)
+ * Link to either Github issues or Bisq Forum for detailed description and deliveries
+ * Requested amount in BSQ
+ * BSQ Address
+ * Onion address
+ * Transaction ID (the compensation request transaction will become a valid issuance tx if request gets accepted after voting has completed)
+ * Tx ID of fee payment tx
+ * Contributor's Public key
+ * Signature of compensation request (signature of hash of all request data excluding signature and tx ID)
+ * Version
 
-====== Data structure of the OP_RETURN compensation request data
- - 1 byte for type (0x01)
- - 1 byte for version (0x01)
- - 20 bytes for hash of payloadAsJson + signature (using Sha256Ripemd160)
+- Data structure of the OP_RETURN compensation request data
+ * 1 byte for type (0x01)
+ * 1 byte for version (0x01)
+ * 20 bytes for hash of payloadAsJson + signature (using Sha256Ripemd160)
 
-===== Verification rules for compensation request transactions
+- Verification rules for compensation request transactions
 
- - There have to be one OP_RETURN output as last output
- - The amount at the OP_RETURN output has to be 0
- - The first byte in the OP_RETURN data need to be the type byte: 0x01
- - The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
- - Size of OP_RETURN data is 22 bytes
- - There have to be a BSQ input for the fee payment
- - BSQ used for fee need to be mature
- - The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
- - The block height must be in the correct period
- - It needs to have at least one output to the address defined in the compensation request data
+ * There have to be one OP_RETURN output as last output
+ * The amount at the OP_RETURN output has to be 0
+ * The first byte in the OP_RETURN data need to be the type byte: 0x01
+ * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
+ * Size of OP_RETURN data is 22 bytes
+ * There have to be a BSQ input for the fee payment
+ * BSQ used for fee need to be mature
+ * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ * The block height must be in the correct period
+ * It needs to have at least one output to the address defined in the compensation request data
 
 Contributors need to have the latest version installed when doing a request to be sure to have the same version as the verification nodes.
 
 
-====== A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
- - Input 1: 30.00 BSQ (needed for fee payment)
- - Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
- - Output 1: 29.00 BSQ (change output)
- - Output 2: 0.00005 BTC (Requested BSQ amount to BSQ address defined in request)
- - Output 3: 0.09946 BTC (optional BTC change output)
- - Output 4 (last): OP_RETURN data as defined above
- - Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
+- A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
+ * Input 1: 30.00 BSQ (needed for fee payment)
+ * Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
+ * Output 1: 29.00 BSQ (change output)
+ * Output 2: 0.00005 BTC (Requested BSQ amount to BSQ address defined in request)
+ * Output 3: 0.09946 BTC (optional BTC change output)
+ * Output 4 (last): OP_RETURN data as defined above
+ * Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
 
 The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi).
  The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00005000 BTC (requested BSQ) + 0.00049000 BTC miner fee.
@@ -256,32 +256,32 @@ The voter encrypts with an encryption key (AES) created per vote his vote data a
 The encrypted vote data are broadcasted to the P2P network.
 To avoid an attack scenario where the malicious voter could try to disrupt the consensus of received vote data by broadcasting their vote data to the P2P network at the very end of the period, thus it has higher chances to not arrives equally at all peers we can use a random break at each voter which makes that attack less effective.
 
-====== Data structure of the OP_RETURN vote data:
+- Data structure of the OP_RETURN vote data:
 
- - 1 byte for type (0x02)
- - 1 byte for version (0x01)
- - 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
+ * 1 byte for type (0x02)
+ * 1 byte for version (0x01)
+ * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
 
-====== A vote transaction would look like that (fee is 5 BSQ):
- - Input 1: 30.00 BSQ (needed for fee payment)
- - Input 2: 0.1 BTC (needed for mining fee)
- - Output 1: 25.00 BSQ (change output used as vote weight)
- - Output 2: 0.09955 BTC (optional BTC change output)
- - Output 3 (last): OP_RETURN data as defined above
- - Mining fee: 0.00050000 (0.00045000 BTC from input 2 + 0.00005000 BTC or 5 BSQ from input 1)
+- A vote transaction would look like that (fee is 5 BSQ):
+ * Input 1: 30.00 BSQ (needed for fee payment)
+ * Input 2: 0.1 BTC (needed for mining fee)
+ * Output 1: 25.00 BSQ (change output used as vote weight)
+ * Output 2: 0.09955 BTC (optional BTC change output)
+ * Output 3 (last): OP_RETURN data as defined above
+ * Mining fee: 0.00050000 (0.00045000 BTC from input 2 + 0.00005000 BTC or 5 BSQ from input 1)
 
-====== Verification rules for the voting transaction
+- Verification rules for the voting transaction
 
- - There have to be one OP_RETURN output as last output
- - The amount at the OP_RETURN output has to be 0
- - The first byte in the OP_RETURN data need to be the: 0x02 (type)
- - The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (votes made with older versions are invalid)
- - Size of OP_RETURN data needs to be 22 bytes
- - There have to be a BSQ input for the fee payment
- - BSQ used for fee need to be mature
- - There have to be exactly 1 BSQ output for the voting weight
- - The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
- - The block height must be in the correct period
+ * There have to be one OP_RETURN output as last output
+ * The amount at the OP_RETURN output has to be 0
+ * The first byte in the OP_RETURN data need to be the: 0x02 (type)
+ * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (votes made with older versions are invalid)
+ * Size of OP_RETURN data needs to be 22 bytes
+ * There have to be a BSQ input for the fee payment
+ * BSQ used for fee need to be mature
+ * There have to be exactly 1 BSQ output for the voting weight
+ * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ * The block height must be in the correct period
 
 Contributors need to have the latest version installed when participating in voting to be sure to have the same version as the verification nodes.
 
@@ -293,20 +293,20 @@ If there are conflicting vote data views (some voters did not receive all votes)
 
 The input for that transaction must be the BSQ output from the vote transaction.
 
-====== Data structure of the OP_RETURN vote reveal data:
+- Data structure of the OP_RETURN vote reveal data:
 
-  - 1 byte for type (0x03)
-  - 1 byte for version (0x01)
-  - 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
-  - 32 bytes for decryption key (AES 256 bit)
+  * 1 byte for type (0x03)
+  * 1 byte for version (0x01)
+  * 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
+  * 32 bytes for decryption key (AES 256 bit)
 
-====== A vote reveal transaction would look like that:
- - Input 1: 25.00 BSQ (output 1 from previous vote tx)
- - Input 2: 0.1 BTC (needed for mining fee)
- - Output 1: 25.00 BSQ (transfer to voter)
- - Output 2: 0.0995 BTC (optional BTC change output)
- - Output 3 (last): OP_RETURN data as defined above
- - Mining fee: 0.0005 BTC
+- A vote reveal transaction would look like that:
+ * Input 1: 25.00 BSQ (output 1 from previous vote tx)
+ * Input 2: 0.1 BTC (needed for mining fee)
+ * Output 1: 25.00 BSQ (transfer to voter)
+ * Output 2: 0.0995 BTC (optional BTC change output)
+ * Output 3 (last): OP_RETURN data as defined above
+ * Mining fee: 0.0005 BTC
 
 
 ===== Calculate the voting result
@@ -327,12 +327,12 @@ We sum up all vote data items and use the BSQ amount as weight to get a total re
 After the vote reveal period and the following break has ended all the compensation requests which have received >= 50% of the acceptance votes (compared to declined votes) will become valid for issuance of new BSQ. The second output of the compensation request transaction which has been interpreted as BTC so far will not be interpreted as valid BSQ, authorized due the voting process.
 
 
-===== Verification rules for the issuance transaction
+- Verification rules for the issuance transaction
 
- - The BSQ output is equal to that what has been defined in the compensation request
- - The issuance amount need to be in the range of the min. and max. allowed amount
- - The block height must have been in the correct compensation request period
- - The compensation request need to be accepted in the voting process
+ * The BSQ output is equal to that what has been defined in the compensation request
+ * The issuance amount need to be in the range of the min. and max. allowed amount
+ * The block height must have been in the correct compensation request period
+ * The compensation request need to be accepted in the voting process
 
 ===== Scenarios for gaming the voting process
 
