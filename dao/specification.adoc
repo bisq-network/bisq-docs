@@ -97,13 +97,13 @@ The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) 
 
 - A 0.50 BSQ fee payment tx could look like that:
 
- * Input 1: 10.000 BSQ
+ * Input 1: 10.00 BSQ
  * Input 2: 0.1 BTC
  * Output 1: 9.50 BSQ
- * Output 2: 0.09949500 BTC
- * Mining fee: 0.0005 (0.00049500 BTC + 0.00000500 BTC or 0.50 BSQ)
+ * Output 2: 0.09949950 BTC
+ * Mining fee: 0.0005 (0.00049950 BTC + 0.00000050 BTC or 0.50 BSQ)
 
-So in that case we only use 9.500 BSQ of the 10.000 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.500 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
+So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.50 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
 
 The trade fee will be calculated based on the trade amount and the distance from the market price (if available). We use the same model for BTC and BSQ fees. A 1 BTC trade with 1% distance from the market price will use the default fee. If the trade amount is lower or higher we apply a linear adjustment. 0.1 BTC trade has 10% of the trade fee as long as we don't reach the minimum value for the trade fee. For the distance to the market price we use the square root of the percent value, so 9% would result in a factor of 3. A 16% distance to the market price would cause a 4 times increase of the trade fee.
 
