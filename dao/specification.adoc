@@ -95,7 +95,7 @@ The way how the factors are applied, how the requested amounts get adjusted and 
 
 The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as Satoshis (BTC), thus the BTC value is not lost but used as mining fee.
 
-e.g. A 0.50 BSQ fee payment tx could look like that:
+====== A 0.50 BSQ fee payment tx could look like that:
 
  - Input 1: 10.000 BSQ
  - Input 2: 0.1 BTC
@@ -119,7 +119,7 @@ WARNING: It is definitely NOT recommended to "hack" around with custom created t
 
 A BSQ transfer transaction is a normal BTC transaction with mixed inputs of BSQ and BTC. The BTC part is required for the mining fee payment. There is no OP_RETURN output required.
 
-e.g. a typical BSQ transfer transaction could look like that:
+====== A typical BSQ transfer transaction could look like that:
 
  - Input 1: 30.00 BSQ (BSQ sender)
  - Input 2: 0.01 BTC (required for mining fee)
@@ -148,7 +148,7 @@ Most users will likely operate in the lite node mode. They have to trust the see
 
 A lite node requests at startup from the seed node the missing BSQ blocks and then validates those blocks to achieve a local state of valid and unspent BSQ outputs. At each new block they receive the broadcasted messages from multiple seed nodes (min. 4 operated by different developers) and only if all those messages contain the same data the validation will succeed and the block will be added to the local state. In case of chain splits it can be that one of the seed nodes is on another chain and conflicting blocks get propagated. This would trigger a re-validation of all blocks from the latest snapshot for the lite node. The last received block would be considered as the current state but the user get displayed a message that there are conflicts and it is recommended to wait for more than one confirmation before considering a BSQ transaction as valid. Only after all full nodes (seed nodes) have the same state again the lite node will exit the "warning" state. If the user waits for a sufficiently high numbers of confirmation (4-6) he will not risk that his validation was based on an orphaned chain and that he could become victim of a double spend.
 
-*Snapshots:*
+====== Snapshots:
 
 Every 100 blocks a snapshot mechanism gets triggered. The current state get cloned and kept in memory and if a previous clone exists the previous one will be persisted. At the next snapshot trigger event the latest clone will be persisted and a new clone will be cached again. That way the snapshot is always at least 100 blocks old.
 
@@ -181,7 +181,7 @@ The contributor will publish the request to the P2P network after the fee tx is 
 
 The range for allowed amounts for a compensation request payout will be 50 BSQ to 50 000 BSQ.
 
-*A compensation request needs to contain following data*
+====== A compensation request needs to contain following data
 
  - UID (auto generated unique ID)
  - Contributor's name or nickname
@@ -198,7 +198,7 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
  - Signature of compensation request (signature of hash of all request data excluding signature and tx ID)
  - Version
 
-*Data structure of the OP_RETURN compensation request data*
+====== Data structure of the OP_RETURN compensation request data
  - 1 byte for type (0x01)
  - 1 byte for version (0x01)
  - 20 bytes for hash of payloadAsJson + signature (using Sha256Ripemd160)
@@ -218,7 +218,8 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
 
 Contributors need to have the latest version installed when doing a request to be sure to have the same version as the verification nodes.
 
-e.g. A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
+
+====== A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
  - Input 1: 30.00 BSQ (needed for fee payment)
  - Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
  - Output 1: 29.00 BSQ (change output)
@@ -227,7 +228,7 @@ e.g. A compensation request tx for requesting 5000 BSQ would look like that (fee
  - Output 4 (last): OP_RETURN data as defined above
  - Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
 
- The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi).
+The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi).
  The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00005000 BTC (requested BSQ) + 0.00049000 BTC miner fee.
  Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
 
@@ -255,13 +256,13 @@ The voter encrypts with an encryption key (AES) created per vote his vote data a
 The encrypted vote data are broadcasted to the P2P network.
 To avoid an attack scenario where the malicious voter could try to disrupt the consensus of received vote data by broadcasting their vote data to the P2P network at the very end of the period, thus it has higher chances to not arrives equally at all peers we can use a random break at each voter which makes that attack less effective.
 
-*Data structure of the OP_RETURN vote data:*
+====== Data structure of the OP_RETURN vote data:
 
  - 1 byte for type (0x02)
  - 1 byte for version (0x01)
  - 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
 
-e.g. A vote tx would look like that (fee is 5 BSQ):
+====== A vote transaction would look like that (fee is 5 BSQ):
  - Input 1: 30.00 BSQ (needed for fee payment)
  - Input 2: 0.1 BTC (needed for mining fee)
  - Output 1: 25.00 BSQ (change output used as vote weight)
@@ -292,14 +293,14 @@ If there are conflicting vote data views (some voters did not receive all votes)
 
 The input for that transaction must be the BSQ output from the vote transaction.
 
-*Data structure of the OP_RETURN vote data:*
+====== Data structure of the OP_RETURN vote reveal data:
 
   - 1 byte for type (0x03)
   - 1 byte for version (0x01)
   - 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
   - 32 bytes for decryption key (AES 256 bit)
 
-e.g. A vote reveal tx would look like that:
+====== A vote reveal transaction would look like that:
  - Input 1: 25.00 BSQ (output 1 from previous vote tx)
  - Input 2: 0.1 BTC (needed for mining fee)
  - Output 1: 25.00 BSQ (transfer to voter)
@@ -480,10 +481,14 @@ This is the data structure published to the P2P network when creating a compensa
 
 We refer to that term as the voting activity from the user perspective in a conceptual sense.
 
-===== Voting transaction
+===== Vote transaction
 
-This is the Bitcoin transaction which contains the voting data for timestamping and to have a consistent data view.
+This is the Bitcoin transaction which contains the hash of the encrypted voting data.
+
+===== Vote reveal transaction
+
+This is the Bitcoin transaction which contains the hash of the vote data view and the decryption key.
 
 ===== Voting data
 
-This is the data structure published to the P2P network when submitting a vote. It gets created when the user sets his voting options in the UI and confirms to submit the vote.
+This is the data structure published to the P2P network when submitting a vote. It gets created when the user sets his voting options in the UI and confirms to submit the vote. It is encrypted and only becomes readable once the voter reveals the decryption key in the vote reveal transaction.
