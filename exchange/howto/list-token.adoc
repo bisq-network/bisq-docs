@@ -1,6 +1,8 @@
 = How to list a token
 :toc:
 
+IMPORTANT: PLEASE DO NOT SUBMIT ANY PULL REQUESTS FOR NEW ALTCOINS / TOKENS UNTIL FURTHER NOTICE. Bisq's repositories have recently been restructured, and the instructions below are now out-of-date. We are working on changes that will make it possible to submit token listing pull requests again soon. Subscribe to https://github.com/bisq-network/bisq-desktop/issues/1456 to be notified of progress. Thank you.
+
 == Introduction
 
 This document describes the process how to submit a request for adding a new Altcoin or token (we use the general term token in that document) to the currency list in Bisq. Adding a token does not mean any endorsement of the token. For making decisions in case of controversial requests we use the Bisq DAO voting process. The maintainers of the GH repository have the authority to merge or reject the PR based on the formal requirements but not on "political" objections (e.g. consider the token as scam-coin,...).
