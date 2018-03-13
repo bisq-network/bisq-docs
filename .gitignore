@@ -1,3 +1,9 @@
-*.swp
+# IDEA
+.idea
+*.iml
+
+# macOS
 .DS_Store
-.idea/**
+
+# Vim
+*.sw[op]
