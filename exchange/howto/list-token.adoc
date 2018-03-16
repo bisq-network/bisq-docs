@@ -35,7 +35,7 @@ The arbitrator must be able to look up transaction in the token's block explorer
 
 == Instructions
 
-IMPORTANT: Each of the classes below reside in the https://github.com/bisq-network/bisq-core repository. You will need to fork this repository, make the specified modifications, and then submit them as a SINGLE pull request. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you don't know what a "pull request" is, or have never created one yourself, please do not attempt to follow the instructions below on your own.
+IMPORTANT: Each of the classes below reside in the https://github.com/bisq-network/bisq-core repository. You will need to fork this repository, make the specified modifications, and then submit them as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you don't know what a "pull request" is, or have never created one yourself, please do not attempt to follow the instructions below on your own.
 
 === Step 1. Add address validation logic
 
@@ -64,7 +64,7 @@ result.add(new CryptoCurrency("MT", "Mycelium Token", true));
 Open the `bisq.core.trade.statistics.TradeStatisticsManager` class and add an entry like the following at the end of the list in the `printAllCurrencyStats` method:
 
 ----
-newlyAdded.add([TOKEN CODE]);
+newlyAdded.add([ticker symbol]);
 ----
 
 === Step 5. Compile and test
@@ -73,19 +73,41 @@ newlyAdded.add([TOKEN CODE]);
 mvn test
 ----
 
-=== Step 6. Submit pull request
+=== Step 6. Create well-formed Git commit
+
+Your changes should be squashed into a SINGLE GIT COMMIT with a commit message that reads as follows:
 
 ----
-- Ticker symbol (e.g. LTC): ...
-- Official token name (e.g. Litecoin): ...
-- Official block explorer URL: ...
-- Is it an altcoin (dedicated blockchain) or a token (anything else) (e.g. altcoin): ...
-- Official token project URL: ...
+List [token name] ([ticker symbol])
 ----
+
+For example:
+
+ - List Litecoin (LTC)
+ - List Monero (XMR)
+ - List Zcash (ZEC)
+
+Your Git author metadata should include your full name (or nym) and email address. For example, this is what your commit metadata, a la `git log` should look like:
+
+----
+Author: Roger Pollack <mrslippery@protonmail.com>
+Date:   Wed Aug 1 00:00:00 1979 -0800
+
+    List OtherPlane (OTP)
+----
+
+=== Step 7. Submit pull request
 
 Your pull request should be submitted against the bisq-network/bisq-core repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-token`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
 
 Copy and paste the form template below into the description of the pull request and fill it out.
+
+----
+- Official block explorer URL: [url]
+- Is this an _altcoin_ with a dedicated blockchain or a _token_ based on another blockchain, (e.g. Ethereum-based ERC-20 tokens): [altcoin | token]
+- Official project URL: [url]
+----
+
 
 == Caveats
 
