@@ -108,6 +108,8 @@ Copy and paste the form template below into the description of the pull request 
 - Official project URL: [url]
 ----
 
+IMPORTANT: When submitting your pull request, please check the `Allow edits from maintainers` box. See https://github.com/bisq-network/style/issues/4 for details.
+
 
 == Caveats
 
