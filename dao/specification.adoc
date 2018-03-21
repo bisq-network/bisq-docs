@@ -210,7 +210,7 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
  * The first byte in the OP_RETURN data need to be the type byte: 0x01
  * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
  * Size of OP_RETURN data is 22 bytes
- * There have to be a BSQ input for the fee payment
+ * There has to be a BSQ input for the fee payment
  * BSQ used for fee need to be mature
  * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
  * The block height must be in the correct period
@@ -262,12 +262,13 @@ To avoid an attack scenario where the malicious voter could try to disrupt the c
  * 1 byte for version (0x01)
  * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
 
-- A vote transaction would look like that (fee is 5 BSQ):
- * Input 1: 30.00 BSQ (needed for fee payment)
+- A vote transaction would look like that (fee is 5 BSQ, stake is 200 BSQ):
+ * Input 1: 300.00 BSQ (needed for fee payment)
  * Input 2: 0.1 BTC (needed for mining fee)
- * Output 1: 25.00 BSQ (change output used as vote weight)
- * Output 2: 0.09955 BTC (optional BTC change output)
- * Output 3 (last): OP_RETURN data as defined above
+ * Output 1: 200.00 BSQ (stake)
+ * Output 2: 95.00 BSQ (optional remaining BSQ change output)
+ * Output 3: 0.09955 BTC (optional BTC change output)
+ * Output 4 (last): OP_RETURN data as defined above
  * Mining fee: 0.00050000 (0.00045000 BTC from input 2 + 0.00005000 BTC or 5 BSQ from input 1)
 
 - Verification rules for the voting transaction
