@@ -70,7 +70,7 @@ newlyAdded.add([ticker symbol]);
 === Step 5. Compile and test
 
 ----
-mvn test
+./gradlew build
 ----
 
 === Step 6. Create well-formed Git commit
