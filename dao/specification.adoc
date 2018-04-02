@@ -195,13 +195,12 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
  * Transaction ID (the compensation request transaction will become a valid issuance tx if request gets accepted after voting has completed)
  * Tx ID of fee payment tx
  * Contributor's Public key
- * Signature of compensation request (signature of hash of all request data excluding signature and tx ID)
  * Version
 
 - Data structure of the OP_RETURN compensation request data
  * 1 byte for type (0x01)
  * 1 byte for version (0x01)
- * 20 bytes for hash of payloadAsJson + signature (using Sha256Ripemd160)
+ * 20 bytes for hash of payload (using Sha256Ripemd160 from Protobuffer encoded payload)
 
 - Verification rules for compensation request transactions
 
