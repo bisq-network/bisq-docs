@@ -191,9 +191,7 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
  * Link to either Github issues or Bisq Forum for detailed description and deliveries
  * Requested amount in BSQ
  * BSQ Address
- * Onion address
- * Transaction ID (the compensation request transaction will become a valid issuance tx if request gets accepted after voting has completed)
- * Tx ID of fee payment tx
+ * Tx ID
  * Contributor's Public key
  * Version
 
@@ -221,13 +219,13 @@ Contributors need to have the latest version installed when doing a request to b
 - A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
  * Input 1: 30.00 BSQ (needed for fee payment)
  * Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
- * Output 1: 29.00 BSQ (change output)
+ * Output 1: 29.00 BSQ (mandatory change output)
  * Output 2: 0.00005 BTC (Requested BSQ amount to BSQ address defined in request)
  * Output 3: 0.09946 BTC (optional BTC change output)
  * Output 4 (last): OP_RETURN data as defined above
  * Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
 
-The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi).
+The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
  The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00005000 BTC (requested BSQ) + 0.00049000 BTC miner fee.
  Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
 
@@ -298,7 +296,7 @@ The input for that transaction must be the BSQ output from the vote transaction.
   * 1 byte for type (0x03)
   * 1 byte for version (0x01)
   * 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
-  * 32 bytes for decryption key (AES 256 bit)
+  * 32 bytes for decryption key (AES 256 bit) -> TODO we might change to 128 bit as that is probably good enough for our use case.
 
 - A vote reveal transaction would look like that:
  * Input 1: 25.00 BSQ (output 1 from previous vote tx)
