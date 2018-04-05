@@ -1,0 +1,135 @@
+= How to list a token
+:toc:
+
+== Introduction
+
+This document describes the process how to submit a request for adding a new altcoin or token (we use the general term _token_ in this document) to the currency list in Bisq. Adding a token does not mean any endorsement of the token. For making decisions in case of controversial requests we use the Bisq DAO voting process. The maintainers of the GH repository have the authority to merge or reject the PR based on the formal requirements but not on "political" objections (e.g. if we consider the token to be a scam, etc).
+
+Please note that Bisq is not implementing technically any token infrastructure, e.g. wallet, full node, block explorer, etc. Rather, we only support users adding a token address as a payment account that will be used to settle a trade for bitcoin. The process of sending and receiving the token is not part of the Bisq application; traders must use their own token wallets to perform the actual transfer.
+
+NOTE: This document replaces the earlier process description in the link:https://bisq.community/t/how-to-add-your-favorite-Altcoin/46[Bisq forum].
+
+
+== Prerequisites
+
+=== Block explorer
+
+The token must have an active, publicly available block explorer.
+
+=== The ticker symbol does not conflict with national currency tickers
+
+The ticker symbol must not conflict with one of the national currency ISO 4217 ticker symbols listed at https://en.wikipedia.org/wiki/ISO_4217.
+
+=== The ticker symbol does not conflict with other crypto-currency tickers
+
+The ticker symbol must not conflict with one of the top 100 cryptocurrency ticker symbols listed at: https://coinmarketcap.com/currencies at the time of PR creation.
+
+=== The token does not have extra requirements
+
+Be sure that the requirements to add the token does not cause extra effort for Bisq maintainers, e.g. requiring additional input fields because the address alone is not sufficient for a trade.
+
+=== Arbitrators must be able to look up transactions in the block explorer
+
+The arbitrator must be able to look up transaction in the token's block explorer by using the receiver's address. In case that is not possible as a result of enhanced privacy features (Zcash, Monero, CryptoNote coins, etc) a suggested solution needs to be added to the PR (e.g. in Zcash we support only transparent addresses not z-addresses; in Monero we require that the user is using a Monero wallet which supports transaction keys to enable 3rd party audits of the transaction which is used in case of a dispute). As such additional cases require additional effort (popup with background info) it will be up to Bisq contributors whether to add a PR for the popup and translation strings. Of course the code or the popup can be part of the PR as well but a more detailed description is out of scope of this document.
+
+
+== Instructions
+
+IMPORTANT: Each of the classes below reside in the https://github.com/bisq-network/bisq-core repository. You will need to fork this repository, make the specified modifications, and then submit them as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you don't know what a "pull request" is, or have never created one yourself, please do not attempt to follow the instructions below on your own.
+
+=== Step 1. Add address validation logic
+
+Add code for address validation to the `validate` method in `bisq.core.payment.validation.AltCoinAddressValidator` class.
+
+=== Step 2. Add address validation tests
+
+Add unit tests with different addresses of the token to the `bisq.core.payment.validation.AltCoinAddressValidatorTest` class and *run the tests* to ensure they pass.
+
+=== Step 3. Add token to currency list
+
+Add an entry for the token to the `createAllSortedCryptoCurrenciesList` method in the `bisq.core.locale.CurrencyUtil` class. The first parameter is the ticker, the second parameter is the token name and the optional third parameter is the boolean `isAsset` parameter. Set that to `true` in case the token is not using a dedicated blockchain but is issued on other blockchains (e.g. colored coins, ETH tokens, etc). The list is *ordered alphabetically by token name*—please add your entry at the correct position!
+
+==== Examples
+
+----
+// token with dedicated blockchain
+result.add(new CryptoCurrency("XMR", "Monero"));
+
+// token issued on another blockchain
+result.add(new CryptoCurrency("MT", "Mycelium Token", true));
+----
+
+=== Step 4. Add token to trade statistics manager
+
+Open the `bisq.core.trade.statistics.TradeStatisticsManager` class and add an entry like the following at the end of the list in the `printAllCurrencyStats` method:
+
+----
+newlyAdded.add([ticker symbol]);
+----
+
+=== Step 5. Compile and test
+
+----
+./gradlew build
+----
+
+=== Step 6. Create well-formed Git commit
+
+Your changes should be squashed into a SINGLE GIT COMMIT with a commit message that reads as follows:
+
+----
+List [token name] ([ticker symbol])
+----
+
+For example:
+
+ - List Litecoin (LTC)
+ - List Monero (XMR)
+ - List Zcash (ZEC)
+
+Your Git author metadata should include your full name (or nym) and email address. For example, this is what your commit metadata, a la `git log` should look like:
+
+----
+Author: Roger Pollack <mrslippery@protonmail.com>
+Date:   Wed Aug 1 00:00:00 1979 -0800
+
+    List OtherPlane (OTP)
+----
+
+=== Step 7. Submit pull request
+
+Your pull request should be submitted against the bisq-network/bisq-core repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-token`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
+
+Copy and paste the form template below into the description of the pull request and fill it out.
+
+----
+- Official block explorer URL: [url]
+- Is this an _altcoin_ with a dedicated blockchain or a _token_ based on another blockchain, (e.g. Ethereum-based ERC-20 tokens): [altcoin | token]
+- Official project URL: [url]
+----
+
+IMPORTANT: When submitting your pull request, please check the `Allow edits from maintainers` box. See https://github.com/bisq-network/style/issues/4 for details.
+
+
+== Caveats
+
+=== Controversial tokens may be put to a vote
+
+ - Any BSQ token holder can request that a decision for adding the token should be decided in the Bisq DAO voting process (the Bisq DAO will be executed in a manual manner as long the full DAO version is not implemented according to the DAO phase 0 doc TODO: add link, not available atm).
+ - If such a request for voting is filed the PR will be delayed until the next voting period. Filing a request for voting is described in the DOA voting document (TODO: add link, not available atm).
+ - If the voting has > 50% of votes and reaches the required quorum (at least 5% of total BSQ stake need to vote on it) the result will be used to accept or reject the token. Not reaching the quorum results in a rejection.
+ - For requesting again a token which got rejected by voting it requires a clear statement about the changed circumstances. Objecting the political positions is not sufficient (e.g. Coin XXX is not a scamcoin because of ....).
+ - Any BSQ token holder can also request a voting to remove an already supported token.
+
+=== Inactive tokens will be de-listed
+
+ - At each new release we will check if already added tokens have been traded in the past 4 months. If this requirement is not met the token will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded token will not be announced beside in the release notes of the new release.
+ - Adding the token again requires a statement about the changed circumstances (e.g. link to discussions where demand for the token is documented, etc).
+
+=== Getting a new token into production may take a while
+
+Adding a new token will be part of the normal release cycle. Whenever we ship the next Bisq release, your token will be included.
+
+=== Pull requests that do not conform to the requirements will be ignored and closed
+
+If your pull request is for any reason incorrect, e.g. code does not compile, tests do not pass, steps have been missed in the instructions, your changes will be ignored and your pull request will be closed. Getting your token listed is 100% your responsibility. If you follow the instructions, the `bisq-core` maintainers will merge it; if you don't, they won't. It's that simple.
