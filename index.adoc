@@ -1,5 +1,0 @@
-= The Bisq Network Manual
-ifdef::env-github,env-browser[:outfilesuffix: .adoc]
-
- - link:dao/phase-zero{outfilesuffix}[Phase Zero]
- - link:exchange/howto/list-asset.adoc[How to list an asset]

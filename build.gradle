@@ -3,13 +3,13 @@ plugins {
 }
 
 asciidoctor {
-    sourceDir = file('.')
+    sourceDir = file('src')
 
-    resources {
-        from(sourceDir) {
-            include '**/*.png'
-        }
-    }
+//  resources {
+//      from(sourceDir) {
+//          include '**/*.png'
+//      }
+//  }
 
     attributes 'source-highlighter': 'coderay',
         toc                 : 'left',
