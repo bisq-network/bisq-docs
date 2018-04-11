@@ -1,4 +1,4 @@
-= Bisq Network Documentation
+# Bisq Network Documentation
 
 These are the sources for the docs hosted at https://docs.bisq.network.
 
