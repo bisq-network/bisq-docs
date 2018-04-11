@@ -1,6 +1,5 @@
 = Bisq Network Documentation
 ifdef::env-github,env-browser[:outfilesuffix: .adoc]
-:!toc:
 
 BISQ LOGO
 
@@ -8,7 +7,7 @@ Science. Stirred by starlight extraplanetary. A very small stage in a vast cosmi
 
 == Introduction
 
-link:introduction.adoc[]
+link:introduction{outfilesuffix}[]
 
 == User Manual
 

@@ -12,8 +12,6 @@ asciidoctor {
 //  }
 
     attributes 'source-highlighter': 'coderay',
-        toc                 : 'left',
-        sectanchors         : '',
         idprefix            : '',
         idseparator         : '-'
 }
