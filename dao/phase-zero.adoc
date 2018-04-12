@@ -1,5 +1,4 @@
 = Phase Zero: A Plan for Bootstrapping the Bisq DAO
-:toc: left
 :sectanchors:
 Chris Beams <chris@beams.io>; Manfred Karrer <mk@nucleo.io>
 v1.0, October 19, 2017
