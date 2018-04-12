@@ -18,14 +18,14 @@
  ** <<help#, Support>>
 
  * *_Contributor Docs_*
- ** <<list-asset#, How to list an asset>>
+ ** <<exchange/howto/list-asset#, How to list an asset>>
  ** Arbitration
- *** <<manual-payout#, How to issue a manual dispute payout>>
+ *** <<exchange/howto/manual-dispute-payout#, How to issue a manual dispute payout>>
 
  * *_Developer Docs_*
  ** How to set up a Bisq development environment
 
  * *_Papers_*
- ** <<phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>
+ ** <<dao/phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>
 
  * *_<<archive#, Archive>>_*
