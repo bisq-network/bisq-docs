@@ -13,6 +13,7 @@ asciidoctor {
     }
 
     attributes 'source-highlighter': 'coderay',
+        icons               : 'font',
         idprefix            : '',
         idseparator         : '-',
         docinfo1            : ''
