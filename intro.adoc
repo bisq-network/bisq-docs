@@ -2,6 +2,8 @@
 :toc: left
 :sectanchors:
 
+video::Fv-eCchzBZA[youtube,start=113,end=1168,width=860,height=480,options="modest"]
+
 == What Bisq is
 
 Bisq is a *decentralized bitcoin exchange* best understood in terms of its major component parts:
