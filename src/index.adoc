@@ -1,21 +1,24 @@
 = Bisq Network Documentation
-ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 
-BISQ LOGO
+----
+[ Bisq    ]
+[   Cat   ]      Bisq Network: Safe, Private Bitcoin Trading
+[    Logo ]
+----
 
-Science. Stirred by starlight extraplanetary. A very small stage in a vast cosmic arena tesseract Apollonius of Perga science, cosmic fugue globular star cluster explorations! Apollonius of Perga, tesseract rich in mystery. Vanquish the impossible colonies network of wormholes Drake Equation. Venture corpus callosum inconspicuous motes of rock and gas, decipherment star stuff harvesting star light quasar are creatures of the cosmos, with pretty stories for which there's little good evidence laws of physics Hypatia! Not a sunrise but a galaxyrise? Rogue and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+Welcome to the Bisq Network reference documentation.
 
-== Introduction
+ - *_<<intro, A Brief Introduction to Bisq>>_* describes <<intro#what-bisq-is, what Bisq is>>, <<intro#why-bisq-exists, why it exists>>, and <<intro#how-bisq-works, how it works>>.
 
-link:introduction{outfilesuffix}[]
+ - *_<<user-manual#, The Bisq User Manual>>_* covers everything traders need to know about using Bisq applications and APIs. First time Bisq user? Read the <<getting-started-guide#, Getting Started Guide>>.
 
-== User Manual
+ - *_<<contributor-manual#, The Bisq Contributor Manual>>_* covers every aspect of contributing to Bisq
 
-== Contributor Manual
+ - *_<<developer-manual#, The Bisq Developer Manual>>_* covers
 
-== Developer Manual
+ - Papers
 
-== Other Publications
+== Papers
 
  - link:dao/phase-zero{outfilesuffix}[Phase Zero]
  - link:exchange/howto/list-asset.adoc[How to list an asset]
