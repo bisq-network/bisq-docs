@@ -1,5 +1,6 @@
 plugins {
     id 'org.asciidoctor.convert' version '1.5.7'
+    id 'org.kordamp.gradle.livereload' version '0.2.1'
 }
 
 asciidoctor {
@@ -14,6 +15,10 @@ asciidoctor {
     attributes 'source-highlighter': 'coderay',
         idprefix            : '',
         idseparator         : '-'
+}
+
+liveReload {
+    docRoot asciidoctor.outputDir.canonicalPath
 }
 
 build.dependsOn asciidoctor
