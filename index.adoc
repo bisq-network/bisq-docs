@@ -1,12 +1,5 @@
 = Bisq Network Documentation
 
-----
- [ Bisq    ]
- [   Cat   ]      Bisq Network: Safe, Private Bitcoin Trading
- [    Logo ]
-----
-
-
  * *_User Docs_*
  ** <<intro#, Introduction>> — What Bisq is, why it exists and how it works
  ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
