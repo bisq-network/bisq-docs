@@ -6,26 +6,23 @@
  [    Logo ]
 ----
 
- * *_The Basics_*
- ** <<intro#, Introduction>>: what Bisq is, why it exists and how it works
- ** <<getting-started-guide#, Getting Started>>: everything you need to get trading in 10 minutes
 
  * *_User Docs_*
- ** <<install#, Installation>>
- ** <<configure#, Configuration>>
- ** <<fund#, Funding>>
- ** <<trade#, Trading>>
- ** <<help#, Support>>
+ ** <<intro#, Introduction>> — What Bisq is, why it exists and how it works
+ ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
 
  * *_Contributor Docs_*
  ** <<exchange/howto/list-asset#, How to list an asset>>
- ** Arbitration
- *** <<exchange/howto/manual-dispute-payout#, How to issue a manual dispute payout>>
-
- * *_Developer Docs_*
- ** How to set up a Bisq development environment
+ ** <<exchange/howto/manual-dispute-payout#, How to issue a manual dispute payout>>
+ ** <<exchange/howto/run-seednode#, How to run a seednode>>
+ ** <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
 
  * *_Papers_*
  ** <<dao/phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>
+
+ * *_Specifications_*
+ ** <<dao/specification#, Bisq DAO technical specification>>
+ ** <<account-age-witness#, Account age witness feature specification>>
+ ** https://docs.google.com/document/d/1DXEVEfk4x1qN6QgIcb2PjZwU4m7W6ib49wCdktMMjLw/edit#heading=h.4nbd0q1s77uq[Bisq arbitration and mediation system] (GDoc)
 
  * *_<<archive#, Archive>>_*
