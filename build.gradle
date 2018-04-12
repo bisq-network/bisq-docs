@@ -14,7 +14,8 @@ asciidoctor {
 
     attributes 'source-highlighter': 'coderay',
         idprefix            : '',
-        idseparator         : '-'
+        idseparator         : '-',
+        docinfo1            : ''
 }
 
 liveReload {

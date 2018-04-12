@@ -1,0 +1,14 @@
+<script>
+
+    var link = document.createElement("a");
+    link.setAttribute("href", "index.html");
+    link.innerHTML = "← Back to index<br><br>";
+    var ul = document.createElement("ul");
+    var li = document.createElement("li");
+    ul.appendChild(li);
+    li.appendChild(link);
+    var toc = document.getElementById('toc')
+    var next = document.getElementById('toctitle').nextElementSibling;
+    toc.insertBefore(ul, next);
+
+</script>
