@@ -8,6 +8,7 @@ asciidoctor {
     resources {
         from(sourceDir) {
             include '**/*.png'
+            exclude 'build/**'
         }
     }
 
