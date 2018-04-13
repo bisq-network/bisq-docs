@@ -1,10 +1,7 @@
 = Bisq DAO technical specification
-:toc:
-:toc-placement!:
+:toc: left
 
-NOTE: This document is a detailed technical specification for the Bisq DAO and BSQ token. For a high-level overview and rationale, please see https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[Phase Zero: A plan for bootstrapping the Bisq DAO].
-
-toc::[]
+NOTE: This document is a detailed technical specification for the Bisq DAO and BSQ token. For a high-level overview and rationale, please see <<phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>.
 
 == BSQ token
 

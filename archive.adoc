@@ -1,0 +1,5 @@
+= Archive
+
+ * Original <<exchange/whitepaper#, Bisq whitepaper>>
+ * Original <<dao/overview#, Bisq DAO overview>>
+ * <<exchange/howto/add-alternative-base-currency#, How to add an alternative base currency>>

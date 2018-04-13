@@ -2,7 +2,7 @@
 :toc:
 :toc-placement!:
 
-NOTE: This overview of the Bisq DAO has been superseded by a new paper released on October 19th, 2017 titled https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[Phase Zero: A plan for bootstrapping the Bisq DAO]. Please refer to that document for more up to date information; this one will likely be removed soon.
+NOTE: This overview of the Bisq DAO has been superseded by a new paper released on October 19th, 2017 titled <<phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>> Please refer to that document for more up to date information; this one will likely be removed soon.
 
 toc::[]
 
@@ -209,7 +209,7 @@ In short, we see no economic incentive for a majority attack on the Bisq DAO.
 
 == More details and technical specification
 
-More detailed description and technical specifications can be found in the https://docs.google.com/document/d/1jj7bABnf9apjhaa99VQUoRsIHa7I2nlcUu2sNnIReFs/[More details and technical specification] document.
+More detailed description and technical specifications can be found in the <<specification#, Bisq DAO specification>>.
 
 == Conclusion
 

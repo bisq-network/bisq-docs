@@ -1,0 +1,22 @@
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.7'
+}
+
+asciidoctor {
+    sourceDir = file('.')
+
+    resources {
+        from(sourceDir) {
+            include '**/*.png'
+            exclude 'build/**'
+        }
+    }
+
+    attributes 'source-highlighter': 'coderay',
+        icons               : 'font',
+        idprefix            : '',
+        idseparator         : '-',
+        docinfo1            : ''
+}
+
+build.dependsOn asciidoctor

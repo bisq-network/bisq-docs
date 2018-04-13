@@ -1,0 +1,75 @@
+= A Brief Introduction to Bisq
+:sectanchors:
+
+video::Fv-eCchzBZA[youtube,start=113,end=1168,width=860,height=480,options="modest"]
+
+== What Bisq is
+
+Bisq is a *decentralized bitcoin exchange* best understood in terms of its major component parts:
+
+ 1. Bisq is a cross-platform *desktop application* that allows anyone to buy and sell bitcoin in exchange for national currencies and other cryptocurrencies.
+
+ 2. Bisq is a *trading protocol* that enables individuals to exchange directly with one another over the internet, eliminating the need for trusted third party exchange services.
+
+ 3. Bisq is the *peer-to-peer network* formed by Bisq applications discovering, connecting to, and working with one another to implement the Bisq trading protocol. The Bisq network is _fully_ peer-to-peer in that it requires no centrally-controlled servers and has no single points of failure.
+
+Bisq is *not a company*. Bisq is *free software* released under version 3 of the GNU Affero General Public License. Bisq is _built_ by individuals around the world who choose to work together, and Bisq is _used_ by individuals around the world who choose to trade with Bisq over many other exchange alternatives.
+
+== Why Bisq exists
+
+Bisq's mission is to provide a *secure*, *private* and *censorship-resistant* way of exchanging bitcoin for national currencies and other cryptocurrencies over the internet.
+
+When we say *secure*, we are referring to the safety of users' funds. Today, most bitcoin exchanges are _centralized_, requiring users to store their bitcoins--for at least some amount of time--on exchange servers. When thousands of users do this, it creates extreme incentives for those servers to be hacked and for those users' bitcoins to be stolen. And time and time again these hacks and thefts are exactly what happen.
+
+When we say *private*, we are referring to users' ability to control access to their own information. Today, most centralized exchanges require users to divulge personally identifying information in order to set up an account, and then in turn link users' trading activity to their respective identities. This practice creates extreme risks for users that their personal details and financial information will be stolen, leaked or otherwise used against their own best interests.
+
+When we say *censorship-resistant*, we are referring to users' ability to voluntarily trade with one another without interference from a third party. Today, centralized bitcoin exchanges are highly susceptible to such interference. By their nature, they must operate within one legal jurisdiction or another, putting them at risk of being fined or shut down if they do not comply with the laws and other rules of that jurisdiction, which may include restrictions on who can trade and what can be traded, and almost always include requirements to collect personal information as described above.
+
+What's needed is an exchange where *users keep control of funds*, that *is private by default*, and that *defends freedom of transaction*. We built Bisq to meet these needs.
+
+Where Bitcoin's motto is "be your own bank," Bisq's is "*be your own exchange.*"
+
+== How Bisq works
+
+=== In a nutshell
+
+Imagine you want to buy bitcoin (BTC) in exchange for US dollars (USD). In Bisq terminology, you are a _buyer_ of BTC looking for a _seller_ of BTC who will accept USD as payment. To complete such a trade using Bisq, you would follow a series of steps similar to these:
+
+ . You download and run the Bisq application on your laptop or desktop computer
+ . You configure Bisq with your USD payment method details
+ . You browse Bisq's offer book for existing offers to sell BTC for USD
+ . You take an existing offer, agreeing to buy the seller's BTC for your USD
+ . You send USD from your bank to the seller's bank and indicate you have done so in Bisq
+ . You and the seller wait for your USD payment to arrive at the seller's bank
+ . The seller receives your USD and indicates they have done so in Bisq
+ . You receive the seller's bitcoin and the trade is complete
+
+These steps can vary in a number of ways depending on whether you wish to buy or sell bitcoin, whether you are the _maker_ or the _taker_ of an offer, which payment methods you have access to, and so on. But in any case, the steps above are rather different than those one would follow to complete a similar trade on a centralized exchange.
+
+=== How trading with Bisq is different
+
+Beyond the obvious difference that Bisq is a desktop application and not a browser-based web application, the first difference experienced traders will notice is that there is *no automatic order matching* on the Bisq exchange. Rather, Bisq users manually search for and select specific offers they wish to take. This approach enables truly peer-to-peer trade settlement, and ensures that users are in control of which counterparties they trade with.
+
+Bisq is also unique among decentralized bitcoin exchanges in the way it coordinates *out-of-band fiat payments*. Bisq does not directly integrate with banks or other national currency payment systems in any way. Rather, Bisq's trading protocol orchestrates the process of buyer and seller working together to settle fiat payments _outside of_ the Bisq application, as demonstrated in steps 5&ndash;7 of the trading example above.
+
+These and other differences result in a key tradeoff for Bisq users--one in which *trade settlement takes longer*, but *trading itself is far more secure, private and censorship-resistant*.
+
+=== How Bisq keeps funds secure
+
+ - Bisq is *entirely non-custodial*; users stay in control of fiat and cryptocurrency funds
+ - Trades include *security deposits* from buyer and seller to prevent fraud
+ - Trading funds and security deposits are locked in a *2-of-3 multisig escrow*
+ - Disputes are handled through a *decentralized human arbitration system*
+
+=== How Bisq keeps data private
+
+ - Using Bisq requires *no registration or centralized identity verification*
+ - Every Bisq application is a *Tor hidden service*
+ - Bisq has *no central servers or databases* to record data
+ - *Data is encrypted* such that trade details are readable only by counterparties
+
+=== How Bisq resists censorship
+
+ - Bisq's network is a *fully distributed P2P network*, and thus difficult to shut down
+ - Bisq's network is *built on top of Tor*, and thus inherits Tor's own censorship resistance
+ - *Bisq is code*, not a company; it is not incorporated, and it cannot be disincorporated
