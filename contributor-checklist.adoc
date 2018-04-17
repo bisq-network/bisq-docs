@@ -10,7 +10,7 @@ Bisq is free and open source software, but contributing is *not* just about writ
 This can mean anything from fixing typos in documentation, to answering questions on the Bisq Forum, to implementing new Bisq features and everything in-between. All such contributions are eligible for compensation under the Bisq DAO. Read the <<dao/phase-zero#,Phase Zero>> doc for complete details.
 ====
 
-== Say hello, get set up, have a look around
+== Say hello and get started
 
 [%interactive]
 
@@ -28,6 +28,14 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] To set up a Bisq development environment, follow the instructions at https://github.com/bisq-network/bisq#readme[bisq-network/bisq#readme].
 
+ * [ ] Read https://chris.beams.io/posts/git-commit[How to Write a Git Commit Message] and follow its https://chris.beams.io/posts/git-commit#7-rules[7 rules] when contributing to Bisq projects.
+
+ * [ ] Get set up to https://help.github.com/articles/signing-commits-using-gpg/[Sign your Git Commits] with GPG.
+
+== Learn how we work
+
+[%interactive]
+
  * [ ] Familiarize yourself with https://rfc.unprotocols.org/spec:1/C4/[C4: The Collaborative Code Constructor Contract]. It's a simple set of collaboration rules based on GitHub's fork+pull request model, and a foundational part of how we work together.
 
  * [ ] For more context on C4 and the principles behind it, read author Pieter Hintjens' short book, https://legacy.gitbook.com/book/hintjens/social-architecture/details[Social Architecture].
@@ -38,22 +46,22 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] To get inspired about what building software in a non-hierarchical organization can be like (and what it requires of everyone involved), read the http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf[Valve Employee Handbook].
 
- * [ ] Subscribe to the https://www.youtube.com/channel/UCDrHtlIlYfdRx4Gr-MV8NrA[Bisq YouTube channel] to get notified about every meeting we hold, tutorial we publish, live session we broadcast and more.
+== Get connected
+
+[%interactive]
 
  * [ ] Catch up on past https://www.youtube.com/playlist?list=PLFH5SztL5cYOtcg64PntHlbtLoiO3HAjB[Bisq Tech Session] YouTube live streams.
+
+ * [ ] Subscribe to the https://www.youtube.com/channel/UCDrHtlIlYfdRx4Gr-MV8NrA[Bisq YouTube channel] to get notified about every meeting we hold, tutorial we publish, live session we broadcast and more.
 
  * [ ] Subscribe to the https://bisq.network/calendar[Bisq calendar] to get notified of upcoming events, conferences and calls.
 
  * [ ] Subscribe to the https://lists.bisq.network/listinfo/bisq-contrib[bisq-contrib] mailing list for low-frequency, high-priority contributor communications.
 
- * [ ] Read https://chris.beams.io/posts/git-commit[How to Write a Git Commit Message] and follow its https://chris.beams.io/posts/git-commit#7-rules[7 rules] when contributing to Bisq projects.
-
- * [ ] Get set up to https://help.github.com/articles/signing-commits-using-gpg/[Sign your Git Commits] with GPG.
-
  * [ ] Follow https://twitter.com/bisq_network[@bisq_network] on Twitter.
 
-== Do valuable work, get compensated
-Ok. You're all set up and ready to work. Here's what to do.
+== Do valuable work and get compensated
+Ok. You're all set up and ready to work. Here's what to do next.
 
  . *Find a problem somewhere in Bisq-land* that (a) needs fixing and (b) is a match for your skills and interests. Browse open bounties, ask around about what other contributors think needs fixing. Because while you don't need anybody's permission and you can work on whatever you want, you'll want to know up front whether anybody else is going to care about the work you do.
 
