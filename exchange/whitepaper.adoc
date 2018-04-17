@@ -6,7 +6,7 @@
 :uri-risk-analysis: https://bisq.network/docs/risk-analysis.pdf
 :uri-arbitration-system: https://bisq.network/docs/arbitration-system.pdf
 
-NOTE: This document is the original Bisq whitepaper. On October 19th, 2017, we released a new paper titled https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc[Phase Zero: A plan for bootstrapping the Bisq DAO]. If you're new to Bisq and looking for a comprehensive overview of the project, we recommend reading the section titled https://github.com/bisq-network/docs/blob/master/dao/phase-zero.adoc#Part-I[Understanding Bisq and the Bisq DAO], which largely replaces the content of this whitepaper.
+NOTE: This document is the original Bisq whitepaper. On October 19th, 2017, we released a new paper titled <<../dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>. If you're new to Bisq and looking for a comprehensive overview of the project, we recommend reading the section titled <<../dao/phase-zero#Part-I,Understanding Bisq and the Bisq DAO>>, which largely replaces the content of this whitepaper.
 
 toc::[]
 
