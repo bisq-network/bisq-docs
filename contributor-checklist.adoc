@@ -36,7 +36,7 @@ This can mean anything from fixing typos in documentation, to answering question
 
 [%interactive]
 
- * [ ] Familiarize yourself with https://rfc.unprotocols.org/spec:1/C4/[C4: The Collaborative Code Constructor Contract]. It's a simple set of collaboration rules based on GitHub's fork+pull request model, and a foundational part of how we work together.
+ * [ ] Familiarize yourself with https://rfc.unprotocols.org/spec:1/C4/[C4: The Collaborative Code Construction Contract]. It's a simple set of collaboration rules based on GitHub's fork+pull request model, and a foundational part of how we work together.
 
  * [ ] For more context on C4 and the principles behind it, read author Pieter Hintjens' short book, https://legacy.gitbook.com/book/hintjens/social-architecture/details[Social Architecture].
 
