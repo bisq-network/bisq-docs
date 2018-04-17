@@ -73,3 +73,10 @@ These and other differences result in a key tradeoff for Bisq users--one in whic
  - Bisq's network is a *fully distributed P2P network*, and thus difficult to shut down
  - Bisq's network is *built on top of Tor*, and thus inherits Tor's own censorship resistance
  - *Bisq is code*, not a company; it is not incorporated, and it cannot be disincorporated
+
+== Next steps
+
+ - Download and install Bisq at https://bisq.network/downloads
+ - Get started trading with a https://www.youtube.com/watch?v=9JW25wXnPls&list=PLFH5SztL5cYMOm7IpvA2WkrSF3VscndPM[tutorial video]
+ - Ask questions in the https://bisq.community[Bisq Forum] or https://bisq.network/slack-invite[Slack workspace]
+ - Stay in touch by following https://twitter.com/bisq-network[@bisq_network] on Twitter
