@@ -1,0 +1,80 @@
+= New Contributor Checklist
+
+So you're interested in contributing to Bisq--welcome! This checklist will get you plugged in and productive quickly as possible.
+
+[NOTE]
+.What is a contributor?
+====
+Bisq is free and open source software, but contributing is *not* just about writing code. *A contributor is any individual who works to improve and add value to the Bisq Network and its users.*
+
+This can mean anything from fixing typos in documentation, to answering questions on the Bisq Forum, to implementing new Bisq features and everything in-between. All such contributions are eligible for compensation under the Bisq DAO. Read the <<dao/phase-zero#,Phase Zero>> doc for complete details.
+====
+
+== Say hello and get started
+
+[%interactive]
+
+ * [ ] Join our https://bisq.network/slack-invite[Slack workspace].
+
+ * [ ] Introduce yourself in the `#general` channel. Say a bit about your skills and interests. This will help others point you in the right direction.
+
+ * [ ] Join the `#github` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to assign you to GitHub issues.
+
+ * [ ] After accepting your GitHub invitation, consider changing your https://github.com/orgs/bisq-network/people[membership visibility] from private to public. This helps others know at a glance roughly how many contributors are involved with Bisq.
+
+ * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
+
+ * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified via email of threaded GitHub issue discussions that happen there.
+
+ * [ ] To set up a Bisq development environment, follow the instructions at https://github.com/bisq-network/bisq#readme[bisq-network/bisq#readme].
+
+ * [ ] Read https://chris.beams.io/posts/git-commit[How to Write a Git Commit Message] and follow its https://chris.beams.io/posts/git-commit#7-rules[7 rules] when contributing to Bisq projects.
+
+ * [ ] Get set up to https://help.github.com/articles/signing-commits-using-gpg/[Sign your Git Commits] with GPG.
+
+== Learn how we work
+
+[%interactive]
+
+ * [ ] Familiarize yourself with https://rfc.unprotocols.org/spec:1/C4/[C4: The Collaborative Code Constructor Contract]. It's a simple set of collaboration rules based on GitHub's fork+pull request model, and a foundational part of how we work together.
+
+ * [ ] For more context on C4 and the principles behind it, read author Pieter Hintjens' short book, https://legacy.gitbook.com/book/hintjens/social-architecture/details[Social Architecture].
+
+ * [ ] To understand the current state of Bisq and the Bisq DAO, including how compensation works, read <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>
+
+ * [ ] To understand Bisq's commitment to _radical transparency_ and _radical honesty_, read Part III of Ray Dalio's https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021/[Principles].
+
+ * [ ] To get inspired about what building software in a non-hierarchical organization can be like (and what it requires of everyone involved), read the http://www.valvesoftware.com/company/Valve_Handbook_LowRes.pdf[Valve Employee Handbook].
+
+== Get connected
+
+[%interactive]
+
+ * [ ] Catch up on past https://www.youtube.com/playlist?list=PLFH5SztL5cYOtcg64PntHlbtLoiO3HAjB[Bisq Tech Session] YouTube live streams.
+
+ * [ ] Subscribe to the https://www.youtube.com/channel/UCDrHtlIlYfdRx4Gr-MV8NrA[Bisq YouTube channel] to get notified about every meeting we hold, tutorial we publish, live session we broadcast and more.
+
+ * [ ] Subscribe to the https://bisq.network/calendar[Bisq calendar] to get notified of upcoming events, conferences and calls.
+
+ * [ ] Subscribe to the https://lists.bisq.network/listinfo/bisq-contrib[bisq-contrib] mailing list for low-frequency, high-priority contributor communications.
+
+ * [ ] Follow https://twitter.com/bisq_network[@bisq_network] on Twitter.
+
+== Do valuable work and get compensated
+Ok. You're all set up and ready to work. Here's what to do next.
+
+ . *Find a problem somewhere in Bisq-land* that (a) needs fixing and (b) is a match for your skills and interests. Browse open bounties, ask around about what other contributors think needs fixing. Because while you don't need anybody's permission and you can work on whatever you want, you'll want to know up front whether anybody else is going to care about the work you do.
+
+ . *Do work to fix that problem.* Submit your fix for review with a pull request (for code and documentation changes) or with a GitHub issue (for everything else).
+
+ . *Request that others review your work.* The best way to do this is by writing good commit comments and pull request/issue descriptions that clearly explain the problem your work is intended to solve, why it's important, and why you fixed it the way you did. Make it as easy as possible for others to review your work. Make it a _pleasure_ for others to review your work.
+
+ . *Incorporate review feedback* you get until your fix gets merged or is otherwise accepted.
+
+ . *Repeat* steps 1–4.
+
+ . https://docs.bisq.network/dao/phase-zero.html#how-to-request-compensation[*Submit a compensation request*] at the end of the month, link to your finished work and request the amount of https://docs.bisq.network/dao/phase-zero.html#the-bisq-dao-and-bsq-token[BSQ] you believe that work to be worth to Bisq, the Bisq Network and its users.
+
+[TIP]
+.Reviews are for everybody
+If you want to be really popular around here, don't just submit your own work, but also spend time reviewing the work of others. And remember: reviews are eligible for compensation just like any other contribution.
