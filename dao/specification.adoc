@@ -254,7 +254,7 @@ To avoid an attack scenario where the malicious voter could try to disrupt the c
 
  * 1 byte for type (0x02)
  * 1 byte for version (0x01)
- * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
+ * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160, proposals are sorted by txId, data input for encryption is byte array of Protobuffer file of list of proposals)
 
 - A vote transaction would look like that (fee is 5 BSQ, stake is 200 BSQ):
  * Input 1: 300.00 BSQ (needed for fee payment)
@@ -293,7 +293,7 @@ The input for that transaction must be the BSQ output from the vote transaction.
   * 1 byte for type (0x03)
   * 1 byte for version (0x01)
   * 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
-  * 32 bytes for decryption key (AES 256 bit) -> TODO we might change to 128 bit as that is probably good enough for our use case.
+  * 16 bytes for decryption key (AES 128 bit)
 
 - A vote reveal transaction would look like that:
  * Input 1: 25.00 BSQ (output 1 from previous vote tx)
