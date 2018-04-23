@@ -97,7 +97,7 @@ The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) 
  * Input 1: 10.00 BSQ
  * Input 2: 0.1 BTC
  * Output 1: 9.50 BSQ
- * Output 2: 0.09949950 BTC
+ * Output 2: 0.09950050 BTC
  * Mining fee: 0.0005 (0.00049950 BTC + 0.00000050 BTC or 0.50 BSQ)
 
 So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.50 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
