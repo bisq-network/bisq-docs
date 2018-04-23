@@ -1,0 +1,112 @@
+= Proposals
+:toc: left
+:sectanchors:
+
+Proposals are a means for suggesting specific changes to Bisq Network software components, infrastructure and processes. They are especially useful where awareness and agreement of other contributors is required in order for the change to be successfully implemented.
+
+
+== Introduction
+
+The Bisq DAO is a flat organization, meaning that there is no command-and-control hierarchy available to make big decisions and carry them out.
+
+Generally, this is not a problem, as the Bisq DAO is designed for contributors to operate permissionlessly and autonomously. Most day-to-day changes happen without any need for organization-wide consensus, but there are certain kinds of changes that benefit from or even require it. For such cases, what's needed is a mechanism that allows any contributor to _propose_ a change, and allows any and all other contributors to _review_ it in order to arrive at an IETF-style https://en.wikipedia.org/wiki/Rough_consensus[rough consensus] whether to proceed.
+
+_Proposals_ are that mechanism within the Bisq DAO, and this document covers everything that submitters, reviewers and maintainers need to know about the infrastructure, process and best practices around them.
+
+=== What proposals are good for
+
+If you're thinking of creating an entire new Bisq component or making a significant change to an existing one, it's a good idea to submit a proposal first. Likewise, if you want to change something about the way contributors work together under the Bisq DAO, submit a proposal.
+
+=== What proposals are not good for
+
+For smaller changes to existing components, infrastructure or processes, where a broad consensus of contributors is not required, just submit an issue and/or pull request in the relevant repository. The maintainer of that repository will let you know if the change is too big or controversial, in which case they'll probably suggest you write a proposal. When in doubt, don't jump right to submitting a proposal. Have a conversation first. Chat with other contributors. See if they think a proposal is merited.
+
+
+== Infrastructure
+
+=== GitHub
+
+Proposals are managed as GitHub issues in the https://github.com/bisq-network/proposals/issues[bisq-network/proposals] repository.
+
+TIP: If you're an active Bisq contributor, consider https://help.github.com/articles/watching-and-unwatching-repositories/[watching] this repository to be notified of new proposals and discussions around them. You can always https://help.github.com/articles/subscribing-to-and-unsubscribing-from-notifications/[unsubscribe] from specific issues you're not interested in.
+
+=== Slack
+
+The `#proposals` Slack channel is available for discussion and notifications about proposal issue activity.
+
+
+== Roles and responsibilities
+
+=== Submitter
+
+The contributor(s) who write a proposal and carry it through to completion. **Submitters are 100% responsible for the success of their proposals.**
+
+=== Reviewer
+
+Other contributors who read, discuss and react to proposals. **Any contributor _may_ review a proposal, but no contributor is obligated to do so.** This intentionally puts the onus on the submitter to ensure their proposal is relevant and well-written per the guidelines below.
+
+=== Maintainer
+
+The contributor(s) who have administrative rights over the `bisq-network/proposals` GitHub repository, monitor the `#proposals` Slack channel, enforce the process detailed below, and write https://github.com/bisq-network/roles/issues/30[monthly reports] on proposals activity. **Maintainers have no special authority to approve or reject proposals.**
+
+
+== Process
+
+=== Step 0. Research
+
+Before you submit a proposal, **do your homework!**
+
+ . Discuss your idea with other contributors to see if a proposal is worth submitting at all;
+ . Search through existing proposals (both https://github.com/bisq-network/proposals/issues?utf8=%E2%9C%93&q=is%3Aissue+[open and closed]) to see whether something similar has already been proposed;
+ . Notice which among those proposals have been accepted and rejected, and why;
+ . Read this document to fully understand the proposal process and guidelines.
+
+=== Step 1. Submit
+
+Create a new GitHub issue in the `bisq-network/proposals` repository containing the text of your proposal, written and formatted per the guidelines below.
+
+A maintainer will quickly review your proposal and will either (a) assign it to you to indicate your ownership and responsibility over it, or (b) close it and label it as `was:incorrect` if it does not follow the guidelines below.
+
+=== Step 2. Review
+
+Once a proposal is submitted, a two-week review period follows. During this period, interested reviewers should read, discuss and ultimately react to the proposal as follows:
+
+ - 👍: I agree with the proposal and want to see it enacted
+ - 👎: I disagree with the proposal and do not want to see it enacted
+
+When reacting with a 👎, add a comment explaining why. If you don't, then don't expect your dissenting opinion to have much weight or get addressed.
+
+If you do not understand or care about a given proposal, ignore it.
+
+Use comments on the proposal issue to discuss, ask questions, and get clarifications. Take lengthy discussions offline to Slack or elsewhere and then summarize them back on the issue.
+
+TIP: Remember that the proposal review process is all about reaching a _rough consensus,_ meaning that there is a broad agreement that the proposal should be enacted, and that any dissenting opinions have been addressed, though not necessarily fully resolved.
+
+=== Step 3. Evaluate
+
+After the two-week review period is over, a maintainer will evaluate reactions to and discussions about to the proposal and will close the issue with a comment explaining that it is approved or rejected based on whether a rough consensus was acheived.
+
+Approved proposals will be labeled with `was:approved`. Rejected proposals will be labeled with `was:rejected`.
+
+If rough consensus has not been achieved, e.g. because discussion is still ongoing, dissenting concerns have not been addressed, or the proposal has turned out to be contentious, the maintainer will indicate that they cannot close the proposal, and that it is up to the submitter to take next steps to move the proposal forward. If the proposal does not move forward after another two weeks, the maintainer will close and label it `was:stalled`.
+
+If there have been no or very few reactions to a proposal after the two-week period, the maintainer will close it and label it as `was:ignored`.
+
+=== Step 4. Enact
+
+Assuming your proposal was approved, the next step is to actually enact the changes described in that proposal.
+
+
+== Guidelines
+
+Write your proposal in a way that makes it as easy as possible to achieve rough consensus. This means that **proposals should be as simple, focused, concrete and well-defined as possible.** Your goal should be to make it as easy as possible for your fellow contributors to understand and agree with you.
+
+**Take full responsibility for your proposal.** It is not the maintainers' job, nor anyone else's, to see your proposal succeed. If people aren't responding or reacting to your proposal, it's your job to solicit that feedback more actively.
+
+**Never assume that anyone other than yourself is going to do the work described in your proposal.** If your proposal does place expectations on other contributors, or requires them to change their behavior in any way, be explicit about that.
+
+**Provide context.** Make a strong case for your proposal. Link to prior discussions. Do not make your reader do any more work than they have to to understand your proposal.
+
+**Format your proposal in Markdown.** Make it a pleasure to read.
+
+In general, **good proposals take time to research and write.** Every minute you spend clearly and logically articulating your proposal is a minute that you save other contributors in understanding it. This diligence on your part will be appreciated and rewarded by others' attention. Cheaply written, "drive by" proposals that waste others' time will be closed immediately as `was:incorrect`.
