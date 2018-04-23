@@ -84,7 +84,7 @@ TIP: Remember that the proposal review process is all about reaching a _rough co
 
 === Step 3. Evaluate
 
-After the two-week review period is over, a maintainer will evaluate reactions to and discussions about to the proposal and will close the issue with a comment explaining that it is approved or rejected based on whether a rough consensus was acheived.
+After the two-week review period is over, a maintainer will evaluate reactions to and discussions about the proposal and will close the issue with a comment explaining that it is approved or rejected based on whether a rough consensus was acheived.
 
 Approved proposals will be labeled with `was:approved`. Rejected proposals will be labeled with `was:rejected`.
 
