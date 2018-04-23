@@ -217,13 +217,13 @@ Contributors need to have the latest version installed when doing a request to b
  * Input 1: 30.00 BSQ (needed for fee payment)
  * Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
  * Output 1: 29.00 BSQ (mandatory change output)
- * Output 2: 0.00005 BTC (Requested BSQ amount to BSQ address defined in request)
- * Output 3: 0.09946 BTC (optional BTC change output)
+ * Output 2: 0.00500000 BTC (Requested BSQ amount to BSQ address defined in request)
+ * Output 3: 0.09450100 BTC (optional BTC change output)
  * Output 4 (last): OP_RETURN data as defined above
- * Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
+ * Mining fee: 0.00050000 (0.00049900 BTC from input 2 + 0.00000100 BTC or 1 BSQ from input 1)
 
 The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
- The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00005000 BTC (requested BSQ) + 0.00049000 BTC miner fee.
+ The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00500000 BTC (requested BSQ) + 0.00049900 BTC miner fee.
  Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
 
 ==== Voting
