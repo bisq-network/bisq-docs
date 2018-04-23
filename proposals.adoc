@@ -1,8 +1,6 @@
 = Proposals
 :toc: left
 :sectanchors:
-:thumbsup: &#128077;
-:thumbsdn: &#128078;
 
 Proposals are a means for suggesting specific changes to Bisq Network software components, infrastructure and processes. They are especially useful where awareness and agreement of other contributors is required in order for the change to be successfully implemented.
 
@@ -73,10 +71,10 @@ A maintainer will quickly review your proposal and will either (a) assign it to 
 
 Once a proposal is submitted, a two-week review period follows. During this period, interested reviewers should read, discuss and ultimately react to the proposal as follows:
 
- - {thumbsup}: I agree with the proposal and want to see it enacted
- - {thumbsdn}: I disagree with the proposal and do not want to see it enacted
+ - 👍: I agree with the proposal and want to see it enacted
+ - 👎: I disagree with the proposal and do not want to see it enacted
 
-When reacting with a {thumbsdn}, add a comment explaining why. If you don't, then don't expect your dissenting opinion to have much weight or get addressed.
+When reacting with a 👎, add a comment explaining why. If you don't, then don't expect your dissenting opinion to have much weight or get addressed.
 
 If you do not understand or care about a given proposal, ignore it.
 
