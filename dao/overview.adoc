@@ -103,7 +103,7 @@ There are 2 ways of issuing BSQ tokens:
 
 ==== Genesis distribution
 
-In the first phase, there will be a genesis issuance of 2,500,000 BSQ tokens, given to the contributors who have worked on the project thus far. In this way, we distribute the value of the project to all participants in proportion to their contributions. Each contributor will hold a certain percentage of the project's total value. We will use the 25 BTC we received over the past years in our donation address as input for the genesis transaction. So, the starting base capital will be 25 BTC. Right after the trading begins, market forces will determine the value of the project.
+In the first phase, there will be a genesis issuance of 2,500,000 BSQ tokens, given to the contributors who have worked on the project thus far. In this way, we distribute the value of the project to all participants in proportion to their contributions. Each contributor will hold a certain percentage of the project's total value. We will use 2.5 of the 25 BTC we received over the past years in our donation address as input for the genesis transaction. So, the starting base capital will be 2.5 BTC. Right after the trading begins, market forces will determine the value of the project.
 
 ==== Periodic issuance
 

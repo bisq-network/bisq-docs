@@ -150,7 +150,7 @@ In the next section, we'll see how the Bisq DAO and BSQ token have been designed
 
 We introduce a token, BSQ, designed to facilitate a transfer of value from the traders _using_ Bisq to the contributors _maintaining_ it.
 
-BSQ is Bisq's own custom implementation of the _colored coin_ concept.footnote:[Bitcoin wiki, "Colored coins," https://en.bitcoin.it/wiki/Colored_Coins, November 2015.] From the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00000100 BTC, or 100 satoshis.
+BSQ is Bisq's own custom implementation of the _colored coin_ concept.footnote:[Bitcoin wiki, "Colored coins," https://en.bitcoin.it/wiki/Colored_Coins, November 2015.] Using 2.5 of the 25 bitcoin (BTC) that have been donated to the project since its inception in March 2014, we create 2.5 million BSQ tokens, such that each BSQ token is represented on the Bitcoin blockchain by 0.00000100 BTC, or 100 satoshis.
 
 ._Initial distribution of BSQ tokens from BTC donations_
 image::phase-zero/bsq-distribution.png[Initial BSQ distribution]
