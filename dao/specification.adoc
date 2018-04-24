@@ -97,7 +97,7 @@ The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) 
  * Input 1: 10.00 BSQ
  * Input 2: 0.1 BTC
  * Output 1: 9.50 BSQ
- * Output 2: 0.09949950 BTC
+ * Output 2: 0.09950050 BTC
  * Mining fee: 0.0005 (0.00049950 BTC + 0.00000050 BTC or 0.50 BSQ)
 
 So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.50 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
@@ -217,13 +217,13 @@ Contributors need to have the latest version installed when doing a request to b
  * Input 1: 30.00 BSQ (needed for fee payment)
  * Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
  * Output 1: 29.00 BSQ (mandatory change output)
- * Output 2: 0.00005 BTC (Requested BSQ amount to BSQ address defined in request)
- * Output 3: 0.09946 BTC (optional BTC change output)
+ * Output 2: 0.00500000 BTC (Requested BSQ amount to BSQ address defined in request)
+ * Output 3: 0.09450100 BTC (optional BTC change output)
  * Output 4 (last): OP_RETURN data as defined above
- * Mining fee: 0.00050000 (0.00049000 BTC from input 2 + 0.00001000 BTC or 1 BSQ from input 1)
+ * Mining fee: 0.00050000 (0.00049900 BTC from input 2 + 0.00000100 BTC or 1 BSQ from input 1)
 
 The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
- The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00005000 BTC (requested BSQ) + 0.00049000 BTC miner fee.
+ The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00500000 BTC (requested BSQ) + 0.00049900 BTC miner fee.
  Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
 
 ==== Voting
@@ -254,7 +254,7 @@ To avoid an attack scenario where the malicious voter could try to disrupt the c
 
  * 1 byte for type (0x02)
  * 1 byte for version (0x01)
- * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160)
+ * 20 bytes for hash of encrypted vote data (using Sha256Ripemd160, proposals are sorted by txId, data input for encryption is byte array of Protobuffer file of list of proposals)
 
 - A vote transaction would look like that (fee is 5 BSQ, stake is 200 BSQ):
  * Input 1: 300.00 BSQ (needed for fee payment)
@@ -293,7 +293,7 @@ The input for that transaction must be the BSQ output from the vote transaction.
   * 1 byte for type (0x03)
   * 1 byte for version (0x01)
   * 20 bytes for hash of (encrypted) vote data collection (using Sha256Ripemd160)
-  * 32 bytes for decryption key (AES 256 bit) -> TODO we might change to 128 bit as that is probably good enough for our use case.
+  * 16 bytes for decryption key (AES 128 bit)
 
 - A vote reveal transaction would look like that:
  * Input 1: 25.00 BSQ (output 1 from previous vote tx)
