@@ -35,7 +35,7 @@ A Bisq arbitrator must be able to look up transactions in the asset's block expl
 
 == Instructions
 
-IMPORTANT: Each of the steps described below deal with code in the https://github.com/bisq-network/bisq-core repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
+IMPORTANT: Each of the steps described below deal with code in the https://github.com/bisq-network/bisq-assets repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
 
 === Step 1. Implement your asset
 
@@ -43,7 +43,7 @@ IMPORTANT: Each of the steps described below deal with code in the https://githu
 .The `bisq.asset.Asset` type hierarchy
 image::images/asset-hierarchy.png[Asset Hierarchy]
 
-All assets listed on the Bisq exchange ultimately implement the https://jitpack.io/com/github/bisq-network/bisq-core/-SNAPSHOT/javadoc/bisq/asset/Asset.html[`bisq.asset.Asset`] interface. Your asset implementation will need to extend the https://jitpack.io/com/github/bisq-network/bisq-core/-SNAPSHOT/javadoc/bisq/asset/Coin.html[`Coin`], https://jitpack.io/com/github/bisq-network/bisq-core/-SNAPSHOT/javadoc/bisq/asset/Token.html[`Token`] or https://jitpack.io/com/github/bisq-network/bisq-core/-SNAPSHOT/javadoc/bisq/asset/Erc20Token.html[`Erc20Token`] subtypes as appropriate.
+All assets listed on the Bisq exchange ultimately implement the https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Asset.html[`bisq.asset.Asset`] interface. Your asset implementation will need to extend the https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Coin.html[`Coin`], https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Token.html[`Token`] or https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Erc20Token.html[`Erc20Token`] subtypes as appropriate.
 
 TIP: The links above point to Javadoc for each respective type. Read it!
 
@@ -102,7 +102,7 @@ Date:   Wed Aug 1 00:00:00 1979 -0800
 
 === Step 6. Submit your pull request
 
-Your pull request should be submitted against the bisq-network/bisq-core repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-asset`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
+Your pull request should be submitted against the bisq-network/bisq-assets repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-asset`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
 
 Copy and paste the form template below into the description of the pull request and fill it out.
 
@@ -142,4 +142,4 @@ Whenever we ship the next Bisq release, your newly-listed asset will be included
 
 === Pull requests that do not conform to the requirements above will be rejected
 
-If your pull request is for any reason incorrect, e.g. code does not compile, tests do not pass, steps have been missed in the instructions, your changes will be ignored and your pull request will be closed. Getting your asset successfully listed is 100% your responsibility. If you follow the instructions, the `bisq-core` maintainers will merge it; if you don't, they won't. It's that simple.
+If your pull request is for any reason incorrect, e.g. code does not compile, tests do not pass, steps have been missed in the instructions, your changes will be ignored and your pull request will be closed. Getting your asset successfully listed is 100% your responsibility. If you follow the instructions, the `bisq-assets` maintainers will merge it; if you don't, they won't. It's that simple.
