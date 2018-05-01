@@ -19,6 +19,29 @@ Assuming that the loser comes online, their client will be used to sign the mult
 
 If the approach above does not work, and you believe there is no way to issue the payout transaction using normal mechanisms in the Bisq client and protocol, then continue below with the instructions to issue a manual payout.
 
+[TIP]
+.Fill this out as you go
+====
+Paste the following into a text editor and fill out the individual values as you follow the steps below. You'll use these values when submitting the actual manual payout form in <<issue-payout>>.
+----
+depositTxHex:
+buyerPayoutAmount:
+sellerPayoutAmount:
+arbitratorPayoutAmount:
+Tx fee:
+buyerAddressString:
+sellerAddressString:
+arbitratorAddressString:
+buyerPrivateKeyAsHex:
+sellerPrivateKeyAsHex:
+arbitratorPrivateKeyAsHex:
+buyerPubKeyAsHex:
+sellerPubKeyAsHex:
+arbitratorPubKeyAsHex:
+P2SHMultiSigOutputScript:
+----
+====
+
 === Step 1. Review dispute details
 
 In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have recieved the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
@@ -86,6 +109,7 @@ Click on the winning trader's dispute ticket and *send the trader their public k
 
 When you have the trader's private key, move on to the next step.
 
+[[issue-payout]]
 === Step 4. Issue the manual dispute payout
 
 Now that you have all the necessary information, you can *open the Emergency multi-sig payout tool* by clicking `alt-g` in the dispute view:
