@@ -1,5 +1,6 @@
 = How to issue a manual dispute payout
-:toc:
+:toc: left
+:sectanchors:
 
 == Introduction
 
