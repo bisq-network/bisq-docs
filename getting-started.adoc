@@ -1,4 +1,6 @@
 = Getting Started with Bisq
+:toc: left
+:sectanchors:
 :btc_deposit: 0.01
 
 Bisq is built on some https://bisq.network/philosophy/[serious principles^] and some https://github.com/bisq-network[seriously impressive code^], but it's surprisingly approachable. This guide will help you get up & running quickly.
