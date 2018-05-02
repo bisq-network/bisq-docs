@@ -19,7 +19,7 @@ Instead, when you place an order on Bisq, it's routed to a global network of peo
 If you want to tap into this network, you've got to run the software too!
 ====
 
-Once the installer is done, go ahead and open Bisq. It'll take a few moments to open as it connects to Tor and Bisq's peer-to-peer trading network. 
+Once the installer is done, go ahead and open Bisq. It'll take a few moments to open as it connects to Tor and Bisq's peer-to-peer trading network.
 
 [[[Once it does, it'll ask you to set up a wallet...]]]
 
@@ -58,7 +58,7 @@ We're almost there—last thing: before you buy bitcoin with Bisq, you'll need s
 
 Huh?
 
-Here's why: to encourage fair trades, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc_deposit} BTC, along with a tiny bit more to cover the trading fee & mining fees for the transfers. 
+Here's why: to encourage fair trades, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc_deposit} BTC, along with a tiny bit more to cover the trading fee & mining fees for the transfers.
 
 [NOTE]
 .I'm new to this and have no bitcoin. How can I get bitcoin for the deposit?
