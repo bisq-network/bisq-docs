@@ -1,3 +1,111 @@
 = Getting Started with Bisq
+:btc_deposit: 0.01
 
-COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/37[bisq-network/bisq-docs#37] for updates.
+Bisq is built on some https://bisq.network/philosophy/[serious principles^] and some https://github.com/bisq-network[seriously impressive code^], but it's surprisingly approachable. This guide will help you get up & running quickly.
+
+Here we're going to assume you want to trade a national currency for bitcoin, because that's Bisq's most common use case. But keep in mind Bisq offers trading for a range of altcoins too—the only constraint is that one side of the trade must always be in bitcoin.
+
+== Download & install
+
+To run Bisq, download it from https://bisq.network/downloads/[the Bisq downloads page]. Before installing, it's a good idea to verify the signatures of the downloaded file (https://www.torproject.org/docs/verifying-signatures.html.en[instructions here^]).
+
+[NOTE]
+.Download and install? Why can't I just trade on your website?
+====
+Unlike most exchanges, Bisq doesn't run a central server to receive orders.
+
+Instead, when you place an order on Bisq, it's routed to a global network of people who are also running Bisq's software on their own computers.
+
+If you want to tap into this network, you've got to run the software too!
+====
+
+Once the installer is done, go ahead and open Bisq. It'll take a few moments to open as it connects to Tor and Bisq's peer-to-peer trading network. 
+
+[[[Once it does, it'll ask you to set up a wallet...]]]
+
+[[[discuss first-time application/wallet setup]]]
+
+When that's done, feel free to have a look around Bisq. You can browse buy offers, sell offers, and tweak your account settings.
+
+== Configure a national currency account
+
+Since we're looking to buy bitcoin, let's take a look at the Buy BTC panel. You should see a list of offers. But the orange Buy BTC buttons are all disabled:
+
+<picture of buy offers screen with disabled orange buttons>
+
+That's because we haven't set a way to actually pay for the bitcoin we want to buy. Bisq works with several payment methods, so you can pick one you're most comfortable with. Keep in mind that the one you pick will determine:
+
+* which offers you can take (e.g., in the picture above Venmo has a handful of outstanding offers...but if you don't want to use Venmo, and if there are no offers for your preferred payment method, you can make your own offer & wait for a taker)
+* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#5[details here^])
+
+[NOTE]
+.Where is my financial account data stored?
+====
+On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your arbitrator, if there's a dispute) will ever see your payment details.
+====
+
+Once you've decided on a payment method, go ahead & configure it on the Account panel by filling in the details:
+
+<picture of Account screen>
+
+Once you're done, hit Save New Account and go back to the Buy BTC panel. Offers that use your payment method should now be enabled:
+
+<picture of buy offers screen with enabled orange buttons>
+
+== Fund your Bisq wallet
+
+We're almost there—last thing: before you buy bitcoin with Bisq, you'll need some bitcoin.
+
+Huh?
+
+Here's why: to encourage fair trades, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc_deposit} BTC, along with a tiny bit more to cover the trading fee & mining fees for the transfers. 
+
+[NOTE]
+.I'm new to this and have no bitcoin. How can I get bitcoin for the deposit?
+====
+You can buy bitcoin on a centralized exchange, but if you're interested in Bisq, chances are you might not want to do that.
+
+So what can you do? You've got options: friends, family, bitcoin ATMs, bitcoin meetups (commonly called "Satoshi Squares" but there are many others), vouchers, a site like LocalBitcoins.com, or your https://www.youtube.com/watch?v=GbmWGrQjgTA[friendly neighborhood airdrop^] (although you might need to time-travel to find one of these now!).
+====
+
+To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next step" at the bottom. Accept the disclaimer, and you should see a box that looks like this:
+
+<screenshot of box specifying total needed to fund trade>
+
+In this case, you'll need 0.012184 BTC to start the trade. Once you've got that bitcoin, you can move it into Bisq's built-in wallet (this is often more convenient, because then Bisq can automatically post your deposit when you enter a trade). Otherwise you'll need to do that yourself (more about that below).
+
+[[[discuss difference between trade wallet and bisq's built-in wallet? encourage people to use bisq's wallet? maybe as quick admonition?]]]
+
+Now that you've got enough bitcoin for a deposit, you're ready to trade!
+
+== Place a trade
+
+Now for the fun part! Let's actually place a trade.
+
+[[[--following would be a numbered list with abundant screenshots--]]]
+
+[[[find an offer]]]
+
+[[[send deposit to trade wallet--if enough btc in bisq wallet, this is automatic; otherwise, send to trade wallet yourself (need to specify >20 sat/b mining fee?)]]]
+
+[[[confirm trade]]]
+
+[[[send payment! this varies...but bisq will guide you. screenshot will show user must wait for 1 confirmation before sending payment]]]
+
+[[[once you send payment, make sure you tell bisq you've sent it (easy to forget); admonition: good chance to remind users that bisq doesn't actually integrate with fiat payment channels?]]]
+
+[[[wait for seller to receive]]]
+
+...
+
+[[[complete trade]]]
+
+== Get help
+
+[[[bisq has presence on many channels...but which are preferred for support? forums, reddit, github...any/all?]]]
+
+== Stay in touch
+
+If Bitcoin's motto is "be your own bank" then Bisq's motto is "be your own exchange." It's an exciting concept, it's growing fast, and it's something you'll want to follow.
+
+[[[encourage follow on twitter, facebook, telegram, youtube, reddit...any/all/others? looks like email list is retired]]]
