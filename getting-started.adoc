@@ -73,10 +73,9 @@ So what can you do? You've got options: friends, family, bitcoin ATMs, bitcoin m
 To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next step" at the bottom. Accept the disclaimer, and you should see a box that looks like this:
 
 <screenshot of box specifying total needed to fund trade>
+[[[caption: In this case, you'll need 0.012184 BTC to start the trade.]]]
 
-In this case, you'll need 0.012184 BTC to start the trade. Once you've got that bitcoin, you can move it into Bisq's built-in wallet (this is often more convenient, because then Bisq can automatically post your deposit when you enter a trade). Otherwise you'll need to do that yourself (more about that below).
-
-[[[discuss difference between trade wallet and bisq's built-in wallet? encourage people to use bisq's wallet? maybe as quick admonition?]]]
+Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because Bisq could automatically transfer the funds it needs (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq every time you start a trade. More on this below.
 
 Now that you've got enough bitcoin for a deposit, you're ready to trade!
 
