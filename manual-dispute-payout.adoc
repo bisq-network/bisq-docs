@@ -116,8 +116,6 @@ Now that you have all the necessary information, you can *open the Emergency mul
 
 image:images/multisig-payout-tool.png[Emergency multi-sig payout tool]
 
-NOTE: Several values are pre-filled in the payout tool. They are a left-over from testing in an earlier version of Bisq. *You should erase these pre-filled values and replace them with the ones you have collected in the steps above*.
-
 depositTxHex:: The Deposit transaction ID from the Dispute details view, i.e. the same transaction ID you clicked on to view the transaction in a block explorer.
 
 buyerPayoutAmount:: The amount in BTC that the buyer should be paid out, as noted above, e.g. `0.03`
