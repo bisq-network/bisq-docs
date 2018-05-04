@@ -1,3 +1,6 @@
 = Roles
 
-COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/46[bisq-network/bisq-docs#46] for updates. In the meantime, browse the issues under the https://github.com/bisq-network/roles/issues[bisq-network/roles] repository.
+COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/46[bisq-network/bisq-docs#46] for updates, and in the meantime:
+
+ * Read https://docs.bisq.network/dao/phase-zero.html#Appendix-A[Appendix A: Roles] of the Phase Zero doc
+ * Browse the issues under the https://github.com/bisq-network/roles/issues[bisq-network/roles] repository
