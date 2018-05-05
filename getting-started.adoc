@@ -2,6 +2,8 @@
 :toc: left
 :sectanchors:
 :btc_deposit: 0.01
+:imagesdir: images
+:!figure-caption:
 
 Bisq is built on some https://bisq.network/philosophy/[serious principles^] and some https://github.com/bisq-network[seriously impressive code^], but it's surprisingly approachable. This guide will help you get up & running quickly.
 
@@ -31,13 +33,14 @@ When that's done, feel free to have a look around Bisq. You can browse buy offer
 
 == Configure a national currency account
 
-Since we're looking to buy bitcoin, let's take a look at the Buy BTC panel. You should see a list of offers. But the orange Buy BTC buttons are all disabled:
+Since we're looking to buy bitcoin, let's take a look at the Buy BTC panel. You should see a list of offers, but you'll notice all the orange Buy BTC buttons are disabled:
 
-<picture of buy offers screen with disabled orange buttons>
+.Here, all offers are disabled except the one requiring a US Postal Money Order, since there's no account to configure for that method.
+image::before-adding-fiat-account.png[Offers before configuring national currency account]
 
 That's because we haven't set a way to actually pay for the bitcoin we want to buy. Bisq works with several payment methods, so you can pick one you're most comfortable with. Keep in mind that the one you pick will determine:
 
-* which offers you can take (e.g., in the picture above Venmo has a handful of outstanding offers...but if you don't want to use Venmo, and if there are no offers for your preferred payment method, you can make your own offer & wait for a taker)
+* which offers you can take (e.g., in the image above, Cash App has many outstanding offers...but if you don't want to use Cash App, and if there are no offers for the payment method you want, you can make your own offer & wait for a taker)
 * how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#5[details here^])
 
 [NOTE]
@@ -46,13 +49,21 @@ That's because we haven't set a way to actually pay for the bitcoin we want to b
 On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your arbitrator, if there's a dispute) will ever see your payment details.
 ====
 
-Once you've decided on a payment method, go ahead & configure it on the Account panel by filling in the details:
+Once you've picked a payment method, go to the Account panel and click "Add New Account." Pick your payment method from the dropdown and enter your details. 
 
-<picture of Account screen>
+We're going to configure a Venmo account:
 
-Once you're done, hit Save New Account and go back to the Buy BTC panel. Offers that use your payment method should now be enabled:
+.Configuring a Venmo account. In this case, we only need to edit the full name & username fields.
+image::configure-fiat-account.png[Configuring a national currency account]
 
-<picture of buy offers screen with enabled orange buttons>
+It's *crucial* the information you enter here is correct. Your trading partner can only acknowledge your payment if the they receive a payment from the same account as the account detailed here. Once you've created an account, you cannot edit its information (if you need to make a change, you can delete & add the account again).
+
+The "Account Name" field is an exception: it's just a label only you will ever see, so there's no right or wrong value for it. You can make it whatever you like.
+
+Once you're done, hit the "Save New Account" button and go back to the Buy BTC panel. Offers requiring the payment method you just configured should now be enabled:
+
+.After configuring a payment account: we picked Venmo, so Venmo offers are now enabled.
+image::after-adding-fiat-account.png[Configuring a national currency account]
 
 == Fund your Bisq wallet
 
