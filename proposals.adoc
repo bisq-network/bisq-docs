@@ -72,9 +72,10 @@ A maintainer will quickly review your proposal and will either (a) assign it to 
 Once a proposal is submitted, a two-week review period follows. During this period, interested reviewers should read, discuss and ultimately react to the proposal as follows:
 
  - 👍: I agree with the proposal and want to see it enacted
+ - 😕: I am uncertain about the proposal and I need more information
  - 👎: I disagree with the proposal and do not want to see it enacted
 
-When reacting with a 👎, add a comment explaining why. If you don't, then don't expect your dissenting opinion to have much weight or get addressed.
+When reacting with a 😕 or 👎, add a comment explaining why. If you don't, then don't expect your opinion to have much weight or get addressed.
 
 If you do not understand or care about a given proposal, ignore it.
 
