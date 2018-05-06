@@ -539,9 +539,13 @@ Once submitted, your request will be added to the https://docs.google.com/spread
 
 === submit a proposal
 
+See <<../proposals#step-1-submit, how to submit a proposal>>.
+
 == As a stakeholder, I can… [[stakeholder-use-cases,stakeholder use cases]]
 
 === put a proposal to a vote
+
+During Phase Zero, we do not formally vote on any proposals other than compensation requests. Generic proposal voting will come online with the first production software release of the Bisq DAO, i.e. when we <<exit-criteria, exit Phase Zero>>.
 
 === vote on compensation requests [[how-to-vote]]
 
