@@ -15,7 +15,7 @@ The mining fee estimation is delivered by:
 
 . link:https://bitcoinfees.21.co/[21.co]
 
-_Please note that the fee estimation function might get separated in future into it's own node._
+_Please note that the fee estimation function might get separated in the future into its own node._
 
 
 === Background:
@@ -28,7 +28,7 @@ There are several reasons why the Bisq application does not connect directly to 
 
 For those 2 reasons we changed in earlier updates to the model of operating a price relay node running as Tor hidden service which connects to the service providers in clear net mode and contains the API key for Bitcoin Average.
 
-The price relay carry an important security aspect: +
+The price relay carries an important security aspect: +
 If the trader is using a percentage based price in the offer the actual trade price will be calculated using the current market price taken from the market price providers. If a node would deliver wrong data it could lead to a wrong trade price. Both traders check the calculated price by themselves but if both are connected to the same malicious provider it would result in a wrong trade price. Connection is made randomly to one of the providers in the list. We have as well a check for the age of the price and if the price is older than 30 min. the market price will be ignored. If no price is available percentage based offers cannot be taken. A monitor service checking all price relay nodes and comparing their values for outliers is an important feature we need to add soon.
 
 The price relay is a simple http server and has to be set up to be accessible as Tor hidden service. Additionally if the operator wants he can open it to clear net (at least one clear net node is useful for supporting the regtest-without-tor dev setup for receiving market prices). We don't recommend to advertise the node address to not get traffic from non-Bisq users. There is no authentication scheme for Bisq users which make the service vulnerable for abuse of DDoS attacks. An authentication scheme for a P2P/open source environment is a challenge on its own but considered important to get explored further.
@@ -36,12 +36,12 @@ The price relay is a simple http server and has to be set up to be accessible as
 
 The user connects to one of the nodes randomly and if a node fails it tries the next in random node in the list.
 If the first node is not available it decreases usability for the user because price display at startup takes longer.
-But more critical is that if both nodes are offline percentage based offers cannot be used. Similar if a price node has connection issues with the providers the prices are outdated and likely invalid for other peers when the user engage in a trade.
+But more critical is that if both nodes are offline percentage based offers cannot be used. Similar if a price node has connection issues with the providers the prices are outdated and likely invalid for other peers when the user engages in a trade.
 
 
 == Price relay node operators
 
-The price relay node addresses (onion address) are hard coded in the application but can be overruled if the user adds a price relay node address as program argument. Any user can run therefor their own price relay node and connect to it. Though they require an API key for Bitcoin Average (cost are 12.- or 35.- USD/month depending on plan).
+The price relay node addresses (onion address) are hard coded in the application but can be overruled if the user adds a price relay node address as program argument. Any user can run therefor their own price relay node and connect to it. Though they require an API key for Bitcoin Average (cost is 12.- or 35.- USD/month depending on plan).
 
 Some contributors of Bisq are running the default price relay nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default price relay node and it requires that a certain quality of service is met. The operator also need to acquire an API key for Bitcoin Average. Currently we trust that all operators do their best to provide a reliable service without defining exactly the metrics for the quality of service.
 

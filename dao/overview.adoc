@@ -203,7 +203,7 @@ The risk of forking provides a strong incentive not to act contrary to the inter
 
 It is possible for the main stakeholders to abuse their power in detriment to the interests of minority stakeholders (a.k.a. a majority attack). For example, a majority could vote to add new rules for confiscating or invalidating the tokens of the minority stakeholders. Such decisions constitute a hard fork, i.e. a change to the system that is not backward compatible.
 
-The established network will not accept transactions on the hard fork. This means that a malicious fork would have the difficult task of starting a network of traders from scratch, in particular since they have to compete against the old network. Second, the token value on the new fork would be essentially zero, and the attackers would presumably lose a lot of wealth.The attackers need to get their token value back and this would take decades, given a token yield of a few percent.
+The established network will not accept transactions on the hard fork. This means that a malicious fork would have the difficult task of starting a network of traders from scratch, in particular since they have to compete against the old network. Second, the token value on the new fork would be essentially zero, and the attackers would presumably lose a lot of wealth. The attackers need to get their token value back and this would take decades, given a token yield of a few percent.
 
 In short, we see no economic incentive for a majority attack on the Bisq DAO.
 

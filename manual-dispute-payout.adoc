@@ -10,7 +10,7 @@ In rare cases, it can become necessary for an arbitrator to work with a trader t
 
 The instructions that follow assume that a trade dispute has already been opened, arbitrated and closed, but that for some reason the payout transaction has not occurred as expected.
 
-One reason that a payout transaction may not go through is because the "winner" of the dispute (i.e. the trader who is being awarded the trading amount) has not come online since the ticket has been closed. It is necessary for the winner's Bisq client to come online in order to actually sign their part of of the 2-of-3 multi-sig transaction. If you believe this is the problem, you should *not* jump straight to a manual payout. You should first:
+One reason that a payout transaction may not go through is because the "winner" of the dispute (i.e. the trader who is being awarded the trading amount) has not come online since the ticket has been closed. It is necessary for the winner's Bisq client to come online in order to actually sign their part of the 2-of-3 multi-sig transaction. If you believe this is the problem, you should *not* jump straight to a manual payout. You should first:
 
  1. Re-open both buyer and seller tickets for this trade using `cmd-U`
  2. Re-close the ticket of the "losing" (i.e. the trader who is *not* receiving the trade amount, this time checking the "Use loser as publisher" checkbox.
@@ -44,7 +44,7 @@ P2SHMultiSigOutputScript:
 
 === Step 1. Review dispute details
 
-In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have recieved the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
+In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have received the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
 
 image:images/determine-winner.png[determining who was the winner]
 
@@ -66,7 +66,7 @@ Also *take note of the `txFee` value in the contract JSON*, e.g.:
 
    "txFee": 36000,
 
-This is the value of the bitcoin transaction fee denominated in Satoshis. Later, *you will need the same transaction fee value denominated in BTC*, which can be found by dividing the Satoshi value by 100,000,000, e.g.:
+This is the value of the Bitcoin transaction fee denominated in satoshis. Later, *you will need the same transaction fee value denominated in BTC*, which can be found by dividing the satoshi value by 100,000,000, e.g.:
 
     36000/100000000 = 0.00036000 BTC
 
@@ -112,7 +112,7 @@ When you have the trader's private key, move on to the next step.
 [[issue-payout]]
 === Step 4. Issue the manual dispute payout
 
-Now that you have all the necessary information, you can *open the Emergency multi-sig payout tool* by clicking `alt-g` in the dispute view:
+Now that you have all the necessary information, you can *open the Emergency multisig payout tool* by clicking `alt-g` in the dispute view:
 
 image:images/multisig-payout-tool.png[Emergency multi-sig payout tool]
 
@@ -124,7 +124,7 @@ sellerPayoutAmount:: The amount in BTC the seller should be paid out, e.g. `0.06
 
 arbitratorPayoutAmount:: This value should always be `0`, as we no longer issue payouts to arbitrators
 
-Tx fee:: The value of the `txFee` taken from the JSON contract details above, after converting from Satoshis to BTC, e.g. `36000` Satoshis => `0.00036` BTC
+Tx fee:: The value of the `txFee` taken from the JSON contract details above, after converting from satoshis to BTC, e.g. `36000` satoshis => `0.00036` BTC
 
 buyerAddressString:: The buyer's bitcoin address
 
