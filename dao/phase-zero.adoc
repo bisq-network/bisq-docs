@@ -364,7 +364,7 @@ With that said, it's a good idea to consult with stakeholders via the Bisq forum
 
  . something that the relevant maintainer(s) would be likely to merge;
  . something that stakeholders would likely vote to approve as a compensation request;
- . subjected to as as much feedback as possible while still an idea and thus cheap to change or abort.
+ . subjected to as much feedback as possible while still an idea and thus cheap to change or abort.
 
 Remember: _every contributor_ is free to work on what they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
 
@@ -439,7 +439,7 @@ An _operator_ is a bonded contributor responsible for running ("operating") soft
 
 === Administrator
 
-An _administrator_ is a bonded contributor responsible for managing ("adminstering") applications and services that support the Bisq project. Examples include GitHub admin, DNS admin, Slack admin, IRC admin and Discourse (forum) admin.
+An _administrator_ is a bonded contributor responsible for managing ("administering") applications and services that support the Bisq project. Examples include GitHub admin, DNS admin, Slack admin, IRC admin and Discourse (forum) admin.
 
 === Other roles not listed here
 

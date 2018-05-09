@@ -77,6 +77,6 @@ If the PR gets merged the seed node operators and arbitrators will be assigned a
  - At each new release we will check if already supported base currencies have been traded in the past 4 months. If this requirement is not met the base currency will be removed. The Bisq trade statistics are taken as reference. Removal of a not-traded base currency will not be announced beside in the release notes of the new release.
  - Adding the base currency again requires a statement about the changed circumstances (e.g. link to discussions where demand for the base currency is documented,...).
 
-=== Getting an new base currency into production might take a bit
+=== Getting a new base currency into production might take a bit
 
 Adding a new base currency will be part of the normal release cycle.

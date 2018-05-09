@@ -5,9 +5,9 @@ NOTE: This document is a detailed technical specification for the Bisq DAO and B
 
 == BSQ token
 
-BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. We don't use any existing colored coin implementation because our use case requires some extra features which are not supported by those (e.g. decentralized issuance). Beside that, we did not want to introduce any external dependencies to a company or Altcoin. As Bitcoin is the default base currency in Bisq anyway, and our requirements can be 100% covered by the basic features Bitcoin provides we decided to build our custom colored coin solution on top of the Bitcoin blockchain. We don't have the ambition to provide a general purpose solution but have designed the model according to the concrete requirements of Bisq DAO.
+BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. We don't use any existing colored coin implementation because our use case requires some extra features which are not supported by those (e.g. decentralized issuance). Besides that, we did not want to introduce any external dependencies to a company or Altcoin. As Bitcoin is the default base currency in Bisq anyway, and our requirements can be 100% covered by the basic features Bitcoin provides we decided to build our custom colored coin solution on top of the Bitcoin blockchain. We don't have the ambition to provide a general purpose solution but have designed the model according to the concrete requirements of Bisq DAO.
 
-Technically a BSQ token is the same as Bitcoin but it adds some additional rules. A BSQ token is denominated as 100 Bitcoin Satoshi so it can be divided in 100 subunits, leading to the smallest unit of 0.01 BSQ, which is equivalent to 1 Satoshi. Bitcoin requires that the minimum amount of a transaction output is 2730 Satoshi (dust limit) so for transferring BSQ tokens we inherit that limitation. The smallest possible BSQ amount to transfer is therefore 27.30 BSQ. As BSQ tokens are inherently BTC they will have at least the market value of the Bitcoin Satoshis. So 1 BSQ = 100 Satoshi >= the market value of 0.00000100 BTC, which equals at a market price of 20 000 USD/BTC, about 0.02 USD. The real market value of a BSQ token will be decided by the market once trading has started ans will be the sum of that underlying BTC value with the value traders see in the Bisq project.
+Technically a BSQ token is the same as Bitcoin but it adds some additional rules. A BSQ token is denominated as 100 Bitcoin satoshis so it can be divided in 100 subunits, leading to the smallest unit of 0.01 BSQ, which is equivalent to 1 satoshi. Bitcoin requires that the minimum amount of a transaction output is 2730 satoshis (dust limit) so for transferring BSQ tokens we inherit that limitation. The smallest possible BSQ amount to transfer is therefore 27.30 BSQ. As BSQ tokens are inherently BTC they will have at least the market value of the Bitcoin satoshis. So 1 BSQ = 100 satoshis >= the market value of 0.00000100 BTC, which equals at a market price of 20 000 USD/BTC, about 0.02 USD. The real market value of a BSQ token will be decided by the market once trading has started and will be the sum of that underlying BTC value with the value traders see in the Bisq project.
 
 ==== Wallet
 
@@ -84,13 +84,13 @@ A contribution is typically one of the following activities:
  - Advice
  - Others (we will decide on a case to case basis)
 
-Basically any contributed effort exceeding roughly 4 hours will be considered to be included in the group of receivers for the initial distribution. We will announce that call for requests at the https://bisq.community/[Bisq Forum] and contributors need to send an email with the required information to enable verification if the request is justified. They should give a short description and if possible references to the work (links to Github, Forum, etc,...) and provide the spent time and the period when their contribution happened. We will apply a factor for giving early contributions higher weight as well as a factor to give long term contributions more weight. This should reflect the higher risk at earlier periods as well as the higher value of long term contributions. The Bisq team will verify those requests and if it is justified and the requested amount reasonable we will add the contributor to the list of receivers. The hours will get multiplied by a factor to the type of contribution (orientated on typical market salaries). We will then sum up all the weighted hours of all verified contributors and use the percentage of each contributor related to the overall sum for calculating the amount of BSQ they will receive from the genesis transaction. So if a contributor has worked 100 hours and the sum of all contributors is 10 000 hours he will receive 1% of the 2 500 000.00 BSQ from the genesis transaction, thus 25 000 BSQ.
+Basically any contributed effort exceeding roughly 4 hours will be considered to be included in the group of receivers for the initial distribution. We will announce that call for requests at the https://bisq.community/[Bisq Forum] and contributors need to send an email with the required information to enable verification if the request is justified. They should give a short description and if possible references to the work (links to GitHub, Forum, etc,...) and provide the spent time and the period when their contribution happened. We will apply a factor for giving early contributions higher weight as well as a factor to give long term contributions more weight. This should reflect the higher risk at earlier periods as well as the higher value of long term contributions. The Bisq team will verify those requests and if it is justified and the requested amount reasonable we will add the contributor to the list of receivers. The hours will get multiplied by a factor to the type of contribution (orientated on typical market salaries). We will then sum up all the weighted hours of all verified contributors and use the percentage of each contributor related to the overall sum for calculating the amount of BSQ they will receive from the genesis transaction. So if a contributor has worked 100 hours and the sum of all contributors is 10 000 hours he will receive 1% of the 2 500 000.00 BSQ from the genesis transaction, thus 25 000 BSQ.
 
 The way how the factors are applied, how the requested amounts get adjusted and the total sum will be kept private in the team to protect privacy of the contributors as well as to avoid pointless discussions. The model for distributing the project's value is a voluntary act of the Bisq team and there is no right for a claim of any contributor as we never gave any guarantee or advertised that as a reward model. We are simply donating back our received donations to those who we think they deserve to get something in return for their support. Also the contributors can request anonymously and it is highly recommended to use GPG. This should protect the privacy of the contributors as far as possible (many will be known due their activity, but at least only the team will know that). For market makers the verification might get a bit more difficult and we will apply a practical approach how to deal with that. They need initially provide only the onion address of their Bisq application and the number of trades they did. If we see a requirement for it there might be an extra software release where the market makers can prove their claims in a way which protects their privacy but gives cryptographic evidence of their request.
 
 ==== Trade fee payment
 
-The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as Satoshis (BTC), thus the BTC value is not lost but used as mining fee.
+The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as satoshis (BTC), thus the BTC value is not lost but used as mining fee.
 
 - A 0.50 BSQ fee payment tx could look like that:
 
@@ -100,7 +100,7 @@ The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) 
  * Output 2: 0.09950050 BTC
  * Mining fee: 0.0005 (0.00049950 BTC + 0.00000050 BTC or 0.50 BSQ)
 
-So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.50 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin Satoshi.
+So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the second output is spending more than the remaining 0.50 BSQ it is invalid as a BSQ output and we consider it as a BTC output. The remaining 0.50 BSQ which was not used in the first output will be used for the mining fee, thus reduces the mining fee which is paid from the BTC input (input 2). With that model we can spend fees as small as 0.01 BSQ or 1 Bitcoin satoshi.
 
 The trade fee will be calculated based on the trade amount and the distance from the market price (if available). We use the same model for BTC and BSQ fees. A 1 BTC trade with 1% distance from the market price will use the default fee. If the trade amount is lower or higher we apply a linear adjustment. 0.1 BTC trade has 10% of the trade fee as long as we don't reach the minimum value for the trade fee. For the distance to the market price we use the square root of the percent value, so 9% would result in a factor of 3. A 16% distance to the market price would cause a 4 times increase of the trade fee.
 
@@ -168,9 +168,9 @@ The full cycle will last 4380 blocks which is about an average month if one bloc
 
 ==== Compensation request
 
-Contributors can create a compensation request for the work they contributed to the project. This can be anything what has added value to the project. The contributors has no guarantee that their request gets accepted. So when they start working they need to be aware that there is no guarantee for a reward.
+Contributors can create a compensation request for the work they contributed to the project. This can be anything what has added value to the project. The contributors have no guarantee that their request gets accepted. So when they start working they need to be aware that there is no guarantee for a reward.
 
-If not sure about the value of their work for the community, they should make small work packages and discuss at the usual communication channels (Slack, Github, Forum,..) to see if the work they are proposing sparks some interest and support. To use upfront payment with escrow would make the process much more complicated (who controls the escrow,...). It also reflects the situation of normal freelance work where work is paid usually after the work is completed and the reputation of the company provides sufficient base for a trust relationship in most cases.
+If not sure about the value of their work for the community, they should make small work packages and discuss at the usual communication channels (Slack, GitHub, Forum,..) to see if the work they are proposing sparks some interest and support. To use upfront payment with escrow would make the process much more complicated (who controls the escrow,...). It also reflects the situation of normal freelance work where work is paid usually after the work is completed and the reputation of the company provides sufficient base for a trust relationship in most cases.
 
 To avoid spam the contributor needs to pay a fee of 1 BSQ. There will be a user interface in the application where the contributor fills in a form with the required data.
 
@@ -185,7 +185,7 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
  * Title (must not conflict with existing requests)
  * Creation date
  * Description (short paragraph)
- * Link to either Github issues or Bisq Forum for detailed description and deliveries
+ * Link to either GitHub issues or Bisq Forum for detailed description and deliveries
  * Requested amount in BSQ
  * BSQ Address
  * Tx ID
@@ -234,7 +234,7 @@ In the vote period a stakeholder cannot transfer his BSQ tokens which they used 
 
 All valid compensation requests from the current cycle are considered for voting. The stakeholder can choose to accept, decline or ignore a request. For acceptance or decline a simple majority is sufficient (> 50%).
 
-Initially the voting is mainly for the compensation requests but there will be some flexible (yet to defined) option for voting on any topic. Over time we might add more specific vote items like amount of trading fee. To avoid that some stakeholder take benefit of voter apathy and are able to make changes with a very low stake we require a quorum for each vote item. Those quorum values will be defined for each vote item. If the vote item does not reach that limit it will be discarded.
+Initially the voting is mainly for the compensation requests but there will be some flexible (yet to defined) option for voting on any topic. Over time we might add more specific vote items like amount of trading fee. To avoid that some stakeholders take benefit of voter apathy and are able to make changes with a very low stake we require a quorum for each vote item. Those quorum values will be defined for each vote item. If the vote item does not reach that limit it will be discarded.
 
 We use blind voting to avoid influence of the current state of the votes to voters who have not yet voted. Without blind voting there would be an incentive to wait for the last moment with voting to have more information.
 
@@ -364,13 +364,13 @@ In case a mediator or arbitrator fails (fraud or severe failure in fulfilling th
 
 A partial confiscation is also possible. The confiscation will be rolled out as a new release where the confiscated transaction is hardcoded and renders the locked up BSQ invalid.
 
-By using a software update we add another safety factor to avoid abuse (if users don't agree they can simply ignore the update), so users are voting to support the decision for confiscation by updating the software. If there is not a super majority it would lead to a network fork. This hard requirements should make sure that only non-contentious cases can be considered for confiscation.
+By using a software update we add another safety factor to avoid abuse (if users don't agree they can simply ignore the update), so users are voting to support the decision for confiscation by updating the software. If there is not a super majority it would lead to a network fork. These hard requirements should make sure that only non-contentious cases can be considered for confiscation.
 
 ==== Revocation
 
-For revoking a registration it requires some lead time, because the arbitrator or mediator can be used in trades or disputes which require some time to get completed. The lead time will be 2 weeks (2000 blocks).
+Revoking a registration requires some lead time, because the arbitrator or mediator can be used in trades or disputes which require some time to get completed. The lead time will be 2 weeks (2000 blocks).
 
-Offers which will get taken after his revocation can only be taken if other arbitrators are selected in the offer as well. In the worst case an offer which has only selected a revoked arbitrator becomes invalid which will get communicated to the user so he can remove the offer. That should be a very rare case if multiple arbitrator are available.
+Offers which will get taken after his revocation can only be taken if other arbitrators are selected in the offer as well. In the worst case an offer which has only selected a revoked arbitrator becomes invalid which will get communicated to the user so he can remove the offer. That should be a very rare case if multiple arbitrators are available.
 
 The number of mediators and arbitrators can be influenced by voting by setting the requirements and payments higher or lower. A change of the requirements will not be applied to past registrations. The requirement at registration time will stick the lifetime of a mediator or arbitrator.
 
@@ -401,7 +401,7 @@ To get the privilege to control a private key for one of those messages it requi
 
 ===== Accounts
 
- - Github account
+ - GitHub account
  - Bisq domain
  - Bisq Trademark
  - Social media accounts (Twitter, Reddit, Slack, IRC, Facebook, Telegram, Mailing List, Newsletter)
@@ -458,7 +458,7 @@ To avoid later discussions about "code is law" we define with that policy clearl
 
 == Definitions
 
-Some terms are used in different context. The following should make more clear the distinction of their meaning.
+Some terms are used in different context. The following should make the distinction of their meaning clearer.
 
 ===== Compensation request
 
@@ -466,7 +466,7 @@ We refer to that term as the request from the user perspective in a conceptual s
 
 ===== Compensation request transaction
 
-This is the Bitcoin transaction which will turn into  new issuance transaction once the compensation request got accepted in voting.
+This is the Bitcoin transaction which will turn into new issuance transaction once the compensation request got accepted in voting.
 
 ===== Compensation request data
 

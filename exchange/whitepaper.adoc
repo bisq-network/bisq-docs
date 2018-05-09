@@ -200,7 +200,7 @@ Bisq does not use a reputation system, as such systems can easily be manipulated
 
 === Standard exchange process
 
- 1. Trader selects the arbitrators he want to accept in case of disputes or stick with the default selection of all matching arbitrators.
+ 1. Trader selects the arbitrators he wants to accept in case of disputes or stick with the default selection of all matching arbitrators.
  2. Trader sets up a payment method account.
  3. Buyer deposits bitcoins from external wallet (for security deposit, create-offer fee and mining fee)
  4. Buyer publishes the offer. Create-offer-fee gets paid to one of his selected arbitrators. The security deposit will be locked in his local Bisq trading wallet in case someone takes the offer.
@@ -214,7 +214,7 @@ Bisq does not use a reputation system, as such systems can easily be manipulated
 === Resolving a dispute
 
  1. The traders started a trade but for whatever reason it got stalled.
- 2. After the max. allowed trade period (depends on the payment method: e.g. OKPay: 1 day, SEPA: 8 days) the software displays an "Open dispute" button, which is otherwise not visible. Any trader can requests arbitration by pressing that button.
+ 2. After the max. allowed trade period (depends on the payment method: e.g. OKPay: 1 day, SEPA: 8 days) the software displays an "Open dispute" button, which is otherwise not visible. Any trader can request arbitration by pressing that button.
  3. Bisq provides a chat like communication system for disputes (and support tickets in case of software bugs) only between the trader and the arbitrator. The initiating trader will see his first (system) message he has sent to the arbitrator requesting a dispute.
  4. The arbitrator receives the dispute request and the software send a dispute message to the other trader, informing him that his peer has started a dispute. The two traders cannot communicate directly with each other and cannot see the communication of the other trader with the arbitrator.
  5. Traders and arbitrator communicate in real time, end-to-end encrypted.
