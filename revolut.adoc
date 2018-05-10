@@ -1,0 +1,28 @@
+= Payment methods: Revolut
+ 
+== Description
+ 
+Revolut Ltd is a digital banking alternative that includes a pre-paid debit card (MasterCard or VISA),
+currency exchange, cryptocurrency exchange (Bitcoin (BTC), Ethereum (ETH), Litecoin (LTC)) and
+peer-to-peer payments. Revolut currently charges no fees for the majority of its services (but for a
+capped usage), and uses interbank exchange rates for its currency exchange on weekdays, and charge a
+markup from 0.5% to 1.5% on weekends. The Revolut App gives customers instant access to Bitcoin,
+Litecoin and Ether by exchanging to/from 25 fiat currencies. However, they remain in the app and
+cannot be moved to another cryptocurrency wallet.
+
+* Website — https://www.revolut.com/[revolut.com]
+* Terms and Conditions - https://www.revolut.com/website-terms[revolut.com/website-terms]
+* Chargeback risk: Low
+* Privacy protection to other peer: High (using e-mail) / Medium (using mobile phone)
+* Mandatory data for a transaction: Amount and email or phone no.
+* Duration: Instant
+* Region: Global
+* Fees: Low
+* Verifiable: Receipt
+* Fraud risk: Low
+
+== Best practices
+
+When using phone number as a Revolut ID will automatically allow you to make an instant payment.
+When using e-mail an e-mail is sent to the other user with an unconfirmed payment and they need to
+claim it. UX is worse / privacy is better with e-mail. 
