@@ -1,0 +1,19 @@
+= Payment methods: Cash deposit
+ 
+== Description
+
+Performing cash deposits in bank accounts.
+
+* Chargeback risk: None
+* Privacy protection to other peer: High
+* Mandatory data for a transaction: Bank account Nr., Name
+* Duration: Instant
+* Region: Global
+* Fees: None
+* Verifiable: Receipt
+* Fraud risk: Low
+
+== Best practices
+
+* Please confirm that there is a bank branch in your area (depositor)
+* Bank of America requires depositors to have a BoA account
