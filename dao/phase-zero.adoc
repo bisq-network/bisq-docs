@@ -121,6 +121,8 @@ Bisq is still small, but has been growing steadily. The USD volume of bitcoin ex
 ._Bisq global monthly trading volume in USD, April 2016&ndash;October 2017_
 image::phase-zero/volume.png[Bisq Trading Volume in USD]
 
+NOTE: For an up-to-date version of the chart above, see the https://docs.google.com/spreadsheets/d/1M8y2cIlHv5Hx5UAt4WZ961Ac8xaNSLiiavjxabNf0qc/edit#gid=1242111088[Bisq Trading Volume spreadsheet].
+
 === Funding
 
 Bisq is designed to be funded directly by its users through _trading fees_. Trading fees are paid by both buyer and seller on every trade, and are received by each trade's arbitrator in compensation for the service they provide. As of October 2017, these trading fees total around one bitcoin per month, distributed to two arbitrators who are also the project's founders and principal developers. These funds are insufficient to cover expenses and as a result the project remains funded in part by founder savings.
