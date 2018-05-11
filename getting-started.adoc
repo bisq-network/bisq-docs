@@ -35,7 +35,7 @@ When that's done, feel free to have a look around Bisq. You can browse buy offer
 
 Since we're looking to buy bitcoin, let's take a look at the Buy BTC panel. You should see a list of offers, but you'll notice all the orange Buy BTC buttons are disabled:
 
-.Here, all offers are disabled except the one requiring a US Postal Money Order, since we haven't set up a way to configure an account for that method yet.
+.Here, all offers are disabled except the one requiring a US Postal Money Order, since Bisq doesn't yet have a way to configure an account for that method yet.
 image::before-adding-fiat-account.png[Offers before configuring national currency account]
 
 That's because we haven't set a way to actually pay for the bitcoin we want to buy. Bisq works with many different payment methods, so you can choose those you already have access to & are most comfortable using. Keep in mind that the one you pick will determine:
@@ -76,7 +76,7 @@ Here's why: to prevent fraud, Bisq requires buyers and sellers to post a securit
 [NOTE]
 .I'm new to this and have no bitcoin. How can I get bitcoin for the deposit?
 ====
-You've got options. Do you have any friends or  family who could help? Otherwise, try: bitcoin ATMs, bitcoin meetups, and vouchers.
+You've got options. Do you have any friends or  family who could help? Otherwise, try: bitcoin ATMs, bitcoin meetups, vouchers.
 ====
 
 [WARNING]
@@ -87,46 +87,137 @@ Most centralized exchanges (like Coinbase) track your personal information, putt
 Bisq is built from the ground up to avoid this privacy fiasco, so we highly recommend you get your first bitcoin through one of the channels mentioned above.
 ====
 
-To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next step" at the bottom. Accept the disclaimer, and you should see a box that looks like this:
+[.float-group]
+--
+[.left.text-center]
+.You'll need 0.012184 BTC to start this trade.
+image::closing-message.png[Select an offer,400,400]
 
-<screenshot of box specifying total needed to fund trade>
-[[[caption: In this case, you'll need 0.012184 BTC to start the trade.]]]
+To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next Step" at the bottom. Accept the disclaimer, and you'll see a box that tells you how much bitcoin you'll need to start that trade.
 
-Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because it'll allow Bisq to automatically transfer the funds it needs for every trade (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq yourself every time you trade. More on this below.
+Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because it'll allow Bisq to automatically transfer the funds it needs for the trade (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq yourself when you trade. More on this below.
+--
 
 == Take an offer
 
-Now that we've gotten setup out of the way, let's trade.
+:figure-caption: Figure
 
-=== 1. Select an offer you like
+Now that we've gotten setup out of the way, let's do a trade.
+
+=== 1. Select an offer
 
 [.float-group]
 --
 [.right.text-center]
+.Select an offer.
 image::closing-message.png[Select an offer,400,400]
-You can find Linux everywhere these days!
+
+Click the orange "Buy BTC" button for an offer you want to take.
+
+If you don't see one you like, consider waiting & checking back in a couple hours. A Bisq offer is only available while the user making the offer is online and running Bisq, so you'll see offers come and go as Bisq users around the world go online and offline throughout the day.
+
+You can also create your own buy offer, but that's a topic beyond the scope of this guide.
 --
 
 === 2. Send deposit to trade wallet
 
-[[[send deposit to trade wallet--if enough btc in bisq wallet, this is automatic; otherwise, send to trade wallet yourself (need to specify >20 sat/b mining fee?)]]]
+[.float-group]
+--
+[.right.text-center]
+.Address & amount for deposit.
+image::closing-message.png[Send deposit to trade wallet,400,400]
+
+Once you've chosen an offer, a special trade wallet is created to hold both parties' bitcoin (yours and the seller's) while you send payment to the seller.
+
+It works like an escrow account: funds can only be released once you and the seller have satisfied your ends of the deal.
+
+Bisq will tell you exactly how much you need to deposit in this account. 
+
+* If you already have enough bitcoin in a Bisq wallet, the funds will be sent to the trade wallet automatically.
+* If not, go ahead and send the amount required to the trade wallet (see Figure 2). [[[minimum miner fee??]]]
+--
+
+[NOTE]
+.An escrow account? How does that work?
+====
+Bisq never holds any bitcoin or national currency. The trade wallet is actually a 2-of-3 multisignature setup involving you, the seller, and a https://bisq.network/faq/#8[bonded arbitrator^]. More details are https://bisq.network/faq/#18[here^] and you can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
+====
 
 === 3. Confirm trade
 
+Once you've funded your trade wallet, hit the "Review: Take Offer to Buy Bitcoin" button.
+
+Bisq will then show you all the details of the offer you're about to take.
+
+.Make sure these details are correct. After you confirm these terms, you must follow through (or risk losing your deposit).
+image::before-adding-fiat-account.png[Confirm deal details]
+
+If it all looks good, go ahead and hit "Confirm: Take Offer to Buy Bitcoin."
+
+Your deal is now officially happening!
+
 === 4. Send payment
 
-[[[send payment! this varies...but bisq will guide you. screenshot will show user must wait for 1 confirmation before sending payment]]]
+[.float-group]
+--
 
-=== 5. Mark payment as sent in Bisq
+[.right.text-center]
+.Payment details pop-up.
+image::closing-message.png[Select an offer,400,400]
 
-[[[once you send payment, make sure you tell bisq you've sent it (easy to forget); admonition: good chance to remind users that bisq doesn't actually integrate with fiat payment channels?]]]
+Before showing you the seller's payment details, Bisq will wait for the seller's transaction to confirm. This will take _approximately_ 10 minutes.
+
+Then, you'll see a pop-up with the seller's details. Now it's your job to pay the seller through the agreed payment method. 
+
+Note the remaining time indicator: your payment must reach the seller before that timer runs out. So don't stall!
+
+[NOTE]
+.Wait for more confirmations?
+====
+You'll notice that Bisq mentions you can wait for more confirmations before sending payment.
+
+Why might you do that? It has to do with the way Bitcoin transactions are validated: each confirmation makes a transacation exponentially harder to reverse.
+
+Learn more about confirmations https://en.bitcoin.it/wiki/Confirmation[here^].
+====
+
+--
+
+=== 5. Mark payment as sent
+
+[.float-group]
+--
+
+[.right.text-center]
+.Mark payment as sent.
+image::closing-message.png[Mark payment as sent,400,400]
+
+Once you've sent your payment, be sure to mark the payment as sent in Bisq.
+
+It's easy to forget this step, but remember: to maximize your privacy, Bisq doesn't integrate with national currency payment methods—so it won't know you've sent your payment until you tell it.
+
+--
 
 === 6. Complete trade
 
+[.float-group]
+--
+
+[.right.text-center]
+.Trade complete!
+image::closing-message.png[Complete trade,400,400]
+
+When the seller receives your payment, they'll mark it as received in Bisq. Bisq will then complete the trade by releasing the bitcoin you bought to you (along with your deposit).
+
+You can keep your new bitcoin in Bisq, or send it wherever you'd like.
+
+Congratulations. You've just completed your first trade on Bisq!
+
+--
 
 == Get help
 
-If you get stuck and need guidance, feel free to reach out on https://bisq.community/[the forums^], https://www.reddit.com/r/bisq//[r/bisq on reddit^], or https://t.me/bisq_p2p[Telegram^].
+If you get stuck, reach out! There's a community of people to help you on https://bisq.community/[the forums^], https://www.reddit.com/r/bisq//[r/bisq on reddit^], and https://t.me/bisq_p2p[Telegram^].
 
 == Stay in touch
 
