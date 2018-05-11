@@ -1,13 +1,13 @@
 = Getting Started with Bisq
 :toc: left
 :sectanchors:
-:btc_deposit: 0.01
 :imagesdir: images
 :!figure-caption:
+:btc-deposit: 0.01
 
 Bisq is built on some https://bisq.network/philosophy/[serious principles^] and some https://github.com/bisq-network[seriously impressive code^], but it's surprisingly approachable. This guide will help you get up & running quickly.
 
-Here we're going to assume you want to trade a national currency for bitcoin, because that's Bisq's most common use case. But keep in mind Bisq offers trading for a range of altcoins too—the only constraint is that one side of the trade must always be in bitcoin.
+Here we're going to assume you want to trade a national currency for bitcoin, since that's how most people get started with Bisq. But keep in mind Bisq offers trading for a range of other coins too—the only constraint is that one side of the trade must always be in bitcoin.
 
 == Download & install
 
@@ -16,9 +16,9 @@ To run Bisq, download it from https://bisq.network/downloads/[the Bisq downloads
 [NOTE]
 .Download and install? Why can't I just trade on your website?
 ====
-Unlike most exchanges, Bisq doesn't run a central server to receive orders.
+Unlike most exchanges, Bisq doesn't run a central server to take/place offers.
 
-Instead, when you place an order on Bisq, it's routed to a global network of people who are also running Bisq's software on their own computers.
+Instead, when you take/place offers on Bisq, it's routed to a global network of people who are also running Bisq's software on their own computers.
 
 If you want to tap into this network, you've got to run the software too!
 ====
@@ -35,28 +35,28 @@ When that's done, feel free to have a look around Bisq. You can browse buy offer
 
 Since we're looking to buy bitcoin, let's take a look at the Buy BTC panel. You should see a list of offers, but you'll notice all the orange Buy BTC buttons are disabled:
 
-.Here, all offers are disabled except the one requiring a US Postal Money Order, since there's no account to configure for that method.
+.Here, all offers are disabled except the one requiring a US Postal Money Order, since we haven't set up a way to configure an account for that method yet.
 image::before-adding-fiat-account.png[Offers before configuring national currency account]
 
-That's because we haven't set a way to actually pay for the bitcoin we want to buy. Bisq works with several payment methods, so you can pick one you're most comfortable with. Keep in mind that the one you pick will determine:
+That's because we haven't set a way to actually pay for the bitcoin we want to buy. Bisq works with many different payment methods, so you can choose those you already have access to & are most comfortable using. Keep in mind that the one you pick will determine:
 
-* which offers you can take (e.g., in the image above, Cash App has many outstanding offers...but if you don't want to use Cash App, and if there are no offers for the payment method you want, you can make your own offer & wait for a taker)
+* which offers you can take (e.g., in the image above, Cash App has many outstanding offers...but if you don't want to use Cash App, and if there are no offers for the payment method you pick, you can make your own offer & wait for a taker)
 * how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#5[details here^])
 
 [NOTE]
-.Where is my financial account data stored?
+.Where is my payment account data stored?
 ====
 On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your arbitrator, if there's a dispute) will ever see your payment details.
 ====
 
-Once you've picked a payment method, go to the Account panel and click "Add New Account." Pick your payment method from the dropdown and enter your details. 
+In this tutorial, we're going to configure a Venmo account. You can adapt the instructions that follow to the payment method you choose.
 
-We're going to configure a Venmo account:
+Go to the Account panel and click "Add New Account." Pick Venmo from the dropdown and enter your details. 
 
 .Configuring a Venmo account. In this case, we only need to edit the full name & username fields.
 image::configure-fiat-account.png[Configuring a national currency account]
 
-It's *crucial* the information you enter here is correct. Your trading partner can only acknowledge your payment if the they receive a payment from the same account as the account detailed here. Once you've created an account, you cannot edit its information (if you need to make a change, you can delete & add the account again).
+It's *crucial* the information you enter here is correct. Your trading partner can only acknowledge your payment if it's from the account detailed here. Once you've created an account, you cannot edit its information (if you need to make a change, you can delete & add the account again).
 
 The "Account Name" field is an exception: it's just a label only you will ever see, so there's no right or wrong value for it. You can make it whatever you like.
 
@@ -71,14 +71,20 @@ We're almost there—last thing: before you buy bitcoin with Bisq, you'll need s
 
 Huh?
 
-Here's why: to encourage fair trades, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc_deposit} BTC, along with a tiny bit more to cover the trading fee & mining fees for the transfers.
+Here's why: to prevent fraud, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc-deposit} BTC, along with a trading fee & mining fees for the transfers.
 
 [NOTE]
 .I'm new to this and have no bitcoin. How can I get bitcoin for the deposit?
 ====
-You can buy bitcoin on a centralized exchange, but if you're interested in Bisq, chances are you might not want to do that.
+You've got options. Do you have any friends or  family who could help? Otherwise, try: bitcoin ATMs, bitcoin meetups, and vouchers.
+====
 
-So what can you do? You've got options: friends, family, bitcoin ATMs, bitcoin meetups (commonly called "Satoshi Squares" but there are many others), vouchers, a site like LocalBitcoins.com, or your https://www.youtube.com/watch?v=GbmWGrQjgTA[friendly neighborhood airdrop^] (although you might need to time-travel to find one of these now!).
+[WARNING]
+.Why not use an exchange like Coinbase?
+====
+Most centralized exchanges (like Coinbase) track your personal information, putting you at risk by tying your identity with your bitcoin.
+
+Bisq is built from the ground up to avoid this privacy fiasco, so we highly recommend you get your first bitcoin through one of the channels mentioned above.
 ====
 
 To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next step" at the bottom. Accept the disclaimer, and you should see a box that looks like this:
@@ -86,38 +92,44 @@ To find out exactly how much bitcoin you need to execute a specific trade, choos
 <screenshot of box specifying total needed to fund trade>
 [[[caption: In this case, you'll need 0.012184 BTC to start the trade.]]]
 
-Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because Bisq could automatically transfer the funds it needs (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq every time you start a trade. More on this below.
+Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because it'll allow Bisq to automatically transfer the funds it needs for every trade (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq yourself every time you trade. More on this below.
 
-Now that you've got enough bitcoin for a deposit, you're ready to trade!
+== Take an offer
 
-== Place a trade
+Now that we've gotten setup out of the way, let's trade.
 
-Now for the fun part! Let's actually place a trade.
+=== 1. Select an offer you like
 
-[[[--following would be a numbered list with abundant screenshots--]]]
+[.float-group]
+--
+[.right.text-center]
+image::closing-message.png[Select an offer,400,400]
+You can find Linux everywhere these days!
+--
 
-[[[find an offer]]]
+=== 2. Send deposit to trade wallet
 
 [[[send deposit to trade wallet--if enough btc in bisq wallet, this is automatic; otherwise, send to trade wallet yourself (need to specify >20 sat/b mining fee?)]]]
 
-[[[confirm trade]]]
+=== 3. Confirm trade
+
+=== 4. Send payment
 
 [[[send payment! this varies...but bisq will guide you. screenshot will show user must wait for 1 confirmation before sending payment]]]
 
+=== 5. Mark payment as sent in Bisq
+
 [[[once you send payment, make sure you tell bisq you've sent it (easy to forget); admonition: good chance to remind users that bisq doesn't actually integrate with fiat payment channels?]]]
 
-[[[wait for seller to receive]]]
+=== 6. Complete trade
 
-...
-
-[[[complete trade]]]
 
 == Get help
 
-[[[bisq has presence on many channels...but which are preferred for support? forums, reddit, github...any/all?]]]
+If you get stuck and need guidance, feel free to reach out on https://bisq.community/[the forums^], https://www.reddit.com/r/bisq//[r/bisq on reddit^], or https://t.me/bisq_p2p[Telegram^].
 
 == Stay in touch
 
 If Bitcoin's motto is "be your own bank" then Bisq's motto is "be your own exchange." It's an exciting concept, it's growing fast, and it's something you'll want to follow.
 
-[[[encourage follow on twitter, facebook, telegram, youtube, reddit...any/all/others? looks like email list is retired]]]
+Get Bisq updates on https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
