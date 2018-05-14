@@ -4,6 +4,7 @@
 :imagesdir: images
 :!figure-caption:
 :btc-deposit: 0.01
+:btc-deposit-plus-fees: 0.011
 
 Bisq is built on some https://bisq.network/philosophy/[serious principles^] and some https://github.com/bisq-network[seriously impressive code^], but it's surprisingly approachable. This guide will help you get up & running quickly.
 
@@ -71,38 +72,32 @@ Once you're done, hit the "Save New Account" button and go back to the Buy BTC p
 .After configuring a payment account: we picked Zelle, so Zelle offers are now enabled.
 image::after-adding-fiat-account.png[Configuring a national currency account]
 
-== Fund your Bisq wallet
+== Get a security deposit
 
-We're almost there—last thing: before you buy bitcoin with Bisq, you'll need some bitcoin.
+Just 1 more thing to do before we can trade with Bisq: we need to obtain enough bitcoin for a security deposit.
 
-Huh?
+To prevent fraud, Bisq requires buyers and sellers to post a security deposit in bitcoin for every trade. On the buy side, it's {btc-deposit} BTC, along with a trading fee & mining fees for the transfers.
 
-Here's why: to prevent fraud, Bisq requires buyers and sellers to post a security deposit. On the buy side, it's {btc-deposit} BTC, along with a trading fee & mining fees for the transfers.
+As of this writing, that means you'll need {btc-deposit-plus-fees} BTC.
 
-[NOTE]
-.I'm new to this and have no bitcoin. How can I get bitcoin for the deposit?
-====
-You've got options. Do you have any friends or  family who could help? Otherwise, try: bitcoin ATMs, bitcoin meetups, vouchers.
-====
+If you don't already own this bitcoin, you'll need to obtain it. How? You've got options. Do you have any friends or family who could help? Otherwise, you can try a local bitcoin ATM (many don't require ID for small transactions), vouchers, or bitcoin meetups/events.
 
 [WARNING]
-.Why not use an exchange like Coinbase?
+.How about getting bitcoin through an exchange like Coinbase?
 ====
-Most centralized exchanges (like Coinbase) track your personal information, putting you at risk by tying your identity with your bitcoin.
+Most centralized exchanges (like Coinbase, Binance, Kraken, etc) track your personal information, putting you at risk by tying your identity with your bitcoin.
 
-Bisq is built from the ground up to avoid this privacy fiasco, so we highly recommend you get your first bitcoin through one of the channels mentioned above.
+Bisq is built from the ground up to avoid this privacy fiasco, so we highly recommend you get your first bitcoin through one of the other channels mentioned above.
 ====
 
-[.float-group]
---
-[.left.text-center]
-.This trade requires 0.010152 BTC to start.
-image::temp/deposit-amount.png[See exact deposite amount,400,400]
+Once you've gotten enough bitcoin for your security deposit, you can move it into Bisq's built-in wallet. This isn't required, but it'll be more convenient because it'll make the security deposit & fees that Bisq needs readily available when you accept an offer.
 
-To find out exactly how much bitcoin you need to execute a specific trade, choose an offer you like. A new "Take Offer" tab will appear with some deal details. Click "Next Step" at the bottom. Accept the disclaimer, and you'll see a box that tells you how much bitcoin you'll need to start that trade.
+To do this, go to the Funds panel and click the Receive tab. Send your 0.011 BTC to one of the addresses listed there.
 
-Once you've got the bitcoin you need, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient because it'll allow Bisq to automatically transfer the funds it needs for the trade (since they'll be stored in a wallet Bisq controls). Otherwise, you'll need to transfer the funds into Bisq yourself when you trade. More on this below.
---
+.You can send your security deposit to an address listed here (yours will be different from the one in this image).
+image::fund-bisq-wallet.png[Fund your Bisq wallet]
+
+If you'd rather not hold any bitcoin in Bisq, that's fine, but you'll need to transfer your security deposit & fees to Bisq yourself when you take an offer (more on this below).
 
 == Take an offer
 
