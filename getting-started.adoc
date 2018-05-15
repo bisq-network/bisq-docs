@@ -208,7 +208,7 @@ It's easy to forget this step, but remember: to maximize your privacy, Bisq does
 
 [.right.text-center]
 .Trade complete!
-image::temp/complete-trade.png[Complete trade,400,400]
+image::complete-trade.png[Complete trade,400,400]
 
 When the seller receives your payment, they'll mark it as received in Bisq. Bisq will then complete the trade by releasing the bitcoin you bought to you (along with your deposit).
 
