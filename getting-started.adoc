@@ -56,7 +56,7 @@ On your computer *only* (i.e., the computer on which Bisq is installed). Only yo
 
 In this tutorial, we're going to configure a Zelle account. You can adapt the instructions that follow to the payment method you choose.
 
-Go to the Account panel and click "Add New Account." Pick Zelle from the dropdown and enter your details. 
+Go to the Account panel and click "Add New Account." Pick Zelle from the dropdown and enter your details.
 
 For Zelle, we need to enter Full Name and Email/Mobile Number.
 
@@ -131,7 +131,7 @@ Once you choose an offer, Bisq creates a special trade wallet to hold both parti
 
 It works like an escrow account: funds in the wallet can only be released once you and the seller have satisfied your ends of the deal.
 
-Bisq will tell you the address of the trade wallet & exactly how much to send it. 
+Bisq will tell you the address of the trade wallet & exactly how much to send it.
 
 * If you already have enough bitcoin in a Bisq wallet, click "Transfer Funds From Bisq Wallet" and the funds will automatically transfer to the trade wallet.
 * If not, go ahead and send the amount required ("Funds Needed") to the specified address ("Trade Wallet Address"). See Figure 2.
