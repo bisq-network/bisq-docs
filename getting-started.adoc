@@ -83,14 +83,14 @@ As of this writing, that means you'll need {btc-deposit-plus-fees} BTC.
 If you don't already own this bitcoin, you'll need to obtain it. How? You've got options. Do you have any friends or family who could help? Otherwise, you can try a local bitcoin ATM (many don't require ID for small transactions), vouchers, or bitcoin meetups/events.
 
 [WARNING]
-.How about getting bitcoin through an exchange like Coinbase?
+.How about getting bitcoin through a platform like Coinbase?
 ====
-Most centralized exchanges (like Coinbase, Binance, Kraken, etc) track your personal information, putting you at risk by tying your identity with your bitcoin.
+Most centralized platforms (like Coinbase, Binance, Kraken, etc) track your personal information, putting you at risk by tying your identity with your bitcoin.
 
 Bisq is built from the ground up to avoid this privacy fiasco, so we highly recommend you get your first bitcoin through one of the other channels mentioned above.
 ====
 
-Once you've gotten enough bitcoin for your security deposit, you can move it into Bisq's built-in wallet. This isn't required, but it'll be more convenient because it'll make the security deposit & fees that Bisq needs to accept an offer readily available.
+Once you've gotten enough bitcoin for your security deposit, you can move it into Bisq's built-in wallet. This isn't required, but it'll make trading more convenient since the security deposit & fees you need to accept an offer will be readily available to Bisq.
 
 IMPORTANT: If you decide to use a Bisq wallet, make sure you write down its seed words. Seed words will allow you to recover the funds in your wallets in case of disaster. You'll find them in the "Wallet Seed" section of the Account panel. Learn more about wallet security https://bitcoin.org/en/secure-your-wallet[here^].
 
@@ -167,7 +167,7 @@ Your deal is now officially happening!
 .Payment details pop-up.
 image::seller-payment-details.png[Seller payment details,400,400]
 
-Now that you've taken an offer, it's time to pay the seller. Almost.
+Now that you've taken an offer, it's almost time to pay the seller.
 
 First, before showing you the seller's payment details, Bisq will wait for the Bitcoin network to confirm the trade's transactions. On average, this takes 10 minutes.
 
@@ -207,7 +207,7 @@ It's easy to forget this step, but remember: to maximize your privacy, Bisq does
 --
 
 [.right.text-center]
-.Trade complete!
+.Trade complete.
 image::complete-trade.png[Complete trade,400,400]
 
 When the seller receives your payment, they'll mark it as received in Bisq. Bisq will then complete the trade by releasing the bitcoin you bought to you (along with your deposit).
