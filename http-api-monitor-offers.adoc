@@ -38,7 +38,20 @@ For more hard-core developers that want to run from source:
 
 In both cases the API should be running on port 8080. You can verify that by executing:
 
-    curl http://localhost:8080/api/v1/offers
+    curl http://localhost:8080/api/v1/version
+
+You should receive a response like the following:
+
+[source,json]
+----
+{
+    "application": "0.6.7",
+    "network": 1,
+    "p2PMessage": 10,
+    "localDB": 1,
+    "tradeProtocol": 1
+}
+----
 
 [NOTE]
 Complete interactive API documentation is available at http://localhost:8080/swagger.
