@@ -2,7 +2,6 @@
 
 This guide walks you through the process of creating a bot that monitors available offers and sends email notifications.
 
-
 == What you'll build
 
 You'll build a NodeJS based script that connects to Bisq over HTTP API to get offers and market prices and sends email notification in case any interesting offer is found.
@@ -14,7 +13,6 @@ You'll build a NodeJS based script that connects to Bisq over HTTP API to get of
 * NodeJS 6+
 * gmail account
 * Bisq-api source code (and Maven) or Docker
-
 
 == Starting the API
 
@@ -34,7 +32,6 @@ For more hard core developers that want to run from sources:
     cd bisq-api
     mvn compile exec:java -Dexec.mainClass="io.bisq.api.app.ApiMain"
 
-
 === Verify if API is running
 
 In both cases the API should be running on port 8080. You can verify that by executing:
@@ -43,7 +40,6 @@ In both cases the API should be running on port 8080. You can verify that by exe
 
 [NOTE]
 API documentation is available at http://localhost:8080/swagger.
-
 
 == Getting the offers
 
@@ -146,7 +142,6 @@ Let's install some dependencies:
 
     npm install lodash http-as-promised nodemailer
 
-
 In general our script will look like this:
 
 [source,javascript]
@@ -215,7 +210,6 @@ function getPriceFilter(marketPrice) {
 ----
 
 We are multiplying `marketPrice` by `10000` because that is the format in which the API returns the price.
-
 
 Here is a full script. You must substitute EMAIL_ACCOUNT_USERNAME, EMAIL_ACCOUNT_PASSWORD, EMAIL_FROM_ADDRESS and EMAIL_TO_ADDRESS
 with appropriate values.
