@@ -52,66 +52,75 @@ Open offers are available under following URL http://localhost:8080/api/v1/offer
 
 Response should look like this:
 
-    {
-        "offers": [OfferDetail],
-        "total": integer
-    }
+[source,json]
+----
+{
+    "offers": [OfferDetail],
+    "total": integer
+}
+----
 
 Where `offers` is an array with individual offers and `total` is number of all offers.
 
 OfferDetail looks like this:
 
-    {
-        acceptedBankIds	[string]
-        acceptedCountryCodes	[string]
-        amount	integer($int64)
-        arbitratorNodeAddresses	[string]
-        bankId	string
-        baseCurrencyCode	string
-        blockHeightAtOfferCreation	integer($int64)
-        buyerSecurityDeposit	integer($int64)
-        counterCurrencyCode	string
-        countryCode	string
-        currencyCode	string
-        date	string($date-time)
-        direction	string Enum: [ BUY, SELL ]
-        hashOfChallenge	string
-        id	string
-        isCurrencyForMakerFeeBtc	boolean
-        isPrivateOffer	boolean
-        lowerClosePrice	integer($int64)
-        makerFee	integer($int64)
-        makerPaymentAccountId	string
-        marketPriceMargin	number($double)
-        maxTradeLimit	integer($int64)
-        maxTradePeriod	integer($int64)
-        minAmount	integer($int64)
-        offerFeePaymentTxId	string
-        ownerNodeAddress	string
-        paymentMethodId	string
-        price	integer($int64)
-        protocolVersion	integer($int32)
-        sellerSecurityDeposit	integer($int64)
-        state	string Enum: [ UNKNOWN, OFFER_FEE_PAID, AVAILABLE, NOT_AVAILABLE, REMOVED, MAKER_OFFLINE ]
-        txFee	integer($int64)
-        upperClosePrice	integer($int64)
-        useAutoClose	boolean
-        useMarketBasedPrice	boolean
-        useReOpenAfterAutoClose	boolean
-        versionNr	string
-    }
+[source,json]
+----
+{
+    acceptedBankIds	[string]
+    acceptedCountryCodes	[string]
+    amount	integer($int64)
+    arbitratorNodeAddresses	[string]
+    bankId	string
+    baseCurrencyCode	string
+    blockHeightAtOfferCreation	integer($int64)
+    buyerSecurityDeposit	integer($int64)
+    counterCurrencyCode	string
+    countryCode	string
+    currencyCode	string
+    date	string($date-time)
+    direction	string Enum: [ BUY, SELL ]
+    hashOfChallenge	string
+    id	string
+    isCurrencyForMakerFeeBtc	boolean
+    isPrivateOffer	boolean
+    lowerClosePrice	integer($int64)
+    makerFee	integer($int64)
+    makerPaymentAccountId	string
+    marketPriceMargin	number($double)
+    maxTradeLimit	integer($int64)
+    maxTradePeriod	integer($int64)
+    minAmount	integer($int64)
+    offerFeePaymentTxId	string
+    ownerNodeAddress	string
+    paymentMethodId	string
+    price	integer($int64)
+    protocolVersion	integer($int32)
+    sellerSecurityDeposit	integer($int64)
+    state	string Enum: [ UNKNOWN, OFFER_FEE_PAID, AVAILABLE, NOT_AVAILABLE, REMOVED, MAKER_OFFLINE ]
+    txFee	integer($int64)
+    upperClosePrice	integer($int64)
+    useAutoClose	boolean
+    useMarketBasedPrice	boolean
+    useReOpenAfterAutoClose	boolean
+    versionNr	string
+}
+----
 
 Now let's say that we want to buy Bitcoin that is less than 1% from market price.
 We can use only polish SEPA account and pay with Euros.
 
 First we need to filter those offers using following static criteria:
 
-    {
-        baseCurrencyCode: 'BTC',
-        counterCurrencyCode: 'EUR',
-        direction: 'SELL',
-        paymentMethodId: 'SEPA'
-    }
+[source,json]
+----
+{
+    baseCurrencyCode: 'BTC',
+    counterCurrencyCode: 'EUR',
+    direction: 'SELL',
+    paymentMethodId: 'SEPA'
+}
+----
 
 Next we need to filter those offers by price. There are two types of offers, market price based offers and fixed price offers.
 They are distinguished by `useMarketBasedPrice` attribute.
@@ -127,11 +136,14 @@ In order to get market price of BTC in EUR we have to execute following query:
 
 The response should be something like this:
 
-    {
-      "prices": {
-        "EUR": 7035.62
-      }
-    }
+[source,json]
+----
+{
+  "prices": {
+    "EUR": 7035.62
+  }
+}
+----
 
 == The JavaScript part
 
@@ -142,43 +154,55 @@ Let's install some dependencies:
 
 In general our script will look like this:
 
-    Promise.all([getOffers(), getMarketPrice()])
-            .then(filterOffers)
-            .then(notify)
-            .catch(e => console.error(e));
+[source,javascript]
+----
+Promise.all([getOffers(), getMarketPrice()])
+        .then(filterOffers)
+        .then(notify)
+        .catch(e => console.error(e));
+----
 
 So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API.
 Then we need to filter those offers and finally send notification.
 
 Getting offers is a simple call that returns promise with array of offers:
 
-    function getOffers() {
-        return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true})
-            .then(body => body.offers);
-    }
+[source,javascript]
+----
+function getOffers() {
+    return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true})
+        .then(body => body.offers);
+}
+----
 
 Similarly with `getMarketPrice`:
 
-    function getMarketPrice() {
-        return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
-                .then(body => _.get(body, 'prices.EUR'))
-    }
+[source,javascript]
+----
+function getMarketPrice() {
+    return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
+            .then(body => _.get(body, 'prices.EUR'))
+}
+----
 
 Now our `filterOffers` function is ready to receive an array of results from the two functions described above:
 
-    function filterOffers([offers, marketPrice]) {
-        return _(offers)
-                .filter({
-                    baseCurrencyCode: 'BTC',
-                    counterCurrencyCode: 'EUR',
-                    direction: 'SELL',
-                    paymentMethodId: 'SEPA'
-                })
-                .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
-                .filter(getPriceFilter(marketPrice))
-                .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
-                .value();
-    }
+[source,javascript]
+----
+function filterOffers([offers, marketPrice]) {
+    return _(offers)
+            .filter({
+                baseCurrencyCode: 'BTC',
+                counterCurrencyCode: 'EUR',
+                direction: 'SELL',
+                paymentMethodId: 'SEPA'
+            })
+            .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
+            .filter(getPriceFilter(marketPrice))
+            .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
+            .value();
+}
+----
 
 This function filters offers to match our criteria. It returns matching offers and maps them to a bit simpler structure
 that contains as little data as needed for `notify` function.
@@ -186,14 +210,17 @@ We are using `lodash` library to simplify the filtering.
 
 The `getPriceFilter` function creates the actual filter function and looks like this:
 
-    function getPriceFilter(marketPrice) {
-        const maxPrice = marketPrice * (1 - threshold) * 10000;
-        return offer => {
-            if (offer.useMarketBasedPrice)
-                return offer.marketPriceMargin >= threshold;
-            return offer.price < maxPrice;
-        }
+[source,javascript]
+----
+function getPriceFilter(marketPrice) {
+    const maxPrice = marketPrice * (1 - threshold) * 10000;
+    return offer => {
+        if (offer.useMarketBasedPrice)
+            return offer.marketPriceMargin >= threshold;
+        return offer.price < maxPrice;
     }
+}
+----
 
 We are multiplying `marketPrice` by `10000` because that is the format in which the API returns the price.
 
@@ -201,88 +228,89 @@ We are multiplying `marketPrice` by `10000` because that is the format in which 
 Here is a full script. You must substitute EMAIL_ACCOUNT_USERNAME, EMAIL_ACCOUNT_PASSWORD, EMAIL_FROM_ADDRESS and EMAIL_TO_ADDRESS
 with appropriate values.
 
-```
-    const _ = require('lodash');
-    const $http = require('http-as-promised');
-    const nodemailer = require('nodemailer');
+[source,javascript]
+----
+const _ = require('lodash');
+const $http = require('http-as-promised');
+const nodemailer = require('nodemailer');
 
-    const threshold = 0.1;
+const threshold = 0.1;
 
-    const EMAIL_ACCOUNT_USERNAME = 'email@gmail.com';
-    const EMAIL_ACCOUNT_PASSWORD = 'secret';
-    const EMAIL_FROM_ADDRESS = 'from@gmail.com';
-    const EMAIL_TO_ADDRESS = 'to@gmail.com';
+const EMAIL_ACCOUNT_USERNAME = 'email@gmail.com';
+const EMAIL_ACCOUNT_PASSWORD = 'secret';
+const EMAIL_FROM_ADDRESS = 'from@gmail.com';
+const EMAIL_TO_ADDRESS = 'to@gmail.com';
 
-    function getPriceFilter(marketPrice) {
-        const maxPrice = marketPrice * (1 - threshold) * 10000;
-        return offer => {
-            if (offer.useMarketBasedPrice)
-                return offer.marketPriceMargin >= threshold;
-            return offer.price < maxPrice;
+function getPriceFilter(marketPrice) {
+    const maxPrice = marketPrice * (1 - threshold) * 10000;
+    return offer => {
+        if (offer.useMarketBasedPrice)
+            return offer.marketPriceMargin >= threshold;
+        return offer.price < maxPrice;
+    }
+}
+
+function getMarketPrice() {
+    return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
+            .then(body => _.get(body, 'prices.EUR'))
+}
+
+function getOffers() {
+    return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true}).then(body => body.offers);
+}
+
+function notify(offers) {
+    if (!offers.length) {
+        console.log('No interesting offers found');
+        return;
+    }
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: EMAIL_ACCOUNT_USERNAME,
+            pass: EMAIL_ACCOUNT_PASSWORD
         }
-    }
+    });
 
-    function getMarketPrice() {
-        return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
-                .then(body => _.get(body, 'prices.EUR'))
-    }
+    const text = _.map(offers, offer => `${offer.amount / 100000000} BTC (-${_.round(offer.margin * 100, 2)}%)`).join('\n');
 
-    function getOffers() {
-        return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true}).then(body => body.offers);
-    }
+    const mailOptions = {
+        from: EMAIL_FROM_ADDRESS,
+        to: EMAIL_TO_ADDRESS,
+        subject: `${offers.length} interesting BTC offers from Bisq`,
+        text: text
+    };
 
-    function notify(offers) {
-        if (!offers.length) {
-            console.log('No interesting offers found');
-            return;
+    transporter.sendMail(mailOptions, function (error) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log(`Notification about ${offers.length} offers sent`);
         }
+    });
+}
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: EMAIL_ACCOUNT_USERNAME,
-                pass: EMAIL_ACCOUNT_PASSWORD
-            }
-        });
+function filterOffers([offers, marketPrice]) {
+    return _(offers)
+            .filter({
+                baseCurrencyCode: 'BTC',
+                counterCurrencyCode: 'EUR',
+                direction: 'SELL',
+                paymentMethodId: 'SEPA'
+            })
+            .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
+            .filter(getPriceFilter(marketPrice))
+            .map(i => _.pick(i, 'baseCurrencyCode', 'counterCurrencyCode', 'direction', 'paymentMethodId', 'id', 'useMarketBasedPrice', 'price', 'marketPriceMargin', 'amount', 'minAmont'))
+            .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
+            .value();
+}
 
-        const text = _.map(offers, offer => `${offer.amount / 100000000} BTC (-${_.round(offer.margin * 100, 2)}%)`).join('\n');
-
-        const mailOptions = {
-            from: EMAIL_FROM_ADDRESS,
-            to: EMAIL_TO_ADDRESS,
-            subject: `${offers.length} interesting BTC offers from Bisq`,
-            text: text
-        };
-
-        transporter.sendMail(mailOptions, function (error) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(`Notification about ${offers.length} offers sent`);
-            }
-        });
-    }
-
-    function filterOffers([offers, marketPrice]) {
-        return _(offers)
-                .filter({
-                    baseCurrencyCode: 'BTC',
-                    counterCurrencyCode: 'EUR',
-                    direction: 'SELL',
-                    paymentMethodId: 'SEPA'
-                })
-                .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
-                .filter(getPriceFilter(marketPrice))
-                .map(i => _.pick(i, 'baseCurrencyCode', 'counterCurrencyCode', 'direction', 'paymentMethodId', 'id', 'useMarketBasedPrice', 'price', 'marketPriceMargin', 'amount', 'minAmont'))
-                .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
-                .value();
-    }
-
-    Promise.all([getOffers(), getMarketPrice()])
-            .then(filterOffers)
-            .then(notify)
-            .catch(e => console.error(e));
-```
+Promise.all([getOffers(), getMarketPrice()])
+        .then(filterOffers)
+        .then(notify)
+        .catch(e => console.error(e));
+----
 
 If there are any matching offers you should receive an mail like this:
 
