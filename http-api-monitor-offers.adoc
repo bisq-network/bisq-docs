@@ -30,7 +30,9 @@ For more hard-core developers that want to run from source:
 
     git clone https://github.com/mrosseel/bisq-api
     cd bisq-api
-    mvn compile exec:java -Dexec.mainClass="io.bisq.api.app.ApiMain"
+    mvn compile exec:java \
+        -Dexec.mainClass="io.bisq.api.app.ApiMain" \
+        -Dexec.args="--appName=bisqmon"
 
 === Verify the API is running
 
