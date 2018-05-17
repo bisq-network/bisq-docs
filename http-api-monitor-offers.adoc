@@ -4,48 +4,48 @@ This guide walks you through the process of creating a bot that monitors availab
 
 == What you'll build
 
-You'll build a NodeJS based script that connects to Bisq over HTTP API to get offers and market prices and sends email notification in case any interesting offer is found.
+You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get offers and market prices and sends email notification whenever "interesting" offers are detected.
 
 == What you’ll need
 
 * About 15 minutes
 * A favorite text editor or IDE
 * NodeJS 6+
-* gmail account
-* Bisq-api source code (and Maven) or Docker
+* Docker (to run from an image) or Git and Maven (to build from source)
+* A GMail account
 
-== Starting the API
+== Run the API
 
-There are two alternative ways you can run Bisq HTTP API, either from docker image or from sources.
+There are two alternative ways you can run an instance of the Bisq HTTP API, either from a Docker image or from source.
 
-=== Staring the API using Docker
+=== Run the API using Docker
 
-The easiest way to run the API in headless mode is by using docker image:
+The easiest way to run the API in headless mode is by using a Docker image:
 
     docker run -it --rm -p 8080:8080 -e BISQ_API_HOST=0.0.0.0 bisq/api
 
-=== Staring the API from the source code
+=== Run the API from source
 
-For more hard core developers that want to run from sources:
+For more hard-core developers that want to run from source:
 
     git clone https://github.com/mrosseel/bisq-api
     cd bisq-api
     mvn compile exec:java -Dexec.mainClass="io.bisq.api.app.ApiMain"
 
-=== Verify if API is running
+=== Verify the API is running
 
 In both cases the API should be running on port 8080. You can verify that by executing:
 
     curl http://localhost:8080/api/v1/offers
 
 [NOTE]
-API documentation is available at http://localhost:8080/swagger.
+Complete interactive API documentation is available at http://localhost:8080/swagger.
 
-== Getting the offers
+== List available offers
 
-Open offers are available under following URL http://localhost:8080/api/v1/offers.
+Open offers are available at http://localhost:8080/api/v1/offers.
 
-Response should look like this:
+The response should look like this:
 
 [source,json]
 ----
@@ -55,9 +55,7 @@ Response should look like this:
 }
 ----
 
-Where `offers` is an array with individual offers and `total` is number of all offers.
-
-`OfferDetail` looks like this:
+Where `offers` is an array with individual offers and `total` is number of all offers. The model for each individual `OfferDetail` is defined as follows:
 
 [source,json]
 ----
@@ -102,8 +100,10 @@ Where `offers` is an array with individual offers and `total` is number of all o
 }
 ----
 
-Now let's say that we want to buy Bitcoin that is less than 1% from market price.
-We can use only polish SEPA account and pay with Euros.
+Now let's assume that we want to buy bitcoin, and let's define "interesting" offers as those that:
+
+ . sell bitcoin at a discount 1% or more under the current market price, and
+ . accept payment in Euros to a Polish SEPA account
 
 First we need to filter those offers using following static criteria:
 
@@ -117,15 +117,15 @@ First we need to filter those offers using following static criteria:
 }
 ----
 
-Next we need to filter those offers by price. There are two types of offers, market price based offers and fixed price offers. They are distinguished by `useMarketBasedPrice` attribute. In case of market price based offers the filtering criteria is easy, the `marketPriceMargin` must be above 0.1. In case of fixed price offers we have to fetch market price of BTC in EUR, then calculate price that is 1% less and finally filter offers which have price less that that calculated price.
+Next we need to filter those offers by price. There are two types of offers: _market-based price offers_ and _fixed price offers_. They are distinguished by the `useMarketBasedPrice` attribute. In case of market-based price offers the filtering criteria is easy: the `marketPriceMargin` value must be above 0.1. In case of fixed price offers we have to fetch market price of BTC in EUR, then calculate whether the price is 1% or less, and finally we must filter offers which have a price _less_ than that calculated price.
 
-=== Getting the market price
+=== Get the market price
 
-In order to get market price of BTC in EUR we have to execute following query:
+In order to get the market price of BTC in EUR, execute the following query:
 
     curl http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR
 
-The response should be something like this:
+You should receive a response like the following:
 
 [source,json]
 ----
