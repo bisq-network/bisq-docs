@@ -57,7 +57,7 @@ Response should look like this:
 
 Where `offers` is an array with individual offers and `total` is number of all offers.
 
-OfferDetail looks like this:
+`OfferDetail` looks like this:
 
 [source,json]
 ----
@@ -211,7 +211,7 @@ function getPriceFilter(marketPrice) {
 
 We are multiplying `marketPrice` by `10000` because that is the format in which the API returns the price.
 
-Here is a full script. You must substitute EMAIL_ACCOUNT_USERNAME, EMAIL_ACCOUNT_PASSWORD, EMAIL_FROM_ADDRESS and EMAIL_TO_ADDRESS
+Here is a full script. You must substitute `EMAIL_ACCOUNT_USERNAME`, `EMAIL_ACCOUNT_PASSWORD`, `EMAIL_FROM_ADDRESS` and `EMAIL_TO_ADDRESS`
 with appropriate values.
 
 [source,javascript]
