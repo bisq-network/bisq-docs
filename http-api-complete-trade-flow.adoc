@@ -1,0 +1,320 @@
+= Complete trade flow with HTTP API
+:toc:
+:sectlinks:
+:sectanchors:
+
+This guide walks you through the trade flow using just HTTP API.
+
+
+== What you'll build
+
+You'll execute a set of HTTP requests to several instances of Bisq over HTTP API in order to
+complete the trade. Everything will be done in safe RegTest mode, so that you don't need to spend real coins.
+
+In brief you will:
+
+- register one of the Bisq instances as Arbitrator (as both parties must select an arbitrator in order to conduct the trade)
+- create compatible payment accounts for Alice and Bob
+- generate fake bitcoins and send them to both parties
+- tell Alice to create an offer
+- tell Bob to take that offer
+- tell Alice to mark trade as `payment started`
+- tell Bob to mark trade as `payment received`
+- tell Alice and Bob to withdraw funds to Bisq wallet
+
+
+== What you’ll need
+
+* About 15 minutes
+* curl or some other tool to execute HTTP requests (i.e. https://chrome.google.com/webstore/detail/postmanam/lnpfbngjdpeijdfjlljmcjaaincinkhh[Postman.am])
+* Docker and docker-compose
+
+== Getting the source code
+
+    git clone https://github.com/mrosseel/bisq-api
+    cd bisq-api
+
+== Staring the API using Docker
+
+In order to complete the whole trade flow you will need:
+
+* HTTP API for Alice
+* HTTP API for Bob
+* HTTP API for Arbitrator
+* Bisq Seednode so that Bob, Alice and Arbitrator can discover each other
+* Bitcoin node
+
+[NOTE]
+RegTest mode allows you to run your own Bitcoin and Bisq network and have full control over Bitcoin supply.
+
+The easiest way to run the API in headless mode for purpose of this tutorial is by using docker-compose:
+
+    docker-compose build
+    docker-compose up alice bob arbitrator
+
+APIs should be running on following ports:
+
+|===
+| Alice | 8080
+| Bob | 8081
+| Arbitrator | 8082
+|===
+
+You can verify that by executing:
+
+    curl -i http://localhost:8080/api/v1/offers
+
+If the API is up and running the response should start with:
+
+    HTTP/1.1 200 OK
+
+and the response payload should look like this:
+
+[source,json]
+----
+{
+    "offers": [],
+    "total": 0
+}
+----
+
+You can now generate bitcoins using
+
+    docker-compose exec bitcoin bitcoin-cli -regtest generate 101
+
+[NOTE]
+docker-compose command must be executed in bisq-api sources directory
+
+Of course that is in possession of the miner.
+To send those coins to Alice you need to retrieve Alice's address using the API.
+We will see how to do that later.
+
+[NOTE]
+You can read more about Bitcoin in Regtest mode at https://bitcoin.org/en/developer-examples#regtest-mode.
+
+
+== Create payment account
+
+One of the prerequisites to create or take offer is that the party must have payment account.
+
+Each payment method requires different payload structure. Look at `Models` section of Swagger documentation.
+Search for definitions that contain `PaymentAccount` suffix. You will find AliPayPaymentAccount, SepaPaymentAccount
+and many more.
+
+Let's create SEPA payment account for Alice:
+
+    curl -X POST "http://localhost:8080/api/v1/payment-accounts" -H "Content-Type: application/json" -d "{\"paymentMethod\":\"SEPA\",\"selectedTradeCurrency\":\"EUR\",\"tradeCurrencies\":[\"EUR\"],\"accountName\":\"SEPA EUR\",\"countryCode\":\"PL\",\"holderName\":\"Alice\",\"bic\":\"YJGSBIF70Q7\",\"iban\":\"EE875639607137003809\",\"acceptedCountries\":[\"PL\"]}"
+
+and one for Bob:
+
+    curl -X POST "http://localhost:8081/api/v1/payment-accounts" -H "Content-Type: application/json" -d "{\"paymentMethod\":\"SEPA\",\"selectedTradeCurrency\":\"EUR\",\"tradeCurrencies\":[\"EUR\"],\"accountName\":\"SEPA EUR\",\"countryCode\":\"PL\",\"holderName\":\"BOB\",\"bic\":\"YJGSBIF70Q7\",\"iban\":\"EE875639607137003809\",\"acceptedCountries\":[\"PL\"]}"
+
+Responses should contain ID of newly created account. Remember those IDs as they will be needed later.
+
+[NOTE]
+Each endpoint's documentation is available at `/swagger` path.
+So for Alice the address should be `http://localhost:8080/swagger`.
+
+
+== Make one of the peers an arbitrator
+
+Trades on Bisq platform involve two trading parties (the seller and the buyer) and the arbitrator.
+On mainnet there are already arbitrators registered but in RegTest mode that we are running in this tutorial
+we have to manually appoint one of the peers to be an arbitrator.
+
+    curl -i -X POST "http://localhost:8082/api/v1/arbitrators" -H "Content-Type: application/json" -d "{ \"languageCodes\": [ \"en\" ]}"
+
+After this request a message to all peers will be broadcast and by default they will select this arbitrator.
+
+== List arbitrators
+
+Let's see all available arbitrators:
+
+    curl -X GET "http://localhost:8080/api/v1/arbitrators"
+
+This will return something like this:
+
+[source,json]
+----
+{
+  "arbitrators": [
+    {
+      "address": "swfmgmb2aoyqxkte.onion:9999"
+    }
+  ],
+  "total": 1
+}
+----
+
+To see which arbitrators you have selected add `acceptedOnly` query param:
+
+    curl -X GET "http://localhost:8080/api/v1/arbitrators?acceptedOnly=true"
+
+The response should be exactly the same, because by default any newly registered arbitrator gets automatically accepted
+by all peers.
+
+
+== Get Bisq wallet address
+
+In order to create offer we need to have Bitcoin. In the beginning of this guide we told miner to artificially generate
+a few coins. Now we need to transfer them to Alice and Bob. To do that first we need to get their Bisq wallet addresses.
+
+    curl -X POST "http://localhost:8080/api/v1/wallet/addresses"
+
+Returns:
+
+[source,json]
+----
+{
+  "address": "13TuZEfDh8Mys4ijKA6hQiRC1BRSuVju2q",
+  "balance": 0,
+  "confirmations": 0,
+  "context": "AVAILABLE"
+}
+----
+
+== Fund wallets
+
+    docker-compose exec bitcoin bitcoin-cli -regtest sendtoaddress 13TuZEfDh8Mys4ijKA6hQiRC1BRSuVju2q 1
+
+That would send 1 BTC to Alice, who can now trade it using Bisq.
+Now send one bitcoin to Bob (remember about correct port when retrieving his wallet address).
+
+== Create an offer
+
+Offers are very customizable, so we will first present a sample request.
+
+    curl -X POST "http://localhost:8080/api/v1/offers" -H "Content-Type: application/json" -d "{\"minAmount\":100000,\"accountId\":\"$ALICE_PAYMENT_ACCOUNT_ID\",\"amount\":100000,\"marketPair\":\"BTC_EUR\",\"priceType\":\"FIXED\",\"fixedPrice\":100000,\"fundUsingBisqWallet\":\"true\",\"direction\":\"BUY\"}"
+
+Let's take a closer look at the payload:
+
+[source,json]
+----
+{
+  "fundUsingBisqWallet": boolean,
+  "accountId": "string",
+  "direction": "string",
+  "priceType": "string",
+  "marketPair": "string",
+  "percentageFromMarketPrice": number,
+  "fixedPrice": integer,
+  "amount": integer,
+  "minAmount": integer,
+  "buyerSecurityDeposit": integer
+}
+----
+
+- *accountId*: id of payment account
+- *direction*: SELL or BUY
+- *priceType*: FIXED or PERCENTAGE
+- *marketPair*: i.e. BTC_EUR
+- *percentageFromMarketPrice*: 10.0 means 10%
+- *fixedPrice*: in case of PERCENTAGE priceType this should be 0
+- *amount*: amount of BTC to trade (expressed in satoshis)
+- *buyerSecurityDeposit*: amount of BTC required as buyer security deposit (expressed in satoshis)
+
+Currently offer funding from Bisq wallet is the only supported option so `fundUsingBisqWallet` must be set to true.
+
+
+Let's create an offer via Alice:
+
+    curl -X POST "http://localhost:8080/api/v1/offers" -H "Content-Type: application/json" -d "{\"minAmount\":100000,\"accountId\":\"$ALICE_PAYMENT_ACCOUNT_ID\",\"amount\":100000,\"marketPair\":\"BTC_EUR\",\"priceType\":\"FIXED\",\"fixedPrice\":100000,\"fundUsingBisqWallet\":\"true\",\"direction\":\"BUY\"}"
+
+[NOTE]
+Make sure to substitute `$ALICE_PAYMENT_ACCOUNT_ID` with proper value (refer to link:#create-payment-account[Create payment account] section).
+
+Look at the response and remember the `id`. That's the offer ID that will be used for taking the offer.
+
+
+== Take offer
+
+Once you know the `id` of an offer you want to take (let's assume it is CXYKISWR-e2dcf553-acfe-4810-935a-8d41e9346594-065)
+You can take the offer with following request:
+
+    curl -X POST "http://localhost:8081/api/v1/offers/CXYKISWR-e2dcf553-acfe-4810-935a-8d41e9346594-065/take" -H "Content-Type: application/json" -d "{ \"paymentAccountId\": \"$BOB_PAYMENT_ACCOUNT_ID\", \"amount\": 100000}"
+
+[NOTE]
+You must substitute `$BOB_PAYMENT_ACCOUNT_ID` with proper value and the `amount` of BTC you want to buy/sell.
+
+
+== List open trades
+
+Now both parties should see that they have one open trade
+
+    curl -X GET "http://localhost:8080/api/v1/trades"
+    curl -X GET "http://localhost:8081/api/v1/trades"
+
+
+== Generate a block to confirm the trade transaction
+
+Before buyer marks trade as `Payment started` they must wait for at least one confirmation of the trade transaction
+from the Bitcoin blockchain.
+
+   docker-compose exec bitcoin bitcoin-cli -regtest generate 1
+
+
+== Payment started
+
+Now it is time for Alice, who is the buyer, to mark the trade as `Payment started`
+
+    curl -X POST -i "http://localhost:8080/api/v1/trades/$TRADE_ID/payment-started"
+
+[NOTE]
+Substitute `$TRADE_ID` with id of the created trade.
+
+== Payment received
+
+Now Bob, the seller, has to mark the trade as `Payment received`. It will release the funds.
+
+    curl -X POST -i "http://localhost:8081/api/v1/trades/$TRADE_ID/payment-received"
+
+[NOTE]
+Substitute `$TRADE_ID` with id of the created trade.
+
+
+== Move funds to Bisq wallet
+
+Ultimately once trade has been marked as `Payment received` both parties can withdraw the funds to their Bisq wallets:
+
+    curl -X POST -i "http://localhost:8080/api/v1/trades/$TRADE_ID/move-funds-to-bisq-wallet"
+    curl -X POST -i "http://localhost:8081/api/v1/trades/$TRADE_ID/move-funds-to-bisq-wallet"
+
+[NOTE]
+Substitute `$TRADE_ID` with id of the created trade.
+
+== Check the balance
+
+    curl -X GET "http://localhost:8080/api/v1/wallet"
+    curl -X GET "http://localhost:8081/api/v1/wallet"
+
+You should see something like this for Alice:
+
+[source,json]
+----
+{
+    "availableBalance": 100089000,
+    "reservedBalance": 0,
+    "lockedBalance": 0
+}
+----
+
+And something like this for Bob:
+
+[source,json]
+----
+{
+    "availableBalance": 99877000,
+    "reservedBalance": 0,
+    "lockedBalance": 0
+}
+----
+
+== Congratulations
+
+You have completed the trade!
+
+== Next steps
+
+* Join our slack at https://bisq.slack.com and leave feedback on the API and this guide
+* If you find any issues please report them https://github.com/mrosseel/bisq-api/issues[here]
+
