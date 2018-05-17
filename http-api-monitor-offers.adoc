@@ -5,8 +5,7 @@ This guide walks you through the process of creating a bot that monitors availab
 
 == What you'll build
 
-You'll build a NodeJS based script that connects to Bisq over HTTP API to get offers and market prices
-and sends email notification in case any interesting offer is found.
+You'll build a NodeJS based script that connects to Bisq over HTTP API to get offers and market prices and sends email notification in case any interesting offer is found.
 
 == What you’ll need
 
@@ -122,11 +121,7 @@ First we need to filter those offers using following static criteria:
 }
 ----
 
-Next we need to filter those offers by price. There are two types of offers, market price based offers and fixed price offers.
-They are distinguished by `useMarketBasedPrice` attribute.
-In case of market price based offers the filtering criteria is easy, the `marketPriceMargin` must be above 0.1.
-In case of fixed price offers we have to fetch market price of BTC in EUR, then calculate price that is 1% less
-and finally filter offers which have price less that that calculated price.
+Next we need to filter those offers by price. There are two types of offers, market price based offers and fixed price offers. They are distinguished by `useMarketBasedPrice` attribute. In case of market price based offers the filtering criteria is easy, the `marketPriceMargin` must be above 0.1. In case of fixed price offers we have to fetch market price of BTC in EUR, then calculate price that is 1% less and finally filter offers which have price less that that calculated price.
 
 === Getting the market price
 
@@ -162,8 +157,7 @@ Promise.all([getOffers(), getMarketPrice()])
         .catch(e => console.error(e));
 ----
 
-So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API.
-Then we need to filter those offers and finally send notification.
+So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API. Then we need to filter those offers and finally send notification.
 
 Getting offers is a simple call that returns promise with array of offers:
 
@@ -204,9 +198,7 @@ function filterOffers([offers, marketPrice]) {
 }
 ----
 
-This function filters offers to match our criteria. It returns matching offers and maps them to a bit simpler structure
-that contains as little data as needed for `notify` function.
-We are using `lodash` library to simplify the filtering.
+This function filters offers to match our criteria. It returns matching offers and maps them to a bit simpler structure that contains as little data as needed for `notify` function. We are using `lodash` library to simplify the filtering.
 
 The `getPriceFilter` function creates the actual filter function and looks like this:
 
@@ -323,5 +315,4 @@ If there are any matching offers you should receive an mail like this:
     0.25 BTC (-6%)
 
 [NOTE]
-If you would like to use something else that gmail then you will need a bit different mail transport configuration.
-For reference look at https://nodemailer.com/smtp/.
+If you would like to use something else that gmail then you will need a bit different mail transport configuration. For reference look at https://nodemailer.com/smtp/.
