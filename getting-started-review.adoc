@@ -1,5 +1,7 @@
 = Getting Started with Bisq
 
+From : https://github.com/m52go/bisq-docs/blob/getting-started/getting-started.adoc
+
 1st sentence = original material
 
 2nd sentence = suggestion
@@ -7,4 +9,13 @@
 the only constraint is that one side of each Bisq trade must always be bitcoin.
 
 the only constraint is (at the moment) that one side of each Bisq trade must always be bitcoin.
+
+
+To run Bisq, download and install it from the Bisq downloads page. Optional: before installing, verify the signatures of the 
+
+Maybe insert a carriage return before Optional
+
+
+
+
 
