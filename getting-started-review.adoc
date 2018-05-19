@@ -1,3 +1,10 @@
 = Getting Started with Bisq
 
-COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/37[bisq-network/bisq-docs#37] for updates.
+1st sentence = original material
+
+2nd sentence = suggestion
+
+the only constraint is that one side of each Bisq trade must always be bitcoin.
+
+the only constraint is (at the moment) that one side of each Bisq trade must always be bitcoin.
+
