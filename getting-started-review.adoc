@@ -18,11 +18,10 @@ Maybe insert a carriage return before Optional
 
 Unlike most exchanges, Bisq doesn’t run a centralized server for making and taking offers, so trading on a website isn’t possible.
 
-Unlike most exchanges, Bisq doesn’t run a centralized server for making and taking offers, so trading on a centralized website isn’t possible.
+Unlike most exchanges, Bisq doesn’t run a centralized server for making and taking offers, so trading on a centralized website is neither wanted and neither possible.
 
 
 This means that if you want to use the Bisq Network, you’ve got to download and run the software too!
-
 This means that if you want to use the Bisq Network, you’ve got to download and run the software too! Your computer becomes a member of the decentralized trading website.
 
 
