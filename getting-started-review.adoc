@@ -22,7 +22,20 @@ Unlike most exchanges, Bisq doesn’t run a centralized server for making and ta
 
 
 This means that if you want to use the Bisq Network, you’ve got to download and run the software too!
-This means that if you want to use the Bisq Network, you’ve got to download and run the software too! Your computer becomes a member of the decentralized trading website.
+
+This means that if you want to use the Bisq Network, you’ve got to download and run the software too! Your computer becomes a member of the decentralized and robust trading website.
+
+
+Once the installer is finished
+
+Once the installation is finished
+
+
+It’ll take a few moments to open as it connects to Tor and syncs with Bisq’s peer-to-peer trading network.
+
+It’ll take a few moments to open as it connects to Tor and syncs with Bisq’s peer-to-peer trading network nodes.
+
+
 
 
 
