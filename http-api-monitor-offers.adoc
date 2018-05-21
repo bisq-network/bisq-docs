@@ -1,10 +1,13 @@
 = Monitoring Bisq offers with Http API
 
-This guide walks you through the process of creating a bot that monitors available offers and sends email notifications.
+:sectlinks:
+:sectanchors:
+
+This guide walks you through the process of creating a bot that monitors available offers.
 
 == What you'll build
 
-You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get offers and market prices and sends email notification whenever "interesting" offers are detected.
+You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get offers and market prices and displays "interesting" offers on the console if any is found.
 
 == What you’ll need
 
@@ -12,7 +15,10 @@ You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get
 * A favorite text editor or IDE
 * NodeJS 6+
 * Docker (to run from an image) or Git and Maven (to build from source)
-* A GMail account
+
+[NOTE]
+Bisq HTTP API is currently incubating. This means that things may be a bit rough around the edges
+and your feedback (see the link:#next-steps[next steps] section for details).
 
 == Run the API
 
@@ -56,7 +62,11 @@ You should receive a response like the following:
 [NOTE]
 Complete interactive API documentation is available at http://localhost:8080/swagger.
 
-== List available offers
+== API overview
+
+First we will look at the endpoints we need to fetch the data from and how they responses look like.
+
+=== List available offers
 
 Open offers are available at http://localhost:8080/api/v1/offers.
 
@@ -151,169 +161,71 @@ You should receive a response like the following:
 }
 ----
 
-== The JavaScript part
+== Write the monitoring bot code
 
 Let's install some dependencies:
 
-    npm install lodash http-as-promised nodemailer
+    npm install lodash http-as-promised
 
 In general our script will look like this:
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-Promise.all([getOffers(), getMarketPrice()])
-        .then(filterOffers)
-        .then(notify)
-        .catch(e => console.error(e));
+include::http-api-monitor-offers.js[tags=flow]
 ----
 
-So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API. Then we need to filter those offers and finally send notification.
+So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API. Then we need to filter those offers and finally display the results.
 
 Getting offers is a simple call that returns promise with array of offers:
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-function getOffers() {
-    return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true})
-        .then(body => body.offers);
-}
+include::http-api-monitor-offers.js[tags=getOffers]
 ----
 
 Similarly with `getMarketPrice`:
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-function getMarketPrice() {
-    return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
-            .then(body => _.get(body, 'prices.EUR'))
-}
+include::http-api-monitor-offers.js[tags=getMarketPrice]
 ----
 
 Now our `filterOffers` function is ready to receive an array of results from the two functions described above:
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-function filterOffers([offers, marketPrice]) {
-    return _(offers)
-            .filter({
-                baseCurrencyCode: 'BTC',
-                counterCurrencyCode: 'EUR',
-                direction: 'SELL',
-                paymentMethodId: 'SEPA'
-            })
-            .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
-            .filter(getPriceFilter(marketPrice))
-            .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
-            .value();
-}
+include::http-api-monitor-offers.js[tags=filterOffers]
 ----
 
 This function filters offers to match our criteria. It returns matching offers and maps them to a bit simpler structure that contains as little data as needed for `notify` function. We are using `lodash` library to simplify the filtering.
 
 The `getPriceFilter` function creates the actual filter function and looks like this:
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-function getPriceFilter(marketPrice) {
-    const maxPrice = marketPrice * (1 - threshold) * 10000;
-    return offer => {
-        if (offer.useMarketBasedPrice)
-            return offer.marketPriceMargin >= threshold;
-        return offer.price < maxPrice;
-    }
-}
+include::http-api-monitor-offers.js[tags=getPriceFilter]
 ----
 
 We are multiplying `marketPrice` by `10000` because that is the format in which the API returns the price.
 
-Here is a full script. You must substitute `EMAIL_ACCOUNT_USERNAME`, `EMAIL_ACCOUNT_PASSWORD`, `EMAIL_FROM_ADDRESS` and `EMAIL_TO_ADDRESS`
-with appropriate values.
+Here is a full script.
 
+.http-api-monitor-offers.js
 [source,javascript]
 ----
-const _ = require('lodash');
-const $http = require('http-as-promised');
-const nodemailer = require('nodemailer');
-
-const threshold = 0.1;
-
-const EMAIL_ACCOUNT_USERNAME = 'email@gmail.com';
-const EMAIL_ACCOUNT_PASSWORD = 'secret';
-const EMAIL_FROM_ADDRESS = 'from@gmail.com';
-const EMAIL_TO_ADDRESS = 'to@gmail.com';
-
-function getPriceFilter(marketPrice) {
-    const maxPrice = marketPrice * (1 - threshold) * 10000;
-    return offer => {
-        if (offer.useMarketBasedPrice)
-            return offer.marketPriceMargin >= threshold;
-        return offer.price < maxPrice;
-    }
-}
-
-function getMarketPrice() {
-    return $http.get('http://localhost:8080/api/v1/currencies/prices?currencyCodes=EUR', {resolve: 'body', json: true})
-            .then(body => _.get(body, 'prices.EUR'))
-}
-
-function getOffers() {
-    return $http.get('http://localhost:8080/api/v1/offers', {resolve: 'body', json: true}).then(body => body.offers);
-}
-
-function notify(offers) {
-    if (!offers.length) {
-        console.log('No interesting offers found');
-        return;
-    }
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: EMAIL_ACCOUNT_USERNAME,
-            pass: EMAIL_ACCOUNT_PASSWORD
-        }
-    });
-
-    const text = _.map(offers, offer => `${offer.amount / 100000000} BTC (-${_.round(offer.margin * 100, 2)}%)`).join('\n');
-
-    const mailOptions = {
-        from: EMAIL_FROM_ADDRESS,
-        to: EMAIL_TO_ADDRESS,
-        subject: `${offers.length} interesting BTC offers from Bisq`,
-        text: text
-    };
-
-    transporter.sendMail(mailOptions, function (error) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Notification about ${offers.length} offers sent`);
-        }
-    });
-}
-
-function filterOffers([offers, marketPrice]) {
-    return _(offers)
-            .filter({
-                baseCurrencyCode: 'BTC',
-                counterCurrencyCode: 'EUR',
-                direction: 'SELL',
-                paymentMethodId: 'SEPA'
-            })
-            .filter(i => _.includes(i.acceptedCountryCodes, 'PL'))
-            .filter(getPriceFilter(marketPrice))
-            .map(i => _.pick(i, 'baseCurrencyCode', 'counterCurrencyCode', 'direction', 'paymentMethodId', 'id', 'useMarketBasedPrice', 'price', 'marketPriceMargin', 'amount', 'minAmont'))
-            .map(i => ({amount: i.amount, margin: i.useMarketBasedPrice ? i.marketPriceMargin : marketPrice / i.price}))
-            .value();
-}
-
-Promise.all([getOffers(), getMarketPrice()])
-        .then(filterOffers)
-        .then(notify)
-        .catch(e => console.error(e));
+include::http-api-monitor-offers.js[tags=**;*]
 ----
 
-If there are any matching offers you should receive an mail like this:
+Now run
+
+    node http-api-monitor-offers.js
+
+If there are any matching offers you should see something like this:
 
     5 interesting BTC offers from Bisq
     0.0625 BTC (-2%)
@@ -323,5 +235,14 @@ If there are any matching offers you should receive an mail like this:
     0.02 BTC (-1.5%)
     0.25 BTC (-6%)
 
-[NOTE]
-If you would like to use something else that gmail then you will need a bit different mail transport configuration. For reference look at https://nodemailer.com/smtp/.
+If there are no matching offers, try fiddling with the value of `threshold`. Try setting it to -20, 0.01, etc.
+
+== Congratulations
+
+You are now able to monitor Bisq offers via HTTP API!
+
+== Next steps
+
+* Try adding a loop to keep the process repeating the search periodically (use _setInterval_)
+* Join our slack at https://bisq.slack.com and leave feedback on the API and this guide
+* Report https://github.com/mrosseel/bisq-api/issues[issues]

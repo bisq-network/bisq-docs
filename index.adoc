@@ -3,7 +3,7 @@
  * *_User Docs_*
  ** <<intro#, Introduction>> — What Bisq is, why it exists and how it works
  ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
- ** <<http-api#, Getting Started - HTTP API>> — How to access Bisq programatically
+ ** <<http-api-monitor-offers#, Monitoring Bisq offers with HTTP API>> — Getting started with Bisq HTTP API
 
  * *_Contributor Docs_*
  ** <<contributor-checklist#, New contributor checklist>>
