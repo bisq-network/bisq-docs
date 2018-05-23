@@ -89,43 +89,43 @@ Where `offers` is an array with individual offers and `total` is number of all o
 [source,json]
 ----
 {
-    acceptedBankIds	[string]
-    acceptedCountryCodes	[string]
-    amount	integer($int64)
-    arbitratorNodeAddresses	[string]
-    bankId	string
-    baseCurrencyCode	string
-    blockHeightAtOfferCreation	integer($int64)
-    buyerSecurityDeposit	integer($int64)
-    counterCurrencyCode	string
-    countryCode	string
-    currencyCode	string
-    date	string($date-time)
-    direction	string Enum: [ BUY, SELL ]
-    hashOfChallenge	string
-    id	string
-    isCurrencyForMakerFeeBtc	boolean
-    isPrivateOffer	boolean
-    lowerClosePrice	integer($int64)
-    makerFee	integer($int64)
-    makerPaymentAccountId	string
-    marketPriceMargin	number($double)
-    maxTradeLimit	integer($int64)
-    maxTradePeriod	integer($int64)
-    minAmount	integer($int64)
-    offerFeePaymentTxId	string
-    ownerNodeAddress	string
-    paymentMethodId	string
-    price	integer($int64)
-    protocolVersion	integer($int32)
-    sellerSecurityDeposit	integer($int64)
-    state	string Enum: [ UNKNOWN, OFFER_FEE_PAID, AVAILABLE, NOT_AVAILABLE, REMOVED, MAKER_OFFLINE ]
-    txFee	integer($int64)
-    upperClosePrice	integer($int64)
-    useAutoClose	boolean
-    useMarketBasedPrice	boolean
-    useReOpenAfterAutoClose	boolean
-    versionNr	string
+    "acceptedBankIds": [string]
+    "acceptedCountryCodes": [string]
+    "amount": integer
+    "arbitratorNodeAddresses": [string]
+    "bankId": string
+    "baseCurrencyCode": string
+    "blockHeightAtOfferCreation": integer
+    "buyerSecurityDeposit": integer
+    "counterCurrencyCode": string
+    "countryCode": string
+    "currencyCode": string
+    "date": string
+    "direction": string Enum: [ BUY, SELL ]
+    "hashOfChallenge": string
+    "id": string
+    "isCurrencyForMakerFeeBtc": boolean
+    "isPrivateOffer": boolean
+    "lowerClosePrice": integer
+    "makerFee": integer
+    "makerPaymentAccountId": string
+    "marketPriceMargin": number
+    "maxTradeLimit": integer
+    "maxTradePeriod": integer
+    "minAmount": integer
+    "offerFeePaymentTxId": string
+    "ownerNodeAddress": string
+    "paymentMethodId": string
+    "price": integer
+    "protocolVersion": integer
+    "sellerSecurityDeposit": integer
+    "state": string Enum: [ UNKNOWN, OFFER_FEE_PAID, AVAILABLE, NOT_AVAILABLE, REMOVED, MAKER_OFFLINE ]
+    "txFee": integer
+    "upperClosePrice": integer
+    "useAutoClose": boolean
+    "useMarketBasedPrice": boolean
+    "useReOpenAfterAutoClose": boolean
+    "versionNr": string
 }
 ----
 
@@ -139,10 +139,10 @@ First we need to filter those offers using following static criteria:
 [source,json]
 ----
 {
-    baseCurrencyCode: 'BTC',
-    counterCurrencyCode: 'EUR',
-    direction: 'SELL',
-    paymentMethodId: 'SEPA'
+    "baseCurrencyCode": "BTC",
+    "counterCurrencyCode": "EUR",
+    "direction": "SELL",
+    "paymentMethodId": "SEPA"
 }
 ----
 
