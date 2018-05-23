@@ -37,8 +37,12 @@ For more hard-core developers that want to run from source:
     git clone https://github.com/mrosseel/bisq-api
     cd bisq-api
     mvn compile exec:java \
-        -Dexec.mainClass="io.bisq.api.app.ApiMain" \
-        -Dexec.args="--appName=bisqmon"
+        -Dexec.mainClass="network.bisq.api.app.ApiMain" \
+        -Dexec.args="--appName=http-api-monitor-offers"
+
+[NOTE]
+Since the API is in incubating phase we suggest to run it against different database directory then the default one.
+To do that, use `--appName` parameter. You can set it to whatever you like, just keep it different from `Bisq`.
 
 === Verify the API is running
 
