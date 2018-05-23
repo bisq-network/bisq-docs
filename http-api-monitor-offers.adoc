@@ -1,5 +1,5 @@
 = Monitoring Bisq offers with Http API
-
+:toc:
 :sectlinks:
 :sectanchors:
 
@@ -13,8 +13,8 @@ You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get
 
 * About 15 minutes
 * A favorite text editor or IDE
-* NodeJS 6+
-* Docker (to run from an image) or Git and Maven (to build from source)
+* NodeJS 6+ (to execute the API client script that you will write)
+* Docker (to run from an image) or Git, Maven, JDK8, JavaFX (to build from source)
 
 [NOTE]
 Bisq HTTP API is currently incubating. This means that things may be a bit rough around the edges
@@ -249,4 +249,4 @@ You are now able to monitor Bisq offers via HTTP API!
 
 * Try adding a loop to keep the process repeating the search periodically (use _setInterval_)
 * Join our slack at https://bisq.slack.com and leave feedback on the API and this guide
-* Report https://github.com/mrosseel/bisq-api/issues[issues]
+* If you find any issues please report them https://github.com/mrosseel/bisq-api/issues[here]
