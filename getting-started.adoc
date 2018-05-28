@@ -1,3 +1,251 @@
 = Getting Started with Bisq
+:toc: left
+:sectanchors:
+:imagesdir: images
+:!figure-caption:
+:btc-deposit: 0.01
+:btc-deposit-plus-fees: 0.011
 
-COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/37[bisq-network/bisq-docs#37] for updates.
+Bisq is decentralized, private, and secure—but it's surprisingly approachable—and this guide will help you get up and running quickly.
+
+In this guide, we'll assume you want to buy bitcoin in exchange for a national currency, since that's how most people get started with Bisq.
+
+Specifically, we'll show you how to buy bitcoin with US dollars, using a popular payment method called _Zelle_. Keep in mind, though, that Bisq offers support for trading all national currencies and dozens of different cryptocurrencies and tokens—the only constraint is that one side of each Bisq trade must always be bitcoin.
+
+== Download & install
+
+To run Bisq, download and install it from https://bisq.network/downloads/[the Bisq downloads page^].
+
+[NOTE]
+.Why do I need to download software? Why can't I just trade on your website?
+====
+Unlike most exchanges, Bisq doesn't run a centralized server for making and taking offers, so trading on a website isn't possible.
+
+Instead, Bisq manages offers to trade using a peer-to-peer network—a global network of people who are also running Bisq on their own computers.
+
+This is good news for users, because centralized services are easy to monitor, block and shut down, while peer-to-peer networks like BitTorrent, Bitcoin and Bisq are difficult to surveil, censor and hack.
+
+This means that if you want to use the Bisq Network, you've got to download and run the software too!
+====
+
+Once the installer is finished, go ahead and open Bisq. It'll take a few moments to open as it connects to Tor and syncs with Bisq's peer-to-peer trading network.
+
+When that's done, the first screen you see should look something like this:
+
+.Right half of the screen (gold-colored graph) shows outstanding offers you can take to buy bitcoin. That's what we'll be doing in this guide.
+image::market-screen.png[Market overview screen]
+
+== Configure a national currency account
+
+Since we're looking to buy bitcoin, let's take a look at the `Buy BTC` screen. You should see a list of offers, but you'll notice all the orange `Take offer` buttons are disabled:
+
+.Before configuring a payment account: all offers are disabled.
+image::before-adding-fiat-account.png[Offers disabled before configuring national currency account]
+
+That's because we haven't yet configured a way to pay for the bitcoin we want to buy. So let's set up a payment method. Bisq works with many different payment methods, so you can choose those you already have access to and are most comfortable using. Keep in mind that payment methods determine:
+
+* which offers you can take right now (e.g., in the image above, Zelle has many existing offers, so if we set up Zelle, we could immediately take any of those offers)
+* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#5[details here^])
+
+[NOTE]
+.What if there are no existing offers for the payment method I want to use?
+====
+If you don't see any offers for the payment method you want to use, consider checking back later. A Bisq offer is only available while the user making the offer is online and running Bisq, so you'll see offers come and go as Bisq users around the world go online and offline throughout the day.
+
+You can also easily create your own buy offer with the `Create new offer to buy BTC with USD` button at bottom-right, but we won't go into those details here.
+====
+
+[NOTE]
+.Where is my payment account data stored?
+====
+On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your arbitrator, if there's a dispute) will ever see your payment details.
+====
+
+In this tutorial, we'll configure a Zelle account. You can adapt the instructions that follow to the payment method you choose.
+
+Go to the `Account` screen and click `Add new account`. Select `Zelle` from the dropdown and enter your details.
+
+You'll need to enter *your full name* as registered with your Zelle account as well as the *email address or mobile phone number* linked to your Zelle account.
+
+.Configuring a Zelle account.
+image::configure-fiat-account.png[Configuring a national currency account]
+
+You don't need to edit the `Salt` field. You can keep the `Account name` unchanged or change it however you like: this is an internal label that only you will ever see, so there's no right or wrong value for it.
+
+IMPORTANT: It's *crucial* the information you enter here is correct. Your trading partner can only acknowledge your payment if it's from the account detailed here. Once you've created an account, you cannot edit its information (if you need to make a change, you'll have to delete and add the account again).
+
+Once you're done, hit the `Save new account` button and go back to the `Buy BTC` screen. Offers requiring the payment method you just configured should now be enabled:
+
+.After configuring a payment account: we picked Zelle, so Zelle offers are now enabled.
+image::after-adding-fiat-account.png[Configuring a national currency account]
+
+== Fund your Bisq wallet
+
+There's just one more thing to do before we can trade with Bisq: we need to send enough bitcoin to our Bisq wallet to cover a security deposit as well as trading and mining fees.
+
+To prevent fraud, Bisq requires both buyers and sellers to post a security deposit in bitcoin for every trade. On the buyer's side, this amount is usually {btc-deposit} BTC, plus a trading fee and mining fees for the Bitcoin transactions involved in each trade.
+
+As of this writing, that means you'll need {btc-deposit-plus-fees} BTC.
+
+If you don't already own this much bitcoin, you'll need to obtain it. How? You've got options. Friends and family are often the best option—simply buy a small amount of bitcoin directly from someone you trust. Otherwise, you can try a https://coinatmradar.com/[local bitcoin ATM] (many don't require ID for small transactions), https://www.meetup.com/topics/bitcoin/[bitcoin meetups/events], or vouchers.
+
+[WARNING]
+.How about getting bitcoin through a centralized exchange like Coinbase?
+====
+Most centralized platforms and exchanges (like Coinbase, Binance, Kraken, etc) track your personal information, putting you at risk by tying your identity to the bitcoin you buy and sell there. And because Bitcoin transactions are public and easily traceable, potentially _all_ of your future transactions involving those bitcoin could be traced back to you.
+
+Bisq is built from the ground up to avoid this privacy fiasco, so we strongly recommend avoiding centralized exchanges and to get your first bitcoin through one of the other channels mentioned above.
+====
+
+Once you've gotten enough bitcoin for your security deposit and fees, you can move it into Bisq's built-in wallet. This isn't strictly required, but it'll make trading more convenient since the security deposit & fees you need to accept an offer will be readily available when making or taking an offer.
+
+[IMPORTANT]
+====
+Make sure to password-protect your Bisq client and to write down the _seed words_ for your Bisq wallet. Seed words allow you to recover the funds in your wallet in case of disaster. You'll find them in the `Wallet seed` section of the `Account` screen. <<secure-wallet#,Learn more here>>.
+
+Don't worry, we'll remind you about this again at the end of this tutorial so you don't forget.
+====
+
+To send bitcoin to your Bisq wallet, go to the `Funds` screen and click the `Receive` tab. Send your 0.011 BTC to one of the addresses listed there.
+
+.You can send your security deposit to an address listed here (yours will be different from the one in this image).
+image::fund-bisq-wallet.png[Fund your Bisq wallet]
+
+If you'd rather not hold any bitcoin in your Bisq wallet, that's fine, but you'll need to transfer your security deposit & fees manually when you take an offer (more on this below).
+
+== Take an offer
+
+:figure-caption: Figure
+
+Now that we've gotten setup out of the way, let's trade!
+
+=== 1. Select an offer
+
+[.float-group]
+--
+[.right.text-center]
+.Select an offer you like.
+image::select-an-offer.png[Select an offer,400,400]
+
+Back in the `Buy BTC` screen, click the orange `Take Offer` button for the offer you'd like to take.
+
+--
+
+=== 2. Send deposit to trade wallet
+
+[.float-group]
+--
+[.right.text-center]
+.Send this much bitcoin to this address.
+image::deposit-details.png[Deposit details,400,400]
+
+When taking an offer, Bisq creates a special trade wallet to hold your security deposit and fees. This wallet will be used to pay your _taker fee,_ and will then be used to transfer your security deposit into a _multisig escrow transaction_ together with the seller's security deposit and the bitcoin being traded.
+
+Once you and the seller have completed your ends of the trade, you'll receive the bitcoin you bought along with your security deposit.
+
+Bisq will tell you the address of the trade wallet and exactly how much to send it.
+
+* If you already have enough bitcoin in your Bisq wallet, click `Transfer funds from Bisq wallet` and the funds will automatically transfer to the trade wallet.
+* If not, go ahead and send the amount required (`Funds needed`) to the specified address (`Trade wallet address`). See Figure 2.
+--
+
+[NOTE]
+.A multisig escrow transaction? How does that work?
+====
+Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#8[bonded arbitrator^]. More details are https://bisq.network/faq/#18[here^] and you can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
+====
+
+=== 3. Confirm trade
+
+Once you've funded your trade wallet, you'll see a `Review: Take offer to buy bitcoin` button appear.
+
+Click it, and Bisq will then show you all the details of the offer you're about to take.
+
+.Look over these details carefully.
+image::confirm-deal.png[Confirm trade details]
+
+*Make sure these details are correct.* After you confirm these details, there's no backing out—you must follow through (or risk losing your deposit).
+
+If it all looks good, go ahead and hit `Confirm: Take offer to buy bitcoin`.
+
+Your trade has now officially begun!
+
+=== 4. Send payment
+
+[.float-group]
+--
+
+[.right.text-center]
+.Payment details pop-up.
+image::seller-payment-details.png[Seller payment details,400,400]
+
+Now that you've taken an offer, it's almost time to pay the seller.
+
+First, before showing you the seller's payment details, Bisq will wait for the Bitcoin network to confirm the trade's transactions. On average, this takes 10 minutes.
+
+Then, you'll see a pop-up with the seller's details. Go ahead and pay the seller through the agreed payment method.
+
+[NOTE]
+.Confirmations?
+====
+Each confirmation makes a bitcoin transaction exponentially harder to reverse. You can wait for as many confirmations as you like before sending payment—just note the remaining time indicator. The seller must _receive_ your payment before that timer runs out.
+
+.Make sure the seller receives your payment before this timer runs out.
+image::remaining-time-to-pay.png[Send payment quickly]
+
+Learn more about confirmations https://en.bitcoin.it/wiki/Confirmation[here^].
+====
+
+--
+
+=== 5. Mark payment as sent
+
+[.float-group]
+--
+
+[.right.text-center]
+.Mark payment as sent.
+image::mark-payment-sent.png[Mark payment as sent,400,400]
+
+Once you've sent your payment, be sure to mark the payment as sent in Bisq by clicking the `Payment started` button.
+
+It's easy to forget this step, but remember: Bisq doesn't integrate with national currency payment methods in any way—so Bisq won't know you've sent your payment until you say so.
+
+When you click `Payment started`, the seller will receive a notification that lets them know the payment is on the way. They'll be on the lookout for it now.
+
+--
+
+=== 6. Complete trade
+
+[.float-group]
+--
+
+[.right.text-center]
+.Trade complete.
+image::complete-trade.png[Complete trade,400,400]
+
+When the seller receives your payment, they'll mark it as received in Bisq. Bisq will then complete the trade by releasing the bitcoin you bought to you along with your security deposit.
+
+You can keep your new bitcoin in your built-in Bisq wallet by clicking `Move Funds to Bisq Wallet` or send it elsewhere by clicking `Withdraw to External Wallet`.
+
+--
+
+Congratulations. You've just completed your first trade on Bisq!
+
+== Next steps
+
+It's *crucial* that you secure your Bisq wallet. Without a password, your wallet data is stored on your hard drive unencrypted. That's _dangerous_.
+
+Please follow our <<secure-wallet#,short guide here>> to set a password, encrypt your wallet, and securely store your wallet's recovery seed words.
+
+== Get help and stay in touch
+
+If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and the https://bisq.network/slack-invite[Bisq Slack team^].
+
+You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
+
+And if you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
+
+== Improve this doc
+
+Find a typo or have other suggestions for improvement? Please https://github.com/bisq-network/bisq-docs/blob/master/{docname}{docfilesuffix}[edit this doc] or https://github.com/bisq-network/bisq-docs/issues/new?title=Improvement+suggestion+for+{docname}{docfilesuffix}[report an issue].
