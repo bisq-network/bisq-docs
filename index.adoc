@@ -3,6 +3,7 @@
  * *_User Docs_*
  ** <<intro#, Introduction>> — What Bisq is, why it exists and how it works
  ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
+ ** <<secure-wallet#, Secure Your Wallet>> — Encrypt your wallet's data and write down its seed words
 
  * *_Contributor Docs_*
  ** <<contributor-checklist#, New contributor checklist>>
