@@ -101,7 +101,7 @@ Once you've gotten enough bitcoin for your security deposit and fees, you can mo
 
 [IMPORTANT]
 ====
-Make sure to password-protect your Bisq client and to write down the _seed words_ for your Bisq wallet. Seed words allow you to recover the funds in your wallet in case of disaster. You'll find them in the `Wallet seed` section of the `Account` screen. link:secure-wallet.html[Learn more here].
+Make sure to password-protect your Bisq client and to write down the _seed words_ for your Bisq wallet. Seed words allow you to recover the funds in your wallet in case of disaster. You'll find them in the `Wallet seed` section of the `Account` screen. <<secure-wallet#,Learn more here>>.
 
 Don't worry, we'll remind you about this again at the end of this tutorial so you don't forget.
 ====
@@ -236,7 +236,7 @@ Congratulations. You've just completed your first trade on Bisq!
 
 It's *crucial* that you secure your Bisq wallet. Without a password, your wallet data is stored on your hard drive unencrypted. That's _dangerous_.
 
-Please follow our https://docs.bisq.network/secure-wallet.html[short guide here] to set a password and encrypt your wallets.
+Please follow our <<secure-wallet#,short guide here>> to set a password and encrypt your wallets.
 
 == Get help
 
@@ -246,4 +246,4 @@ If you get stuck, reach out! There's a community of people to help you on the ht
 
 You can get updates on https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
 
-If you really like Bisq, https://docs.bisq.network/contributor-checklist.html[consider contributing]! Even if you're not a developer, there's much you can do.
+If you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
