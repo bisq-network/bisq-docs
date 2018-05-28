@@ -238,12 +238,14 @@ It's *crucial* that you secure your Bisq wallet. Without a password, your wallet
 
 Please follow our <<secure-wallet#,short guide here>> to set a password and encrypt your wallets.
 
-== Get help
+== Get help and stay in touch
 
 If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and the https://bisq.network/slack-invite[Bisq Slack team^].
 
-== Stay in touch
+You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
 
-You can get updates on https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
+And if you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
 
-If you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
+== Improve this doc
+
+Find a typo or have other suggestions for improvement? Please https://github.com/bisq-network/bisq-docs/blob/master/{docname}{docfilesuffix}[edit this doc] or https://github.com/bisq-network/bisq-docs/issues/new?title=Improvement+suggestion+for+{docname}{docfilesuffix}[report an issue].
