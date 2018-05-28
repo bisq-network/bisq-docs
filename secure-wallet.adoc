@@ -21,20 +21,11 @@ image::set-password.png[Set a password to encrypt your Bisq wallet]
 
 Now that you've set a password, it's time to write down your wallet's seed words. Go to the `Wallet seed` section of the `Account` screen and *_write down_* the words you see in the `Wallet seed words` field along with the `Wallet date`.
 
-IMPORTANT: You should _actually_ write down your seed words and wallet date with paper and pen. Saving them on your computer makes it _possible_ for a hacker to obtain through sneaky schemes like keylogging, phishing, etc. Using paper and pen eliminates every possible digital attack vector, no matter how sneaky it is.
+IMPORTANT: You should _actually_ write down your seed words and wallet date using pen and paper. Saving them on your computer, even if you do so in a secure password manager, makes it _possible_ for a hacker to obtain them through sneaky schemes like keylogging. Going low-tech with pen and paper eliminates all such digital attack vectors.
 
 With just your wallet's seed words and date, you can restore your Bisq wallet and all its bitcoin whenever you need to. If you lose your wallet's seed words and date, you won't be able to restore your wallet, and any bitcoin in it is lost forever. So make sure you keep that paper safe!
 
-[WARNING]
-====
-
-Encrypting your wallet and writing down its seed words does *not* save Bisq application data such as trading history, arbitration cases, etc. For that, you need to back up the Bisq data folder:
-
-* macOS: `/Users/username/Library/Application Support/Bisq`
-* Linux: `/home/username/.local/share/Bisq`
-* Windows: `C:\Documents and Settings\username\AppData\Roaming\Bisq`
-
-====
+WARNING: Your seed words can restore your wallet's bitcoin, but they *do not* restore other Bisq application data such as trading history, arbitration cases, etc. For that, you need to back up the Bisq data folder. You can find out how to do that in the `Backup` section of the `Account` screen.
 
 .Write down your Bisq wallet's seed words & wallet date.
 image::seed-words.png[Write down your Bisq wallet's seed words]
