@@ -1,24 +1,32 @@
 = Bisq Network Documentation
+:toc: left
+:sectanchors:
 
- * *_User Docs_*
- ** <<intro#, Introduction>> — Learn what Bisq is, why it exists and how it works
- ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
- ** <<secure-wallet#, Secure Your Wallet>> — Keep your bitcoin safe
+== User Docs
 
- * *_Contributor Docs_*
- ** <<contributor-checklist#, New contributor checklist>>
- ** <<proposals#, Proposals>>
- ** <<exchange/howto/list-asset#, How to list an asset>>
- ** <<manual-dispute-payout#, How to issue a manual dispute payout>>
- ** <<exchange/howto/run-seednode#, How to run a seednode>>
- ** <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
+ * <<intro#, Introduction>> — Learn what Bisq is, why it exists and how it works
+ * <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
+ * <<secure-wallet#, Secure Your Wallet>> — Keep your bitcoin safe
 
- * *_Papers_*
- ** <<dao/phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>
+== Contributor Docs
 
- * *_Specifications_*
- ** <<dao/specification#, Bisq DAO technical specification>>
- ** <<payment-account-age-witness#, Payment account age witness specification>>
- ** https://docs.google.com/document/d/1DXEVEfk4x1qN6QgIcb2PjZwU4m7W6ib49wCdktMMjLw/edit#heading=h.4nbd0q1s77uq[Bisq arbitration and mediation system] (GDoc)
+ * <<contributor-checklist#, New contributor checklist>>
+ * <<proposals#, Proposals>>
+ * <<exchange/howto/list-asset#, How to list an asset>>
+ * <<manual-dispute-payout#, How to issue a manual dispute payout>>
+ * <<exchange/howto/run-seednode#, How to run a seednode>>
+ * <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
 
- * *_<<archive#, Archive>>_*
+== Papers
+
+ * <<dao/phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>
+
+== Specifications
+
+ * <<dao/specification#, Bisq DAO technical specification>>
+ * <<payment-account-age-witness#, Payment account age witness specification>>
+ * https://docs.google.com/document/d/1DXEVEfk4x1qN6QgIcb2PjZwU4m7W6ib49wCdktMMjLw/edit#heading=h.4nbd0q1s77uq[Bisq arbitration and mediation system] (GDoc)
+
+== Archive
+
+ * <<archive#, Archived docs>>
