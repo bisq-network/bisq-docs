@@ -1,7 +1,7 @@
 = Bisq Network Documentation
 
  * *_User Docs_*
- ** <<intro#, Introduction>> — What Bisq is, why it exists and how it works
+ ** <<intro#, Introduction>> — Learn what Bisq is, why it exists and how it works
  ** <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
  ** <<secure-wallet#, Secure Your Wallet>> — Keep your bitcoin safe
 
