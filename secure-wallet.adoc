@@ -1,0 +1,33 @@
+= Secure Your Wallet
+:toc: left
+:sectanchors:
+:imagesdir: images
+:!figure-caption:
+
+As with traditional money and valuables, it's critical that you take reasonable measures to keep your bitcoin safe. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) saving its seed words so you can restore it later.
+
+== Encrypt your wallet
+
+Before setting a password, your Bisq wallet files are stored on your hard drive unencrypted. That means anyone who gains access to your computer (whether by physically stealing it or hacking it remotely) can gain access to your private keys and take your bitcoin.
+
+Setting a password encrypts your Bisq wallet files so they're useless to anyone without the password.
+
+To set a password, go to the `Wallet password` section of the `Account` screen and enter a password.
+
+.Set a password to encrypt your Bisq wallet.
+image::set-password.png[Set a password to encrypt your Bisq wallet]
+
+== Save your seed words
+
+Now that you've set a password, it's time to save your wallet's seed words. Go to the `Wallet seed` section of the `Account` screen and *_write down_* the words you see in the `Wallet seed words` field along with the `Wallet date`.
+
+IMPORTANT: You should literally write your seed words and wallet date down with paper and pen. Saving them on your computer makes your computer a single point of failure: if it's ever lost, stolen, or destroyed, your bitcoin will be gone too. Storing seed words on paper prevents that from happening—just make sure you don't lose that paper!
+
+.Save your Bisq wallet's seed words & wallet date.
+image::seed-words.png[Save your Bisq wallet's seed words]
+
+With your wallet encrypted and your seed words saved, the bitcoin in your Bisq wallet is much more secure. Bravo!
+
+_This document covers just enough to help you secure your Bisq wallet. More details and general wallet safety is a much broader topic, however, so we'll expand this document over time._
+
+_Subscribe to https://github.com/bisq-network/bisq-docs/issues/58[bisq-network/bisq-docs#58] for updates._
