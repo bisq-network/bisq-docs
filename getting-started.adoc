@@ -236,7 +236,7 @@ Congratulations. You've just completed your first trade on Bisq!
 
 It's *crucial* that you secure your Bisq wallet. Without a password, your wallet data is stored on your hard drive unencrypted. That's _dangerous_.
 
-Please follow our <<secure-wallet#,short guide here>> to set a password and encrypt your wallets.
+Please follow our <<secure-wallet#,short guide here>> to set a password, encrypt your wallet, and securely store your wallet's recovery seed words.
 
 == Get help and stay in touch
 
