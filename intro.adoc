@@ -44,6 +44,8 @@ Imagine you want to buy bitcoin (BTC) in exchange for US dollars (USD). In Bisq 
  . The seller receives your USD and indicates they have done so in Bisq
  . You receive the seller's bitcoin and the trade is complete
 
+TIP: For complete instructions on each of the steps above above, read <<getting-started#,Getting Started with Bisq>>.
+
 These steps can vary in a number of ways depending on whether you wish to buy or sell bitcoin, whether you are the _maker_ or the _taker_ of an offer, which payment methods you have access to, and so on. But in any case, the steps above are rather different than those one would follow to complete a similar trade on a centralized exchange.
 
 === How trading with Bisq is different
@@ -76,7 +78,6 @@ These and other differences result in a key tradeoff for Bisq users--one in whic
 
 == Next steps
 
- - Download and install Bisq at https://bisq.network/downloads
- - Get started trading with a https://www.youtube.com/watch?v=9JW25wXnPls&list=PLFH5SztL5cYMOm7IpvA2WkrSF3VscndPM[tutorial video]
- - Ask questions in the https://bisq.community[Bisq Forum] or https://bisq.network/slack-invite[Slack workspace]
+ - Complete the <<getting-started#,Getting Started with Bisq>> guide
+ - Ask questions in the Bisq https://bisq.community[Forum] or https://bisq.network/slack-invite[Slack] workspace
  - Stay in touch by following https://twitter.com/bisq-network[@bisq_network] on Twitter
