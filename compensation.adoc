@@ -1,0 +1,17 @@
+= Compensation
+:toc: left
+:sectanchors:
+
+existing howto documentation: https://docs.bisq.network/dao/phase-zero.html#how-to-request-compensation
+
+compensation request issue template: https://github.com/bisq-network/compensation/blob/master/ISSUE_TEMPLATE.md
+
+delivered work: https://github.com/bisq-network/proposals/issues/19
+
+https://github.com/issues?utf8=%E2%9C%93&q=org%3Abisq-network+involves%3Acbeams+updated%3A2018-05-01..2018-05-31+sort%3Aupdated-desc+[org:bisq-network involves:cbeams updated:2018-05-01..2018-05-31 sort:updated-desc]
+
+monthly reports: https://github.com/bisq-network/proposals/issues/13
+
+my comments regarding contributor work vs. maintainer work vs. role owner work in https://github.com/bisq-network/compensation/issues/68
+
+my response to @rex4539 regarding value of BSQ and how to know how much to request: https://github.com/bisq-network/compensation/issues/70#issuecomment-393061717
