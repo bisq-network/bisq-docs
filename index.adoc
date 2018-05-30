@@ -3,15 +3,52 @@
 :sectanchors:
 :docinfo: private
 
+[TIP]
+.Brand new to Bisq?
+====
+Welcome! Start with the <<essentials>>. You'll be up and trading quickly.
+====
+
+[NOTE]
+.These docs are a work in progress (and you can help)
+====
+Docs without hyperlinks haven't been written yet. If you want to write one, <<contributor-checklist#,let us know>>.
+====
+
 == User Docs
 
- * <<intro#, Introduction>> — Learn what Bisq is, why it exists and how it works
- * <<getting-started#, Getting Started>> — Go from zero to trading in 15 minutes
- * <<secure-wallet#, Secure Your Wallet>> — Keep your bitcoin safe
+=== Essentials
+
+ * <<intro#, Introduction>> — _Learn what Bisq is, why it exists and how it works_
+ * <<getting-started#, Getting Started>> — _Download, set up and start trading with Bisq in minutes_
+ * <<secure-wallet#, Secure Your Wallet>> — _Set a password and save your seed words to keep your bitcoin safe_
+ * Backup and Recovery — _Maintain backups to keep your settings and history safe_
+ * Staying Private — _Maximize control over your personal info and trading data_
+ * Trading and Arbitration Rules — _Know what's expected of you and others when trading_
+ * Fees and Security Deposits - _Understand how your bitcoin is used and kept safe when trading_
+ * Support — _Get help from other Bisq users and contributors_
+
+=== Features
+
+ * Payment Methods — _Explore 20+ supported fiat currency payment methods, from Alipay to Zelle_
+ * Altcoins — _Explore 100+ supported cryptocurrencies, tokens and assets_
+
+=== Ecosystem
+
+ * News and Announcements – _Stay informed with the Bisq https://github.com/bisq-network/proposals/issues/20[mailing list], https://twitter.com/bisq_network[Twitter], https://www.youtube.com/c/bisq-network[YouTube], https://www.facebook.com/bisqnetwork/[Facebook], etc_
+ * Media and Press — _Catch up on talks, interviews, podcasts and articles about Bisq_
+ * Chat and Discussion — _Connect with other users on the Bisq https://bisq.community[Forum], https://bisq.network/slack-invite[Slack], https://webchat.freenode.net/?channels=bisq[IRC], https://keybase.io/team/bisq[Keybase], etc_
+ * Charts and Data – _Explore Bisq https://markets.bisq.network[markets], https://bisq.network/volume[global volume],  https://coin.dance/volume/bisq/[regional volume], https://bisq.network/release-stats[release statistics], etc_
+ * Ratings and Reviews — _Read Bisq user experience reports and reviews on sites like https://www.cryptocompare.com/exchanges/bisq/[CryptoCompare]_
+
+=== Incubating Efforts
+
+ * Bisq HTTP API — _Automate trading and interact programmatically with your Bisq node_
+ * Bisq Mobile — _Operate your Bisq node remotely via a web/mobile frontend_
 
 == Contributor Docs
 
- * <<contributor-checklist#, New contributor checklist>>
+ * <<contributor-checklist#, Contributor Checklist>>
  * <<proposals#, Proposals>>
  * <<exchange/howto/list-asset#, How to list an asset>>
  * <<manual-dispute-payout#, How to issue a manual dispute payout>>
