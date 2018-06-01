@@ -6,19 +6,21 @@ Purpose: to serve as (in C4 terms) the 'platform' for Bisq code and issue manage
 
 == Infrastructure
 
-== @bisq-network GitHub organization
+=== The @bisq-network GitHub organization
 
 https://github.com/bisq-network
 
-== bisq-github mailing list
+=== bisq-github mailing list
 
 https://lists.bisq.network/listinfo/github
 
 Explain what this is for, both as a kind of 'backup' mechanism, but also as a censorship resistance mechanism in case Bisq is ever de-platformed from GitHub. Also as a means for current and potential users and contributors to get an at-a-glance overview and 'feel' for the level of activity around Bisq. Everything that matters with regard to Bisq development goes one way or another through GitHub, so this mailing list creates a very accurate sense of how much activity there is and what the main areas of focus are.
 
-== bisq-network/github repository
+=== The bisq-network/github repository
 
 Issues managed at https://github.com/bisq-network/github
+
+=== Slack
 
 == Roles
 
@@ -38,3 +40,9 @@ https://github.com/organizations/bisq-network/settings/audit-log
 
 created:2018-05-01..2018-05-31 -action:issue_comment
 
+
+== Misc, tips, tricks etc
+
+ - `hub`
+ - Refined GitHub chrome plugin
+ - Issue references (this is more important than misc, though)
