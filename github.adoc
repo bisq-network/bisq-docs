@@ -46,3 +46,4 @@ created:2018-05-01..2018-05-31 -action:issue_comment
  - `hub`
  - Refined GitHub chrome plugin
  - Issue references (this is more important than misc, though)
+ - Stay up to date with latest features with the GitHub 'changelog' feed, which is also subscribed to in the Slack #github channel.
