@@ -16,6 +16,10 @@ https://lists.bisq.network/listinfo/github
 
 Explain what this is for, both as a kind of 'backup' mechanism, but also as a censorship resistance mechanism in case Bisq is ever de-platformed from GitHub. Also as a means for current and potential users and contributors to get an at-a-glance overview and 'feel' for the level of activity around Bisq. Everything that matters with regard to Bisq development goes one way or another through GitHub, so this mailing list creates a very accurate sense of how much activity there is and what the main areas of focus are.
 
+Mention the role of the https://github.com/bisq-kitty service account here, i.e. that it must be a watcher on all repositories in order for notifications to get passed through to the bisq-github mailing list.
+
+There should be a checklist for new repository creation that includes all these items, like having bisq-kitty watch the repository, making sure that there's a @bisq-network/<whatever>-maintainers team and role issue associated with it. This is why new repository creation should probably not be open to all organization members, but required to go through a GitHub admin, so that they can work through this checkbox (only they have the rights to do things like create GH teams). This may also be a good reason to make sure that the same individual contributors that act as GitHub Admins also act as Role Admins; because the duties of the two roles are linked in use cases like this.
+
 === The bisq-network/github repository
 
 Issues managed at https://github.com/bisq-network/github
