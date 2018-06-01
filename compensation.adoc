@@ -15,3 +15,17 @@ monthly reports: https://github.com/bisq-network/proposals/issues/13
 my comments regarding contributor work vs. maintainer work vs. role owner work in https://github.com/bisq-network/compensation/issues/68
 
 my response to @rex4539 regarding value of BSQ and how to know how much to request: https://github.com/bisq-network/compensation/issues/70#issuecomment-393061717
+
+When transcribing compensation requests from GitHub issues to the spreadsheet, e.g. as was done when transcribing https://github.com/bisq-network/compensation/issues/70[May requests] to the worksheet https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=722083962[here]:
+
+    $ for n in $(seq 71 80); do echo "=HYPERLINK(\"https://github.com/bisq-network/compensation/issues/$n\",\"bisq-network/compensation/issues/$n\")"; done;
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/71","bisq-network/compensation/issues/71")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/72","bisq-network/compensation/issues/72")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/73","bisq-network/compensation/issues/73")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/74","bisq-network/compensation/issues/74")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/75","bisq-network/compensation/issues/75")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/76","bisq-network/compensation/issues/76")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/77","bisq-network/compensation/issues/77")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/78","bisq-network/compensation/issues/78")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/79","bisq-network/compensation/issues/79")
+    =HYPERLINK("https://github.com/bisq-network/compensation/issues/80","bisq-network/compensation/issues/80")
