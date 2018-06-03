@@ -3,3 +3,5 @@
 Current instructions: https://docs.bisq.network/dao/phase-zero.html#how-to-vote
 
 When reviewing others contributors' compensation requests, consider reacting to their monthly report comments with a :thumbsup: or other emoji. This helps role owners know that people are actually reading their comments.
+
+Please do vote for your own compensation requests.
