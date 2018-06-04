@@ -1,0 +1,24 @@
+= Support
+:imagesdir: images
+
+Support Staff role: https://github.com/bisq-network/roles/issues/64
+
+Support GitHub issues: https://github.com/bisq-network/support/issues/
+
+#support in Slack
+
+https://bisq.community forum in general is a support resource
+
+== Reimbursements
+
+Example reimbursement issue: https://github.com/bisq-network/support/issues/113
+
+Example reimbursement batch transaction issue: https://github.com/bisq-network/support/issues/101
+
+Example closing comment for a trade cancelled due to tx broadcast failure:
+
+    This trade has failed due to the seller's maker transaction not being broadcasted. The buyer's taker transaction fees will be reimbursed, please see and subscribe to https://github.com/bisq-network/support/issues/113 for further updates. To ensure that your Bisq wallets are in a consistent state following this incident, both parties should go to `Settings->Network info` and click the `Resync SPV file` button. Thanks and best regards to both parties.
+
+When closing an issue like this, it should be closed to the seller, with the reason being 'Bug':
+
+image::closing-failed-trade.png[Closing a failed trade]
