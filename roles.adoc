@@ -4,3 +4,5 @@ COMING SOON. Subscribe to https://github.com/bisq-network/bisq-docs/issues/46[bi
 
  * Read https://docs.bisq.network/dao/phase-zero.html#Appendix-A[Appendix A: Roles] of the Phase Zero doc
  * Browse the issues under the https://github.com/bisq-network/roles/issues[bisq-network/roles] repository
+
+Maintainer role must be fully separated from reviewer role. Maintainers validate that pull requests are correct, maintainers ensure that overall process is followed, maintainers give enough time for sufficient review, and then, maintainers merge pull requests. When somone is _reviewing_ a pull request, even if that person is a maintainer, they are not wearing their maintainer hat. They are wearing their _contributor_ hat. Maintainers do not review. See https://github.com/bisq-network/roles/issues/63#issuecomment-393453744 for counter-example of this. Reviewing puts too much on maintainers.
