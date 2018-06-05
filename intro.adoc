@@ -79,4 +79,4 @@ These and other differences result in a key tradeoff for Bisq users--one in whic
  - Download and install Bisq at https://bisq.network/downloads
  - Get started trading with a https://www.youtube.com/watch?v=9JW25wXnPls&list=PLFH5SztL5cYMOm7IpvA2WkrSF3VscndPM[tutorial video]
  - Ask questions in the https://bisq.community[Bisq Forum] or https://bisq.network/slack-invite[Slack workspace]
- - Stay in touch by following https://twitter.com/bisq-network[@bisq_network] on Twitter
+ - Stay in touch by following https://twitter.com/bisq_network[@bisq_network] on Twitter
