@@ -80,4 +80,4 @@ These and other differences result in a key tradeoff for Bisq users--one in whic
 
  - Complete the <<getting-started#,Getting Started with Bisq>> guide
  - Ask questions in the Bisq https://bisq.community[Forum] or https://bisq.network/slack-invite[Slack] workspace
- - Stay in touch by following https://twitter.com/bisq-network[@bisq_network] on Twitter
+ - Stay in touch by following https://twitter.com/bisq_network[@bisq_network] on Twitter
