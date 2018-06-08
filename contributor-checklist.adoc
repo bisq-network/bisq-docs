@@ -1,4 +1,6 @@
-= New Contributor Checklist
+= Contributor Checklist
+:toc: left
+:sectanchors:
 
 So you're interested in contributing to Bisq--welcome! This checklist will get you plugged in and productive quickly as possible.
 
@@ -18,9 +20,9 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] Introduce yourself in the `#general` channel. Say a bit about your skills and interests. This will help others point you in the right direction.
 
- * [ ] Join the `#github` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to assign you to GitHub issues.
+ * [ ] Join the `#github` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
 
- * [ ] After accepting your GitHub invitation, consider changing your https://github.com/orgs/bisq-network/people[membership visibility] from private to public. This helps others know at a glance roughly how many contributors are involved with Bisq.
+ * [ ] After accepting your GitHub invitation, please change your https://github.com/orgs/bisq-network/people[membership visibility] from `private` to `public`. This helps others know at a glance roughly how many contributors are involved with Bisq.
 
  * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
 
