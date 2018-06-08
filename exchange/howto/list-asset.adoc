@@ -1,6 +1,4 @@
 = How to list an asset
-:toc:
-:sectanchors:
 
 == Introduction
 

@@ -1,6 +1,4 @@
 = Bisq Network Documentation
-:toc: left
-:sectanchors:
 :docinfo: private
 
 [TIP]

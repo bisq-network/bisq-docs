@@ -1,6 +1,4 @@
 = Getting Started with Bisq
-:toc: left
-:sectanchors:
 :imagesdir: images
 :!figure-caption:
 :btc-deposit: 0.01
