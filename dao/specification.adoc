@@ -1,5 +1,4 @@
 = Bisq DAO technical specification
-:toc: left
 
 NOTE: This document is a detailed technical specification for the Bisq DAO and BSQ token. For a high-level overview and rationale, please see <<phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>>.
 

@@ -1,6 +1,4 @@
 = Proposals
-:toc: left
-:sectanchors:
 
 Proposals are a means for suggesting specific changes to Bisq Network software components, infrastructure and processes. They are especially useful where awareness and agreement of other contributors is required in order for the change to be successfully implemented.
 
