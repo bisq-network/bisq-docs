@@ -30,8 +30,8 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 
 === Features
 
- * Payment Methods — _Explore 20+ supported fiat currency payment methods, from Alipay to Zelle_
- * Altcoins — _Explore 100+ supported cryptocurrencies, tokens and assets_
+ * Payment Methods — _Explore https://bisq.network/faq/#paymentmethods[20+] supported fiat currency payment methods, from Alipay to Zelle_
+ * Altcoins — _Explore https://bisq.network/faq/#altcoins[100+] supported cryptocurrencies, tokens and assets_
 
 === Ecosystem
 
