@@ -1,0 +1,19 @@
+= Glossary
+
+fiat::
+
+buyer::
+
+seller::
+
+maker::
+
+taker::
+
+offer::
+
+trade::
+
+dispute::
+
+payment method::
