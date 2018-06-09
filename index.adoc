@@ -25,6 +25,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * Trading and Arbitration Rules — _Know what's expected of you and others when trading_
  * Fees and Security Deposits - _Understand how your bitcoin is used and kept safe when trading_
  * Support — _Get help from other Bisq users and contributors_
+ * <<glossary#, Glossary>> — _Get familiar with commonly-used Bisq terminology_
 
 === Features
 

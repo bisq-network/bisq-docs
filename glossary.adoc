@@ -1,5 +1,17 @@
 = Glossary
 
+== National currency
+
+=== Altcoin
+
+=== Trade
+
+== Offer
+
+== Maker
+
+== Taker
+
 fiat::
 
 buyer::
