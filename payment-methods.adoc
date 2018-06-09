@@ -1,0 +1,173 @@
+= Bisq Payment Methods
+:toc:
+// values from https://github.com/bisq-network/bisq-core/blob/0eea3c7/src/main/java/bisq/core/payment/payload/PaymentMethod.java#L153-L157
+:high-risk:     0.16 BTC
+:mid-risk:      0.25 BTC
+:low-risk:      0.50 BTC
+:very-low-risk: 1.00 BTC
+
+_Payment methods_ are the different ways that buyers can purchase bitcoin from sellers in a Bisq trade. Offers to trade specify which payment method must be used, and both buyer and seller must have access to that payment method in order to complete the trade. National currency payment methods range from traditional bank transfers, to money orders by mail, to more modern services like Revolut and Uphold, while altcoin payment methods always involve transferring payment over that altcoin's blockchain.
+
+== Introduction
+
+How we think about adding payment methods
+
+Payment method hardness scale
+
+Prime directive: avoid chargebacks
+
+Effect of payment account age on per-trade limits
+
+Why do we apply per-trade limits?
+
+How to set up a payment method in Bisq (exception: Altcoins)
+
+== Risks and precautions
+
+Bisq trade id. Never mention bitcoin, Bisq, etc. See trading and arbitration rules.
+
+Daily and monthly limits. Know your limits. It's a protocol violation if you don't.
+
+== Supported payment methods
+
+|===
+|Payment Method |Region |Trading Period |Per-Trade Limit
+
+|Alipay
+|China 🇨🇳
+|1 day
+|{low-risk}
+
+|Altcoins
+|Global 🌍
+|1 day
+|{very-low-risk}
+
+|Cash Deposit
+|Global 🌍
+|4 days
+|{mid-risk}
+
+|Chase QuickPay
+|USA 🇺🇸
+|1 day
+|{mid-risk}
+
+|Faster Payments
+|UK 🇬🇧
+|1 day
+|{mid-risk}
+
+|Interac e-Transfer
+|Canada 🇨🇦
+|1 day
+|{mid-risk}
+
+|MoneyBeam (N26)
+|Europe 🇪🇺
+|1 day
+|{high-risk}
+
+|National bank transfer
+|n/a
+|4 days
+|{mid-risk}
+
+|OKPay
+|Global 🌍
+|1 day
+|{very-low-risk}
+
+|Perfect Money
+|Europe 🇪🇺 and USA 🇺🇸
+|1 day
+|{low-risk}
+
+|Popmoney
+|USA 🇺🇸
+|1 day
+|{high-risk}
+
+|Revolut
+|Global 🌍
+|1 day
+|{high-risk}
+
+|SEPA
+|Europe 🇪🇺
+|6 days
+|{mid-risk}
+
+|SEPA Instant
+|Europe 🇪🇺
+|1 day
+|{mid-risk}
+
+|Swish
+|Sweden 🇸🇪
+|1 day
+|{low-risk}
+
+|Transfer with same bank
+|n/a
+|2 days
+|{mid-risk}
+
+|Transfer with specific banks
+|n/a
+|4 days
+|{low-risk}
+
+|US Postal Money Order
+|USA 🇺🇸
+|8 days
+|{mid-risk}
+
+|Uphold
+|Global 🌍
+|1 day
+|{high-risk}
+
+|Western Union
+|Global 🌍
+|4 days
+|{mid-risk}
+
+|Zelle
+|USA 🇺🇸
+|4 days
+|{mid-risk}
+
+|===
+
+== Unsupported payment methods
+
+ * Paypal
+ * Cash App
+ * Venmo
+
+== Proposed payment methods
+
+ * https://github.com/bisq-network/proposals/issues/24[In-person / face-to-face trading]
+ * Cash by mail – _<<proposals#, Proposals>> welcome_
+
+== How to request a new payment method
+
+== Roles
+
+ * https://github.com/bisq-network/roles/issues/38[Payment Method Maintainer] — Subscribe to this issue for monthly reports on payment method activity in Bisq
+
+ * Bisq Core Maintainer — responsible for actually merging changes
+
+ * Bisq Core Contributor — responsible for submitting pull requests to add or modify existing payment methods
+
+== Infrastructure
+
+ * `#payment-methods` Slack channel
+ * https://github.com/bisq-network/payment-methods
+
+== See also
+
+ * https://github.com/bisq-network/bisq-core/blob/master/src/main/java/bisq/core/payment/payload/PaymentMethod.java
+ * https://en.bitcoin.it/wiki/Payment_methods
+
