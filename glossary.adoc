@@ -1,31 +1,171 @@
-= Glossary
+= Bisq Glossary
+// inspired by https://github.com/libbitcoin/libbitcoin/wiki/Glossary
 
-== National currency
 
-=== Altcoin
+== Actors
+
+=== User
+A person who uses <<Bisq>> in the pursuit of their economic self-interest.
+
+=== Contributor
+A person who improves <<Bisq>> in the pursuit of their economic self-interest.
+
+=== Maker
+A <<user>> who creates an <<offer>>.
+
+=== Taker
+A <<user>> who accepts an <<offer>>.
+
+=== Trader
+A <<user>> contractually bound to complete a given <<trade>>. Sometimes referred to as _party_ or _counterparty_.
+
+=== Buyer
+A <<trader>> who buys another's bitcoin in exchange for their own <<property>>.
+
+=== Seller
+A <<trader>> who sells their own bitcoin in exchange for another's <<property>>.
+
+=== Stakeholder
+A <<contributor>> who TODO
+
+=== Bonded Contributor
+A <<contributor>> who TODO
+
+=== Arbitrator
+A <<user>> and <<bonded-contributor>> selected to settle a trade <<dispute>>.
+
+=== Operator
+A <<bonded-contributor>> who operates a <<trusted-component>>.
+
+=== Maintainer
+A <<bonded-contributor>> who maintains a <<repository>>
+
+
+== Transactions
 
 === Trade
+The act of exchanging (buying or selling) bitcoin for other property.
 
-== Offer
+=== Dispute
+The process of <<buyer>> and <<seller>> working with an <<arbitrator>> to resolve a problem with a <<trade>>. Also known as _Arbitration_.
 
-== Maker
 
-== Taker
+=== Repository
 
-fiat::
 
-buyer::
+== Objects
 
-seller::
+=== Component
+Software that performs a specific function. See <<Components>>.
 
-maker::
+=== Bisq
+The system of <<components>> that work together to make . Also referred to as the _Bisq Network_.
 
-taker::
+=== Offer
+An expression of intent to <<trade>>, including all necessary details such as <<price>> and <<payment-method>>.
 
-offer::
+=== Offer Book
+A map of all open <<offer>>s, keyed by <<market>>.
 
-trade::
 
-dispute::
+== Components
 
-payment method::
+=== Critical components
+
+==== Bisq Desktop
+
+==== Bisq Core
+
+==== Bisq P2P
+
+==== Trusted components
+
+===== Bisq Seednode
+
+===== Bisq Pricenode
+
+===== Bisq Bitcoin Node
+
+=== Non-critical components
+
+==== Bisq Website
+
+==== Bisq Markets Website
+
+==== Bisq Markets API
+
+
+
+
+
+=== Property
+An object rightfully possessed by a person. Presently, the specific types of property that may be traded on Bisq are <<fiat>> currencies and <<crypto>> assets.
+
+=== Asset
+Definition of asset.
+
+=== Currency
+def
+
+=== Bitcoin
+def
+
+=== Fiat (currency)
+def
+
+=== Crypto (currency)
+def
+
+=== Depth
+The amount of bitcoin currently available for trading in a given market.
+
+=== Spread
+// tag::spread[]
+The difference between the best (lowest-priced) <<./glossary#offer, offer>> to sell and the best (highest-priced) <<./glossary#offer, offer>> to buy, divided by the market price and expressed as a percentage.
+// end::spread[]
+[NOTE]
+.Example
+====
+If the best <<glossary#offer, offer>> to sell BTC is **1,050 USD** and the best offer to buy BTC is for **950 USD** and the current market price is **1,000 USD**, then the BTC/USD market spread is `((1050-950)/1000)*100)` or **10%**.
+====
+[TIP]
+.Putting spreads to use
+====
+Spreads indicate different kinds of opportunities in a market. A 0% spread indicates an opportunity to trade at the market price. A positive spread (as in the example above) indicates an opportunity to make a better offer and get it taken more quickly. A negative spread indicates an opportunity to take an underpriced offer and profit from it. See <<./glossary.adoc#arbitrage, arbitrage>>.
+====
+
+=== Market
+The trade between a certain pair of assets. As in "the BTC/USD and BTC/XMR markets".
+
+=== Volume
+The amount of a given number of units traded in a given time period.
+
+=== Price
+and fixed vs distance from market price
+
+
+
+=== Payment Method
+// tag::payment-method[]
+The means by which a <<./glossary#buyer, buyer>> pays a <<./glossary#seller, seller>> for their bitcoin when settling a <<./glossary#trade, trade>>. Each Bisq trade <<./glossary#offer, offer>> specifies the payment method to be used, and both buyer and seller must have access to that payment method to complete the trade. <<./glossary#national-currency, National currency>> payment methods range widely from traditional bank transfers, to money orders by mail, to more modern services like Revolut and Uphold. Cryptocurrency (or <<./glossary#altcoin, altcoin>>) payment methods require transferring payment over a specific altcoin blockchain.
+// end::payment-method[]
+See: <<payment-methods#, Payment Methods>>.
+
+=== Account
+
+=== Security Deposit
+def
+
+=== Multisig Escrow
+def
+
+=== Deposit Transaction
+def
+
+=== Mining Fee
+def
+
+=== Trading Fee
+def
+
+
