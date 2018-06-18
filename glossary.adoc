@@ -27,9 +27,7 @@ A peer-to-peer Bitcoin <<asset>> exchange network. Aka _Bisq Network_.
 
 A peer-to-peer <<asset>> exchange network for Bitcoin. Aka _Bisq Network_.
 ////
-A peer-to-peer <<asset>> exchange network.
-
-Aka _Bisq Network_.
+A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
 
 === Asset
 Property divisible into and transferrable as fungible <<units>>.
@@ -59,7 +57,7 @@ An <<offer>> to sell bitcoin.
 
 === Trade
 To exchange bitcoin for another <<asset>>. +
-_noun:_ The exchange of bitcoin for another <<asset>>.
+_n._ The exchange of bitcoin for another <<asset>>.
 
 === Trader
 A <<user>> bound by contract to <<settle>>.
@@ -77,9 +75,15 @@ A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
 A <<trader>> who sells their own bitcoin in exchange for another's <<asset>>.
 
 === Arbitrator
-A <<contributor>> who works to resolve <<dispute, disputes>>.
+A <<contributor>> who performs <<arbitration>>.
+
+=== Arbitration
+The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
 
 === Dispute
+A problem with a <<trade>>.
+
+> The seller opened a dispute after receiving less in payment than expected.
 
 
 == Trading
@@ -165,13 +169,6 @@ TODO
 
 === Own
 A person controlling certain <<units>>.
-
-== Trading
-
-=== Dispute
-The process of <<buyer>> and <<seller>> working with an <<arbitrator>> to resolve a problem with a <<trade>>.
-
-Aka _Arbitration_.
 
 === Offer Book
 A map of all open <<offer, Offers>>, keyed by <<market>>.
