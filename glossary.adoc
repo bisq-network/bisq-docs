@@ -83,8 +83,12 @@ The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
 === Dispute
 A problem with a <<trade>>.
 
-> The seller opened a dispute after receiving less in payment than expected.
+> The dispute was over the amount the buyer paid the seller.
 
+=== Dispute Ticket
+A request for <<arbitration>>.
+
+> The seller opened a dispute ticket after receiving too little in payment from the buyer.
 
 == Trading
 
