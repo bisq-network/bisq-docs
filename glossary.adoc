@@ -1,5 +1,6 @@
 = Bisq Glossary
 
+
 == Fundamentals
 
 === User
@@ -57,19 +58,36 @@ An <<offer>> to buy bitcoin.
 An <<offer>> to sell bitcoin.
 
 === Trade
-(v.) To exchange bitcoin for another <<asset>>. +
-(n.) The exchange of bitcoin for another <<asset>>.
+To exchange bitcoin for another <<asset>>. +
+_noun:_ The exchange of bitcoin for another <<asset>>.
 
-=== Terms
-The requirements to <<settle>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
-
-// > The terms specified that the buyer would purchase 0.625 BTC from the seller at a price of 6425.89 USD via the Zelle payment network.
+=== Trader
+A <<user>> bound by contract to <<settle>>.
 
 === Settle
 To complete payment of an <<amount>> owed.
 
 === Amount
 A number of <<units>>.
+
+=== Buyer
+A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
+
+=== Seller
+A <<trader>> who sells their own bitcoin in exchange for another's <<asset>>.
+
+=== Arbitrator
+A <<contributor>> who works to resolve <<dispute, disputes>>.
+
+=== Dispute
+
+
+== Trading
+
+=== Terms
+The requirements to <<settle>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
+
+// > The terms specified that the buyer would purchase 0.625 BTC from the seller at a price of 6425.89 USD via the Zelle payment network.
 
 === Trade Amount
 The <<amount>> of bitcoin to be traded.
@@ -109,25 +127,14 @@ The means with which the <<buyer>> will <<settle>>.
 
 See <<payment-methods#, Payment Methods>>.
 
-=== Trader
-A <<user>> bound by contract to <<settle>>.
 
-Aka _Counterparty_.
-
-=== Buyer
-A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
-
-=== Seller
-A <<trader>> who sells their own bitcoin in exchange for another's <<asset>>.
+== Contributing
 
 === Stakeholder
 A <<contributor>> who <<own, Owns>> <<BSQ>> and is eligible to <<vote>>.
 
 === Bonded Contributor
 A <<contributor>> who TODO
-
-=== Arbitrator
-A <<user>> and <<bonded-contributor>> selected to settle a trade <<dispute>>.
 
 === Operator
 A <<bonded-contributor>> who operates a <<trusted-component>>.
@@ -143,7 +150,6 @@ A dishonest <<trader>> who attempts to defraud others of their property.
 
 Aka _Fraudster_.
 
-== ???
 
 === BSQ
 Bisq's Bitcoin-based utility token that owners can trade for bitcoin, spend on trading fees, vote, bond, and earn.
