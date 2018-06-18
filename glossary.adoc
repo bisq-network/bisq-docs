@@ -1,5 +1,4 @@
 = Bisq Glossary
-// inspired by https://github.com/libbitcoin/libbitcoin/wiki/Glossary
 
 == Fundamentals
 
@@ -27,7 +26,9 @@ A peer-to-peer Bitcoin <<asset>> exchange network. Aka _Bisq Network_.
 
 A peer-to-peer <<asset>> exchange network for Bitcoin. Aka _Bisq Network_.
 ////
-A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
+A peer-to-peer <<asset>> exchange network.
+
+Aka _Bisq Network_.
 
 === Asset
 Property divisible into and transferrable as fungible <<units>>.
@@ -73,34 +74,45 @@ A number of <<units>>.
 === Trade Amount
 The <<amount>> of bitcoin to be traded.
 
-> The trade amount is `0.625 BTC` (62,500,000 satoshis)
+> The trade amount was `0.1 BTC` (1,000,000 satoshis)
+
+=== Trade Date
+The date an <<offer>> is taken.
+
+> The trade date was `Nov 16th at 16:12 CET`
 
 === Price
-The <<amount>> of an <<asset>> expected in exchange for one bitcoin. Aka _Exchange Rate_.
+The <<amount>> of an <<asset>> expected in exchange for one bitcoin.
+
+Aka _Exchange Rate_.
 
 === Market Price
 A moving average of a given <<price>>.
 //Aka _Spot Price_.
 
-> The market price on June 16th at 16:12 CET was `6,401.39 USD/BTC` according to BitcoinAverage.
+> The market price on Nov 16th at 16:12 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
 
 === Trade Price
-The <<price>> agreed on in a given <<trade>>, which may differ from the <<market-price>>.
+The <<price>> agreed on for a given <<trade>>, which may differ from the <<market-price>>.
 
-> The trade price was `6,529.42 USD/BTC` – 2% above the market price.
+> The trade price was `1,010.00 USD/BTC` – 1% above the market price.
 
 === Payment Amount
 The <<trade-amount>> multiplied by the <<trade-price>>.
 
-> The payment amount was `4,000.87 USD` (0.625 BTC * 6,401.39 USD/BTC)
+> The payment amount was `101.00 USD` (0.1 BTC * 1,010.00 USD/BTC)
 
 === Payment Method
-The means with which the <<buyer>> will <<settle>>. See <<payment-methods#, Payment Methods>>.
+The means with which the <<buyer>> will <<settle>>.
 
-> The payment method was `SEPA transfer`.
+> The payment method was `Cash Deposit`.
+
+See <<payment-methods#, Payment Methods>>.
 
 === Trader
-A <<user>> bound by contract to <<settle>>. Aka _Counterparty_.
+A <<user>> bound by contract to <<settle>>.
+
+Aka _Counterparty_.
 
 === Buyer
 A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
@@ -127,8 +139,9 @@ A <<bonded-contributor>> who maintains a <<repository>>.
 A person who attempts to damage <<Bisq>>.
 
 === Scammer
-A dishonest <<trader>> who attempts to defraud others of their property. Aka _Fraudster_.
+A dishonest <<trader>> who attempts to defraud others of their property.
 
+Aka _Fraudster_.
 
 == ???
 
@@ -147,12 +160,12 @@ TODO
 === Own
 A person controlling certain <<units>>.
 
-
-
 == Trading
 
 === Dispute
-The process of <<buyer>> and <<seller>> working with an <<arbitrator>> to resolve a problem with a <<trade>>. Aka _Arbitration_.
+The process of <<buyer>> and <<seller>> working with an <<arbitrator>> to resolve a problem with a <<trade>>.
+
+Aka _Arbitration_.
 
 === Offer Book
 A map of all open <<offer, Offers>>, keyed by <<market>>.
@@ -203,7 +216,9 @@ def
 def
 
 === Fiat
-A <<currency>> issued by a national authority. Aka _Fiat Currency, National Currency_.
+A <<currency>> issued by a national authority.
+
+Aka _Fiat Currency, National Currency_.
 
 === Crypto
 A
@@ -232,7 +247,6 @@ The trade between a certain pair of assets. As in "the BTC/USD and BTC/XMR marke
 === Volume
 The amount of a given number of units traded in a given time period.
 
-
 === Account
 
 === Security Deposit
@@ -249,5 +263,3 @@ def
 
 === Trading Fee
 def
-
-
