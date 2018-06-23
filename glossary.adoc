@@ -54,7 +54,7 @@ Aka _Exchange Rate_.
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
-> You have to spend bitcoin to transact on the Bitcoin network. Mining fees are access-to-the-network fees.
+> You have to spend bitcoin to transact on the Bitcoin network.
 
 === Bitcoin
 The concept of Bitcoin; the entire network itself.footnote:[Adapted from https://bitcoin.org/en/vocabulary#bitcoin]
@@ -62,16 +62,12 @@ The concept of Bitcoin; the entire network itself.footnote:[Adapted from https:/
 > I was learning about the Bitcoin protocol today.
 
 === BSQ
-The <<Bitcoin>>-based colored coin that powers Bisq funding and governance. Aka _BSQ token_. Pronounced "Bee-Ess-Queue".
+The <<bitcoin>>-based colored coin that underpins Bisq funding and governance. Aka _BSQ token_.
 
-> The BSQ token has five utilities: earning, trading, spending, voting and bonding.
+> BSQ has five utilities: earning, trading, spending, voting and bonding.
 
-[NOTE]
-.BSQ the token vs BSQ the system
-====
-TODO
-====
-
+=== BSQ (system)
+The <<components>> and consensus protocol that validate <<BSQ>> transactions.
 
 == Trading
 
@@ -80,7 +76,7 @@ To exchange <<bitcoin>> for another <<asset>>. +
 _n._ The exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> who has agreed to <<settle>> one side of a <<trade>>.
+A <<user>> who has agreed to <<settle>> in one side of a <<trade>>.
 
 === Settle
 To complete payment of an <<amount>>.
