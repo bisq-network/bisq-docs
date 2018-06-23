@@ -198,6 +198,13 @@ The date an <<offer>> was taken.
 > The trade date is `March 27th 2017 at 12:00 CET`
 
 
+== Payment Accounts
+
+=== Fiat Payment Accounts
+
+=== Crypto Payment Accounts
+
+
 == Portfolio
 
 === Open Offer
@@ -209,6 +216,64 @@ The date an <<offer>> was taken.
 === Failed Trade
 
 
+== Fees
+
+=== Mining Fee
+
+=== Trading Fee
+
+=== Maker Fee
+
+=== Taker Fee
+
+
+== Fraud Protection
+
+=== Security Deposit
+
+The <<amount>> of bitcoin each <<trader>> must place in <<escrow>>.
+
+> The buyer's security deposit was 0.01 BTC; the seller's was 0.003 BTC.
+
+=== Per-Trade Limits
+
+=== Payment Account Maturity
+
+=== Payment Method Selection
+
+
+== Escrow
+The state of <<escrow-funds>> being held aside until <<traders>> complete <<settle, settlement>>
+
+=== Escrow Funds
+The <<trade-amount>> and the <<security-deposit>> from each <<trader>>.
+
+=== Escrow Address
+The <<multisig-address>> where <<escrow-funds>> are <<deposit, deposited>>.
+
+which any two of the <<buyer>>, <<seller>> and <<arbitrator>> must sign in order to be co
+
+=== Multisig Address
+A <<bitcoin>> address requiring multiple signatures to authorize a <<bitcoin>> transaction.
+
+=== Deposit
+The process of sending
+
+=== Payout
+
+
+== Bitcoin Transactions
+
+=== Maker Fee Transaction
+
+=== Taker Fee Transaction
+
+=== Deposit Transaction
+
+=== Payout Transaction
+
+
+
 == Wallet (Aka. Funds)
 
 === Available Balance
@@ -216,13 +281,6 @@ The date an <<offer>> was taken.
 === Reserved Balance
 
 === Locked Balance
-
-
-== Payment Accounts
-
-=== Fiat Payment Accounts
-
-=== Crypto Payment Accounts
 
 
 == Network Components
