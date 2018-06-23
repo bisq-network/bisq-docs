@@ -46,11 +46,6 @@ A person controlling certain <<units>>.footnote:[Adapted from https://github.com
 === Amount
 A number of <<units>>.
 
-=== Price
-The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
-
-Aka _Exchange Rate_.
-
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
@@ -106,11 +101,45 @@ A request for <<arbitration>>.
 
 == Markets
 
-=== Market Price
-A moving average of a given <<price>>.
-//Aka _Spot Price_.
+=== Market
+The trade between a certain pair of assets.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
 
-> The market price on Nov 16th at 16:12 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
+> The USD/BTC market is very active.
+
+=== Price
+The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
+
+=== Market Price
+A moving average of <<price, Prices>> in a given <<market>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#price] Aka _Spot Price, Exchange Rate_.
+
+> The market price on March 27th 2017 at 12:00 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
+
+=== Volume
+The <<amount>> of <<bitcoin>> traded over a given time period.
+
+> 24-hour volume was 4.23 BTC
+
+=== Depth
+The <<amount>> of <<bitcoin>> available for to buy or sell in a <<market>>.
+
+> The sell side of the USD/BTC market has a depth of 1.25 BTC.
+
+=== Spread
+The percentage difference between the best (lowest-priced) <<ask>> and the best (highest-priced) <<bid>> divided by the <<market-price>>.
+
+> The spread in the USD/BTC market is 2% right now.
+
+[NOTE]
+.Example
+====
+If the best <<ask>> is **1,050 USD** and the best <<bid>> is **950 USD** and the <<market-price>> is **1,000 USD**, then the BTC/USD market spread is `(1050-950)/1000` or **10%**.
+====
+
+[TIP]
+.Putting spreads to use
+====
+Spreads indicate different kinds of opportunities in a market. A 0% spread indicates an opportunity to trade at the market price. A positive spread (as in the example above) indicates an opportunity to make a better offer and to profit when your offer is taken more quickly than others. A negative spread indicates an opportunity to take an underpriced offer and to acquire bitcoin at a discount.
+====
 
 
 == Trade Terms
@@ -144,9 +173,9 @@ See <<payment-methods#, Payment Methods>>.
 == Trade Details
 
 === Trade Date
-The date an <<offer>> is taken.
+The date an <<offer>> was taken.
 
-> The trade date was `Nov 16th at 16:12 CET`
+> The trade date is `March 27th 2017 at 12:00 CET`
 
 
 == Offers
@@ -176,25 +205,6 @@ A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multip
 
 > This trade's price is set to float at 2% above market price
 
-
-
-== Contributing
-
-=== Stakeholder
-An <<owner>> of <<BSQ>>.
-
-=== Bonded Contributor
-A <<contributor>> who TODO
-
-=== Operator
-A <<bonded-contributor>> who operates a <<trusted-component>>.
-
-=== Maintainer
-A <<bonded-contributor>> who maintains a <<repository>>.
-
-=== Compensation
-
-=== Voting
 
 === Offer Book
 A map of all open <<offer, Offers>>, keyed by <<market>>.
@@ -237,6 +247,25 @@ Software that performs a specific function. See <<Components>>.
 === Repository
 
 
+== Contributing
+
+=== Stakeholder
+An <<owner>> of <<BSQ>>.
+
+=== Bonded Contributor
+A <<contributor>> who TODO
+
+=== Operator
+A <<bonded-contributor>> who operates a <<trusted-component>>.
+
+=== Maintainer
+A <<bonded-contributor>> who maintains a <<repository>>.
+
+=== Compensation
+
+=== Voting
+
+
 == Uncategorized
 
 === Attacker
@@ -254,30 +283,6 @@ Aka _Fiat Currency, National Currency_.
 
 === Crypto
 A
-
-=== Depth
-The amount of bitcoin available for <<trade>> in a given <<market>>.
-
-=== Spread
-// tag::spread[]
-The difference between the best (lowest-priced) <<./glossary#offer, offer>> to sell and the best (highest-priced) <<./glossary#offer, offer>> to buy, divided by the market price and expressed as a percentage.
-// end::spread[]
-[NOTE]
-.Example
-====
-If the best <<glossary#offer, offer>> to sell BTC is **1,050 USD** and the best offer to buy BTC is for **950 USD** and the current market price is **1,000 USD**, then the BTC/USD market spread is `((1050-950)/1000)*100)` or **10%**.
-====
-[TIP]
-.Putting spreads to use
-====
-Spreads indicate different kinds of opportunities in a market. A 0% spread indicates an opportunity to trade at the market price. A positive spread (as in the example above) indicates an opportunity to make a better offer and get it taken more quickly. A negative spread indicates an opportunity to take an underpriced offer and profit from it. See <<./glossary.adoc#arbitrage, arbitrage>>.
-====
-
-=== Market
-The trade between a certain pair of assets. As in "the BTC/USD and BTC/XMR markets".
-
-=== Volume
-The amount of a given number of units traded in a given time period.
 
 === Account
 
