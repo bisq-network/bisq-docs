@@ -76,20 +76,20 @@ TODO
 == Trading
 
 === Trade
-To exchange bitcoin for another <<asset>>. +
-_n._ The exchange of bitcoin for another <<asset>>.
+To exchange <<bitcoin>> for another <<asset>>. +
+_n._ The exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> bound by contract to <<settle>>.
+A <<user>> who has agreed to <<settle>> one side of a <<trade>>.
 
 === Settle
 To complete payment of an <<amount>>.
 
 === Buyer
-A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
+The <<trader>> who <<settle, settles>> by sending their <<asset>> to the <<seller>>.
 
 === Seller
-A <<trader>> who sells their own bitcoin in exchange for another's <<asset>>.
+The <<trader>> who <<settle, settles>> by releasing their <<bitcoin>> to the <<buyer>>.
 
 === Arbitrator
 A <<contributor>> who performs <<arbitration>>.
