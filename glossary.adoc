@@ -3,11 +3,16 @@
 
 == Fundamentals
 
-=== User
-A person who uses <<Bisq>>.
+=== Asset
+Property divisible into and transferrable as fungible <<units>>.
 
-=== Contributor
-A person who improves <<Bisq>>.
+> The US dollar and bitcoin are assets.
+
+[[units, Units]]
+=== Unit
+The atomic transferable value of an <<asset>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#unit]
+
+> The penny is the US dollar unit. The satoshi is the bitcoin unit.
 
 === Bisq
 ////
@@ -29,16 +34,13 @@ A peer-to-peer <<asset>> exchange network for Bitcoin. Aka _Bisq Network_.
 ////
 A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
 
-=== Asset
-Property divisible into and transferrable as fungible <<units>>.
+> US dollars have been exchanged for bitcoin thousands of times using Bisq
 
-> The US dollar and bitcoin are assets.
+=== User
+A person who uses <<Bisq>>.
 
-[[units, Units]]
-=== Unit
-The atomic transferable value of an <<asset>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#unit]
-
-> The penny is the US dollar unit. The satoshi is the bitcoin unit.
+=== Contributor
+A person who improves <<Bisq>>.
 
 === Owner
 A person controlling certain <<units>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#owner]
@@ -55,14 +57,6 @@ The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 The concept of Bitcoin; the entire network itself.footnote:[Adapted from https://bitcoin.org/en/vocabulary#bitcoin]
 
 > I was learning about the Bitcoin protocol today.
-
-=== BSQ
-The <<bitcoin>>-based colored coin used in Bisq funding and governance transactions. Aka _BSQ token_.
-
-> BSQ has five utilities: earning, trading, spending, voting and bonding.
-
-=== BSQ (system)
-The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
 
 
 == Trading
@@ -382,6 +376,14 @@ A <<trade-price>> whose value is assigned at <<offer>> creation time.
 A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
 
 > This trade's price is set to float at 2% above market price
+
+=== BSQ
+The <<bitcoin>>-based colored coin used in Bisq funding and governance transactions. Aka _BSQ token_.
+
+> BSQ has five utilities: earning, trading, spending, voting and bonding.
+
+=== BSQ (system)
+The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
 
 
 == Appendix: Notes and recommendations
