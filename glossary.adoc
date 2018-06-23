@@ -62,12 +62,12 @@ The concept of Bitcoin; the entire network itself.footnote:[Adapted from https:/
 > I was learning about the Bitcoin protocol today.
 
 === BSQ
-The <<bitcoin>>-based colored coin that underpins Bisq funding and governance. Aka _BSQ token_.
+The <<bitcoin>>-based colored coin used in Bisq funding and governance transactions. Aka _BSQ token_.
 
 > BSQ has five utilities: earning, trading, spending, voting and bonding.
 
 === BSQ (system)
-The <<components>> and consensus protocol that validate <<BSQ>> transactions.
+The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
 
 == Trading
 
@@ -116,39 +116,27 @@ A moving average of a given <<price>>.
 == Trade Terms
 
 === Terms
-The conditions to <<settle, settling>> a trade, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
+The conditions for <<settle, settling>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
 
 === Trade Amount
-The <<amount>> of bitcoin to be traded.
+The <<amount>> of <<bitcoin>> to be traded.
 
-> The trade amount was `0.1 BTC` (1,000,000 satoshis)
+> The trade amount is `0.1 BTC` (1,000,000 satoshis)
 
 === Trade Price
 The <<price>> both <<trader, Traders>> have agreed to pay.
 
-> The trade price was `1,010.00 USD/BTC`
-
-==== Fixed Trade Price
-
-A <<trade-price>> whose value is assigned at <<offer>> creation time.
-
-> This trade's price is fixed at 1,000 USD/BTC
-
-==== Floating Trade Price
-
-A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
-
-> This trade's price is set to float at 2% above market price
+> The trade price is `1,000.00 USD/BTC`
 
 === Payment Amount
 The <<trade-amount>> multiplied by the <<trade-price>>.
 
-> The payment amount was `101.00 USD` (0.1 BTC * 1,010.00 USD/BTC)
+> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC)
 
 === Payment Method
 The means with which the <<buyer>> will <<settle>>.
 
-> The payment method was `Cash Deposit`.
+> The payment method is `Cash Deposit`.
 
 See <<payment-methods#, Payment Methods>>.
 
@@ -177,6 +165,16 @@ An <<offer>> to buy bitcoin.
 
 === Ask
 An <<offer>> to sell bitcoin.
+
+=== Fixed Trade Price
+A <<trade-price>> whose value is assigned at <<offer>> creation time.
+
+> This trade's price is fixed at 1,000 USD/BTC
+
+=== Floating Trade Price
+A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
+
+> This trade's price is set to float at 2% above market price
 
 
 
