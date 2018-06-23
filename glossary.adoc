@@ -40,20 +40,33 @@ The atomic transferable value of an <<asset>>.footnote:[Adapted from https://git
 
 > The penny is the US dollar unit. The satoshi is the bitcoin unit.
 
-=== Maker
-A <<user>> who creates an <<offer>>.
+=== Owner
+A person controlling certain <<units>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#owner]
 
-=== Taker
-A <<user>> who accepts an <<offer>>.
+=== Amount
+A number of <<units>>.
 
-=== Offer
-An expression of intent to <<trade>> with certain <<terms>>.
+=== Price
+The <<amount>> of an <<asset>> expected in exchange for one bitcoin.
 
-=== Bid
-An <<offer>> to buy bitcoin.
+Aka _Exchange Rate_.
 
-=== Ask
-An <<offer>> to sell bitcoin.
+=== Bitcoin
+TODO
+
+=== BSQ
+The <<Bitcoin>>-based colored coin that powers Bisq funding and governance. Aka _BSQ token_. Pronounced "Bee-Ess-Queue".
+
+> The BSQ token has five utilities: earning, trading, spending, voting and bonding.
+
+[NOTE]
+.BSQ the token vs BSQ the system
+====
+TODO
+====
+
+
+== Trading
 
 === Trade
 To exchange bitcoin for another <<asset>>. +
@@ -63,10 +76,7 @@ _n._ The exchange of bitcoin for another <<asset>>.
 A <<user>> bound by contract to <<settle>>.
 
 === Settle
-To complete payment of an <<amount>> owed.
-
-=== Amount
-A number of <<units>>.
+To complete payment of an <<amount>>.
 
 === Buyer
 A <<trader>> who buys another's bitcoin in exchange for their own <<asset>>.
@@ -90,12 +100,11 @@ A request for <<arbitration>>.
 
 > The seller opened a dispute ticket after receiving too little in payment from the buyer.
 
-== Trading
+
+== Trade Terms
 
 === Terms
 The requirements to <<settle>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
-
-// > The terms specified that the buyer would purchase 0.625 BTC from the seller at a price of 6425.89 USD via the Zelle payment network.
 
 === Trade Amount
 The <<amount>> of bitcoin to be traded.
@@ -106,11 +115,6 @@ The <<amount>> of bitcoin to be traded.
 The date an <<offer>> is taken.
 
 > The trade date was `Nov 16th at 16:12 CET`
-
-=== Price
-The <<amount>> of an <<asset>> expected in exchange for one bitcoin.
-
-Aka _Exchange Rate_.
 
 === Market Price
 A moving average of a given <<price>>.
@@ -136,10 +140,32 @@ The means with which the <<buyer>> will <<settle>>.
 See <<payment-methods#, Payment Methods>>.
 
 
+== Trade Details
+
+
+== Offers
+
+=== Maker
+A <<user>> who creates an <<offer>>.
+
+=== Taker
+A <<user>> who accepts an <<offer>>.
+
+=== Offer
+An expression of intent to <<trade>> with certain <<terms>>.
+
+=== Bid
+An <<offer>> to buy bitcoin.
+
+=== Ask
+An <<offer>> to sell bitcoin.
+
+
+
 == Contributing
 
 === Stakeholder
-A <<contributor>> who <<own, Owns>> <<BSQ>> and is eligible to <<vote>>.
+An <<owner>> of <<BSQ>>.
 
 === Bonded Contributor
 A <<contributor>> who TODO
@@ -150,35 +176,15 @@ A <<bonded-contributor>> who operates a <<trusted-component>>.
 === Maintainer
 A <<bonded-contributor>> who maintains a <<repository>>.
 
-=== Attacker
-A person who attempts to damage <<Bisq>>.
-
-=== Scammer
-A dishonest <<trader>> who attempts to defraud others of their property.
-
-Aka _Fraudster_.
-
-
-=== BSQ
-Bisq's Bitcoin-based utility token that owners can trade for bitcoin, spend on trading fees, vote, bond, and earn.
-[NOTE]
-.BSQ the token vs BSQ the system
-====
-TODO
-====
-
 === Compensation
 
 === Voting
-
-=== Own
-A person controlling certain <<units>>.
 
 === Offer Book
 A map of all open <<offer, Offers>>, keyed by <<market>>.
 
 
-== System
+== System / Components
 
 === Bisq
 The system of <<components>> that work together to make . Also referred to as the _Bisq Network_.
@@ -270,3 +276,21 @@ def
 
 === Trading Fee
 def
+
+
+== Uncategorized
+
+=== Attacker
+A person who attempts to damage <<Bisq>>.
+
+=== Scammer
+A dishonest <<trader>> who attempts to defraud others of their <<asset>>.
+
+Aka _Fraudster_.
+
+
+== Appendix: Notes and recommendations
+
+ . Introduce 'Bid' and 'Ask' terms in the UI, API
+ . Normalize presentation of market pairs, such that BTC is always the denominator, e.g. USD/BTC = 6,500 USD / 1 BTC; XMR/BTC = n XMR / 1 BTC.
+ . i.e. do not flip things around for altcoin / crypto trades. They're just another payment method as far as Bisq is concened. In Bisq, BTC is money. It's half of every trade. It's the unit of account. All prices here are denominated in it.
