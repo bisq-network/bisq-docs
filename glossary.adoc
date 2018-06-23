@@ -64,23 +64,23 @@ The <<bitcoin>>-based colored coin used in Bisq funding and governance transacti
 === BSQ (system)
 The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
 
+
 == Trading
 
 === Trade
-To exchange <<bitcoin>> for another <<asset>>. +
-_n._ The exchange of <<bitcoin>> for another <<asset>>.
+An exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> who has agreed to <<settle>> in one side of a <<trade>>.
+A <<user>> who has agreed to <<settle>> in a <<trade>>.
 
 === Settle
 To complete payment of an <<amount>>.
 
 === Buyer
-The <<trader>> who <<settle, settles>> by sending their <<asset>> to the <<seller>>.
+The <<trader>> who will <<settle>> by sending their <<asset>> to the <<seller>>.
 
 === Seller
-The <<trader>> who <<settle, settles>> by releasing their <<bitcoin>> to the <<buyer>>.
+The <<trader>> who will <<settle>> by releasing their <<bitcoin>> to the <<buyer>>.
 
 === Arbitrator
 A <<contributor>> who performs <<arbitration>>.
@@ -89,7 +89,7 @@ A <<contributor>> who performs <<arbitration>>.
 The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
 
 === Dispute
-A problem with a <<trade>>.
+A problem during a <<trade>>.
 
 > The dispute was over the amount the buyer paid the seller.
 
@@ -99,12 +99,30 @@ A request for <<arbitration>>.
 > The seller opened a dispute ticket after receiving too little in payment from the buyer.
 
 
+== Offers
+
+=== Offer
+An expression of intent to <<settle>> a <<trade>>.
+
+=== Maker
+A <<user>> who creates an <<offer>>.
+
+=== Taker
+A <<user>> who accepts an <<offer>>.
+
+=== Bid
+An <<offer>> to buy <<bitcoin>>.
+
+=== Ask
+An <<offer>> to sell <<bitcoin>>.
+
+
 == Markets
 
 === Market
-The trade between a certain pair of assets.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
+The trade between a certain <<asset>> and <<bitcoin>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
 
-> The USD/BTC market is very active.
+> The USD/BTC market is among the most active.
 
 === Price
 The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
@@ -141,11 +159,13 @@ If the best <<ask>> is **1,050 USD** and the best <<bid>> is **950 USD** and the
 Spreads indicate different kinds of opportunities in a market. A 0% spread indicates an opportunity to trade at the market price. A positive spread (as in the example above) indicates an opportunity to make a better offer and to profit when your offer is taken more quickly than others. A negative spread indicates an opportunity to take an underpriced offer and to acquire bitcoin at a discount.
 ====
 
+=== Offer Book
+A visual representation of open <<offer, Offers>> in a given <<market>>.
 
+
+[[terms, Terms]]
 == Trade Terms
-
-=== Terms
-The conditions for <<settle, settling>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
+The required conditions to <<settle>> a <<trade>>.
 
 === Trade Amount
 The <<amount>> of <<bitcoin>> to be traded.
@@ -178,36 +198,31 @@ The date an <<offer>> was taken.
 > The trade date is `March 27th 2017 at 12:00 CET`
 
 
-== Offers
+== Portfolio
 
-=== Maker
-A <<user>> who creates an <<offer>>.
+=== Open Offer
 
-=== Taker
-A <<user>> who accepts an <<offer>>.
+=== Open Trade
 
-=== Offer
-An expression of intent to <<trade>> with certain <<terms>>.
+=== Completed Trade
 
-=== Bid
-An <<offer>> to buy bitcoin.
-
-=== Ask
-An <<offer>> to sell bitcoin.
-
-=== Fixed Trade Price
-A <<trade-price>> whose value is assigned at <<offer>> creation time.
-
-> This trade's price is fixed at 1,000 USD/BTC
-
-=== Floating Trade Price
-A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
-
-> This trade's price is set to float at 2% above market price
+=== Failed Trade
 
 
-=== Offer Book
-A map of all open <<offer, Offers>>, keyed by <<market>>.
+== Wallet (Aka. Funds)
+
+=== Available Balance
+
+=== Reserved Balance
+
+=== Locked Balance
+
+
+== Payment Accounts
+
+=== Fiat Payment Accounts
+
+=== Crypto Payment Accounts
 
 
 == Network Components
@@ -255,15 +270,24 @@ An <<owner>> of <<BSQ>>.
 === Bonded Contributor
 A <<contributor>> who TODO
 
+=== Bonding
+
+=== Compensation
+
+=== Voting
+
+
+== Roles
+
 === Operator
 A <<bonded-contributor>> who operates a <<trusted-component>>.
 
 === Maintainer
 A <<bonded-contributor>> who maintains a <<repository>>.
 
-=== Compensation
+=== Moderator
 
-=== Voting
+=== Admin
 
 
 == Uncategorized
@@ -272,38 +296,50 @@ A <<bonded-contributor>> who maintains a <<repository>>.
 A person who attempts to damage <<Bisq>>.
 
 === Scammer
-A dishonest <<trader>> who attempts to defraud others of their <<asset>>.
-
-Aka _Fraudster_.
+A dishonest <<trader>> who attempts to defraud others of their <<asset>>. Aka _Fraudster_.
 
 === Fiat
-A <<currency>> issued by a national authority.
-
-Aka _Fiat Currency, National Currency_.
+A <<currency>> issued by a national authority. Aka _Fiat Currency, National Currency_.
 
 === Crypto
-A
 
 === Account
 
 === Security Deposit
-def
 
 === Multisig Escrow
-def
 
 === Deposit Transaction
-def
 
 === Mining Fee
-def
 
 === Trading Fee
-def
+
+=== Fixed Trade Price
+A <<trade-price>> whose value is assigned at <<offer>> creation time.
+
+> This trade's price is fixed at 1,000 USD/BTC
+
+=== Floating Trade Price
+A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
+
+> This trade's price is set to float at 2% above market price
 
 
 == Appendix: Notes and recommendations
 
  . Introduce 'Bid' and 'Ask' terms in the UI, API
  . Normalize presentation of market pairs, such that BTC is always the denominator, e.g. USD/BTC = 6,500 USD / 1 BTC; XMR/BTC = n XMR / 1 BTC.
+   - UPDATE: kill the BTC entirely in most contexts. It's half of every trade. So just talk about Bisq's USD market, XMR market, etc. When displaying market prices, do it like this: `Market Price: 6552.50 USD/BTC`. Note how BTC is in the denominator here, as it should be. (currently we put it in the numerator of the market)
  . i.e. do not flip things around for altcoin / crypto trades. They're just another payment method as far as Bisq is concened. In Bisq, BTC is money. It's half of every trade. It's the unit of account. All prices here are denominated in it.
+ . Change `Market` to `Markets` in top nav
+ . Rename `Account` to `Payment Accounts`
+   - Rename `National Currency Accouts` to `Fiat Payment Accounts`
+   - Rename `National Currency Accouts` to `Crypto Payment Accounts`
+   - Extract `Arbitrator Selection`, `Wallet Password` and other tabs to `Settings`
+ . Rename `Funds` => `Wallet`
+   - Rename `Receive funds` to `Receive BTC`
+   - Rename `Send funds` to `Send BTC`
+   - Rename `Send funds` to `Send BTC`
+   - Rename `Reserved funds` to `Reserved Balance`
+   - Rename `Locked funds` to `Locked Balance`
