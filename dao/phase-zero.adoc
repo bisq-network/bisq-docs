@@ -121,7 +121,7 @@ Bisq is still small, but has been growing steadily. The USD volume of bitcoin ex
 ._Bisq global monthly trading volume in USD, April 2016&ndash;October 2017_
 image::phase-zero/volume.png[Bisq Trading Volume in USD]
 
-NOTE: For an up-to-date version of the chart above, see the https://docs.google.com/spreadsheets/d/1M8y2cIlHv5Hx5UAt4WZ961Ac8xaNSLiiavjxabNf0qc/edit#gid=1242111088[Bisq Trading Volume spreadsheet].
+NOTE: For an up-to-date version of the chart above, see the https://bisq.network/volume[Bisq Trading Volume spreadsheet].
 
 === Funding
 
