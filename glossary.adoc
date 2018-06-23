@@ -191,10 +191,7 @@ A <<bonded-contributor>> who maintains a <<repository>>.
 A map of all open <<offer, Offers>>, keyed by <<market>>.
 
 
-== System / Components
-
-=== Bisq
-The system of <<components>> that work together to make . Also referred to as the _Bisq Network_.
+== Network Components
 
 === Component
 Software that performs a specific function. See <<Components>>.
@@ -224,16 +221,22 @@ Software that performs a specific function. See <<Components>>.
 === Bisq Markets API
 
 
+== Network Infrastructure
+
+=== Infrastructure
 
 === Repository
 
 
+== Uncategorized
 
-=== Currency
-def
+=== Attacker
+A person who attempts to damage <<Bisq>>.
 
-=== Bitcoin
-def
+=== Scammer
+A dishonest <<trader>> who attempts to defraud others of their <<asset>>.
+
+Aka _Fraudster_.
 
 === Fiat
 A <<currency>> issued by a national authority.
@@ -283,17 +286,6 @@ def
 
 === Trading Fee
 def
-
-
-== Uncategorized
-
-=== Attacker
-A person who attempts to damage <<Bisq>>.
-
-=== Scammer
-A dishonest <<trader>> who attempts to defraud others of their <<asset>>.
-
-Aka _Fraudster_.
 
 
 == Appendix: Notes and recommendations
