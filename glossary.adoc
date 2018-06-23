@@ -47,12 +47,19 @@ A person controlling certain <<units>>.footnote:[Adapted from https://github.com
 A number of <<units>>.
 
 === Price
-The <<amount>> of an <<asset>> expected in exchange for one bitcoin.
+The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
 
 Aka _Exchange Rate_.
 
+=== bitcoin
+The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
+
+> You have to spend bitcoin to transact on the Bitcoin network. Mining fees are access-to-the-network fees.
+
 === Bitcoin
-TODO
+The concept of Bitcoin; the entire network itself.footnote:[Adapted from https://bitcoin.org/en/vocabulary#bitcoin]
+
+> I was learning about the Bitcoin protocol today.
 
 === BSQ
 The <<Bitcoin>>-based colored coin that powers Bisq funding and governance. Aka _BSQ token_. Pronounced "Bee-Ess-Queue".
