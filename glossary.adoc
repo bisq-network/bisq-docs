@@ -108,20 +108,7 @@ A request for <<arbitration>>.
 > The seller opened a dispute ticket after receiving too little in payment from the buyer.
 
 
-== Trade Terms
-
-=== Terms
-The requirements to <<settle>>, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
-
-=== Trade Amount
-The <<amount>> of bitcoin to be traded.
-
-> The trade amount was `0.1 BTC` (1,000,000 satoshis)
-
-=== Trade Date
-The date an <<offer>> is taken.
-
-> The trade date was `Nov 16th at 16:12 CET`
+== Markets
 
 === Market Price
 A moving average of a given <<price>>.
@@ -129,10 +116,33 @@ A moving average of a given <<price>>.
 
 > The market price on Nov 16th at 16:12 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
 
-=== Trade Price
-The <<price>> agreed on for a given <<trade>>, which may differ from the <<market-price>>.
 
-> The trade price was `1,010.00 USD/BTC` – 1% above the market price.
+== Trade Terms
+
+=== Terms
+The conditions to <<settle, settling>> a trade, including <<trade-amount>>, <<trade-price>>, <<payment-amount>> and <<payment-method>>.
+
+=== Trade Amount
+The <<amount>> of bitcoin to be traded.
+
+> The trade amount was `0.1 BTC` (1,000,000 satoshis)
+
+=== Trade Price
+The <<price>> both <<trader, Traders>> have agreed to pay.
+
+> The trade price was `1,010.00 USD/BTC`
+
+==== Fixed Trade Price
+
+A <<trade-price>> whose value is assigned at <<offer>> creation time.
+
+> This trade's price is fixed at 1,000 USD/BTC
+
+==== Floating Trade Price
+
+A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
+
+> This trade's price is set to float at 2% above market price
 
 === Payment Amount
 The <<trade-amount>> multiplied by the <<trade-price>>.
@@ -148,6 +158,11 @@ See <<payment-methods#, Payment Methods>>.
 
 
 == Trade Details
+
+=== Trade Date
+The date an <<offer>> is taken.
+
+> The trade date was `Nov 16th at 16:12 CET`
 
 
 == Offers
