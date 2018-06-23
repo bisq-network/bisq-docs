@@ -1,7 +1,7 @@
 = Phase Zero: A Plan for Bootstrapping the Bisq DAO
 :sectanchors:
 Chris Beams <chris@beams.io>; Manfred Karrer <mk@nucleo.io>
-v1.0, October 19, 2017
+2017-10-19
 
 [abstract]
 *Abstract.* We present an overview of Bisq, a peer-to-peer exchange network designed for secure, private and censorship-resistant trading of bitcoin for national currencies and other cryptocurrencies. We demonstrate that while Bisq already provides users with a high degree of security and privacy through decentralized architecture and other protections, the project cannot achieve the degree of censorship resistance it requires without first decentralizing its funding and governance. We review the Bisq DAO and BSQ token that have been designed to achieve this goal and we analyze the risks inherent to rolling them out. We conclude by presenting the _Phase Zero_ plan for a pre-release period in which each aspect of the Bisq DAO is operationalized in an incremental and risk-mitigating fashion. Compensation, voting, bonding and other DAO use cases commence immediately as high-trust operations in a testing environment and iterate toward trust-minimized operations in production. BSQ stake is tracked on Bitcoin testnet during Phase Zero such that BSQ may be earned but not traded or spent. Completion of Phase Zero is marked by a BSQ genesis distribution on Bitcoin mainnet and a Bisq application release supporting BSQ trading and other key DAO use cases.
