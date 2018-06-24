@@ -65,10 +65,10 @@ The concept of Bitcoin; the entire network itself.footnote:[Adapted from https:/
 An exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> who has agreed to <<settle>> one side of a <<trade>>.
+A <<user>> who has agreed to <<settle>> in a <<trade>>.
 
 === Settle
-To complete payment of an <<amount>>.
+To complete payment.
 
 === Buyer
 The <<trader>> who will <<settle>> by sending their <<asset>> to the <<seller>>.
@@ -96,7 +96,7 @@ A request for <<arbitration>>.
 == Offers
 
 === Offer
-An expression of intent to <<settle>> a <<trade>>.
+An expression of intent to engage in a <<trade>>.
 
 === Maker
 A <<user>> who creates an <<offer>>.
@@ -159,7 +159,7 @@ A visual representation of open <<offer, Offers>> in a given <<market>>.
 
 [[terms, Terms]]
 == Trade Terms
-The required conditions to <<settle>> a <<trade>>.
+The conditions required to <<settle>> in a <<trade>>.
 
 === Trade Amount
 The <<amount>> of <<bitcoin>> to be traded.
@@ -237,23 +237,21 @@ The <<amount>> of bitcoin each <<trader>> must place in <<escrow>>.
 
 
 == Escrow
-The state of <<escrow-funds>> being held aside until <<traders>> complete <<settle, settlement>>
 
-=== Escrow Funds
+=== Escrow Amount
 The <<trade-amount>> and the <<security-deposit>> from each <<trader>>.
 
 === Escrow Address
-The <<multisig-address>> where <<escrow-funds>> are <<deposit, deposited>>.
-
-which any two of the <<buyer>>, <<seller>> and <<arbitrator>> must sign in order to be co
+A <<multisig-address>> that requires two among the <<buyer>>, <<seller>> and <<arbitrator>> to sign.
 
 === Multisig Address
-A <<bitcoin>> address requiring multiple signatures to authorize a <<bitcoin>> transaction.
+A <<bitcoin>> address requiring multiple signatures to authorize a transaction.
 
-=== Deposit
-The process of sending
+=== Escrow Deposit
+The process of sending the <<escrow-amount>> to the <<escrow-address>> when a <<trade>> begins.
 
-=== Payout
+=== Escrow Payout
+The process of sending the <<escrow-amount>> from the <<escrow-address>> to its rightful <<owner, owners>> when a <<trade>> completes.
 
 
 == Bitcoin Transactions
@@ -262,9 +260,9 @@ The process of sending
 
 === Taker Fee Transaction
 
-=== Deposit Transaction
+=== Escrow Deposit Transaction
 
-=== Payout Transaction
+=== Escrow Payout Transaction
 
 
 
