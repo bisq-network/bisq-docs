@@ -51,12 +51,12 @@ A number of <<units>>.
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
-> You have to spend bitcoin to transact on the Bitcoin network.
+> I sent 0.011 bitcoin to a family member today
 
 === Bitcoin
-The concept of Bitcoin; the entire network itself.footnote:[Adapted from https://bitcoin.org/en/vocabulary#bitcoin]
+A peer-to-peer electronic cash system.footnote:[https://bitcoin.org/bitcoin.pdf] Aka _Bitcoin network_.
 
-> I was learning about the Bitcoin protocol today.
+> I've been studying the way the Bitcoin protocol works
 
 
 == Trading
