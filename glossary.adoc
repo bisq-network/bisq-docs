@@ -73,24 +73,30 @@ To complete payment.
 === Buyer
 The <<trader>> who will <<settle>> by sending their <<asset>> to the <<seller>>.
 
+> Alice is the buyer. She will send 3,000 US dollars to Bob as payment for 0.5 of his bitcoin.
+
 === Seller
-The <<trader>> who will <<settle>> by releasing their <<bitcoin>> to the <<buyer>>.
+The <<trader>> who will <<settle>> by sending their <<bitcoin>> to the <<buyer>>.
+
+> Bob is the seller. He will send 0.5 of his bitcoin to Alice after receiving her payment.
 
 === Arbitrator
 A <<contributor>> who performs <<arbitration>>.
 
+> Charlie is the arbitrator. He is standing by in case of dispute.
+
 === Arbitration
-The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
+The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>
 
 === Dispute
 A problem during a <<trade>>.
 
-> The dispute was over the amount the buyer paid the seller.
+> The dispute was over the amount the buyer paid the seller
 
 === Dispute Ticket
 A request for <<arbitration>>.
 
-> The seller opened a dispute ticket after receiving too little in payment from the buyer.
+> The seller opened a dispute ticket after receiving too little in payment from the buyer
 
 
 == Offers
