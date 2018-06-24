@@ -31,10 +31,12 @@ A peer-to-peer exchange network for Bitcoin. Aka _Bisq Network_.
 A peer-to-peer Bitcoin <<asset>> exchange network. Aka _Bisq Network_.
 
 A peer-to-peer <<asset>> exchange network for Bitcoin. Aka _Bisq Network_.
-////
-A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
 
-> US dollars have been exchanged for bitcoin thousands of times using Bisq
+A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
+////
+A peer-to-peer <<asset>> exchange system. Aka _Bisq Network_.
+
+> People regularly exchange US dollars for bitcoin using Bisq.
 
 === User
 A person who uses <<Bisq>>.
@@ -91,15 +93,17 @@ A <<contributor>> who performs <<arbitration>>.
 === Arbitration
 The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>
 
+> Charlie has performed arbitration hundreds of times.
+
 === Dispute
 A problem during a <<trade>>.
 
-> The dispute was over the amount the buyer paid the seller
+> The dispute is about the amount Alice paid Bob.
 
 === Dispute Ticket
 A request for <<arbitration>>.
 
-> The seller opened a dispute ticket after receiving too little in payment from the buyer
+> Bob opened a dispute ticket and explained to Charlie that he had received 10 dollars too few from Alice.
 
 
 [[terms, Terms]]
