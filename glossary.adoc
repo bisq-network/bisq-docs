@@ -411,3 +411,6 @@ The <<component, Components>> and consensus protocol that validate <<BSQ>> trans
    - Rename `Send funds` to `Send BTC`
    - Rename `Reserved funds` to `Reserved Balance`
    - Rename `Locked funds` to `Locked Balance`
+ . Rework `Asset` hierarchy to include fiat
+   - Use emoji flags for national currencies?
+   - Repackage to `bisq.{=>core}.asset`? (would reflect that physical separation of repo is for practical purposes, would allow nat'l / fiat currency implementations to live in bisq-core.
