@@ -48,6 +48,9 @@ A person controlling certain <<units>>.footnote:[Adapted from https://github.com
 === Amount
 A number of <<units>>.
 
+=== Price
+The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
+
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
@@ -99,10 +102,37 @@ A request for <<arbitration>>.
 > The seller opened a dispute ticket after receiving too little in payment from the buyer
 
 
+[[terms, Terms]]
+== Trade Terms
+The conditions required to <<settle>>.
+
+=== Trade Amount
+The <<amount>> of <<bitcoin>> to be traded.
+
+> The trade amount is `0.1 BTC` (1,000,000 satoshis)
+
+=== Trade Price
+The <<price>> both <<trader, Traders>> have agreed to pay.
+
+> The trade price is `1,000.00 USD/BTC`
+
+=== Payment Amount
+The <<trade-amount>> multiplied by the <<trade-price>>.
+
+> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC)
+
+=== Payment Method
+The means with which the <<buyer>> will <<settle>>.
+
+> The payment method is `Cash Deposit`.
+
+See <<payment-methods#, Payment Methods>>.
+
+
 == Offers
 
 === Offer
-An expression of intent to engage in a <<trade>>.
+An expression of intent to buy or sell <<bitcoin>> with certain <<terms>>.
 
 === Maker
 A <<user>> who creates an <<offer>>.
@@ -123,9 +153,6 @@ An <<offer>> to sell <<bitcoin>>.
 The trade between a certain <<asset>> and <<bitcoin>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
 
 > The USD/BTC market is among the most active.
-
-=== Price
-The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
 
 === Market Price
 A moving average of <<price, Prices>> in a given <<market>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#price] Aka _Spot Price, Exchange Rate_.
@@ -161,33 +188,6 @@ Spreads indicate different kinds of opportunities in a market. A 0% spread indic
 
 === Offer Book
 A visual representation of open <<offer, Offers>> in a given <<market>>.
-
-
-[[terms, Terms]]
-== Trade Terms
-The conditions required to <<settle>> in a <<trade>>.
-
-=== Trade Amount
-The <<amount>> of <<bitcoin>> to be traded.
-
-> The trade amount is `0.1 BTC` (1,000,000 satoshis)
-
-=== Trade Price
-The <<price>> both <<trader, Traders>> have agreed to pay.
-
-> The trade price is `1,000.00 USD/BTC`
-
-=== Payment Amount
-The <<trade-amount>> multiplied by the <<trade-price>>.
-
-> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC)
-
-=== Payment Method
-The means with which the <<buyer>> will <<settle>>.
-
-> The payment method is `Cash Deposit`.
-
-See <<payment-methods#, Payment Methods>>.
 
 
 == Trade Details
