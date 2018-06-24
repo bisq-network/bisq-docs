@@ -65,7 +65,7 @@ The concept of Bitcoin; the entire network itself.footnote:[Adapted from https:/
 An exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> who has agreed to <<settle>> in a <<trade>>.
+A <<user>> who has agreed to <<settle>> one side of a <<trade>>.
 
 === Settle
 To complete payment of an <<amount>>.
@@ -384,6 +384,16 @@ The <<bitcoin>>-based colored coin used in Bisq funding and governance transacti
 
 === BSQ (system)
 The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
+
+=== Proposal
+
+=== Compensation Request
+
+=== Meritocracy
+
+=== Radical Transparency
+
+=== Work on What You Want
 
 
 == Appendix: Notes and recommendations
