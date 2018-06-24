@@ -136,19 +136,19 @@ See <<payment-methods#, Payment Methods>>.
 == Offers
 
 === Offer
-An expression of intent to buy or sell <<bitcoin>> with certain <<terms>>.
-
-=== Maker
-A <<user>> who creates an <<offer>>.
-
-=== Taker
-A <<user>> who accepts an <<offer>>.
+A proposal to buy or sell <<bitcoin>> under certain <<terms>>.
 
 === Bid
 An <<offer>> to buy <<bitcoin>>.
 
 === Ask
 An <<offer>> to sell <<bitcoin>>.
+
+=== Maker
+A <<user>> who creates an <<offer>>.
+
+=== Taker
+A <<user>> who accepts an <<offer>>.
 
 
 == Markets
