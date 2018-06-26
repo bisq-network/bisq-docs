@@ -4,7 +4,7 @@
 == Fundamentals
 
 === Asset
-Property divisible into and transferrable as fungible <<units>>.
+Property divisible into and transferable as fungible <<units>>.
 
 [example]
 The US dollar and bitcoin are assets.
