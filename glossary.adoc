@@ -146,8 +146,6 @@ The means with which the <<buyer>> will <<settle>>.
 [example]
 The payment method is `Cash Deposit`.
 
-See <<payment-methods#, Payment Methods>>.
-
 
 == Offers
 
@@ -317,7 +315,7 @@ The process of sending the <<escrow-amount>> from the <<escrow-address>> to its 
 == Network Components
 
 === Component
-Software that performs a specific function. See <<Components>>.
+Software that performs a specific function.
 
 === Critical component
 
