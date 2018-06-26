@@ -70,10 +70,11 @@ A peer-to-peer electronic cash system.footnote:[https://bitcoin.org/bitcoin.pdf]
 An exchange of <<bitcoin>> for another <<asset>>.
 
 === Trader
-A <<user>> who has agreed to <<settle>> in a <<trade>>.
+A <<user>> who has agreed to <<settle>> one side of a <<trade>>.
 
 === Settle
-To complete payment.
+To complete payment. +
+_w. object:_ To complete payment for _object_.
 
 === Buyer
 The <<trader>> who will <<settle>> by sending their <<asset>> to the <<seller>>.
@@ -108,7 +109,7 @@ A request for <<arbitration>>.
 
 [[terms, Terms]]
 == Trade Terms
-The conditions required to <<settle>>.
+The conditions required to <<settle>> both sides of a <<trade>>.
 
 === Trade Amount
 The <<amount>> of <<bitcoin>> to be traded.
