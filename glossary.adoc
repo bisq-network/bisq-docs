@@ -147,8 +147,12 @@ An <<offer>> to sell <<bitcoin>>.
 === Maker
 A <<user>> who creates an <<offer>>.
 
+> Bob was the maker. It was his ask that Alice accepted.
+
 === Taker
 A <<user>> who accepts an <<offer>>.
+
+> Alice was the taker. It was her first time using Bisq.
 
 
 == Markets
