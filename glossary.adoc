@@ -56,12 +56,12 @@ The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
-> I sent 0.011 bitcoin to a family member today
+> I sent 0.011 bitcoin to a family member today.
 
 === Bitcoin
 A peer-to-peer electronic cash system.footnote:[https://bitcoin.org/bitcoin.pdf] Aka _Bitcoin network_.
 
-> I've been studying the way the Bitcoin protocol works
+> I've been studying the way the Bitcoin protocol works.
 
 
 == Trading
@@ -91,7 +91,7 @@ A <<contributor>> who performs <<arbitration>>.
 > Charlie is the arbitrator. He is standing by in case of dispute.
 
 === Arbitration
-The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>
+The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
 
 > Charlie has performed arbitration hundreds of times.
 
@@ -113,17 +113,17 @@ The conditions required to <<settle>>.
 === Trade Amount
 The <<amount>> of <<bitcoin>> to be traded.
 
-> The trade amount is `0.1 BTC` (1,000,000 satoshis)
+> The trade amount is `0.1 BTC` (1,000,000 satoshis).
 
 === Trade Price
 The <<price>> both <<trader, Traders>> have agreed to pay.
 
-> The trade price is `1,000.00 USD/BTC`
+> The trade price is `1,000.00 USD/BTC`.
 
 === Payment Amount
 The <<trade-amount>> multiplied by the <<trade-price>>.
 
-> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC)
+> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC).
 
 === Payment Method
 The means with which the <<buyer>> will <<settle>>.
@@ -166,7 +166,7 @@ A moving average of <<price, Prices>> in a given <<market>>.footnote:[Adapted fr
 === Volume
 The <<amount>> of <<bitcoin>> traded over a given time period.
 
-> 24-hour volume was 4.23 BTC
+> 24-hour volume was 4.23 BTC.
 
 === Depth
 The <<amount>> of <<bitcoin>> available for to buy or sell in a <<market>>.
@@ -199,7 +199,7 @@ A visual representation of open <<offer, Offers>> in a given <<market>>.
 === Trade Date
 The date an <<offer>> was taken.
 
-> The trade date is `March 27th 2017 at 12:00 CET`
+> The trade date is `March 27th 2017 at 12:00 CET`.
 
 
 == Payment Accounts
@@ -378,12 +378,12 @@ A <<currency>> issued by a national authority. Aka _Fiat Currency, National Curr
 === Fixed Trade Price
 A <<trade-price>> whose value is assigned at <<offer>> creation time.
 
-> This trade's price is fixed at 1,000 USD/BTC
+> This trade's price is fixed at 1,000 USD/BTC.
 
 === Floating Trade Price
 A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
 
-> This trade's price is set to float at 2% above market price
+> This trade's price is set to float at 2% above market price.
 
 === BSQ
 The <<bitcoin>>-based colored coin used in Bisq funding and governance transactions. Aka _BSQ token_.
