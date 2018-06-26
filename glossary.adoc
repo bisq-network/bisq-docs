@@ -17,25 +17,6 @@ The atomic transferable value of an <<asset>>.footnote:[Adapted from https://git
 The penny is the US dollar unit. The satoshi is the bitcoin unit.
 
 === Bisq
-////
-A peer-to-peer Bitcoin foreign exchange network. Aka _Bisq Network_.
-
-A peer-to-peer Bitcoin trading network. Aka _Bisq Network_.
-
-A peer-to-peer Bitcoin exchange network. Aka _Bisq Network_.
-
-A peer-to-peer bitcoin exchange network. Aka _Bisq Network_.
-
-A peer-to-peer Bitcoin asset exchange network. Aka _Bisq Network_.
-
-A peer-to-peer exchange network for Bitcoin. Aka _Bisq Network_.
-
-A peer-to-peer Bitcoin <<asset>> exchange network. Aka _Bisq Network_.
-
-A peer-to-peer <<asset>> exchange network for Bitcoin. Aka _Bisq Network_.
-
-A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
-////
 A peer-to-peer <<asset>> exchange system. Aka _Bisq Network_.
 
 [example]
