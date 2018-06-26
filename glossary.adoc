@@ -36,7 +36,7 @@ A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
 ////
 A peer-to-peer <<asset>> exchange system. Aka _Bisq Network_.
 
-> People regularly exchange US dollars for bitcoin using Bisq.
+> People use Bisq to exchange bitcoin with US dollars and other assets.
 
 === User
 A person who uses <<Bisq>>.
