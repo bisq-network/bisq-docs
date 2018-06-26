@@ -6,13 +6,15 @@
 === Asset
 Property divisible into and transferrable as fungible <<units>>.
 
-> The US dollar and bitcoin are assets.
+[example]
+The US dollar and bitcoin are assets.
 
 [[units, Units]]
 === Unit
 The atomic transferable value of an <<asset>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#unit]
 
-> The penny is the US dollar unit. The satoshi is the bitcoin unit.
+[example]
+The penny is the US dollar unit. The satoshi is the bitcoin unit.
 
 === Bisq
 ////
@@ -36,7 +38,8 @@ A peer-to-peer <<asset>> exchange network. Aka _Bisq Network_.
 ////
 A peer-to-peer <<asset>> exchange system. Aka _Bisq Network_.
 
-> People use Bisq to exchange bitcoin with US dollars and other assets.
+[example]
+People use Bisq to exchange bitcoin with US dollars and other assets.
 
 === User
 A person who uses <<Bisq>>.
@@ -56,12 +59,14 @@ The <<amount>> of an <<asset>> expected in exchange for one <<bitcoin>>.
 === bitcoin
 The <<asset>> of account on the <<Bitcoin>> network. Aka _BTC_.
 
-> I sent 0.011 bitcoin to a family member today.
+[example]
+I sent 0.011 bitcoin to a family member today.
 
 === Bitcoin
 A peer-to-peer electronic cash system.footnote:[https://bitcoin.org/bitcoin.pdf] Aka _Bitcoin network_.
 
-> I've been studying the way the Bitcoin protocol works.
+[example]
+I've been studying the way the Bitcoin protocol works.
 
 
 == Trading
@@ -79,32 +84,38 @@ _w. object:_ To complete payment for _object_.
 === Buyer
 The <<trader>> who will <<settle>> by sending their <<asset>> to the <<seller>>.
 
-> Alice is the buyer. She will send 3,000 US dollars to Bob as payment for 0.5 of his bitcoin.
+[example]
+Alice is the buyer. She will send 3,000 US dollars to Bob as payment for 0.5 of his bitcoin.
 
 === Seller
 The <<trader>> who will <<settle>> by sending their <<bitcoin>> to the <<buyer>>.
 
-> Bob is the seller. He will send 0.5 of his bitcoin to Alice after receiving her payment.
+[example]
+Bob is the seller. He will send 0.5 of his bitcoin to Alice after receiving her payment.
 
 === Arbitrator
 A <<contributor>> who performs <<arbitration>>.
 
-> Charlie is the arbitrator. He is standing by in case of dispute.
+[example]
+Charlie is the arbitrator. He is standing by in case of dispute.
 
 === Arbitration
 The service of working with <<buyer>> and <<seller>> to resolve a <<dispute>>.
 
-> Charlie has performed arbitration hundreds of times.
+[example]
+Charlie has performed arbitration hundreds of times.
 
 === Dispute
 A problem during a <<trade>>.
 
-> The dispute is about the amount Alice paid Bob.
+[example]
+The dispute is about the amount Alice paid Bob.
 
 === Dispute Ticket
 A request for <<arbitration>>.
 
-> Bob opened a dispute ticket and explained to Charlie that he had received 10 dollars too few from Alice.
+[example]
+Bob opened a dispute ticket and explained to Charlie that he had received 10 dollars too few from Alice.
 
 
 [[terms, Terms]]
@@ -114,22 +125,26 @@ The conditions required to <<settle>> both sides of a <<trade>>.
 === Trade Amount
 The <<amount>> of <<bitcoin>> to be traded.
 
-> The trade amount is `0.1 BTC` (1,000,000 satoshis).
+[example]
+The trade amount is `0.1 BTC` (1,000,000 satoshis).
 
 === Trade Price
 The <<price>> both <<trader, Traders>> have agreed to pay.
 
-> The trade price is `1,000.00 USD/BTC`.
+[example]
+The trade price is `1,000.00 USD/BTC`.
 
 === Payment Amount
 The <<trade-amount>> multiplied by the <<trade-price>>.
 
-> The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC).
+[example]
+The payment amount is `100.00 USD` (0.1 BTC * 1,000.00 USD/BTC).
 
 === Payment Method
 The means with which the <<buyer>> will <<settle>>.
 
-> The payment method is `Cash Deposit`.
+[example]
+The payment method is `Cash Deposit`.
 
 See <<payment-methods#, Payment Methods>>.
 
@@ -148,12 +163,14 @@ An <<offer>> to sell <<bitcoin>>.
 === Maker
 A <<user>> who creates an <<offer>>.
 
-> Bob was the maker. It was his ask that Alice accepted.
+[example]
+Bob was the maker. It was his ask that Alice accepted.
 
 === Taker
 A <<user>> who accepts an <<offer>>.
 
-> Alice was the taker. It was her first time using Bisq.
+[example]
+Alice was the taker. It was her first time using Bisq.
 
 
 == Markets
@@ -161,27 +178,32 @@ A <<user>> who accepts an <<offer>>.
 === Market
 The trade between certain <<asset, Assets>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
 
-> Bisq's EUR/BTC market is the most active, followed by USD/BTC.
+[example]
+Bisq's EUR/BTC market is the most active, followed by USD/BTC.
 
 === Market Price
 A moving average of <<price, Prices>> in a given <<market>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#price] Aka _Spot Price, Exchange Rate_.
 
-> The market price on March 27th 2017 at 12:00 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
+[example]
+The market price on March 27th 2017 at 12:00 CET was `1,000.00 USD/BTC` according to BitcoinAverage.
 
 === Volume
 The <<amount>> of <<bitcoin>> traded over a given time period.
 
-> 24-hour volume was 4.23 BTC.
+[example]
+24-hour volume was 4.23 BTC.
 
 === Depth
 The <<amount>> of <<bitcoin>> available for to buy or sell in a <<market>>.
 
-> The sell side of the USD/BTC market has a depth of 1.25 BTC.
+[example]
+The sell side of the USD/BTC market has a depth of 1.25 BTC.
 
 === Spread
 The percentage difference between the best (lowest-priced) <<ask>> and the best (highest-priced) <<bid>> divided by the <<market-price>>.
 
-> The spread in the USD/BTC market is 2% right now.
+[example]
+The spread in the USD/BTC market is 2% right now.
 
 [NOTE]
 .Example
@@ -204,7 +226,8 @@ A visual representation of open <<offer, Offers>> in a given <<market>>.
 === Trade Date
 The date an <<offer>> was taken.
 
-> The trade date is `March 27th 2017 at 12:00 CET`.
+[example]
+The trade date is `March 27th 2017 at 12:00 CET`.
 
 
 == Payment Accounts
@@ -242,7 +265,8 @@ The date an <<offer>> was taken.
 
 The <<amount>> of bitcoin each <<trader>> must place in <<escrow>>.
 
-> The buyer's security deposit was 0.01 BTC; the seller's was 0.003 BTC.
+[example]
+The buyer's security deposit was 0.01 BTC; the seller's was 0.003 BTC.
 
 === Per-Trade Limits
 
@@ -383,17 +407,20 @@ A <<currency>> issued by a national authority. Aka _Fiat Currency, National Curr
 === Fixed Trade Price
 A <<trade-price>> whose value is assigned at <<offer>> creation time.
 
-> This trade's price is fixed at 1,000 USD/BTC.
+[example]
+This trade's price is fixed at 1,000 USD/BTC.
 
 === Floating Trade Price
 A <<trade-price>> whose value is assigned at <<offer>> acceptance time by multiplying the <<market-price>> by a `percent distance from market price` premium.
 
-> This trade's price is set to float at 2% above market price.
+[example]
+This trade's price is set to float at 2% above market price.
 
 === BSQ
 The <<bitcoin>>-based colored coin used in Bisq funding and governance transactions. Aka _BSQ token_.
 
-> BSQ has five utilities: earning, trading, spending, voting and bonding.
+[example]
+BSQ has five utilities: earning, trading, spending, voting and bonding.
 
 === BSQ (system)
 The <<component, Components>> and consensus protocol that validate <<BSQ>> transactions.
