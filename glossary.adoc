@@ -154,9 +154,9 @@ A <<user>> who accepts an <<offer>>.
 == Markets
 
 === Market
-The trade between a certain <<asset>> and <<bitcoin>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
+The trade between certain <<asset, Assets>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#market]
 
-> The USD/BTC market is among the most active.
+> Bisq's EUR/BTC market is the most active, followed by USD/BTC.
 
 === Market Price
 A moving average of <<price, Prices>> in a given <<market>>.footnote:[Adapted from https://github.com/libbitcoin/libbitcoin/wiki/Glossary#price] Aka _Spot Price, Exchange Rate_.
