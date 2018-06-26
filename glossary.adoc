@@ -1,4 +1,5 @@
 = Bisq Glossary
+:docinfo: private
 
 
 == Fundamentals
