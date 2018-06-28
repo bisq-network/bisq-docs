@@ -4,7 +4,7 @@ AsciiDoc sources for the docs hosted at <https://docs.bisq.network>.
 
 ## Build
 
-To build locally, run `./gradlew build` and then open `build/asciidoc/html5/index.html` in your browser.
+To build locally, run `./gradlew build` (`gradlew.bat build --project-cache-dir=../cache` on Windows) and then open `build/asciidoc/html5/index.html` in your browser.
 
 ## Deploy
 

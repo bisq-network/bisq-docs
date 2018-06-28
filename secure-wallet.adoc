@@ -1,6 +1,4 @@
 = Secure Your Wallet
-:toc: left
-:sectanchors:
 :imagesdir: images
 :!figure-caption:
 
