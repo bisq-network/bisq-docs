@@ -5,14 +5,18 @@ Roles are the means by which responsibility over specific Bisq Network component
 
 == Introduction
 
-The Bisq DAO is a flat organization, with no hierarchical management and reporting infrastructure. At the same time, there are many resources and processes within the Bisq Network that require individuals to take responsibility and to be held accountable for those responsibilities.
+The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many vital resources and processes that must be cared for by individuals. For example, someone must manage the DNS for the https://bisq.network[bisq.network] domain, someone must admininister the {gh-org}[bisq-network] GitHub organization, and so on.
 
-What's needed is a mechanism that defines each of these responsibilities, makes it clear who is responsible for which, and that includes a process for regular reporting and feedback. Roles provide that mechanism.
+And because the Bisq DAO is not a volunteer organization, but one that compensates valuable contributions, it must be possible for stakeholders to assess how these resources and processes are being cared for over time so as to know whether and how much to compensate those in charge of them.
+
+What's needed is a mechanism that defines each of these responsibilities, makes it clear who is responsible for them, and that includes a process for regular reporting and feedback. The system of roles described below provide that mechanism.
 
 
 == Infrastructure
 
 === GitHub
+
+==== Issues
 
 Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] repository.
 
@@ -28,54 +32,96 @@ Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] rep
  - Labels used to
    - Indicate `help wanted`
 
-=== Teams in the bisq-network GitHub organization
+==== Teams
+
 Managed as GitHub Teams. For @mentions and to institutionalize thinking in terms of roles not individuals.
 
 === Docs
 
-==== role documentation
 There is no "role documentation" per se, but rather there is documentation about whatever component or infrastructure a given role is responsible for, and in that documentation, there is a section for the role.
 
 === Slack
 
-.Example
-----
-DNS Admin
-
-Assignees: @cbeams, @ripcurlx
-Description:
-    Team: @bisq-network/dns-admins
-    Primary: @cbeams
-    Docs: https://docs.bisq.network/dns.html#admin
-----
+Slack.
 
 
-
-
-
-== Role ownership
-
-=== primary / secondary role owners
-
-=== Privileges
+== Anatomy of a role
 
 === Duties
 
-==== Reporting
+A role's _duties_ are the activities that the role's owner must carry out in order to be compensated for their efforts. For example, repository maintainers must enforce review process and merge pull requests in a timely fashion, the website operator must keep the site up and running at all times, and so forth.
+
+=== Rights
+
+Most roles involve some special _rights,_ such as exclusive permissions or access to a given resource. For example, a maintainer of a bisq-network GitHub repository will have write permissions to that repository such that they can merge contributors' pull requests, the operator of the bisq.network website will have administrative access to the infrastructure that hosts the site, and so forth.
+
+=== Owners
+
+Each role has one or more _owners,_ with one being designated as _primary_ and others being designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary role owner is responsible for carrying out the day to day activities of that role, while secondary owners are standing by, fully capable of taking over for the primary owner in case of sickness or other incapacitation.
 
 
-== Common Role Types
+== Common role duties
 
-bonded contributor roles
+=== Reporting
 
-maintainer
+=== Communication
 
-operator
+Respond to issues in any repositories
 
-administrator
+Respond to inquiries in Slack
 
-moderator
+Generally means setting up notifications appropriately.
 
+=== Documentation
+
+Specifically, keeping your own role's documentation up to date
+
+
+== Common role types
+
+=== Maintainer
+
+=== Operator
+
+=== Administrator
+
+=== Moderator
+
+
+== Compensation
+
+
+== Bonding
+
+
+== Proceseses
+
+=== Proposing a new role
+
+=== Transferring ownership
+
+=== Changing primary / secondary status
+
+=== Adding a secondary
+
+=== Providing feedback to role owners
+
+
+[roles-maintainer]
+== The Roles Maintainer role
+
+The system of roles described above is a collection of infrastructure and processes like any other in the Bisq DAO, and requires a maintainer to care for it.
+
+https://github.com/bisq-network/roles/issues/28
+
+=== Duties
+
+All normal <<maintainter>>
+
+=== Rights
+
+
+== Notes
 
 replace the proto-documentation we did for roles in the Phase Zero doc, particularly that found at docs.bisq.network/dao/phase-zero.html#bonded-contributor-roles
 
@@ -94,3 +140,18 @@ Update https://docs.bisq.network/dao/phase-zero.html#Appendix-A
 Close https://github.com/bisq-network/bisq-docs/issues/46
 
 Maintainer role must be fully separated from reviewer role. Maintainers validate that pull requests are correct, maintainers ensure that overall process is followed, maintainers give enough time for sufficient review, and then, maintainers merge pull requests. When somone is _reviewing_ a pull request, even if that person is a maintainer, they are not wearing their maintainer hat. They are wearing their _contributor_ hat. Maintainers do not review. See https://github.com/bisq-network/roles/issues/63#issuecomment-393453744 for counter-example of this. Reviewing puts too much on maintainers.
+
+////
+.Example
+----
+DNS Admin
+
+Assignees: @cbeams, @ripcurlx
+Description:
+    Team: @bisq-network/dns-admins
+    Primary: @cbeams
+    Docs: https://docs.bisq.network/dns.html#admin
+----
+////
+
+TIP: Subscribe to individual role issues or watch the entire repository to stay up to date with role reports.
