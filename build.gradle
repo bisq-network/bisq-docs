@@ -16,7 +16,8 @@ asciidoctor {
         icons               : 'font',
         idprefix            : '',
         idseparator         : '-',
-        docinfo1            : ''
+        docinfo1            : '',
+        'gh-org'            : 'https://github.com/bisq-network'
 }
 
 build.dependsOn asciidoctor
