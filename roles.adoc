@@ -33,6 +33,10 @@ One owner is designated as _primary_ and any other owners are designated as _sec
 
 == Infrastructure
 
+=== Docs
+
+There is no "role documentation" per se, but rather there is documentation about whatever component or infrastructure a given role is responsible for, and in that documentation, there is a section for the role.
+
 === GitHub
 
 ==== Issues
@@ -56,10 +60,6 @@ Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] rep
 ==== Teams
 
 Managed as GitHub Teams. For @mentions and to institutionalize thinking in terms of roles not individuals.
-
-=== Docs
-
-There is no "role documentation" per se, but rather there is documentation about whatever component or infrastructure a given role is responsible for, and in that documentation, there is a section for the role.
 
 === Slack
 
