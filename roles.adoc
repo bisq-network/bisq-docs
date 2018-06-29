@@ -140,19 +140,3 @@ https://github.com/bisq-network/roles/issues/28
 All normal <<maintainter>>
 
 === Rights
-
-
-////
-.Example
-----
-DNS Admin
-
-Assignees: @cbeams, @ripcurlx
-Description:
-    Team: @bisq-network/dns-admins
-    Primary: @cbeams
-    Docs: https://docs.bisq.network/dns.html#admin
-----
-////
-
-TIP: Subscribe to individual role issues or watch the entire repository to stay up to date with role reports.
