@@ -1,7 +1,4 @@
 = Monitoring Bisq offers with Http API
-:toc:
-:sectlinks:
-:sectanchors:
 
 This guide walks you through the process of creating a bot that monitors available offers.
 
