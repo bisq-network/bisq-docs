@@ -1,7 +1,7 @@
 = Phase Zero: A Plan for Bootstrapping the Bisq DAO
 :sectanchors:
 Chris Beams <chris@beams.io>; Manfred Karrer <mk@nucleo.io>
-v1.0, October 19, 2017
+2017-10-19
 
 [abstract]
 *Abstract.* We present an overview of Bisq, a peer-to-peer exchange network designed for secure, private and censorship-resistant trading of bitcoin for national currencies and other cryptocurrencies. We demonstrate that while Bisq already provides users with a high degree of security and privacy through decentralized architecture and other protections, the project cannot achieve the degree of censorship resistance it requires without first decentralizing its funding and governance. We review the Bisq DAO and BSQ token that have been designed to achieve this goal and we analyze the risks inherent to rolling them out. We conclude by presenting the _Phase Zero_ plan for a pre-release period in which each aspect of the Bisq DAO is operationalized in an incremental and risk-mitigating fashion. Compensation, voting, bonding and other DAO use cases commence immediately as high-trust operations in a testing environment and iterate toward trust-minimized operations in production. BSQ stake is tracked on Bitcoin testnet during Phase Zero such that BSQ may be earned but not traded or spent. Completion of Phase Zero is marked by a BSQ genesis distribution on Bitcoin mainnet and a Bisq application release supporting BSQ trading and other key DAO use cases.
@@ -120,6 +120,8 @@ Bisq is still small, but has been growing steadily. The USD volume of bitcoin ex
 
 ._Bisq global monthly trading volume in USD, April 2016&ndash;October 2017_
 image::phase-zero/volume.png[Bisq Trading Volume in USD]
+
+NOTE: For an up-to-date version of the chart above, see the https://bisq.network/volume[Bisq Trading Volume spreadsheet].
 
 === Funding
 
@@ -284,7 +286,7 @@ _Status:_ *pending.* See https://github.com/bisq-network/dao/issues/11 for detai
 
 === Define bonded contributor roles
 
-We enumerate and define the roles necessary to operate, maintain and administrate the Bisq project, Bisq network and Bisq DAO, such that responsibilities can be transferred from founders to other reputable contributors. Because each of these of these roles require a degree of trust, filling the role requires putting up a BSQ bond. Initially, founders will use their BSQ stake to bond into these roles, and will then transfer those roles to contributors who (a) wish to take the role over and (b) have earned sufficient BSQ to do so.
+We enumerate and define the roles necessary to operate, maintain and administrate the Bisq project, Bisq network and Bisq DAO, such that responsibilities can be transferred from founders to other reputable contributors. Because each of these roles requires a degree of trust, filling the role requires putting up a BSQ bond. Initially, founders will use their BSQ stake to bond into these roles, and will then transfer those roles to contributors who (a) wish to take the role over and (b) have earned sufficient BSQ to do so.
 
 _Status:_ *in progress.* Each role has been enumerated in the form of a GitHub issue in the <<roles-repo>>, and we continue to add to and modify these roles as appropriate. Bonding is not yet in place for any role.
 
@@ -423,7 +425,7 @@ See <<founder-use-cases>>.
 
 == Bonded contributor roles [[bonded-contributor-roles]]
 
-A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such a password or private key to perform, and more generally include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
+A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such as a password or private key to perform, and more generally include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
 
 While there are many specific bonded contributor roles, most fall into one of the categories below.
 
@@ -529,11 +531,17 @@ Pull requests must be well-formed. Follow the guidelines in https://github.com/b
 To submit a compensation request, create a new issue in the <<compensation-repo>>, and include the following information in the issue description:
 
  - The amount you are requesting in BSQ
- - The address that BSQ should be paid to
+ - The address that BSQ should be paid to (see below for instructions how to generate a BSQ address)
  - Links to issues, pull requests and any other work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
 
 See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2] for an example compensation request.
+
+[NOTE]
+.How do I generate a BSQ address?
+====
+Open your Bisq client and press `CMD+D` on macOS or `CTRL-D` on Linux/Windows. You'll see a `DAO` button appear in the top menu. Click it, and you'll be taken to a screen with your BSQ wallet. Copy your BSQ address and use it in your compensation requests.
+====
 
 Once submitted, your request will be added to the https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[voting spreadsheet] where stakeholders can <<how-to-vote,vote>> on it.
 

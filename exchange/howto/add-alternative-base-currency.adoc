@@ -1,5 +1,4 @@
 = How to add an alternative base currency
-:toc:
 
 == Introduction
 

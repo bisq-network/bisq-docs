@@ -1,0 +1,31 @@
+= Secure Your Wallet
+:imagesdir: images
+:!figure-caption:
+
+As with traditional money and valuables, it's critical that you take reasonable measures to keep your bitcoin safe. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
+
+== Encrypt your wallet
+
+Before setting a password, your Bisq wallet files are stored on your hard drive unencrypted. That means anyone who gains access to your computer (whether by physically stealing it or by hacking it remotely) can gain access to your private keys and take your bitcoin.
+
+Setting a password encrypts your Bisq wallet files so they're useless to anyone without the password.
+
+To set a password, go to the `Wallet password` section of the `Account` screen and enter a password.
+
+.Set a password to encrypt your Bisq wallet.
+image::set-password.png[Set a password to encrypt your Bisq wallet]
+
+== Write down your seed words
+
+Now that you've set a password, it's time to write down your wallet's seed words. Go to the `Wallet seed` section of the `Account` screen and *_write down_* the words you see in the `Wallet seed words` field along with the `Wallet date`.
+
+IMPORTANT: You should _actually_ write down your seed words and wallet date using pen and paper. Saving them on your computer, even if you do so in a secure password manager, makes it _possible_ for a hacker to obtain them through sneaky schemes like keylogging. Going low-tech with pen and paper eliminates all such digital attack vectors.
+
+With just your wallet's seed words and date, you can restore your Bisq wallet and all its bitcoin whenever you need to. If you lose your wallet's seed words and date, you won't be able to restore your wallet, and any bitcoin in it is lost forever. So make sure you keep that paper safe!
+
+WARNING: Your seed words can restore your wallet's bitcoin, but they *do not* restore other Bisq application data such as trading history, arbitration cases, etc. For that, you need to back up the Bisq data folder. You can find out how to do that in the `Backup` section of the `Account` screen.
+
+.Write down your Bisq wallet's seed words & wallet date.
+image::seed-words.png[Write down your Bisq wallet's seed words]
+
+With your wallet encrypted and your seed words written down, the bitcoin in your Bisq wallet is much more secure. Bravo!
