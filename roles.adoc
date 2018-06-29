@@ -1,15 +1,34 @@
-= Roles
+= Bisq DAO Roles
 
-Roles are the means by which responsibility over specific Bisq Network components, infrastructure and processes is delegated to individual contributors.
+Roles are the way contributors take responsibility for Bisq Network resources and processes.
 
 
 == Introduction
 
-The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many vital resources and processes that must be cared for by individuals. For example, someone must manage the DNS for the https://bisq.network[bisq.network] domain, someone must admininister the {gh-org}[bisq-network] GitHub organization, and so on.
+The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many vital resources and processes that must be cared for by individuals. For example, someone must manage the DNS for the `bisq.network` domain, someone must conduct monthly stakeholder voting, and so on.
 
-And because the Bisq DAO is not a volunteer organization, but one that compensates valuable contributions, it must be possible for stakeholders to assess how these resources and processes are being cared for over time so as to know whether and how much to compensate those in charge of them.
+What's needed is a mechanism that defines these various responsibilities, makes it clear who is responsible for each, and that includes a process for regular reporting and feedback. The system of _roles_ described below provides that mechanism.
 
-What's needed is a mechanism that defines each of these responsibilities, makes it clear who is responsible for them, and that includes a process for regular reporting and feedback. The system of roles described below provide that mechanism.
+
+== Characteristics
+
+=== Duties
+
+Actions that must be performed for a certain resource or process to function normally.
+
+For example, a repository maintainer's duties include merging pull requests in a timely fashion, and the website operator's duties include keeping the site available at all times.
+
+=== Rights
+
+Special permissions or other access required to perform the <<duties>> of a role.
+
+For example, a repository maintainer's rights include write permissions to their repository, and the website operator's rights include administrative access to site hosting infrastructure.
+
+=== Owners
+
+The individuals who have the <<rights>> required to perform the <<duties>> of a role.
+
+One owner is designated as _primary_ and any other owners are designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary is responsible for performing the <<duties>> of the role, while secondaries stand by, capable of taking over for the primary at any time.
 
 
 == Infrastructure
@@ -20,6 +39,7 @@ What's needed is a mechanism that defines each of these responsibilities, makes 
 
 Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] repository.
 
+////
  - Assignees used to track role ownership
  - Description field used to
    - Link to team
@@ -31,6 +51,7 @@ Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] rep
  - Anyone can subscribe to any issue or watch the whole repo to stay up to date with reporting
  - Labels used to
    - Indicate `help wanted`
+////
 
 ==== Teams
 
@@ -44,20 +65,6 @@ There is no "role documentation" per se, but rather there is documentation about
 
 Slack.
 
-
-== Anatomy of a role
-
-=== Duties
-
-A role's _duties_ are the activities that the role's owner must carry out in order to be compensated for their efforts. For example, repository maintainers must enforce review process and merge pull requests in a timely fashion, the website operator must keep the site up and running at all times, and so forth.
-
-=== Rights
-
-Most roles involve some special _rights,_ such as exclusive permissions or access to a given resource. For example, a maintainer of a bisq-network GitHub repository will have write permissions to that repository such that they can merge contributors' pull requests, the operator of the bisq.network website will have administrative access to the infrastructure that hosts the site, and so forth.
-
-=== Owners
-
-Each role has one or more _owners,_ with one being designated as _primary_ and others being designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary role owner is responsible for carrying out the day to day activities of that role, while secondary owners are standing by, fully capable of taking over for the primary owner in case of sickness or other incapacitation.
 
 
 == Common role duties
