@@ -142,26 +142,6 @@ All normal <<maintainter>>
 === Rights
 
 
-== Notes
-
-replace the proto-documentation we did for roles in the Phase Zero doc, particularly that found at docs.bisq.network/dao/phase-zero.html#bonded-contributor-roles
-
-capture the decisions we've made around roles in bisq-network/proposals#12 and bisq-network/proposals#13 and bisq-network/proposals#14
-
-document the way the bisq-network/roles repository works and document the responsibilities of the roles maintainer (bisq-network/roles#28).
-
-cover the relationship between role issues, GitHub teams, primary/secondary role owners
-
-document, or at least carve out a placeholder for documenting, the way bonding and BSQ interest payments will work for bonded contributor roles.
-
-document the process for creating a new role, which will likely involve submitting a proposal for a new role, similar to the way this one was done
-
-Update https://docs.bisq.network/dao/phase-zero.html#Appendix-A
-
-Close https://github.com/bisq-network/bisq-docs/issues/46
-
-Maintainer role must be fully separated from reviewer role. Maintainers validate that pull requests are correct, maintainers ensure that overall process is followed, maintainers give enough time for sufficient review, and then, maintainers merge pull requests. When somone is _reviewing_ a pull request, even if that person is a maintainer, they are not wearing their maintainer hat. They are wearing their _contributor_ hat. Maintainers do not review. See https://github.com/bisq-network/roles/issues/63#issuecomment-393453744 for counter-example of this. Reviewing puts too much on maintainers.
-
 ////
 .Example
 ----
