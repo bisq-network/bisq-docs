@@ -1,21 +1,25 @@
 = Monitoring Bisq offers with Http API
 
-This guide walks you through the process of creating a bot that monitors available offers.
+This guide walks you through the process of creating a simple bot that monitors available offers.
+
 
 == What you'll build
 
-You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get offers and market prices and displays "interesting" offers on the console if any is found.
+You'll build a NodeJS-based script that connects to Bisq over an HTTP API to get offers and market prices and then displays "interesting" offers on the console if any are found.
+
+CAUTION: The Bisq HTTP API is currently incubating. Things may be rough around the edges and should not be considered production-ready. Your feedback is extremely valuable at this stage—see the link:#next-steps[next steps] section at bottom for details how to get in touch with us. Thanks!
+
 
 == What you’ll need
 
 * About 15 minutes
 * A favorite text editor or IDE
 * NodeJS 6+ (to execute the API client script that you will write)
-* Docker (to run from an image) or Git, Maven, JDK8, JavaFX (to build from source)
+* Either:
+** Docker (to run from an image) or
+** Git, Maven and JDK8 (to build from source)
 
-[NOTE]
-Bisq HTTP API is currently incubating. This means that things may be a bit rough around the edges
-and your feedback (see the link:#next-steps[next steps] section for details).
+NOTE: Using the Bisq HTTP API in no way requires the use of NodeJS on the client side. It is just used for example purposes in this guide.
 
 == Run the API
 
@@ -162,6 +166,7 @@ You should receive a response like the following:
 }
 ----
 
+
 == Write the monitoring bot code
 
 Let's install some dependencies:
@@ -238,9 +243,11 @@ If there are any matching offers you should see something like this:
 
 If there are no matching offers, try fiddling with the value of `threshold`. Try setting it to -20, 0.01, etc.
 
-== Congratulations
 
-You are now able to monitor Bisq offers via HTTP API!
+== Summary
+
+Congratulations! You are now able to monitor Bisq offers via the Bisq HTTP API. From here, you can explore the complete API documentation and build trading bots of any complexity and in any language you like.
+
 
 == Next steps
 
