@@ -66,6 +66,16 @@ There is no "role documentation" per se, but rather there is documentation about
 Slack.
 
 
+== Types
+
+=== Maintainer
+
+=== Operator
+
+=== Administrator
+
+=== Moderator
+
 
 == Common role duties
 
@@ -97,17 +107,6 @@ Generally means setting up notifications appropriately.
 === Documentation
 
 Specifically, keeping your own role's documentation up to date
-
-
-== Common role types
-
-=== Maintainer
-
-=== Operator
-
-=== Administrator
-
-=== Moderator
 
 
 == Compensation
