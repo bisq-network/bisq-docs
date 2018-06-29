@@ -64,6 +64,21 @@ Each role has one or more _owners,_ with one being designated as _primary_ and o
 
 === Reporting
 
+Primary role <<owners>> should submit a _monthly report_ as a comment on their role's <<issues,issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
+
+[source,markdown]
+----
+## YYYY.MM report
+
+<content>
+
+/cc bisq-network/compensation#<number>
+----
+
+Where `<content>` is the content of the report itself, and `<number>` is the number of that contributor's monthly compensation request. https://github.com/bisq-network/roles/issues/16#issuecomment-393852612[Example].
+
+Some roles may have nothing to report in a given month. In this case, a report should still be written stating that there is "nothing to report". https://github.com/bisq-network/roles/issues/18#issuecomment-393217596[Example].
+
 === Communication
 
 Respond to issues in any repositories
