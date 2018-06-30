@@ -116,19 +116,6 @@ Specifically, keeping your own role's documentation up to date
 == Bonding
 
 
-== Processes
-
-=== Proposing a new role
-
-=== Transferring ownership
-
-=== Changing primary / secondary status
-
-=== Adding a secondary
-
-=== Providing feedback to role owners
-
-
 [roles-maintainer]
 == The Roles Maintainer role
 
@@ -156,3 +143,16 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
 ==== Owners
 
 See the <<roles-maintainer-role-issue>>
+
+
+== Processes
+
+=== Proposing a new role
+
+=== Transferring ownership
+
+=== Changing primary / secondary status
+
+=== Adding a secondary
+
+=== Providing feedback to role owners
