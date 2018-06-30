@@ -82,7 +82,7 @@ Slack.
 
 === Reporting
 
-Primary role <<owners>> should submit a _monthly report_ as a comment on their role's <<issues,issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
+Primary role <<owners>> should submit a _monthly report_ as a comment on their <<issues, Role Issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
 
 [source,markdown]
 ----
