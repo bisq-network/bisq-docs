@@ -126,6 +126,12 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
 
 {gh-org}/issues/28[#28]
 
+[roles-maintainer-role-team]
+=== Role Team
+:roles-maintainers: {gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
+
+{roles-maintainers} footnote:[See link:roles.html#teams[]]
+
 [roles-maintainer-duties]
 === Duties
 
@@ -137,7 +143,9 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
 [roles-maintainer-rights]
 === Rights
 
- * Write access to the {gh-org}/roles[bisq-network/roles] repository
+ * Membership in the {roles-maintainers} team
+ * `Maintainer` status in the {roles-maintainers} team (primary owner only)
+ * Write access to the {gh-org}/roles[bisq-network/roles] repository (through the {roles-maintainers} team)
 
 [roles-maintainer-owners]
 === Owners
