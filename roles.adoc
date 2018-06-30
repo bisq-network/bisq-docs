@@ -116,7 +116,7 @@ Specifically, keeping your own role's documentation up to date
 == Bonding
 
 
-== Proceseses
+== Processes
 
 === Proposing a new role
 
@@ -132,12 +132,27 @@ Specifically, keeping your own role's documentation up to date
 [roles-maintainer]
 == The Roles Maintainer role
 
-The system of roles described above is a collection of infrastructure and processes like any other in the Bisq DAO, and requires a maintainer to care for it.
+The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.footnote:[See link:roles.html#maintainer[]]
 
-https://github.com/bisq-network/roles/issues/28
+[roles-maintainer-role-issue]
+=== Role Issue
 
-=== Duties
+{gh-org}/issues/28[#28]
 
-All normal <<maintainter>>
+[roles-maintainer-duties]
+==== Duties
 
-=== Rights
+ * Enforce the proposals <<processes>> detailed below.
+ * Monitor communications on the `#roles` Slack channel.footnote:[See link:roles.html#communication[]]
+ * Keep this roles documentation up to date.footnote:[See link:roles.html#documentation[]]
+ * Write a monthly report on the roles maintainer <<roles-maintainer-role-issue>>.footnote:[See link:roles.html#reporting[]]
+
+[roles-maintainer-rights]
+==== Rights
+
+ * Write access to the {gh-org}/roles[bisq-network/roles] repository
+
+[roles-maintainer-owners]
+==== Owners
+
+See the <<roles-maintainer-role-issue>>
