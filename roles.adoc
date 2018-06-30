@@ -115,7 +115,9 @@ Specifically, keeping your own role's documentation up to date
 
 == Bonding
 
-
+////
+In the section below, custom [[anchors]] are used for each section to disambiguate them from sections with the same name in the general documentation above about role issues, role teams, duties, rights and owners.
+////
 [[roles-maintainer-role]]
 == The Roles Maintainer role
 
