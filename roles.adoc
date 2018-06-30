@@ -116,23 +116,23 @@ Specifically, keeping your own role's documentation up to date
 == Bonding
 
 
-[roles-maintainer]
+[[roles-maintainer-role]]
 == The Roles Maintainer role
 
 The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.footnote:[See link:roles.html#maintainer[]]
 
-[roles-maintainer-role-issue]
+[[roles-maintainer-role-issue]]
 === Role Issue
 
 {gh-org}/issues/28[#28]
 
-[roles-maintainer-role-team]
+[[roles-maintainer-role-team]]
 === Role Team
 :roles-maintainers: {gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
 
 {roles-maintainers} footnote:[See link:roles.html#teams[]]
 
-[roles-maintainer-duties]
+[[roles-maintainer-duties]]
 === Duties
 
  * Enforce the proposals <<processes>> detailed below.
@@ -140,14 +140,14 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
  * Keep this roles documentation up to date.footnote:[See link:roles.html#documentation[]]
  * Write a monthly report on the roles maintainer <<roles-maintainer-role-issue>>.footnote:[See link:roles.html#reporting[]]
 
-[roles-maintainer-rights]
+[[roles-maintainer-rights]]
 === Rights
 
  * Membership in the {roles-maintainers} team
  * `Maintainer` status in the {roles-maintainers} team (primary owner only)
  * Write access to the {gh-org}/roles[bisq-network/roles] repository (through the {roles-maintainers} team)
 
-[roles-maintainer-owners]
+[[roles-maintainer-owners]]
 === Owners
 
 See the <<roles-maintainer-role-issue>>
