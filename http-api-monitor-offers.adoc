@@ -23,7 +23,7 @@ NOTE: Using the Bisq HTTP API in no way requires the use of NodeJS on the client
 
 == Run the API
 
-There are two alternative ways you can run an instance of the Bisq HTTP API, either from a Docker image or from source.
+There are two ways you can run an instance of the Bisq HTTP API: from a Docker image or from source.
 
 === Run the API using Docker
 
@@ -42,12 +42,12 @@ For more hard-core developers that want to run from source:
         -Dexec.args="--appName=http-api-monitor-offers"
 
 [NOTE]
-Since the API is in incubating phase we suggest to run it against different database directory then the default one.
-To do that, use `--appName` parameter. You can set it to whatever you like, just keep it different from `Bisq`.
+Since the API is incubating we suggest to run it against a different database directory from the default one.
+To do that, use the `--appName` parameter. You can set it to whatever you like (just keep it different from `Bisq`).
 
 === Verify the API is running
 
-In both cases the API should be running on port 8080. You can verify that by executing:
+The API should now be running on port 8080. You can verify that by executing:
 
     curl http://localhost:8080/api/v1/version
 
@@ -69,7 +69,7 @@ Complete interactive API documentation is available at http://localhost:8080/swa
 
 == API overview
 
-First we will look at the endpoints we need to fetch the data from and how they responses look like.
+First we will look at the endpoints we need to fetch the data from and how their responses look.
 
 === List available offers
 
@@ -85,7 +85,7 @@ The response should look like this:
 }
 ----
 
-Where `offers` is an array with individual offers and `total` is number of all offers. The model for each individual `OfferDetail` is defined as follows:
+The `offers` property is an array with individual offers and `total` is the number of all offers. The model for each `OfferDetail` element is defined as follows:
 
 [source,json]
 ----
@@ -132,7 +132,7 @@ Where `offers` is an array with individual offers and `total` is number of all o
 
 Now let's assume that we want to buy bitcoin, and let's define "interesting" offers as those that:
 
- . sell bitcoin at a discount 1% or more under the current market price, and
+ . sell bitcoin at a 1% discount or more under the current market price, and
  . accept payment in Euros to a Polish SEPA account
 
 First we need to filter those offers using following static criteria:
@@ -147,7 +147,7 @@ First we need to filter those offers using following static criteria:
 }
 ----
 
-Next we need to filter those offers by price. There are two types of offers: _market-based price offers_ and _fixed price offers_. They are distinguished by the `useMarketBasedPrice` attribute. In case of market-based price offers the filtering criteria is easy: the `marketPriceMargin` value must be above 0.1. In case of fixed price offers we have to fetch market price of BTC in EUR, then calculate whether the price is 1% or less, and finally we must filter offers which have a price _less_ than that calculated price.
+Next we need to filter those offers by price. There are two types of offers: _market-based price offers_ and _fixed price offers_. They are distinguished by the `useMarketBasedPrice` attribute. In the case of market-based price offers the filtering criteria is easy: the `marketPriceMargin` value must be above 0.1. In the case of fixed price offers we have to fetch the market price of BTC in EUR, calculate whether the price is 1% or less, and then filter offers which have a price _less_ than that calculated price.
 
 === Get the market price
 
@@ -181,9 +181,9 @@ In general our script will look like this:
 include::http-api-monitor-offers.js[tags=flow]
 ----
 
-So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API. Then we need to filter those offers and finally display the results.
+So first 2 things to do (concurrently and asynchronously) is to fetch offers and market price of BTC from our API. Then we need to filter those offers and display the results.
 
-Getting offers is a simple call that returns promise with array of offers:
+Getting offers is a simple call that returns a promise with an array of offers:
 
 .http-api-monitor-offers.js
 [source,javascript]
@@ -207,7 +207,7 @@ Now our `filterOffers` function is ready to receive an array of results from the
 include::http-api-monitor-offers.js[tags=filterOffers]
 ----
 
-This function filters offers to match our criteria. It returns matching offers and maps them to a bit simpler structure that contains as little data as needed for `notify` function. We are using `lodash` library to simplify the filtering.
+This function filters offers to match our criteria. It returns matching offers and maps them to a simpler structure that contains as little data as needed for the `notify` function. We are using the `lodash` library to simplify filtering.
 
 The `getPriceFilter` function creates the actual filter function and looks like this:
 
