@@ -127,7 +127,7 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
 {gh-org}/issues/28[#28]
 
 [roles-maintainer-duties]
-==== Duties
+=== Duties
 
  * Enforce the proposals <<processes>> detailed below.
  * Monitor communications on the `#roles` Slack channel.footnote:[See link:roles.html#communication[]]
@@ -135,12 +135,12 @@ The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.fo
  * Write a monthly report on the roles maintainer <<roles-maintainer-role-issue>>.footnote:[See link:roles.html#reporting[]]
 
 [roles-maintainer-rights]
-==== Rights
+=== Rights
 
  * Write access to the {gh-org}/roles[bisq-network/roles] repository
 
 [roles-maintainer-owners]
-==== Owners
+=== Owners
 
 See the <<roles-maintainer-role-issue>>
 
