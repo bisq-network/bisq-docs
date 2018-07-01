@@ -1,73 +1,70 @@
-= Bisq DAO Roles
+= Roles
 
 Roles are the way contributors take responsibility for Bisq Network resources and processes.
 
 
 == Introduction
 
-The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many vital resources and processes that must be cared for by individuals. For example, someone must manage the DNS for the `bisq.network` domain, someone must conduct monthly stakeholder voting, and so on.
-
-What's needed is a mechanism that defines these various duties, makes it clear who is responsible for each, and that includes a process for regular reporting and feedback. The system of _roles_ described below provides such a mechanism.
+The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many resources and processes vital to the operation of the network that must be cared for by individuals. For example, someone must manage the DNS for the `bisq.network` domain, someone must conduct monthly stakeholder voting, and so on. What's needed is a mechanism that defines these various duties, makes it clear who is responsible for each, and that provides a process for regular reporting and feedback. The system of _roles_ described below is designed to meet this need, with a major design goal being maximizing decentralization and keeping the organization flat as it grows.
 
 
-[[characteristics]]
-== Characteristics of a role
+== Properties
+
+The following are properties common to all roles.
 
 === Duties
 
-Actions that must be performed for a certain resource or process to function normally.
+_Duties_ are actions that must be performed for a certain resource or process to function normally.
 
-For example, a repository maintainer's duties include merging pull requests in a timely fashion, and the website operator's duties include keeping the site available at all times.
+For example, a repository maintainer's duties include merging pull requests in a timely fashion, and a website operator's duties include keeping the site available at all times.
 
 === Rights
 
-Special permissions or other access required to perform the <<duties>> of a role.
+_Rights_ are special permissions or other access required to perform the <<duties>> of a role.
 
-For example, a repository maintainer's rights include write permissions to their repository, and the website operator's rights include administrative access to site hosting infrastructure.
+For example, a repository maintainer's rights include write permissions to their repository, and a website operator's rights include administrative access to site hosting infrastructure.
 
 === Owners
 
-Contributors who have the <<rights>> required to perform the <<duties>> of a role.
+_Owners_ are contributors who have the <<rights>> required to perform the <<duties>> of a role.
 
 One owner is designated as _primary_ and any other owners are designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary is responsible for performing the <<duties>> of the role, while secondaries stand by, capable of taking over for the primary at any time.
 
 
 == Infrastructure
 
+The following infrastructure is used to define and manage each role.
+
 === Docs
 
-There is no "role documentation" per se, but rather there is documentation about whatever component or infrastructure a given role is responsible for, and in that documentation, there is a section for the role.
+Each role should be documented at https://docs.bisq.network[docs.bisq.network], not in a document of its own, but in a _section_ of a document dedicated to the larger resource or process in question.
 
-=== GitHub
+For example, there is no "Proposals Maintainer" document, but rather a <<proposals#, Proposals>> document having a <<proposals#maintainer, Maintainer>> section within.
 
-==== Issues
+Each role's documentation should enumerate its <<duties>> and <<rights>> and link to its <<team>> and <<issue>>.
 
-Roles are managed as issues in the {gh-org}/roles/issues[bisq-network/roles] repository.
+=== Team
 
-////
- - Assignees used to track role ownership
- - Description field used to
-   - Link to team
-   - Indicate who is primary
-   - Link to role documentation
- - Comments used for
-   - monthly reporting
-   - customer feedback
- - Anyone can subscribe to any issue or watch the whole repo to stay up to date with reporting
- - Labels used to
-   - Indicate `help wanted`
-////
+Each role has a dedicated GitHub team where each of the role's <<owners>> are members. The team is used to manage access to GitHub repositories that role is responsible for and to send notifications to owners with @mentions in GitHub issues and pull requests.
 
-==== Teams
+For example, the {gh-team}/desktop-maintainers/members[@bisq-network/desktop-maintainers] team has write access to the {gh-org}/bisq-desktop[bisq-network/bisq-desktop] repository.
 
-Managed as GitHub Teams. For @mentions and to institutionalize thinking in terms of roles not individuals.
+The primary role owner is also assigned as the _maintainer_ of the GitHub team, such that they may manage the team without requiring the intervention of a GitHub admin.
 
-=== Slack
+=== Issue
 
-Slack.
+Each role has a dedicated GitHub issue in the {gh-org}/roles/issues[bisq-network/roles] repository.
+
+ - The **Assignees** field is used to track role ownership.
+ - The **Description** field is used to link to the role's <<docs>>, <<team>> and primary <<owners, Owner>>.
+ - **Comments** are used for <<report, reporting>> and feedback.
+
+See the {gh-org}/roles/issues/30[Proposals Maintainer] role issue for an example.
 
 
 == Types
+
+Most roles fit into one of the types below.
 
 === Maintainer
 
@@ -78,11 +75,13 @@ Slack.
 === Moderator
 
 
-== Common role duties
+== Common duties
 
-=== Reporting
+The following duties are common to all roles.
 
-Primary role <<owners>> should submit a _monthly report_ as a comment on their <<issues, Role Issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
+=== Report
+
+Primary role <<owners>> should report once a month in the form of a comment on their <<issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
 
 [source,markdown]
 ----
@@ -97,62 +96,52 @@ Where `<content>` is the content of the report itself, and `<number>` is the num
 
 Some roles may have nothing to report in a given month. In this case, a report should still be written stating that there is "nothing to report". https://github.com/bisq-network/roles/issues/18#issuecomment-393217596[Example].
 
-=== Communication
+=== Document
 
-Respond to issues in any repositories
+Primary role <<owners>> should document changes to their role by submitting pull requests to their role's <<docs>>.
 
-Respond to inquiries in Slack
+=== Communicate
 
-Generally means setting up notifications appropriately.
-
-=== Documentation
-
-Specifically, keeping your own role's documentation up to date
+Primary role <<owners>> should respond in a timely fashion to feedback comments on their role <<issue>>, issues created in their repositories, @mentions of their <<team>>, and questions in their Slack channel.
 
 
 == Compensation
 
+TODO
+
 
 == Bonding
 
-////
-In the section below, custom [[anchors]] are used for each section to disambiguate them from sections with the same name in the general documentation above about role issues, role teams, duties, rights and owners.
-////
+TODO
+
+
 [[roles-maintainer-role]]
 == The Roles Maintainer role
 
-The contributor(s) responsible for roles <<infrastructure>> and <<processes>>.footnote:[See link:roles.html#maintainer[]]
+Roles Maintainers are the contributors responsible for the system of roles described throughout the rest of this document.
 
-[[roles-maintainer-role-issue]]
-=== Role Issue
+[[roles-maintainer-issue]]
+=== Issue
 
-{gh-org}/issues/28[#28]
+{gh-org}/roles/issues/28[bisq-network/roles#28]
 
-[[roles-maintainer-role-team]]
-=== Role Team
-:roles-maintainers: {gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
+[[roles-maintainer-team]]
+=== Team
 
-{roles-maintainers} footnote:[See link:roles.html#teams[]]
+{gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
 
 [[roles-maintainer-duties]]
 === Duties
 
- * Enforce the proposals <<processes>> detailed below.
- * Monitor communications on the `#roles` Slack channel.footnote:[See link:roles.html#communication[]]
- * Keep this roles documentation up to date.footnote:[See link:roles.html#documentation[]]
- * Write a monthly report on the roles maintainer <<roles-maintainer-role-issue>>.footnote:[See link:roles.html#reporting[]]
+ * Follow and enforce the roles <<processes>> detailed below.
+ * <<report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
+ * <<document>> changes to roles <<processes>>.
+ * <<communicate>> in the `#roles` Slack channel.
 
 [[roles-maintainer-rights]]
 === Rights
 
- * Membership in the {roles-maintainers} team
- * `Maintainer` status in the {roles-maintainers} team (primary owner only)
- * Write access to the {gh-org}/roles[bisq-network/roles] repository (through the {roles-maintainers} team)
-
-[[roles-maintainer-owners]]
-=== Owners
-
-See the <<roles-maintainer-role-issue>>
+ * Write access to the {gh-org}/roles[bisq-network/roles] repository
 
 
 == Processes
