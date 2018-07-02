@@ -78,19 +78,19 @@ Examples: {role}/63[Bisq Desktop Maintainer], {role}/30[Proposals Maintainer]
  * Tagging releases.
  * Keeping issues organized and to a minimum.
 
-==== Maintainer Rights
-
- * Write access to the repository they are responsible for.
-
 [IMPORTANT]
 .A Maintainer is not a Developer or a Reviewer
 ====
-The maintainer role is strictly about enforcing process. Development (submitting pull requests) is something any contributor can do. Likewise, review is open to contributors and is NOT the special duty of maintainers.
+Submitting and reviewing pull requests is something any contributor can do; neither are maintainer duties per se.
 
-This is particularly important from a compensation perspective. If you are a maintainer, do NOT group development and review activities under your maintainer role in your compensation requests. Rather, itemize your pull requests and reviews just like any other contributor would.
+This is particularly important from a compensation perspective. **If you are a maintainer, do NOT group your development and review activities together with your maintainer role in your compensation requests.** Rather, account for them separately like any other contributor would.
 
 The goal is to have as many competent contributors developing and reviewing as possible, not to load everything on the Maintiner. https://rfc.unprotocols.org/spec:1/C4/#21-preliminaries[C4] is the inspiration here, it's worth re-reading.
 ====
+
+==== Maintainer Rights
+
+ * Write access to the repository they are responsible for.
 
 === Operator
 
