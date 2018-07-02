@@ -112,7 +112,32 @@ Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator]
 
 === Administrator
 
+An _Administrator_ ('Admin') is a contributor responsible for managing a given resource.
+
+Examples: {role}/16[GitHub Admin], {role}/23[Slack Admin]
+
+==== Admin Duties
+
+ * Respond to change requests.
+
+==== Admin Rights
+
+ * Access to the administrative interface of the resource in question.
+
 === Moderator
+
+A _Moderator_ is a contributor responsible for enforcing process and standards in a given communications channel.
+
+Examples: {role}/37[Bitcointalk Moderator], {role}/25[Reddit Moderator]
+
+==== Moderator Duties
+
+ * Ensure discussions are on topic, civil, etc.
+ * Post key announcements in a timely fashion.
+
+==== Moderator Rights
+
+ * Moderator (or equivalent) status in the channel.
 
 
 == Common duties
