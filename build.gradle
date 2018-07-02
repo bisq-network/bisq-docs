@@ -20,7 +20,8 @@ asciidoctor {
         idseparator         : '-',
         docinfo1            : '',
         'gh-org'            : 'https://github.com/bisq-network',
-        'gh-team'           : 'https://github.com/orgs/bisq-network/teams'
+        'gh-team'           : 'https://github.com/orgs/bisq-network/teams',
+        'role'              : 'https://github.com/bisq-network/roles/issues'
 }
 
 build.dependsOn asciidoctor

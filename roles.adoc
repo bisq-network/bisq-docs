@@ -59,7 +59,7 @@ Each role has a dedicated GitHub issue in the {gh-org}/roles/issues[bisq-network
  - The **Description** field is used to link to the role's <<docs>>, <<team>> and primary <<owners, Owner>>.
  - **Comments** are used for <<report, reporting>> and feedback.
 
-See the {gh-org}/roles/issues/30[Proposals Maintainer] role issue for an example.
+See the {role}/30[Proposals Maintainer] role issue for an example.
 
 
 == Types
@@ -92,9 +92,9 @@ Primary role <<owners>> should report once a month in the form of a comment on t
 /cc bisq-network/compensation#<number>
 ----
 
-Where `<content>` is the content of the report itself, and `<number>` is the number of that contributor's monthly compensation request. https://github.com/bisq-network/roles/issues/16#issuecomment-393852612[Example].
+Where `<content>` is the content of the report itself, and `<number>` is the number of that contributor's monthly compensation request. {role}/16#issuecomment-393852612[Example].
 
-Some roles may have nothing to report in a given month. In this case, a report should still be written stating that there is "nothing to report". https://github.com/bisq-network/roles/issues/18#issuecomment-393217596[Example].
+Some roles may have nothing to report in a given month. In this case, a report should still be written stating that there is "nothing to report". {role}/18#issuecomment-393217596[Example].
 
 === Document
 
@@ -123,7 +123,7 @@ Roles Maintainers are the contributors responsible for the system of roles descr
 [[roles-maintainer-issue]]
 === Issue
 
-{gh-org}/roles/issues/28[bisq-network/roles#28]
+{role}/28[bisq-network/roles#28]
 
 [[roles-maintainer-team]]
 === Team
