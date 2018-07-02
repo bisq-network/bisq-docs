@@ -94,6 +94,22 @@ The goal is to have as many competent contributors developing and reviewing as p
 
 === Operator
 
+An _Operator_ is a contributor responsible for keeping a given resource running and functioning normally.
+
+Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator]
+
+==== Operator Duties
+
+ * Keep the given resource online and functioning normally.
+ * Keep the resource up to date with latest version.
+ * Maintain backups as appropriate.
+ * Report on any incidents.
+
+==== Operator Rights
+
+ * Administrative access to hosting infrastructure.
+ * Ownership of any domain name used.
+
 === Administrator
 
 === Moderator
