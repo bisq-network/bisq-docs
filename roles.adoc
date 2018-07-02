@@ -211,12 +211,31 @@ Roles Maintainers are the contributors responsible for the system of roles descr
 
 == Processes
 
+The following are some common roles-related processes.
+
 === Proposing a new role
+
+Typically, proposing a new role is one part of a larger proposal to introduce some new resource or process.
+
+ . Discuss the idea informally with other contributors, e.g. via Slack.
+ . Follow the <<proposals#, Proposals>> process to formally suggest the new resource or process.
+ . Draft documentation for the new resource or process, including a section about the new role as a pull request to the {gh-org/bisq-docs[bisq-network/bisq-docs] repository.
+
+For example, see the {gh-org}/proposals/15[proposal to support Tor Relays] and the resulting {role}/72[Tor Relay Operator] role issue.
+
+=== Adding a secondary owner
+
+A primary role owner may add a secondary owner with the following steps:
+
+ . Add them as a member of the role's GitHub <<team>>
+ . Add them as an assignee to role's GitHub <<issue>>
+ . Announce the change via a comment on the role's GitHub <<issue>>.
 
 === Transferring ownership
 
-=== Changing primary / secondary status
+A primary owner may transfer ownership to another with the following steps:
 
-=== Adding a secondary
-
-=== Providing feedback to role owners
+ . Grant the _maintainer_ role to the new primary in the role's GitHub <<team>>
+ . Remove the _maintainer_ role from yourself
+ . Update the role's GitHub <<issue>> to reflect the new primary owner.
+ . Announce the change in a comment on the role's GitHub <<issue>>.
