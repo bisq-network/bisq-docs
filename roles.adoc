@@ -222,7 +222,9 @@ For example, as mentioned above in the <<maintainer-duties>> section, a reposito
 
 == Bonding
 
-TODO
+Most roles involve special <<rights>> that, if abused, could cause damage to the Bisq Network. For this reason, role owners must put up a _bond_ in BSQ commensurate with the amount of damage that could be caused. In the event of a role owner turning into a bad actor or being grossly negligent, this bond can be confiscated through a BSQ voting process.
+
+Bonding is not currently in place during <<dao/phase-zero#, Phase Zero>> of the Bisq DAO, but is being implemented and will come online when we go live on Bitcoin testnet.
 
 
 [[roles-maintainer-role]]
