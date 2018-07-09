@@ -83,9 +83,9 @@ Examples: {role}/63[Bisq Desktop Maintainer], {role}/30[Proposals Maintainer]
 ====
 Submitting and reviewing pull requests is something any contributor can do; neither are maintainer duties per se.
 
-This is particularly important from a compensation perspective. **If you are a maintainer, do NOT group your development and review activities together with your maintainer role in your compensation requests.** Rather, account for them separately like any other contributor would.
+This is particularly important from a <<compensation>> perspective. **If you are a maintainer, do NOT group your development and review activities together with your maintainer role in your compensation requests.** Rather, account for them separately like any other contributor would.
 
-The goal is to have as many competent contributors developing and reviewing as possible, not to load everything on the Maintiner. https://rfc.unprotocols.org/spec:1/C4/#21-preliminaries[C4] is the inspiration here, it's worth re-reading.
+The goal is to have as many competent contributors developing and reviewing as possible, not to load everything on the maintainer. https://rfc.unprotocols.org/spec:1/C4/#21-preliminaries[C4] is the inspiration here, it's worth (re-)reading.
 ====
 
 ==== Maintainer Rights
@@ -172,7 +172,52 @@ Primary role <<owners>> should respond in a timely fashion to feedback comments 
 
 == Compensation
 
-TODO
+Role owners should include a summary line item for each role they own in a monthly <<dao/phase-zero#how-to-request-compensation, compensation request>>. Each summary should include:
+
+ * The name of the role,
+ * a link to the owner's monthly <<report>> for that role, and
+ * the total amount of BSQ being requested for performing the role's duties during that month.
+
+[example]
+.Per-role line items in a compensation request
+====
+* Bisq Desktop Maintainer | https://github.com/bisq-network/roles/issues/63#issuecomment-401352998[bisq-network/roles#63 (comment)] | 350 BSQ
+* Bisq Seednode Operator | https://github.com/bisq-network/roles/issues/15#issuecomment-401547205[bisq-network/roles#15 (comment)] | 150 BSQ
+====
+
+NOTE: Secondary role owners should not submit monthly reports or compensation requests for a role unless they actually performed the duties of that role during that month.
+
+The amount of BSQ requested should include any hard costs (e.g. hosting) plus time and effort costs involved in performing the duties of the role. These costs should be detailed in the monthly report as follows:
+
+[example]
+.Monthly report for Bisq Desktop Maintainer
+====
+## 2018.07 report
+
+ * Regular duties | 150 BSQ
+ * Big issue cleanup | 200 BSQ
+
+Total: 350 BSQ
+
+/cc bisq-network/compensation#42
+====
+
+[example]
+.Monthly report for Bisq Seednode Maintainer
+====
+## 2018.07 report
+
+ * Hosting 2 nodes @ 50 USD/mo on Digital Ocean | 100 BSQ
+ * Upgrade nodes to v0.7.1 | 50 BSQ
+
+Total: 150 BSQ
+
+/cc bisq-network/compensation#42
+====
+
+The only work items that should be included in role compensation are those <<duties>> that can be performed _only_ by that role's owner. Everything else should be itemized independently.
+
+For example, as mentioned above in the <<maintainer-duties>> section, a repository maintainer's main duties are merging pull requests and triaging incoming issues. If the person playing the maintainer role submits their own pull requests, or performs reviews of others' pull requests, that work should NOT be grouped together with regular maintainer duties when putting together a compensation request. Rather, each PR submitted or reviewed should be called out separately as individual contributions.
 
 
 == Bonding
