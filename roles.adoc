@@ -75,7 +75,7 @@ Most roles fit into one of the types below.
 
 A _Maintainer_ is a contributor responsible for enforcing process in a given GitHub repository.
 
-Examples: {role}/63[Bisq Desktop Maintainer], {role}/30[Proposals Maintainer]
+Examples: {role}/63[Bisq Desktop Maintainer], {role}/30[Proposals Maintainer].
 
 ==== Maintainer Duties
 
@@ -101,7 +101,7 @@ The goal is to have as many competent contributors developing and reviewing as p
 
 An _Operator_ is a contributor responsible for keeping a given resource running and functioning normally.
 
-Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator]
+Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator].
 
 ==== Operator Duties
 
@@ -119,7 +119,7 @@ Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator]
 
 An _Administrator_ ('Admin') is a contributor responsible for managing a given resource.
 
-Examples: {role}/16[GitHub Admin], {role}/23[Slack Admin]
+Examples: {role}/16[GitHub Admin], {role}/23[Slack Admin].
 
 ==== Admin Duties
 
@@ -133,7 +133,7 @@ Examples: {role}/16[GitHub Admin], {role}/23[Slack Admin]
 
 A _Moderator_ is a contributor responsible for enforcing process and standards in a given communications channel.
 
-Examples: {role}/37[Bitcointalk Moderator], {role}/25[Reddit Moderator]
+Examples: {role}/37[Bitcointalk Moderator], {role}/25[Reddit Moderator].
 
 ==== Moderator Duties
 
@@ -258,7 +258,7 @@ Roles Maintainers are the contributors responsible for the system of roles descr
 [[roles-maintainer-rights]]
 === Rights
 
- * Write access to the {gh-org}/roles[bisq-network/roles] repository
+ * Write access to the {gh-org}/roles[bisq-network/roles] repository.
 
 
 == Processes
@@ -279,15 +279,15 @@ For example, see the {gh-org}/proposals/15[proposal to support Tor Relays] and t
 
 A primary role owner may add a secondary owner with the following steps:
 
- . Add them as a member of the role's GitHub <<team>>
- . Add them as an assignee to role's GitHub <<issue>>
+ . Add them as a member of the role's GitHub <<team>>.
+ . Add them as an assignee to role's GitHub <<issue>>.
  . Announce the change via a comment on the role's GitHub <<issue>>.
 
 === Transferring ownership
 
 A primary owner may transfer ownership to another with the following steps:
 
- . Grant the _maintainer_ role to the new primary in the role's GitHub <<team>>
- . Remove the _maintainer_ role from yourself
+ . Grant the _maintainer_ role to the new primary in the role's GitHub <<team>>.
+ . Remove the _maintainer_ role from yourself.
  . Update the role's GitHub <<issue>> to reflect the new primary owner.
  . Announce the change in a comment on the role's GitHub <<issue>>.
