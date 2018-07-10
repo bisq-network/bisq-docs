@@ -5,7 +5,12 @@ Roles are the way contributors take responsibility for Bisq Network resources an
 
 == Introduction
 
-The Bisq DAO is a flat organization, without traditional management or reporting structures. At the same time, there are many resources and processes vital to the operation of the network that must be cared for by individuals. For example, someone must manage the DNS for the `bisq.network` domain, someone must conduct monthly stakeholder voting, and so on. What's needed is a mechanism that defines these various duties, makes it clear who is responsible for each, and that provides a process for regular reporting and feedback. The system of _roles_ described below is designed to meet this need, with a major design goal being maximizing decentralization and keeping the organization flat as it grows.
+There are many resources and processes vital to the operation of the Bisq Network that require ownership by individual contributors. For example, someone must merge pull requests into the `bisq-desktop` repository, someone must manage DNS for the `bisq.network` domain, someone must conduct monthly stakeholder voting, and so on.
+
+This document defines the system of _roles_ used within the Bisq DAO to enumerate, define and track each of these responsibilities. The system is designed with two major goals in mind:
+
+ . To maximize role owner autonomy in order to achieve <<dao/phase-zero#, Phase Zero>> decentralization goals.
+ . To maximize transparency such that DAO stakeholders can effectively review and vote on role owner compensation requests.
 
 
 == Properties
