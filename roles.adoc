@@ -33,7 +33,7 @@ For example, a repository maintainer's rights include write permissions to their
 
 _Owners_ are contributors who have the <<rights>> required to perform the <<duties>> of a role.
 
-One owner is designated as _primary_ and any other owners are designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary is responsible for performing the <<duties>> of the role, while secondaries stand by, capable of taking over for the primary at any time.
+One owner is designated as _primary_ and any other owners are designated as _secondary_.footnote:[See {gh-org}/proposals/issues/12] The primary is responsible for performing the <<duties>> of the role, while secondaries stand by, ready to take over for the primary at any time.
 
 
 == Infrastructure
@@ -44,13 +44,13 @@ The following infrastructure is used to define and manage each role.
 
 Each role should be documented at https://docs.bisq.network[docs.bisq.network], not in a document of its own, but in a _section_ of a document dedicated to the larger resource or process in question.
 
-For example, there is no "Proposals Maintainer" document, but rather a <<proposals#, Proposals>> document having a <<proposals#maintainer, Maintainer>> section within.
+For example, there is no "Proposals Maintainer" document, but rather there is a <<proposals#, Proposals>> document having a <<proposals#maintainer, Maintainer>> section within.
 
 Each role's documentation should enumerate its <<duties>> and <<rights>> and link to its <<team>> and <<issue>>.
 
 === Team
 
-Each role has a dedicated GitHub team where each of the role's <<owners>> are members. The team is used to manage access to GitHub repositories that role is responsible for and to send notifications to owners with @mentions in GitHub issues and pull requests.
+Each role has a dedicated GitHub team where each of the role's <<owners>> are members. The team is used to manage access to GitHub repositories that the role is responsible for and to send notifications to role owners with @mentions in GitHub issues and pull requests.
 
 For example, the {gh-team}/desktop-maintainers/members[@bisq-network/desktop-maintainers] team has write access to the {gh-org}/bisq-desktop[bisq-network/bisq-desktop] repository.
 
@@ -58,7 +58,7 @@ The primary role owner is also assigned as the _maintainer_ of the GitHub team, 
 
 === Issue
 
-Each role has a dedicated GitHub issue in the {gh-org}/roles/issues[bisq-network/roles] repository.
+Each role has a dedicated GitHub issue in the {gh-org}/roles/issues[bisq-network/roles] repository, wherein:
 
  - The **Assignees** field is used to track role ownership.
  - The **Description** field is used to link to the role's <<docs>>, <<team>> and primary <<owners, Owner>>.
@@ -81,7 +81,7 @@ Examples: {role}/63[Bisq Desktop Maintainer], {role}/30[Proposals Maintainer].
 
  * Merging or closing pull requests after sufficient review.
  * Tagging releases.
- * Keeping issues organized and to a minimum.
+ * Triaging incoming issues and keeping them organized over time.
 
 [IMPORTANT]
 .A Maintainer is not a Developer or a Reviewer
