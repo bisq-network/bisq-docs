@@ -425,27 +425,19 @@ See <<founder-use-cases>>.
 
 == Bonded contributor roles [[bonded-contributor-roles]]
 
-A _bonded contributor_ is a stakeholder who has put up a bond in BSQ in order to assume a _high-trust_ role within the DAO. High-trust roles are those that require privileged access such as a password or private key to perform, and more generally include any duties that can cause harm to the Bisq network or project if carried out incorrectly. As protection against malfeasance and gross negligence, BSQ bonds may be confiscated (burned) in part or in whole through stakeholder voting. In compensation for making their BSQ illiquid and incurring confiscation risk, bonded contributors earn interest in BSQ on their bonds; in compensation for carrying out the specific duties of their role, bonded contributors earn BSQ via the same compensation request process that applies to all other (non-bonded) contributors.
-
-While there are many specific bonded contributor roles, most fall into one of the categories below.
+NOTE: This section has been superseded by the <<../roles#, Roles>> document.
 
 === Maintainer
 
-A _maintainer_ is a bonded contributor responsible for a given repository in the <<bisq-network-org>>, including managing its issues, reviewing and merging pull requests and releasing new versions of the software in that repository.
-
-See <<maintainer-use-cases>>.
+NOTE: This section has been superseded by the <<../roles#maintainer, Maintainer>> section of the <<../roles#, Roles>> document.
 
 === Operator
 
-An _operator_ is a bonded contributor responsible for running ("operating") software that support the Bisq network. Examples include Bisq _seed node_ and _price node_ operators, the Bisq website operator, and the BSQ transaction explorer operator. Where practical, maintainer and operator roles may be played by the same contributor.
+NOTE: This section has been superseded by the <<../roles#operator, Operator>> section of the <<../roles#, Roles>> document.
 
 === Administrator
 
-An _administrator_ is a bonded contributor responsible for managing ("administering") applications and services that support the Bisq project. Examples include GitHub admin, DNS admin, Slack admin, IRC admin and Discourse (forum) admin.
-
-=== Other roles not listed here
-
-There are more than 30 bonded contributor roles in the Bisq project. See the <<roles-repo>> for a complete list.
+NOTE: This section has been superseded by the <<../roles#administrator, Administrator>> section of the <<../roles#, Roles>> document.
 
 
 = Appendix B: Resources [[Appendix-B]]
@@ -464,9 +456,11 @@ https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+org%3Abisq-network+label%3A
 
 https://github.com/bisq-network/compensation[https://github.com/bisq-network/compensation]
 
-=== roles repository and board [[roles-repo,bisq-network/roles repository]]
+=== roles repository [[roles-repo,bisq-network/roles repository]]
 
 https://github.com/bisq-network/roles[https://github.com/bisq-network/roles]
+
+See the <<../roles#, Roles>> document for full details.
 
 === proposals repository [[proposals-repo,bisq-network/proposals repository]]
 
@@ -580,30 +574,6 @@ NOTE: It is important to vote "no" if you believe a request should not be approv
 === issue the final BSQ genesis distribution on Bitcoin mainnet
 
 === modify this plan
-
-== As a bonded contributor, I can… [[bonded-contributor-use-cases,bonded contributor use cases]]
-
-=== earn interest on my BSQ bond
-
-=== transfer my role to the successor of my choosing
-
-== As a maintainer, I can… [[maintainer-use-cases,maintainer use cases]]
-
-=== post bounties
-
-In practice, "posting a bounty" simply means adding the `$BSQ bounty` label to a GitHub issue. Because maintainers are the only ones with write access to the repositories they maintain, they are the only ones with the ability to add this (or any other) label.
-
-The `$BSQ bounty` label should only be added to issues that are _ready for work_, meaning that they are already defined well enough to make it possible for a contributor to begin working on that bounty with a minimum amount of discussion.
-
-A well-defined bounty is one that clearly states a problem to be solved. If the desired solution is already known, the bounty should provide as much detail as necessary about that solution. If the solution is not already known, the maintainer may want to formulate the bounty as a request for a _proposal_ that can be reviewed and discussed, and then a subsequent bounty can address actually implementing that proposed solution.
-
-=== review and merge pull requests
-
-In accordance with the C4 process,footnoteref:[C4] all contributions to bisq-network repositories should come in the form of pull requests. Repository maintainers should review and comment on pull requests and merge them only if they are correct and well-formed.
-
-=== publish releases
-
-Maintainers are responsible for publishing releases of the software they maintain.
 
 == Post-phase zero use cases [[post-phase-zero-use-cases]]
 
