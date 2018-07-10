@@ -54,7 +54,9 @@ Each role has a dedicated GitHub team where each of the role's <<owners>> are me
 
 For example, the {gh-team}/desktop-maintainers/members[@bisq-network/desktop-maintainers] team has write access to the {gh-org}/bisq-desktop[bisq-network/bisq-desktop] repository.
 
-The primary role owner is also assigned as the _maintainer_ of the GitHub team, such that they may manage the team without requiring the intervention of a GitHub admin.
+NOTE: GitHub teams are visible only to GitHub organization members. To join the {gh-org}[@bisq-network] org, see the <<contributor-checklist#, Contributor Checklist>>.
+
+The primary role owner is also assigned as the _maintainer_ of their role's GitHub team, such that they may manage the team without requiring the intervention of a GitHub admin.
 
 === Issue
 
