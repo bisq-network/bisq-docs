@@ -64,7 +64,7 @@ Each role has a dedicated GitHub issue in the {gh-org}/roles/issues[bisq-network
 
  - The **Assignees** field is used to track role ownership.
  - The **Description** field is used to link to the role's <<docs>>, <<team>> and primary <<owners, Owner>>.
- - **Comments** are used for <<report, reporting>> and feedback.
+ - **Comments** are used for <<reporting>> and feedback.
 
 See the {role}/30[Proposals Maintainer] role issue for an example.
 
@@ -151,7 +151,7 @@ Examples: {role}/37[Bitcointalk Moderator], {role}/25[Reddit Moderator].
 
 The following duties are common to all roles.
 
-=== Report
+=== Reporting
 
 Primary role <<owners>> should report once a month in the form of a comment on their <<issue>>.footnote:[See {gh-org}/proposals/issues/13] The report should contain whatever information the owner believes would be valuable to other users, contributors and stakeholders. The comment should be formatted in Markdown as follows:
 
@@ -168,11 +168,11 @@ Where `<content>` is the content of the report itself, and `<number>` is the num
 
 Some roles may have nothing to report in a given month. In this case, a report should still be written stating that there is "nothing to report". {role}/18#issuecomment-393217596[Example].
 
-=== Document
+=== Documentation
 
 Primary role <<owners>> should document changes to their role by submitting pull requests to their role's <<docs>>.
 
-=== Communicate
+=== Communication
 
 Primary role <<owners>> should respond in a timely fashion to feedback comments on their role <<issue>>, issues created in their repositories, @mentions of their <<team>>, and questions in their Slack channel.
 
@@ -181,9 +181,9 @@ Primary role <<owners>> should respond in a timely fashion to feedback comments 
 
 Role owners should include a summary line item for each role they own in a monthly <<dao/phase-zero#how-to-request-compensation, compensation request>>. Each summary should include:
 
- * The name of the role,
- * a link to the owner's monthly <<report>> for that role, and
- * the total amount of BSQ being requested for performing the role's duties during that month.
+ . The name of the role,
+ . a link to the owner's monthly <<reporting, report>> for that role, and
+ . the total amount of BSQ being requested for performing the role's duties during that month.
 
 [example]
 .Per-role line items in a compensation request
@@ -253,9 +253,9 @@ Roles Maintainers are the contributors responsible for the system of roles descr
 === Duties
 
  * Follow and enforce the roles <<processes>> detailed below.
- * <<report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
- * <<document>> changes to roles <<processes>>.
- * <<communicate>> in the `#roles` Slack channel.
+ * <<reporting, Report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
+ * <<documentation, Document>> changes to roles <<processes>>.
+ * <<communication, Communicate>> in the `#roles` Slack channel.
 
 [[roles-maintainer-rights]]
 === Rights
