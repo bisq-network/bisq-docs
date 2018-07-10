@@ -50,12 +50,12 @@ The contributor(s) responsible for proposals <<infrastructure>> and <<process>>.
 
 ==== Role Issue
 
-{gh-org}/roles/issues/30[#30]
+{gh-org}/roles/issues/30[bisq-network/roles#30] footnote:[See link:roles.html#issue[]]
 
 ==== Role Team
 :proposals-maintainers: {gh-team}/proposals-maintainers[@bisq-network/proposals-maintainers]
 
-{proposals-maintainers} footnote:[See link:roles.html#teams[]]
+{proposals-maintainers} footnote:[See link:roles.html#team[]]
 
 ==== Duties
 
@@ -66,13 +66,7 @@ The contributor(s) responsible for proposals <<infrastructure>> and <<process>>.
 
 ==== Rights
 
- * Membership in the {proposals-maintainers} team
- * `Maintainer` status in the {proposals-maintainers} team (primary owner only)
- * Write access to the {gh-org}/proposals[bisq-network/proposals] repository (through the {proposals-maintainers} team)
-
-==== Owners
-
-See the <<role-issue>>
+ * Write access to the {gh-org}/proposals[bisq-network/proposals] repository.
 
 
 == Process
