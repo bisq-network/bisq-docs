@@ -273,7 +273,7 @@ Typically, proposing a new role is one part of a larger proposal to introduce so
 
  . Discuss the idea informally with other contributors, e.g. via Slack.
  . Follow the <<proposals#, Proposals>> process to formally suggest the new resource or process.
- . Draft documentation for the new resource or process, including a section about the new role as a pull request to the {gh-org/bisq-docs[bisq-network/bisq-docs] repository.
+ . Draft documentation for the new resource or process, including a section about the new role as a pull request to the {gh-org}/bisq-docs[bisq-network/bisq-docs] repository.
 
 For example, see the {gh-org}/proposals/15[proposal to support Tor Relays] and the resulting {role}/72[Tor Relay Operator] role issue.
 
