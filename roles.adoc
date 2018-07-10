@@ -277,7 +277,7 @@ Typically, proposing a new role is one part of a larger proposal to introduce so
 
 For example, see the {gh-org}/proposals/15[proposal to support Tor Relays] and the resulting {role}/72[Tor Relay Operator] role issue.
 
-=== Adding a secondary owner
+=== Adding a secondary role owner
 
 A primary role owner may add a secondary owner with the following steps:
 
@@ -285,7 +285,7 @@ A primary role owner may add a secondary owner with the following steps:
  . Add them as an assignee to role's GitHub <<issue>>.
  . Announce the change via a comment on the role's GitHub <<issue>>.
 
-=== Transferring ownership
+=== Transferring role ownership
 
 A primary owner may transfer ownership to another with the following steps:
 
