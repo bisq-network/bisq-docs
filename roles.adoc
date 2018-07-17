@@ -234,35 +234,6 @@ Most roles involve special <<rights>> that, if abused, could cause damage to the
 Bonding is not currently in place during <<dao/phase-zero#, Phase Zero>> of the Bisq DAO, but is being implemented and will come online when we go live on Bitcoin testnet.
 
 
-[[roles-maintainer-role]]
-== The Roles Maintainer role
-
-Roles Maintainers are the contributors responsible for the system of roles described throughout the rest of this document.
-
-[[roles-maintainer-issue]]
-=== Issue
-
-{role}/28[bisq-network/roles#28]
-
-[[roles-maintainer-team]]
-=== Team
-
-{gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
-
-[[roles-maintainer-duties]]
-=== Duties
-
- * Follow and enforce the roles <<processes>> detailed below.
- * <<reporting, Report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
- * <<documentation, Document>> changes to roles <<processes>>.
- * <<communication, Communicate>> in the `#roles` Slack channel.
-
-[[roles-maintainer-rights]]
-=== Rights
-
- * Write access to the {gh-org}/roles[bisq-network/roles] repository.
-
-
 == Processes
 
 The following are some common roles-related processes.
@@ -293,3 +264,32 @@ A primary owner may transfer ownership to another with the following steps:
  . Remove the _maintainer_ role from yourself.
  . Update the role's GitHub <<issue>> to reflect the new primary owner.
  . Announce the change in a comment on the role's GitHub <<issue>>.
+
+
+[[roles-maintainer-role]]
+== The Roles Maintainer role
+
+Roles Maintainers are the contributors responsible for the system of roles described throughout the rest of this document.
+
+[[roles-maintainer-issue]]
+=== Issue
+
+{role}/28[bisq-network/roles#28]
+
+[[roles-maintainer-team]]
+=== Team
+
+{gh-team}/roles-maintainers[@bisq-network/roles-maintainers]
+
+[[roles-maintainer-duties]]
+=== Duties
+
+ * Follow and enforce the roles <<processes>> detailed above.
+ * <<reporting, Report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
+ * <<documentation, Document>> changes to roles <<processes>>.
+ * <<communication, Communicate>> in the `#roles` Slack channel.
+
+[[roles-maintainer-rights]]
+=== Rights
+
+ * Write access to the {gh-org}/roles[bisq-network/roles] repository.
