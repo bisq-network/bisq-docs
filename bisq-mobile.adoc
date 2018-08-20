@@ -6,7 +6,7 @@ There are a couple of efforts underway to enable mobile functionality for Bisq. 
 
 == Mobile notifications
 
-The Bisq mobile notifications app lets you get notifications from Bisq desktop on your iPhone or Android device. This doc explains how to set it up and how it works.
+The Bisq mobile notifications app lets you get notifications from Bisq desktop on your iPhone or Android device. Here we explain how to set it up and how it works.
 
 === 1. Get the app
 
