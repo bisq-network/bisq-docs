@@ -22,7 +22,7 @@ In the mobile app, click `Pair` and scan the QR code with your computer's webcam
 [NOTE]
 If you don't have a webcam, click the `I don't have a webcam` button in desktop Bisq. Then send the pairing string on your mobile device to your computer and paste it in the text field. 
 
-You'll see a success message once pairing completes, and can then proceed to the notifications screen.
+Once pairing completes, you'll see a success message, and can then proceed to the next screen to configure notifications.
 
 === 3. Configure notifications
 
@@ -39,7 +39,7 @@ Example: you're buying BTC, just sent your deposit, and are waiting for the tran
 Example 2: you're selling BTC, and you're waiting for your trading partner to send you the fiat currency or altcoin. You'll get a notification as soon as they mark their payment as sent, so you can then check for the payment and complete the trade.
 
 [WARNING]
-Please don't rely on mobile notifications to receive important messages. Mobiles notifications are new and there may be bugs. Please be sure to still check your desktop Bisq app for trade status, dispute messages, etc!
+Please don't rely on mobile notifications to receive important messages. Mobile notifications are new and there may be bugs. Please be sure to still check your desktop Bisq app for trade status, dispute messages, etc!
 
 ==== Dispute messages
 If enabled, you will get a notification whenever there's a new dispute message. This notification will not include content of the message—it merely lets you know of the existence of a new dispute message on your desktop Bisq app.
