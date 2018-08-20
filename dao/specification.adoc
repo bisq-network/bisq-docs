@@ -160,7 +160,7 @@ Periods are defined in block height. Each period is separated with a break of 10
 
  - Publishing compensation requests (3630 blocks, about 25 days)
  - Voting: Approve/decline compensation requests (450 blocks, about 3 days)
- - Voting commitment: The voters publish the decryption key and vot on their vote data consensus (300 blocks, about 2 days)
+ - Voting commitment: The voters publish the decryption key and vote on their vote data consensus (300 blocks, about 2 days)
  - Issuance of new BSQ (happens directly and automatically after the vote commitment is completed)
 
 The full cycle will last 4380 blocks which is about an average month if one block takes in average 10 min. The interval of 1 month has been used in the phase zero and can be considered as practical.
@@ -200,12 +200,12 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
 
  * There have to be one OP_RETURN output as last output
  * The amount at the OP_RETURN output has to be 0
- * The first byte in the OP_RETURN data need to be the type byte: 0x01
- * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (requests made with older versions are invalid)
+ * The first byte in the OP_RETURN data needs to be the type byte: 0x01
+ * The second byte in the OP_RETURN data needs to match the nodes version byte: 0x01 (requests made with older versions are invalid)
  * Size of OP_RETURN data is 22 bytes
  * There has to be a BSQ input for the fee payment
  * BSQ used for fee need to be mature
- * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ * The fee needs to match the fee defined for that cycle (can be changed by voting at each new cycle)
  * The block height must be in the correct period
  * It needs to have at least one output to the address defined in the compensation request data
 
@@ -221,8 +221,8 @@ Contributors need to have the latest version installed when doing a request to b
  * Output 4 (last): OP_RETURN data as defined above
  * Mining fee: 0.00050000 (0.00049900 BTC from input 2 + 0.00000100 BTC or 1 BSQ from input 1)
 
-The input 1 need to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
- The BTC input at input 2 need to be at least the sum of the requested BSQ and the miner fee, in our case 0.00500000 BTC (requested BSQ) + 0.00049900 BTC miner fee.
+The input 1 needs to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
+ The BTC input at input 2 needs to be at least the sum of the requested BSQ and the miner fee, in our case 0.00500000 BTC (requested BSQ) + 0.00049900 BTC miner fee.
  Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
 
 ==== Voting
@@ -268,13 +268,13 @@ To avoid an attack scenario where the malicious voter could try to disrupt the c
 
  * There have to be one OP_RETURN output as last output
  * The amount at the OP_RETURN output has to be 0
- * The first byte in the OP_RETURN data need to be the: 0x02 (type)
- * The second byte in the OP_RETURN data need to match the nodes version byte: 0x01 (votes made with older versions are invalid)
+ * The first byte in the OP_RETURN data needs to be the: 0x02 (type)
+ * The second byte in the OP_RETURN data needs to match the nodes version byte: 0x01 (votes made with older versions are invalid)
  * Size of OP_RETURN data needs to be 22 bytes
  * There have to be a BSQ input for the fee payment
  * BSQ used for fee need to be mature
  * There have to be exactly 1 BSQ output for the voting weight
- * The fee need to match the fee defined for that cycle (can be changed by voting at each new cycle)
+ * The fee needs to match the fee defined for that cycle (can be changed by voting at each new cycle)
  * The block height must be in the correct period
 
 Contributors need to have the latest version installed when participating in voting to be sure to have the same version as the verification nodes.
@@ -324,9 +324,9 @@ After the vote reveal period and the following break has ended all the compensat
 - Verification rules for the issuance transaction
 
  * The BSQ output is equal to that what has been defined in the compensation request
- * The issuance amount need to be in the range of the min. and max. allowed amount
+ * The issuance amount needs to be in the range of the min. and max. allowed amount
  * The block height must have been in the correct compensation request period
- * The compensation request need to be accepted in the voting process
+ * The compensation request needs to be accepted in the voting process
 
 ===== Scenarios for gaming the voting process
 
@@ -351,11 +351,11 @@ Both need to fulfill basic requirements (availability, quality of work,...). If 
 
 ==== Lockup process
 
-To register as mediator or arbitrator one need to send the required amount of BSQ to an own BSQ address. This special transaction contains OP_RETURN data which are marking that transaction as lockup transaction (OP_RETURN type 0x04). Any spend transaction from this address would render the BSQ invalid as the only valid process to unlock those funds is to use the unlock transaction.
+To register as mediator or arbitrator one needs to send the required amount of BSQ to an own BSQ address. This special transaction contains OP_RETURN data which are marking that transaction as lockup transaction (OP_RETURN type 0x04). Any spend transaction from this address would render the BSQ invalid as the only valid process to unlock those funds is to use the unlock transaction.
 
 ==== Unlock process
 
-To unlock the funds he makes another transaction to himself with other OP_RETURN data (OP_RETURN type 0x05) which marks that transaction as an unlock request and will become available for spending after the lock time is over. The unlocking period is about 2 months (9000 blocks). The delay for unlocking is required to give the community enough time to act in case of abuse to prepare the steps for a possible confiscation. Therefore the lock period need to be rather long.
+To unlock the funds he makes another transaction to himself with other OP_RETURN data (OP_RETURN type 0x05) which marks that transaction as an unlock request and will become available for spending after the lock time is over. The unlocking period is about 2 months (9000 blocks). The delay for unlocking is required to give the community enough time to act in case of abuse to prepare the steps for a possible confiscation. Therefore the lock period needs to be rather long.
 
 ==== Confiscation
 

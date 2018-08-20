@@ -109,15 +109,15 @@ The offer maker will add the hash used in the AccountAgeWitness object to his of
 
 === Verification
 
-When a trader takes an offer both users are exchanging in the trade process the signature of data defined by the other peer (for taker we use the offer ID, for maker we use the takers preparedDepositTx - we use that data like a nonce for the signature), the pubKey, the salt and the peers local date. With that data the other peer can verify that the other trader is the owner of the AccountAgeWitness data (as the pugKey is part of the hash and the signature gets verified with pubKey and predefined input data) and that the hash is matching the account data used for the trade. As the date of both users will differ at least sightly we exchange the peers local date and use that for calculating the age and trade limit. The date need to be inside a 1 day tolerance otherwise the trade fails. That way we avoid problems with corner cases when the age just enters the next level for one peer but the verifying peer might get another result because of time differences. Any violation of those rules would lead to a failed trade.
+When a trader takes an offer both users are exchanging in the trade process the signature of data defined by the other peer (for taker we use the offer ID, for maker we use the takers preparedDepositTx - we use that data like a nonce for the signature), the pubKey, the salt and the peer's local date. With that data the other peer can verify that the other trader is the owner of the AccountAgeWitness data (as the pugKey is part of the hash and the signature gets verified with pubKey and predefined input data) and that the hash is matching the account data used for the trade. As the date of both users will differ at least slightly we exchange the peer's local date and use that for calculating the age and trade limit. The date needs to be inside a 1 day tolerance otherwise the trade fails. That way we avoid problems with corner cases when the age just enters the next level for one peer but the verifying peer might get another result because of time differences. Any violation of those rules would lead to a failed trade.
 
 
 ==== Verification steps
 1. Check if witness date is after release date for that feature (v. 0.6)
-2. Check if peers date is inside 1 day tolerance window
+2. Check if peer's date is inside 1 day tolerance window
 3. Verify if witness hash matches hash created from the data delivered by peer (ageWitnessInputData, salt, pubKey)
-4. Check if peers trade limit calculated with its account age is not lower than the trade amount.
-5. Verify if signature of the predefined input data (offer ID or preparedDepositTx) is correct using the peers pubKey.
+4. Check if peer's trade limit calculated with its account age is not lower than the trade amount.
+5. Verify if signature of the predefined input data (offer ID or preparedDepositTx) is correct using the peer's pubKey.
 
 
 NOTE: By using offer ID and preparedDepositTx for the nonce we avoid the need for a challenge protocol. We have chosen data which are defined by the other peer so they cannot be manipulated.
@@ -134,7 +134,7 @@ We need to be sure that the date of the trade in the AccountAgeWitness object ca
 
 A more advanced fraud approach would be an attempt of hijacking someone else's AccountAgeWitness and payment account to gain the benefit of an already aged account.
 
-A malicious trader could make a trade with someone who has already an old account and takes the account data of that trader to use it for an own account. That fake account can only be used for buying BTC because for selling he would not receive the Fiat money but the user from where he has "stolen" the data. Because he has traded with the peer he has received all the relevant data for the verification like the salt and the pubKey. To protect against such a hijacking attempt we use the peers signature to verify ownership of the AccountAgeWitness data. Without the private key the fraudster cannot create a correct signature matching the pubKey and input data. The public key is used for the hash in the AccountAgeWitness so he cannot alter that. The signed data is defined by the other peer and different for each trade so he has no chance to use data where he knows already the signature.
+A malicious trader could make a trade with someone who has already an old account and takes the account data of that trader to use it for an own account. That fake account can only be used for buying BTC because for selling he would not receive the Fiat money but the user from where he has "stolen" the data. Because he has traded with the peer he has received all the relevant data for the verification like the salt and the pubKey. To protect against such a hijacking attempt we use the peer's signature to verify ownership of the AccountAgeWitness data. Without the private key the fraudster cannot create a correct signature matching the pubKey and input data. The public key is used for the hash in the AccountAgeWitness so he cannot alter that. The signed data is defined by the other peer and different for each trade so he has no chance to use data where he knows already the signature.
 
 
 === Changing a foreign AccountAgeWitness
