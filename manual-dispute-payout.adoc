@@ -42,7 +42,7 @@ P2SHMultiSigOutputScript:
 
 === Step 1. Review dispute details
 
-In `Support > Aribtrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have received the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
+In `Support > Arbitrator's support tickets`, find the trade dispute in question, select it, and *review the closing chat message to determine who was the "winner" of the dispute*, i.e. who was supposed to have received the trading amount payout. For example, the closing comments on the dispute below make it clear that it was the seller who won the dispute:
 
 image:images/determine-winner.png[determining who was the winner]
 

@@ -19,7 +19,7 @@ But more critical is that if a node has bad connectivity it might miss messages 
 
 The seed node addresses (onion address) are hard coded in the application but can be overruled if the user adds a seed node address as program argument. Any user can run therefor their own seed node and connect to it.
 
-Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node need to support at least 30 connections.
+Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node needs to support at least 30 connections.
 
 Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
 
@@ -30,7 +30,7 @@ _Side note: The seed nodes on Linux get a out of memory error after running a fe
 
 === Duties of the seed node operator
 
-The operator of a seed node need to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he need to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
+The operator of a seed node needs to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he needs to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
 Operators need to subscribe to the Bisq Slack channel 'seednode' and act if their node reports errors.
 
 
