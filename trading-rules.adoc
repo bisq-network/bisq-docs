@@ -1,0 +1,12 @@
+= Trading and Arbitration Rules
+:imagesdir: images
+:!figure-caption:
+
+This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates.
+
+== Face-to-Face (F2F) Trading
+[[f2f-trading]]
+
+On Bisq, F2F trades are largely similar to online trades. This section outlines key differences. 
+
+_Coming soon._
