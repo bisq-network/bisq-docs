@@ -1,0 +1,84 @@
+= Bisq Mobile
+:imagesdir: images
+:!figure-caption:
+
+There are a couple of efforts underway to enable mobile functionality for Bisq. One of those efforts is Bisq mobile notifications, and it's ready to use today.
+
+== Mobile notifications
+
+The Bisq mobile notifications apps let you get notifications from Bisq desktop on your iPhone or Android device. This doc explains how to set it up and how it works.
+
+=== 1. Get the app
+
+* iOS: _link coming soon—waiting for Apple approval_
+* Android: _link coming soon—waiting for Google approval_
+
+=== 2. Pair it with Bisq desktop
+
+In your desktop Bisq app, go to the `Account` screen and click the `Notifications` button. There, click on `Scan QR code`. 
+
+In the mobile app, click `Pair` and scan the QR code with your computer's webcam. 
+
+[NOTE]
+If you don't have a webcam, click the `I don't have a webcam` button in desktop Bisq. Then send the pairing string on your mobile device to your computer and paste it in the text field. 
+
+You'll see a success message once pairing complete, and can then proceed to the notifications screen.
+
+=== 3. Configure notifications
+
+There are several types of notifications you can get: trade activities, offers you are interested in, price alerts, and dispute alerts. You can also enable and disable notification sounds.
+
+==== Open offers
+If enabled, you will get a notification when one of your open offers is taken.
+
+==== Trade alerts
+If enabled, you will get a notification whenever any action on your side is required on any open trades. 
+
+Example: you're buying BTC, just sent your deposit, and are waiting for the transaction to hit 1 blockchain confirmation. When it does, you'll get a notification letting you know it's time to send the fiat currency or altcoin.
+
+Example 2: you're selling BTC, and you're waiting for your trading partner to send you the fiat currency or altcoin. You'll get a notification as soon as they mark the payment as sent, so you can check for the payment and complete the trade.
+
+[WARNING]
+Please don't rely on mobile notifications to receive important messages. Mobiles notifications are new and there may be bugs. Please be sure to still check your desktop Bisq app for trade state, dispute messages, etc!
+
+==== Dispute messages
+If enabled, you will get a notification whenever there's a new dispute message. This notification will not include content of the message—it merely lets you know of the existence of a new dispute message on your desktop Bisq app.
+
+==== Offer alerts
+If enabled, you will get alerts whenever there's a new offer that fits your criteria.
+
+1. Select your preferred payment account. 
+
+2. Then select which offers you want to receive alerts for: buy or sell. If you want to buy bitcoin, you'll want to know when someone's made a good sell offer (and vice-versa if you want to sell bitcoin).
+
+3. Determine the % distance from the market price for which you want to get a notification. With a price distance set, you will only receive an alert when an offer that meets (or exceeds) your requirements is published. Example: you want to sell BTC, but you will only sell at a 2% premium to the current market price. Setting this field to 2% will ensure you only receive alerts for offers with prices that are 2% (or more) above the current market price.
+
+4. Hit `Add offer alert`.
+
+Clicking the `Manage offer alerts` button shows you a screen with all configured alerts. There, you can remove offer alerts you no longer need.
+
+==== Price alerts:
+If enabled, you'll get alerts when bitcoin hits the specified price in the specified currency. 
+
+First, select your currency. Then, choose the upper and lower price thresholds. You'll get an alert when the bitcoin price goes above your upper threshold, or when it goes below your lower threshold.
+
+Example: an alert set with an upper threshold of 6000 EUR and lower threshold of 5500 EUR will send you a notification when the market price goes over 6000 _or_ when it goes below 5500 EUR. 
+
+[NOTE]
+Once a price alert is triggered, it's deleted automatically so you don't get repeated notifications as the price fluctuates.
+
+=== Technical details & privacy:
+All notification content is encrypted by a key generated on your mobile device.
+
+That secret key and your mobile ID are passed to the desktop Bisq app at the time it's paired to your mobile device. 
+
+To send you a notification, here's what happens:
+
+* The desktop Bisq app encrypts the notification payload and sends it (along with your mobile ID) to a relay node over Tor. Because of Tor, the relay node does not know your IP address.
+* The relay node forwards the message to an Apple/Google push notification server, which then pushes a notification to your mobile device which it identifies using the mobile ID.
+
+Ultimately, Apple/Google know that a device with your mobile ID is receiving Bisq notifications, but they already knew you were a Bisq user the moment you downloaded the mobile app. 
+
+The important part is the companies cannot read any message content since it's encrypted from the time it leaves your desktop Bisq app to the time your mobile device receives the message.
+
+Push notifications can't be implemented in a more private manner. If you don't like any aspect of this mobile notifications mechanism, feel free to avoid using it—it's completely optional.

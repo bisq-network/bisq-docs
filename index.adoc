@@ -23,7 +23,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * Backup and Recovery — _Maintain backups to keep your settings and history safe_
  * Staying Private — _Maximize control over your personal info and trading data_
  * Trading and Arbitration Rules — _Know what's expected of you and others when trading_
- * Fees and Security Deposits - _Understand how your bitcoin is used and kept safe when trading_
+ * Fees and Security Deposits — _Understand how your bitcoin is used and kept safe when trading_
  * Support — _Get help from other Bisq users and contributors_
 
 === Features
@@ -33,16 +33,16 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 
 === Ecosystem
 
- * News and Announcements – _Stay informed with the Bisq https://github.com/bisq-network/proposals/issues/20[mailing list], https://twitter.com/bisq_network[Twitter], https://www.youtube.com/c/bisq-network[YouTube], https://www.facebook.com/bisqnetwork/[Facebook], etc_
+ * News and Announcements — _Stay informed with the Bisq https://github.com/bisq-network/proposals/issues/20[mailing list], https://twitter.com/bisq_network[Twitter], https://www.youtube.com/c/bisq-network[YouTube], https://www.facebook.com/bisqnetwork/[Facebook], etc_
  * Media and Press — _Catch up on https://twitter.com/bisq_network/status/946723541298360320[talks, interviews, podcasts and articles] about Bisq_
  * Chat and Discussion — _Connect with other users on the Bisq https://bisq.community[Forum], https://bisq.network/slack-invite[Slack], https://webchat.freenode.net/?channels=bisq[IRC], https://keybase.io/team/bisq[Keybase], etc_
- * Charts and Data – _Explore Bisq https://markets.bisq.network[markets], https://bisq.network/volume[global volume],  https://coin.dance/volume/bisq/[regional volume], https://bisq.network/release-stats[release statistics], etc_
+ * Charts and Data — _Explore Bisq https://markets.bisq.network[markets], https://bisq.network/volume[global volume],  https://coin.dance/volume/bisq/[regional volume], https://bisq.network/release-stats[release statistics], etc_
  * Ratings and Reviews — _Read Bisq user experience reports and reviews on sites like https://www.cryptocompare.com/exchanges/bisq/[CryptoCompare]_
 
 === Incubating Efforts
 
  * Bisq HTTP API — _Automate trading and interact programmatically with your Bisq node_
- * Bisq Mobile — _Operate your Bisq node remotely via a web/mobile frontend_
+ * <<bisq-mobile#, Bisq Mobile Notifications>> — _Get alerts for new offers, trades in process, and more right on your phone._
 
 == Contributor Docs
 
