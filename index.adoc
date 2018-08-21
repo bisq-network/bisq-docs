@@ -22,7 +22,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * <<secure-wallet#, Secure Your Wallet>> — _Set a password and save your seed words to keep your bitcoin safe_
  * Backup and Recovery — _Maintain backups to keep your settings and history safe_
  * Staying Private — _Maximize control over your personal info and trading data_
- * Trading and Arbitration Rules — _Know what's expected of you and others when trading_
+ * <<trading-rules#, Trading and Arbitration Rules>> — _Know what's expected of you and others when trading_
  * Fees and Security Deposits — _Understand how your bitcoin is used and kept safe when trading_
  * Support — _Get help from other Bisq users and contributors_
 
