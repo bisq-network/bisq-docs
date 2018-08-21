@@ -6,6 +6,8 @@ _This document is under development. Subscribe to https://github.com/bisq-networ
 
 To trade on Bisq, you assume one of two roles. You either make a new offer to buy or sell an asset (offer maker), or you agree to accept an existing offer to buy or sell an asset (offer taker).
 
+This document covers the rules and expectations for each role, as well as details on the process for arbitrating disputes.
+
 == Offer maker
 
 _Coming soon._
@@ -16,27 +18,53 @@ _Coming soon._
 
 == Arbitration
 
-When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to find a solution.
+When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution.
 
 _Coming soon. For now, you can read more about the arbitration process https://bisq.network/faq/#8[here]._
 
 == Face-to-Face (F2F) Trading
 [[f2f-trading]]
 
-On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real-life and pays with cash. 
+On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash. 
 
 This introduces some important differences.
 
 === Meeting your trading partner
 
-- safety precautions
-- validating currency, using credit cards to avoid carrying cash
-- ensuring both parties adhere to bisq trading protocol 
+Doing a transaction face-to-face means you'll be coming within close proximity of a stranger to exchange relatively substantial value.
+
+==== Be safe
+
+People do local, in-person commerce all the time, all over the world. Incidents are rare, but they do happen. You should be cognizant of risks and do your part to minimize potential harm.
+
+**Guard your data.** When you set up a face-to-face payment account in Bisq, you'll need to provide contact information so you can arrange a meeting with your trading partner. Make sure this information isn't traceable back to your property or identity.
+
+**Meet in a neutral public place.** Meeting your trading partner in a place with witnesses and security cameras significantly reduces the chance of an incident.
+
+**Don't bring more than you need.** Even in a public place, incidents can still happen, but you can limit the chance even further by limiting valuables on your person that would interest a thief in the first place.
+
+**Bring backup.** Consider bringing a friend with you. Also, depending on the laws in your area & your own comfort, consider carrying a concealed tool for self-defense. Even pepper-spray can hobble a criminal just enough to get you out of immediate danger.
+
+==== Validate payment
+
+Face-to-face trades are usually settled with cash. Cash is wonderfully anonymous, but it can be counterfeited. Be sure you know the basics of detecting counterfeit currency. For example, there are several characteristics of US dollar bills one can examine to quickly determine fakes with high accuracy.
+
+You could look for tools like counterfeit pens to do the work for you, but make sure you do thorough research before picking one. Counterfeit pens, for example, are often not reliable. 
+
+If you'd rather not take the chance of carrying or accepting cash, consider meeting at a bank where you can validate a buyer's payment on the spot.
+
+==== Ensure you follow Bisq protocol
+
+Ultimately, the deal will be completed in Bisq. Buyers must mark payment as sent before sellers can release assets.
+
+**Buyers** should either bring a laptop with them to mark the payment as sent, or they should click the `Payment sent` button before meeting the seller. Otherwise, the buyer will pay the seller and have to walk away without the assets they paid for.
+
+**Sellers** should bring a laptop with their Bisq client running no matter what. Once they receive a legitimate payment, they'll need to mark the payment as received so the assets are released to the buyer. No buyer will want to walk away after paying without proof of a complete deal.
 
 === Arbitration
 
-- how it's different & why
+The lack of verifiable actions makes arbitrating face-to-face disputes much harder.
 
-=== What it all means 
+The same arbitration process is in place for F2F trades, but be advised that arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
 
-To take a F2F offer, you need to first add a F2F payment account. 
+Arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
