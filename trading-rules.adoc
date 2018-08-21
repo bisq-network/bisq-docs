@@ -2,11 +2,41 @@
 :imagesdir: images
 :!figure-caption:
 
-This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates.
+_This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates._
+
+To trade on Bisq, you assume one of two roles. You either make a new offer to buy or sell an asset (offer maker), or you agree to accept an existing offer to buy or sell an asset (offer taker).
+
+== Offer maker
+
+_Coming soon._
+
+== Offer taker
+
+_Coming soon._
+
+== Arbitration
+
+When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to find a solution.
+
+_Coming soon. For now, you can read more about the arbitration process https://bisq.network/faq/#8[here]._
 
 == Face-to-Face (F2F) Trading
 [[f2f-trading]]
 
-On Bisq, F2F trades are largely similar to online trades. This section outlines key differences. 
+On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real-life and pays with cash. 
 
-_Coming soon._
+This introduces some important differences.
+
+=== Meeting your trading partner
+
+- safety precautions
+- validating currency, using credit cards to avoid carrying cash
+- ensuring both parties adhere to bisq trading protocol 
+
+=== Arbitration
+
+- how it's different & why
+
+=== What it all means 
+
+To take a F2F offer, you need to first add a F2F payment account. 
