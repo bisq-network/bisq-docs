@@ -2,7 +2,7 @@
 
 == Introduction
 
-This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skill to follow the instructions below can list any asset. There are no fees involved in this process.
+This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skill to follow the instructions below can list any asset. A fee structure for new listings is in the process of being determined. See https://github.com/bisq-network/proposals/issues/35[bisq-network/proposals#35^] for details.
 
 Please note that Bisq does not implement any technical infrastructure for listed assets, such as wallets, full nodes, block explorers, etc. Rather, Bisq simply supports users adding an address for any listed asset as a _payment account_ that can be used to settle trades for bitcoin. The process of sending and receiving such asset payments, like the process of sending and receiving fiat payments, is not an integrated part of the Bisq application; traders must use their own wallet software to perform actual transfers for such assets.
 
