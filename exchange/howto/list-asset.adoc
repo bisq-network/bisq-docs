@@ -34,7 +34,7 @@ A Bisq arbitrator must be able to look up transactions in the asset's block expl
 
 == Instructions
 
-IMPORTANT: Each of the steps described below deal with code in the https://github.com/bisq-network/bisq-assets repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
+IMPORTANT: Each of the steps described below deal with code in the `assets` directory of the https://github.com/bisq-network/bisq repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
 
 === Step 1. Implement your asset
 
@@ -42,9 +42,7 @@ IMPORTANT: Each of the steps described below deal with code in the https://githu
 .The `bisq.asset.Asset` type hierarchy
 image::images/asset-hierarchy.png[Asset Hierarchy]
 
-All assets listed on the Bisq exchange ultimately implement the https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Asset.html[`bisq.asset.Asset`] interface. Your asset implementation will need to extend the https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Coin.html[`Coin`], https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Token.html[`Token`] or https://jitpack.io/com/github/bisq-network/bisq-assets/-SNAPSHOT/javadoc/bisq/asset/Erc20Token.html[`Erc20Token`] subtypes as appropriate.
-
-TIP: The links above point to Javadoc for each respective type. Read it!
+All assets listed on the Bisq exchange ultimately implement the `bisq.asset.Asset` interface. Your asset implementation will need to extend the `Coin`, `Token` or `Erc20Token` subtypes as appropriate.
 
 TIP: Look through existing concrete `Asset` implementations for one most similar to yours and use it as a baseline.
 
@@ -71,7 +69,7 @@ TIP: Again, look to existing `AbstractAssetTest` implementations for a baseline 
 Run the following command and ensure you get a successful result.
 
 ----
-./gradlew build
+./gradlew :assets:build
 [...]
 BUILD SUCCESSFUL
 ----
