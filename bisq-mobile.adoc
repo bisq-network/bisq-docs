@@ -10,7 +10,7 @@ The Bisq mobile notifications app lets you get notifications from Bisq desktop o
 
 === 1. Get the app
 
-* iOS: link coming soon (waiting for Apple approval)
+* iOS: https://itunes.apple.com/us/app/bisq-mobile/id1424420411[install]
 * Android: https://play.google.com/store/apps/details?id=com.joachimneumann.bisq[install]
 
 === 2. Pair it with Bisq desktop
