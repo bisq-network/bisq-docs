@@ -10,8 +10,8 @@ The Bisq mobile notifications app lets you get notifications from Bisq desktop o
 
 === 1. Get the app
 
-* iOS: link coming soon (waiting for Apple approval)
-* Android: currently in beta (join https://bisq.network/slack-invite[#bisq-mobile on Slack] for access)
+* iOS: https://itunes.apple.com/us/app/bisq-mobile/id1424420411
+* Android: https://play.google.com/store/apps/details?id=com.joachimneumann.bisq
 
 === 2. Pair it with Bisq desktop
 
