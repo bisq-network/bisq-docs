@@ -1,6 +1,7 @@
 = Trading and Arbitration Rules
 :imagesdir: images
 :!figure-caption:
+:stylesdir: ./css
 
 _This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates._
 

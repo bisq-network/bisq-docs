@@ -1,4 +1,5 @@
 = Contributor Checklist
+:stylesdir: ./css
 
 So you're interested in contributing to Bisq--welcome! This checklist will get you plugged in and productive quickly as possible.
 

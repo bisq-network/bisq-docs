@@ -1,5 +1,6 @@
 = Getting Started with Bisq
-:imagesdir: images
+:imagesdir: ./images
+:stylesdir: ./css
 :!figure-caption:
 :btc-deposit: 0.01
 :btc-deposit-plus-fees: 0.011

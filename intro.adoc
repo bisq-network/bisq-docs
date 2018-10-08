@@ -1,4 +1,5 @@
 = A Brief Introduction to Bisq
+:stylesdir: ./css
 
 video::Fv-eCchzBZA[youtube,start=113,end=1168,width=860,height=480,options="modest"]
 

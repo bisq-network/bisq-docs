@@ -1,6 +1,7 @@
 = Bisq Mobile
 :imagesdir: images
 :!figure-caption:
+:stylesdir: ./css
 
 There are a couple of efforts underway to enable mobile functionality for Bisq. One of those efforts is mobile notifications, and it's ready to use today.
 

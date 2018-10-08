@@ -21,7 +21,8 @@ asciidoctor {
         docinfo1            : '',
         'gh-org'            : 'https://github.com/bisq-network',
         'gh-team'           : 'https://github.com/orgs/bisq-network/teams',
-        'role'              : 'https://github.com/bisq-network/roles/issues'
+        'role'              : 'https://github.com/bisq-network/roles/issues',
+        'stylesheet'        : 'lean-and-green.css'
 }
 
 build.dependsOn asciidoctor

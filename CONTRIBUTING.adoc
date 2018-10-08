@@ -1,4 +1,5 @@
 = Contributing to bisq-network Git repositories
+:stylesdir: ./css
 
 This document contains general contributor guidelines that apply to all bisq-network Git repositories.
 

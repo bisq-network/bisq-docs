@@ -1,5 +1,6 @@
 = Bisq Network Documentation
 :docinfo: private
+:stylesdir: ./css
 
 [TIP]
 .Brand new to Bisq?

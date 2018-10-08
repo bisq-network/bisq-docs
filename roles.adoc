@@ -1,4 +1,5 @@
 = Roles
+:stylesdir: ./css
 
 Roles are the way contributors take responsibility for Bisq Network resources and processes.
 
