@@ -1,5 +1,4 @@
 = Payment account age witness
-:stylesdir: ./css
 
 Manfred Karrer <mk@nucleo.io>
 2017-09-14

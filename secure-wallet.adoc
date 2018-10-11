@@ -1,7 +1,6 @@
 = Secure Your Wallet
 :imagesdir: images
 :!figure-caption:
-:stylesdir: ./css
 
 As with traditional money and valuables, it's critical that you take reasonable measures to keep your bitcoin safe. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
 

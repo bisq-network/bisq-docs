@@ -1,5 +1,4 @@
 = Proposals
-:stylesdir: ./css
 
 Proposals are a means for suggesting changes to Bisq Network software components, infrastructure and processes.
 
