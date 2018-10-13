@@ -1,5 +1,6 @@
 = How to list an asset
 :stylesdir: ../../css
+:docinfodir: ../../
 
 == Introduction
 

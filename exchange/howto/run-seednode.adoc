@@ -1,5 +1,6 @@
 = How to run a seed node
 :stylesdir: ../../css
+:docinfodir: ../../
 
 == Introduction
 

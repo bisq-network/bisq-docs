@@ -1,29 +1,58 @@
 <script>
 
     var devMode = ( ( window.location.protocol ).indexOf( 'file' ) > -1 ) ? true : false;
+    var pathName = window.location.pathname;
+    var relativePath = "./";
 
+    //remove local environment cruft to make local pathname like deployed pathname
     if( devMode ) {
-        var devModeSuffix = "/html5/index.html";
-        if( ( window.location.pathname ).slice( -devModeSuffix.length ) !== devModeSuffix ) {
-            addBackLink();
-        }
-    } else {
-        if( window.location.pathname !== '/' ) {
-            addBackLink();
-        }
+        var localEnvMarker = "/html5";
+        pathName = pathName.substring( pathName.indexOf( localEnvMarker ) + localEnvMarker.length );
+        pathName = pathName.replace( "index.html", "" );
     }
+
+    relativePath = findRelativePath( pathName );
+
+    if( pathName !== '/' ) {
+        addBackLink();
+    } 
+
+    addLogoImage();
 
     function addBackLink() {
         var link = document.createElement("a");
-        link.setAttribute("href", "index.html");
+        link.setAttribute("href", relativePath + "index.html");
         link.innerHTML = "← Back to index<br><br>";
         var ul = document.createElement("ul");
         var li = document.createElement("li");
         ul.appendChild(li);
         li.appendChild(link);
-        var toc = document.getElementById('toc')
+        var toc = document.getElementById('toc');
         var next = document.getElementById('toctitle').nextElementSibling;
         toc.insertBefore(ul, next);
+        return;
+    }
+
+    function findRelativePath( pathName ) {
+        var relativePath = "./";
+        var pathDepth = 0;
+        var s = ( pathName ).split('/').length;
+        if( s > 2 ) {
+            pathDepth =  s - 2;
+            relativePath = "";
+            for( var i = 0; i < pathDepth; i++ ) {
+                relativePath += "../";
+            }
+        }
+        return relativePath;
+    }
+
+    function addLogoImage() {
+        var tocTop = document.getElementById('toctitle');
+        var logoImg = document.createElement("img");
+        var toc = document.getElementById('toc')
+        logoImg.setAttribute("src", relativePath + "images/bisq-docs.svg");
+        toc.insertBefore(logoImg, tocTop);
         return;
     }
 

@@ -1,5 +1,6 @@
 = Bisq DAO Overview
 :stylesdir: ../css
+:docinfodir: ../
 
 NOTE: This overview of the Bisq DAO has been superseded by a new paper released on October 19th, 2017 titled <<phase-zero#, Phase Zero: A plan for bootstrapping the Bisq DAO>> Please refer to that document for more up to date information; this one will likely be removed soon.
 

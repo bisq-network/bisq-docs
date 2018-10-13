@@ -1,5 +1,6 @@
 = How to run a price relay node
 :stylesdir: ../../css
+:docinfodir: ../../
 
 == Introduction
 
