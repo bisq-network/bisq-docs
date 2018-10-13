@@ -1,14 +1,13 @@
 <script>
 
     var devMode = ( ( window.location.protocol ).indexOf( 'file' ) > -1 ) ? true : false;
-    var pathName = window.location.pathname;
+    var pathName = ( window.location.pathname ).replace( "index.html", "" );
     var relativePath = "./";
 
     //remove local environment cruft to make local pathname like live pathname
     if( devMode ) {
         var localEnvMarker = "/html5";
         pathName = pathName.substring( pathName.indexOf( localEnvMarker ) + localEnvMarker.length );
-        pathName = pathName.replace( "index.html", "" );
     }
 
     relativePath = findRelativePath( pathName );
