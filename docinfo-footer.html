@@ -1,14 +1,30 @@
 <script>
 
-    var link = document.createElement("a");
-    link.setAttribute("href", "index.html");
-    link.innerHTML = "← Back to index<br><br>";
-    var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    ul.appendChild(li);
-    li.appendChild(link);
-    var toc = document.getElementById('toc')
-    var next = document.getElementById('toctitle').nextElementSibling;
-    toc.insertBefore(ul, next);
+    var devMode = ( ( window.location.protocol ).indexOf( 'file' ) > -1 ) ? true : false;
+
+    if( devMode ) {
+        var devModeSuffix = "/html5/index.html";
+        if( ( window.location.pathname ).slice( -devModeSuffix.length ) !== devModeSuffix ) {
+            addBackLink();
+        }
+    } else {
+        if( window.location.pathname !== '/' ) {
+            addBackLink();
+        }
+    }
+
+    function addBackLink() {
+        var link = document.createElement("a");
+        link.setAttribute("href", "index.html");
+        link.innerHTML = "← Back to index<br><br>";
+        var ul = document.createElement("ul");
+        var li = document.createElement("li");
+        ul.appendChild(li);
+        li.appendChild(link);
+        var toc = document.getElementById('toc')
+        var next = document.getElementById('toctitle').nextElementSibling;
+        toc.insertBefore(ul, next);
+        return;
+    }
 
 </script>
