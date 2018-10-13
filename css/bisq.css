@@ -477,6 +477,7 @@ a {
     height: auto;
     margin: 0 auto 15px auto;
     max-width: 140px;
+    cursor: pointer;
 }
 
 @media only screen and ( max-width: 768px ) {
