@@ -9,6 +9,7 @@ asciidoctor {
         from(sourceDir) {
             include '**/*.png'
             include '**/*.svg'
+            include '**/*.ico'
             exclude 'build/**'
         }
     }

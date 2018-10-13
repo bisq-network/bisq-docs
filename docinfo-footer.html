@@ -4,7 +4,7 @@
     var pathName = window.location.pathname;
     var relativePath = "./";
 
-    //remove local environment cruft to make local pathname like deployed pathname
+    //remove local environment cruft to make local pathname like live pathname
     if( devMode ) {
         var localEnvMarker = "/html5";
         pathName = pathName.substring( pathName.indexOf( localEnvMarker ) + localEnvMarker.length );
@@ -12,12 +12,12 @@
     }
 
     relativePath = findRelativePath( pathName );
+    addFavicon();
+    addLogoImage();
 
     if( pathName !== '/' ) {
         addBackLink();
     } 
-
-    addLogoImage();
 
     function addBackLink() {
         var link = document.createElement("a");
@@ -58,6 +58,15 @@
             window.location.replace( relativePath + "index.html" );
         }
 
+        return;
+    }
+
+    function addFavicon() {
+        var faviconLink = document.createElement("link");
+        faviconLink.setAttribute( 'rel', 'icon' );
+        faviconLink.setAttribute( 'type', 'image/x-icon' );
+        faviconLink.setAttribute( 'href', relativePath + 'images/favicon.ico' );
+        document.head.appendChild( faviconLink );
         return;
     }
 
