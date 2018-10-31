@@ -188,8 +188,8 @@ Role owners should include a summary line item for each role they own in a month
 [example]
 .Per-role line items in a compensation request
 ====
-* Bisq Desktop Maintainer | https://github.com/bisq-network/roles/issues/63#issuecomment-401352998[bisq-network/roles#63 (comment)] | 350 BSQ
-* Bisq Seednode Operator | https://github.com/bisq-network/roles/issues/15#issuecomment-401547205[bisq-network/roles#15 (comment)] | 150 BSQ
+* Bisq Desktop Maintainer: https://github.com/bisq-network/roles/issues/63#issuecomment-401352998[bisq-network/roles#63 (comment)] `(350 BSQ)`
+* Bisq Seednode Operator: https://github.com/bisq-network/roles/issues/15#issuecomment-401547205[bisq-network/roles#15 (comment)] `(150 BSQ)`
 ====
 
 NOTE: Secondary role owners should not submit monthly reports or compensation requests for a role unless they actually performed the duties of that role during that month.
@@ -201,8 +201,8 @@ The amount of BSQ requested should include any hard costs (e.g. hosting) plus ti
 ====
 ## 2018.07 report
 
- * Regular duties | 150 BSQ
- * Big issue cleanup | 200 BSQ
+ * Regular duties `(150 BSQ)`
+ * Big issue cleanup `(200 BSQ)`
 
 Total: 350 BSQ
 
@@ -214,8 +214,8 @@ Total: 350 BSQ
 ====
 ## 2018.07 report
 
- * Hosting 2 nodes @ 50 USD/mo on Digital Ocean | 100 BSQ
- * Upgrade nodes to v0.7.1 | 50 BSQ
+ * Hosting 2 nodes @ 50 USD/mo on Digital Ocean `(100 BSQ)`
+ * Upgrade nodes to v0.7.1 `(50 BSQ)`
 
 Total: 150 BSQ
 
