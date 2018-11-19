@@ -53,6 +53,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * <<manual-dispute-payout#, How to issue a manual dispute payout>>
  * <<exchange/howto/run-seednode#, How to run a seednode>>
  * <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
+ * <<btcnode#, Bitcoin Node Maintainer Role>>
 
 == Papers
 
