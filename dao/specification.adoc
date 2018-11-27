@@ -6,7 +6,7 @@ NOTE: This document is a detailed technical specification for the Bisq DAO and B
 
 BSQ tokens are based on Bitcoin and use the Bitcoin blockchain similar to colored coins. We don't use any existing colored coin implementation because our use case requires some extra features which are not supported by those (e.g. decentralized issuance). Besides that, we did not want to introduce any external dependencies to a company or Altcoin. As Bitcoin is the default base currency in Bisq anyway, and our requirements can be 100% covered by the basic features Bitcoin provides we decided to build our custom colored coin solution on top of the Bitcoin blockchain. We don't have the ambition to provide a general purpose solution but have designed the model according to the concrete requirements of Bisq DAO.
 
-Technically a BSQ token is the same as Bitcoin but it adds some additional rules. A BSQ token is denominated as 100 Bitcoin satoshis so it can be divided in 100 subunits, leading to the smallest unit of 0.01 BSQ, which is equivalent to 1 satoshi. Bitcoin requires that the minimum amount of a transaction output is 2730 satoshis (dust limit) so for transferring BSQ tokens we inherit that limitation. The smallest possible BSQ amount to transfer is therefore 27.30 BSQ. As BSQ tokens are inherently BTC they will have at least the market value of the Bitcoin satoshis. So 1 BSQ = 100 satoshis >= the market value of 0.00000100 BTC, which equals at a market price of 20 000 USD/BTC, about 0.02 USD. The real market value of a BSQ token will be decided by the market once trading has started and will be the sum of that underlying BTC value with the value traders see in the Bisq project.
+Technically a BSQ token is the same as Bitcoin but it adds some additional rules. A BSQ token is denominated as 100 Bitcoin satoshis so it can be divided in 100 subunits, leading to the smallest unit of 0.01 BSQ, which is equivalent to 1 satoshi. Bitcoin requires that the minimum amount of a transaction output is 2730 satoshis (dust limit) so for transferring BSQ tokens we inherit that limitation. The smallest possible BSQ amount to transfer is therefore 27.30 BSQ. As BSQ tokens are inherently BTC they will have at least the market value of the Bitcoin satoshis. So 1 BSQ = 100 satoshis >= the market value of 0.00000100 BTC, which equals about 0.02 USD at a market price of 20 000 USD/BTC. The real market value of a BSQ token will be decided by the market once trading has started and will be the sum of that underlying BTC value with the value traders see in the Bisq project.
 
 ==== Wallet
 
@@ -24,7 +24,7 @@ We use that possibility to invalidate BSQ intentionally for "burning" tokens to 
 
 ==== Validation process
 
-The validation of the BSQ tokens requires the full blockchain data from the block containing the genesis transaction up to the latest block. To avoid that users need to download too much data we use a lite-node mode where all BSQ transactions are delivered by the dedicated block provider nodes at startup (we use the seed nodes for that but that can/should change later). The verification is done on the lite node itself (each Bisq application). Every time a new block is created by the miners, the block provider nodes (they operate as full nodes) are broadcasting the BSQ transactions contained in that block to the P2P network. The data is broadcasted by multiple block provider nodes, and if the data is not consistent the lite node would re-validate from the last snapshot (see below). Such inconsistency is expected in the case of https://en.bitcoin.it/wiki/Chain_Reorganization[chain reorganisations] (reorgs), but also delivers more resilience in case a block provider node is not providing reliable data.
+The validation of the BSQ tokens requires the full blockchain data from the block containing the genesis transaction up to the latest block. To avoid users from needing to download too much data we use a lite-node mode where all BSQ transactions are delivered by the dedicated block provider nodes at startup (we use the seed nodes for that but that can/should change later). The verification is done on the lite node itself (each Bisq application). Every time a new block is created by the miners, the block provider nodes (they operate as full nodes) broadcast the BSQ transactions contained in that block to the P2P network. The data is broadcasted by multiple block provider nodes, and if the data is not consistent the lite node would re-validate from the last snapshot (see below). Such inconsistency is expected in the case of https://en.bitcoin.it/wiki/Chain_Reorganization[chain reorganisations] (reorgs), but also delivers more resilience in case a block provider node is not providing reliable data.
 
 Furthermore we use snapshots of past blocks which will get distributed with the software release to reduce bandwidth requirements. Thus we do not require to load all BSQ transactions since the genesis transaction but only since the latest snapshot. At certain block-heights (every 100 blocks) the nodes are locally persisting snapshots. Those persisted snapshots will be used after a restart to only request the missing BSQ transactions from the blocks since the latest snapshot up to the actual chain head.
 
@@ -51,7 +51,7 @@ After that phase we start working on *phase 2* which includes the core features 
  - Voting on compensation requests
  - Issuance of new BSQ
 
-In* phase 3* we will focus on the implementation of the arbitration and mediation model. The security feature for locking up BSQ funds will be made available for the remaining yet not decentralized areas.
+In *phase 3* we will focus on the implementation of the arbitration and mediation model. The security feature for locking up BSQ funds will be made available for the remaining yet not decentralized areas.
 
 Once that is completed we can consider Bisq as *feature complete* and fully decentralized.
 
@@ -89,9 +89,9 @@ The way how the factors are applied, how the requested amounts get adjusted and 
 
 ==== Trade fee payment
 
-The trade fee can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as satoshis (BTC), thus the BTC value is not lost but used as mining fee.
+Beginning in Phase 1, trade fees can be paid in BSQ (if the user has sufficient BSQ in his wallet) or in BTC. The base fee in BTC will initially be 0.002 BTC. If BSQ is used it will be initially 2 BSQ. If the market price of BSQ is 0.0001 BSQ/BTC the BTC value of the trade fee paid in BSQ would be 0.0002 BTC which is 10% of the fee in BTC so they get a 90% discount. The fee payment is done by making a part of the BSQ invalid and give that part to miners as satoshis (BTC), thus the BTC value is not lost but used as mining fee.
 
-- A 0.50 BSQ fee payment tx could look like that:
+- A 0.50 BSQ fee payment tx could look like this:
 
  * Input 1: 10.00 BSQ
  * Input 2: 0.1 BTC
@@ -103,7 +103,7 @@ So in that case we only use 9.50 BSQ of the 10.00 BSQ from the input. As the sec
 
 The trade fee will be calculated based on the trade amount and the distance from the market price (if available). We use the same model for BTC and BSQ fees. A 1 BTC trade with 1% distance from the market price will use the default fee. If the trade amount is lower or higher we apply a linear adjustment. 0.1 BTC trade has 10% of the trade fee as long as we don't reach the minimum value for the trade fee. For the distance to the market price we use the square root of the percent value, so 9% would result in a factor of 3. A 16% distance to the market price would cause a 4 times increase of the trade fee.
 
-The fee is calculated according to that formula:
+The fee is calculated according to this formula:
 
 Math.max(Min. trade fee, Trade amount in BTC x default fee x sqrt(distance to market price in %))
 
@@ -115,7 +115,7 @@ WARNING: It is definitely NOT recommended to "hack" around with custom created t
 
 A BSQ transfer transaction is a normal BTC transaction with mixed inputs of BSQ and BTC. The BTC part is required for the mining fee payment. There is no OP_RETURN output required.
 
-- A typical BSQ transfer transaction could look like that:
+- A transaction to send 10 BSQ could look like this:
 
  * Input 1: 30.00 BSQ (BSQ sender)
  * Input 2: 0.01 BTC (required for mining fee)
@@ -144,7 +144,7 @@ Most users will likely operate in the lite node mode. They have to trust the see
 
 A lite node requests at startup from the seed node the missing BSQ blocks and then validates those blocks to achieve a local state of valid and unspent BSQ outputs. At each new block they receive the broadcasted messages from multiple seed nodes (min. 4 operated by different developers) and only if all those messages contain the same data the validation will succeed and the block will be added to the local state. In case of chain splits it can be that one of the seed nodes is on another chain and conflicting blocks get propagated. This would trigger a re-validation of all blocks from the latest snapshot for the lite node. The last received block would be considered as the current state but the user get displayed a message that there are conflicts and it is recommended to wait for more than one confirmation before considering a BSQ transaction as valid. Only after all full nodes (seed nodes) have the same state again the lite node will exit the "warning" state. If the user waits for a sufficiently high numbers of confirmation (4-6) he will not risk that his validation was based on an orphaned chain and that he could become victim of a double spend.
 
-====== Snapshots:
+====== Snapshots
 
 Every 100 blocks a snapshot mechanism gets triggered. The current state get cloned and kept in memory and if a previous clone exists the previous one will be persisted. At the next snapshot trigger event the latest clone will be persisted and a new clone will be cached again. That way the snapshot is always at least 100 blocks old.
 
@@ -171,7 +171,9 @@ Contributors can create a compensation request for the work they contributed to 
 
 If not sure about the value of their work for the community, they should make small work packages and discuss at the usual communication channels (Slack, GitHub, Forum,..) to see if the work they are proposing sparks some interest and support. To use upfront payment with escrow would make the process much more complicated (who controls the escrow,...). It also reflects the situation of normal freelance work where work is paid usually after the work is completed and the reputation of the company provides sufficient base for a trust relationship in most cases.
 
-To avoid spam the contributor needs to pay a fee of 1 BSQ. There will be a user interface in the application where the contributor fills in a form with the required data.
+**To make a request, a contributor must include enough BTC to issue the BSQ he's requesting (amount requested * 100 satoshis)**, and pay a 1 BSQ fee to discourage spam. See example compensation tx for 5000 BSQ below.
+
+There will be a user interface in the application where the contributor fills in a form with the required data.
 
 The contributor will publish the request to the P2P network after the fee tx is confirmed with 6 confirmations in the blockchain (6 confirmations to avoid issues with reorgs and tx malleability). The publishing of the compensation request can be done any time during the contribution request phase. A contributor can file several requests for different work packages. Any compensation request published after the first phase has ended (once the break starts) will get queued up for the next phase. Each node will verify the compensation request if it fulfills the rules and only forward valid requests. The UI will display own requests, the active requests of others as well as a history of all past requests.
 
@@ -212,24 +214,24 @@ The range for allowed amounts for a compensation request payout will be 50 BSQ t
 Contributors need to have the latest version installed when doing a request to be sure to have the same version as the verification nodes.
 
 
-- A compensation request tx for requesting 5000 BSQ would look like that (fee is 1 BSQ):
+- A compensation request tx for requesting 5000 BSQ would look like this (fee is 1 BSQ):
  * Input 1: 30.00 BSQ (needed for fee payment)
- * Input 2: 0.1 BTC (needed for mining fee as well as we need 1 BTC output
+ * Input 2: 0.1 BTC (needed for mining fee; we also need a BTC output)
  * Output 1: 29.00 BSQ (mandatory change output)
- * Output 2: 0.00500000 BTC (Requested BSQ amount to BSQ address defined in request)
+ * Output 2: 0.00500000 BTC (requested BSQ amount * 100 satoshis goes to BSQ address defined in request)
  * Output 3: 0.09450100 BTC (optional BTC change output)
  * Output 4 (last): OP_RETURN data as defined above
  * Mining fee: 0.00050000 (0.00049900 BTC from input 2 + 0.00000100 BTC or 1 BSQ from input 1)
 
 The input 1 needs to be larger than the fee so we enforce a BSQ change output (output 1). All outputs must not be smaller than the dust limit (2730 Satoshi). We require that the BSQ change is at input 0 and mandatory to have a clearly defined output index for the issuance output. The BSQ change output cannot be after the issuance output as that is interpreted as BTC as long it got not successfully voted.
  The BTC input at input 2 needs to be at least the sum of the requested BSQ and the miner fee, in our case 0.00500000 BTC (requested BSQ) + 0.00049900 BTC miner fee.
- Please note that the output 2 is at request time interpreted as BTC. Only after the request got accepted by voting the output will get interpreted as BSQ and thus the requester has issued himself BSQ.
+ Please note that the output 2 is at request time interpreted as BTC. *Only after the request gets accepted by voting does the output get interpreted as BSQ and thus the requester has issued himself BSQ.*
 
 ==== Voting
 
 To make the best decisions require a certain level of information and time. Voting in the DAO is an important service and should be only executed by those who are well informed and take sufficiently time to make well reasoned decisions. Therefore there will be a considerable fee for voting to de-incentivize stakeholders who are not sufficiently interested in the project. The fee will be set to 5 BSQ. The stakeholder can vote on a single vote item or on as many as they want.
 
-In the vote period a stakeholder cannot transfer his BSQ tokens which they used for voting, otherwise they would render their vote invalid. For that reason we should keep the vote period rather short to not lock up liquidity for too long. There might be an effect on the market price as if many stakeholder are using their coins for voting there will be less supply and therefore increase the price. Thought that effect should be limited as it is predictable and known in advance and it lasts just 5 days and the loss of the vote would also be not too problematic for some stakeholders, if they decide to prefer to trade their tokens instead.
+In the vote period a stakeholder cannot transfer his BSQ tokens which they used for voting, otherwise they would render their vote invalid. For that reason we should keep the vote period rather short to not lock up liquidity for too long. There might be an effect on the market price as if many stakeholder are using their coins for voting there will be less supply and therefore increase the price. Though that effect should be limited as it is predictable and known in advance and it lasts just 5 days and the loss of the vote would also be not too problematic for some stakeholders, if they decide to prefer to trade their tokens instead.
 
 All valid compensation requests from the current cycle are considered for voting. The stakeholder can choose to accept, decline or ignore a request. For acceptance or decline a simple majority is sufficient (> 50%).
 
@@ -305,7 +307,7 @@ The input for that transaction must be the BSQ output from the vote transaction.
 
 ===== Calculate the voting result
 
-After the vote reveal phase is over all Bis users will calculate the vote result.
+After the vote reveal phase is over all Bisq users will calculate the vote result.
 
 The user might also have a different vote data collection than voters. To get a consensus about a unique view of the vote data we look for the majority winner from the vote reveal transactions.
 We gather all valid reveal transactions and add up the BSQ inputs to find the winning vote data collection. In rare case we would have 2 compensation requests collections with the same BSQ stake we would use the one where the hash converted to a double number results in the smaller number.
