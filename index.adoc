@@ -49,11 +49,12 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * <<contributor-checklist#, Contributor Checklist>>
  * <<proposals#, Proposals>>
  * <<roles#, Roles>>
+    ** <<btcnode#, Bitcoin Core Node Operator>>
  * <<exchange/howto/list-asset#, How to list an asset>>
  * <<manual-dispute-payout#, How to issue a manual dispute payout>>
  * <<exchange/howto/run-seednode#, How to run a seednode>>
  * <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
- * <<btcnode#, Bitcoin Node Maintainer Role>>
+
 
 == Papers
 

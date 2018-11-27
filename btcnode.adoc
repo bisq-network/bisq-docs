@@ -1,15 +1,15 @@
 = Bitcoin Core Nodes
 
-Bisq contributors run a federation of Bitcoin Core nodes to ensure Bisq connects to nodes with consistent Bitcoin Core implementations.
+Bisq contributors run a federation of Bitcoin Core nodes to (1) avoid relying on bloom filters to protect user privacy when connecting to arbitrary public nodes and (2) ensure Bisq connects to nodes with consistent Bitcoin Core implementations.
 
 
 == Introduction
 
 In the past, Bisq connected to arbitrary Bitcoin Core nodes, but the prospect of the SegWit2x hard fork in Fall 2017 made it clear this was not ideal—in the case of a hard fork, it would be impossible for Bisq to tell which fork a connected node was running. The SegWit2x hard fork never happened, but if it did, there was a chance transactions would execute on an undesirable fork, and even worse, a chance that transactions would execute on different forks.
 
-Hence the decision to run a federation of Bitcoin nodes known to run the same Bitcoin Core implementation and configuration—Bisq can expect all bitcoin nodes it connects to enforce consistent block validation rules.
+Critically, bloom filters introduce serious privacy flaws when connecting to arbitrary bitcoin nodes, as chain analysis companies spy on SPV wallets. Connecting only to nodes run by trusted Bisq contributors avoids such monitoring.
 
-An important additional benefit of this setup is added user privacy: bloom filters in bitcoinj are not implemented very well, so connecting only to nodes run by trusted Bisq contributors avoids monitoring from arbitrary public nodes.
+Hence the decision to run a federation of Bitcoin nodes: more robust user privacy and a consistent Bitcoin Core implementation Bisq can rely on.
 
 Note: Bisq users can still choose to connect to arbitrary public nodes, as before, or even connect to specific nodes they prefer.
 
@@ -92,4 +92,4 @@ Set up a Bitcoin Core node, making sure to use the configuration https://github.
 
 === Step 3. Include Node in Bisq Source
 
-Once your node is ready, send a PR to include it as a Bitcoin Core node for Bisq (they're currently specified https://github.com/bisq-network/bisq/blob/ff4e22d5f537ec8e77bffb3fec116b96fa387c46/core/src/main/java/bisq/core/btc/nodes/BtcNodes.java[here]).
+Once your node is ready, send a PR to include it as a Bitcoin Core node for Bisq (they're currently specified https://github.com/bisq-network/bisq/blob/master/core/src/main/java/bisq/core/btc/nodes/BtcNodes.java[here]).
