@@ -76,8 +76,6 @@ The contributor(s) responsible for keeping full nodes running as outlined in <<p
 
 == Process
 
-[ the following is a rough outline in need of feedback and with blanks to fill ]
-
 === Step 0. Evaluate
 
 Determine if this is really a role you can fill. It's expected that your node will maintain (1) good uptime and (2) an up-to-date config and bitcoind version (as required by the Bitcoin Node Maintainer). There are no strict requirements for either, but it's expected that you will make your best effort to stay current.
@@ -88,7 +86,7 @@ Contact the Bitcoin Core Maintainer to convey your intention of setting up a Bit
 
 === Step 2. Set it Up
 
-Set up a Bitcoin Core node, making sure to use the configuration https://github.com/bisq-network/bisq-btcnode[specified here] [where is it, actually?]. Also make sure your node runs in a secure environment [ details? ] and that it allows onion connections so Bisq can connect to it.
+Set up a Bitcoin Core node, making sure to use the configuration https://github.com/bisq-network/bisq-btcnode/blob/master/bitcoin.conf[specified here]. Also make sure your node runs in a secure environment (i.e. basic server admin: locked-down user access, security patches applied promptly, etc) and that it allows onion connections so Bisq can connect to it.
 
 === Step 3. Include Node in Bisq Source
 
