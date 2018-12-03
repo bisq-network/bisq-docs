@@ -1,5 +1,4 @@
 = Bisq Network Documentation
-:docinfo: private
 
 [TIP]
 .Brand new to Bisq?

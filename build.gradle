@@ -8,6 +8,7 @@ asciidoctor {
     resources {
         from(sourceDir) {
             include '**/*.png'
+            include '**/*.ico'
             exclude 'build/**'
         }
     }
@@ -18,10 +19,13 @@ asciidoctor {
         icons               : 'font',
         idprefix            : '',
         idseparator         : '-',
-        docinfo1            : '',
+        docinfo             : 'shared@',
         'gh-org'            : 'https://github.com/bisq-network',
         'gh-team'           : 'https://github.com/orgs/bisq-network/teams',
-        'role'              : 'https://github.com/bisq-network/roles/issues'
+        'role'              : 'https://github.com/bisq-network/roles/issues',
+        'stylesheet'        : 'bisq.css',
+        'stylesdir'         : './css@',
+        'docinfodir'        : './@'
 }
 
 build.dependsOn asciidoctor

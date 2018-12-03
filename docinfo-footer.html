@@ -1,14 +1,72 @@
 <script>
 
-    var link = document.createElement("a");
-    link.setAttribute("href", "index.html");
-    link.innerHTML = "← Back to index<br><br>";
-    var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    ul.appendChild(li);
-    li.appendChild(link);
-    var toc = document.getElementById('toc')
-    var next = document.getElementById('toctitle').nextElementSibling;
-    toc.insertBefore(ul, next);
+    var devMode = ( ( window.location.protocol ).indexOf( 'file' ) > -1 ) ? true : false;
+    var pathName = ( window.location.pathname ).replace( "index.html", "" );
+    var relativePath = "./";
+
+    //remove local environment cruft to make local pathname like live pathname
+    if( devMode ) {
+        var localEnvMarker = "/html5";
+        pathName = pathName.substring( pathName.indexOf( localEnvMarker ) + localEnvMarker.length );
+    }
+
+    relativePath = findRelativePath( pathName );
+    addFavicon();
+    addLogoImage();
+
+    if( pathName !== '/' ) {
+        addBackLink();
+    } 
+
+    function addBackLink() {
+        var link = document.createElement("a");
+        link.setAttribute("href", relativePath + "index.html");
+        link.innerHTML = "← Back to index<br><br>";
+        var ul = document.createElement("ul");
+        var li = document.createElement("li");
+        ul.appendChild(li);
+        li.appendChild(link);
+        var toc = document.getElementById('toc');
+        var next = document.getElementById('toctitle').nextElementSibling;
+        toc.insertBefore(ul, next);
+        return;
+    }
+
+    function findRelativePath( pathName ) {
+        var relativePath = "./";
+        var pathDepth = 0;
+        var s = ( pathName ).split('/').length;
+        if( s > 2 ) {
+            pathDepth =  s - 2;
+            relativePath = "";
+            for( var i = 0; i < pathDepth; i++ ) {
+                relativePath += "../";
+            }
+        }
+        return relativePath;
+    }
+
+    function addLogoImage() {
+        var tocTop = document.getElementById('toctitle');
+        var logoImg = document.createElement("img");
+        var toc = document.getElementById('toc')
+        logoImg.setAttribute("src", relativePath + "images/bisq-docs.png");
+        toc.insertBefore(logoImg, tocTop);
+
+        logoImg.onclick = function() {
+            window.location.replace( relativePath + "index.html" );
+        }
+
+        return;
+    }
+
+    function addFavicon() {
+        var faviconLink = document.createElement("link");
+        faviconLink.setAttribute( 'rel', 'icon' );
+        faviconLink.setAttribute( 'type', 'image/x-icon' );
+        faviconLink.setAttribute( 'href', relativePath + 'images/favicon.ico' );
+        document.head.appendChild( faviconLink );
+        return;
+    }
 
 </script>

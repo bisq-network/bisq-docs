@@ -1,4 +1,6 @@
 = How to add an alternative base currency
+:stylesdir: ../../css
+:docinfodir: ../../
 
 == Introduction
 
