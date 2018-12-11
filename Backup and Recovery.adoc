@@ -1,23 +1,24 @@
 = Backup and Recovery
 
-The Bisq client is a hot wallet, this means there are Bitcoin and BSQ private keys stored locally on your hardware. Anyone who has access to these keys has full access and can send your money. Further, if you loose these private keys, you have lost your bitcoin, and they cannot be recovered. It is thus advised to always keep an encrypted backup of all the sensitive data in your wallet.
+The Bisq client is a hot wallet, this means there are Bitcoin and BSQ private keys stored locally on your hardware. Anyone who has access to these keys has full access and can send your money. Further, if you loose these private keys, you have lost your bitcoin, and they cannot be recovered. See chapter https://docs.bisq.network/secure-wallet.html[Secure Your Wallet] for details on the wallet password and mnemonic seed. This chapter specifically is for backing up the entire bisq client.
 
-== Password
+== Why is this Important
 
-Before sending any funds to the Bisq wallet, you should first set a wallet password. This password has to be entered every time you log into the wallet, and upon every attempt to send and withdraw currency. Go to the *Account* menu and the *Wallet Password* tab. Make sure that the password is longer than 8 characters, contains upper and lower case letters. It is very important that you write down this password, if you loose it, you will loose access to your money!! 
+Please note, that you need to create a backup of the whole application directory to recover the valid application state and data. The seed words are only a backup for the on chain funds, but not for the other sensitive data included in the Bisq client. Importing seed words is only recommended for emergency cases, as the application will not be functional without a proper backup.
 
-== Mnemonic Seed
+== What is Contained in the Backup File
 
-Make sure that you are in a secure location and that nobody is watching the screen other than you. Anyone who has the mnemonic seed has full control over your money, thus be extremely careful with whom you share this information! However, when you loose these words, you have lost your money, so store the paper in a secure location. Go to the *Account* menue and *Wallet Seed* tab, read and confirm the security warning, and write down the 12 English words on a piece of paper with a permanent pen. 
+* Private keys to on chain bitcoin and BSQ
+* Tor hostname, onion keys, state
+* Pending and closed trades, other trade statistics
 
-You can *restore wallets from seed words* and import money by typing the 12 words with a single space in between them. Setting the wallet creation date helps with the initial sync time. 
+== How to Create a Backup
 
-== Local Backup
+You can create a complete backup of the entire wallet, in the *Account* menu and the *Backup* tab. *Select Backup Location* on your local computer, USB stick or CD, and click *Backup Now*. Careful though, the backup file is not encrypted, and thus anyone who has this file can take all your money! 
 
-Please note, that you need to create a backup of the whole application directory to recover the valid application state and data. Importing seed words is only recommended for emergency cases, as the application will not be functional without a proper backup. You can create a complete backup of the entire wallet, in the *Account* menu and the *Backup* tab. This file contains your private keys, key for the Tor onion address, national currency account and trade history. *Select Backup Location* on your local computer, USB stick or CD, and click *Backup Now*. Careful though, the backup file is not encrypted, and thus anyone who has this file can take all your money! 
-
+== How to Import a Backup
 [%hardbreaks]
-When you want to *Import a Backup*, shutdown the Bisq client and copy the entire backup data from your USB stick to 
+Shutdown the Bisq client and copy the entire backup data from your USB stick to 
 Mac OSX: `~/Library/Application Support/Bisq`
 Linux: `~/.local/share/Bisq`
 Windows 7,8,10: `C:\Users\username\AppData\Roaming\Bisq`
