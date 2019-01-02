@@ -35,7 +35,7 @@ A BSQ token is a **colored coin** on the Bitcoin blockchain. More plainly, a BSQ
 1. the satoshis take on the market value of a BSQ token
 2. the owner of the satoshis is endowed with power to participate in various Bisq governance functions
 
-See it for yourself: here's a BSQ token on an ordinary block explorer, and here's that same UTXO on a BSQ block explorer.
+See it for yourself: here's a https://blockstream.info/testnet/tx/92df3183d3c60983492983882642145ac0ab8ef93cda07ff57d1f810e34003f6/[BSQ transaction on an ordinary block explorer^], and here's https://explorer.bisq.network/tx.html?tx=92df3183d3c60983492983882642145ac0ab8ef93cda07ff57d1f810e34003f6[that same transaction on a BSQ block explorer^].
 
 The value of a BSQ token is determined by the market as stakeholders buy and sell tokens to perform various functions in the DAO. Because BSQ tokens are only recognized by Bisq software, BSQ trading can only happen in Bisq software.
 
