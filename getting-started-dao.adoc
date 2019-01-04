@@ -165,7 +165,7 @@ After the blind voting phase is over, **you must make sure Bisq goes back online
 
 IMPORTANT: Bisq will publish the transaction automatically when it's online, so you don't have to actually do anything, but you can check the https://explorer.bisq.network/[BSQ block explorer^] to be sure the transaction was published. More details <<#explore-a-bsq-block-explorer,below>>.
 
-This transaction includes the key to decrypt your vote from the last phase. It also includes a representation of all votes you've received from the network, which is necessary to determine which peer on the network has the most complete view of all votes cast. See more details <<dao/specification#vote-reveal-phase,here>>.
+This transaction includes the key to decrypt your vote from the last phase. It also includes a representation of all votes you've received from the network, which is used to determine a consensus of all votes cast on the network. See more details <<dao/specification#vote-reveal-phase,here>>.
 
 Don't forget this step! If your vote reveal transaction is not published, your vote won't be decrypted, and it won't be counted.
 
@@ -203,7 +203,7 @@ Otherwise, check out our <<user-dao-intro#,conceptual overview of the Bisq DAO>>
 
 == Get help and stay in touch
 
-If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and the https://bisq.network/slack-invite[Bisq Slack team^].
+If you get stuck, reach out! There's a community of people to help you on https://bisq.network/slack-invite[Slack^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
 
 You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^] and https://www.youtube.com/c/bisq-network[YouTube^].
 

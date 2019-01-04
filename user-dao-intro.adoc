@@ -64,9 +64,8 @@ Now let's see how these dynamics enable the Bisq DAO to provide 3 core governanc
 
 Every project needs to be financial sustainable to fund ongoing operations and development. But traditional means of handling revenue and revenue distribution are necessarily centralized—any receiving address or account must be owned by one person, or a small group; determining how much a person should be paid must be determined by one person, or a small group; etc.
 
-The Bisq DAO seeks to avoid such centralization of authority. So, instead of taking in trading fees and then distributing them, the Bisq DAO distributes fees first and then puts them up for sale.
-
-Here's how it works: after a Bisq contributor does work, they file a **compensation request** in the DAO with a description of what they did and how much BSQ they want in return. Then, stakeholders (who are other contributors, traders, and anyone else with BSQ) vote for/against the request. If the request is approved, the contributor is issued new BSQ in the amount they requested.
+===== Contributors produce, creating BSQ
+In the Bisq DAO, trading fees are collected from traders and distributed to contributors, but there is no central authority to do this. Here's how it works: after a Bisq contributor does work, they file a **compensation request** in the DAO with a description of what they did and how much BSQ they want in return. Then, stakeholders (who are other contributors, traders, and anyone else with BSQ) vote for/against the request. If the request is approved, the contributor is issued _new_ BSQ in the amount they requested and **BSQ supply is increased**.
 
 [NOTE]
 .Where does new BSQ actually come from?
@@ -76,11 +75,21 @@ Recall that a BSQ token is merely colored bitcoin. When a contributor makes thei
 If their request is approved, those satoshis are 'colored' and recognized as 1,000 valid BSQ tokens on Bisq. Assuming a BSQ market value of 1 USD (exact value will fluctuate), the contributor will have been granted 1,000 USD worth of BSQ for a negligible cost of 3 USD.
 ====
 
-Then, a trader looking for lower trading fees can buy those BSQ tokens from the contributor. When they buy BSQ tokens for BTC, the contributor is paid for their work, and the value transfer is complete!
+===== Traders consume, burning BSQ
+Then, a trader looking for lower trading fees can buy those BSQ tokens from a contributor. When they buy BSQ tokens for BTC, the contributor is paid for their work, and the value transfer from producer to consumer is complete! When a trader pays trading fees with BSQ, those BSQ tokens are _burned_ or "decolored" and **BSQ supply is decreased**. This process of creating and destroying BSQ tokens enables a sort of https://docs.bisq.network/dao/phase-zero.html#how-bsq-decentralizes-compensation-and-enables-monetary-policy[monetary policy^] controlled by Bisq stakeholders and traders.
 
 In this way, there is no need for a central entity to collect and distribute revenue: the BSQ token enables a transfer of value from producer to consumer without any single entity controlling any aspect of the decision-making or distribution process.
 
-Please note: the Bisq DAO does not _require_ traders to use BSQ for trading fees. They're free to pay trading fees directly with BTC, but they will pay higher rates than if they bought BSQ with BTC and paid with BSQ instead.
+NOTE: The Bisq DAO does not _require_ traders to use BSQ for trading fees. They're free to pay trading fees directly with BTC, but they will pay higher rates than if they bought BSQ with BTC and paid with BSQ instead.
+
+
+[sidebar]
+.Note on BTC revenues
+--
+Currently, Bisq only collects trading fees in BTC, and these fees only go to arbitrators. There is no mechanism to distribute them to other contributors. The DAO solves this distribution problem with BSQ through the process outlined above. But since traders will also be able to pay fees with BTC when the DAO goes live, where will those BTC fees go then?
+
+For a little while, they will continue going to arbitrators. But shortly after the DAO launches on mainnet, Bisq will implement https://github.com/bisq-network/proposals/issues/52[a new trading protocol^] that removes arbitrators, and BTC fees will be sent to a "donation" address determined by DAO voting. This BTC could then be used to buy BSQ on the market to distribute the fees to stakeholders, and the BSQ obtained https://github.com/bisq-network/proposals/issues/55[will be burned^].
+--
 
 === Determine strategy
 
@@ -109,13 +118,13 @@ But what happens if that person goes rogue? In a project without central authori
 
 As with strategy and compensation, the community decides through voting. Anyone who suspects foul play can make a case for confiscating a bond with a new proposal, and stakeholders vote to determine an outcome.
 
-NOTE: Confiscating a bond is a harsh penalty which should not be taken lightly. Therefore, the Bisq DAO makes confiscation proposals especially hard to approve. Whereas regular proposals cost 1 BSQ to make, a confiscation proposal costs 100 BSQ to make, and it requires a quorum of at least 100,000 BSQ and 75% acceptance to pass (instead of the typical >50%).
+NOTE: Confiscating a bond is a harsh penalty which should not be taken lightly. Therefore, the Bisq DAO makes confiscation proposals especially hard to approve: they require a quorum of at least 200,000 BSQ and 85% acceptance to pass (instead of the typical >50%).
 
 In this way, the risk that people in high-trust roles misbehave is minimized, and the community has access to a responsble mechanism for handling such a scenario in cases that warrant it.
 
 == Now you try
 
-As of Bisq v0.9.0, the Bisq DAO is live on testnet! You can make a proposal, vote on others' proposals, buy testnet BSQ, and earn testnet BSQ.
+As of Bisq v0.9, the Bisq DAO is live on testnet! You can make a proposal, vote on others' proposals, buy testnet BSQ, and earn testnet BSQ.
 
 Voting cycles are currently set to about 7 days instead of the usual 1 month so that feedback and testing can be done quicker.
 
