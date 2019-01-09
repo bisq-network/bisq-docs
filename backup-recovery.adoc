@@ -1,26 +1,101 @@
 = Backup and Recovery
+:imagesdir: ./images
+:!figure-caption:
 
-The Bisq client is a hot wallet, this means there are Bitcoin and BSQ private keys stored locally on your hardware. Anyone who has access to these keys has full access and can send your money. Further, if you loose these private keys, you have lost your bitcoin, and they cannot be recovered. See chapter https://docs.bisq.network/secure-wallet.html[Secure Your Wallet] for details on the wallet password and mnemonic seed. This chapter specifically is for backing up the entire bisq client.
+All Bisq data is stored right on your computer. It's never sent or stored to a central server. That is great for your privacy and security, but it also means backing up your data is your job. This doc shows you how.
 
-== Why is this Important
+As you use Bisq, you'll accumulate data you will want to save, like your payment account details, onion address, local reputation, and more. Backing up this data not only protects you in case of unexpected events (e.g., computer crash, data corruption, etc), but it also gives you the flexibility to migrate elements of your Bisq environment to another machine (or even clone the whole setup).
 
-Please note, that you need to create a backup of the whole application directory to recover the valid application state and data. The seed words are only a backup for the on chain funds, but not for the other sensitive data included in the Bisq client. Importing seed words is only recommended for emergency cases, as the application will not be functional without a proper backup.
+We will start by covering the simplest, most common scenario—backing up and restoring the whole Bisq data directory—and then cover some more advanced use cases by breaking down what's actually in the data directory.
 
-== What is Contained in the Backup File
+IMPORTANT: Backing up your Bisq data directory is different from backing up your Bisq wallet's seed words. While the Bisq data directory includes a complete backup of your Bisq wallet, you should still <<secure-wallet#, write down your seed words>>. In a worst-case scenario, even if you can't restore your Bisq data, your seed words will at least allow you to retrieve your funds.
 
-* Private keys to on chain bitcoin and BSQ
-* Tor hostname, onion keys, state
-* Pending and closed trades, other trade statistics
+== Data Directory
 
-== How to Create a Backup
+=== Back Up
 
-You can create a complete backup of the entire wallet, in the *Account* menu and the *Backup* tab. *Select Backup Location* on your local computer, USB stick or CD, and click *Backup Now*. Careful though, the backup file is not encrypted, and thus anyone who has this file can take all your money! 
+All Bisq data is stored in one place:
 
-== How to Import a Backup
-[%hardbreaks]
-Shutdown the Bisq client and copy the entire backup data from your USB stick to 
-Mac OSX: `~/Library/Application Support/Bisq`
-Linux: `~/.local/share/Bisq`
-Windows 7,8,10: `C:\Users\username\AppData\Roaming\Bisq`
-Windows XP: `C:\Documents and Settings\username\Application Data\Bisq`
-Make sure that you merge and replace all the existing files. Importing the backup means that you delete the current state of the wallet, so make sure you have a second backup of the status quo. Upon restart of the Bisq client, the the backup account will automatically load.
+* macOS: `/Users/<username>/Library/Application Support/Bisq`
+* Linux: `/home/<username>/.local/share/Bisq`
+* Windows 7+: `C:\Documents and Settings\<username>\AppData\Roaming\Bisq`
+* Windows XP: `C:\Documents and Settings\<username>\Application Data\Bisq`
+
+**The safest, quickest, easiest, and most comprehensive thing you can do is to back up this whole folder at regular intervals.** You can either close Bisq and copy this folder to your backup location, or you can export a backup directly to your backup location while Bisq is running from the `Backup` tab of the `Account` screen.
+
+NOTE: Backup files are not encrypted. If you've set a wallet password, your wallet files will be encrypted, but all your other data will not be. We recommend encrypting the whole backup folder with something like gpg, 7-Zip, Cryptomator, etc.
+
+=== Restore
+
+First, make sure the Bisq program is closed. And just in case something goes wrong with the restore, back up the current state of your data directory (i.e., the `Bisq` folder).
+
+Then delete the whole `Bisq` folder and replace it with the `Bisq` folder from your backup.
+
+=== Details
+
+In your Bisq data directory, you will see a few items. The most notable file is `bisq.log`, which is the Bisq program log file. Checking it can be helpful when you have issues with the Bisq program.
+
+The other notable item is `btc_mainnet`, which is the main folder containing data for your payment accounts, Tor setup, and wallet.
+
+== Payment Accounts
+
+There are 2 components to payment accounts on Bisq: account details and account aging.
+
+**Account details** consist of all the payment methods you've set up and their associated account numbers, bank information, addresses, etc. You can export this data from within Bisq on the `National currency accounts` and `Altcoin accounts` tabs of the `Account` screen. Click `Export accounts` and Bisq will output a file that you can use to import these details later.
+
+**Account aging** establishes the age of your payment accounts. To reduce fraud, newer payment accounts have lower trading limits.
+
+To include account aging with your account details import, replace the `btc_mainnet/keys/sig.key` file with the `sig.key` file from your backup. Be sure you don't have any open offers, trades, or disputes before changing `sig.key`, otherwise you won't be able to respond to those activities.
+
+If you don't have an accounts export file, but you have a full backup of the data directory, you can still fully restore your accounts details and accounts aging by manually copying these files to your data directory from a backup:
+
+* `btc_mainnet/db/AccountAgeWitnessStore` (salt)
+* `btc_mainnet/keys/sig.key` (key used to sign p2p messages)
+* `btc_mainnet/keys/UserPayload` (account details)
+
+**Again, please make sure you don't have any open offers, trades, or disputes before changing `sig.key`.**
+
+IMPORTANT: Before manually making any changes to Bisq data files, please remember to back up the current state of your Bisq data directory and make sure the Bisq program is closed.
+
+== Tor State
+
+Bisq runs as a Tor hidden service to protect your privacy.
+
+As you do trades, you'll build _local reputation_ whereby Bisq will show you how many trades you've completed with other peers. The idea is that if one trade with someone went well, it's reasonable to expect your next trade with that person will go well too, creating a rudimentary sort of reputation while maintaining anonymity. This mechanism is tied to your onion address.
+
+If you want to migrate a particular onion address, you can replace the `btc_mainnet/tor/hiddenservice` folder in your data directory with the one from your backup.
+
+If you want to change your onion address, just delete the `btc_mainnet/tor/hiddenservice`. The next time you start Bisq, you'll have a different onion address.
+
+**Make sure you don't have any open offers, trades, or disputes before changing your onion address, as doing so will make you unreachable.**
+
+IMPORTANT: Before manually making any changes to Bisq data files, please remember to back up the current state of your Bisq data directory and make sure the Bisq program is closed.
+
+== Wallet Data
+
+Your wallet data is stored in `btc_mainnet/wallet`.
+
+Wallet issues (e.g., incorrect balance showing, corrupted/out-of-sync SPV file) can often be solved by resyncing the SPV chain and restarting the Bisq program. You can do this by clicking the `Delete SPV file and resync` button on the `Network info` tab of the `Settings` screen. If you can't access this screen, you can just delete the `bisq.spvchain` file in `btcmainnet/wallet` (just be advised that you will need to manually restart Bisq twice to complete the resync).
+
+If issues persist, you can try to restore a backup wallet file from `btc_mainnet/wallet/backup/backups_bisq_BTC_wallet`. This folder contains 20 of your most recent wallet backups (backups are made on a rolling basis). Replace the `bisq_BTC.wallet` wallet file in `btc_mainnet/wallet` with a backup wallet file and rename it to `bisq_BTC.wallet`. Start Bisq and see if your issue is fixed. If not, repeat with another backup.
+
+In extreme cases, if neither resyncing the SPV file nor restoring a wallet backup solves the problem, you might need to set up a new data directory. Make sure you don't have any open offers, trades, or disputes before doing this, as you won't be able to respond to these activities any longer.
+
+Here's how to do it:
+
+* make sure you have your Bisq wallet's <<secure-wallet#, seed words>>
+* close Bisq
+* delete the whole `Bisq` directory (after backing it up, just in case)
+* start Bisq (it will generate a fresh new data directory)
+* restore your wallet from seed words in the Bisq interface (on the `Wallet seed` tab of the `Account` screen)
+* optional: restore payment accounts and/or Tor keys through the processes outlined above
+
+**Make sure you don't have any open offers, trades, or disputes before doing this.**
+
+Please do not try to copy an old wallet backup folder (i.e., `btc_mainnet/wallet`) into a new data directory, as that will cause internal database files to be out of synx—just restore from seed words.
+
+IMPORTANT: Before manually making any changes to Bisq data files, please remember to back up the current state of your Bisq data directory and make sure the Bisq program is closed.
+
+== Trade History
+
+You can export your trade history for your own records in CSV format on the `History` tab of the `Portfolio` screen. Note that there is no way to import this data.
