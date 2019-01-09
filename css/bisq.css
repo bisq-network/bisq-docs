@@ -480,6 +480,14 @@ a {
     cursor: pointer;
 }
 
+.imageblock.left, .imageblock[style*="float: left"] {
+    margin: .25em 1.625em 1.25em 0;
+}
+
+.imageblock.right, .imageblock[style*="float: right"] {
+    margin: .25em 0 1.25em 1.625em;
+}
+
 @media only screen and ( max-width: 768px ) {
     #toc img {
         margin-top: 40px;

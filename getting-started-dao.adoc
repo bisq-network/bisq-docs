@@ -1,0 +1,214 @@
+= Getting Started with the Bisq DAO
+:imagesdir: ./images
+:!figure-caption:
+
+The Bisq DAO will soon go live on mainnet. But there's no need to wait—you can tinker with it right now and experience truly decentralized governance for yourself.
+
+In this guide, we'll show you how to use the Bisq DAO on testnet.
+
+Specifically, we will walk through one voting cycle. Voting is a crucial duty within the Bisq DAO that makes decision-making for the Bisq project accessible to all who use it—users and contributors alike. You'll see how to make a proposal, vote on other proposals, and how the BSQ token enables the process to be handled in a decentralized and trustless but meritocratic way.
+
+For a brief overview of how the Bisq DAO works, see our <<user-dao-intro#,Introduction to the Bisq DAO>> doc.
+
+[IMPORTANT]
+.Before you get started, please note the following:
+====
+
+* **This guide assumes you have Bisq v0.9.1 or later installed**. If not, you can get it from https://bisq.network/downloads/[the Bisq downloads page^].
+
+* **All references to BTC and BSQ in this guide are for testnet values**. You should _not_ be working with real BTC at any point during this guide.
+====
+
+Let's begin!
+
+== Switch to testnet mode
+
+The Bisq DAO is only live in testnet mode right now, so you'll need to run Bisq in testnet mode. To do this, simply switch from `Bitcoin_MAINNET` to `Bitcoin_TESTNET` in the `General preferences` section of the `Settings` screen.
+
+Bisq maintains completely separate data directories for mainnet and testnet modes, so it will generate a whole new directory for testnet when you restart Bisq in testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on testnet.
+
+[WARNING]
+.Beware of open offers and open disputes!
+====
+Because Bisq runs from a totally different data directory in testnet mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
+====
+
+Go ahead and restart Bisq when prompted. Voilà—you should be in testnet mode. You'll know because the window's title bar should include the text `[TESTNET]` and the main menu bar will have a `DAO` button.
+
+.Switch to testnet from the Settings screen.
+image::switch-testnet.png[Switch to testnet]
+
+== Acquire some BSQ
+
+As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
+
+First, in order to get any BSQ, you'll need your BSQ wallet address, which is already generated. On the `DAO` screen, go to the `BSQ Wallet` tab. In the `Receive` section, you'll see an address:
+
+.Get your BSQ wallet address.
+image::get-bsq-address.png[Get your BSQ address]
+
+Now, there are 2 ways to get BSQ for testnet:
+
+* request some BSQ https://bisq.network/slack-invite[on Slack^]
+* buy BSQ in Bisq with testnet BTC
+
+=== Option A: Request BSQ on Slack
+
+This method is simple enough. Just ask for some BSQ https://bisq.network/slack-invite[on Slack^], and a contributor will send you some. Don't forget to include your BSQ address.
+
+=== Option B: Buy BSQ on Bisq
+
+Of course, when the Bisq DAO goes live on mainnet, getting BSQ won't be as simple as asking for it—you'll need to buy it (or work for it).
+
+Buying BSQ on Bisq is a little more work, but if you want a more authentic Bisq DAO experience, this is the way to go.
+
+NOTE: In order to buy BSQ on Bisq, there need to be sellers offering BSQ for you to buy. Because the Bisq DAO is in testing right now, the market can be a bit thin. You might want to check the `Sell BTC` screen to see if there are any open offers for BSQ before proceeding.
+
+==== 1. Create a BSQ payment account
+
+In order to take an offer to buy BSQ, you'll need to have a BSQ payment account set up. Go ahead and create one, just like you would create a fiat or altcoin account: on the `Account` screen, pick BSQ from the `Altcoin` dropdown and put in your BSQ address.
+
+.Create a new BSQ payment account.
+image::add-new-bsq-account.png[Create a new BSQ payment account]
+
+==== 2. Get some testnet BTC
+
+To buy BSQ, you'll need BTC. You can get testnet BTC https://coinfaucet.eu/en/btc-testnet/[here^] or http://tpfaucet.appspot.com/[here^]. Just put in the BTC address of your Bisq wallet, which you can find in the `Receive funds` section of the `Funds` screen, and you should receive testnet BTC shortly afterward.
+
+==== 3. Take an offer to buy BSQ with BTC
+
+Now that you've got testnet BTC, head over to the `Sell BTC` screen and choose BSQ in the `Filter by currency` dropdown. Take an offer you like and complete the trade.
+
+.Pick an offer to buy BSQ with BTC.
+image::buy-bsq-with-btc.png[Buy BSQ with BTC]
+
+As noted above, you may not see any open offers to buy BSQ with BTC. If that's the case, you can try waiting until there is an offer, or acquire BSQ through <<option-a-request-bsq-on-slack, Option A>> instead.
+
+== Participate in a voting cycle
+
+Now that you've got some BSQ, let's use it.
+
+There's a lot you'll be able to do with BSQ when the DAO goes live on mainnet (like, for example, getting a 90% discount on trading fees by paying for trades with BSQ instead of BTC).
+
+For now, we'll use it to test Bisq's governance mechanism: making proposals and voting on proposals to change various aspects of Bisq.
+
+We'll do this by participating in one voting cycle in the Bisq DAO. Voting cycles are composed of 4 phases and last for 4,380 blocks (about 1 month on average). Here are the 4 phases:
+
+1. **Proposal phase**, in which stakeholders submit compensation requests and other proposals requesting reimbursements for trading fees, changes in trading parameters, or changes in some other aspect of the Bisq project.
+2. **Blind voting phase**, in which stakeholders cast their votes on submitted proposals. Votes are encrypted in this phase to prevent later voters from being influenced by earlier voters.
+3. **Vote reveal phase**, in which each stakeholder sends the decryption key for their vote.
+4. **Vote result phase**, in which vote results are calculated and BSQ is issued accordingly.
+
+For testing, voting cycles are shortened to 979 blocks (just under 7 days), and each phase is shortened proportionally. You can see exact timeframes on the `Dashboard` section of the `Governance` tab on the `DAO` screen.
+
+.Testnet voting cycle overview.
+image::voting-cycle-overview.png[Testnet voting cycle overview]
+
+Let's begin by making a proposal.
+
+=== 1. Make a proposal
+
+NOTE: To make a proposal for the current voting cycle, the voting cycle needs to be in the proposal phase. If it's in the blind voting phase, you can skip this section and <<2-vote-on-proposals, vote on current proposals>>. If it's beyond both these phases, you'll need to wait to participate until the next voting cycle starts.
+
+In the `Make proposal` section of the `Governance` tab of the `DAO` screen, you'll find a form to make a new proposal. Simply fill the form and hit `Make proposal`.
+
+We'll make a proposal to change a parameter, but feel free to make another type of proposal:
+
+.Make a proposal.
+image::make-test-dao-proposal.png[Make a proposal]
+
+Couple things to note:
+
+* Information you're asked to provide will vary based on the type of proposal you're making.
+* In most cases, you'll need to provide a link with more information on your proposal. Since these proposals are not real, please don't make new GitHub issues—just link to one that already exists.
+* There's a 2 BSQ fee to make a proposal to discourage spam.
+
+Once you're done making a proposal, you can sit back and relax until voting starts.
+
+=== 2. Vote on proposals
+
+[.float-group]
+--
+[.right.text-center]
+.Cast vote on a proposal.
+image::vote-proposal.png[Cast vote on proposal,400,400]
+
+Once the period to make proposals is over, it's time to vote. As long as you have some BSQ, you can vote—it doesn't matter if you submitted a proposal or not.
+
+You can see all proposals in the current voting cycle in the `Browse open proposals` section of the `Governance` tab on the `DAO` screen.
+
+Click through each proposal to see more details, and then vote on the proposals you want—you can vote for the ones you like (ideally, the ones you know intimately and have a strong opinion about).
+
+--
+
+[.float-group]
+--
+[.left.text-center]
+.Select voting weight and submit all votes.
+image::vote-submit.png[Select voting weight ad submit all votes,400,400]
+
+When you're done casting your votes, make sure you actually submit your votes by clicking the `Vote on all proposals` button at the bottom of the screen.
+
+To submit your votes, you'll need to specify a BSQ amount to use for **voting weight**. The more BSQ you include in your vote, the more weight the vote carries. This BSQ cannot be traded or otherwise transferred for the remainder of the voting cycle, or your vote will be rendered invalid. It will be released for you to use again as soon as the voting cycle has finished.
+
+This is why, as you see in the screenshot to the left, we use most (but not all) of our BSQ for the voting weight—we left some BSQ available for spending in case we need it for other purposes during the voting cycle.
+
+--
+
+`Vote weight from earned BSQ` is BSQ earned from contributing to Bisq: this BSQ is treated slightly differently from BSQ bought on the open market when determining a stakeholder's voting weight.
+
+For an overview of voting weight, see <<user-dao-intro#determine-strategy,this section>> of our Introduction to the Bisq DAO doc.
+
+=== 3. Reveal your vote
+
+After the blind voting phase is over, **you must make sure Bisq goes back online at some point during the vote reveal phase to publish your vote reveal transaction**.
+
+IMPORTANT: Bisq will publish the transaction automatically when it's online, so you don't have to actually do anything, but you can check the https://explorer.bisq.network/[BSQ block explorer^] to be sure the transaction was published. More details <<#explore-a-bsq-block-explorer,below>>.
+
+This transaction includes the key to decrypt your vote from the last phase. It also includes a representation of all votes you've received from the network, which is used to determine a consensus of all votes cast on the network. See more details <<dao/specification#vote-reveal-phase,here>>.
+
+Don't forget this step! If your vote reveal transaction is not published, your vote won't be decrypted, and it won't be counted.
+
+=== 4. Get vote results
+
+Once the vote reveal phase is over, results are published and the next voting cycle starts. You can see results on the `Vote results` section of the `Governance` tab of the `DAO` screen.
+
+.See voting results.
+image::dao-vote-results.png[See voting results]
+
+As you can see, our proposal was accepted. Hopefully you have similar luck!
+
+If your proposal was a compensation request, this is when the BTC you included in your request will show as BSQ (after having been 'colored' by the voting process). Check your BSQ wallet balance in the `BSQ Wallet` tab of the `DAO` screen to see the updated balance.
+
+That's it—you've now participated in a full voting cycle of the Bisq DAO, the upcoming decentralized governance mechanism for the Bisq exchange. Bravo!
+
+== Explore a BSQ block explorer
+
+Since BSQ is just bitcoin, you can see BSQ transactions on any bitcoin block explorer. But because these bitcoins are colored, ordinary bitcoin block explorers can't recognize which bitcoin transactions are also BSQ transactions.
+
+So there's a https://explorer.bisq.network/testnet/[BSQ block explorer^]. Whenever you do a BSQ transaction, you can see it there.
+
+See the difference: here's https://explorer.bisq.network/tx.html?tx=3dc364b55fa9e92058d52a9c09b98300781414573f123e63367ff3749a8615b2[a simple transaction^] on the BSQ block explorer that shows the transfer of 500 BSQ from one wallet to another. https://blockstream.info/testnet/tx/3dc364b55fa9e92058d52a9c09b98300781414573f123e63367ff3749a8615b2/[Here's that same transaction^] on an ordinary bitcoin block explorer.
+
+Here's a screenshot of the past few BSQ transactions as of mid-December 2018. You'll notice that this block explorer recognizes the various transaction properties that make valid BSQ transactions, and it labels them accordingly:
+
+.Some BSQ transactions on the https://explorer.bisq.network[BSQ block explorer^].
+image::bsq-block-explorer.png[Some recent BSQ transactions]
+
+== Next steps
+
+At the moment, the Bisq DAO is being tested thoroughly. If you'd like to help, there are bounties! https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[See more details here^].
+
+Otherwise, check out our <<user-dao-intro#,conceptual overview of the Bisq DAO>> and our https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[video series^] on DAO concepts.
+
+== Get help and stay in touch
+
+If you get stuck, reach out! There's a community of people to help you on https://bisq.network/slack-invite[Slack^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
+
+You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^] and https://www.youtube.com/c/bisq-network[YouTube^].
+
+And if you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
+
+== Improve this doc
+
+Find a typo or have other suggestions for improvement? Please https://github.com/bisq-network/bisq-docs/blob/master/{docname}{docfilesuffix}[edit this doc] or https://github.com/bisq-network/bisq-docs/issues/new?title=Improvement+suggestion+for+{docname}{docfilesuffix}[report an issue].
