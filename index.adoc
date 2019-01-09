@@ -24,7 +24,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
  * <<getting-started#, Getting Started>> — _Download, set up and start trading with Bisq in minutes_
  * <<getting-started-dao#, Getting Started with the Bisq DAO>> — _Trade, vote, and govern Bisq through the DAO with BSQ_
  * <<secure-wallet#, Secure Your Wallet>> — _Set a password and save your seed words to keep your bitcoin safe_
- * Backup and Recovery — _Maintain backups to keep your settings and history safe_
+ * <<backup-recovery#, Backup and Recovery>> — _Maintain backups to keep your settings and history safe_
  * Staying Private — _Maximize control over your personal info and trading data_
  * <<trading-rules#, Trading and Arbitration Rules>> — _Know what's expected of you and others when trading_
  * Fees and Security Deposits — _Understand how your bitcoin is used and kept safe when trading_
