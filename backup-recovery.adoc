@@ -43,7 +43,7 @@ There are 2 components to payment accounts on Bisq: account details and account 
 
 **Account details** consist of all the payment methods you've set up and their associated account numbers, bank information, addresses, etc. You can export this data from within Bisq on the `National currency accounts` and `Altcoin accounts` tabs of the `Account` screen. Click `Export accounts` and Bisq will output a file that you can use to import these details later.
 
-**Account aging** is a measure to reduce fraud. Newer payment accounts have lower trading limits. It takes 3 months for a payment account to reach the maximum trading limit.
+**Account aging** is a measure to reduce fraud risk for fiat payments. Newer accounts have lower trading limits. It takes 3 months for a payment account to reach the maximum trading limit. See more details on account aging <<payment-account-age-witness#, here>>. Note that account aging does not apply to altcoin accounts since they don't have chargeback risk.
 
 To restore payment account details, simply import the file you exported earlier through the same interface.
 
@@ -51,9 +51,8 @@ To include account aging with your account details import, you will also need to
 
 If you don't have an accounts export file, but you have a full backup of the data directory, you can still fully restore your accounts details and accounts aging by manually copying the following files to your data directory from a backup:
 
-* `btc_mainnet/db/AccountAgeWitnessStore` (salt)
-* `btc_mainnet/keys/sig.key` (key used to sign p2p messages)
-* `btc_mainnet/keys/UserPayload` (account details)
+* `btc_mainnet/db/UserPayload` (account details and salt)
+* `btc_mainnet/keys/sig.key` (key for signing p2p messages)
 
 **Again, please make sure you don't have any open offers, trades, or disputes before changing `sig.key`.**
 
@@ -63,11 +62,22 @@ IMPORTANT: Before manually making any changes to Bisq data files, please ensure 
 
 Bisq runs as a Tor hidden service to protect your privacy.
 
-As you do trades, you'll build _local reputation_ whereby Bisq will show you how many trades you've completed with other peers. The idea is that if a trade with someone went well, it's reasonable to expect your next trade with that person will go well too, creating a rudimentary sort of reputation indicator while maintaining anonymity. This mechanism is tied to your onion address.
+[.float-group]
+--
 
-If you want to migrate a particular onion address, you can replace the `btc_mainnet/tor/hiddenservice` folder in your data directory with the one from your backup.
+[.right.text-center]
+.Local reputation.
+image::repeat-trading-peer.png[Local reputation,300,300]
 
-If you want to change your onion address, just delete the `btc_mainnet/tor/hiddenservice`. The next time you start Bisq, you'll have a different onion address.
+As you do trades, you'll build _local reputation_ whereby Bisq will show you how many trades you've completed with other peers. The idea is that if a trade with someone went well, it's reasonable to expect your next trade with that person will go well too, creating a rudimentary sort of reputation indicator while maintaining anonymity.
+
+This mechanism is tied to your onion address. You'll see it when browsing open offers: Bisq will add a bubble next to the avatars of peers you've previously traded with indicating how many times you've already traded with them.
+
+--
+
+If you want to carry over a particular onion address (and keep your local reputation), you can replace the `btc_mainnet/tor/hiddenservice` folder in your data directory with the one from your backup.
+
+If you want to change your onion address, just delete the `btc_mainnet/tor/hiddenservice`. The next time you start Bisq, you will have a different onion address. You'll lose your local reputation, but you'll gain privacy since you will appear as a new trader on the network. That means your past trading partners will no longer be able to recognize that your new offers are from _you_.
 
 **Make sure you don't have any open offers, trades, or disputes before changing your onion address, as doing so will make you unreachable.**
 
@@ -75,7 +85,7 @@ IMPORTANT: Before manually making any changes to Bisq data files, please ensure 
 
 == Wallet Data
 
-Your wallet data is stored in `btc_mainnet/wallet`. There are 3 ways to work with wallet backup files to resolve wallet issues.
+Your wallet data is stored in `btc_mainnet/wallet`. There are 3 primary ways to work with wallet backup files to resolve wallet issues.
 
 === Resync SPV chain
 
@@ -83,30 +93,31 @@ Wallet issues (e.g., incorrect balance showing, corrupted/out-of-sync SPV file) 
 
 The SPV file is a collection of data from the bitcoin blockchain that tells Bisq your wallet's balances. All data in the file is available on the bitcoin network. Deleting this file just forces Bisq to resync with the Bitcoin network and fetch the data it needs to determine your balances again.
 
-NOTE: Resyncs can take a while, depending on how old your wallet it is and how many transactions you did with it. Be patient!
+NOTE: Resyncs can take a while, depending on how old your wallet it is and how many transactions you did with it. Your CPU may run at 100% and Bisq will appear unresponsive. This is normal. Be patient!
 
 === Restore wallet backup
 
-If issues persist, you can try to restore a backup wallet file from `btc_mainnet/wallet/backup/backups_bisq_BTC_wallet`. This folder holds your 20 most recent wallet backups made on a rolling basis. Replace the `bisq_BTC.wallet` wallet file in `btc_mainnet/wallet` with a backup wallet file and rename it to `bisq_BTC.wallet`.
+If issues persist, you can try to restore a backup wallet file from `btc_mainnet/wallet/backup/backups_bisq_BTC_wallet`. This folder holds your most recent wallet backups made on a rolling basis. Replace the `bisq_BTC.wallet` wallet file in `btc_mainnet/wallet` with a backup wallet file and rename it to `bisq_BTC.wallet`. You'll also need to resync the SPV chain, so be sure to delete `bisq.spvchain` when restoring a wallet backup.
 
-Start Bisq and see if your issue is fixed. If not, repeat with another backup.
+Start Bisq and see if your issue is fixed. If not, repeat with another backup file.
 
-=== Restore from seed words
+=== Switch to a new data direcory
 
-In extreme cases, if neither resyncing the SPV file nor restoring a wallet backup solves the problem, you might need to switch to a new data directory and restore your funds from seed words. If you decide to go this route, make sure you don't have any open offers, trades, or disputes, as you won't be able to respond to these activities afterward.
+If neither resyncing the SPV file nor restoring a wallet backup solves the problem, you might have a corrupted wallet. In this case, it's best to switch to a new data directory and start using a new wallet.
 
-Here's how to do it:
+NOTE: Bisq SPV wallets use the bitcoinj library. This library is not built well for high performance, and the wallet file gets larger with more transactions, to the point disk write errors become a real threat (which can corrupt the wallet file) and performance can suffer (e.g., long startup times if you haven't started Bisq in a while). For these reasons, you may want to consider switching to a new data directory after a while even if you're not having issues at the moment.
 
-* make sure you have your Bisq wallet's <<secure-wallet#, seed words>>
+First, make sure you don't have any open offers, trades, or disputes, as you won't be able to respond to these activities afterward. Then, send any funds in your Bisq wallet to an external wallet (either through a regular transaction from the `Funds` screen, emergency wallet tool with Ctrl/Cmd + E, or by restoring from seed words with a tool like Electrum).
+
+Once you're retrieved your funds, here's how to generate a new data directory:
+
 * close Bisq
 * delete the whole `Bisq` directory (after backing it up, just in case)
 * start Bisq (this will generate a fresh new data directory)
-* restore your wallet from seed words in the Bisq interface (on the `Wallet seed` tab of the `Account` screen)
+* send your funds back into Bisq
 * optional: restore payment accounts and/or Tor keys through the processes outlined above
 
 **Make sure you don't have any open offers, trades, or disputes before doing this.**
-
-Please do not try to copy an old wallet backup folder (i.e., `btc_mainnet/wallet`) into a new data directory, as that will cause internal database files to be out of sync—just restore from seed words.
 
 IMPORTANT: Before manually making any changes to Bisq data files, please ensure that the Bisq program is closed and that you have backed up the current state of your Bisq data directory.
 
