@@ -30,12 +30,12 @@ Once the installer is finished, go ahead and open Bisq. It'll take a few moments
 
 When that's done, the first screen you see should look something like this:
 
-.Right half of the screen (gold-colored graph) shows outstanding offers you can take to buy bitcoin. That's what we'll be doing in this guide.
+.Right half of the screen (green graph) shows outstanding offers you can take to buy bitcoin. That's what we'll be doing in this guide.
 image::market-screen.png[Market overview screen]
 
 == Configure a national currency account
 
-Since we're looking to buy bitcoin, let's take a look at the `Buy BTC` screen. You should see a list of offers, but you'll notice all the orange `Take offer` buttons are disabled:
+Since we're looking to buy bitcoin, let's take a look at the `Buy BTC` screen. You should see a list of offers, but you'll notice all the green `Take offer` buttons are disabled:
 
 .Before configuring a payment account: all offers are disabled.
 image::before-adding-fiat-account.png[Offers disabled before configuring national currency account]
@@ -43,7 +43,7 @@ image::before-adding-fiat-account.png[Offers disabled before configuring nationa
 That's because we haven't yet configured a way to pay for the bitcoin we want to buy. So let's set up a payment method. Bisq works with many different payment methods, so you can choose those you already have access to and are most comfortable using. Keep in mind that payment methods determine:
 
 * which offers you can take right now (e.g., in the image above, Zelle has many existing offers, so if we set up Zelle, we could immediately take any of those offers)
-* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#5[details here^])
+* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#How_long_does_a_trade_take[details here^])
 
 [NOTE]
 .What if there are no existing offers for the payment method I want to use?
@@ -125,7 +125,7 @@ Now that we've gotten setup out of the way, let's trade!
 .Select an offer you like.
 image::select-an-offer.png[Select an offer,400,400]
 
-Back in the `Buy BTC` screen, click the orange `Take Offer` button for the offer you'd like to take.
+Back in the `Buy BTC` screen, click the green `Take Offer` button for the offer you'd like to take.
 
 --
 
@@ -150,7 +150,7 @@ Bisq will tell you the address of the trade wallet and exactly how much to send 
 [NOTE]
 .A multisig escrow transaction? How does that work?
 ====
-Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#8[bonded arbitrator^]. More details are https://bisq.network/faq/#18[here^] and you can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
+Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#What_is_an_arbitrator[bonded arbitrator^]. You can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
 ====
 
 === 3. Confirm trade
@@ -232,15 +232,23 @@ Congratulations. You've just completed your first trade on Bisq!
 
 == Next steps
 
+==== Security
+
 It's *crucial* that you secure your Bisq wallet. Without a password, your wallet data is stored on your hard drive unencrypted. That's _dangerous_.
 
 Please follow our <<secure-wallet#,short guide here>> to set a password, encrypt your wallet, and securely store your wallet's recovery seed words.
+
+==== Mobile Notifications
+
+There are points in the Bisq trading process when your attention is required, but what if you're not near your computer at those times?
+
+To solve this problem, you can get https://bisq.network/downloads/[Bisq's mobile notifications apps for iOS and Android^]. Once paired with your Bisq client, the app will send you a notification as soon as an offer is accepted, a payment is sent, etc.
 
 == Get help and stay in touch
 
 If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and the https://bisq.network/slack-invite[Bisq Slack team^].
 
-You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^], https://www.facebook.com/bisqnetwork/[Facebook^], and https://www.youtube.com/c/bisq-network[YouTube^].
+You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^] and https://www.youtube.com/c/bisq-network[YouTube^].
 
 And if you really like Bisq, <<contributor-checklist#,consider contributing>>! Even if you're not a developer, there's much you can do.
 

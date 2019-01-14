@@ -2,7 +2,7 @@
 :imagesdir: images
 :!figure-caption:
 
-As with traditional money and valuables, it's critical that you take reasonable measures to keep your bitcoin safe. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
+Bisq is a non-custodial exchange, which means you retain control of your funds. That also means you're in charge of securing your funds. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
 
 == Encrypt your wallet
 
@@ -23,7 +23,7 @@ IMPORTANT: You should _actually_ write down your seed words and wallet date usin
 
 With just your wallet's seed words and date, you can restore your Bisq wallet and all its bitcoin whenever you need to. If you lose your wallet's seed words and date, you won't be able to restore your wallet, and any bitcoin in it is lost forever. So make sure you keep that paper safe!
 
-WARNING: Your seed words can restore your wallet's bitcoin, but they *do not* restore other Bisq application data such as trading history, arbitration cases, etc. For that, you need to back up the Bisq data folder. You can find out how to do that in the `Backup` section of the `Account` screen.
+WARNING: Your seed words can restore your wallet's bitcoin, but they *do not* restore other Bisq application data such as your payment accounts, open disputes, etc. For that, you need to <<backup-recovery#, back up the Bisq data folder>>.
 
 .Write down your Bisq wallet's seed words & wallet date.
 image::seed-words.png[Write down your Bisq wallet's seed words]
