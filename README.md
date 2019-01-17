@@ -8,7 +8,7 @@ Bisq's [decentralized governance structure][3] makes documentation especially im
 
 - Take a look at [existing docs][4] to get a feel for the general approach to format, tone, and detail
 - Look through our [Contributor's Checklist][5] for a background on how we work and conventions (e.g., proper git commit messages)
-- Correspond with existing contributors [on Slack^] to discuss your ideas or determine where help is most needed
+- Correspond with existing contributors [on Slack][6] to discuss your ideas or determine where help is most needed
 
 ## Build
 
@@ -28,3 +28,4 @@ Commits pushed to the `master` branch of this repository are automatically built
 [3]: https://docs.bisq.network/user-dao-intro.html
 [4]: https://docs.bisq.network
 [5]: https://docs.bisq.network/contributor-checklist.html
+[6]: https://bisq.network/slack-invite
