@@ -1,4 +1,5 @@
 = Bisq Network Documentation
+:imagesdir: ./images
 
 [TIP]
 .Brand new to Bisq?
@@ -13,6 +14,24 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 ====
 
 == User Docs
+
+=== Quick Links
+
+[.float-group]
+--
+[.left]
+image::docs-quick-link.png[alt=Flower,width=200]
+
+[.left]
+image::docs-quick-link-2.png[alt=Flower,width=200]
+
+[.left]
+image::docs-quick-link-3.png[alt=Flower,width=200]
+
+[.left]
+image::docs-quick-link-4.png[alt=Flower,width=200]
+--
+
 
 === Essentials
 
