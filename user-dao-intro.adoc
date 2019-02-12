@@ -13,7 +13,7 @@ The Bisq project needed infrastructure to provide these functions, and the Bisq 
 
 == What is a DAO?
 
-Conventional entities such as for-profit and non-profit corporations must be sanctioned by the state: they are legal entities registered in particular jurisdictions. No matter how big or small or virtuous or innovative they are, they cannot operate without state approval. In return for this approval, the entity is endowed with rights (e.g., limited liability) and responsbilities (e.g., taxes).
+Conventional entities such as for-profit and non-profit corporations must be sanctioned by the state: they are legal entities registered in particular jurisdictions. No matter how big or small or virtuous or innovative they are, they cannot operate without state approval. In return for this approval, the entity is endowed with rights (e.g., limited liability) and responsibilities (e.g., taxes).
 
 A **decentralized autonomous organization** (DAO) is just a generic term for a governance model sanctioned by software: code defines conventions for governing the project irrespective of the stance of the state.
 
