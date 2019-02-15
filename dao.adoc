@@ -1,0 +1,5 @@
+= All About the Bisq DAO
+:imagesdir: ./images
+:!figure-caption:
+
+_This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/105[bisq-network/bisq-docs#105] for updates._
