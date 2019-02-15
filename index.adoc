@@ -46,7 +46,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 === Incubating Efforts
 
  * Bisq HTTP API — _Automate trading and interact programmatically with your Bisq node_
- * <<bisq-mobile#, Bisq Mobile Notifications>> — _Get alerts for new offers, trades in process, and more right on your phone._
+ * <<bisq-mobile#, Bisq Mobile Notifications>> — _Get alerts for new offers, trades in process, and more right on your phone_
 
 == Contributor Docs
 
