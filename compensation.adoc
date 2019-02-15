@@ -1,0 +1,69 @@
+= Requesting Compensation and Voting
+:imagesdir: ./images
+:!figure-caption:
+
+Contributed to the Bisq Network? Great, and thank you! Here is how to request compensation for your work, and vote on requests from others.
+
+Compensation requests are evaluated monthly. Exact dates for each of these stages are posted in a GitHub issue in the https://github.com/bisq-network/compensation[bisq-network/compensation] repository toward the end of the month.
+
+== Submit your compensation request
+
+=== Get your BSQ address
+
+Bisq contributors are paid with BSQ. Until the Bisq DAO is launched, BSQ cannot actually be issued, so for now we use a work-around: new BSQ is allocated to contributors' BSQ addresses in a https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[spreadsheet].
+
+[NOTE]
+====
+When the DAO is launched, this spreadsheet will be used to make the genesis BSQ transaction, which will issue BSQ to every contributor who has earned some before the launch of the DAO.
+
+After that, the spreadsheet will no longer be needed, and new BSQ will be issued directly to each contributors' BSQ address.
+====
+
+On v0.9.4, you can get your BSQ address by simply clicking the `DAO` button in the main menu. Your BSQ address will be on the bottom left:
+
+.Get your BSQ address.
+image::get-bsq-address-094.png[Get your BSQ address]
+
+=== Create a new GitHub issue
+
+BSQ is issued through voting, so you'll need to convince other people of (a) what you did and (b) why it's valuable, so they vote in favor of your compensation request.
+
+This is what the GitHub issue is for. It should go in the https://github.com/bisq-network/compensation[bisq-network/compensation] repository, and it should include the following information:
+
+ - The amount you are requesting in BSQ
+ - The address that BSQ should be paid to
+ - Links to issues, pull requests, and any other work you want to be compensated for
+ - Comments that help explain what the work is, why it is valuable, etc.
+
+**For now, until the DAO launch, we assume 1 BSQ = 1 USD**.
+
+[NOTE]
+.How do I know how much to request?
+====
+Bisq contributions are valued _on completion_. The metric for that is _merged to master_ or otherwise _already delivered_ if the contribution is not code. How you determine the value you request is up to you, but it should be based on the value of the contribution you made, not on the raw time you spent.
+
+For example, it might be reasonable to request 100 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through it, will probably be rejected.
+====
+
+See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2^] for an example compensation request.
+
+== Vote on requests from others
+
+=== Review other contributors' requests
+
+Once the submission period is over, there is a short period to allow for contributors to review other contributors' requests and clear any uncertainties in the work done and value requested.
+
+It's important to make use of this time so that you can make a well-informed vote on everyone's work.
+
+=== Vote
+
+Now it's time to vote.
+
+Until the DAO is live, voting is done on https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[this spreadsheet]. Here's the process:
+
+1. If it's your first time voting, you'll need to request access to the spreadsheet so you can cast your vote. Just ask for it in the https://github.com/bisq-network/compensation[GitHub issue] for that month's voting cycle or on Slack in the #compensation channel.
+2. In the spreadsheet, navigate to the tab for the current month.
+3. Find the row with your BSQ address.
+4. Cast your vote for each request in the appropriate column.
+
+You can approve (1), reject (-1), or abstain (0). Abstaining is recommended if you're not very familiar with the work in a particular compensation request.

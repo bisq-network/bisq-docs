@@ -52,6 +52,7 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 
  * <<contributor-checklist#, Contributor Checklist>>
  * <<proposals#, Proposals>>
+ * <<compensation#, Requesting Compensation and Voting>>
  * <<roles#, Roles>>
     ** <<btcnode#operator, Bitcoin Core Node Operator>>
  * <<exchange/howto/list-asset#, How to list an asset>>
