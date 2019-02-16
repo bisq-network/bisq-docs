@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -533,6 +533,6 @@
          x="301.21045"
          y="272.12915"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans';text-align:end;text-anchor:end;stroke-width:0.26458332"
-         id="tspan1368">What is it?</tspan></text>
+         id="tspan1368">All About the DAO &amp; BSQ</tspan></text>
   </g>
 </svg>
