@@ -488,6 +488,12 @@ a {
     margin: .25em 0 1.25em 1.625em;
 }
 
+.imageblock.quick-link {
+    display: inline-block;
+    margin: 20px 20px 20px 0;
+    border: 1px solid #ecf0f1;
+}
+
 @media only screen and ( max-width: 768px ) {
     #toc img {
         margin-top: 40px;
