@@ -20,16 +20,16 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 [.float-group]
 --
 [.left]
-image::docs-quick-link.png[alt=Flower,width=200]
+image::quick-link-1.svg[alt=What is Bisq?,width=200,class="quick-link"]
 
 [.left]
-image::docs-quick-link-2.png[alt=Flower,width=200]
+image::quick-link-2.svg[alt=Start Trading in Minutes,width=200]
 
 [.left]
-image::docs-quick-link-3.png[alt=Flower,width=200]
+image::quick-link-3.svg[alt=What is the Bisq DAO?,width=200]
 
 [.left]
-image::docs-quick-link-4.png[alt=Flower,width=200]
+image::quick-link-4.svg[alt=Make a Compensation Request,width=200]
 --
 
 
