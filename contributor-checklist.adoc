@@ -73,7 +73,7 @@ Ok. You're all set up and ready to work. Here's what to do next.
 
  . *Repeat* steps 1–4.
 
- . https://docs.bisq.network/dao/phase-zero.html#how-to-request-compensation[*Submit a compensation request*] at the end of the month, link to your finished work and request the amount of https://docs.bisq.network/dao/phase-zero.html#the-bisq-dao-and-bsq-token[BSQ] you believe that work to be worth to Bisq, the Bisq Network and its users.
+ . <<compensation#, *Submit a compensation request*>> at the end of the month, link to your finished work and request the amount of https://docs.bisq.network/dao/phase-zero.html#the-bisq-dao-and-bsq-token[BSQ] you believe that work to be worth to Bisq, the Bisq Network and its users.
 
 [TIP]
 .Reviews are for everybody

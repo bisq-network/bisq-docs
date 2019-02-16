@@ -525,22 +525,7 @@ Pull requests must be well-formed. Follow the guidelines in https://github.com/b
 
 === submit a compensation request [[how-to-request-compensation]]
 
-To submit a compensation request, create a new issue in the <<compensation-repo>>, and include the following information in the issue description:
-
- - The amount you are requesting in BSQ
- - The address that BSQ should be paid to (see below for instructions how to generate a BSQ address)
- - Links to issues, pull requests and any other work you want to be compensated for
- - Comments that help explain what the work is, why it is valuable, etc.
-
-See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2] for an example compensation request.
-
-[NOTE]
-.How do I generate a BSQ address?
-====
-Open your Bisq client and press `CMD+D` on macOS or `CTRL-D` on Linux/Windows. You'll see a `DAO` button appear in the top menu. Click it, and you'll be taken to a screen with your BSQ wallet. Copy your BSQ address and use it in your compensation requests.
-====
-
-Once submitted, your request will be added to the https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[voting spreadsheet] where stakeholders can <<how-to-vote,vote>> on it.
+See <<../compensation#, how to submit a compensation request>>.
 
 === submit a proposal
 
