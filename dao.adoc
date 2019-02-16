@@ -2,4 +2,48 @@
 :imagesdir: ./images
 :!figure-caption:
 
-_This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/105[bisq-network/bisq-docs#105] for updates._
+Here we collect resources to help you learn more about the Bisq DAO, what it is, and how it works.
+
+_The Bisq DAO is currently live on testnet, and is projected to go live on mainnet in March 2019._
+
+== General Info
+
+==== <<user-dao-intro#, Introduction to the Bisq DAO (doc)>>
+Plain language introduction to the Bisq DAO.
+
+==== <<#, Bisq DAO in Brief (videos)>>
+Quick, short video series on the Bisq DAO. _Coming soon._
+
+==== https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics (videos)^]
+A more thorough treatment of the DAO covering everything from the basics of bitcoin transactions and colored coins to the economic and technical roots of the BSQ token and how it powers the Bisq DAO.
+
+== Try It
+
+==== <<getting-started-dao#, User Guide: Making a Compensation Request in the Testnet DAO (doc)>>
+The Bisq DAO isn't live yet, but you can experience truly decentralized governance for yourself right now with this easy-to-follow guide. It walks you through the process of making a compensation request, but you can use the same process to make any proposal you'd like (e.g., adjust fees, trading limits, or any other parameter).
+
+== More Details
+
+==== <<dao/phase-zero#, Phase Zero: A Plan for Bootstrapping the Bisq DAO>>
+An overview of the philosophy behind Bisq, the Bisq DAO, why both were created, and how it planned to decentralize its own governance from the very beginning.
+
+==== <<dao/specification#, Bisq DAO Technical Specification>>
+Technical details of (1) what BSQ tokens actually are, how they're created, and how they're destroyed and (2) the various functions of the Bisq DAO and how BSQ enables them. The document includes several example transactions so you can explicitly see the processes.
+
+==== https://www.youtube.com/watch?v=McaBSRj-bTk[Dev Session on the Bisq DAO^]
+A thorough look at the technical implementation of the Bisq DAO. It's a fairly advanced treatment of the DAO that assumes you are already familiar with its basic ideas and workings.
+
+== For Contributors
+
+==== <<compensation#, How to Make a Compensation Request (doc)>>
+Contributed to the Bisq Network? Great (and thank you!). Here is how to request compensation for your work.
+
+[#get-added-to-genesis]
+==== <<#get-added-to-genesis, Past contributors: Get Added to the Genesis Distribution>>
+If you contributed to Bisq at some point in the past, you will need to specify a mainnet BSQ address to become part of the genesis BSQ distribution.
+
+You should receive an email with further instructions. Otherwise, please keep an eye on https://bisq.network/slack-invite[Slack^], https://bisq.community[the forum^], or https://twitter.com/bisq_network[Twitter^].
+
+== Still Curious?
+
+We're happy to help. Feel free to reach out on https://bisq.network/slack-invite[Slack^], https://bisq.community[the forum^], or https://twitter.com/bisq_network[Twitter^].
