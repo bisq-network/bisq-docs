@@ -101,7 +101,7 @@ If issues persist, you can try to restore a backup wallet file from `btc_mainnet
 
 Start Bisq and see if your issue is fixed. If not, repeat with another backup file.
 
-=== Switch to a new data direcory
+=== Switch to a new data directory
 
 If neither resyncing the SPV file nor restoring a wallet backup solves the problem, you might have a corrupted wallet. In this case, it's best to switch to a new data directory and start using a new wallet.
 
