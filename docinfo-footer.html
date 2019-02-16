@@ -13,10 +13,11 @@
     relativePath = findRelativePath( pathName );
     addFavicon();
     addLogoImage();
+    addQuickLinks();
 
     if( pathName !== '/' ) {
         addBackLink();
-    } 
+    }
 
     function addBackLink() {
         var link = document.createElement("a");
@@ -54,9 +55,23 @@
         toc.insertBefore(logoImg, tocTop);
 
         logoImg.onclick = function() {
-            window.location.replace( relativePath + "index.html" );
+            window.location = relativePath + "index.html";
         }
 
+        return;
+    }
+
+    function addQuickLinks() {
+        var links = document.getElementsByClassName('quick-link');
+        var elementClasses = "";
+        for( var i = 0; i < links.length; i++ ) {
+            elementClasses = links[i].getAttribute('class');
+            (function(linkElement) {
+                linkElement.onclick = function() {
+                    window.location = linkElement.getAttribute("class").split(" ").slice(-1).pop() + ".html";
+                }
+            })(links[i]);
+        }
         return;
     }
 
