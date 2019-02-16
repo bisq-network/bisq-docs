@@ -42,7 +42,7 @@ This is what the GitHub issue is for. It should go in the https://github.com/bis
 ====
 Bisq contributions are valued _on completion_. The metric for that is _merged to master_, or _already delivered_ if the contribution is not code. How you determine the value you request is up to you, but it should be based on the value of the contribution you made, not on the raw time you spent.
 
-A good rule of thumb, if you are unsure about the the value of your contribution: consider what you would charge for the work if you did it as a freelancer.
+A good rule of thumb, if you are unsure about the value of your contribution: consider what you would charge for the work if you did it as a freelancer.
 
 For example, it might be reasonable to request 100 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through it, will probably be rejected.
 ====
