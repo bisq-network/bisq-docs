@@ -1,4 +1,5 @@
 = Bisq Network Documentation
+:imagesdir: ./images
 
 [TIP]
 .Brand new to Bisq?
@@ -13,6 +14,28 @@ Docs without hyperlinks haven't been written yet. If you want to write one, <<co
 ====
 
 == User Docs
+
+=== Quick Links
+
+[.float-group]
+--
+[.left]
+image::quick-link-1.svg[alt=What is Bisq?,width=200,role=quick-link intro]
+//WARNING: links depend on these role labels
+
+[.left]
+image::quick-link-2.svg[alt=Start Trading in Minutes,width=200,role=quick-link getting-started]
+//WARNING: links depend on these role labels
+
+[.left]
+image::quick-link-3.svg[alt=What is the Bisq DAO?,width=200,role=quick-link dao]
+//WARNING: links depend on these role labels
+
+[.left]
+image::quick-link-4.svg[alt=Make a Compensation Request,width=200,role=quick-link compensation]
+//WARNING: links depend on these role labels
+--
+
 
 === Essentials
 
