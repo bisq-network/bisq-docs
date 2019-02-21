@@ -11,8 +11,8 @@ _The Bisq DAO is currently live on testnet, and is projected to go live on mainn
 ==== <<user-dao-intro#, Introduction to the Bisq DAO (doc)>>
 Plain language introduction to the Bisq DAO.
 
-==== <<#, Bisq DAO in Brief (videos)>>
-Quick, short video series on the Bisq DAO. _Coming soon._
+==== https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[Bisq DAO in Brief (videos)^]
+Quick, short video series on the Bisq DAO. Get up to speed with a handful of 3-4 minute videos.
 
 ==== https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics (videos)^]
 A more thorough treatment of the DAO covering everything from the basics of bitcoin transactions and colored coins to the economic and technical roots of the BSQ token and how it powers the Bisq DAO.
