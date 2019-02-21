@@ -4,7 +4,7 @@
 
 The Bisq DAO will soon go live on mainnet. But there's no need to wait—you can tinker with it right now and experience truly decentralized governance for yourself.
 
-In this guide, we'll show you how to use the Bisq DAO on testnet.
+In this guide, we'll show you how to use the Bisq DAO on our testnet.
 
 Specifically, we will walk through one voting cycle. Voting is a crucial duty within the Bisq DAO that makes decision-making for the Bisq project accessible to all who use it—users and contributors alike. You'll see how to make a proposal, vote on other proposals, and how the BSQ token enables the process to be handled in a decentralized and trustless but meritocratic way.
 
@@ -16,27 +16,29 @@ For a brief overview of how the Bisq DAO works, see our <<user-dao-intro#,Introd
 
 * **This guide assumes you have Bisq v0.9.1 or later installed**. If not, you can get it from https://bisq.network/downloads/[the Bisq downloads page^].
 
-* **All references to BTC and BSQ in this guide are for testnet values**. You should _not_ be working with real BTC at any point during this guide.
+* **All references to BTC and BSQ in this guide are for test values**. You should _not_ be working with real BTC at any point during this guide.
 ====
 
 Let's begin!
 
-== Switch to testnet mode
+== Switch to dao-testnet mode
 
-The Bisq DAO is only live in testnet mode right now, so you'll need to run Bisq in testnet mode. To do this, simply switch from `Bitcoin_MAINNET` to `Bitcoin_TESTNET` in the `General preferences` section of the `Settings` screen.
+NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-testnet_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
 
-Bisq maintains completely separate data directories for mainnet and testnet modes, so it will generate a whole new directory for testnet when you restart Bisq in testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on testnet.
+The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode. To do this, simply switch to the `Bitcoin DAO Testnet` network in the `General preferences` section of the `Settings` screen.
+
+Bisq maintains completely separate data directories for different currency networks, so it will generate a whole new directory when you restart Bisq in dao-testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on dao-testnet.
 
 [WARNING]
 .Beware of open offers and open disputes!
 ====
-Because Bisq runs from a totally different data directory in testnet mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
+Because Bisq runs from a totally different data directory in dao-testnet mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
 ====
 
-Go ahead and restart Bisq when prompted. Voilà—you should be in testnet mode. You'll know because the window's title bar should include the text `[TESTNET]` and the main menu bar will have a `DAO` button.
+Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet mode. You'll know because the window's title bar should include the text `[Bitcoin DAO Testnet]`.
 
-.Switch to testnet from the Settings screen.
-image::switch-testnet.png[Switch to testnet]
+.Switch to dao-testnet from the Settings screen.
+image::switch-testnet.png[Switch todao-testnet]
 
 == Acquire some BSQ
 
@@ -47,42 +49,7 @@ First, in order to get any BSQ, you'll need your BSQ wallet address, which is al
 .Get your BSQ wallet address.
 image::get-bsq-address.png[Get your BSQ address]
 
-Now, there are 2 ways to get BSQ for testnet:
-
-* request some BSQ https://bisq.network/slack-invite[on Slack^]
-* buy BSQ in Bisq with testnet BTC
-
-=== Option A: Request BSQ on Slack
-
-This method is simple enough. Just ask for some BSQ https://bisq.network/slack-invite[on Slack^], and a contributor will send you some. Don't forget to include your BSQ address.
-
-=== Option B: Buy BSQ on Bisq
-
-Of course, when the Bisq DAO goes live on mainnet, getting BSQ won't be as simple as asking for it—you'll need to buy it (or work for it).
-
-Buying BSQ on Bisq is a little more work, but if you want a more authentic Bisq DAO experience, this is the way to go.
-
-NOTE: In order to buy BSQ on Bisq, there need to be sellers offering BSQ for you to buy. Because the Bisq DAO is in testing right now, the market can be a bit thin. You might want to check the `Sell BTC` screen to see if there are any open offers for BSQ before proceeding.
-
-==== 1. Create a BSQ payment account
-
-In order to take an offer to buy BSQ, you'll need to have a BSQ payment account set up. Go ahead and create one, just like you would create a fiat or altcoin account: on the `Account` screen, pick BSQ from the `Altcoin` dropdown and put in your BSQ address.
-
-.Create a new BSQ payment account.
-image::add-new-bsq-account.png[Create a new BSQ payment account]
-
-==== 2. Get some testnet BTC
-
-To buy BSQ, you'll need BTC. You can get testnet BTC https://coinfaucet.eu/en/btc-testnet/[here^] or http://tpfaucet.appspot.com/[here^]. Just put in the BTC address of your Bisq wallet, which you can find in the `Receive funds` section of the `Funds` screen, and you should receive testnet BTC shortly afterward.
-
-==== 3. Take an offer to buy BSQ with BTC
-
-Now that you've got testnet BTC, head over to the `Sell BTC` screen and choose BSQ in the `Filter by currency` dropdown. Take an offer you like and complete the trade.
-
-.Pick an offer to buy BSQ with BTC.
-image::buy-bsq-with-btc.png[Buy BSQ with BTC]
-
-As noted above, you may not see any open offers to buy BSQ with BTC. If that's the case, you can try waiting until there is an offer, or acquire BSQ through <<option-a-request-bsq-on-slack, Option A>> instead.
+To get test BSQ, simply ask for some https://bisq.network/slack-invite[on Slack^] and a contributor will send you some. Don't forget to include your BSQ address.
 
 == Participate in a voting cycle
 
@@ -101,8 +68,8 @@ We'll do this by participating in one voting cycle in the Bisq DAO. Voting cycle
 
 For testing, voting cycles are shortened to 979 blocks (just under 7 days), and each phase is shortened proportionally. You can see exact timeframes on the `Dashboard` section of the `Governance` tab on the `DAO` screen.
 
-.Testnet voting cycle overview.
-image::voting-cycle-overview.png[Testnet voting cycle overview]
+.Voting cycle overview.
+image::voting-cycle-overview.png[Voting cycle overview]
 
 Let's begin by making a proposal.
 
