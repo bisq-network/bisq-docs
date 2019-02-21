@@ -4,7 +4,7 @@
 
 Here we collect resources to help you learn more about the Bisq DAO, what it is, and how it works.
 
-_The Bisq DAO is currently live on testnet, and is projected to go live on mainnet in March 2019._
+_The Bisq DAO is currently live on our testnet, and is projected to go live on mainnet in March 2019._
 
 == General Info
 
@@ -19,8 +19,8 @@ A more thorough treatment of the DAO covering everything from the basics of bitc
 
 == Try It
 
-==== <<getting-started-dao#, User Guide: Making a Compensation Request in the Testnet DAO (doc)>>
-The Bisq DAO isn't live yet, but you can experience truly decentralized governance for yourself right now with this easy-to-follow guide. It walks you through the process of making a compensation request, but you can use the same process to make any proposal you'd like (e.g., adjust fees, trading limits, or any other parameter).
+==== <<getting-started-dao#, User Guide: Making a Compensation Request in the DAO (doc)>>
+The Bisq DAO isn't live yet, but it's available for you to test right now! This easy-to-follow guide will walk you through the process of making a compensation request, but you can use the same process to make any proposal you'd like (e.g., adjust fees, trading limits, or any other parameter).
 
 == More Details
 
