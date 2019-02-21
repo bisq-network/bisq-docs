@@ -155,8 +155,6 @@ Since BSQ is just bitcoin, you can see BSQ transactions on any bitcoin block exp
 
 So there's a https://explorer.bisq.network/testnet/[BSQ block explorer^]. Whenever you do a BSQ transaction, you can see it there.
 
-See the difference: here's https://explorer.bisq.network/tx.html?tx=3dc364b55fa9e92058d52a9c09b98300781414573f123e63367ff3749a8615b2[a simple transaction^] on the BSQ block explorer that shows the transfer of 500 BSQ from one wallet to another. https://blockstream.info/testnet/tx/3dc364b55fa9e92058d52a9c09b98300781414573f123e63367ff3749a8615b2/[Here's that same transaction^] on an ordinary bitcoin block explorer.
-
 Here's a screenshot of the past few BSQ transactions as of mid-December 2018. You'll notice that this block explorer recognizes the various transaction properties that make valid BSQ transactions, and it labels them accordingly:
 
 .Some BSQ transactions on the https://explorer.bisq.network[BSQ block explorer^].
