@@ -38,7 +38,7 @@ Because Bisq runs from a totally different data directory in dao-testnet mode, i
 Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet mode. You'll know because the window's title bar should include the text `[Bitcoin DAO Testnet]`.
 
 .Switch to dao-testnet from the Settings screen.
-image::switch-testnet.png[Switch todao-testnet]
+image::switch-testnet.png[Switch to dao-testnet]
 
 == Acquire some BSQ
 
