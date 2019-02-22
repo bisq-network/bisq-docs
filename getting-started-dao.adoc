@@ -21,6 +21,7 @@ For a brief overview of how the Bisq DAO works, see our <<user-dao-intro#,Introd
 
 Let's begin!
 
+[[switch-to-testnet-mode]]
 == Switch to dao-testnet mode
 
 NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-testnet_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
@@ -54,7 +55,8 @@ Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet m
 .Switch to dao-testnet from the Settings screen.
 image::switch-testnet.png[Switch to dao-testnet]
 
-== Acquire some BSQ and BTC for testing
+[[acquire-some-bsq]]
+== Acquire BSQ and BTC for testing
 
 As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
 
