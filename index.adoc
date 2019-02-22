@@ -55,8 +55,8 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 
 === Features
 
- * Payment Methods — _Explore https://bisq.network/faq/#paymentmethods[20+] supported fiat currency payment methods, from Alipay to Zelle_
- * Altcoins — _Explore https://bisq.network/faq/#altcoins[100+] supported cryptocurrencies, tokens and assets_
+ * Payment Methods — _Explore https://bisq.network/faq/#Which_payment_methods_are_supported[20+] supported fiat currency payment methods, from Alipay to Zelle_
+ * Altcoins — _Explore https://bisq.network/markets/[100+] supported cryptocurrencies, tokens and assets_
 
 === Ecosystem
 
@@ -69,7 +69,7 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 === Incubating Efforts
 
  * Bisq HTTP API — _Automate trading and interact programmatically with your Bisq node_
- * <<bisq-mobile#, Bisq Mobile Notifications>> — _Get alerts for new offers, trades in process, and more right on your phone._
+ * <<bisq-mobile#, Bisq Mobile Notifications>> — _Get alerts for new offers, trades in process, and more right on your phone_
 
 == Contributor Docs
 
