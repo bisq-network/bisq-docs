@@ -25,7 +25,21 @@ Let's begin!
 
 NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-testnet_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
 
-The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode. To do this, simply switch to the `Bitcoin DAO Testnet` network in the `General preferences` section of the `Settings` screen.
+The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode. You can do this through the command-line flag or through the interface.
+
+==== Through the command-line
+
+If you're comfortable with the command-line, you might prefer this method, as it allows you to run a dao-testnet version of Bisq alongside mainnet Bisq (so you don't lose access to any open trades/disputes while testing).
+
+Just run the Bisq executable with the `--baseCurrencyNetwork=BTC_DAO_TESTNET` flag. Default locations for the Bisq executable are:
+
+* **Windows**: "C:\Users\<username>\AppData\Local\Bisq\Bisq.exe"
+* **Mac**: /Applications/Bisq.app/Contents/MacOS/Bisq
+* **Linux**: /opt/Bisq/Bisq
+
+==== Through the interface
+
+Pick the `Bitcoin DAO Testnet` option in the drop-down in the `General preferences` section of the `Settings` screen.
 
 Bisq maintains completely separate data directories for different currency networks, so it will generate a whole new directory when you restart Bisq in dao-testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on dao-testnet.
 
