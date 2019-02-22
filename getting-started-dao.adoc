@@ -40,13 +40,17 @@ Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet m
 .Switch to dao-testnet from the Settings screen.
 image::switch-testnet.png[Switch to dao-testnet]
 
-== Acquire some BSQ
+== Acquire some BSQ and BTC for testing
 
 As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
 
-To get test BSQ, simply ask for some https://bisq.network/slack-invite[on Slack^] and a contributor will send you some. Don't forget to include your BSQ address.
+To get test BSQ and BTC, simply ask for some https://bisq.network/slack-invite[on Slack^] and a contributor will send you some. Don't forget to include your addresses.
 
-To get your BSQ address: go to the `DAO` screen, navigate to the `BSQ Wallet` tab. In the `Receive` section, you'll see an address:
+==== Get your BTC address
+Go to the `Funds` screen. On the `Receive funds` tab, you'll see your BTC addresses. Pick one, preferably an unused one.
+
+==== Get your BSQ address
+Go to the `DAO` screen, navigate to the `BSQ Wallet` tab. In the `Receive` section, you'll see an address:
 
 .Get your BSQ wallet address.
 image::get-bsq-address.png[Get your BSQ address]
