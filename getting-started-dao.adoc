@@ -21,11 +21,28 @@ For a brief overview of how the Bisq DAO works, see our <<user-dao-intro#,Introd
 
 Let's begin!
 
+[[switch-to-testnet-mode]]
 == Switch to dao-testnet mode
 
 NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-testnet_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
 
-The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode. To do this, simply switch to the `Bitcoin DAO Testnet` network in the `General preferences` section of the `Settings` screen.
+The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode.
+
+There are 2 ways to enable it:
+
+==== Option A: Through the command-line
+
+If you're comfortable with the command-line, you might prefer this method, as it allows you to run a dao-testnet version of Bisq alongside mainnet Bisq (so you don't lose access to any open trades/disputes while testing).
+
+Just run the Bisq executable with the `--baseCurrencyNetwork=BTC_DAO_TESTNET` flag. Default locations for the Bisq executable are:
+
+* **Windows**: "C:\Users\<username>\AppData\Local\Bisq\Bisq.exe"
+* **Mac**: /Applications/Bisq.app/Contents/MacOS/Bisq
+* **Linux**: /opt/Bisq/Bisq
+
+==== Option B: Through the graphical interface
+
+Pick the `Bitcoin DAO Testnet` option in the drop-down in the `General preferences` section of the `Settings` screen.
 
 Bisq maintains completely separate data directories for different currency networks, so it will generate a whole new directory when you restart Bisq in dao-testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on dao-testnet.
 
@@ -33,6 +50,8 @@ Bisq maintains completely separate data directories for different currency netwo
 .Beware of open offers and open disputes!
 ====
 Because Bisq runs from a totally different data directory in dao-testnet mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
+
+To avoid this issue, consider running from the command-line with the instructions above.
 ====
 
 Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet mode. You'll know because the window's title bar should include the text `[Bitcoin DAO Testnet]`.
@@ -40,13 +59,18 @@ Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet m
 .Switch to dao-testnet from the Settings screen.
 image::switch-testnet.png[Switch to dao-testnet]
 
-== Acquire some BSQ
+[[acquire-some-bsq]]
+== Acquire BSQ and BTC for testing
 
 As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
 
-To get test BSQ, simply ask for some https://bisq.network/slack-invite[on Slack^] and a contributor will send you some. Don't forget to include your BSQ address.
+To get test BSQ and BTC, simply ask for some https://bisq.network/slack-invite[on Slack^] and a contributor will send you some. Don't forget to include your addresses.
 
-To get your BSQ address: go to the `DAO` screen, navigate to the `BSQ Wallet` tab. In the `Receive` section, you'll see an address:
+==== Get your BTC address
+Go to the `Funds` screen. On the `Receive funds` tab, you'll see your BTC addresses. Pick one, preferably an unused one.
+
+==== Get your BSQ address
+Go to the `DAO` screen, navigate to the `BSQ Wallet` tab. In the `Receive` section, you'll see an address:
 
 .Get your BSQ wallet address.
 image::get-bsq-address.png[Get your BSQ address]
@@ -164,7 +188,7 @@ image::bsq-block-explorer.png[Some recent BSQ transactions]
 
 At the moment, the Bisq DAO is being tested thoroughly. If you'd like to help, there are bounties! https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[See more details here^].
 
-Otherwise, check out our <<user-dao-intro#,conceptual overview of the Bisq DAO>> and our https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[video series^] on DAO concepts.
+Otherwise, check out our <<user-dao-intro#,conceptual overview of the Bisq DAO>> and our two video series: one that's https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[quick and to-the-point^] and another that's https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[more extensive^].
 
 == Get help and stay in touch
 
