@@ -187,6 +187,8 @@ If your proposal was a compensation request, this is when the BTC you included i
 
 That's it—you've now participated in a full voting cycle of the Bisq DAO, the upcoming decentralized governance mechanism for the Bisq exchange. Bravo!
 
+NOTE: If you could, please fill out our https://docs.google.com/forms/d/e/1FAIpQLSdS4YRE9Eox3bvuo4oSJJQCm5Yy54ZclKC_ThUt702PeU4rxw/viewform[DAO testing survey^]. It's very helpful to us!
+
 == Explore a BSQ block explorer
 
 Since BSQ is just bitcoin, you can see BSQ transactions on any bitcoin block explorer. But because these bitcoins are colored, ordinary bitcoin block explorers can't recognize which bitcoin transactions are also BSQ transactions.
