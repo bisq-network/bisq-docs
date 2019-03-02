@@ -21,6 +21,20 @@ For a brief overview of how the Bisq DAO works, see our <<user-dao-intro#,Introd
 
 Let's begin!
 
+[sidebar]
+.Quick note on testing
+--
+The launch of the DAO is a critical step for the Bisq Network. Rigorous testing and feedback from a wide user base is crucial, and as with all valuable contributions to Bisq, we're awarding BSQ to meaningful testing feedback.
+
+Upon completing a testing cycle, as outlined in this doc, we invite you to take part in the following:
+
+* **Complete a survey**. https://docs.google.com/forms/d/e/1FAIpQLSdS4YRE9Eox3bvuo4oSJJQCm5Yy54ZclKC_ThUt702PeU4rxw/viewform[This one^]. It's short, only 4 questions. _Award: 20 BSQ_.
+* **Create a meaningful GitHub issue**. Something that will help developers improve the software and user experience. Please create issues in https://github.com/bisq-network/bisq[the main Bisq repository^]. _Award: 50 BSQ_.
+* **Find an advanced technical flaw**. Find consensus bugs, data inconsistencies, or some other major bug? Let us know. More details https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[here^]. _Award: varies_.
+
+If you do take part in any of the items above, don't forget to <<compensation#,file a compensation request>> at the end of the month!
+--
+
 [[switch-to-testnet-mode]]
 == Switch to dao-testnet mode
 
@@ -60,7 +74,7 @@ Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet m
 image::switch-testnet.png[Switch to dao-testnet]
 
 [[acquire-some-bsq]]
-== Acquire BSQ and BTC for testing
+== Request BSQ and BTC for testing
 
 As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
 
@@ -172,6 +186,8 @@ As you can see, our proposal was accepted. Hopefully you have similar luck!
 If your proposal was a compensation request, this is when the BTC you included in your request will show as BSQ (after having been 'colored' by the voting process). Check your BSQ wallet balance in the `BSQ Wallet` tab of the `DAO` screen to see the updated balance.
 
 That's it—you've now participated in a full voting cycle of the Bisq DAO, the upcoming decentralized governance mechanism for the Bisq exchange. Bravo!
+
+NOTE: If you could, please fill out our https://docs.google.com/forms/d/e/1FAIpQLSdS4YRE9Eox3bvuo4oSJJQCm5Yy54ZclKC_ThUt702PeU4rxw/viewform[DAO testing survey^]. It's very helpful to us!
 
 == Explore a BSQ block explorer
 
