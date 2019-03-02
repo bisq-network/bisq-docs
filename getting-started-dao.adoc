@@ -60,7 +60,7 @@ Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet m
 image::switch-testnet.png[Switch to dao-testnet]
 
 [[acquire-some-bsq]]
-== Acquire BSQ and BTC for testing
+== Request BSQ and BTC for testing
 
 As we covered in the <<user-dao-doc#,Introduction to the Bisq DAO>> doc, virtually all actions in the Bisq DAO require BSQ tokens. So let's get some!
 
