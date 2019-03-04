@@ -10,6 +10,7 @@ Thus the need for decentralizing the resources in charge of running Bisq itself.
 
 The Bisq project needed infrastructure to provide these functions, and the Bisq DAO is its solution.
 
+video::pNvOZlIDYEQ[youtube]
 
 == What is a DAO?
 
