@@ -30,7 +30,7 @@ Upon completing a testing cycle, as outlined in this doc, we invite you to take 
 
 * **Complete a survey**. https://docs.google.com/forms/d/e/1FAIpQLSdS4YRE9Eox3bvuo4oSJJQCm5Yy54ZclKC_ThUt702PeU4rxw/viewform[This one^]. It's short, only 4 questions. _Award: 20 BSQ_.
 * **Create a meaningful GitHub issue**. Something that will help developers improve the software and user experience. Please create issues in https://github.com/bisq-network/bisq[the main Bisq repository^]. _Award: 50 BSQ_.
-* **Find an advanced technical flaw**. Find consensus bugs, data inconsistencies, or some other major bug? Let us know. More details https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[here^]. _Award: varies_.
+* **Find an advanced technical flaw**. Find consensus bugs, data inconsistencies, or some other major bug? Let us know. More details https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[here^]. _Award: varies; up to 10,000 BSQ_.
 
 If you do take part in any of the items above, don't forget to <<compensation#,file a compensation request>> at the end of the month!
 --
