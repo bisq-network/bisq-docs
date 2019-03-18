@@ -40,7 +40,7 @@ Contributed to the Bisq Network? Great (and thank you!). Here is how to request 
 
 [#get-added-to-genesis]
 ==== <<compensation#get-added-to-genesis, Past Contributors: Get Added to the Genesis Distribution>>
-If you contributed to Bisq at some point in the past, you will need to specify a **new** mainnet BSQ address to become part of the genesis BSQ distribution. See instructions at the bottom of the linked page.
+If you contributed to Bisq at some point in the past, you will need to specify a **new** mainnet BSQ address to become part of the genesis BSQ distribution. See details at the bottom of the linked page.
 
 == Still Curious?
 
