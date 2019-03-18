@@ -69,3 +69,12 @@ Until the DAO is live, voting is done on https://docs.google.com/spreadsheets/d/
 4. Cast your vote for each request in the appropriate column.
 
 You can approve (1), reject (-1), or abstain (0). Abstaining is recommended if you're not very familiar with the work in a particular compensation request.
+
+[#get-added-to-genesis]
+== Past Contributors: Get Added to the Genesis Distribution
+
+If you contributed to Bisq at some point in the past, please make sure you send a **new** BSQ address to mailto:genesis@bitsquare.io[genesis@bitsquare.io] so that you can be included in the genesis transaction.
+
+We are requesting a new address because wallets from the 2017 versions of the Bisq application may be incompatible with the new software.
+
+You can get a new BSQ address by downloading the https://bisq.network/downloads/[latest Bisq software]. You'll see your BSQ address in the lower-left corner of the `DAO` screen. See the image <<#get-your-bsq-address,here>> for reference.
