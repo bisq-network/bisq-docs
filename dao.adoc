@@ -39,10 +39,8 @@ A thorough look at the technical implementation of the Bisq DAO. It's a fairly a
 Contributed to the Bisq Network? Great (and thank you!). Here is how to request compensation for your work.
 
 [#get-added-to-genesis]
-==== <<#get-added-to-genesis, Past contributors: Get Added to the Genesis Distribution>>
-If you contributed to Bisq at some point in the past, you will need to specify a mainnet BSQ address to become part of the genesis BSQ distribution.
-
-You should receive an email with further instructions. Otherwise, please keep an eye on https://bisq.network/slack-invite[Slack^], https://bisq.community[the forum^], or https://twitter.com/bisq_network[Twitter^].
+==== <<compensation#get-added-to-genesis, Past Contributors: Get Added to the Genesis Distribution>>
+If you contributed to Bisq at some point in the past, you will need to specify a **new** mainnet BSQ address to become part of the genesis BSQ distribution. See details at the bottom of the linked page.
 
 == Still Curious?
 
