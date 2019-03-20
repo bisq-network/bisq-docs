@@ -12,31 +12,43 @@ Also note that Bisq does not implement any technical infrastructure for listed a
 
 NOTE: This document replaces the earlier process description in the link:https://bisq.community/t/how-to-add-your-favorite-Altcoin/46[Bisq forum] and the earlier document at https://bisq.network/list-token.
 
+There are 2 ways to submit a new asset to be listed on Bisq: create an issue or make a pull request. We detail both processes below, but note that prerequisites are identical for both.
 
 == Prerequisites
 
-=== The asset must have an official block explorer
+==== The asset must have an official block explorer
 
 The asset must have an active, publicly available block explorer.
 
-=== The asset ticker symbol must not conflict with national currency tickers
+==== The asset ticker symbol must not conflict with national currency tickers
 
 The ticker symbol must not conflict with one of the national currency ISO 4217 ticker symbols listed at https://en.wikipedia.org/wiki/ISO_4217.
 
-=== The asset ticker symbol must not conflict with other asset ticker symbols
+==== The asset ticker symbol must not conflict with other asset ticker symbols
 
 The ticker symbol must not conflict with one of the top 100 cryptocurrency / crypto-asset ticker symbols listed at: https://coinmarketcap.com/currencies at the time of PR creation.
 
-=== The asset must not impose additional technical requirements
+==== The asset must not impose additional technical requirements
 
 Be sure that the requirements to add the asset do not cause extra effort for Bisq maintainers, e.g. requiring additional input fields because the address alone is not sufficient for a trade.
 
-=== Arbitrators must be able to look up transactions in the asset block explorer
+==== Arbitrators must be able to look up transactions in the asset block explorer
 
 A Bisq arbitrator must be able to look up transactions in the asset's block explorer by using the receiver's address. In case that is not possible as a result of enhanced privacy features e.g. in Zcash, Monero and CryptoNote coins, a suggested solution needs to be added to the asset listing pull request (e.g. in Zcash we support only transparent addresses not z-addresses; in Monero we require that the user is using a Monero wallet which supports transaction keys to enable 3rd party audits of the transaction which is used in case of a dispute). As such additional cases require additional effort (popup with background info) it will be up to Bisq contributors whether to add a pull request for the popup and translation strings. Of course the code or the popup can be part of the PR as well but a more detailed description is out of scope of this document.
 
+== Method #1: Create an Issue
 
-== Instructions
+If your asset meets the prerequisites listed above, you may open a new issue in the bisq-network/bisq repository using this link:
+
+https://github.com/bisq-network/bisq/issues/new?template=new_asset.md[Create issue to request new asset listing^]
+
+**You must use the link above to create the issue, as it links to a template designed specifically for new asset requests.**
+
+WARNING: Creating an issue to list a new asset is not a guarantee that your asset will be listed. It's a request to convince a Bisq developer to spend the time needed to implement the new asset, write tests, etc. You can help by making a request that is complete and well-formed, and by being cooperative throughout the process.
+
+If you have the resources to make a pull request yourself, you are welcome to do so by following the directions below.
+
+== Method #2: Make a Pull Request
 
 IMPORTANT: Each of the steps described below deal with code in the `assets` directory of the https://github.com/bisq-network/bisq repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
 
