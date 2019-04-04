@@ -36,19 +36,19 @@ If you do take part in any of the items above, don't forget to <<compensation#,f
 --
 
 [[switch-to-testnet-mode]]
-== Switch to dao-testnet mode
+== Switch to dao-regtest mode
 
-NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-testnet_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
+NOTE: Issues on the main Bitcoin testnet made it unusable for Bisq DAO testing, so _dao-regtest_ refers to a regtest network maintained by Bisq contributors specifically for DAO testing.
 
-The Bisq DAO is only live in dao-testnet mode right now, so to try it out, you'll need to run Bisq in dao-testnet mode.
+The Bisq DAO is only live in dao-regtest mode right now, so to try it out, you'll need to run Bisq in dao-regtest mode.
 
 There are 2 ways to enable it:
 
 ==== Option A: Through the command-line
 
-If you're comfortable with the command-line, you might prefer this method, as it allows you to run a dao-testnet version of Bisq alongside mainnet Bisq (so you don't lose access to any open trades/disputes while testing).
+If you're comfortable with the command-line, you might prefer this method, as it allows you to run a dao-regtest version of Bisq alongside mainnet Bisq (so you don't lose access to any open trades/disputes while testing).
 
-Just run the Bisq executable with the `--baseCurrencyNetwork=BTC_DAO_TESTNET` flag. Default locations for the Bisq executable are:
+Just run the Bisq executable with the `--baseCurrencyNetwork=BTC_DAO_REGTEST` flag. Default locations for the Bisq executable are:
 
 * **Windows**: "C:\Users\<username>\AppData\Local\Bisq\Bisq.exe"
 * **Mac**: /Applications/Bisq.app/Contents/MacOS/Bisq
@@ -56,22 +56,22 @@ Just run the Bisq executable with the `--baseCurrencyNetwork=BTC_DAO_TESTNET` fl
 
 ==== Option B: Through the graphical interface
 
-Pick the `Bitcoin DAO Testnet` option in the drop-down in the `General preferences` section of the `Settings` screen.
+Pick the `Bitcoin DAO Regtest` option in the drop-down in the `General preferences` section of the `Settings` screen.
 
-Bisq maintains completely separate data directories for different currency networks, so it will generate a whole new directory when you restart Bisq in dao-testnet mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on dao-testnet.
+Bisq maintains completely separate data directories for different currency networks, so it will generate a whole new directory when you restart Bisq in dao-regtest mode for the first time. When you switch back to mainnet, your mainnet configuration will be reloaded, untouched from your time on dao-regtest.
 
 [WARNING]
 .Beware of open offers and open disputes!
 ====
-Because Bisq runs from a totally different data directory in dao-testnet mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
+Because Bisq runs from a totally different data directory in dao-regtest mode, it won't know anything about open offers and open disputes from mainnet. So if you have any such open items, be aware that you won't get updates on them until you switch back to mainnet mode.
 
 To avoid this issue, consider running from the command-line with the instructions above.
 ====
 
-Go ahead and restart Bisq when prompted. Voilà—you should be in dao-testnet mode. You'll know because the window's title bar should include the text `[Bitcoin DAO Testnet]`.
+Go ahead and restart Bisq when prompted. Voilà—you should be in dao-regtest mode. You'll know because the window's title bar should include the text `[Bitcoin DAO Regtest]`.
 
-.Switch to dao-testnet from the Settings screen.
-image::switch-testnet.png[Switch to dao-testnet]
+.Switch to dao-regtest from the Settings screen.
+image::switch-testnet.png[Switch to dao-regtest]
 
 [[acquire-some-bsq]]
 == Request BSQ and BTC for testing
@@ -193,7 +193,7 @@ NOTE: If you could, please fill out our https://docs.google.com/forms/d/e/1FAIpQ
 
 Since BSQ is just bitcoin, you can see BSQ transactions on any bitcoin block explorer. But because these bitcoins are colored, ordinary bitcoin block explorers can't recognize which bitcoin transactions are also BSQ transactions.
 
-So there's a https://explorer.bisq.network/testnet/[BSQ block explorer^]. Whenever you do a BSQ transaction, you can see it there.
+So there's a https://explorer.bisq.network/[BSQ block explorer^]. Whenever you do a BSQ transaction, you can see it there.
 
 Here's a screenshot of the past few BSQ transactions as of mid-December 2018. You'll notice that this block explorer recognizes the various transaction properties that make valid BSQ transactions, and it labels them accordingly:
 
