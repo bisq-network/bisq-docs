@@ -53,6 +53,7 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 === Bisq DAO: Governing Bisq
  * <<user-dao-intro#, Introduction to the Bisq DAO>> — _Learn how the DAO enables Bisq's decentralized governance model_
  * <<getting-started-dao#, Getting Started with the Bisq DAO>> — _Trade, vote, and govern Bisq through the DAO with BSQ_
+ * <<dao-user-reference#, Bisq DAO User Reference>> — _Practical details on using the DAO, along with a brief technical overview_
 
 === Ecosystem
 

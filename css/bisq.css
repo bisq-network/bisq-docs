@@ -1195,6 +1195,11 @@ a {
     cursor: pointer;
 }
 
+.sidebarblock {
+    margin-top: 2.25em;
+    margin-bottom: 2.25em;
+}
+
 @media only screen and ( max-width: 768px ) {
     #toc img {
         margin-top: 40px;
