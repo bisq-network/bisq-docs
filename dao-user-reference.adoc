@@ -51,7 +51,7 @@ These contributions can be divided into 2 segments.
 
 1. _Before October 2017_
 +
-In the early days of the project, before Bisq tracked compensation requests and voting results, Bisq collected donations. Over time, about 25 BTC was collected from 144 people. In October 2017, as part of the implementation of the <<dao/phase-zero#the-bsq-token,Phase Zero>> plan, it was decided that 2.5 BTC of the total would be distributed back to these past contributors as BSQ where each person would receive an amount proportional to their prior contributions.
+In the early days of the project, before Bisq tracked compensation requests and voting results, Bisq collected donations. In October 2017, as part of the implementation of the <<dao/phase-zero#the-bsq-token,Phase Zero>> plan, it was decided that 2.5 BTC of all donations would be distributed back to past contributors as BSQ where each person would receive an amount proportional to their prior contributions.
 +
 2. _After October 2017_
 +
@@ -59,7 +59,7 @@ In October 2017, the Phase Zero plan went into effect. Subsequent contributions 
 
 The genesis BSQ distribution was the sum of both segments of past contributions.
 
-Ultimately, the genesis transaction issued https://explorer.bisq.network/[6,157,480 BSQ to 202 contributors^].
+Ultimately, the genesis transaction issued https://explorer.bisq.network/[4,000,000 BSQ to 202 contributors^].
 
 You can verify the calculation of the final issuance amount yourself. The portion allotted for contributors from before October 2017 was 2.5 million BSQ. The remainder was for contributions made afterward, which are all documented on GitHub and the spreadsheet (both linked above).
 
@@ -80,7 +80,7 @@ image::bisq-dao-data-model.png[How Bisq stores data]
 
 Storing a hash of the extra data on the Bitcoin blockchain ensures any attempts to manipulate it will fail, since the hash of the manipulated data will change and then not match the hash recorded in the corresponding Bitcoin transaction.
 
-NOTE: There's a bit of a chicken-and-egg problem here, since the Bitcoin transaction ID can only be known after the Bitcoin transaction is made, and the hash of a data object can only be made once the Bitcoin transaction ID is known. To get around this, the data object is hashed with a blank string in place of the Bitcoin transaction ID, and the Bitcoin transaction ID is added afterward. Later, when the integrity of the data object needs to be validated, the Bitcoin transaction ID is replaced with a blank string before the data object is hashed.
+NOTE: There's a bit of a chicken-and-egg problem here, since the Bitcoin transaction ID can only be known after the Bitcoin transaction is made, and the hash of a data object can only be made once the Bitcoin transaction ID is known. To get around this, the data object is hashed with `null` in place of the Bitcoin transaction ID, and the Bitcoin transaction ID is added afterward. Later, when the integrity of the data object needs to be validated, the Bitcoin transaction ID is replaced with `null` before the data object is hashed.
 
 === Voting Cycle
 
@@ -132,7 +132,7 @@ _Stake_ is the literal amount of BSQ specified for the vote transaction. This is
 
 **Total voting weight is the sum of reputation value and specified stake.**
 
-Reputation is worth more than stake. The idea is that there is no better measure of good-will and dedication to the project than actually working on the project. The arrangement still allows people who buy into the project considerable influence, while hopefully minimizing the potential of whales with bad intentions from buying their way in and sabotaging the project.
+BSQ earned is worth more than BSQ bought. The idea is that there is no better measure of good-will and dedication to the project than actually working on the project. The arrangement still allows people who buy into the project considerable influence, while hopefully minimizing the potential of whales with bad intentions from buying their way in and sabotaging the project.
 
 ===== Other Details
 
@@ -146,7 +146,7 @@ _450 blocks, about 3 days_
 
 No action is required of the user during this phase aside from having the Bisq software online at some point during the phase so the vote reveal phase so it can publish the vote reveal transaction.
 
-You should see a pop-up in the UI when the transaction has been published.
+You will see a pop-up in the UI when the transaction has been published.
 
 ===== Other Details
 
@@ -173,11 +173,13 @@ In this phase, Bisq nodes calculate vote results from proposals, voting stake, a
 
 ===== Determining Consensus
 
-We can trust that all Bisq nodes will get the same data from the the Bitcoin blockchain. However, we cannot be sure that all Bisq nodes have obtained identical data from the Bisq P2P network. It is critical that any potential inconsistencies be handled before determining vote results, otherwise, vote results may differ.
+We can trust that all Bisq nodes will get the same data from the the Bitcoin blockchain. However, we cannot be sure that all Bisq nodes have obtained all corresponding data from the Bisq P2P network. It is critical that any potential inconsistencies be handled before determining vote results, otherwise, vote results may differ.
 
 This is why each Bisq node includes a hash of the list of the voting data objects it has received in its vote reveal transaction. While a hash of vote data objects is recorded on the Bitcoin blockchain for integrity, it's not guaranteed that every _voting data object itself_ is actually delivered to every Bisq node.
 
 So, when calculating vote results, the majority hash from the vote reveal transactions (majority by voting stake) is considered to be the authoritative representation of votes for the whole network. Vote result calculations are based on this uniform determination, ensuring consensus across the network.
+
+NOTE: This majority hash must have at least 80% of the vote stake—otherwise the whole voting cycle is invalidated and all proposals are rejected. Such inconsistencies should be exceptional, as they would indicate a significant problem with P2P network stability. This 80% threshold is also a security measure, as only an attacker with at least 80% of the total stake in a voting cycle could succeed.
 
 == Note on Unexpected Situations
 
@@ -185,7 +187,9 @@ Great care has been taken to make sure that there are no opportunities for the B
 
 Much expertise and theory went into the Bisq DAO's conception, implementation was careful, and testing was thorough. The resulting software is the best expression of the intention of these collective efforts, but it may not be infallible.
 
-We say this to establish that Bisq DAO code is not law. It has clear intentions, and every effort will be made to fix unintended results. While we hope nothing will be catastrophic enough to require it, hard forks, confiscation, and new issuances are options to deal with extreme scenarios.
+We say this to establish that Bisq DAO code is not law. It has clear intentions, and every effort will be made to fix unintended results.
+
+While we hope nothing will be catastrophic enough to require it, hard forks, confiscation, and new issuances are options to deal with extreme scenarios. BSQ trading and DAO operations can be halted through an alert message from the lead developer. Such messages may be ignored by users if they think the measure is being abused, but ignoring such messages in a situation where the measure _is_ justified may exclude the user from reimbursement in case of losses.
 
 == Improve this doc
 
