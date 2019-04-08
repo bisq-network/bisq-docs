@@ -4,7 +4,7 @@
 
 Here we collect resources to help you learn more about the Bisq DAO, what it is, and how it works.
 
-_The Bisq DAO is currently live on our testnet, and is projected to go live on mainnet in March 2019._
+_The Bisq DAO is currently live on our testnet, and is projected to go live on mainnet in April 2019._
 
 == General Info
 
