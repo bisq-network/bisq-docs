@@ -43,9 +43,9 @@ More details are in the <<dao/specification#,technical specification>>.
 
 ### BSQ Genesis Distribution
 
-As you may have noticed, the Bisq DAO did not launch with a supply of zero BSQ tokens. So where did the initial supply of BSQ tokens come from?
+The Bisq DAO will not launch with a supply of zero BSQ tokens. So where will the initial supply of BSQ tokens come from?
 
-In short, the initial supply of BSQ tokens was created to account for all the contributions to the Bisq project before the mainnet launch of the Bisq DAO.
+In short, the initial supply of BSQ tokens will be created to account for all the contributions to the Bisq project before the mainnet launch of the Bisq DAO.
 
 These contributions can be divided into 2 segments.
 
@@ -57,11 +57,9 @@ In the early days of the project, before Bisq tracked compensation requests and 
 +
 In October 2017, the Phase Zero plan went into effect. Subsequent contributions to Bisq were https://github.com/bisq-network/compensation/issues[documented on GitHub^] and votes were cast https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck[on this spreadsheet^] by stakeholders.
 
-The genesis BSQ distribution was the sum of both segments of past contributions.
+The genesis BSQ distribution will be the sum of both segments of past contributions.
 
-Ultimately, the genesis transaction issued https://explorer.bisq.network/[4,000,000 BSQ to 202 contributors^].
-
-You can verify the calculation of the final issuance amount yourself. The portion allotted for contributors from before October 2017 was 2.5 million BSQ. The remainder was for contributions made afterward, which are all documented on GitHub and the spreadsheet (both linked above).
+More details on the exact distribution will be recorded here as soon as they are available.
 
 == Bisq DAO
 
