@@ -1,0 +1,194 @@
+= Bisq DAO User Reference
+:imagesdir: ./images
+:!figure-caption:
+
+Practical details on the workings of the Bisq DAO for traders and contributors.
+
+Some basic DAO functions may not be conceptually complex—e.g., paying trading fees, making proposals, voting, etc—but implementing these functions on peer-to-peer networks (Bitcoin and Bisq's own P2P network) adds extensive technical complexity.
+
+Immense technical challenges aside, the practical constraints of the Bisq DAO are not trivial. One requirement is true, complete decentralization of decision-making (no persons with special powers) and funding (no central wallets or accounts to store and distribute funds). Another is that incentives must be so well-aligned that stakeholders are naturally motivated to grow and support the DAO merely by acting rationally—there are no managers to promote you (or fire you).
+
+And perhaps most critically, the DAO needs to be secure: safe from hackers and scammers trying to advantage of the DAO and its users.
+
+== BSQ Token
+
+Contributors earn BSQ for working on Bisq, and traders spend BSQ to trade on Bisq. We've covered this basic dynamic in <<user-dao-intro#,this doc>> and https://www.youtube.com/watch?v=pNvOZlIDYEQ&list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[this video series^].
+
+But what actually _is_ BSQ, and where does it come from?
+
+=== More About BSQ
+
+A single BSQ token is denominated as 100 satoshis (i.e., it's represented on the Bitcoin blockchain as 0.00000100 BTC). This bitcoin is 'colored' with additional properties that causes Bisq software to recognize it as BSQ.
+
+BSQ can only be created in one of two ways:
+
+1. through the genesis distribution (detailed below)
+2. through an issuance transaction (compensation request or reimbursement request)
+
+While BSQ is just bitcoin, it should only be stored in a Bisq wallet.
+
+[sidebar]
+.Warning
+--
+WARNING: **Please do not try to send BSQ to a non-Bisq wallet, or to otherwise create your own BSQ transactions**. The rules to form a valid BSQ transaction are rather complex, and even the slightest error can result in invalid BSQ. Even the <<dao/specification#,technical spec>> does not cover every single detail—the only complete reference is the source code. Also note that future code changes may break custom transactions or implementations. Bisq will NOT provide support for any such cases.
+--
+
+Ultimately, BSQ is stored in a Bitcoin wallet, but the Bisq software takes several measures to keep BSQ and BTC separate to prevent mixing the two by accident. On disk, BTC and BSQ wallets are stored in separate files. In the Bisq interface, BSQ wallets are prefixed with a 'B' to prevent users from mistakenly using BSQ as BTC.
+
+As an additional protection measure, Bisq wallets use a special BIP44 derivation path that other wallets won't understand.
+
+For user convenience, the built-in Bisq wallets for BTC and BSQ share the same seed.
+
+More details are in the <<dao/specification#,technical specification>>.
+
+### BSQ Genesis Distribution
+
+The Bisq DAO will not launch with a supply of zero BSQ tokens. So where will the initial supply of BSQ tokens come from?
+
+In short, the initial supply of BSQ tokens will be created to account for all the contributions to the Bisq project before the mainnet launch of the Bisq DAO.
+
+These contributions can be divided into 2 segments.
+
+1. _Before October 2017_
++
+In the early days of the project, before Bisq tracked compensation requests and voting results, Bisq collected donations. In October 2017, as part of the implementation of the <<dao/phase-zero#the-bsq-token,Phase Zero>> plan, it was decided that 2.5 BTC of all donations would be distributed back to past contributors as BSQ where each person would receive an amount proportional to their prior contributions.
++
+2. _After October 2017_
++
+In October 2017, the Phase Zero plan went into effect. Subsequent contributions to Bisq were https://github.com/bisq-network/compensation/issues[documented on GitHub^] and votes were cast https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck[on this spreadsheet^] by stakeholders.
+
+The genesis BSQ distribution will be the sum of both segments of past contributions.
+
+More details on the exact distribution will be recorded here as soon as they are available.
+
+== Bisq DAO
+
+=== Technical Overview
+
+There are 2 key points to note about how the Bisq DAO works.
+
+1. **Every DAO action is an on-chain Bitcoin transaction.** Every DAO action requires BSQ, and since BSQ is bitcoin, every DAO action is also recorded on the Bitcoin blockchain. As noted above, this does NOT mean you should try to form your own BSQ transactions. But it does mean that every action you take on the Bisq DAO is immortalized on the Bitcoin blockchain, publicly verifiable, and virtually impossible to reverse.
+
+2. **Bitcoin provides transaction integrity, and Bisq's own P2P network provides storage.** DAO actions such as making proposals and voting include extra data such as text and links that don't belong on the Bitcoin blockchain. This extra data is stored on Bisq's own P2P network (literally, Bisq users' hard drives). A hash of that extra data is included in the `OP_RETURN` output of the corresponding Bitcoin transaction. Then, the Bitcoin transaction ID is added to the extra data and broadcast to peers on the Bisq network.
+
+You can visualize it like this:
+
+.How Bisq stores data
+image::bisq-dao-data-model.png[How Bisq stores data]
+
+Storing a hash of the extra data on the Bitcoin blockchain ensures any attempts to manipulate it will fail, since the hash of the manipulated data will change and then not match the hash recorded in the corresponding Bitcoin transaction.
+
+NOTE: There's a bit of a chicken-and-egg problem here, since the Bitcoin transaction ID can only be known after the Bitcoin transaction is made, and the hash of a data object can only be made once the Bitcoin transaction ID is known. To get around this, the data object is hashed with `null` in place of the Bitcoin transaction ID, and the Bitcoin transaction ID is added afterward. Later, when the integrity of the data object needs to be validated, the Bitcoin transaction ID is replaced with `null` before the data object is hashed.
+
+=== Voting Cycle
+
+Voting cycles are timed to last about 1 month. Duration is measured in blocks, so actual times may vary.
+
+==== Proposal Phase
+
+_3600 blocks, about 24 days_
+
+During this time, Bisq stakeholders (contributors and traders) can make proposals. It is not possible to edit a proposal, but it is possible to remove a proposal and submit a corrected one (only during this phase).
+
+There is a small fee to make proposals to discourage spam. Fees for proposals that are removed are not reimbursed.
+
+Proposals requesting the issuance of new BSQ will also require a small amount of BTC to be included in the proposal transaction so there is BTC to 'color' into BSQ. The spec requires 100 satoshis per BSQ token, so a request for 1000 BSQ will require 1000 × 100 = 100,000 satoshis.
+
+Keep in mind that the actual BSQ you end up with will be net the proposal fee: if your request for 1000 BSQ is approved, and if the proposal fee is 2 BSQ, you will end up with 998 BSQ in your wallet.
+
+For compensation requests, please make sure you follow <<compensation#, established conventions and recommendations>>.
+
+If the proposal phase ends before you can make your proposal, simply wait and make your proposal in the next proposal phase.
+
+===== Other Details
+
+As illustrated in the image above, proposal transactions are published on the Bitcoin network and proposal data objects are broadcast on the Bisq P2P network. The Bitcoin transaction includes a hash of the proposal data object.
+
+After the proposal phase is over, there is a break of 150 blocks (about 1 day) to review and discuss proposals before voting begins.
+
+==== Blind Voting Phase
+
+_450 blocks, about 3 days_
+
+You may approve, reject, or abstain from casting a vote on proposals. It is highly recommended that you only approve or reject proposals for which you can make a well-informed decision.
+
+It is not necessary to have made a proposal to be able to vote—any stakeholder (anyone with BSQ) can participate in voting.
+
+Once you have made your selections, you must specify a stake and publish your votes.
+
+Votes cannot be changed once they are published.
+
+===== Voting Stake
+
+Your voting weight is determined by 2 factors: _reputation_ (how much BSQ you've earned), and _stake_ (how much of your owned BSQ you allot to your vote) that you specify in your vote transaction.
+
+_Reputation_ is the amount of BSQ earned by doing work for the Bisq network, independent of the amount of BSQ spent or sold. So if Alice earns 10,000 BSQ by working on Bisq, and she sells 8,000 BSQ for BTC to pay her bills, her reputation value remains 10,000 BSQ. Caveat: reputation decays over time. BSQ earned decays linearly over a period of 2 years as soon as it's earned. So the reputation value of Alice's 10,000 BSQ is 5,000 BSQ one year after she earns it, and zero two years later.
+
+Reputation cannot be specified when making a vote transaction—it's automatically calculated for the user from their past contributions.
+
+_Stake_ is the literal amount of BSQ specified for the vote transaction. This is BSQ you own that you would like to devote to your vote. The more BSQ you allot, the more weight your vote will hold. BSQ specified for stake is unspendable for the duration of the voting cycle.
+
+**Total voting weight is the sum of reputation value and specified stake.**
+
+BSQ earned is worth more than BSQ bought. The idea is that there is no better measure of good-will and dedication to the project than actually working on the project. The arrangement still allows people who buy into the project considerable influence, while hopefully minimizing the potential of whales with bad intentions from buying their way in and sabotaging the project.
+
+===== Other Details
+
+Votes are published on the Bitcoin network and _encrypted_ vote data objects are broadcast on the Bisq P2P network (hence the term 'blind' vote). The Bitcoin transaction includes a hash of the vote data object. BSQ specified for voting stake is also specified in this transaction, and cannot be spent until the vote reveal transaction is published.
+
+Following the end of the blind voting phase, there is a break of 10 blocks to protect against reorgs.
+
+==== Vote Reveal Phase
+
+_450 blocks, about 3 days_
+
+No action is required of the user during this phase aside from having the Bisq software online at some point during the phase so the vote reveal phase so it can publish the vote reveal transaction.
+
+You will see a pop-up in the UI when the transaction has been published.
+
+===== Other Details
+
+Only a Bitcoin transaction is made in this phase—no additional data is broadcast to the Bisq P2P network.
+
+This transaction includes 2 items:
+
+1. the key to decrypt the votes cast in the blind voting phase
+2. a hash of the list of voting data objects received by the Bisq node making the transaction (ordered by transaction ID; details <<#determining-consensus,below>>)
+
+One of the inputs to this transaction is the BSQ reserved for stake, so once this transaction is published, that BSQ becomes spendable again.
+
+If a user fails to make their vote reveal transaction, their vote is rendered invalid.
+
+Again, for protection against reorgs, there is a break of 10 blocks after this phase is over.
+
+==== Vote Result Phase
+
+_10 blocks, about 100 minutes_
+
+This phase is more of a trigger, so allotting 10 blocks is more for consistency than a hard requirement.
+
+In this phase, Bisq nodes calculate vote results from proposals, voting stake, and votes (which can now be decrypted from the vote reveal transactions).
+
+===== Determining Consensus
+
+We can trust that all Bisq nodes will get the same data from the the Bitcoin blockchain. However, we cannot be sure that all Bisq nodes have obtained all corresponding data from the Bisq P2P network. It is critical that any potential inconsistencies be handled before determining vote results, otherwise, vote results may differ.
+
+This is why each Bisq node includes a hash of the list of the voting data objects it has received in its vote reveal transaction. While a hash of vote data objects is recorded on the Bitcoin blockchain for integrity, it's not guaranteed that every _voting data object itself_ is actually delivered to every Bisq node.
+
+So, when calculating vote results, the majority hash from the vote reveal transactions (majority by voting stake) is considered to be the authoritative representation of votes for the whole network. Vote result calculations are based on this uniform determination, ensuring consensus across the network.
+
+NOTE: This majority hash must have at least 80% of the vote stake—otherwise the whole voting cycle is invalidated and all proposals are rejected. Such inconsistencies should be exceptional, as they would indicate a significant problem with P2P network stability. This 80% threshold is also a security measure, as only an attacker with at least 80% of the total stake in a voting cycle could succeed.
+
+== Note on Unexpected Situations
+
+Great care has been taken to make sure that there are no opportunities for the Bisq DAO to be exploited by scammers, hackers, or others with bad intentions.
+
+Much expertise and theory went into the Bisq DAO's conception, implementation was careful, and testing was thorough. The resulting software is the best expression of the intention of these collective efforts, but it may not be infallible.
+
+We say this to establish that Bisq DAO code is not law. It has clear intentions, and every effort will be made to fix unintended results.
+
+While we hope nothing will be catastrophic enough to require it, hard forks, confiscation, and new issuances are options to deal with extreme scenarios. BSQ trading and DAO operations can be halted through an alert message from the lead developer. Such messages may be ignored by users if they think the measure is being abused, but ignoring such messages in a situation where the measure _is_ justified may exclude the user from reimbursement in case of losses.
+
+== Improve this doc
+
+Find a typo or have other suggestions for improvement? Please https://github.com/bisq-network/bisq-docs/blob/master/{docname}{docfilesuffix}[edit this doc] or https://github.com/bisq-network/bisq-docs/issues/new?title=Improvement+suggestion+for+{docname}{docfilesuffix}[report an issue].
