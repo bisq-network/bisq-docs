@@ -121,7 +121,7 @@ As with strategy and compensation, the community decides through voting. Anyone 
 
 NOTE: Confiscating a bond is a harsh penalty which should not be taken lightly. Therefore, the Bisq DAO makes confiscation proposals especially hard to approve: they require a quorum of at least 200,000 BSQ and 85% acceptance to pass (instead of the typical >50%).
 
-In this way, the risk that people in high-trust roles misbehave is minimized, and the community has access to a responsble mechanism for handling such a scenario in cases that warrant it.
+In this way, the risk that people in high-trust roles misbehave is minimized, and the community has access to a responsible mechanism for handling such a scenario in cases that warrant it.
 
 == Now you try
 
