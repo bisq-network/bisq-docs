@@ -426,7 +426,7 @@ In the vote result phase, all nodes calculate the vote result on all proposals a
 
 This process uses the hash of the blind vote list from the vote reveal tx to determine the winning majority, in case users had different P2P network payloads of blind votes. The majority is calculated by stake (not merit) of the voters. Only if at least 80% of the network has the same hash is the cycle is valid, otherwise, all proposals and requests are considered rejected.
 
-A proposal is considered accepted if the required quorum and threshold are reached. Quorum is the minimum amount of accumulated vote weight in BSQ which is required. Threshold is the relationship of accepted votes to total votes. It cannot be lower then 50.01%. Each proposal type has different quorum and threshold parameters which can be changed by voting.
+A proposal is considered accepted if the required quorum and threshold are reached. Quorum is the minimum amount of accumulated vote weight in BSQ which is required. Threshold is the relationship of accepted votes to total votes. Each proposal type has different quorum and threshold parameters which can be changed by voting, but threshold can never be below 50.01%.
 
 In case a proposal's data is not available, it is rejected. In case there are 2 accepted change parameter proposals for changing the same parameter to 2 different values, we reject both as it shows there is a social consensus issue in the DAO.
 
