@@ -97,7 +97,7 @@ Unverified is the default state for all unconfirmed BSQ transactions. Validation
 
 Invalid transactions are transactions which have violated validation rules. BSQ are destroyed in such transactions.
 
-Irregular transactions are transactions which are invalid with their intended use but have not destroyed their BSQ. An example is a proposal tx which got confirmed too late (not in proposal phase) and therefore is invalid as a proposal tx, but the BSQ is still valid to spend.
+Irregular transactions are transactions which are invalid with their intended use but have not destroyed their BSQ. An example is a proposal tx which got confirmed too late (not in proposal phase) and therefore is invalid as a proposal tx, but the BSQ is still valid to be spent.
 
 === Genesis tx
 We use BTC from our donation address to fund the input for the genesis tx. We will issue 3 657 480 BSQ which is equivalent to 3.65748 BTC. The amount of 3 657 480 BSQ is the sum of the 2 500 000 BSQ which we distributed as symbolic https://blockstream.info/testnet/tx/2f194230e23459a9211322c4b1c182cf3f367086e8059aca2f8f44e20dac527a[testnet BSQ] to past contributors back in July 2017 and 1 157 480 BSQ contributors have earned since we started the https://docs.bisq.network/dao/phase-zero.html[DAO Phase Zero] in October 2017.
@@ -152,14 +152,14 @@ OpReturn data:
 The hash is created from the bytes of the proposal payload with tx ID set to null using protobuffer serialization.
 It is first hashed with Sha256 and then with Ripemd160 to get a 20 byte hash.
 
-Example with a BSQ fee of 2 BSQ:
+===== Example with a BSQ fee of 2 BSQ:
 
 - Input 1: 10.00 BSQ
 - Input 2: 0.1 BTC
 - Output 1: 8 BSQ
-- Output 2: 0.09952000 BTC change output
+- Output 2: 0.09950200 BTC change output
 - Output 3: OpReturn data
-- Mining fee: 0.0005 (0.00048000 BTC + 0.00002000 BTC or 2 BSQ)
+- Mining fee: 0.0005 (0.00049800 BTC + 0.00000200 BTC or 2 BSQ)
 
 === Compensation request tx/Reimbursement request tx
 Compensation request tx and reimbursement request txs are technically the same and inherit the properties of a
@@ -179,15 +179,15 @@ OpReturn data:
 - 1 byte for version: 0x01
 - 20 bytes for hash of request payload
 
-Example with a BSQ fee of 2 BSQ and requested issuance amount of 5000 BSQ:
+===== Example with a BSQ fee of 2 BSQ and requested issuance amount of 5000 BSQ:
 
 - Input 1: 10.00 BSQ
 - Input 2: 0.1 BTC
 - Output 1: 8 BSQ
 - Output 2: 0.00500000 BTC (5000 BSQ after positive voting)
-- Output 3: 0.09452000 BTC change output
+- Output 3: 0.09950200 BTC change output
 - Output 4: OpReturn data
-- Mining fee: 0.0005 (0.00048000 BTC + 0.00002000 BTC or 2 BSQ)
+- Mining fee: 0.0005 (0.00049800 BTC + 0.00000200 BTC or 2 BSQ)
 
 === Blind vote tx
 The blind vote tx contains the hash of the blind vote payload and uses the vote stake as input. The stake is blocked from spending during this phase and is only unlocked by the vote reveal tx. If another transaction spends the stake, the blind vote becomes invalid. The blind vote requires a fee in BSQ.
@@ -213,15 +213,15 @@ To create the encrypted votes we use following data:
 
 We use protobuffer serialisation for the bytes which will be encrypted with the secret key.
 
-Example with a BSQ fee of 2 BSQ and 7000 BSQ vote stake:
+===== Example with a BSQ fee of 2 BSQ and 7000 BSQ vote stake:
 
 - Input 1: 8000.00 BSQ
 - Input 2: 0.1 BTC
 - Output 1: 7000 BSQ / 0.00700000 BTC
 - Output 2: 998 BSQ change output
-- Output 3: 0.09952000 BTC change output
+- Output 3: 0.09950200 BTC change output
 - Output 4: OpReturn data
-- Mining fee: 0.0005 (0.00048000 BTC + 0.00002000 BTC or 2 BSQ)
+- Mining fee: 0.0005 (0.00049800 BTC + 0.00000200 BTC or 2 BSQ)
 
 === Vote reveal tx
 The vote reveal tx consumes the stake output from the blind vote tx as the only BSQ input. It does not require a BSQ fee.
@@ -245,7 +245,7 @@ OpReturn data:
 The hash of the blind vote list is made using all blind vote payload data received in the cycle and sorted by blind vote tx ID.
 The secretKey is the encoded byte representation of the secret key.
 
-Example with 7000 BSQ stake:
+===== Example with 7000 BSQ stake:
 
 - Input 1: 7000 BSQ
 - Input 2: 0.1 BTC
@@ -276,12 +276,12 @@ OpReturn data:
 The hash in case of a bonded role is created from immutable data of the bonded role. Currently we use hashCode but that should be changed to a cryptographic hash.
 The hash for a reputation is derived from a salt. The salt is by default a random string as hex or can be any string defined by the user.
 
-Example with locking up 4000 BSQ:
+===== Example with locking up 4000 BSQ:
 
 - Input 1: 6000 BSQ
 - Input 2: 0.1 BTC
 - Output 1: 4000 BSQ lockup
-- Output 1: 42000 BSQ change output
+- Output 1: 2000 BSQ change output
 - Output 2: 0.09950000 BTC
 - Output 3: OpReturn data
 - Mining fee: 0.0005 BTC
@@ -297,7 +297,7 @@ Afterwards it is in the unlocked state and can be spent like any normal BSQ outp
 - Outputs [0-1]: BTC change output
 - Mining fee: BTC mining fee
 
-Example with unlocking 4000 BSQ:
+===== Example with unlocking 4000 BSQ:
 
 - Input 1: 4000 BSQ (from lockup tx output)
 - Input 2: 0.1 BTC
@@ -307,7 +307,7 @@ Example with unlocking 4000 BSQ:
 
 === Asset listing fee tx
 The asset listing fee tx is used for paying listing fees for an asset. The ticker symbol of the asset is specified in the OpReturn data to bind the tx to a specific asset.
-If the BSQ fee is more then the required mining fee, we do not use a BTC input, and add the remaining BTC to the BTC output.
+If the BSQ fee is more than the required mining fee, we do not use a BTC input, and add the remaining BTC to the BTC output.
 
 - Inputs [1-n]: BSQ inputs for listing fee
 - Inputs [0-n]: BTC inputs for miner fee
@@ -324,7 +324,7 @@ OpReturn data:
 
 We take the bytes of the ticker symbol as UTF-8 string and hash it with Sha256 and then with Ripemd160.
 
-Example with a BSQ fee of 20 BSQ:
+===== Example with a BSQ fee of 20 BSQ:
 
 - Input 1: 100.00 BSQ
 - Input 2: 0.1 BTC
@@ -334,8 +334,8 @@ Example with a BSQ fee of 20 BSQ:
 - Mining fee: 0.0005 (0.0003 BTC + 0.00020000 BTC or 20 BSQ)
 
 === Proof of burn tx
-A user can put the hash of an arbitrary string (preimage) into a proof of burn tx and burn a specified amount of
-BSQ. He can later use the preimage to proof to any party that he has created that hash. He can also sign any challenge
+A user can put the hash of an arbitrary string (pre-image) into a proof of burn tx and burn a specified amount of
+BSQ. He can later use the pre-image to prove to any party that he has created that hash. He can also sign any challenge
 message and the challenger can verify that he is the key holder of the first input used in that tx.
 
 - Inputs [1-n]: BSQ inputs for burned amount
@@ -351,9 +351,9 @@ OpReturn data:
 - 1 byte for version: 0x01
 - 20 bytes for hash of pre image
 
-We take the bytes of the preimage as UTF-8 string and hash it with Sha256 and then with Ripemd160.
+We take the bytes of the pre-image as UTF-8 string and hash it with Sha256 and then with Ripemd160.
 
-Example with 20 BSQ burned:
+===== Example with 20 BSQ burned:
 
 - Input 1: 100.00 BSQ
 - Input 2: 0.1 BTC
@@ -454,10 +454,10 @@ Assets added to Bisq need to gain enough traders to reach a minimum trade volume
 
 Anyone can pay a fee in BSQ to gain access to a trial period where requirements to reach trade volume thresholds are lifted. Usually the coin issuers do this, but it can be done by anyone interested in trading a particular asset. The fee is initially 1 BSQ per day for a trial period, with a minimum of 30 days. The fee can be changed by voting.
 
-If an asset gets removed by a `Remove Asset Proposal,` it can no longer be reactivated by the listing fee. Listing fees already paid are lost in this case.
+If an asset gets removed by a `Remove Asset Proposal`, it can no longer be reactivated by the listing fee. Listing fees already paid are lost in this case.
 
 === Proof of burn
-This advanced feature does not have a concrete use at the moment, but might be used in the future. Burning BSQ can be used as a form of reputation. If one is willing to burn some money, and can use that proof for other activities (e.g. securing a trade), they might be interested that this form of reputation by burning BSQ will not become pointless in case he was publicly proven as scammer. The user can prove that he was the originator of the transaction by providing the preimage to a hash, which gets added to the OpReturn data and he can sign any challenge message to prove he had funded the transaction. We use the EC key from the first input for the signature.
+This advanced feature does not have a concrete use at the moment, but might be used in the future. Burning BSQ can be used as a form of reputation. If one is willing to burn some money, and can use that proof for other activities (e.g. securing a trade), they might be interested that this form of reputation by burning BSQ will not become pointless in case he was publicly proven as scammer. The user can prove that he was the originator of the transaction by providing the pre-image to a hash, which gets added to the OpReturn data and he can sign any challenge message to prove he had funded the transaction. We use the EC key from the first input for the signature.
 
 == Disclaimer
 
