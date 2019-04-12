@@ -170,7 +170,7 @@ After the blind voting phase is over, **you must make sure Bisq goes back online
 
 IMPORTANT: Bisq will publish the transaction automatically when it's online, so you don't have to actually do anything, but you can check the https://explorer.bisq.network/[BSQ block explorer^] to be sure the transaction was published. More details <<#explore-a-bsq-block-explorer,below>>.
 
-This transaction includes the key to decrypt your vote from the last phase. It also includes a representation of all votes you've received from the network, which is used to determine a consensus of all votes cast on the network. See more details <<dao/specification#vote-reveal-phase,here>>.
+This transaction includes the key to decrypt your vote from the last phase. It also includes a representation of all votes you've received from the network, which is used to determine a consensus of all votes cast on the network. See more details <<dao-user-reference#vote-reveal-phase,here>>.
 
 Don't forget this step! If your vote reveal transaction is not published, your vote won't be decrypted, and it won't be counted.
 

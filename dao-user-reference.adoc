@@ -30,7 +30,7 @@ While BSQ is just bitcoin, it should only be stored in a Bisq wallet.
 [sidebar]
 .Warning
 --
-WARNING: **Please do not try to send BSQ to a non-Bisq wallet, or to otherwise create your own BSQ transactions**. The rules to form a valid BSQ transaction are rather complex, and even the slightest error can result in invalid BSQ. Even the <<dao/specification#,technical spec>> does not cover every single detail—the only complete reference is the source code. Also note that future code changes may break custom transactions or implementations. Bisq will NOT provide support for any such cases.
+WARNING: **Please do not try to send BSQ to a non-Bisq wallet, or to otherwise create your own BSQ transactions**. The rules to form a valid BSQ transaction are rather complex, and even the slightest error can result in invalid BSQ. Even the <<dao-technical-overview#,technical overview>> does not cover every single detail—the only complete reference is the source code. Also note that future code changes may break custom transactions or implementations. Bisq will NOT provide support for any such cases.
 --
 
 Ultimately, BSQ is stored in a Bitcoin wallet, but the Bisq software takes several measures to keep BSQ and BTC separate to prevent mixing the two by accident. On disk, BTC and BSQ wallets are stored in separate files. In the Bisq interface, BSQ wallets are prefixed with a 'B' to prevent users from mistakenly using BSQ as BTC.
@@ -39,7 +39,7 @@ As an additional protection measure, Bisq wallets use a special BIP44 derivation
 
 For user convenience, the built-in Bisq wallets for BTC and BSQ share the same seed.
 
-More details are in the <<dao/specification#,technical specification>>.
+More details are in the <<dao-technical-overview#,technical overview>>.
 
 ### BSQ Genesis Distribution
 

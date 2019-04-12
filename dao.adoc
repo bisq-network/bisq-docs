@@ -27,7 +27,7 @@ The Bisq DAO isn't live yet, but it's available for you to test right now! This 
 ==== <<dao/phase-zero#, Phase Zero: A Plan for Bootstrapping the Bisq DAO>>
 An overview of the philosophy behind Bisq, the Bisq DAO, why both were created, and how it planned to decentralize its own governance from the very beginning.
 
-==== <<dao/specification#, Bisq DAO Technical Specification>>
+==== <<dao-technical-overview#, Bisq DAO Technical Overview>>
 Technical details of (1) what BSQ tokens actually are, how they're created, and how they're destroyed and (2) the various functions of the Bisq DAO and how BSQ enables them. The document includes several example transactions so you can explicitly see the processes.
 
 ==== https://www.youtube.com/watch?v=McaBSRj-bTk[Dev Session on the Bisq DAO^]

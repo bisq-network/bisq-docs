@@ -42,7 +42,7 @@ The value of a BSQ token is determined by the market as stakeholders buy and sel
 
 NOTE: The BSQ token is not associated with any kind of initial coin offering (ICO) or capital-raising initiative. It's merely a tool to decentralize the governance of the already-functional Bisq exchange service. As of December 2018, Bisq has facilitated over 19,000 trades without major incident since it went into production in April 2016.
 
-You can learn more about colored coins https://www.youtube.com/watch?v=68_DU1c0Cac[here in this interview^]. Technical details of BSQ tokens are available <<dao/specification#,here>>.
+You can learn more about colored coins https://www.youtube.com/watch?v=68_DU1c0Cac[here in this interview^]. Technical details of BSQ tokens are available <<dao-technical-overview#,here>>.
 
 === Overview
 
@@ -71,7 +71,7 @@ In the Bisq DAO, trading fees are collected from traders and distributed to cont
 [NOTE]
 .Where does new BSQ actually come from?
 ====
-Recall that a BSQ token is merely colored bitcoin. When a contributor makes their compensation request in the DAO, they must also include the tiny amount of bitcoin to be 'colored' as BSQ (<<dao/specification#,the spec>> requires 100 satoshis). So if a contributor requests 1,000 BSQ, they will need to include 100 * 1,000 = 100,000 satoshis with their compensation request—just about 3 USD at current rates.
+Recall that a BSQ token is merely colored bitcoin. When a contributor makes their compensation request in the DAO, they must also include the tiny amount of bitcoin to be 'colored' as BSQ (<<dao-technical-overview#,the spec>> requires 100 satoshis). So if a contributor requests 1,000 BSQ, they will need to include 100 * 1,000 = 100,000 satoshis with their compensation request—just about 3 USD at current rates.
 
 If their request is approved, those satoshis are 'colored' and recognized as 1,000 valid BSQ tokens on Bisq. Assuming a BSQ market value of 1 USD (exact value will fluctuate), the contributor will have been granted 1,000 USD worth of BSQ for a negligible cost of 3 USD.
 ====
@@ -143,7 +143,7 @@ While the DAO is live on our testnet, we're offering bounties for bugs ranging f
 To learn more about the Bisq DAO, please see:
 
 * <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>, a doc which offers a more comprehensive overview of Bisq and the Bisq DAO.
-* <<dao/specification#, Bisq DAO technical specification>>, along with technical details of BSQ tokens, this doc shows example transactions for several DAO functions.
+* <<dao-technical-overview#, Bisq DAO technical overview>>, along with technical details of BSQ tokens, this doc shows example transactions for several DAO functions.
 * https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics^], a YouTube video series that covers foundational concepts of concepts underlying the DAO such as bitcoin transactions, colored, coins, etc.
 
 Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://bisq.network/slack-invite[Slack^], or https://bisq.community/[the forum^].
