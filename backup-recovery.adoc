@@ -18,7 +18,7 @@ All Bisq data is stored in one place:
 
 * macOS: `/Users/<username>/Library/Application Support/Bisq`
 * Linux: `/home/<username>/.local/share/Bisq`
-* Windows 7+: `C:\Documents and Settings\<username>\AppData\Roaming\Bisq`
+* Windows 7+: `C:\Users\<username>\AppData\Roaming\Bisq`
 * Windows XP: `C:\Documents and Settings\<username>\Application Data\Bisq`
 
 **The safest, quickest, easiest, and most comprehensive thing you can do is to back up this whole folder at regular intervals.** You can either close Bisq and copy this folder to your backup location, or you can export a backup directly to your backup location while Bisq is running from the `Backup` tab of the `Account` screen.
