@@ -2,9 +2,9 @@
 :imagesdir: ./images
 :!figure-caption:
 
-The Bisq DAO will soon go live on mainnet. But there's no need to wait—you can tinker with it right now and experience truly decentralized governance for yourself.
+This guide will show you how to use the Bisq DAO for governance by walking you through the process of making a proposal and voting.
 
-In this guide, we'll show you how to use the Bisq DAO on our testnet.
+_This document became outdated with the launch of the Bisq DAO on mainnet, and while it will be updated soon, keep in mind the basic processes of making proposals and voting remain largely the same._
 
 Specifically, we will walk through one voting cycle. Voting is a crucial duty within the Bisq DAO that makes decision-making for the Bisq project accessible to all who use it—users and contributors alike. You'll see how to make a proposal, vote on other proposals, and how the BSQ token enables the process to be handled in a decentralized and trustless but meritocratic way.
 
