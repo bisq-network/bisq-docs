@@ -71,10 +71,10 @@ Until the DAO is live, voting is done on https://docs.google.com/spreadsheets/d/
 You can approve (1), reject (-1), or abstain (0). Abstaining is recommended if you're not very familiar with the work in a particular compensation request.
 
 [#get-added-to-genesis]
-== Past Contributors: Get Added to the Genesis Distribution
+== BSQ Genesis Distribution
 
-If you contributed to Bisq at some point in the past, please make sure you send a **new** BSQ address to mailto:genesis@bitsquare.io[genesis@bitsquare.io] so that you can be included in the genesis transaction.
+The BSQ genesis transaction was made on April 15, 2019 to all people who contributed to Bisq before the Bisq DAO went live on mainnet.
 
-We are requesting a new address because wallets from the 2017 versions of the Bisq application may be incompatible with the new software.
+You can see transaction details on the BSQ block explorer https://explorer.bisq.network/tx.html?tx=4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[here^] or on a plain Bitcoin block explorer https://blockstream.info/tx/4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[here^].
 
-You can get a new BSQ address by downloading the https://bisq.network/downloads/[latest Bisq software]. You'll see your BSQ address in the lower-left corner of the `DAO` screen. See the image <<#get-your-bsq-address,here>> for reference.
+Addresses were confirmed over email, Slack, Twitter, and on these two GitHub threads: https://github.com/bisq-network/compensation/issues/260[one^], https://github.com/bisq-network/compensation/issues/263[two^].
