@@ -36,7 +36,7 @@ A BSQ token is a **colored coin** on the Bitcoin blockchain. More plainly, a BSQ
 1. the satoshis take on the market value of a BSQ token
 2. the owner of the satoshis is endowed with power to participate in various Bisq governance functions
 
-See it for yourself: here's a https://blockstream.info/testnet/tx/92df3183d3c60983492983882642145ac0ab8ef93cda07ff57d1f810e34003f6/[BSQ transaction on an ordinary block explorer^], and here's https://explorer.bisq.network/tx.html?tx=92df3183d3c60983492983882642145ac0ab8ef93cda07ff57d1f810e34003f6[that same transaction on a BSQ block explorer^].
+See it for yourself: here's a https://blockstream.info/tx/0243f99c848de4f53cb29157d10bf1cdbfcf4219f84e9997dd3cac9244ab7242/[BSQ transaction on an ordinary block explorer^], and here's https://explorer.bisq.network/tx.html?tx=0243f99c848de4f53cb29157d10bf1cdbfcf4219f84e9997dd3cac9244ab7242[that same transaction on a BSQ block explorer^].
 
 The value of a BSQ token is determined by the market as stakeholders buy and sell tokens to perform various functions in the DAO. Because BSQ tokens are only recognized by Bisq software, BSQ trading can only happen in Bisq software.
 
@@ -123,30 +123,16 @@ NOTE: Confiscating a bond is a harsh penalty which should not be taken lightly. 
 
 In this way, the risk that people in high-trust roles misbehave is minimized, and the community has access to a responsible mechanism for handling such a scenario in cases that warrant it.
 
-== Now you try
-
-As of Bisq v0.9, the Bisq DAO is live on our testnet! You can make a proposal, vote on others' proposals, and buy/sell BSQ for testing.
-
-Voting cycles are currently set to about 7 days instead of the usual 1 month so that feedback and testing can be done quicker.
-
-[NOTE]
-.We highly encourage you to explore!
-====
-See our <<getting-started-dao#,walk-through guide on using the DAO here>>.
-====
-
-While the DAO is live on our testnet, we're offering bounties for bugs ranging from 100 to 10,000 BSQ. See https://bisq.community/t/how-to-explore-the-dao-on-testnet/6692[more details here^].
-
-
 == Learn more and stay in touch
 
 To learn more about the Bisq DAO, please see:
 
-* <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>, a doc which offers a more comprehensive overview of Bisq and the Bisq DAO.
+* <<dao-user-reference#, Bisq DAO user reference>>, a doc which offers practical details on the workings of the DAO, along with high-level technical details.
 * <<dao-technical-overview#, Bisq DAO technical overview>>, along with technical details of BSQ tokens, this doc shows example transactions for several DAO functions.
+* <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>, a doc which offers a more comprehensive overview of Bisq and the Bisq DAO.
 * https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics^], a YouTube video series that covers foundational concepts of concepts underlying the DAO such as bitcoin transactions, colored, coins, etc.
 
-Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://bisq.network/slack-invite[Slack^], or https://bisq.community/[the forum^].
+See more resources <<dao#, here>>. Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://bisq.network/slack-invite[Slack^], or https://bisq.community/[the forum^].
 
 
 == Improve this doc
