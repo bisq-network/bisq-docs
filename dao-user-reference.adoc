@@ -33,7 +33,7 @@ While BSQ is just bitcoin, it should only be stored in a Bisq wallet.
 WARNING: **Please do not try to send BSQ to a non-Bisq wallet, or to otherwise create your own BSQ transactions**. The rules to form a valid BSQ transaction are rather complex, and even the slightest error can result in invalid BSQ. Even the <<dao-technical-overview#,technical overview>> does not cover every single detail—the only complete reference is the source code. Also note that future code changes may break custom transactions or implementations. Bisq will NOT provide support for any such cases.
 --
 
-Ultimately, BSQ is stored in a Bitcoin wallet, but the Bisq software takes several measures to keep BSQ and BTC separate to prevent mixing the two by accident. On disk, BTC and BSQ wallets are stored in separate files. In the Bisq interface, BSQ wallets are prefixed with a 'B' to prevent users from mistakenly using BSQ as BTC.
+BSQ is stored in a Bitcoin wallet, but the Bisq software takes several measures to keep BSQ and BTC separate to prevent mixing the two by accident. On disk, BTC and BSQ wallets are stored in separate files. In the Bisq interface, BSQ wallets are prefixed with a 'B' to prevent users from mistakenly using BSQ as BTC.
 
 As an additional protection measure, Bisq wallets use a special BIP44 derivation path that other wallets won't understand.
 
@@ -41,25 +41,25 @@ For user convenience, the built-in Bisq wallets for BTC and BSQ share the same s
 
 More details are in the <<dao-technical-overview#,technical overview>>.
 
-### BSQ Genesis Distribution
+=== BSQ Genesis Distribution
 
-The Bisq DAO will not launch with a supply of zero BSQ tokens. So where will the initial supply of BSQ tokens come from?
+As you may have noticed, the Bisq DAO did not launch with a supply of zero BSQ tokens. So where did the initial supply of BSQ tokens come from?
 
-In short, the initial supply of BSQ tokens will be created to account for all the contributions to the Bisq project before the mainnet launch of the Bisq DAO.
+In short, the initial supply of BSQ tokens was created to account for all the contributions to the Bisq project before the mainnet launch of the Bisq DAO.
 
 These contributions can be divided into 2 segments.
 
 1. _Before October 2017_
 +
-In the early days of the project, before Bisq tracked compensation requests and voting results, Bisq collected donations. In October 2017, as part of the implementation of the <<dao/phase-zero#the-bsq-token,Phase Zero>> plan, it was decided that 2.5 BTC of all donations would be distributed back to past contributors as BSQ where each person would receive an amount proportional to their prior contributions.
+In the early days of the project, before Bisq tracked compensation requests and voting results, Bisq collected donations. In October 2017, as part of the implementation of the <<dao/phase-zero#the-bsq-token,Phase Zero>> plan, it was decided that 2.5 BTC of all donations would be distributed back to these patrons as BSQ where each person would receive an amount proportional to their prior contributions.
 +
 2. _After October 2017_
 +
-In October 2017, the Phase Zero plan went into effect. Subsequent contributions to Bisq were https://github.com/bisq-network/compensation/issues[documented on GitHub^] and votes were cast https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck[on this spreadsheet^] by stakeholders.
+In October 2017, the Phase Zero plan went into effect. Subsequent contributions to Bisq were https://github.com/bisq-network/compensation/issues[documented on GitHub^] and stakeholders voted to approve those contributions https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck[on this spreadsheet^].
 
-The genesis BSQ distribution will be the sum of both segments of past contributions.
+The genesis BSQ distribution was the sum of both segments of past contributions.
 
-More details on the exact distribution will be recorded here as soon as they are available.
+Ultimately, the genesis transaction issued https://explorer.bisq.network/tx.html?tx=4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[3,657,480 BSQ to over 200 past contributors^].
 
 == Bisq DAO
 
