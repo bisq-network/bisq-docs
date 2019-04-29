@@ -1,12 +1,6 @@
 = Bisq Network Documentation
 :imagesdir: ./images
 
-[TIP]
-.Brand new to Bisq?
-====
-Welcome! Start with the <<essentials>>. You'll be up and trading quickly.
-====
-
 [NOTE]
 .These docs are a work in progress (and you can help)
 ====
