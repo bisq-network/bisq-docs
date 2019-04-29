@@ -52,6 +52,7 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 
 === Bisq DAO: Governing Bisq
  * <<user-dao-intro#, Introduction to the Bisq DAO>> — _Learn how the DAO enables Bisq's decentralized governance model_
+ * <<getting-started-dao-traders#, User Guide: Bisq DAO for Traders>> — _Use BSQ to get lower trading fees and compensate contributors_
  * <<getting-started-dao#, User Guide: Bisq DAO for Contributors>> — _Govern Bisq through the DAO by making proposals and voting_
  * <<dao-user-reference#, Bisq DAO User Reference>> — _Practical details on using the DAO, along with a brief technical overview_
  * <<dao-technical-overview#, Bisq DAO Technical Overview>> — _Technical details of DAO functions and transactions_
