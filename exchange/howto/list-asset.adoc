@@ -145,15 +145,15 @@ Any BSQ stakeholder can also request a vote to remove an already-listed asset.
 
 === Inactive assets will be de-listed
 
-To remain listed on Bisq, assets must maintain a minimum trading volume of 0.01 BTC in 120 days.
+To remain listed on Bisq, assets must maintain a minimum trading volume of 0.01 BTC over a rolling 120-day period.
 
-If this threshold is not met, the asset will be de-listed. Once de-listed, payment accounts and offers for an asset are still visible to users who own them, but are not visible to any other peers on the network, so trading is effectively halted. Users cannot create new payment accounts for de-listed assets.
+If this threshold is not met, the asset will be de-listed. Once de-listed, the asset will not appear in the currency list, so new payment accounts for the asset cannot be created. Existing offers for the asset will remain visible.
 
-Assets can be exempted from this requirement (or re-listed after being de-listed due to inactivity) by paying the _daily asset listing fee_—allowing an asset's trading volume to be below 0.01 BTC in 120 days and remain listed.
+Assets can be exempted from this requirement (or re-listed after being de-listed due to inactivity) by paying the _daily asset listing fee_—this fee allows an asset with trading volume below 0.01 BTC in 120 days to remain listed.
 
-This fee is a Bisq DAO parameter, so it is subject to change, but is 1 BSQ per day as of this writing. The fee must be paid in batches of 30 days—so one can only pay to have an asset to be listed for 30 days, 60 days, or any other multiple of 30 days.
+This fee is a Bisq DAO parameter, so it is subject to change, but is 1 BSQ per day as of this writing. The minimum trial period length one can purchase is 30 days.
 
-Assets that have been previously removed from Bisq (i.e., removed entirely from Bisq, not just de-listed due to inactivity) cannot be re-listed.
+Assets that have been previously removed from Bisq through DAO voting (i.e., removed entirely from Bisq through stakeholder consensus, not just de-listed due to inactivity) cannot be re-listed.
 
 === Getting a new asset into production may take a while
 
