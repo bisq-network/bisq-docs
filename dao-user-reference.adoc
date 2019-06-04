@@ -59,7 +59,9 @@ In October 2017, the Phase Zero plan went into effect. Subsequent contributions 
 
 The genesis BSQ distribution was the sum of both segments of past contributions.
 
-Ultimately, the genesis transaction issued https://explorer.bisq.network/tx.html?tx=4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[3,657,480 BSQ to over 200 past contributors^].
+Ultimately, the genesis transaction issued https://explorer.bisq.network/tx.html?tx=4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[3,657,480 BSQ to over 200 past contributors^]. You can see https://blockstream.info/tx/4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[the corresponding Bitcoin transaction here^].
+
+Addresses were confirmed over email, Slack, Twitter, and on these two GitHub threads: https://github.com/bisq-network/compensation/issues/260[one^], https://github.com/bisq-network/compensation/issues/263[two^].
 
 == Bisq DAO
 
