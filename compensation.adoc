@@ -2,79 +2,103 @@
 :imagesdir: ./images
 :!figure-caption:
 
-Contributed to the Bisq Network? Great, and thank you! Here is how to request compensation for your work, and vote on requests from others.
+Have you contributed to the Bisq Network? Great, and thank you! Here is how to request compensation for your work, and vote on requests from others.
 
-Compensation requests are evaluated monthly. Exact dates for each of these stages are posted in a GitHub issue in the https://github.com/bisq-network/compensation[bisq-network/compensation] repository toward the end of the month.
+== Background
+
+Compensation requests are generally made for work done in the current DAO cycle—after the end of the last proposal phase, and before the end of the current one—but you can make a request for work done any time in the past.
+
+IMPORTANT: Compensation requests can only be made for _delivered work_. Work that's planned or in-progress is not eligible for compensation. See more on what that means https://github.com/bisq-network/proposals/issues/19[here^]. Generally, work merged to the master branch of a repository https://github.com/bisq-network/proposals/issues/38[can be considered delivered^] (if applicable).
+
+Each DAO cycle is roughly 1 month long, but timing is based on the Bitcoin block height, so exact dates for the start & end of DAO cycles vary.
+
+Make sure you check the Bisq DAO dashboard to get an idea of the submission deadline for the current cycle:
+
+.Estimated timeframe for Bisq DAO Cycle 2.
+image::check-dao-timing.png[Estimated timeframe for Bisq DAO Cycle 2]
+
+Block confirmation times can vary quite a bit, so keep an eye on these dates, and don't wait until the last minute!
+
+You must file a compensation request before the end of the current proposal phase in order to have it evaluated in the current voting cycle. If you miss it, don't worry—you can submit your request in the next proposal phase.
 
 == Submit your compensation request
 
-=== Get your BSQ address
+=== List your work in a new GitHub issue
 
-Bisq contributors are paid with BSQ. Until the Bisq DAO is launched, BSQ cannot actually be issued, so for now we use a work-around: new BSQ is allocated to contributors' BSQ addresses in a https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[spreadsheet].
+Making compensation requests and voting takes place in the Bisq DAO, but data stored there is minimized to decrease the burden on the peer-to-peer network (and on the Bitcoin network).
 
-[NOTE]
-====
-When the DAO is launched, this spreadsheet will be used to make the genesis BSQ transaction, which will issue BSQ to every contributor who has earned some before the launch of the DAO.
+Hence the GitHub issue. All the details of what work you did and why it's valuable can get long, so you'll put those details in a GitHub issue, and then _link_ to that issue in your compensation request on the Bisq DAO.
 
-After that, the spreadsheet will no longer be needed, and new BSQ will be issued directly to each contributors' BSQ address.
-====
+==== Create the issue
 
-On v0.9.4, you can get your BSQ address by simply clicking the `DAO` button in the main menu. Your BSQ address will be on the bottom left:
+The issue should go in the https://github.com/bisq-network/compensation[bisq-network/compensation^] repository, and it should be titled in the following format:
 
-.Get your BSQ address.
-image::get-bsq-address-094.png[Get your BSQ address]
+`For Cycle [N]`
 
-=== Create a new GitHub issue
+Where N is the number of the current cycle. Please stick to this convention—it's cleaner and much easier to track when looking back in time.
 
-BSQ is issued through voting, so you'll need to convince other people of (a) what you did and (b) why it's valuable, so they vote in favor of your compensation request.
+==== List your work
 
-This is what the GitHub issue is for. It should go in the https://github.com/bisq-network/compensation[bisq-network/compensation] repository, and it should include the following information:
+Your issue needs to convince Bisq stakeholders _what_ you did, _how much_ it's worth, and _why_ it's valuable.
 
- - The amount you are requesting in BSQ
- - The address that BSQ should be paid to
- - Links to issues, pull requests, and any other work you want to be compensated for
+In order to make your case as strong as possible, your request should include the following information:
+
+ - The total amount you are requesting in BSQ
+ - Links to issues, pull requests, and other "evidence" for any work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
+ - Links to role reports, if you hold any roles in the Bisq network
 
-**For now, until the DAO launch, we assume 1 BSQ = 1 USD**.
+IMPORTANT: This is a big reason that it's critical that everything you do for Bisq be as public, verifiable, and documented as possible, and that everything you do has positive consensus with multiple stakeholders so you know you're not wasting your time.
 
-[NOTE]
-.How do I know how much to request?
-====
-Bisq contributions are valued _on completion_. The metric for that is _merged to master_, or _already delivered_ if the contribution is not code. How you determine the value you request is up to you, but it should be based on the value of the contribution you made, not on the raw time you spent.
+Even then, not all stakeholders will be familiar with your work, so it's important to be as thorough as you can when making a compensation request so there's enough context for those unfamiliar with your work to make an informed vote.
 
-A good rule of thumb, if you are unsure about the value of your contribution: consider what you would charge for the work if you did it as a freelancer.
+==== Value your work
 
-For example, it might be reasonable to request 100 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through it, will probably be rejected.
-====
+As mentioned above, Bisq contributions are only eligible for compensation once delivered. For code, that means _merged to master_, and for non-code contributions that means _already delivered_. How you determine the value you request is up to you, but it should be based on the value of the contribution you made, not on the raw time you spent.
 
-See https://github.com/bisq-network/compensation/issues/2[bisq-network/compensation#2^] for an example compensation request.
+A good rule of thumb, if you are unsure about the value of your contribution: consider what you would charge for your work if you did it as a freelancer.
+
+For example, it might be reasonable to request 50 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through the doc, will probably be rejected.
+
+**For now, while the BSQ market is still young, we assume 1 BSQ = 1 USD**. This will change to a rate based on the market price of BSQ as the BSQ market matures.
+
+See https://github.com/bisq-network/compensation/issues/277[this link^] for an example compensation request.
+
+=== File your compensation request in the DAO
+
+BSQ is issued on Bisq when a compensation request is approved through DAO voting, so your compensation request needs to be filed there in order for you to actually be paid.
+
+Once you've documented all details of your request in a new issue on GitHub, make a new compensation request proposal on Bisq:
+
+.Make a new compensation request in the Bisq DAO.
+image::make-compensation-request.png[Make a new compensation request in the Bisq DAO]
+
+Make sure you select `Compensation request` as the proposal type. Also make sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Slack, forum, etc).
+
+When you're ready, click `Make proposal` to confirm your proposal for voting in the current cycle. **Proposal data cannot be edited**, so make sure everything is correct, especially the amount you're requesting.
+
+If you need to make a change, you can delete the proposal and make a new one while the proposal phase is still active, but you'll need to pay the proposal fee again. Once the proposal phase is over, proposals cannot be added or removed until the next proposal phase.
+
+NOTE: A compensation request is a type of proposal, and proposals cost a fee to make in the Bisq DAO. Currently that fee is 2 BSQ. Since a compensation request is intended to issue new BSQ, you'll also need to include a small amount of bitcoin to be colored into BSQ if your proposal is accepted—100 satoshis × [requested BSQ amount]. See more details in our https://docs.bisq.network/dao-user-reference.html#proposal-phase[User Guide].
+
+The BSQ and BTC is automatically added to your proposal transation by Bisq, but the BTC needs to be in your Bisq BTC wallet. Make sure you have enough in there before making your request. Keep in mind that you'll also need some BSQ and BTC for the other proposal phases (vote & reveal vote).
+
+When you successfully submit your proposal in the DAO, it'll propagate across the Bisq peer-to-peer network and be ready for stakeholders to vote on in the voting phase. If your request is approved, you will see the BSQ you requested in your wallet after the voting phase is over.
 
 == Vote on requests from others
 
-=== Review other contributors' requests
+It's not strictly necessary to vote on others' proposals, but highly encouraged that all stakeholders take part in decision-making for the network.
 
-Once the submission period is over, there is a short period to allow for contributors to review other contributors' requests and clear any uncertainties in the work done and value requested.
+You can see how to take part in voting and the rest of the DAO cycle https://docs.bisq.network/getting-started-dao.html#participate-in-a-voting-cycle[here].
 
-It's important to make use of this time so that you can make a well-informed vote on everyone's work.
+== Questions
 
-=== Vote
+If something doesn't make sense, don't hesitate to reach out. There's a community of people to help you on https://bisq.network/slack-invite[Slack^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
 
-Now it's time to vote.
+== Learn more
 
-Until the DAO is live, voting is done on https://docs.google.com/spreadsheets/d/1xlXDswj3251BPCOcII-UyWlX7o7jMkfYBE-IZ5te5Ck/edit#gid=912569327[this spreadsheet]. Here's the process:
+BSQ is a core element of Bisq's governance mechanism, allowing contributors and users to have a hand in crafting the strategy of the project through a voting process.
 
-1. If it's your first time voting, you'll need to request access to the spreadsheet so you can cast your vote. Just ask for it in the https://github.com/bisq-network/compensation[GitHub issue] for that month's voting cycle or on Slack in the #compensation channel.
-2. In the spreadsheet, navigate to the tab for the current month.
-3. Find the row with your BSQ address.
-4. Cast your vote for each request in the appropriate column.
+You can learn more about the overall mechanism in <<user-dao-intro#,this doc>> and https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[these videos^].
 
-You can approve (1), reject (-1), or abstain (0). Abstaining is recommended if you're not very familiar with the work in a particular compensation request.
-
-[#get-added-to-genesis]
-== BSQ Genesis Distribution
-
-The BSQ genesis transaction was made on April 15, 2019 to all people who contributed to Bisq before the Bisq DAO went live on mainnet.
-
-You can see transaction details on the BSQ block explorer https://explorer.bisq.network/tx.html?tx=4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[here^] or on a plain Bitcoin block explorer https://blockstream.info/tx/4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5[here^].
-
-Addresses were confirmed over email, Slack, Twitter, and on these two GitHub threads: https://github.com/bisq-network/compensation/issues/260[one^], https://github.com/bisq-network/compensation/issues/263[two^].
+Our <<dao-user-reference#,user reference>> covers more practical details on using the Bisq DAO, and our <<dao-technical-overview#,technical reference>> covers technical details. Check out <<dao#,this page>> for all Bisq DAO resources.
