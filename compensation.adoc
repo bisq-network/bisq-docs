@@ -73,7 +73,7 @@ Once you've documented all details of your request in a new issue on GitHub, mak
 .Make a new compensation request in the Bisq DAO.
 image::make-compensation-request.png[Make a new compensation request in the Bisq DAO]
 
-Make sure you select `Compensation request` as the proposal type. Also makre sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Slack, forum, etc).
+Make sure you select `Compensation request` as the proposal type. Also make sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Slack, forum, etc).
 
 When you're ready, click `Make proposal` to confirm your proposal for voting in the current cycle. **Proposal data cannot be edited**, so make sure everything is correct, especially the amount you're requesting.
 
@@ -83,7 +83,7 @@ NOTE: A compensation request is a type of proposal, and proposals cost a fee to 
 
 The BSQ and BTC is automatically added to your proposal transation by Bisq, but the BTC needs to be in your Bisq BTC wallet. Make sure you have enough in there before making your request. Keep in mind that you'll also need some BSQ and BTC for the other proposal phases (vote & reveal vote).
 
-When you successfully submit your proposal in the DAO, it'll propagate across the Bisq peer-to-peer network and be ready for stakeholders to vote on in the voting phase. If your request is approved, you will see the BSQ you requested in your wallet after the voting cycle is over.
+When you successfully submit your proposal in the DAO, it'll propagate across the Bisq peer-to-peer network and be ready for stakeholders to vote on in the voting phase. If your request is approved, you will see the BSQ you requested in your wallet after the voting phase is over.
 
 == Vote on requests from others
 
