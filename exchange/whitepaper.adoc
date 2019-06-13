@@ -186,9 +186,7 @@ A fraud report is used to warn about fraud from bank chargebacks, stolen payment
 
 ==== Identity verification
 
-Bisq does not carry out identity verification of users. However, in the event of a dispute, the assigned arbitrator may need to check the identity of the traders. This information is only visible
-
-to that arbitrator and to at most one senior arbitrator. Users may request that identity verification is carried out over encrypted channels, e.g. using Tox instead of Skype. See the https://bisq.network/docs/risk-analysis.pdf[risk analysis] document for more information.
+Bisq does not carry out identity verification of users. However, in the event of a dispute, the assigned arbitrator may need to check the identity of the traders. This information is only visible to that arbitrator and to at most one senior arbitrator. Users may request that identity verification is carried out over encrypted channels, e.g. using Tox instead of Skype. See the https://bisq.network/docs/risk-analysis.pdf[risk analysis] document for more information.
 
 ==== Reputation system
 
