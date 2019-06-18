@@ -145,9 +145,15 @@ Any BSQ stakeholder can also request a vote to remove an already-listed asset.
 
 === Inactive assets will be de-listed
 
-At each new release we will check whether already-listed assets have been traded in the past 4 months. If this requirement is not met the asset will be removed. The Bisq trade statistics are used as a reference. Removal of an un-traded asset will not be announced outside of normal release notes.
+To remain listed on Bisq, assets must maintain a minimum trading volume of 0.01 BTC over a rolling 120-day period.
 
-Listing the asset again will require a statement about what has changed since the original de-listing, e.g.: links to discussions where demand for the asset is documented, etc.
+If this threshold is not met, the asset will be de-listed. Once de-listed, the asset will not appear in the currency list, so new payment accounts for the asset cannot be created. Existing offers for the asset will remain visible.
+
+Assets can be exempted from this requirement (or re-listed after being de-listed due to inactivity) by paying the _daily asset listing fee_—this fee allows an asset with trading volume below 0.01 BTC in 120 days to remain listed.
+
+This fee is a Bisq DAO parameter, so it is subject to change, but is 1 BSQ per day as of this writing. The minimum trial period length one can purchase is 30 days. The period paid for becomes the new rolling window (e.g., if an asset is de-listed, and someone pays 30 BSQ to re-list the asset for 30 days, the asset needs to trade 0.01 BTC over a rolling 30-day period).
+
+Assets that have been previously removed from Bisq through DAO voting (i.e., removed entirely from Bisq through stakeholder consensus, not just de-listed due to inactivity) cannot be re-listed.
 
 === Getting a new asset into production may take a while
 
