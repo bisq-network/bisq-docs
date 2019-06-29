@@ -155,6 +155,19 @@ This fee is a Bisq DAO parameter, so it is subject to change, but is 1 BSQ per d
 
 Assets that have been previously removed from Bisq through DAO voting (i.e., removed entirely from Bisq through stakeholder consensus, not just de-listed due to inactivity) cannot be re-listed.
 
+[sidebar]
+.How to pay the asset listing fee
+--
+There is an asset listing fee section in the DAO section of the software:
+
+.Asset listing fee area
+image::images/asset-listing-fee.png[Asset listing fee area]
+
+Simply select the asset you'd like to re-list, specify a fee to pay according to the rules above, and hit the `Pay fee` button.
+
+You will need BSQ to make the transaction, along with a little BTC for mining fees. If you don't have BSQ, check out <<../../getting-started-dao-traders#acquire-bsq, this doc>> to see how to get some. This is no other way to pay this fee.
+--
+
 === Getting a new asset into production may take a while
 
 Whenever we ship the next Bisq release, your newly-listed asset will be included and become available for trading. We typically ship once every few weeks, but there is no fixed release schedule, and release intervals can vary widely.
