@@ -165,7 +165,7 @@ image::images/asset-listing-fee.png[Asset listing fee area]
 
 Simply select the asset you'd like to re-list, specify a fee to pay according to the rules above, and hit the `Pay fee` button.
 
-You will need BSQ to make the transaction, along with a little BTC for mining fees. If you don't have BSQ, check out <<../../getting-started-dao-traders#acquire-bsq, this doc>> to see how to get some. This is no other way to pay this fee.
+You will need BSQ to make the transaction, along with a little BTC for mining fees. If you don't have BSQ, check out <<../../getting-started-dao-traders#acquire-bsq, this doc>> to see how to get some. There is no other way to pay this fee.
 --
 
 === Getting a new asset into production may take a while
