@@ -8,7 +8,7 @@ Some basic DAO functions may not be conceptually complex—e.g., paying trading 
 
 Immense technical challenges aside, the practical constraints of the Bisq DAO are not trivial. One requirement is true, complete decentralization of decision-making (no persons with special powers) and funding (no central wallets or accounts to store and distribute funds). Another is that incentives must be so well-aligned that stakeholders are naturally motivated to grow and support the DAO merely by acting rationally—there are no managers to promote you (or fire you).
 
-And perhaps most critically, the DAO needs to be secure: safe from hackers and scammers trying to advantage of the DAO and its users.
+And perhaps most critically, the DAO needs to be secure: safe from hackers and scammers trying to take advantage of the DAO and its users.
 
 == BSQ Token
 
@@ -144,7 +144,7 @@ Following the end of the blind voting phase, there is a break of 10 blocks to pr
 
 _450 blocks, about 3 days_
 
-No action is required of the user during this phase aside from having the Bisq software online at some point during the phase so the vote reveal phase so it can publish the vote reveal transaction.
+No action is required of the user during this phase aside from having the Bisq software online at some point during the vote reveal phase so it can publish the vote reveal transaction.
 
 You will see a pop-up in the UI when the transaction has been published.
 
@@ -173,7 +173,7 @@ In this phase, Bisq nodes calculate vote results from proposals, voting stake, a
 
 ===== Determining Consensus
 
-We can trust that all Bisq nodes will get the same data from the the Bitcoin blockchain. However, we cannot be sure that all Bisq nodes have obtained all corresponding data from the Bisq P2P network. It is critical that any potential inconsistencies be handled before determining vote results, otherwise, vote results may differ.
+We can trust that all Bisq nodes will get the same data from the Bitcoin blockchain. However, we cannot be sure that all Bisq nodes have obtained all corresponding data from the Bisq P2P network. It is critical that any potential inconsistencies be handled before determining vote results, otherwise, vote results may differ.
 
 This is why each Bisq node includes a hash of the list of the voting data objects it has received in its vote reveal transaction. While a hash of vote data objects is recorded on the Bitcoin blockchain for integrity, it's not guaranteed that every _voting data object itself_ is actually delivered to every Bisq node.
 
