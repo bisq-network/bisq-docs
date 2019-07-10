@@ -131,7 +131,7 @@ Don't forget this step! If your vote reveal transaction is not published, your v
 
 Once the vote reveal phase is over, results are calculated and the next voting cycle starts.
 
-You can see results of the last voting cycle the `Vote results` section of the `Governance` tab of the `DAO` screen.
+You can see results of the last voting cycle in the `Vote results` section of the `Governance` tab of the `DAO` screen.
 
 .See voting results.
 image::dao-vote-results.png[See voting results.]

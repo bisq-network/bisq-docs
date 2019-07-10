@@ -7,9 +7,9 @@ BSQ is a colored coin based on Bitcoin. One BSQ is represented by 100 bitcoin sa
 
 The colored coin concept does not require OpReturn data but uses the transaction graph to determine if a tx output originates in either the genesis tx or an issuance transaction.
 
-BSQ inherits all the transaction rules from Bitcoin and add some additional rules. Even though BSQ transactions do not require OP_RETURN, it will be used for certain specialized transactions (voting, compensation requests, etc). Aside form the ancestry to the genesis or an issuance transaction, there is another important rule: the outputs are parsed in a way that the first outputs are interpreted as BSQ as long there is sufficient BSQ value available from the inputs. So the order of BSQ and BTC outputs is essential! For inputs the order is irrelevant. Any violation of those rules would make BSQ invalid. There are many more details which are not currently covered in this document.
+BSQ inherits all the transaction rules from Bitcoin and adds some additional rules. Even though BSQ transactions do not require OP_RETURN, it will be used for certain specialized transactions (voting, compensation requests, etc). Aside from the ancestry to the genesis or an issuance transaction, there is another important rule: the outputs are parsed in a way that the first outputs are interpreted as BSQ as long there is sufficient BSQ value available from the inputs. So the order of BSQ and BTC outputs is essential! For inputs the order is irrelevant. Any violation of those rules would make BSQ invalid. There are many more details which are not currently covered in this document.
 
-We use the Bisq P2P network as carrier for content-rich data like that of proposals or voting. The blockchain is used for timestamping that data. Both the P2P network data and the tx are linked together and are used for creating network consensus.
+We use the Bisq P2P network as a carrier for content-rich data like that of proposals or voting. The blockchain is used for timestamping that data. Both the P2P network data and the tx are linked together and are used for creating network consensus.
 
 BSQ is a result of blockchain-related data and P2P network data.
 
@@ -38,7 +38,7 @@ Monitoring of DAO-related data and infrastructure will be added to the https://m
 This is not deployed at the moment, but will be integrated soon.
 
 === BSQ block explorer
-The https://explorer.bisq.network/[BSQ block explorer] shows all BSQ transaction with some metadata (transaction type, etc). It gives also some statistical data about the network. It is a very basic version at the moment, but we are working on a more sophisticated version. Any BSQ transaction can be looked up in a normal Bitcoin block explorer as well, but of course those explorers will not show any DAO-related context. If looking up a BSQ addresses on a normal Bitcoin block explorer, a user needs to remove the `B` prefix so the address is considered a valid BTC addresses.
+The https://explorer.bisq.network/[BSQ block explorer] shows all BSQ transactions with some metadata (transaction type, etc). It gives also some statistical data about the network. It is a very basic version at the moment, but we are working on a more sophisticated version. Any BSQ transaction can be looked up in a normal Bitcoin block explorer as well, but of course those explorers will not show any DAO-related context. If looking up a BSQ address on a normal Bitcoin block explorer, a user needs to remove the `B` prefix so the address is considered a valid BTC address.
 
 == BSQ integration in Bisq
 The Bisq DAO and BSQ are fully integrated into the Bisq UI. It comes with a BSQ wallet and UI for creating proposals, participating in voting, and taking part in other DAO functions.

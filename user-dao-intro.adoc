@@ -63,7 +63,7 @@ Now let's see how these dynamics enable the Bisq DAO to provide 3 core governanc
 
 === Earn and distribute revenue
 
-Every project needs to be financial sustainable to fund ongoing operations and development. But traditional means of handling revenue and revenue distribution are necessarily centralized—any receiving address or account must be owned by one person, or a small group; determining how much a person should be paid must be determined by one person, or a small group; etc.
+Every project needs to be financially sustainable to fund ongoing operations and development. But traditional means of handling revenue and revenue distribution are necessarily centralized—any receiving address or account must be owned by one person, or a small group; determining how much a person should be paid must be determined by one person, or a small group; etc.
 
 ===== Contributors produce, creating BSQ
 In the Bisq DAO, trading fees are collected from traders and distributed to contributors, but there is no central authority to do this. Here's how it works: after a Bisq contributor does work, they file a **compensation request** in the DAO with a description of what they did and how much BSQ they want in return. Then, stakeholders (who are other contributors, traders, and anyone else with BSQ) vote for/against the request. If the request is approved, the contributor is issued _new_ BSQ in the amount they requested and **BSQ supply is increased**.
@@ -130,7 +130,7 @@ To learn more about the Bisq DAO, please see:
 * <<dao-user-reference#, Bisq DAO user reference>>, a doc which offers practical details on the workings of the DAO, along with high-level technical details.
 * <<dao-technical-overview#, Bisq DAO technical overview>>, along with technical details of BSQ tokens, this doc shows example transactions for several DAO functions.
 * <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>, a doc which offers a more comprehensive overview of Bisq and the Bisq DAO.
-* https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics^], a YouTube video series that covers foundational concepts of concepts underlying the DAO such as bitcoin transactions, colored, coins, etc.
+* https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics^], a YouTube video series that covers foundational concepts underlying the DAO such as bitcoin transactions, colored coins, etc.
 
 See more resources <<dao#, here>>. Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://bisq.network/slack-invite[Slack^], or https://bisq.community/[the forum^].
 

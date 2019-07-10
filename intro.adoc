@@ -43,7 +43,7 @@ Imagine you want to buy bitcoin (BTC) in exchange for US dollars (USD). In Bisq 
  . The seller receives your USD and indicates they have done so in Bisq
  . You receive the seller's bitcoin and the trade is complete
 
-TIP: For complete instructions on each of the steps above above, read <<getting-started#,Getting Started with Bisq>>.
+TIP: For complete instructions on each of the steps above, read <<getting-started#,Getting Started with Bisq>>.
 
 These steps can vary in a number of ways depending on whether you wish to buy or sell bitcoin, whether you are the _maker_ or the _taker_ of an offer, which payment methods you have access to, and so on. But in any case, the steps above are rather different than those one would follow to complete a similar trade on a centralized exchange.
 

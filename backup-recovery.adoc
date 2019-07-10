@@ -89,7 +89,7 @@ Your wallet data is stored in `btc_mainnet/wallet`. There are 3 primary ways to 
 
 === Resync SPV chain
 
-Wallet issues (e.g., incorrect balance showing, corrupted/out-of-sync SPV file) can often be solved by resyncing the SPV chain and restarting the Bisq program. You can do this by clicking the `Delete SPV file and resync` button on the `Network info` tab of the `Settings` screen. If you can't access this screen, you can just delete the `bisq.spvchain` file in `btcmainnet/wallet` (just be advised that you will need to manually restart Bisq twice to complete the resync).
+Wallet issues (e.g., incorrect balance showing, corrupted/out-of-sync SPV file) can often be solved by resyncing the SPV chain and restarting the Bisq program. You can do this by clicking the `Delete SPV file and resync` button on the `Network info` tab of the `Settings` screen. If you can't access this screen, you can just delete the `bisq.spvchain` file in `btc_mainnet/wallet` (just be advised that you will need to manually restart Bisq twice to complete the resync).
 
 The SPV file is a collection of data from the bitcoin blockchain that tells Bisq your wallet's balances. All data in the file is available on the bitcoin network. Deleting this file just forces Bisq to resync with the Bitcoin network and fetch the data it needs to determine your balances again.
 
@@ -109,7 +109,7 @@ NOTE: Bisq SPV wallets use the bitcoinj library. This library is not built well 
 
 First, make sure you don't have any open offers, trades, or disputes, as you won't be able to respond to these activities afterward. Then, send any funds in your Bisq wallet to an external wallet (either through a regular transaction from the `Funds` screen, emergency wallet tool with Ctrl/Cmd + E, or by restoring from seed words with a tool like Electrum).
 
-Once you're retrieved your funds, here's how to generate a new data directory:
+Once you've retrieved your funds, here's how to generate a new data directory:
 
 * close Bisq
 * delete the whole `Bisq` directory (after backing it up, just in case)
