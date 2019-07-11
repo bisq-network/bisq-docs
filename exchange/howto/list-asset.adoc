@@ -4,7 +4,7 @@
 
 == Introduction
 
-This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skill to follow the instructions below can list any asset. There are no fees involved in this process.
+This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skills to follow the instructions below can list any asset. There are no fees involved in this process.
 
 Please note: **Bisq will not list your token if it has taken part in an initial coin offering (ICO)**. Given the uncertain regulatory treatment of such tokens, link:https://github.com/bisq-network/proposals/issues/58[Bisq stakeholders determined] they are currently too much of a legal risk for the project.
 
@@ -44,13 +44,13 @@ https://github.com/bisq-network/bisq/issues/new?template=new_asset.md[Create iss
 
 **You must use the link above to create the issue, as it links to a template designed specifically for new asset requests.**
 
-WARNING: Creating an issue to list a new asset is not a guarantee that your asset will be listed. It's a request to convince a Bisq developer to spend the time needed to implement the new asset, write tests, etc. You can help by making a request that is complete and well-formed, and by being cooperative throughout the process.
+WARNING: Creating an issue to list a new asset is not a guarantee that your asset will be listed. It's a request to convince a Bisq developer to spend the time needed to implement the new asset, write tests, etc. You can help by making a request that is complete and well-formed, and by being cooperative throughout the process. Bisq is always short with devs. Offering a bounty is a good idea to help your asset being listed.
 
 If you have the resources to make a pull request yourself, you are welcome to do so by following the directions below.
 
 == Method #2: Make a Pull Request
 
-IMPORTANT: Each of the steps described below deal with code in the `assets` directory of the https://github.com/bisq-network/bisq repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
+IMPORTANT: Each of the steps described below deals with code in the `assets` directory of the https://github.com/bisq-network/bisq repository. You will need to fork this repository, make the specified changes, and then submit those changes as a SINGLE COMMIT within a SINGLE PULL REQUEST. Please DO NOT issue several pull requests by attempting to modify the sources one by one via the GitHub web UI. You need to have a competent developer make these changes and actually run the tests. *To be extra clear:* If you are unfamiliar with Java, don't know what a "pull request" is, or have never created a pull request yourself, please do not attempt to follow the instructions below on your own.
 
 === Step 1. Implement your asset
 
@@ -115,7 +115,7 @@ Date:   Wed Aug 1 00:00:00 1979 -0800
 
 === Step 6. Submit your pull request
 
-Your pull request should be submitted against the bisq-network/bisq-assets repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-asset`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
+Your pull request should be submitted against the bisq-network/bisq repository's `master` branch. Make sure you do this from a dedicated topic branch in your fork named, for example, `list-foo-asset`. Do not submit your pull request directly from your `master` branch, as this can make things unnecessarily complex if and when there are merge conflicts.
 
 Copy and paste the form template below into the description of the pull request and fill it out.
 
