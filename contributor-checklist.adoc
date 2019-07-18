@@ -5,9 +5,9 @@ So you're interested in contributing to Bisq--welcome! This checklist will get y
 [NOTE]
 .What is a contributor?
 ====
-Bisq is free and open source software, but contributing is *not* just about writing code. *A contributor is any individual who works to improve and add value to the Bisq Network and its users.*
+Bisq is free and open source software, but contributing is _not_ just about writing code. *A contributor is any individual who works to improve and add value to the Bisq Network and its users.*
 
-This can mean anything from fixing typos in documentation, to answering questions on the Bisq Forum, to implementing new Bisq features and everything in-between. All such contributions are eligible for compensation under the Bisq DAO. Read the <<dao/phase-zero#,Phase Zero>> doc for complete details.
+This can mean anything from fixing typos in documentation, to answering questions on the Bisq Forum, to implementing new Bisq features and everything in-between. All such contributions are eligible for compensation under the Bisq DAO. See more details <<#do-valuable-work-and-get-compensated,below>> and in the <<compensation#,Compensation>> doc.
 ====
 
 == Say hello and get started
@@ -18,13 +18,13 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] Introduce yourself in the `#general` channel. Say a bit about your skills and interests. This will help others point you in the right direction.
 
- * [ ] Join the `#github` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
+ * [ ] Join the `#bisq` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
 
  * [ ] After accepting your GitHub invitation, please change your https://github.com/orgs/bisq-network/people[membership visibility] from `private` to `public`. This helps others know at a glance roughly how many contributors are involved with Bisq.
 
- * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
+ * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#growth`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
 
- * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified via email of threaded GitHub issue discussions that happen there.
+ * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified of threaded GitHub issue discussions that happen there.
 
  * [ ] To set up a Bisq development environment, follow the instructions at https://github.com/bisq-network/bisq#readme[bisq-network/bisq#readme].
 
@@ -40,7 +40,7 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] For more context on C4 and the principles behind it, read author Pieter Hintjens' short book, https://legacy.gitbook.com/book/hintjens/social-architecture/details[Social Architecture].
 
- * [ ] To understand the current state of Bisq and the Bisq DAO, including how compensation works, read <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>
+ * [ ] Introduce yourself to Bisq and the Bisq DAO with the <<dao/phase-zero#,Phase Zero>> doc. It's a bit outdated now, as the DAO has been launched, but it's the best overview of Bisq's background and underlying concepts.
 
  * [ ] To understand Bisq's commitment to _radical transparency_ and _radical honesty_, read Part III of Ray Dalio's https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021/[Principles].
 
@@ -50,20 +50,32 @@ This can mean anything from fixing typos in documentation, to answering question
 
 [%interactive]
 
- * [ ] Catch up on past https://www.youtube.com/playlist?list=PLFH5SztL5cYOtcg64PntHlbtLoiO3HAjB[Bisq Tech Session] YouTube live streams.
-
- * [ ] Subscribe to the https://www.youtube.com/channel/UCDrHtlIlYfdRx4Gr-MV8NrA[Bisq YouTube channel] to get notified about every meeting we hold, tutorial we publish, live session we broadcast and more.
-
- * [ ] Subscribe to the https://bisq.network/calendar[Bisq calendar] to get notified of upcoming events, conferences and calls.
-
- * [ ] Subscribe to the https://lists.bisq.network/listinfo/bisq-contrib[bisq-contrib] mailing list for low-frequency, high-priority contributor communications.
+ * [ ] Subscribe to the https://www.youtube.com/c/bisq-network[Bisq YouTube channel] to get notified about every meeting we hold, tutorial we publish, live session we broadcast, and more.
 
  * [ ] Follow https://twitter.com/bisq_network[@bisq_network] on Twitter.
+
+ * [ ] Catch up on past https://www.youtube.com/playlist?list=PLFH5SztL5cYOtcg64PntHlbtLoiO3HAjB[Bisq Tech Session] YouTube live streams.
+
+ * [ ] Subscribe to the https://lists.bisq.network/listinfo/bisq-contrib[bisq-contrib] mailing list for low-frequency, high-priority contributor communications.
 
 == Do valuable work and get compensated
 Ok. You're all set up and ready to work. Here's what to do next.
 
  . *Find a problem somewhere in Bisq-land* that (a) needs fixing and (b) is a match for your skills and interests. Browse open bounties, ask around about what other contributors think needs fixing. Because while you don't need anybody's permission and you can work on whatever you want, you'll want to know up front whether anybody else is going to care about the work you do.
+
+[sidebar]
+.More on finding work to do
+--
+It is not required to work on an existing bounty issue to contribute to Bisq, and no one is here to tell you what to do. Contributors who have their own ideas are free to work in their own forks on whatever they wish, however they wish, and without any permission from Bisq stakeholders.
+
+With that said, it's a good idea to consult with stakeholders via Slack, GitHub, the mailing list, or other communication channels before setting out on any serious contribution effort. Do this in order to ensure your contribution is:
+
+ . something that the relevant maintainer(s) would be likely to merge;
+ . something that stakeholders would likely vote to approve as a compensation request;
+ . subjected to as much feedback as possible while still an idea and thus cheap to change or abort.
+
+Remember: _every contributor_ is free to work on what they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
+--
 
  . *Do work to fix that problem.* Submit your fix for review with a pull request (for code and documentation changes) or with a GitHub issue (for everything else).
 
