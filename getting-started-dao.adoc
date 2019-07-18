@@ -35,13 +35,13 @@ As we cover in our <<user-dao-intro#, Introduction to the Bisq DAO>> doc, the BS
 
 Here, we will focus on governance: making proposals and voting on proposals to adjust various aspects of Bisq.
 
-We'll do this by participating in one voting cycle in the Bisq DAO. Voting cycles are composed of 4 phases and last for 4,510 blocks (about 1 month on average).
+We'll do this by participating in one voting cycle in the Bisq DAO. Voting cycles are composed of 4 phases and last for 4,680 blocks (about 1 month on average).
 
 Here are the 4 phases:
 
-1. **Proposal phase**, in which stakeholders submit compensation requests and other proposals requesting reimbursements for trading fees, changes in trading parameters, or changes in some other aspect of the Bisq project.
-2. **Blind voting phase**, in which stakeholders cast their votes on submitted proposals. Votes are encrypted in this phase to prevent later voters from being influenced by earlier voters.
-3. **Vote reveal phase**, in which each stakeholder sends the decryption key for their vote.
+1. **Proposal phase**, in which stakeholders submit compensation requests and other proposals requesting reimbursements for trading fees, changes in trading parameters, or changes in some other aspect of the Bisq project. After the proposal phase is over, there is a break of 150 blocks (about 1 day) to review and discuss proposals before voting begins.
+2. **Blind voting phase**, in which stakeholders cast their votes on submitted proposals. Votes are encrypted in this phase to prevent later voters from being influenced by earlier voters. Following the end of the blind voting phase, there is a break of 10 blocks to protect against reorgs.
+3. **Vote reveal phase**, in which each stakeholder sends the decryption key for their vote. Again, for protection against reorgs, there is a break of 10 blocks after this phase is over.
 4. **Vote result phase**, in which vote results are calculated and BSQ is issued accordingly.
 
 You can see approximate start and end dates for the current voting cycle on the `Dashboard` section of the `Governance` tab on the `DAO` screen.
