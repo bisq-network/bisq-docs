@@ -4,18 +4,27 @@
 
 == Introduction
 
-Bisq seed nodes are used for the connection to the network at the startup of a new application. They have 2 main tasks:
+Bisq seed nodes serve as static gateways for Bisq clients to get connected to Bisq's dynamic P2P network. In this section, you will find information about
 
-. Deliver the peer addresses of network peers
+- what a seed node is and how it works,
+- the duties of a seed node operator,
+- the benefits of being a seed node operator,
+- how to get a seed node up and running and
+- where to get in touch.
 
-. Deliver the initial P2P network data like the offers, mailbox messages or the arbitrators
+== What is a Bisq seed node
 
-The second task could (and should in future) be done also by any other nodes but because seed nodes are running on servers they deliver a higher level of reliability and better connectivity than an normal network node.
+Bisq uses a highly anonymous and dynamic P2P network for communications between Bisq clients. In order to get access to the network, the Bisq network features always-up Bisq clients with a static addresses: seed nodes. They have 2 main tasks:
 
-The user connects to one of the seed nodes randomly and if a node fails it tries the next in random node in the list.
-If the first seed node is not available it decreases usability for the user because startup takes longer.
-But more critical is that if a node has bad connectivity it might miss messages like mailbox messages. That would be very bad because if a trader connects to that node he will not see the message the peer or arbitrator has sent him when he was offline. Usually we never had issues with that but it could become a cause for disputes or bug reports if a node would be badly connected.
+. Deliver the peer addresses of other dynamic network peers
 
+. Deliver the initial P2P network data like open offers, mailbox messages and arbitrators
+
+Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on startup. Thus, seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a normal Bisq client.
+
+A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of his Bisq client (which is unconvenient but not critical) to missing messages sent to him by a trading partner or arbitrator while his Bisq client has been offline (which can lead to disputes, failed trades, blocking of the Bisq client and bad reputation of the Bisq client and therefore the user). 
+
+All in all, seed nodes are mandatory and critical for the Bisq network to function properly. If all goes wrong, mechanisms are in place to ban a bad seed node and therefore, limit its impact on the network.
 
 == Seed node operators
 
@@ -24,8 +33,6 @@ The seed node addresses (onion address) are hard coded in the application but ca
 Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node needs to support at least 30 connections.
 
 Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
-
-A default seed node can be blocked by a network message in case the seed node does not fulfill the required quality.
 
 _Side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute. If you have sufficient RAM you can increase that limit with --maxMemory=1024 to 1024 MB or more, default value for maxMemory is 500 MB._
 
