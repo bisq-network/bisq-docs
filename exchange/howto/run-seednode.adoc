@@ -60,8 +60,10 @@ A seed node operator has the right to:
 . Uptime of > 99.9%
 
 === Setup instructions
+You can run your seed node in two ways:
 
-== Setup instructions
+- Option A: use the systemd service file provided
+- Option B: create and use a shell script to run your seednode
 
 ==== Step 1. Install latest JDK
 
@@ -71,16 +73,39 @@ You need to have the latest JDK installed according to the link:https://github.c
 
 We recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Starting with "master" is a good place to start.
 
+Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq`-users home directory to:
+
 - install git
 - `git clone git@github.com:bisq-network/bisq.git`
 - `cd bisq`
 - `git checkout <insert your release tag here>` (optional)
 - `./gradlew build`
 
-==== Step 3. Start your seed node for the first time
+==== Step 3. Start your seed node
 
-You need to know the onion address of your seed node. But at the first start you don't know it. To solve that chicken and egg problem you start your seed node and later replace the placeholder with the real address.
+==== Option A: Use systemd to run your service
+===== 1. Register your service
 
+Copy the file `bisq-seednode.service` to your systemd service directory. 
+
+`cp seednode/bisq-seednode.service /usr/lib/systemd/system/`
+
+and adapt it to your needs.
+
+===== 2. Enable and start the seed node
+
+Enable and start the seed node by
+
+`systemctl enable bisq-seednode.service` +
+`systemctl start bisq-seednode.service`
+
+===== 3. Observe the logs
+
+Keep an eye on the logs and see if anything works as expected:
+
+`journalctl --unit bisq-seednode --follow`
+
+==== Option B: Use a shell script
 ===== 1. Create two shell scripts:
 
 start_btc_ONION_ADDRESS.sh: +
@@ -111,8 +136,6 @@ Go to `~/.local/share` and replace ONION_ADDRESS in the directory name with the 
 ===== 5. Start seed node again
 
 Once all the renaming is done you can finally start the seed node and it will be available to the network. Check if all is running as expected.
-
-
 
 === Step 3. Backup private key for onion address
 
