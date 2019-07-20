@@ -34,8 +34,6 @@ Some contributors of Bisq are running the default seed nodes which are hard code
 
 Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
 
-_Side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute. If you have sufficient RAM you can increase that limit with --maxMemory=1024 to 1024 MB or more, default value for maxMemory is 500 MB._
-
 
 === Duties of the seed node operator
 
