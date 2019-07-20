@@ -41,7 +41,7 @@ The operator of a seed node needs to:
 - in case of issues, the operator needs to investigate and, if necessary, report (see <<Getting in Touch>>)
 - set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond is be confiscated (burned).
 
-=== Benefits of a seed node operator
+=== Payment
 
 A seed node operator has the right to:
 
