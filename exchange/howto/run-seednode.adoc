@@ -28,17 +28,25 @@ All in all, seed nodes are mandatory and critical for the Bisq network to functi
 
 == Seed node operators
 
-The seed node addresses (onion address) are hard coded in the application but can be overruled if the user adds a seed node address as program argument. Any user can run therefor their own seed node and connect to it.
-
-Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node needs to support at least 30 connections.
-
-Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
-
+Being a seed node operator brings along duties and benefits making it worthwhile.
 
 === Duties of the seed node operator
 
-The operator of a seed node needs to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he needs to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
-Operators need to subscribe to the Bisq Slack channel 'seednode' and act if their node reports errors.
+The operator of a seed node needs to:
+
+- keeps the server up and running, including patching and hardening the operating system
+- keep the seed node software up to date
+- keep an eye on the Bisq's communication channels for updates, issues, countermeasures,... (see <<Getting in Touch>>)
+- keep an eye on the logs of the seed node and the operating system, and act if something shows up
+- in case of issues, the operator needs to investigate and, if necessary, report (see <<Getting in Touch>>)
+- set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond is be confiscated (burned).
+
+=== Benefits of a seed node operator
+
+A seed node operator has the right to:
+
+- file a compensation request over 200 BSQ for setting up the seed node
+- file a compensation request monthly. We define 50 BSQ per month as an appropriate compensation per seed node per month.
 
 
 == System requirements for hosting machine
@@ -69,48 +77,44 @@ start_btc_ONION_ADDRESS.sh: +
 loop_btc_ONION_ADDRESS.sh: +
 `java -Xms1800m -Xmx1800m -jar SeedNode.jar --maxConnections=30 --baseCurrencyNetwork=BTC_MAINNET --nodePort=8000 --appName=seed_BTC_MAINNET_ONION_ADDRESS >/dev/null 2>error_seed_BTC_MAINNET_ONION_ADDRESS.log`
 
-==== Step 2.2. Start the start_btc_ONION_ADDRESS.sh
+and make them executable.
 
-`~/sh start_btc_ONION_ADDRESS.sh`
+===== 2. Start the start_btc_ONION_ADDRESS.sh
 
-==== Step 2.3. Get onion address from log
+run the `start_btc_ONION_ADDRESS.sh` script
 
-After about 40 seconds you should see in the logs following entry:
-`INFO  c.m.t.t.OnionProxyManagerEventHandler: Hidden service joehwtpe7ijnz4df.onion:8000 published.`
+===== 3. Get onion address from log
+
+After about 40 seconds you should see in the logs something similar to:
+`INFO  c.m.t.t.OnionProxyManagerEventHandler: Hidden service <ONION_ADDRESS:port> published.`
 
 This is the onion address you need to use in the next step to replace the ONION_ADDRESS place holder.
 
-==== Step 2.4. Stop the node
+===== 4. Replace placeholder with real onion address
 
-
-=== Step 3. Replace placeholder with real onion address
-
-Replace the occurrence of ONION_ADDRESS in the above listed scripts and their file name.
+Stop the node and replace the occurrence of ONION_ADDRESS in the above listed scripts and their file names.
 
 Go to `~/.local/share` and replace ONION_ADDRESS in the directory name with the real onion address.
+
+===== 5. Start seed node again
+
+Once all the renaming is done you can finally start the seed node and it will be available to the network. Check if all is running as expected.
+
 
 
 === Step 3. Backup private key for onion address
 
 Go to `~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/btc_mainnet/tor/hiddenservice/` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same seed node with the private key. All other data like the `db` or the `keys` directory are not relevant for the seed node.
 
-
-=== Step 4. Start seed node again
-
-Once all the renaming is done you can finally start the seed node and it will be available to the network. Check the logs and monitor the server to see if all is running as expected.
-
-
 == Monitoring
 
 Seed nodes are monitored in the Bisq Slack channel 'monitoring' and errors are sent to the 'seednode' channel. Operators need to subscribe to the 'seednode' channel and act if their node reports errors.
 
+== Getting in Touch
 
-== Bond
+Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
 
-We define a Bond of 2000 BSQ for the privilege to run a seed node. In case of severe failures of service (malicious or carelessness) the bond would be confiscated (burned).
-
-
-== Payment
-
-For the service the contributor provides by running and maintaining a seed node as well as a compensation for the server costs we define a payment of 50 BSQ per month.
-For the setup we define a payment of 200 BSQ.
+- subscribe to the Bisq Slack channel `bisq-seednode` and `bisq-monitor`
+- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, ... are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, ...). A developer will get back to you.
+- the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
+- please be responsive when addressed
