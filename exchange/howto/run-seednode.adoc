@@ -59,7 +59,14 @@ A seed node operator has the right to:
 . UPS (uninterruptible power supply)
 . Uptime of > 99.9%
 
-=== Setup instructions
+=== Bitcoin Node
+
+As per the release of the Bisq DAO, seed nodes are required to run a Bitcoin Full Node.
+
+- follow https://bitcoin.org/en/full-node#linux-instructions to install the node
+- follow https://github.com/bisq-network/bisq/blob/master/docs/dao-setup.md but *remove/ignore all `regtest=1` parts*
+
+=== Bisq Seed Node
 You can run your seed node in two ways:
 
 - Option A: use the systemd service file provided
