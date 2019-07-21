@@ -145,6 +145,64 @@ Go to `~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/btc_mainnet/tor/hiddenservi
 
 In case you are about to take over a seed node from someone, you need the contents of their `~/.local/share/seed_BTC_MAINNET/` (Option A)/`~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/` (Option B) directory, replace your directory with their contents and restart the server.
 
+
+=== System health reports
+
+- install nginx
+- create a certificate
+
+  cd /etc/nginx
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
+
+with
+
+  ON = bisq.network
+  OU = seednodes
+  CN = <your seed nodes onion address here>
+
+- configure a reverse proxy with clientssl enabled
+
+----
+stream {
+	log_format basic '$remote_addr [$time_local] '
+	                 '$protocol Status $status Sent $bytes_sent Received $bytes_received '
+	                 'Time $session_time';
+
+	error_log syslog:server=unix:/dev/log;
+	access_log syslog:server=unix:/dev/log;
+
+	server {
+		listen 2003;
+		proxy_pass monitor.bisq.network:2003;
+		proxy_ssl on;
+
+		proxy_ssl_certificate /etc/nginx/cert.crt;
+		proxy_ssl_certificate_key /etc/nginx/cert.key;
+
+		proxy_ssl_session_reuse on;
+	}
+}
+----
+
+- install collectd
+- use link:collectd.conf[this] collectd config to start from
+
+fill in the onion address of your seed node
+
+  Hostname "<ONION_ADDRESS>"
+
+and adjust the interface, df, disk plugins so they match your setup
+
+- configure your seed node process to expose jmx information by adding
+
+   -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+
+to your service
+
+- start nginx and collectd
+- report your client certificate in slack
+
+
 == Getting in Touch
 
 Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
