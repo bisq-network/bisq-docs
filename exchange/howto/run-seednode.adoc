@@ -34,19 +34,19 @@ Being a seed node operator brings along duties and benefits making it worthwhile
 
 The operator of a seed node needs to:
 
-- keeps the server up and running, including patching and hardening the operating system
+- keep the server up and running, including patching and hardening the operating system
 - keep the seed node software up to date
 - keep an eye on the Bisq's communication channels for updates, issues, countermeasures,... (see <<Getting in Touch>>)
 - keep an eye on the logs of the seed node and the operating system, and act if something shows up
-- in case of issues, the operator needs to investigate and, if necessary, report (see <<Getting in Touch>>)
+- if necessary, report (see <<Getting in Touch>>)
 - set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond is be confiscated (burned).
 
 === Payment
 
 A seed node operator has the right to:
 
-- file a compensation request over 200 BSQ for setting up the seed node
-- file a compensation request monthly. We define 50 BSQ per month as an appropriate compensation per seed node per month.
+- file a compensation request over 200 BSQ for setting up a seed node
+- file a compensation monthly request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
 
 
 ## Get a seed node up and running
@@ -137,11 +137,11 @@ Go to `~/.local/share` and replace ONION_ADDRESS in the directory name with the 
 
 Once all the renaming is done you can finally start the seed node and it will be available to the network. Check if all is running as expected.
 
-=== Step 3. Backup private key for onion address
+==== Step 4. Backup private key for onion address
 
 Go to `~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/btc_mainnet/tor/hiddenservice/` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same seed node with the private key. All other data like the `db` or the `keys` directory are not relevant for the seed node.
 
-=== Step 4. Take over an existing seed node
+==== Step 5. Take over an existing seed node
 
 In case you are about to take over a seed node from someone, you need the contents of their `~/.local/share/seed_BTC_MAINNET/` (Option A)/`~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/` (Option B) directory, replace your directory with their contents and restart the server.
 
