@@ -59,6 +59,14 @@ Bisq uses Slack to communicate via chat. As a seed node operator, you are requir
 - the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
 - please be responsive when addressed
 
+== System requirements for hosting machine
+
+. Min. 2 GB of RAM
+. 10 GB disk space (SSD)
+. 2 TB network traffic
+. UPS (uninterruptible power supply)
+. Uptime of > 99.9%
+
 ## Get a seed node up and running
 
 There are three pieces to the puzzle of successfully running a seed node:
@@ -68,14 +76,6 @@ There are three pieces to the puzzle of successfully running a seed node:
 - system health reports.
 
 You can run your seed node in many ways. The guide here applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. In case your host differs from our reference system, we are sure you can handle yourself.
-
-=== System requirements for hosting machine
-
-. Min. 2 GB of RAM
-. 10 GB disk space (SSD)
-. 2 TB network traffic
-. UPS (uninterruptible power supply)
-. Uptime of > 99.9%
 
 === Bitcoin Node
 
