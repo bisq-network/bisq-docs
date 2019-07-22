@@ -69,10 +69,58 @@ Lets get started.
 
 === Bitcoin Node
 
-As per the release of the Bisq DAO, seed nodes are required to run a Bitcoin Full Node.
+Follow https://bitcoin.org/en/full-node#linux-instructions[this guide] to install the binaries. Create a systemd service file `bitcoind.service` in the systemd service path or your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs. We recommend to create a user `bitcoind` for service hardening reasons (`useradd -r -m bitcoind`). In the end, it should look like 
 
-- follow https://bitcoin.org/en/full-node#linux-instructions to install the node
-- follow https://github.com/bisq-network/bisq/blob/master/docs/dao-setup.md but *remove/ignore all `regtest=1` parts*
+----
+[Unit]
+Description=Bitcoind
+After=network.target
+
+[Service]
+ExecStart=bitcoind -daemon
+
+Restart=on-failure
+
+User=bitcoind
+Group=bitcoind
+
+[Install]
+WantedBy=multi-user.target
+----
+
+Create a file `/home/bitcoind/.bitcoin/bitcoin.conf` that contains something like
+
+----
+rpcport=8332
+server=1
+txindex=1
+dbcache=1000
+maxconnections=800
+timeout=30000
+listen=0
+rpcallowip=localhost
+rpcuser=YOUR_USER_NAME
+rpcpassword=YOUR_PW
+blocknotify=sh ~/.bitcoin/blocknotify.sh %s
+----
+
+and another file `/home/bitcoind/.bitcoin/blocknotify.sh` that contains something like 
+
+  #!/bin/sh
+  echo $1 | nc -w 1 127.0.0.1 5120
+
+and make it executable (`chmod +x /home/bitcoind/.bitcoin/blocknotify.sh`).
+
+Finally, enable and start the service
+
+  systemctl enable bitcoind.service
+  systemctl start bitcoind.service
+
+and observe the logs
+
+  journalctl --unit bitcoind --follow
+
+an check if anything works as expected.
 
 === Bisq Seed Node
 You can run your seed node in many ways. The guide here applies to a unix system with systemd available. Furthermore, we assume that only one seed node is operated on a single server.
@@ -104,7 +152,7 @@ After=network.target
 
 [Service]
 Environment="JAVA_OPTS=-Xms800M -Xmx800M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
-ExecStart=/home/bisq/bisq/bisq-seednode --appName=bisq-seednode --nodePort=8000 --userDataDir=/home/bisq/ --maxConnections=50 --daoActivated=true --fullDaoNode=true --rpcUser=YOUR_USER_NAME --rpcPassword=YOUR_PW --rpcPort=18443 --rpcBlockNotificationPort=5120
+ExecStart=/home/bisq/bisq/bisq-seednode --appName=bisq-seednode --nodePort=8000 --userDataDir=/home/bisq/ --maxConnections=50 --daoActivated=true --fullDaoNode=true --rpcUser=YOUR_USER_NAME --rpcPassword=YOUR_PW --rpcPort=8332 --rpcBlockNotificationPort=5120
 
 Restart=on-failure
 
@@ -115,7 +163,7 @@ Group=bisq
 WantedBy=multi-user.target
 ----
 
-Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service.
+Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service. Make sure, the YOUR_USER_NAME and YOUR_PW placeholders match the configuration of <<Bitcoin Node>>.
 
 ==== Enable and start the seed node
 
