@@ -239,6 +239,8 @@ stream {
 
 	server {
 		listen 2003;
+		allow 127.0.0.1;
+		deny all;
 		proxy_pass monitor.bisq.network:2003;
 		proxy_ssl on;
 
