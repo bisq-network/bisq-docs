@@ -49,7 +49,6 @@ A seed node operator has the right to:
 - file a compensation request over 200 BSQ for setting up a seed node
 - file a monthly compensation request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
 
-
 == Getting in Touch
 
 Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
@@ -140,13 +139,9 @@ an check if anything works as expected.
 
 === Bisq Seed Node
 
-==== Install latest JDK
-
 You need to have the latest JDK installed according to the link:https://github.com/bisq-network/exchange/blob/master/doc/build.md[build.md] file.
 
-==== Get the Bisq binaries
-
-We recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Furthermore, updating is very simple, just pull the changes, recompile and restart your service.
+For getting the Bisq binaries, we recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Furthermore, updating is very simple, just pull the changes, recompile and restart your service.
 
 Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq`-users home directory to:
 
@@ -155,8 +150,6 @@ Furthermore, we recommend creating a user `bisq` in group `bisq` for service har
   git clone git@github.com:bisq-network/bisq.git
   cd bisq
   ./gradlew build
-
-==== Register your seed node as a service
 
 Create a systemd service file `bisq-seednode.service` (or copy the one shipped with bisq `$bisqdir/seednode/bisq-seednode.service`) in the systemd service path or your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs.
 
@@ -188,8 +181,6 @@ WantedBy=multi-user.target
 
 Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service. Make sure, the YOUR_USER_NAME and YOUR_PW placeholders match the configuration of <<Bitcoin Node>>.
 
-==== Enable and start the seed node
-
 Enable and start the seed node by
 
 
@@ -201,9 +192,7 @@ Keep an eye on the logs and see if anything works as expected:
 
 `journalctl --unit bisq-seednode --follow`
 
-==== (Optional) Take over an existing seed node
-
-In case you are about to take over a seed node from someone else, you need manually import their onion address and private key.
+In case you are about to take over a seed node from someone else, you need to manually import their onion address and private key.
 
 In `/home/bisq/.local/share/bisq_seednode/btc_mainnet/tor/hiddenservice/`, replace the files 
 
@@ -214,14 +203,12 @@ with the ones you received from the former seed node operator. Restart your serv
 
 `systemctl restart bisq-seednode.service` and again, observe the logs and make sure everything works as expected.
 
-==== Backup private key for onion address
-
-Go to `/home/bisq/.local/share/bisq-seednode/btc_mainnet/tor/hiddenservice/` and backup the files
+Finally, we ask you to prepare for the worst. Go to `/home/bisq/.local/share/bisq-seednode/btc_mainnet/tor/hiddenservice/` and backup the files
 
   hostname
   private_key
 
-to a safe location. In case your server loses these files during a crash, you can recover easily by following the steps described in <<(Optional) Take over an existing seed node>>. All other data like the `db` or the `keys` directory are not relevant for the seed node.
+to a secure location. In case your server loses the original files during a crash, you can recover easily by following the steps for taking over a seed node. All other data like the `db` or the `keys` directory are not relevant for the seed node.
 
 
 === System health reports
@@ -232,14 +219,14 @@ In order to successfully report to the monitor, we need to create a TCP reverse 
 
 First of all, if you have not already, install nginx on your system.
 
-Then proceed to creating the SSL certificate used to authenticate against the monitor:
+Then proceed to creating the SSL certificate that is later used to authenticate against the monitor:
 
   cd /etc/nginx
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
 
-Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation.
+Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation. The onion address can be found in the `hostname`-file mentioned before.
 
-Configure the reverse proxy with clientssl enabled. You can add the snipped below directly to your `/etc/nginx/nginx.conf` file:
+Configure the reverse proxy with clientssl enabled. You can simply append the snipped below to your `/etc/nginx/nginx.conf` file:
 
 ----
 stream {
@@ -248,7 +235,7 @@ stream {
 	                 'Time $session_time';
 
 	error_log syslog:server=unix:/dev/log;
-	access_log syslog:server=unix:/dev/log;
+	access_log syslog:server=unix:/dev/log basic;
 
 	server {
 		listen 2003;
@@ -279,4 +266,4 @@ Start your collectd service and check the logs for any issues:
   systemctl restart collectd
   journalctl --unit collectd --follow
 
-Once you are satisfied, go ahead and report your client certificate (`/etc/nginx/cert.crt`) to the `bisq-seednode` channel (see <<Getting in Touch>>). The monitoring team will then whitelist your host and you can enjoy your metrics within https://monitor.bisq.network.
+Once you are satisfied, go ahead and report your client certificate (`/etc/nginx/cert.crt`) to the `bisq-seednode` channel (see <<Getting in Touch>>). The monitoring team will then whitelist your host and you can enjoy your metrics at https://monitor.bisq.network.
