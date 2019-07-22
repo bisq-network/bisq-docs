@@ -50,6 +50,15 @@ A seed node operator has the right to:
 - file a monthly compensation request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
 
 
+== Getting in Touch
+
+Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
+
+- subscribe to the Bisq Slack channel `bisq-seednode` and `bisq-monitor`
+- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, ... are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, ...). A developer will get back to you.
+- the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
+- please be responsive when addressed
+
 ## Get a seed node up and running
 
 There are three pieces to the puzzle of successfully running a seed node:
@@ -271,13 +280,3 @@ Start your collectd service and check the logs for any issues:
   journalctl --unit collectd --follow
 
 Once you are satisfied, go ahead and report your client certificate (`/etc/nginx/cert.crt`) to the `bisq-seednode` channel (see <<Getting in Touch>>). The monitoring team will then whitelist your host and you can enjoy your metrics within https://monitor.bisq.network.
-
-
-== Getting in Touch
-
-Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
-
-- subscribe to the Bisq Slack channel `bisq-seednode` and `bisq-monitor`
-- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, ... are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, ...). A developer will get back to you.
-- the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
-- please be responsive when addressed
