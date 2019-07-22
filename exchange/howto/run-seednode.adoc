@@ -51,6 +51,14 @@ A seed node operator has the right to:
 
 ## Get a seed node up and running
 
+There are three pieces to the puzzle of successfully running a seed node:
+
+- a Bitcoin full node
+- the Bisq seednode itself and
+- system health reports.
+
+Lets get started.
+
 === System requirements for hosting machine
 
 . Min. 2 GB of RAM
