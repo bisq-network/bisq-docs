@@ -20,11 +20,12 @@ Bisq uses a highly anonymous and dynamic P2P network for communications between 
 
 . Deliver the initial P2P network data like open offers, mailbox messages and arbitrators
 
-Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on startup. Thus, seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a normal Bisq client.
+Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on each startup. Therefore, seed nodes have distinct properties:
 
-A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of his Bisq client (which is unconvenient but not critical) to missing messages sent to him by a trading partner or arbitrator while his Bisq client has been offline (which can lead to disputes, failed trades, blocking of the Bisq client and bad reputation of the Bisq client and therefore the user). 
+- Seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a normal Bisq client.
+- A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of her Bisq client (which is unconvenient but not critical) to missing messages sent to her by a trading partner or arbitrator while her Bisq client has been offline (which can lead to disputes, failed trades, blocking of the Bisq client and bad reputation of the Bisq client and therefore the user). 
 
-All in all, seed nodes are mandatory and critical for the Bisq network to function properly. If all goes wrong, mechanisms are in place to ban a bad seed node and therefore, limit its impact on the network.
+All in all, seed nodes are mandatory and critical for the Bisq network to function properly. Without the seed nodes, a fresh client would never find its way into the network and would therefore be denied the services of Bisq. Malicious seed nodes can trick fresh clients, cause monetary fraud and if all is said and done, again deny them the services of Bisq.
 
 == Seed node operators
 
@@ -38,15 +39,15 @@ The operator of a seed node needs to:
 - keep the seed node software up to date
 - keep an eye on the Bisq's communication channels for updates, issues, countermeasures,... (see <<Getting in Touch>>)
 - keep an eye on the logs of the seed node and the operating system, and act if something shows up
-- if necessary, report (see <<Getting in Touch>>)
-- set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond is be confiscated (burned).
+- if necessary, report and escalate (see <<Getting in Touch>>)
+- set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
 
 === Payment
 
 A seed node operator has the right to:
 
 - file a compensation request over 200 BSQ for setting up a seed node
-- file a compensation monthly request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
+- file a monthly compensation request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
 
 
 ## Get a seed node up and running
@@ -57,7 +58,7 @@ There are three pieces to the puzzle of successfully running a seed node:
 - the Bisq seednode itself and
 - system health reports.
 
-Lets get started.
+You can run your seed node in many ways. The guide here applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. In case your host differs from our reference system, we are sure you can handle yourself.
 
 === System requirements for hosting machine
 
@@ -110,7 +111,7 @@ rpcpassword=YOUR_PW
 blocknotify=sh ~/.bitcoin/blocknotify.sh %s
 ----
 
-and another file `/home/bitcoind/.bitcoin/blocknotify.sh` that contains something like 
+and another file `/home/bitcoind/.bitcoin/blocknotify.sh` that contains
 
   #!/bin/sh
   echo $1 | nc -w 1 127.0.0.1 5120
@@ -129,7 +130,6 @@ and observe the logs
 an check if anything works as expected.
 
 === Bisq Seed Node
-You can run your seed node in many ways. The guide here applies to a unix system with systemd available. Furthermore, we assume that only one seed node is operated on a single server.
 
 ==== Install latest JDK
 
@@ -141,9 +141,11 @@ We recommend cloning the Bisq Git repository and compiling the code on your serv
 
 Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq`-users home directory to:
 
-- `git clone git@github.com:bisq-network/bisq.git`
-- `cd bisq`
-- `./gradlew build`
+  useradd -r -m bisq
+  cd /home/bisq
+  git clone git@github.com:bisq-network/bisq.git
+  cd bisq
+  ./gradlew build
 
 ==== Register your seed node as a service
 
@@ -186,8 +188,6 @@ Enable and start the seed node by
 `systemctl enable bisq-seednode.service` +
 `systemctl start bisq-seednode.service`
 
-==== Observe the logs
-
 Keep an eye on the logs and see if anything works as expected:
 
 `journalctl --unit bisq-seednode --follow`
@@ -217,19 +217,20 @@ to a safe location. In case your server loses these files during a crash, you ca
 
 === System health reports
 
-- install nginx
-- create a certificate
+Since seed nodes are such a crucial part of the Bisq network, we require periodic health reports to our https://monitor.bisq.network[monitor]. Since the monitor only accepts plain TCP connections for incoming data, we have to accept a bit of overhead to keep the monitor from being flooded with unauthorized input.
+
+In order to successfully report to the monitor, we need to create a TCP reverse proxy local to your host that can authenticate to the monitor. For this guide, we go with nginx, if you prefer another reverse proxy, we are sure you can handle yourself.
+
+First of all, if you have not already, install nginx on your system.
+
+Then proceed to creating the SSL certificate used to authenticate against the monitor:
 
   cd /etc/nginx
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
 
-with
+Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation.
 
-  ON = bisq.network
-  OU = seednodes
-  CN = <your seed nodes onion address here>
-
-- configure a reverse proxy with clientssl enabled
+Configure the reverse proxy with clientssl enabled. You can add the snipped below directly to your `/etc/nginx/nginx.conf` file:
 
 ----
 stream {
@@ -253,23 +254,23 @@ stream {
 }
 ----
 
-- install collectd
-- use link:collectd.conf[this] collectd config to start from
+Start your nginx and observe the logs to see if anything works as expected:
 
-fill in the onion address of your seed node
+  systemctl restart nginx
+  journalctl --unit nginx --follow
 
-  Hostname "<ONION_ADDRESS>"
+Once you are satisfied, proceed on installing https://collectd.org/[collectd] and use link:collectd.conf[this] collectd config to start from. Fill in the onion address of your seed node
 
-and adjust the interface, df, disk plugins so they match your setup
+  Hostname "<ONION_ADDRESS again without the ".onion">"
 
-- configure your seed node process to expose jmx information by adding
+and adjust the interface, df, disk plugins so that they match your setup (and thus, report meaningful metrics).
 
-   -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+Start your collectd service and check the logs for any issues:
 
-to your service
+  systemctl restart collectd
+  journalctl --unit collectd --follow
 
-- start nginx and collectd
-- report your client certificate in slack
+Once you are satisfied, go ahead and report your client certificate (`/etc/nginx/cert.crt`) to the `bisq-seednode` channel (see <<Getting in Touch>>). The monitoring team will then whitelist your host and you can enjoy your metrics within https://monitor.bisq.network.
 
 
 == Getting in Touch
