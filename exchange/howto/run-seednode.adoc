@@ -25,7 +25,7 @@ Being the gateways to the Bisq P2P network, seed nodes are among the first nodes
 - Seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a normal Bisq client.
 - A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of her Bisq client (which is unconvenient but not critical) to missing messages sent to her by a trading partner or arbitrator while her Bisq client has been offline (which can lead to disputes, failed trades, blocking of the Bisq client and bad reputation of the Bisq client and therefore the user). 
 
-All in all, seed nodes are mandatory and critical for the Bisq network to function properly. Without the seed nodes, a fresh client would never find its way into the network and would therefore be denied the services of Bisq. Malicious seed nodes can trick fresh clients, cause monetary fraud and if all is said and done, again deny them the services of Bisq.
+All in all, seed nodes are important for the Bisq network to function in a user-friendly way. Without the seed nodes, a fresh Bisq client would not find its way into the network, at least not without manual intervention. Bad seed nodes can make it harder for a fresh client to join the network. In the end, seed nodes allow new users easy access to the services of Bisq and should therefore be kept up and running.
 
 == Seed node operators
 
@@ -35,12 +35,14 @@ Being a seed node operator brings along duties and benefits making it worthwhile
 
 The operator of a seed node needs to:
 
+- find yourself a deputy in case you are on not available (travel, holiday, others, ...). Usually, on of the developers is there to help. Just inform them on your setup and all is good.
 - keep the server up and running, including patching and hardening the operating system
 - keep the seed node software up to date
 - keep an eye on the Bisq's communication channels for updates, issues, countermeasures,... (see <<Getting in Touch>>)
 - keep an eye on the logs of the seed node and the operating system, and act if something shows up
 - if necessary, report and escalate (see <<Getting in Touch>>)
 - set up a bond of 2000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
+- create a monthly report https://github.com/bisq-network/roles/issues/15[here]
 
 === Payment
 
@@ -48,6 +50,11 @@ A seed node operator has the right to:
 
 - file a compensation request over 200 BSQ for setting up a seed node
 - file a monthly compensation request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
+
+[NOTE]
+====
+With the advent of the DAO and the subsequent need of another 400GB of ROM, the numbers here are currently under discussion. Until new figures are decided on, state your expenses for running the server and add the 50 BSQ on top to get your sum for compensation.
+====
 
 == Getting in Touch
 
@@ -60,11 +67,13 @@ Bisq uses Slack to communicate via chat. As a seed node operator, you are requir
 
 == System requirements for hosting machine
 
-. Min. 2 GB of RAM
-. 10 GB disk space (SSD)
-. 2 TB network traffic
-. UPS (uninterruptible power supply)
-. Uptime of > 99.9%
+- Min. 4 GB of RAM
+- 400 GB of disk space
+- 2 TB network traffic
+- Uptime of > 99.9%
+- > 10000 file handles available (check `ulimit -Sn`)
+
+And please try to stay away from cheap hosting providers! They tend to not care about QOS, the hardware is slow, the occasionally even turned a service off without warning - ask us how we know...
 
 ## Get a seed node up and running
 
@@ -155,7 +164,7 @@ an check if anything works as expected.
 
 === Bisq Seed Node
 
-You need to have the latest JDK installed according to the link:https://github.com/bisq-network/exchange/blob/master/doc/build.md[build.md] file.
+Start by getting OpenJDK 10 up and running.
 
 For getting the Bisq binaries, we recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Furthermore, updating is very simple, just pull the changes, recompile and restart your service.
 
@@ -165,7 +174,7 @@ Furthermore, we recommend creating a user `bisq` in group `bisq` for service har
   cd /home/bisq
   git clone git@github.com:bisq-network/bisq.git
   cd bisq
-  ./gradlew build
+  ./gradlew build -x test
 
 Create a systemd service file `bisq-seednode.service` (or copy the one shipped with bisq `$bisqdir/seednode/bisq-seednode.service`) in the systemd service path or your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs.
 
@@ -177,8 +186,8 @@ Description=Bisq Seed Node
 After=network.target
 
 [Service]
-Environment="JAVA_OPTS=-Xms800M -Xmx800M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
-ExecStart=/home/bisq/bisq/bisq-seednode --appName=bisq-seednode --nodePort=8000 --userDataDir=/home/bisq/ --maxConnections=50 --daoActivated=true --fullDaoNode=true --rpcUser=YOUR_USER_NAME --rpcPassword=YOUR_PW --rpcPort=8332 --rpcBlockNotificationPort=5120
+Environment="JAVA_OPTS=-Xms512M -Xmx2000M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+ExecStart=/home/bisq/bisq/bisq-seednode --appName=bisq-seednode --nodePort=8000 --userDataDir=/home/bisq/ --maxConnections=50 --fullDaoNode=true --rpcUser=YOUR_USER_NAME --rpcPassword=YOUR_PW --rpcPort=8332 --rpcBlockNotificationPort=5120
 
 Restart=on-failure
 
@@ -195,7 +204,7 @@ MemoryDenyWriteExecute=true
 WantedBy=multi-user.target
 ----
 
-Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service. Make sure, the YOUR_USER_NAME and YOUR_PW placeholders match the configuration of <<Bitcoin Node>>.
+Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service. Make sure that the YOUR_USER_NAME and YOUR_PW placeholders match the configuration of <<Bitcoin Node>>.
 
 Enable and start the seed node by
 
