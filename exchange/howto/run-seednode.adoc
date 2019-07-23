@@ -77,13 +77,26 @@ And please try to stay away from cheap hosting providers! They tend to not care 
 
 ## Get a seed node up and running
 
-There are three pieces to the puzzle of successfully running a seed node:
+You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occational root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
+
+There are four pieces to the puzzle of successfully running a seed node:
 
 - a Bitcoin full node
 - the Bisq seednode itself and
-- system health reports.
+- system health reports
 
-You can run your seed node in many ways. The guide here applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occational root access and file permissions, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
+and last but not least, the all-important firewall.
+
+=== Firewall
+
+Although every port that is to be used only by localhost clients should be hardened by configuration and source code already, we recommend whitelisting stuff that is actually needed. Here is an example on how to configure iptables accordingly (the config drops any incoming connections except connection from localhost, SSH and responses.):
+
+	iptables -P INPUT DROP && iptables -A INPUT -i lo -j ACCEPT && iptables -A INPUT -p tcp --dport 22 -j ACCEPT && iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+[NOTE]
+====
+Make sure you execute *all `iptables` commands at once*! Executing only the first one is going to kick you out of your ssh session and does not let you back in.
+====
 
 === Bitcoin Node
 
