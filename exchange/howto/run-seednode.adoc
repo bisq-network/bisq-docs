@@ -78,7 +78,18 @@ You can run your seed node in many ways. The guide here applies to a (debian-bas
 
 === Bitcoin Node
 
-Follow https://bitcoin.org/en/full-node#linux-instructions[this guide] to install the binaries. Create a systemd service file `bitcoind.service` in the systemd service path or your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs. We recommend to create a user `bitcoind` for service hardening reasons (`useradd -r -m bitcoind`). In the end, it should look like 
+Start by setting up a user for the bitcoin core stuff.
+
+	useradd -r -m bitcoind
+	cd /home/bitcoind
+
+Download the Bitcoin Core binaries https://bitcoin.org/en/download[here] to this directory, unpack it and, for updating convenience, create a symlink to the necessary binaries (so you only have to change the symlink on update):
+
+	tar xzf bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
+	ln -s bitcoin-0.18.0/bin/bitcoind bitcoind
+	ln -s bitcoin-0.18.0/bin/bitcoin-cli bitcoin-cli
+
+Create a systemd service file `bitcoind.service` in the systemd service path or your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs. We recommend to create a user `bitcoind` for service hardening reasons (). In the end, it should look like
 
 ----
 [Unit]
@@ -86,8 +97,14 @@ Description=Bitcoind
 After=network.target
 
 [Service]
-ExecStart=bitcoind -daemon
+ExecStart=bitcoind -daemon \
+                   -printtoconsole \
+                   -nodebuglogfile \
+                   -pid=/home/bitcoind/.bitcoin/bitcoind.pid
+ExecStop=/home/bitcoind/bitcoin-cli stop
 
+Type=forking
+PIDFile=/home/bitcoind/.bitcoin/bitcoind.pid
 Restart=on-failure
 
 User=bitcoind
@@ -103,17 +120,16 @@ MemoryDenyWriteExecute=true
 WantedBy=multi-user.target
 ----
 
-Create a file `/home/bitcoind/.bitcoin/bitcoin.conf` that contains something like
+Create a file `/home/bitcoind/.bitcoin/bitcoin.conf` that contains
 
 ----
-rpcport=8332
 server=1
 txindex=1
 dbcache=1000
 maxconnections=800
 timeout=30000
 listen=0
-rpcallowip=localhost
+rpcallowip=127.0.0.1
 rpcuser=YOUR_USER_NAME
 rpcpassword=YOUR_PW
 blocknotify=sh ~/.bitcoin/blocknotify.sh %s
