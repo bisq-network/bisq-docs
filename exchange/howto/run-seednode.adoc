@@ -74,7 +74,7 @@ There are three pieces to the puzzle of successfully running a seed node:
 - the Bisq seednode itself and
 - system health reports.
 
-You can run your seed node in many ways. The guide here applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. In case your host differs from our reference system, we are sure you can handle yourself.
+You can run your seed node in many ways. The guide here applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occational root access and file permissions, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
 
 === Bitcoin Node
 
