@@ -77,7 +77,7 @@ And please try to stay away from cheap hosting providers! They tend to not care 
 
 ## Get a seed node up and running
 
-You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occational root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
+You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occasional root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
 
 There are four pieces to the puzzle of successfully running a seed node:
 
