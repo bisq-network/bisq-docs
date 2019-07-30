@@ -36,7 +36,7 @@ The arbitrator can release all the escrow funds to the BTC seller.
 The BTC buyer is responsible to provide the arbitrator with proof of their payment. If they fail to do so and the BTC seller says they haven't received any funds, the BTC seller gets all the funds in escrow.
 The BTC seller has 48 hours after the end of the max. trade period to respond as to whether they have or not received the funds. After that the arbitrator can sign a transaction releasing all funds in escrow to the BTC buyer.
 
-Any effort to reach out to the arbitrators on the Bisq software should be replicated on the forum[https://bisq.community/t/arbitrators/8074] as to circumvent network issues.
+Any effort to reach out to the arbitrators on the Bisq software should be replicated on the link:https://bisq.community/t/arbitrators/8074[forum] as to circumvent network issues.
 When facing any issue that stops you, as the BTC seller or buyer, from fulfilling your role during the trade period, a dispute should be opened immediately by pressing ctrl+o on the Portfolio > Open Trades screen.
 
 === Failure to follow the trade protocol
