@@ -20,10 +20,12 @@ Bisq uses a highly anonymous and dynamic P2P network for communications between 
 
 . Deliver the initial P2P network data like open offers, mailbox messages and arbitrators
 
-Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on each startup. Therefore, seed nodes have distinct properties:
+. Deliver the initial DAO state
 
-- Seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a normal Bisq client.
-- A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of her Bisq client (which is inconvenient but not critical) to missing messages sent to her by a trading partner or arbitrator while her Bisq client has been offline (which can lead to disputes, failed trades, blocking of the Bisq client and bad reputation of the Bisq client and therefore the user). 
+Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on each startup. Therefore,
+
+- seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a Bisq client for home use.
+- A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of her Bisq client (which is inconvenient but not critical) to missing messages sent to her by a trading partner or arbitrator while her Bisq client has been offline (which can lead to disputes, failed trades, bad reputation and even blocking of the Bisq client).
 
 All in all, seed nodes play a vital role in the Bisq network. They allow users easy access to the Bisq network and therefore must be kept online and available at all times. Without the seed nodes, a new Bisq client would not find its way into the network, at least not without manual intervention. Bad seed nodes can make it harder for a new client to join the network.
 
