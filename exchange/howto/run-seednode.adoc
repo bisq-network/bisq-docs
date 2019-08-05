@@ -43,7 +43,7 @@ The operator of a seed node needs to:
 - keep an eye on Bisq's communication channels for updates, issues, countermeasures, etc (see <<Getting in Touch>>)
 - keep an eye on the logs of the seed node and the operating system, and act if something shows up
 - if necessary, report and escalate (see <<Getting in Touch>>)
-- set up a bond of 20000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
+- set up a bond of 20000 BSQ (twenty-thousand BSQ) to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
 - create a monthly report https://github.com/bisq-network/roles/issues/15[here]
 
 === Compensation
