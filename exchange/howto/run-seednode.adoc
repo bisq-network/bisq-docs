@@ -40,13 +40,13 @@ The operator of a seed node needs to:
 - find yourself a deputy in case you are not available (travel, holiday, others, ...). Usually, one of the developers is there to help. Just inform them on your setup and all is good.
 - keep the server up and running, including patching and hardening the operating system
 - keep the seed node software up to date
-- keep an eye on Bisq's communication channels for updates, issues, countermeasures,... (see <<Getting in Touch>>)
+- keep an eye on Bisq's communication channels for updates, issues, countermeasures, etc (see <<Getting in Touch>>)
 - keep an eye on the logs of the seed node and the operating system, and act if something shows up
 - if necessary, report and escalate (see <<Getting in Touch>>)
 - set up a bond of 20000 BSQ to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
 - create a monthly report https://github.com/bisq-network/roles/issues/15[here]
 
-=== Payment
+=== Compensation
 
 A seed node operator has the right to:
 
@@ -63,7 +63,7 @@ With the advent of the DAO and the subsequent need of an additional 300GB of dis
 Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
 
 - subscribe to the Bisq Slack channel `bisq-seednode` and `bisq-monitor`
-- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, ... are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, ...). A developer will get back to you.
+- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, etc are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, etc). A developer will get back to you.
 - the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
 - please be responsive when addressed
 
@@ -79,7 +79,7 @@ And please try to stay away from cheap hosting providers! They tend to not care 
 
 ## Get a seed node up and running
 
-You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step by step copy and paste how to, as we ignore for example the need for the occasional root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
+You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step-by-step copy-and-paste how-to, as we ignore for example the need for the occasional root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
 
 There are four pieces to the puzzle of successfully running a seed node:
 
@@ -183,7 +183,7 @@ Start by getting OpenJDK 10 up and running.
 
 For getting the Bisq binaries, we recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Furthermore, updating is very simple, just pull the changes, recompile and restart your service.
 
-Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq`-users home directory to:
+Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq` user's home directory to:
 
   useradd -r -m bisq
   cd /home/bisq
@@ -264,7 +264,7 @@ Then proceed to creating the SSL certificate that is later used to authenticate 
   cd /etc/nginx
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
 
-Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation. The onion address can be found in the `hostname`-file mentioned before.
+Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation. The onion address can be found in the `hostname` file mentioned before.
 
 Configure the reverse proxy with clientssl enabled. You can simply append the snippet below to your `/etc/nginx/nginx.conf` file:
 
