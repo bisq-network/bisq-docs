@@ -2,15 +2,15 @@
 :stylesdir: ../../css
 :docinfodir: ../../
 
-== Introduction
+Bisq seed nodes serve as static gateways for Bisq clients to get connected to Bisq's dynamic P2P network.
 
-Bisq seed nodes serve as static gateways for Bisq clients to get connected to Bisq's dynamic P2P network. In this section, you will find information about
+In this doc, you will find information about:
 
-- what a seed node is and how it works,
-- the duties of a seed node operator,
-- the benefits of being a seed node operator,
-- how to get a seed node up and running and
-- where to get in touch.
+- what a seed node is and how it works
+- the duties of a seed node operator
+- the benefits of being a seed node operator
+- how to get a seed node up and running
+- where to get in touch
 
 == What is a Bisq seed node
 
