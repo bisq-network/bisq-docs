@@ -4,6 +4,8 @@
 
 Have you contributed to the Bisq Network? Great, and thank you! Here is how to request compensation for your work, and vote on requests from others.
 
+If you're not sure how to start contributing, check out our <<contributor-checklist#do-valuable-work-and-get-compensated, Contributor Checklist>> for tips on getting started and figuring out what to work on.
+
 == Background
 
 Compensation requests are generally made for work done in the current DAO cycle—after the end of the last proposal phase, and before the end of the current one—but you can make a request for work done any time in the past.
