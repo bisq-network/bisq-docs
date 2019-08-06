@@ -2,110 +2,306 @@
 :stylesdir: ../../css
 :docinfodir: ../../
 
-== Introduction
+Bisq seed nodes serve as static gateways for Bisq clients to get connected to Bisq's dynamic P2P network.
 
-Bisq seed nodes are used for the connection to the network at the startup of a new application. They have 2 main tasks:
+In this doc, you will find information about:
 
-. Deliver the peer addresses of network peers
+- what a seed node is and how it works
+- the duties of a seed node operator
+- the benefits of being a seed node operator
+- how to get a seed node up and running
+- where to get in touch
 
-. Deliver the initial P2P network data like the offers, mailbox messages or the arbitrators
+== What is a Bisq seed node
 
-The second task could (and should in future) be done also by any other nodes but because seed nodes are running on servers they deliver a higher level of reliability and better connectivity than an normal network node.
+Bisq uses a highly anonymous and dynamic P2P network for communications between Bisq clients. In order to get access to the network, the Bisq network features always-up Bisq clients with a static addresses: seed nodes. They have 2 main tasks:
 
-The user connects to one of the seed nodes randomly and if a node fails it tries the next in random node in the list.
-If the first seed node is not available it decreases usability for the user because startup takes longer.
-But more critical is that if a node has bad connectivity it might miss messages like mailbox messages. That would be very bad because if a trader connects to that node he will not see the message the peer or arbitrator has sent him when he was offline. Usually we never had issues with that but it could become a cause for disputes or bug reports if a node would be badly connected.
+. Deliver the peer addresses of other dynamic network peers
 
+. Deliver the initial P2P network data like open offers, mailbox messages and arbitrators
+
+. Deliver the initial DAO state
+
+Being the gateways to the Bisq P2P network, seed nodes are among the first nodes a Bisq client connects to on each startup. Therefore,
+
+- seed nodes face a heavy load and are therefore operated on servers offering a high level of reliability and better connectivity than a Bisq client for home use.
+- A bad seed node can have a substantial impact on the Bisq network. A Bisq user may encounter anything from a longer startup time of her Bisq client (which is inconvenient but not critical) to missing messages sent to her by a trading partner or arbitrator while her Bisq client has been offline (which can lead to disputes, failed trades, bad reputation and even blocking of the Bisq client).
+
+All in all, seed nodes play a vital role in the Bisq network. They allow users easy access to the Bisq network and therefore must be kept online and available at all times. Without the seed nodes, a new Bisq client would not find its way into the network, at least not without manual intervention. Bad seed nodes can make it harder for a new client to join the network.
 
 == Seed node operators
 
-The seed node addresses (onion address) are hard coded in the application but can be overruled if the user adds a seed node address as program argument. Any user can run therefor their own seed node and connect to it.
-
-Some contributors of Bisq are running the default seed nodes which are hard coded in the application. It requires a to set up a bond in BSQ to get the privilege to run a default seed node and it requires that a certain quality of service is met. The node needs to support at least 30 connections.
-
-Contributors running a seed node will file a compensation request each month and get paid a fixed amount of BSQ for it if node availability was as expected.
-
-A default seed node can be blocked by a network message in case the seed node does not fulfill the required quality.
-
-_Side note: The seed nodes on Linux get a out of memory error after running a few days. We still have not found the reason for it (see: link: https://github.com/bisq-network/exchange/issues/599[Github issue]) but as a quick fix we check the memory usage inside the application and if it is over a certain threshold the seed node restarts itself. This happens usually once a day and cause a connection loss for about 1 minute. If you have sufficient RAM you can increase that limit with --maxMemory=1024 to 1024 MB or more, default value for maxMemory is 500 MB._
-
+Being a seed node operator brings along duties and benefits making it worthwhile.
 
 === Duties of the seed node operator
 
-The operator of a seed node needs to be responsive in case of seed node software updates as well to OS updates. If there are connectivity issues he needs to investigate and if required upgrade his server (RAM, CPU). We recommend 2-4 GB of RAM for one seed node to allow 30 connections. He should check the error logs and the node log file (in the data directory) occasionally. He has to have a professional level of operational security to operate the node.
-Operators need to subscribe to the Bisq Slack channel 'seednode' and act if their node reports errors.
+The operator of a seed node needs to:
 
+- find yourself a deputy in case you are not available (travel, holiday, others, ...). Usually, one of the developers is there to help. Just inform them on your setup and all is good.
+- keep the server up and running, including patching and hardening the operating system
+- keep the seed node software up to date
+- keep an eye on Bisq's communication channels for updates, issues, countermeasures, etc (see <<Getting in Touch>>)
+- keep an eye on the logs of the seed node and the operating system, and act if something shows up
+- if necessary, report and escalate (see <<Getting in Touch>>)
+- set up a bond of 20000 BSQ (twenty-thousand BSQ) to get the privilege to run a seed node. In case of severe failure of service, the bond gets confiscated (burned).
+- create a monthly report https://github.com/bisq-network/roles/issues/15[here]
+
+=== Compensation
+
+A seed node operator has the right to:
+
+- file a compensation request over 200 BSQ for setting up a seed node
+- file a monthly compensation request. We define 50 BSQ per month as an appropriate compensation per seed node per month.
+
+[NOTE]
+====
+With the advent of the DAO and the subsequent need of an additional 300GB of disk space for the Bitcoin full node, the numbers here are currently under discussion. Until new figures are decided on, state your expenses for running the server and add the 50 BSQ on top to get your sum for compensation.
+====
+
+== Getting in Touch
+
+Bisq uses Slack to communicate via chat. As a seed node operator, you are required to
+
+- subscribe to the Bisq Slack channel `bisq-seednode` and `bisq-monitor`
+- the `bisq-seednode` channel is the place where updates, issues, countermeasures, heads-ups, etc are discussed. If you encounter a problem with your seed node and cannot solve it by yourself, this is the place to report to (with a specific question, logs, etc). A developer will get back to you.
+- the `bisq-monitor` channel is the place where issues with seed nodes are reported, either manually or by our monitoring service. If your seed node is mentioned for having an issue, you are required to react.
+- please be responsive when addressed
 
 == System requirements for hosting machine
 
-. Min. 2 GB of RAM
-. 10 GB disk space (SSD)
-. 2 TB network traffic
-. UPS (uninterruptible power supply)
-. Uptime of > 99.9%
+- Min. 4 GB of RAM
+- 400 GB of disk space
+- 2 TB network traffic
+- Uptime of > 99.9%
+- > 10000 file handles available (check `ulimit -Sn`)
+
+And please try to stay away from cheap hosting providers! They tend to not care about QOS, the hardware is slow, they occasionally even turned a service off without warning - ask us how we know...
+
+## Get a seed node up and running
+
+You can run your seed node in many ways. The guide you are currently reading applies to a (debian-based) unix system with systemd available. Furthermore, we assume that only one seed node is operated per host. Please be aware that the guide is only a guide and not a step-by-step copy-and-paste how-to, as we ignore for example the need for the occasional root access and file permissions, swap, general opsec, among other things. In case your host differs from our reference system, we are sure you can handle yourself.
+
+There are four pieces to the puzzle of successfully running a seed node:
+
+- a Bitcoin full node
+- the Bisq seednode itself and
+- system health reports
+
+and last but not least, the all-important firewall.
+
+=== Firewall
+
+Although every port that is to be used only by localhost clients should be hardened by configuration and source code already, we recommend whitelisting stuff that is actually needed. Here is an example on how to configure iptables accordingly (the config drops any incoming connections except connection from localhost, SSH and responses.):
+
+	iptables -P INPUT DROP && iptables -A INPUT -i lo -j ACCEPT && iptables -A INPUT -p tcp --dport 22 -j ACCEPT && iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+[NOTE]
+====
+Make sure you execute *all `iptables` commands at once*! Executing only the first one is going to kick you out of your ssh session and does not let you back in.
+====
+
+=== Bitcoin Node
+
+Start by setting up a user for the bitcoin core stuff.
+
+	useradd -r -m bitcoind
+	cd /home/bitcoind
+
+Download the Bitcoin Core binaries https://bitcoin.org/en/download[here] to this directory, unpack it and, for updating convenience, create a symlink to the necessary binaries (so you only have to change the symlink on update):
+
+	tar xzf bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
+	ln -s bitcoin-0.18.0/bin/bitcoind bitcoind
+	ln -s bitcoin-0.18.0/bin/bitcoin-cli bitcoin-cli
+
+Create a systemd service file `bitcoind.service` in the systemd service path for your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs. We recommend to create a user `bitcoind` for service hardening reasons. In the end, it should look like
+
+----
+[Unit]
+Description=Bitcoind
+After=network.target
+
+[Service]
+ExecStart=bitcoind -daemon \
+                   -printtoconsole \
+                   -nodebuglogfile \
+                   -pid=/home/bitcoind/.bitcoin/bitcoind.pid
+ExecStop=/home/bitcoind/bitcoin-cli stop
+
+Type=forking
+PIDFile=/home/bitcoind/.bitcoin/bitcoind.pid
+Restart=on-failure
+
+User=bitcoind
+Group=bitcoind
+
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
+PrivateDevices=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
+----
+
+Create a file `/home/bitcoind/.bitcoin/bitcoin.conf` that contains
+
+----
+txindex=1
+listen=0
+rpcallowip=127.0.0.1
+rpcuser=YOUR_USER_NAME
+rpcpassword=YOUR_PW
+blocknotify=sh ~/.bitcoin/blocknotify.sh %s
+----
+
+and another file `/home/bitcoind/.bitcoin/blocknotify.sh` that contains
+
+  #!/bin/sh
+  echo $1 | nc -w 1 127.0.0.1 5120
+
+and make it executable (`chmod +x /home/bitcoind/.bitcoin/blocknotify.sh`).
+
+Finally, enable and start the service
+
+  systemctl enable bitcoind.service
+  systemctl start bitcoind.service
+
+and observe the logs
+
+  journalctl --unit bitcoind --follow
+
+and check if everything works as expected.
+
+=== Bisq Seed Node
+
+Start by getting OpenJDK 10 up and running.
+
+For getting the Bisq binaries, we recommend cloning the Bisq Git repository and compiling the code on your server. This way, you have precise control over what version you want to deploy. Furthermore, updating is very simple, just pull the changes, recompile and restart your service.
+
+Furthermore, we recommend creating a user `bisq` in group `bisq` for service hardening reasons and using the `bisq` user's home directory to:
+
+  useradd -r -m bisq
+  cd /home/bisq
+  git clone git@github.com:bisq-network/bisq.git
+  cd bisq
+  ./gradlew build -x test
+
+Create a systemd service file `bisq-seednode.service` (or copy the one shipped with bisq `$bisqdir/seednode/bisq-seednode.service`) in the systemd service path for your operating system (something like `/usr/lib/systemd/system/`) and adapt it to your needs.
+
+In the end, your file should look something like
+
+----
+[Unit]
+Description=Bisq Seed Node
+After=network.target
+
+[Service]
+Environment="JAVA_OPTS=-Xms512M -Xmx2000M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=6969 -Dcom.sun.management.jmxremote.rmi.port=6969 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+ExecStart=/home/bisq/bisq/bisq-seednode --appName=bisq-seednode --nodePort=8000 --userDataDir=/home/bisq/ --maxConnections=30 --fullDaoNode=true --rpcUser=YOUR_USER_NAME --rpcPassword=YOUR_PW --rpcPort=8332 --rpcBlockNotificationPort=5120
+
+Restart=on-failure
+
+User=bisq
+Group=bisq
+
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
+PrivateDevices=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
+----
+
+Note that the jmxremote JVM arguments are later used for monitoring the service, the rpc arguments are there to get the seed node hooked to the bitcoin service. Make sure that the YOUR_USER_NAME and YOUR_PW placeholders match the configuration of <<Bitcoin Node>>.
+
+Enable and start the seed node by
 
 
-== Setup instructions
+`systemctl daemon-reload` +
+`systemctl enable bisq-seednode.service` +
+`systemctl start bisq-seednode.service`
 
-=== Step 1. Install latest JDK
+Keep an eye on the logs and see if everything works as expected:
 
-You need to have the latest JDK installed according to the link:https://github.com/bisq-network/exchange/blob/master/doc/build.md[build.md] file.
+`journalctl --unit bisq-seednode --follow`
 
+In case you are about to take over a seed node from someone else, you need to manually import their onion address and private key.
 
-=== Step 2. Start seed node the first time to find out the onion address
+In `/home/bisq/.local/share/bisq_seednode/btc_mainnet/tor/hiddenservice/`, replace the files 
 
-You need to know the onion address of your seed node (part of program argument). But at the first start you don't know it. To solve that chicken and egg problem you start the below script start_btc_ONION_ADDRESS.sh and later replace the placeholder with the real address.
+  hostname
+  private_key
 
-==== Step 2.1. Create 2 sh files:
+with the ones you received from the former seed node operator. Restart your service
 
-start_btc_ONION_ADDRESS.sh: +
-`nohup sh loop_btc_ONION_ADDRESS.sh &`
+`systemctl restart bisq-seednode.service` and again, observe the logs and make sure everything works as expected.
 
-loop_btc_ONION_ADDRESS.sh: +
-`java -Xms1800m -Xmx1800m -jar SeedNode.jar --maxConnections=30 --baseCurrencyNetwork=BTC_MAINNET --nodePort=8000 --myAddress=ONION_ADDRESS.onion:8000 --appName=seed_BTC_MAINNET_ONION_ADDRESS >/dev/null 2>error_seed_BTC_MAINNET_ONION_ADDRESS.log`
+Finally, we ask you to prepare for the worst. Go to `/home/bisq/.local/share/bisq-seednode/btc_mainnet/tor/hiddenservice/` and backup the files
 
-==== Step 2.2. Start the start_btc_ONION_ADDRESS.sh
+  hostname
+  private_key
 
-`~/sh start_btc_ONION_ADDRESS.sh`
-
-==== Step 2.3. Get onion address from log
-
-After about 40 seconds you should see in the logs following entry:
-`INFO  c.m.t.t.OnionProxyManagerEventHandler: Hidden service joehwtpe7ijnz4df.onion:8000 published.`
-
-This is the onion address you need to use in the next step to replace the ONION_ADDRESS place holder.
-
-==== Step 2.4. Stop the node
+to a secure location. In case your server loses the original files during a crash, you can recover easily by following the steps for taking over a seed node. All other data like the `db` or the `keys` directory are not relevant for the seed node.
 
 
-=== Step 3. Replace placeholder with real onion address
+=== System health reports
 
-Replace the occurrence of ONION_ADDRESS in the above listed scripts and their file name.
+Since seed nodes are such a crucial part of the Bisq network, we require periodic health reports to our https://monitor.bisq.network[monitor]. Since the monitor only accepts plain TCP connections for incoming data, we have to accept a bit of overhead to keep the monitor from being flooded with unauthorized input.
 
-Go to `~/.local/share` and replace ONION_ADDRESS in the directory name with the real onion address.
+In order to successfully report to the monitor, we need to create a TCP reverse proxy local to your host that can authenticate to the monitor. For this guide, we go with nginx, if you prefer another reverse proxy, we are sure you can handle yourself.
 
+First of all, if you have not already, install nginx on your system.
 
-=== Step 3. Backup private key for onion address
+Then proceed to creating the SSL certificate that is later used to authenticate against the monitor:
 
-Go to `~/.local/share/seed_BTC_MAINNET_ONION_ADDRESS/btc_mainnet/tor/hiddenservice/` and backup the private key and the hostname file in a safe location. If your server would crash you can re-install the same seed node with the private key. All other data like the `db` or the `keys` directory are not relevant for the seed node.
+  cd /etc/nginx
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
 
+Use `ON = bisq.network`, `OU = seednodes` and `CN = <your seed nodes onion address here (without the ".onion" part)>` for certificate creation. The onion address can be found in the `hostname` file mentioned before.
 
-=== Step 4. Start seed node again
+Configure the reverse proxy with clientssl enabled. You can simply append the snippet below to your `/etc/nginx/nginx.conf` file:
 
-Once all the renaming is done you can finally start the seed node and it will be available to the network. Check the logs and monitor the server to see if all is running as expected.
+----
+stream {
+	log_format basic '$remote_addr [$time_local] '
+	                 '$protocol Status $status Sent $bytes_sent Received $bytes_received '
+	                 'Time $session_time';
 
+	error_log syslog:server=unix:/dev/log;
+	access_log syslog:server=unix:/dev/log basic;
 
-== Monitoring
+	server {
+		listen 2003;
+		allow 127.0.0.1;
+		deny all;
+		proxy_pass monitor.bisq.network:2003;
+		proxy_ssl on;
 
-Seed nodes are monitored in the Bisq Slack channel 'monitoring' and errors are sent to the 'seednode' channel. Operators need to subscribe to the 'seednode' channel and act if their node reports errors.
+		proxy_ssl_certificate /etc/nginx/cert.crt;
+		proxy_ssl_certificate_key /etc/nginx/cert.key;
 
+		proxy_ssl_session_reuse on;
+	}
+}
+----
 
-== Bond
+Start your nginx and observe the logs to see if everything works as expected:
 
-We define a Bond of 2000 BSQ for the privilege to run a seed node. In case of severe failures of service (malicious or carelessness) the bond would be confiscated (burned).
+  systemctl restart nginx
+  journalctl --unit nginx --follow
 
+Once you are satisfied, proceed on installing https://collectd.org/[collectd] and use link:collectd.conf[this] collectd config to start from. Fill in the onion address of your seed node
 
-== Payment
+  Hostname "<ONION_ADDRESS again without the ".onion">"
 
-For the service the contributor provides by running and maintaining a seed node as well as a compensation for the server costs we define a payment of 50 BSQ per month.
-For the setup we define a payment of 200 BSQ.
+and adjust the interface, df, disk plugins so that they match your setup (and thus, report meaningful metrics).
+
+Start your collectd service and check the logs for any issues:
+
+  systemctl restart collectd
+  journalctl --unit collectd --follow
+
+Once you are satisfied, go ahead and report your client certificate (`/etc/nginx/cert.crt`) to the `bisq-seednode` channel (see <<Getting in Touch>>). The monitoring team will then whitelist your host and you can enjoy your metrics at https://monitor.bisq.network.
