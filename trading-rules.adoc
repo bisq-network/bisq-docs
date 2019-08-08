@@ -4,28 +4,65 @@
 
 _This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates._
 
-To trade on Bisq, you assume one of two roles. You either make a new offer to buy or sell an asset (offer maker), or you agree to accept an existing offer to buy or sell an asset (offer taker).
+To trade on Bisq, you assume one of two roles. You either buy bitcoin (BTC buyer) or sell bitcoin (BTC seller).
 
 This document covers the rules and expectations for each role, as well as details on the process for arbitrating disputes.
 
-== Offer maker
+IMPORTANT: Under **no circumstances** should you try to contact a trader using the contact information in their payment details, even if you have an issue with a trade. Always go through an arbitrator. Many people use Bisq for its high degree of privacy, and discussing Bisq away from Bisq is highly likely to compromise that privacy.
 
-_Coming soon._
+NOTE: The rules listed below are default rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
 
-== Offer taker
+== BTC buyer
 
-_Coming soon._
+* Payment should be completed reasonably early within the trade period, such that the seller has time to acknowledge receipt of the payment before the trade period is over. Waiting until the end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The lengths of trade periods vary based on payment method. See details https://bisq.network/faq/#trade-periods[here].
+* Must make payment from the account used to make/take the offer. The account information (e.g., name, account number, etc) must match.
+* Must enter the trade ID in the payment transfer "reason for payment" (if possible).
+* Must click the "Payment started" button after making the payment.
+* Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
+* In case of a dispute, buyer must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
+
+== BTC seller
+
+* Must click "Confirm payment" after having received payment. Has until the end of the maximum trade period to do so.
+* In case of a dispute, seller must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
 
 == Arbitration
 
 When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution.
 
-_Coming soon. For now, you can read more about the arbitration process https://bisq.network/faq/#8[here]._
+The following are possible circumstances and resulting outcomes.
+
+**The BTC buyer didn't confirm sending the funds and let the trade duration limit run out**
+
+The arbitrator can release all the escrow funds to the BTC seller.
+
+**The BTC seller didn't release the trade funds by confirming receipt of the funds and let the trade duration limit run out**
+
+The BTC buyer is responsible to provide the arbitrator with proof of their payment. If they fail to do so and the BTC seller says they haven't received any funds, the BTC seller gets all the funds in escrow.
+The BTC seller has 48 hours after the end of the maximum trade period to respond as to whether they have or not received the funds. After that the arbitrator can sign a transaction releasing all funds in escrow to the BTC buyer.
+
+If you don't hear back from your arbitrator within a reasonable amount of time, your message may not have been delivered successfully by the peer-to-peer network. If this happens, you can ping your arbitrator on link:https://bisq.community/t/arbitrators/8074[the forum]. Simply find your arbitrator's forum handle by searching the forum for your arbitrator's onion address (you'll find this address in the trade information popup), and tag your arbitrator in a new forum post about your issue.
+
+CAUTION: Be sure to create an anonymous forum account so your trade data remains private.
+
+When facing any issue that stops you, as the BTC seller or buyer, from fulfilling your role during the trade period, a dispute should be opened immediately by pressing Cmd/Ctrl+o on the `Portfolio` > `Open trades` screen.
+
+**The BTC buyer sent the funds to the wrong person**
+
+The BTC seller gets all the escrow funds.
+
+**BTC seller receives payment from an account with different details (name, account number, etc) than those on the buyer's Bisq payment account**
+
+The BTC seller gets all the escrow funds.
+
+**The BTC seller received the funds but the BTC buyer didn't enter the correct reference text**
+
+The BTC buyer gets the trade amount but loses their security deposit.
 
 == Face-to-Face (F2F) Trading
 [[f2f-trading]]
 
-On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash. 
+On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash.
 
 This introduces some important differences.
 
@@ -49,7 +86,7 @@ People do local, in-person commerce all the time, all over the world. Incidents 
 
 Face-to-face trades are usually settled with cash. Cash is wonderfully anonymous, but it can be counterfeited. Be sure you know the basics of detecting counterfeit currency. For example, there are several characteristics of US dollar bills one can examine to quickly determine fakes with high accuracy.
 
-You could look for tools like counterfeit pens to do the work for you, but make sure you do thorough research before picking one. Counterfeit pens, for example, are often not reliable. 
+You could look for tools like counterfeit pens to do the work for you, but make sure you do thorough research before picking one. Counterfeit pens, for example, are often not reliable.
 
 If you'd rather not take the chance of carrying or accepting cash, consider meeting at a bank where you can validate a buyer's payment on the spot.
 
