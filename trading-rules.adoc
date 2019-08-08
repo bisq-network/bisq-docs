@@ -51,7 +51,7 @@ When facing any issue that stops you, as the BTC seller or buyer, from fulfillin
 
 The BTC seller gets all the escrow funds.
 
-**The BTC buyer identifiers don't match the identifiers on your payment receipt**
+**BTC seller receives payment from an account with different details (name, account number, etc) than those on the buyer's Bisq payment account**
 
 The BTC seller gets all the escrow funds.
 
