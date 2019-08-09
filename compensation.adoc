@@ -83,7 +83,7 @@ If you need to make a change, you can delete the proposal and make a new one whi
 
 NOTE: A compensation request is a type of proposal, and proposals cost a fee to make in the Bisq DAO. Currently that fee is 2 BSQ. Since a compensation request is intended to issue new BSQ, you'll also need to include a small amount of bitcoin to be colored into BSQ if your proposal is accepted—100 satoshis × [requested BSQ amount]. See more details in our https://docs.bisq.network/dao-user-reference.html#proposal-phase[User Guide].
 
-The BSQ and BTC is automatically added to your proposal transation by Bisq, but the BTC needs to be in your Bisq BTC wallet. Make sure you have enough in there before making your request. Keep in mind that you'll also need some BSQ and BTC for the other proposal phases (vote & vote reveal).
+The BSQ and BTC is automatically added to your proposal transaction by Bisq, but the BTC needs to be in your Bisq BTC wallet. Make sure you have enough in there before making your request. Keep in mind that you'll also need some BSQ and BTC for the other proposal phases (vote & vote reveal).
 
 When you successfully submit your proposal in the DAO, it'll propagate across the Bisq peer-to-peer network and be ready for stakeholders to vote on in the voting phase. If your request is approved, you will see the BSQ you requested in your wallet after the voting phase is over.
 
