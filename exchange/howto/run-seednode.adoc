@@ -293,7 +293,7 @@ Start your nginx and observe the logs to see if everything works as expected:
   systemctl restart nginx
   journalctl --unit nginx --follow
 
-Once you are satisfied, proceed on installing https://collectd.org/[collectd] and use link:collectd.conf[this] collectd config to start from. Fill in the onion address of your seed node
+Once you are satisfied, proceed on installing https://collectd.org/[collectd] and use https://github.com/bisq-network/bisq-docs/blob/master/exchange/howto/collectd.conf[this^] collectd config to start from. Fill in the onion address of your seed node
 
   Hostname "<ONION_ADDRESS again without the ".onion">"
 
