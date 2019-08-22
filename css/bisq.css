@@ -1200,6 +1200,10 @@ a {
     margin-bottom: 2.25em;
 }
 
+#header #revnumber {
+    display: none;
+}
+
 @media only screen and ( max-width: 768px ) {
     #toc img {
         margin-top: 40px;
