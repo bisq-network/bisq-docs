@@ -18,10 +18,6 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] Introduce yourself in the `#general` channel. Say a bit about your skills and interests. This will help others point you in the right direction.
 
- * [ ] Join the `#bisq` channel and request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
-
- * [ ] After accepting your GitHub invitation, please change your https://github.com/orgs/bisq-network/people[membership visibility] from `private` to `public`. This helps others know at a glance roughly how many contributors are involved with Bisq.
-
  * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#growth`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
 
  * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified of threaded GitHub issue discussions that happen there.
@@ -57,6 +53,14 @@ This can mean anything from fixing typos in documentation, to answering question
  * [ ] Catch up on past https://www.youtube.com/playlist?list=PLFH5SztL5cYOtcg64PntHlbtLoiO3HAjB[Bisq Tech Session] YouTube live streams.
 
  * [ ] Subscribe to the https://lists.bisq.network/listinfo/bisq-contrib[bisq-contrib] mailing list for low-frequency, high-priority contributor communications.
+
+== Getting assigned to an issue or role
+
+Discuss with others, and after it is agreed that someone will assign something to you, do the following:
+
+ * [ ] Request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
+
+ * [ ] After accepting your GitHub invitation, please change your https://github.com/orgs/bisq-network/people[membership visibility] from `private` to `public`. This helps others know at a glance roughly how many contributors are involved with Bisq.
 
 == Do valuable work and get compensated
 Ok. You're all set up and ready to work. Here's what to do next.
