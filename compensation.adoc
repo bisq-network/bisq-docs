@@ -77,6 +77,14 @@ image::make-compensation-request.png[Make a new compensation request in the Bisq
 
 Make sure you select `Compensation request` as the proposal type. Also make sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Slack, forum, etc).
 
+For the proposal link, be sure to use this format: `https://bisq.network/dao-compensation/\#`, where `#` is the number of your GitHub issue. For example, if your compensation request's GitHub URL is `https://github.com/bisq-network/compensation/issues/33`, the URL in your DAO compensation request should be `https://bisq.network/dao-compensation/33`. Don't copy the GitHub link directly—it won't work!
+
+[NOTE]
+.Why not just use GitHub links?
+====
+Bisq may not use GitHub forever. But the Bitcoin blockchain is forever, and proposal URLs cannot be changed—the Bitcoin transaction corresponding to a Bisq DAO proposal includes a hash of the proposal's data object, which includes the proposal URL. This is why Bisq proposals require a URL with a domain name that Bisq controls: if proposal data ever needs to be migrated, the links can remain the same.
+====
+
 When you're ready, click `Make proposal` to confirm your proposal for voting in the current cycle. **Proposal data cannot be edited**, so make sure everything is correct, especially the amount you're requesting.
 
 If you need to make a change, you can delete the proposal and make a new one while the proposal phase is still active, but you'll need to pay the proposal fee again. Once the proposal phase is over, proposals cannot be added or removed until the next proposal phase.
