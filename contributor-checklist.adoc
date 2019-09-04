@@ -88,6 +88,8 @@ Remember: _every contributor_ is free to work on what they want, including maint
  . *Incorporate review feedback* you get until your fix gets merged or is otherwise accepted.
 
  . *Repeat* steps 1–4.
+ 
+ . *Squash* your commits. To keep a clean and readable git history, all unnecessary commits (eg. commits added after reviews or multiple commits for the same file) need to be squashed.
 
  . <<compensation#, *Submit a compensation request*>> at the end of the month, link to your finished work and request the amount of https://docs.bisq.network/dao/phase-zero.html#the-bisq-dao-and-bsq-token[BSQ] you believe that work to be worth to Bisq, the Bisq Network and its users.
 
