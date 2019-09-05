@@ -71,9 +71,9 @@ In the Bisq DAO, trading fees are collected from traders and distributed to cont
 [NOTE]
 .Where does new BSQ actually come from?
 ====
-Recall that a BSQ token is merely colored bitcoin. When a contributor makes their compensation request in the DAO, they must also include the tiny amount of bitcoin to be 'colored' as BSQ (<<dao-technical-overview#,the spec>> requires 100 satoshis). So if a contributor requests 1,000 BSQ, they will need to include 100 * 1,000 = 100,000 satoshis with their compensation request—just about 3 USD at current rates.
+Recall that a BSQ token is merely colored bitcoin. When a contributor makes their compensation request in the DAO, they must also include the tiny amount of bitcoin to be 'colored' as BSQ (<<dao-technical-overview#,the spec>> requires 100 satoshis). So if a contributor requests 1,000 BSQ, they will need to include 100 * 1,000 = 100,000 satoshis with their compensation request—just about 10 USD at a rate of 10,000 USD/BTC.
 
-If their request is approved, those satoshis are 'colored' and recognized as 1,000 valid BSQ tokens on Bisq. Assuming a BSQ market value of 1 USD (exact value will fluctuate), the contributor will have been granted 1,000 USD worth of BSQ for a negligible cost of 3 USD.
+If their request is approved, those satoshis are 'colored' and recognized as 1,000 valid BSQ tokens on Bisq. Assuming a BSQ market value of 1 USD (exact value will fluctuate), the contributor will have been granted 1,000 USD worth of BSQ for a negligible cost of 10 USD.
 ====
 
 ===== Traders consume, burning BSQ
