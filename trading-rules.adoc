@@ -1,4 +1,4 @@
-= Trading and Arbitration Rules
+= Trading Rules and Dispute Resolution
 :imagesdir: images
 :!figure-caption:
 
@@ -28,7 +28,7 @@ NOTE: The rules listed below are default rules for every transaction. Offer make
 
 == Arbitration
 
-When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution.
+When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution. Arbitrators have the third key in the 2-of-3 multisig escrow transaction, so their decision is authoritative.
 
 The following are possible circumstances and resulting outcomes.
 
@@ -58,6 +58,23 @@ The BTC seller gets all the escrow funds.
 **The BTC seller received the funds but the BTC buyer didn't enter the correct reference text**
 
 The BTC buyer gets the trade amount but loses their security deposit.
+
+== Mediation
+
+Mediators are like arbitrators, in that their job is to evaluate a trade situation between two users. But unlike arbitrators, they do not have a key in the multisig escrow transaction, so their decision is _not authoritative_.
+
+Instead, mediators evaluate the details of a trade and make a _recommendation_. Traders then handle payouts themselves (for example, by requesting reimbursement from the Bisq DAO based on a mediator's recommendation—see note below).
+
+Mediation is the cornerstone of Bisq's new trade protocol, which eliminates the need for arbitrators. This new protocol will be implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators, before an eventual switchover to a protocol with no arbitrators.
+
+[NOTE]
+====
+A key element of this new trade protocol is that both traders' deposit funds are lost after a predefined period of time (probably around 30 days initially), made possible by a time-locked payout transaction to a pre-defined Bitcoin address not owned by either trader.
+
+Result: if the 2 traders cannot come to a mutually agreeable solution on their own (through trader chat) or through a mediator (through the mediator's recommendation), then both traders lose their deposit funds, and any further appeals for reimbursement are made to the Bisq DAO.
+====
+
+You can learn more about the new trade protocol in https://github.com/bisq-network/proposals/issues/52[this issue^] or in https://www.youtube.com/watch?v=cZtg2sjXli0[this video^]. Please note that the new trade protocol is a work in progress, so details in those links may have since changed.
 
 == Face-to-Face (F2F) Trading
 [[f2f-trading]]
