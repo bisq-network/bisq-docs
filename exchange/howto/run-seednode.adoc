@@ -14,7 +14,7 @@ In this doc, you will find information about:
 
 == What is a Bisq seed node
 
-Bisq uses a highly anonymous and dynamic P2P network for communications between Bisq clients. In order to get access to the network, the Bisq network features always-up Bisq clients with a static addresses: seed nodes. They have 2 main tasks:
+Bisq uses a highly anonymous and dynamic P2P network for communications between Bisq clients. In order to get access to the network, the Bisq network features always-up Bisq clients with static addresses: seed nodes. They have 2 main tasks:
 
 . Deliver the peer addresses of other dynamic network peers
 
