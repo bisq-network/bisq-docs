@@ -124,15 +124,34 @@ Votes cannot be changed once they are published.
 
 Your voting weight is determined by 2 factors: _reputation_ (how much BSQ you've earned), and _stake_ (how much of your owned BSQ you allot to your vote) that you specify in your vote transaction.
 
-_Reputation_ is the amount of BSQ earned by doing work for the Bisq network, independent of the amount of BSQ spent or sold. So if Alice earns 10,000 BSQ by working on Bisq, and she sells 8,000 BSQ for BTC to pay her bills, her reputation value remains 10,000 BSQ. Caveat: reputation decays over time. BSQ earned decays linearly over a period of 2 years as soon as it's earned. So the reputation value of Alice's 10,000 BSQ is 5,000 BSQ one year after she earns it, and zero two years later.
+_Reputation_ is the amount of BSQ earned by doing work for the Bisq network, independent of the amount of BSQ spent or sold. So if Alice earns 10,000 BSQ by working on Bisq, and she sells 8,000 BSQ for BTC to pay her bills, her reputation value remains 10,000 BSQ. Caveat: reputation decays over time. BSQ earned decays linearly over a period of 2 years as soon as it's earned.
 
-Reputation cannot be specified when making a vote transaction—it's automatically calculated for the user from their past contributions.
+Here's how much _reputation value_ Alice's 10,000 BSQ retains over time:
 
-_Stake_ is the literal amount of BSQ specified for the vote transaction. This is BSQ you own that you would like to devote to your vote. The more BSQ you allot, the more weight your vote will hold. BSQ specified for stake is unspendable for the duration of the voting cycle.
+* 9,583 one month after earning it ( 10,000 - (10,000/24) ≈ 9583.33 )
+* 5,000 one year after earning it
+* 0 two years later
+
+Reputation cannot be specified when making a vote transaction—it's automatically applied to a user's vote from their past contributions.
+
+_Stake_ is the amount of BSQ you specify in your vote transaction. This is BSQ you have in your wallet that you would like to devote to your vote. The more BSQ you allot, the more weight your vote will hold. BSQ specified for stake is unspendable for the duration of the voting cycle.
 
 **Total voting weight is the sum of reputation value and specified stake.**
 
-BSQ earned is worth more than BSQ bought. The idea is that there is no better measure of good-will and dedication to the project than actually working on the project. The arrangement still allows people who buy into the project considerable influence, while hopefully minimizing the potential of whales with bad intentions from buying their way in and sabotaging the project.
+[NOTE]
+====
+No matter how much BSQ you allot to your voting stake, your reputation weight will apply in full. Minimum stake is 5.46 BSQ to avoid dust limits.
+
+Assume Alice (from the example above) sold 9,990 of the 10,000 BSQ she earned within the first month of earning it. For the next voting cycle, she will only hold 10 BSQ. Assuming she only makes one proposal, that will be just enough to fully participate: 2 BSQ fee to make 1 proposal + 2 BSQ fee to vote + 6 BSQ stake = 10 BSQ.
+
+Adding her 6 BSQ stake to her 9,583 BSQ reputation, the total weight of her vote will be a hair over 9,583 BSQ.
+====
+
+Why "a hair over"? Why can't we just say Alice's vote is worth precisely 9,583 + 6 = 9,589 BSQ?
+
+Because BSQ earned is weighted higher than BSQ staked when calculating vote results: 10 BSQ of reputation is "worth" more than 10 staked BSQ.
+
+The idea is that there is no better measure of goodwill and dedication to the project than actually working on the project. This arrangement allows considerable influence to people who buy into the project, while minimizing the chance that bad-intentioned whales buy their way in and sabotage the project.
 
 ===== Other Details
 
