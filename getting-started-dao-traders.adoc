@@ -2,7 +2,7 @@
 :imagesdir: ./images
 :!figure-caption:
 
-This short guide will show you how to use BSQ to get up to 90% lower trading fees. Using BSQ also compensates Bisq's contributors, making the Bisq network a sustainable free software project.
+This short guide will show you how to use BSQ to pay lower trading fees. Using BSQ also compensates Bisq's contributors, making the Bisq network a sustainable free software project.
 
 Bisq's token is a bit different from most other exchange tokens: its primary reason to exist is to enable the decentralized operation and management of the Bisq network. That means no central wallets or accounts to accumulate funds, and and no legal entity or leadership team to control strategy. See more details <<user-dao-intro#, in this doc>> or in https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[these videos^].
 
