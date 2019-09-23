@@ -4,7 +4,9 @@
 
 == Introduction
 
-This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skills to follow the instructions below can list any asset. There are no fees involved in this process.
+This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skills to follow the instructions below can list an asset.
+
+<<#fees, Fees to list an asset>> depend on its trading volume. New assets require fees be paid to appear in Bisq.
 
 Please note: **Bisq will not list your token if it has taken part in an initial coin offering (ICO)**. Given the uncertain regulatory treatment of such tokens, link:https://github.com/bisq-network/proposals/issues/58[Bisq stakeholders determined] they are currently too much of a legal risk for the project.
 
@@ -126,6 +128,36 @@ Copy and paste the form template below into the description of the pull request 
 
 IMPORTANT: When submitting your pull request, please check the `Allow edits from maintainers` box. See https://github.com/bisq-network/style/issues/4 for details.
 
+== Fees
+
+Assets listed on Bisq must maintain a minimum trading volume of 0.01 BTC. The time period for this volume requirement varies (details below). Those that don't meet the threshold require an asset listing fee be paid to remain listed.
+
+New assets start with zero volume, so they don't meet the volume threshold to start, and an asset listing fee must be paid _after_ they are included in a Bisq release.
+
+The fee is 1 BSQ per day (the fee is a Bisq DAO parameter, so it is subject to change). The minimum fee is 30 BSQ (i.e., 30 days). The period paid for becomes the new rolling window over which the 0.01 BTC volume threshold applies.
+
+[NOTE]
+.Examples
+====
+Paying 30 BSQ results in an asset being listed for 30 days regardless of volume. Afterward, it must maintain 0.01 BTC of trading volume over subsequent rolling 30-day periods to remain listed without needing more asset-listing fees.
+
+Paying 60 BSQ results in an asset being listed for 60 days regardless of volume. Afterward, it must maintain 0.01 BTC of trading volume over subsequent rolling 60-day periods to remain listed without needing more asset-listing fees.
+
+These examples assume the asset listing fee is 1 BSQ per day.
+====
+
+[sidebar]
+.How to pay the asset listing fee
+--
+There is an asset listing fee section in the DAO section of the software:
+
+.Asset listing fee area
+image::images/asset-listing-fee.png[Asset listing fee area]
+
+Simply select the asset you'd like to list (or re-list), specify a fee to pay according to the rules above, and hit the `Pay fee` button.
+
+You will need BSQ to make the transaction, along with a little BTC for mining fees. If you don't have BSQ, check out <<../../getting-started-dao-traders#acquire-bsq, this doc>> to see how to get some. There is no other way to pay this fee.
+--
 
 == Caveats
 
@@ -145,28 +177,15 @@ Any BSQ stakeholder can also request a vote to remove an already-listed asset.
 
 === Inactive assets will be de-listed
 
-To remain listed on Bisq, assets must maintain a minimum trading volume of 0.01 BTC over a rolling 120-day period.
+To remain listed on Bisq, assets must maintain a minimum trading volume of 0.01 BTC over a rolling period of time. This period of time <<#fees, depends on the amount of the last asset listing fee>> that was paid for the asset.
 
-If this threshold is not met, the asset will be de-listed. Once de-listed, the asset will not appear in the currency list, so new payment accounts for the asset cannot be created. Existing offers for the asset will remain visible.
+If this requirement is not met, the asset will be de-listed. Once de-listed, the asset will not appear in Bisq's currency list, so users won't be able to create new payment accounts for the asset. Existing offers for the asset will remain visible.
 
-Assets can be exempted from this requirement (or re-listed after being de-listed due to inactivity) by paying the _daily asset listing fee_—this fee allows an asset with trading volume below 0.01 BTC in 120 days to remain listed.
-
-This fee is a Bisq DAO parameter, so it is subject to change, but is 1 BSQ per day as of this writing. The minimum trial period length one can purchase is 30 days. The period paid for becomes the new rolling window (e.g., if an asset is de-listed, and someone pays 30 BSQ to re-list the asset for 30 days, the asset needs to trade 0.01 BTC over a rolling 30-day period).
+Inactive assets can be re-listed by paying the _daily asset listing fee_. <<#fees, As described above>>, this fee allows an asset to be listed on Bisq for the time period paid for, regardless of its trading volume.
 
 Assets that have been previously removed from Bisq through DAO voting (i.e., removed entirely from Bisq through stakeholder consensus, not just de-listed due to inactivity) cannot be re-listed.
 
-[sidebar]
-.How to pay the asset listing fee
---
-There is an asset listing fee section in the DAO section of the software:
-
-.Asset listing fee area
-image::images/asset-listing-fee.png[Asset listing fee area]
-
-Simply select the asset you'd like to re-list, specify a fee to pay according to the rules above, and hit the `Pay fee` button.
-
-You will need BSQ to make the transaction, along with a little BTC for mining fees. If you don't have BSQ, check out <<../../getting-started-dao-traders#acquire-bsq, this doc>> to see how to get some. There is no other way to pay this fee.
---
+See details on how to pay the asset listing fee <<#fees, above>>.
 
 === Getting a new asset into production may take a while
 
