@@ -108,6 +108,14 @@ NOTE: For more details on how voting weight is determined, see <<dao-user-refere
 
 Once you've entered a voting stake, go ahead and click the `Vote on all proposals` button at the bottom of the screen.
 
+[CAUTION]
+.Beware!
+====
+Your `Vote weight from earned BSQ` is tied to your wallet. If you use a different wallet to vote after earning some BSQ with another wallet (for example, if you switch to a new data directory), reputation you earned with the other wallet won't apply.
+
+See more on <<dao-user-reference#voting-stake,voting stake here>>.
+====
+
 === 3. Reveal your vote
 
 [.float-group]

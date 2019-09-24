@@ -153,6 +153,13 @@ Because BSQ earned is weighted higher than BSQ staked when calculating vote resu
 
 The idea is that there is no better measure of goodwill and dedication to the project than actually working on the project. This arrangement allows considerable influence to people who buy into the project, while minimizing the chance that bad-intentioned whales buy their way in and sabotage the project.
 
+[CAUTION]
+====
+Your reputation is tied to your wallet. If you use a different wallet to vote after earning BSQ with another wallet (for example, if you switch to a new data directory), the reputation you earned before won't apply.
+
+You can send BSQ from one wallet to another, but not reputation.
+====
+
 ===== Other Details
 
 Votes are published on the Bitcoin network and _encrypted_ vote data objects are broadcast on the Bisq P2P network (hence the term 'blind' vote). The Bitcoin transaction includes a hash of the vote data object. BSQ specified for voting stake is also specified in this transaction, and cannot be spent until the vote reveal transaction is published.
