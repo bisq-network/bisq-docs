@@ -1,10 +1,20 @@
-= Secure Your Wallet
+= Wallet Info and Security
 :imagesdir: images
 :!figure-caption:
 
-Bisq is a non-custodial exchange, which means you retain control of your funds. That also means you're in charge of securing your funds. This short guide will explain how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
+Bisq is a non-custodial exchange, which means you retain control of your funds. That also means you're in charge of securing your funds.
 
-== Encrypt your wallet
+This doc covers Bisq wallet basics and how you can secure your Bisq wallet by (1) encrypting it and (2) writing down its seed words so you can restore it later.
+
+== Wallet Info
+
+Bisq's built-in Bitcoin wallet is based on https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki[BIP 44^]. BTC wallets have a `m/44'/0'/0'` https://en.bitcoin.it/wiki/BIP_0044[derivation path^] and BSQ wallets have a `m/44'/142'/0'` derivation path.
+
+The same seed phrase is used for BTC and BSQ wallets.
+
+== Security
+
+=== Encrypt your wallet
 
 Before setting a password, your Bisq wallet files are stored on your hard drive unencrypted. That means anyone who gains access to your computer (whether by physically stealing it or by hacking it remotely) can gain access to your private keys and take your bitcoin.
 
@@ -15,17 +25,27 @@ To set a password, go to the `Wallet password` section of the `Account` screen a
 .Set a password to encrypt your Bisq wallet.
 image::set-password.png[Set a password to encrypt your Bisq wallet]
 
-== Write down your seed words
+=== Write down your seed words
 
-Now that you've set a password, it's time to write down your wallet's seed words. Go to the `Wallet seed` section of the `Account` screen and *_write down_* the words you see in the `Wallet seed words` field along with the `Wallet date`.
+Now that you've set a password, it's time to write down your wallet's seed words. Go to the `Wallet seed` section of the `Account` screen and *_write down_* the words you see in the `Wallet seed words` field along with the `Wallet date`. Wallet date is required by bitcoinj, which is the library Bisq uses to interact with the Bitcoin network.
 
 IMPORTANT: You should _actually_ write down your seed words and wallet date using pen and paper. Saving them on your computer, even if you do so in a secure password manager, makes it _possible_ for a hacker to obtain them through sneaky schemes like keylogging. Going low-tech with pen and paper eliminates all such digital attack vectors.
 
-With just your wallet's seed words and date, you can restore your Bisq wallet and all its bitcoin whenever you need to. If you lose your wallet's seed words and date, you won't be able to restore your wallet, and any bitcoin in it is lost forever. So make sure you keep that paper safe!
-
-WARNING: Your seed words can restore your wallet's bitcoin, but they *do not* restore other Bisq application data such as your payment accounts, open disputes, etc. For that, you need to <<backup-recovery#, back up the Bisq data folder>>.
+With just your wallet's seed words and date, you can restore your Bisq wallet and all its BTC and BSQ into a new Bisq wallet if you ever need to. If you lose your wallet's seed words and date, you won't be able to restore your wallet, and all funds in it are lost forever. So make sure you keep that paper safe!
 
 .Write down your Bisq wallet's seed words & wallet date.
 image::seed-words.png[Write down your Bisq wallet's seed words]
 
-With your wallet encrypted and your seed words written down, the bitcoin in your Bisq wallet is much more secure. Bravo!
+With your wallet encrypted and your seed words written down, the bitcoin in your Bisq wallet is much more secure.
+
+== Restoring from seed
+
+WARNING: Your seed words can restore your wallet's BTC and BSQ, but they *do not* restore other Bisq application data such as your payment accounts, open disputes, etc. For that, you need to <<backup-recovery#, back up the Bisq data folder>>.
+
+**Restoring from seed is intended as an emergency measure**, to be used if you can't get your funds back any other way. We highly recommend trying <<backup-recovery#wallet-data, these remedies>> to solve common wallet issues first.
+
+If your goal is to transfer BTC or BSQ, it's best to send the funds to a new address with a transaction. This is also better for usability, as wallets with lots of transactions can cause Bisq to get laggy over time.
+
+**You should only restore from seed into a new Bisq wallet**. You could restore BTC funds to an external wallet like Electrum, but restoring BSQ on a non-Bisq wallet is virtually guaranteed to fail given the complex nature of BSQ transactions (<<dao-user-reference#more-about-bsq,see warning here>>).
+
+NOTE: If you do restore from seed on Bisq and still see a zero balance for BTC or BSQ, make sure to wait until the program is done syncing with the Bitcoin network (when done, the green bar on the bottom right labeled `Synchronizing with Bitcoin Mainnet (using Tor) / Synchronizing DAO` will go away).
