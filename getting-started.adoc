@@ -1,8 +1,6 @@
 = Getting Started with Bisq
 :imagesdir: ./images
 :!figure-caption:
-:btc-deposit: 0.01
-:btc-deposit-plus-fees: 0.011
 
 Bisq is decentralized, private, and secure—but it's surprisingly approachable—and this guide will help you get up and running quickly.
 
@@ -26,7 +24,7 @@ This is good news for users, because centralized services are easy to monitor, b
 This means that if you want to use the Bisq Network, you've got to download and run the software too!
 ====
 
-Once the installer is finished, go ahead and open Bisq. It'll take a few moments to open as it connects to Tor and syncs with Bisq's peer-to-peer trading network.
+Once the installer is finished, go ahead and open Bisq. It'll take a few moments to open as it connects to the Tor network and syncs with Bisq's peer-to-peer trading network.
 
 When that's done, the first screen you see should look something like this:
 
@@ -42,21 +40,21 @@ image::before-adding-fiat-account.png[Offers disabled before configuring nationa
 
 That's because we haven't yet configured a way to pay for the bitcoin we want to buy. So let's set up a payment method. Bisq works with many different payment methods, so you can choose those you already have access to and are most comfortable using. Keep in mind that payment methods determine:
 
-* which offers you can take right now (e.g., in the image above, Zelle has many existing offers, so if we set up Zelle, we could immediately take any of those offers)
-* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#How_long_does_a_trade_take[details here^])
+* which offers you can take right now (e.g., in the image above, Zelle has a couple of existing offers, so if we set up a Zelle account in Bisq, we could immediately take any of those Zelle offers).
+* how quickly a trade can be completed (e.g., a bank transfer will go through quicker than a money order sent by mail; see https://bisq.network/faq/#trade-periods[details here^])
 
 [NOTE]
 .What if there are no existing offers for the payment method I want to use?
 ====
-If you don't see any offers for the payment method you want to use, consider checking back later. A Bisq offer is only available while the user making the offer is online and running Bisq, so you'll see offers come and go as Bisq users around the world go online and offline throughout the day.
+If you don't see any offers for the payment method you want to use, consider creating your own offer with the `Create new offer to buy BTC with USD` button in the top-right. Just keep in mind that your offer will only be available while your Bisq program is online.
 
-You can also easily create your own buy offer with the `Create new offer to buy BTC with USD` button at bottom-right, but we won't go into those details here.
+You can also check back later, as offers come and go as Bisq users around the world go online and offline throughout the day.
 ====
 
 [NOTE]
 .Where is my payment account data stored?
 ====
-On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your arbitrator, if there's a dispute) will ever see your payment details.
+On your computer *only* (i.e., the computer on which Bisq is installed). Only your trading partner (and your mediator or arbitrator, if there's a dispute) will ever see your payment details.
 ====
 
 In this tutorial, we'll configure a Zelle account. You can adapt the instructions that follow to the payment method you choose.
@@ -81,11 +79,13 @@ image::after-adding-fiat-account.png[Configuring a national currency account]
 
 There's just one more thing to do before we can trade with Bisq: we need to send enough bitcoin to our Bisq wallet to cover a security deposit as well as trading and mining fees.
 
-To prevent fraud, Bisq requires both buyers and sellers to post a security deposit in bitcoin for every trade. On the buyer's side, this amount is usually {btc-deposit} BTC, plus a trading fee and mining fees for the Bitcoin transactions involved in each trade.
+Security deposits help prevent fraud, so Bisq requires both buyers and sellers to post one (in bitcoin) for every trade. On the buyer's side, this is usually 10% of the trade amount.
 
-As of this writing, that means you'll need {btc-deposit-plus-fees} BTC.
+NOTE: Sellers can specify their preferred deposit percentage when creating an offer to sell bitcoin. The default is 10%, but it's possible you'll come across offers that require bigger (or smaller) security deposits.
 
-If you don't already own this much bitcoin, you'll need to obtain it. How? You've got options. Friends and family are often the best option—simply buy a small amount of bitcoin directly from someone you trust. Otherwise, you can try a https://coinatmradar.com/[local bitcoin ATM] (many don't require ID for small transactions), https://www.meetup.com/topics/bitcoin/[bitcoin meetups/events], or vouchers.
+As of this writing, you would need 0.0012 BTC to take an offer to buy 0.01 BTC that requires a 10% security deposit. But please note that mining fees can fluctuate, some sellers may require bigger security deposits, and you'll need more for bigger trades, so it may be better to acquire more than the bare minimum so you have more flexibility.
+
+If you don't already own the bitcoin you need, you'll need to obtain it. How? You've got options. Friends and family are often the best option—simply buy a small amount of bitcoin directly from someone you trust. Otherwise, you can try a https://coinatmradar.com/[local bitcoin ATM] (many don't require ID for small transactions), https://www.meetup.com/topics/bitcoin/[bitcoin meetups/events], or vouchers.
 
 [WARNING]
 .How about getting bitcoin through a centralized exchange like Coinbase?
@@ -104,9 +104,9 @@ Make sure to password-protect your Bisq client and to write down the _seed words
 Don't worry, we'll remind you about this again at the end of this tutorial so you don't forget.
 ====
 
-To send bitcoin to your Bisq wallet, go to the `Funds` screen and click the `Receive` tab. Send your 0.011 BTC to one of the addresses listed there.
+To send bitcoin to your Bisq wallet, go to the `Funds` screen and click the `Receive` tab. Send your bitcoin to one of the addresses listed there.
 
-.You can send your security deposit to an address listed here (yours will be different from the one in this image).
+.You can send your bitcoin to an address listed here (yours will be different from the one in this image).
 image::fund-bisq-wallet.png[Fund your Bisq wallet]
 
 If you'd rather not hold any bitcoin in your Bisq wallet, that's fine, but you'll need to transfer your security deposit & fees manually when you take an offer (more on this below).
@@ -129,7 +129,7 @@ Back in the `Buy BTC` screen, click the green `Take Offer` button for the offer 
 
 --
 
-=== 2. Send deposit to trade wallet
+=== 2. Send deposit and fees to trade wallet
 
 [.float-group]
 --
@@ -150,8 +150,31 @@ Bisq will tell you the address of the trade wallet and exactly how much to send 
 [NOTE]
 .A multisig escrow transaction? How does that work?
 ====
-Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#What_is_an_arbitrator[bonded arbitrator^]. You can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
+Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#how-arbitration-works[bonded arbitrator^]. You can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
 ====
+
+[sidebar]
+.A note on trading fees
+--
+
+[.left.text-center]
+.Pick trading fee
+image::trading-fee-toggle-focused.png[Pick trading fee.]
+
+You'll notice a toggle to pick between BTC trading fees and BSQ trading fees.
+
+What's this about? Is Bisq shilling its own altcoin?
+
+Hold your horses!
+
+BSQ is **colored bitcoin** that funds and governs Bisq. Remember, Bisq is a _network_ run by _software_—not a _company_ run by a _CEO_—but decisions still need to be made and developers still need to be paid. BSQ colored bitcoin and the Bisq DAO achieve these functions for the Bisq network without a corporate entity, legal jurisdiction, or any designated "leadership".
+
+There was never an ICO, just <<dao/phase-zero#, extensive conception>>, development, and testing over 4+ years to make it a reality.
+
+**Using BSQ is optional**. But buying BSQ pays Bisq's developers and makes the project sustainable, so it's preferred, and this is reflected in trading fees—BSQ fees are considerably lower than BTC fees.
+
+If you'd like to give BSQ a try, <<getting-started-dao-traders#, see how you can get some>>. For more on the Bisq DAO, see https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[these videos^] or <<user-dao-intro#, this doc>>.
+--
 
 === 3. Confirm trade
 
@@ -191,7 +214,7 @@ Each confirmation makes a bitcoin transaction exponentially harder to reverse. Y
 .Make sure the seller receives your payment before this timer runs out.
 image::remaining-time-to-pay.png[Send payment quickly]
 
-Learn more about confirmations https://en.bitcoin.it/wiki/Confirmation[here^].
+Learn more about bitcoin transaction confirmations https://en.bitcoin.it/wiki/Confirmation[here^].
 ====
 
 --
@@ -237,6 +260,12 @@ Congratulations. You've just completed your first trade on Bisq!
 It's *crucial* that you secure your Bisq wallet. Without a password, your wallet data is stored on your hard drive unencrypted. That's _dangerous_.
 
 Please follow our <<secure-wallet#,short guide here>> to set a password, encrypt your wallet, and securely store your wallet's recovery seed words.
+
+==== Backups
+
+All your data is stored locally on your machine in the Bisq data directory. If something happens, _no one_ can help you!
+
+Therefore it's also **crucial** that you back up your Bisq data directory on a regular basis. <<backup-recovery#, Here are details and instructions>>.
 
 ==== Mobile Notifications
 
