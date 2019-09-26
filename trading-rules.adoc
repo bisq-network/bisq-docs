@@ -2,31 +2,146 @@
 :imagesdir: images
 :!figure-caption:
 
-_This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates._
+Follow these rules to make your trades smooth and successful, and be aware of the tools available if you end up with issues.
 
-To trade on Bisq, you assume one of two roles. You either buy bitcoin (BTC buyer) or sell bitcoin (BTC seller).
+To trade on Bisq, you assume one of two roles, no matter what national currency or cryptocurrency you're trading: you either buy bitcoin or sell bitcoin.
 
-This document covers the rules and expectations for each role, as well as details on the process for arbitrating disputes.
+This document covers the rules and expectations for both roles, as well as details on the process for handling disputes.
 
-IMPORTANT: Under **no circumstances** should you try to contact a trader using the contact information in their payment details, even if you have an issue with a trade. Always go through an arbitrator. Many people use Bisq for its high degree of privacy, and discussing Bisq away from Bisq is highly likely to compromise that privacy.
+NOTE: The rules listed below are _default_ rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
 
-NOTE: The rules listed below are default rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
+== Trading Rules
 
-== BTC buyer
+Whether making or taking an offer, bitcoin sellers put all the bitcoin they're selling in the multisig escrow transaction, so there's less for them to do and fewer rules they need to follow.
 
-* Payment should be completed reasonably early within the trade period, such that the seller has time to acknowledge receipt of the payment before the trade period is over. Waiting until the end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The lengths of trade periods vary based on payment method. See details https://bisq.network/faq/#trade-periods[here].
-* Must make payment from the account used to make/take the offer. The account information (e.g., name, account number, etc) must match.
-* Must enter the trade ID in the payment transfer "reason for payment" (if possible).
-* Must click the "Payment started" button after making the payment.
-* Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
-* In case of a dispute, buyer must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
+=== Bitcoin Sellers
 
-== BTC seller
+Bitcoin sellers _must_:
 
-* Must click "Confirm payment" after having received payment. Has until the end of the maximum trade period to do so.
-* In case of a dispute, seller must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
+- **Click `Confirm payment` after receiving payment**
++
+Sellers have until the end of the maximum trade period to do so.
 
-== Arbitration
+- **Collaborate with mediators and arbitrators**
++
+In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
+
+Bitcoin sellers _may_:
+
+- **Respond to trader chat messages**
++
+This is optional. Please see the <<#trader-chat, trader chat section>> below.
+
+Bitcoin sellers _should not_:
+
+- **Communicate with buyers away from Bisq**
++
+Using email addresses, phone numbers, and other means to contact traders is discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
+
+=== Bitcoin Buyers
+
+WARNING: To avoid unexpected issues, make sure you can actually carry out a payment with the payment method you've set up in Bisq. Examples: Wells Fargo doesn't allow cash deposits into bank accounts not owned by the depositor at all, and Zelle has weekly and monthly transfer maximums that are easy to overlook. The software will warn you about known issues, but cannot possibly keep up with all the newest banking and money transfer rules.
+
+Bitcoin buyers _must_:
+
+- **Make payment reasonably early within trade period**
++
+Payment should be completed reasonably early within the trade period, such that the seller has time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
+
+- **Make payment from account used to make or take the offer**
++
+Account information (e.g., name, account number, etc) of the account used to make the payment must _exactly_ match the information in the Bisq payment account details. If such a payment cannot be made, please communicate the issue through trader chat, or you'll need to make your case to a mediator or arbitrator.
+
+- **Enter the trade ID in payment's "reason for payment"**
++
+If possible, the trade ID should be included in the payment's "reason for payment" field. The name of this field can vary by payment method; some call it "Message" or "Information for recipient" or similar. Pick the field (if available) that enables the user to tie the payment to the specific trade.
++
+If there us no such field, just send the payment without specifying the trade ID.
+
+- **Click `Payment started` after sending payment**
++
+Seller cannot mark payment as received until buyer confirms that they have sent it. Don't forget!
+
+- **Pay any transfer fees**
++
+Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
+
+- **Collaborate with mediators and arbitrators**
++
+In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
+
+Bitcoin buyers _may_:
+
+- **Respond to trader chat messages**
++
+This is optional. Please see the <<#trader-chat, trader chat section>> below.
+
+Bitcoin buyers _should not_:
+
+- **Add any additional information in payment's "reason for payment"**
++
+Any mentions of _Bisq_ or _Bitcoin_ or any text other than the trade ID is prohibited. The receiver is already expecting a payment from you using the agreed payment method in the amount of the trade, so there is no reason to reveal any more context or information.
+
+- **Communicate with buyers away from Bisq**
++
+Using email addresses, phone numbers, and other means to contact traders is discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
+
+=== Face-to-Face (F2F) Trading
+[[f2f-trading]]
+
+On Bisq, F2F trades are _technically_ very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash.
+
+This introduces some important _practical_ differences. The rules above still apply, but keep in mind the suggestions and guidelines below.
+
+==== Meeting your trading partner
+
+Doing a transaction face-to-face means you'll be coming within close proximity of a stranger to exchange relatively substantial value.
+
+===== Be safe
+
+People do local, in-person commerce all the time, all over the world. Incidents are rare, but they do happen. You should be cognizant of risks and do your part to minimize potential harm.
+
+**Guard your data.** When you set up a face-to-face payment account in Bisq, you'll need to provide contact information so you can arrange a meeting with your trading partner. Make sure this information isn't traceable back to your property or identity.
+
+**Meet in a neutral public place.** Meeting your trading partner in a place with witnesses and security cameras significantly reduces the chance of an incident.
+
+**Don't bring more than you need.** Even in a public place, incidents can still happen, but you can limit the chance even further by limiting valuables on your person that would interest a thief in the first place.
+
+**Bring backup.** Consider bringing a friend with you. Also, depending on the laws in your area & your own comfort, consider carrying a concealed tool for self-defense. Even pepper-spray can hobble a criminal just enough to get you out of immediate danger.
+
+===== Validate payment
+
+Face-to-face trades are usually settled with cash. Cash is wonderfully anonymous, but it can be counterfeited. Be sure you know the basics of detecting counterfeit currency. For example, there are several characteristics of US dollar bills one can examine to quickly determine fakes with high accuracy.
+
+You could look for tools like counterfeit pens to do the work for you, but make sure you do thorough research before picking one. Counterfeit pens, for example, are often not reliable.
+
+If you'd rather not take the chance of carrying or accepting cash, consider meeting at a bank where you can validate a buyer's payment on the spot.
+
+===== Ensure you follow Bisq protocol
+
+Ultimately, the deal will be completed in Bisq. Buyers must mark payment as sent before sellers can release assets.
+
+**Buyers** should bring a laptop with them so they can mark the payment as sent. Otherwise, the buyer will end up paying the seller and have to walk away without the bitcoin they paid for (since the seller won't be able to acknowledge receipt of payment before the buyer acknowledges they sent payment).
+
+**Sellers** should bring a laptop with their Bisq client running no matter what. Once they receive a legitimate payment, they'll need to mark the payment as received so the assets are released to the buyer. No buyer will want to walk away after paying without proof of a complete deal.
+
+==== Disputes
+
+The lack of verifiable actions makes handling face-to-face disputes much harder.
+
+This is why we highly recommend that both parties bring laptops and acknowledge their ends of the deal on the spot.
+
+Otherwise, the same dispute process is in place for F2F trades (see below), but be advised that mediators and arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
+
+Mediators and arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
+
+== Dispute Resolution
+
+=== Trader Chat
+
+NEW NEW
+
+=== Arbitration
 
 When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution. Arbitrators have the third key in the 2-of-3 multisig escrow transaction, so their decision is authoritative.
 
@@ -59,7 +174,7 @@ The BTC seller gets all the escrow funds.
 
 The BTC buyer gets the trade amount but loses their security deposit.
 
-== Mediation
+=== Mediation
 
 Mediators are like arbitrators, in that their job is to evaluate a trade situation between two users. But unlike arbitrators, they do not have a key in the multisig escrow transaction, so their decision on how to resolve a dispute is _not authoritative_—it's merely a _suggestion_.
 
@@ -67,51 +182,4 @@ If both traders agree with the mediator's suggested payout, the payout is comple
 
 Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eventually eliminate the need for arbitrators. This new protocol will be implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators, before an eventual switchover to a protocol without arbitrators.
 
-You can learn more about the new trade protocol in https://github.com/bisq-network/proposals/issues/52[this issue^] or in https://www.youtube.com/watch?v=cZtg2sjXli0[this video^]. Please note that the new trade protocol is a work in progress, so details in those links may have since changed.
-
-== Face-to-Face (F2F) Trading
-[[f2f-trading]]
-
-On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash.
-
-This introduces some important differences.
-
-=== Meeting your trading partner
-
-Doing a transaction face-to-face means you'll be coming within close proximity of a stranger to exchange relatively substantial value.
-
-==== Be safe
-
-People do local, in-person commerce all the time, all over the world. Incidents are rare, but they do happen. You should be cognizant of risks and do your part to minimize potential harm.
-
-**Guard your data.** When you set up a face-to-face payment account in Bisq, you'll need to provide contact information so you can arrange a meeting with your trading partner. Make sure this information isn't traceable back to your property or identity.
-
-**Meet in a neutral public place.** Meeting your trading partner in a place with witnesses and security cameras significantly reduces the chance of an incident.
-
-**Don't bring more than you need.** Even in a public place, incidents can still happen, but you can limit the chance even further by limiting valuables on your person that would interest a thief in the first place.
-
-**Bring backup.** Consider bringing a friend with you. Also, depending on the laws in your area & your own comfort, consider carrying a concealed tool for self-defense. Even pepper-spray can hobble a criminal just enough to get you out of immediate danger.
-
-==== Validate payment
-
-Face-to-face trades are usually settled with cash. Cash is wonderfully anonymous, but it can be counterfeited. Be sure you know the basics of detecting counterfeit currency. For example, there are several characteristics of US dollar bills one can examine to quickly determine fakes with high accuracy.
-
-You could look for tools like counterfeit pens to do the work for you, but make sure you do thorough research before picking one. Counterfeit pens, for example, are often not reliable.
-
-If you'd rather not take the chance of carrying or accepting cash, consider meeting at a bank where you can validate a buyer's payment on the spot.
-
-==== Ensure you follow Bisq protocol
-
-Ultimately, the deal will be completed in Bisq. Buyers must mark payment as sent before sellers can release assets.
-
-**Buyers** should either bring a laptop with them to mark the payment as sent, or they should click the `Payment sent` button before meeting the seller. Otherwise, the buyer will pay the seller and have to walk away without the assets they paid for.
-
-**Sellers** should bring a laptop with their Bisq client running no matter what. Once they receive a legitimate payment, they'll need to mark the payment as received so the assets are released to the buyer. No buyer will want to walk away after paying without proof of a complete deal.
-
-=== Arbitration
-
-The lack of verifiable actions makes arbitrating face-to-face disputes much harder.
-
-The same arbitration process is in place for F2F trades, but be advised that arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
-
-Arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
+You can learn more about Bisq's future trade protocol in https://www.youtube.com/watch?v=YnTA3p-5v00[this video^]. Please note that the new trade protocol is a work in progress, so final implementation details may change.
