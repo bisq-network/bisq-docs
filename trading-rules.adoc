@@ -46,7 +46,7 @@ Bitcoin buyers _must_:
 
 - **Make payment reasonably early within trade period**
 +
-Payment should be completed reasonably early within the trade period, such that the seller has time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
+Buyer should complete at a time such that the seller has enough time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
 
 - **Make payment from account used to make or take the offer**
 +
@@ -131,15 +131,109 @@ The lack of verifiable actions makes handling face-to-face disputes much harder.
 
 This is why we highly recommend that both parties bring laptops and acknowledge their ends of the deal on the spot.
 
-Otherwise, the same dispute process is in place for F2F trades (see below), but be advised that mediators and arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
+Otherwise, the same dispute process is in place for F2F trades (<<#face-to-face-f2f-trading, see below>>), but be advised that mediators and arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
 
 Mediators and arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
 
 == Dispute Resolution
 
+Dispute resolution on Bisq has 3 layers: trader chat, mediation, and arbitration.
+
+Until Bisq v1.1.6, arbitration was the only means for traders to handle disputes.
+
+After Bisq v1.1.6, chat and mediation were introduced to handle the vast majority of disputes more efficiently, making arbitration a rare fallback for extreme circumstances.
+
 === Trader Chat
 
-NEW NEW
+Direct end-to-end encrypted chat in Bisq allows traders to communicate with each other throughout the course of a trade to resolve trade issues quickly without involving a third party like a mediator or arbitrator.
+
+.Click this icon to start trader chat.
+image::start-trader-chat.png[Click this icon to start trader chat.]
+
+This functionality was avoided for a while because of the risky nature of having 2 internet strangers communicate with each other, but we aim to mitigate these risks with the following rules:
+
+- **Responding to chat messages is always optional**
++
+If you're not comfortable responding to chat messages, don't respond. You have no obligation to communicate over this medium.
+
+- **Do not send links of any kind**
++
+For safety. If you want to send a link, describe it instead.
++
+_Not allowed:_
++
+`+++https://blockstream.info/tx/4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5+++`
++
+_Allowed:_
++
+`Hey, could you look up txid 4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5 in your favorite block explorer?`
+
+- **Do not encourage trading away from Bisq**
++
+Trades away from Bisq lack Bisq's security mechanisms. If something goes wrong with an off-Bisq trade, you're on your own.
+
+- **Do not send sensitive information like private keys, passwords, etc**
++
+Such information is never wise to share in general, and is _never_ needed to solve trade disputes on Bisq.
+
+- **Do not attempt social engineering exploits**
++
+Any attempts to engage in foul play are prohibited.
+
+- **Respect a peer's decision to avoid responding**
++
+If a peer seems unresponsive, or has signaled their intention to refrain from chatting, please respect it and don't pressure them.
+
+- **Keep conversation scope limited to the trade**
++
+Please don't use Bisq's trader chat as a general-purpose messenger. Unnecessary exchanges add unnecessary strain to the Bisq peer-to-peer network.
+
+- **Keep conversation friendly and respectful**
++
+Because friendlier traders resolve disputes quicker, and no one wants to deal with a jerk.
+
+Hopefully, by following these rules, you can work directly with your trading peer to solve issues quickly and amicably.
+
+If not, you may need to engage a mediator.
+
+=== Mediation
+
+[.left.text-center]
+.Start mediation.
+image::start-mediation.png[Start mediation,400,400]
+
+If trading peers cannot resolve issues on their own with trader chat, mediation is the next step.
+
+==== How Mediation Works
+
+A mediator's job is to evaluate a trade situation between two users and make a _suggestion_ for a payout. Mediators do _not_ have a key in the multisig escrow transaction, so their suggested payout is _not authoritative_.
+
+Trading peers should do their best to cooperate with the mediator and provide the requested information, and are required to respond to messages within 48 hours.
+
+Likewise, **mediators may take up to 48 hours to respond to your messages.** Please don't panic if you don't hear back immediately.
+
+When a mediator suggests a payout:
+
+* if both peers agree with the suggestion, the payout is completed and the trade is closed
+* if one or both peers disagree with the suggestion, the situation is then re-evaluated by an arbitrator who makes the payout based on their findings (<<#arbitration, see below>>)
+
+NOTE: You don't have to wait for the end of a trading period to request help from a mediator: you can engage a mediator at any point during the trading period, for example, if your trading peer's chats make you feel uncomfortable.
+
+==== Who Are Mediators?
+
+Mediator roles are <<user-dao-intro#ensure-honesty-in-high-trust-roles, bonded roles>> in the Bisq DAO. Anyone can propose to become a mediator, but approval will depend on the network's need for more mediators at the time a proposal is made.
+
+Once a proposal to become a mediator is approved by DAO voting, the mediator must lock a 10,000 BSQ bond to become active. This bond helps to ensure their continued availability and performance in the role, and can be confiscated by DAO voting in extreme circumstances (negligence, foul play, prolonged absence, etc).
+
+You can see more details (current role owners, regular updates, etc) on the https://github.com/bisq-network/roles/issues/83[mediator role issue^].
+
+==== Why Mediation?
+
+Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eventually eliminate the need for arbitrators. Arbitrators are big trust points, legal liabilities, relatively expensive, not scalable...there are many issues, causing them to be the weakest link in the Bisq network right now.
+
+The new trade protocol is being implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators (v1.1.6), before an eventual switchover to a new protocol without arbitrators.
+
+You can learn more about Bisq's future trade protocol in https://www.youtube.com/watch?v=YnTA3p-5v00[this video^]. Please note that the new trade protocol is a work in progress, so final implementation details may change.
 
 === Arbitration
 
@@ -173,13 +267,3 @@ The BTC seller gets all the escrow funds.
 **The BTC seller received the funds but the BTC buyer didn't enter the correct reference text**
 
 The BTC buyer gets the trade amount but loses their security deposit.
-
-=== Mediation
-
-Mediators are like arbitrators, in that their job is to evaluate a trade situation between two users. But unlike arbitrators, they do not have a key in the multisig escrow transaction, so their decision on how to resolve a dispute is _not authoritative_—it's merely a _suggestion_.
-
-If both traders agree with the mediator's suggested payout, the payout is completed and the trade is closed. If one or both traders disagree with the suggestion, the situation is then re-evaluated by an arbitrator who makes the payout based on their findings.
-
-Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eventually eliminate the need for arbitrators. This new protocol will be implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators, before an eventual switchover to a protocol without arbitrators.
-
-You can learn more about Bisq's future trade protocol in https://www.youtube.com/watch?v=YnTA3p-5v00[this video^]. Please note that the new trade protocol is a work in progress, so final implementation details may change.
