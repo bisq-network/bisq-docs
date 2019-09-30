@@ -8,11 +8,11 @@ To trade on Bisq, you assume one of two roles, no matter what national currency 
 
 This document covers the rules and expectations for both roles, as well as details on the process for handling disputes.
 
-NOTE: The rules listed below are _default_ rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
-
 == Trading Rules
 
 Whether making or taking an offer, bitcoin sellers put all the bitcoin they're selling in the multisig escrow transaction, so there's less for them to do and fewer rules they need to follow.
+
+The rules below are _default_ rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
 
 === Bitcoin Sellers
 
@@ -21,16 +21,20 @@ Bitcoin sellers _must_:
 - **Click `Confirm payment` after receiving payment**
 +
 Sellers have until the end of the maximum trade period to do so.
++
+Please don't get impatient if a buyer doesn't send payment immediately. Although buyers are encouraged to send payment as soon as possible, they can take length of the trade period to do so.
 
 - **Collaborate with mediators and arbitrators**
 +
 In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
++
+Mediators may take up to 48 hours to respond to messages, and arbitrators may take up to 5 days to respond to messages.
 
 Bitcoin sellers _may_:
 
 - **Respond to trader chat messages**
 +
-This is optional. Please see the <<#trader-chat, trader chat section>> below.
+This is optional. Please see the <<#trader-chat, rules for trader chat>> below.
 
 Bitcoin sellers _should not_:
 
@@ -40,17 +44,19 @@ Using email addresses, phone numbers, and other means to contact traders is disc
 
 === Bitcoin Buyers
 
-WARNING: To avoid unexpected issues, make sure you can actually carry out a payment with the payment method you've set up in Bisq. Examples: Wells Fargo doesn't allow cash deposits into bank accounts not owned by the depositor at all, and Zelle has weekly and monthly transfer maximums that are easy to overlook. The software will warn you about known issues, but cannot possibly keep up with all the newest banking and money transfer rules.
+WARNING: To avoid unexpected issues, make sure you can actually carry out a payment with the payment method you've set up in Bisq. Examples: Wells Fargo doesn't allow cash deposits into bank accounts not owned by the depositor, and Zelle has weekly and monthly transfer maximums that are easy to overlook. The software will warn you about known issues, but cannot possibly keep up with all the newest banking and money transfer rules.
 
 Bitcoin buyers _must_:
 
 - **Make payment reasonably early within trade period**
 +
-Buyer should complete at a time such that the seller has enough time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
+Buyer should complete at a time such that the seller has enough time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not advised, as then the seller cannot reasonably act in time to acknowledge receipt (also, it's annoying). The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
 
 - **Make payment from account used to make or take the offer**
 +
-Account information (e.g., name, account number, etc) of the account used to make the payment must _exactly_ match the information in the Bisq payment account details. If such a payment cannot be made, please communicate the issue through trader chat, or you'll need to make your case to a mediator or arbitrator.
+Intermediary banks or other payment methods from the same bank are not acceptable. Account information (e.g., name, account number, etc) of the account used to make the payment must _exactly_ match the information in the Bisq payment account details.
++
+If such a payment cannot be made, please communicate the issue through trader chat, or you'll need to make your case to a mediator or arbitrator.
 
 - **Enter the trade ID in payment's "reason for payment"**
 +
@@ -62,19 +68,23 @@ If there us no such field, just send the payment without specifying the trade ID
 +
 Seller cannot mark payment as received until buyer confirms that they have sent it. Don't forget!
 
-- **Pay any transfer fees**
+- **Pay any transaction fees**
 +
 Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
++
+The seller should receive the _exact_ amount of the trade. The only exception to this rule is if the receiving institution imposes a fee on incoming payments—these fees are borne by the seller.
 
 - **Collaborate with mediators and arbitrators**
 +
 In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
++
+Mediators may take up to 48 hours to respond to messages, and arbitrators may take up to 5 days to respond to messages.
 
 Bitcoin buyers _may_:
 
 - **Respond to trader chat messages**
 +
-This is optional. Please see the <<#trader-chat, trader chat section>> below.
+This is optional. Please see the <<#trader-chat, rules for trader chat>> below.
 
 Bitcoin buyers _should not_:
 
@@ -82,9 +92,11 @@ Bitcoin buyers _should not_:
 +
 Any mentions of _Bisq_ or _Bitcoin_ or any text other than the trade ID is prohibited. The receiver is already expecting a payment from you using the agreed payment method in the amount of the trade, so there is no reason to reveal any more context or information.
 
+WARNING: This is an important rule, and potentially a serious problem if broken: many banks don't like anything related to Bitcoin, and may create serious problems for you (or your trading peer) if they sense such a transacton.
+
 - **Communicate with buyers away from Bisq**
 +
-Using email addresses, phone numbers, and other means to contact traders is discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
+Using email addresses, phone numbers, and other means to contact traders is strongly discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
 
 === Face-to-Face (F2F) Trading
 [[f2f-trading]]
@@ -143,6 +155,8 @@ Until Bisq v1.1.6, arbitration was the only means for traders to handle disputes
 
 After Bisq v1.1.6, chat and mediation were introduced to handle the vast majority of disputes more efficiently, making arbitration a rare fallback for extreme circumstances.
 
+NOTE: Most issues on Bisq are minor and easily resolved when traders communicate with each other.
+
 === Trader Chat
 
 Direct end-to-end encrypted chat in Bisq allows traders to communicate with each other throughout the course of a trade to resolve trade issues quickly without involving a third party like a mediator or arbitrator.
@@ -186,7 +200,7 @@ If a peer seems unresponsive, or has signaled their intention to refrain from ch
 
 - **Keep conversation scope limited to the trade**
 +
-Please don't use Bisq's trader chat as a general-purpose messenger. Unnecessary exchanges add unnecessary strain to the Bisq peer-to-peer network.
+Please don't use Bisq's trader chat as a general-purpose messenger. Unnecessary exchanges add unnecessary strain to Bisq's peer-to-peer network.
 
 - **Keep conversation friendly and respectful**
 +
@@ -208,7 +222,7 @@ If trading peers cannot resolve issues on their own with trader chat, mediation 
 
 A mediator's job is to evaluate a trade situation between two users and make a _suggestion_ for a payout. Mediators do _not_ have a key in the multisig escrow transaction, so their suggested payout is _not authoritative_.
 
-Trading peers should do their best to cooperate with the mediator and provide the requested information, and are required to respond to messages within 48 hours.
+Trading peers should do their best to cooperate with the mediator and provide the <<#dispute-process-what-to-expect, requested information>>, and are required to respond to messages within 48 hours.
 
 Likewise, **mediators may take up to 48 hours to respond to your messages.** Please don't panic if you don't hear back immediately.
 
@@ -217,19 +231,24 @@ When a mediator suggests a payout:
 * if both peers agree with the suggestion, the payout is completed and the trade is closed
 * if one or both peers disagree with the suggestion, the situation is then re-evaluated by an arbitrator who makes the payout based on their findings (<<#arbitration, see below>>)
 
-NOTE: You don't have to wait for the end of a trading period to request help from a mediator: you can engage a mediator at any point during the trading period, for example, if your trading peer's chats make you feel uncomfortable.
+[NOTE]
+====
+You don't have to wait for the end of a trading period to request help from a mediator. You can engage a mediator at any point during the trading period, for example, if your trading peer's chats make you feel uncomfortable.
+
+But please be patient—for example, it's not against the rules for a buyer to send payment toward the end of the trade period, so engaging a mediator during the trade period (for this reason) would not be productive.
+====
 
 ==== Who Are Mediators?
 
 Mediator roles are <<user-dao-intro#ensure-honesty-in-high-trust-roles, bonded roles>> in the Bisq DAO. Anyone can propose to become a mediator, but approval will depend on the network's need for more mediators at the time a proposal is made.
 
-Once a proposal to become a mediator is approved by DAO voting, the mediator must lock a 10,000 BSQ bond to become active. This bond helps to ensure their continued availability and performance in the role, and can be confiscated by DAO voting in extreme circumstances (negligence, foul play, prolonged absence, etc).
+Once a proposal to become a mediator is approved by DAO voting, the mediator must lock a 10 000 BSQ bond to become active. This bond helps to ensure their continued availability and performance in the role, and can be confiscated by DAO voting in extreme circumstances (negligence, foul play, prolonged absence, etc).
 
 You can see more details (current role owners, regular updates, etc) on the https://github.com/bisq-network/roles/issues/83[mediator role issue^].
 
 ==== Why Mediation?
 
-Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eventually eliminate the need for arbitrators. Arbitrators are big trust points, legal liabilities, relatively expensive, not scalable...there are many issues, causing them to be the weakest link in the Bisq network right now.
+Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eliminate arbitration. Unlike arbitrators, mediators don't have a key in the multisig escrow transaction, meaning they don't require nearly as much trust. This reduced trust requirement also enables more people to become mediators, so mediation can be made available in more languages to support Bisq trading around the world, allowing dispute resolution to scale more flexibly.
 
 The new trade protocol is being implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators (v1.1.6), before an eventual switchover to a new protocol without arbitrators.
 
@@ -237,33 +256,68 @@ You can learn more about Bisq's future trade protocol in https://www.youtube.com
 
 === Arbitration
 
-When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution. Arbitrators have the third key in the 2-of-3 multisig escrow transaction, so their decision is authoritative.
+Arbitration is the last layer of dispute resolution on Bisq, available only if trader chat and mediation fail to produce a satisfactory outcome. Arbitrators have the third key in the 2-of-3 multisig escrow transaction, so their decisions are authoritative.
 
-The following are possible circumstances and resulting outcomes.
+You can choose to engage an arbitrator upon receiving the mediator's suggested payout.
 
-**The BTC buyer didn't confirm sending the funds and let the trade duration limit run out**
+.If you disagree with a mediator's suggestion, you can engage an arbitrator.
+image::engage-arbitrator-v116.png[.If you disagree with a mediator's suggestion, you can engage an arbitrator.]
 
-The arbitrator can release all the escrow funds to the BTC seller.
+Arbitration is meant to be rare. Arbitrators are required to respond to messages within 5 days, so it may take a bit longer for them to respond than mediators (you should still respond to messages within 2 days).
 
-**The BTC seller didn't release the trade funds by confirming receipt of the funds and let the trade duration limit run out**
+See the section below on <<#dispute-process-what-to-expect, what to expect>> when your case is handled by an arbitrator.
 
-The BTC buyer is responsible to provide the arbitrator with proof of their payment. If they fail to do so and the BTC seller says they haven't received any funds, the BTC seller gets all the funds in escrow.
-The BTC seller has 48 hours after the end of the maximum trade period to respond as to whether they have or not received the funds. After that the arbitrator can sign a transaction releasing all funds in escrow to the BTC buyer.
+==== History and future of arbitration
 
-If you don't hear back from your arbitrator within a reasonable amount of time, your message may not have been delivered successfully by the peer-to-peer network. If this happens, you can ping your arbitrator on link:https://bisq.community/t/arbitrators/8074[the forum]. Simply find your arbitrator's forum handle by searching the forum for your arbitrator's onion address (you'll find this address in the trade information popup), and tag your arbitrator in a new forum post about your issue.
+Arbitration used to be the only way to handle disputes on Bisq. It was an imperfect but effective solution for the fledgling network. During this time, all trading fees went to arbitrators to compensate for their high availability, high risk, and high stakes (if they made a payout incorrectly, they were on the hook for making it right).
 
-CAUTION: Be sure to create an anonymous forum account so your trade data remains private.
+Historically, arbitrator roles have only been held only by people who consistently put significant effort into the project over long periods of time to warrant holding such an important responsibility. They're also relatively expensive roles and not scalable either (e.g., it's difficult to find highly-trusted people to arbitrate in other languages).
 
-When facing any issue that stops you, as the BTC seller or buyer, from fulfilling your role during the trade period, a dispute should be opened immediately by pressing Cmd/Ctrl+o on the `Portfolio` > `Open trades` screen.
+In short, they're the weakest link in the Bisq network right now.
 
-**The BTC buyer sent the funds to the wrong person**
+Hence upcoming changes to the Bisq trading protocol in v1.2 with the move to 2-of-2 multisignature wallets. Arbitrators will lose their third key in multisig escrow wallets, drastically reducing their power. Mediators and chat will become the primary tools of dispute resolution, leaving arbitration as a last resort for rare occasions.
 
-The BTC seller gets all the escrow funds.
+=== Dispute Process: What to Expect
 
-**BTC seller receives payment from an account with different details (name, account number, etc) than those on the buyer's Bisq payment account**
+When engaging with a mediator or arbitrator, you may be asked to provide various proofs of a payment transaction.
 
-The BTC seller gets all the escrow funds.
+[WARNING]
+====
+Please note that the measures below are for real disputes, that is, when the very existence of a payment is disputed. Such cases are rare.
 
-**The BTC seller received the funds but the BTC buyer didn't enter the correct reference text**
+The vast majority of disputes on Bisq are minor mistakes or issues that don't require the measures below.
+====
 
-The BTC buyer gets the trade amount but loses their security deposit.
+==== "Notarized" bank site
+
+https://tlsnotary.org/pagesigner.html[PageSigner^] is a browser extension that allows users to "notarize" web pages, so that you can provide tamper-proof evidence that a particular website rendered particular information. This is helpful for Bisq buyers and sellers to prove whether they did (or didn't) send or receive fiat payments.
+
+A buyer claiming to have made a payment needs to send proof that they transferred the correct amount with the correct reference text. A seller claiming to have _not received_ payment needs to show proof in the form of their transaction history (filtered by the offer ID, with trade period specified for time period).
+
+PageSigner outputs a `.pgsg` file you can send to a mediator or arbitrator.
+
+If it isn't possible to generate the required proof with PageSigner, the user will be asked to request a digitally-signed statement from their bank with evidence of their position.
+
+NOTE: At this point, if there is no obvious resolution, both users will be asked to check with their banks to determine if the transaction was blocked or delayed by the bank. If it was, a mediator or arbitrator may allow the user more time to handle the issue with their bank.
+
+**The following measures are even more rare, but we document them here just in case.** Fiat payment methods are tied tightly to identity, unfortunately, and if other payment verification methods fail, identity verification may be the only possible way to determine the veracity of two peers' claims.
+
+==== Video ID verification
+
+A mediator or arbitrator may ask the user to send a picture of themself ("selfie") holding scans of 2 government-issued IDs (front and back). At least one of the documents must include a photo.
+
+If a user can produce such a photo, they may then be asked to have a video chat with both documents so the mediator or arbitrator can compare the photo on the IDs to the user's face on video.
+
+Mediators and arbitrators are not required to reveal who they are.
+
+NOTE: Remember—people in these roles have locked bonds to ensure their honesty, so knowing their identity isn't necessary. If you suspect foul play, know that <<user-dao-intro#ensure-honesty-in-high-trust-roles, confiscating their bond>> is a possible remedy.
+
+If one peer fails to successfully verify themself, the case will be decide in favor of the other peer (assuming that peer _can_ verify their identity).
+
+==== Video transaction verification
+
+If both peers pass identity verification, the next step is to show a mediator or arbitrator the relevant bank account web page with evidence of the payment in question (or lack thereof) on a screen-share or video-chat.
+
+==== Closure
+
+Once a mediator or arbitrator has gathered enough evidence to make a decision, they will either suggest a payout (in the case of a mediator) or publish a new payout transaction (in the case of an arbitrator) from the 2-of-3 multisig deposit according to their findings.
