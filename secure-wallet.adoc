@@ -40,7 +40,12 @@ With your wallet encrypted and your seed words written down, the bitcoin in your
 
 == Restoring from seed
 
-WARNING: Your seed words can restore your wallet's BTC and BSQ, but they *do not* restore other Bisq application data such as your payment accounts, open disputes, etc. For that, you need to <<backup-recovery#, back up the Bisq data folder>>.
+[WARNING]
+====
+Your seed words can restore your wallet's BTC and BSQ, but they *do not* restore other Bisq application data such as your payment accounts, open disputes, etc. For that, you need to <<backup-recovery#, back up the Bisq data folder>>.
+
+Also note that restoring from seed does not restore <<dao-user-reference#voting-stake,reputation value>> earned from contributing to Bisq.
+====
 
 **Restoring from seed is intended as an emergency measure**, to be used if you can't get your funds back any other way. We highly recommend trying <<backup-recovery#wallet-data, these remedies>> to solve common wallet issues first.
 
