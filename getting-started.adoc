@@ -171,7 +171,7 @@ BSQ is **colored bitcoin** that funds and governs Bisq. Remember, Bisq is a _net
 
 There was never an ICO, just <<dao/phase-zero#, extensive conception>>, development, and testing over 4+ years to make it a reality.
 
-**Using BSQ is optional**. But buying BSQ pays Bisq's developers and makes the project sustainable, so it's preferred, and this is reflected in trading fees—BSQ fees are considerably lower than BTC fees.
+**Using BSQ is optional**. But buying BSQ pays Bisq's developers and makes the project sustainable, so it's encouraged, and this is reflected in trading fees—BSQ fees are considerably lower than BTC fees.
 
 If you'd like to give BSQ a try, <<getting-started-dao-traders#, see how you can get some>>. For more on the Bisq DAO, see https://www.youtube.com/playlist?list=PLFH5SztL5cYPAXWFz-IMB4dBZ0MEZEG_e[these videos^] or <<user-dao-intro#, this doc>>.
 --
