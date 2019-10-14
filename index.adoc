@@ -66,15 +66,29 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 
 == Contributor Docs
 
+=== Details on Contributing
+
  * <<contributor-checklist#, Contributor Checklist>> — _The one-stop doc to help you start contributing to Bisq._
  * <<compensation#, Requesting Compensation and Voting>> — _How to get paid for your contributions to Bisq._
- * <<exchange/howto/list-asset#, How to list an asset>> — _Everything you need to know to list an asset on Bisq._
- * <<proposals#, Proposals>>
- * <<roles#, Roles>>
-    ** <<btcnode#operator, Bitcoin Core Node Operator>>
- * <<exchange/howto/run-seednode#, How to run a seednode>>
- * <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
+ * <<exchange/howto/list-asset#, How to List an Asset>> — _Everything you need to know to list an asset on Bisq._
 
+=== Infrastructure and Notable Roles
+
+==== Governance
+
+ * <<proposals#, Proposals>>
+    ** <<proposals#maintainer, Proposals Maintainer>>
+ * <<roles#, Roles>>
+    ** <<roles#maintainer, Roles Maintainer>>
+
+==== Network Infrastructure
+
+ * <<btcnode#, Bitcoin Core Nodes>>
+    ** <<btcnode#operator, Bitcoin Core Node Operator>>
+ * <<exchange/howto/run-seednode#, Bisq Seed Nodes>>
+    ** <<exchange/howto/run-seednode#seed-node-operators, Bisq Seed Node Operator>>
+ * <<exchange/howto/run-price-relay-node#, Bisq Price Nodes>>
+    ** <<exchange/howto/run-price-relay-node#price-relay-node-operators, Bisq Price Node Operator>>
 
 == Papers
 
