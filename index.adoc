@@ -66,13 +66,12 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 
 == Contributor Docs
 
- * <<contributor-checklist#, Contributor Checklist>>
+ * <<contributor-checklist#, Contributor Checklist>> — _The one-stop doc to help you start contributing to Bisq._
+ * <<compensation#, Requesting Compensation and Voting>> — _How to get paid for your contributions to Bisq._
+ * <<exchange/howto/list-asset#, How to list an asset>> — _Everything you need to know to list an asset on Bisq._
  * <<proposals#, Proposals>>
- * <<compensation#, Requesting Compensation and Voting>>
  * <<roles#, Roles>>
     ** <<btcnode#operator, Bitcoin Core Node Operator>>
- * <<exchange/howto/list-asset#, How to list an asset>>
- * <<manual-dispute-payout#, How to issue a manual dispute payout>>
  * <<exchange/howto/run-seednode#, How to run a seednode>>
  * <<exchange/howto/run-price-relay-node#, How to run a pricenode>>
 
