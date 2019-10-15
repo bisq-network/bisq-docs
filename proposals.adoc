@@ -1,23 +1,30 @@
 = Proposals
 
-Proposals are a means for suggesting changes to Bisq Network software components, infrastructure and processes.
-
-
-== Introduction
+Proposals are a means for suggesting significant changes to Bisq Network software components, infrastructure and processes.
 
 The Bisq DAO is a flat organization, with no command-and-control hierarchy available to make big decisions and carry them out. Usually this is not a problem, as most day-to-day changes happen without any need for organization-wide consensus. Certain kinds of changes, however, benefit from or even require it.
 
 What's needed is a mechanism that allows any contributor to _propose_ a change, and all other contributors to _review_ it in order to arrive at an IETF-style rough consensus.footnote:[See link:https://en.wikipedia.org/wiki/Rough_consensus[]] _Proposals_ are that mechanism, and this document covers everything that participants need to know about the process.
 
-=== What proposals are good for
+== When to Make a Proposal
 
- * Creating an entire new Bisq component or making a significant change to an existing one
+Proposals are for _significant_ changes in the Bisq network.
+
+**What proposals are good for:**
+
+ * Creating an entirely new Bisq component or making a significant change to an existing one
  * Changing something about the way contributors work together
+ * Creating new roles
+ * Adjusting DAO parameters (e.g., trading fees)
 
-=== What proposals are not good for
+**What proposals are not good for:**
 
  * Smaller changes to existing components, infrastructure or processes, where a broad consensus of contributors is not required
+ * Adding or changing payment methods
 
+If you're not sure if you should make a proposal, you should probably avoid making one. Instead, float your idea with contributors first (typically, on Slack or GitHub) and get a feel for what others think. If you get positive feedback, you can steer the conversation toward how to implement the idea, which may involve making a proposal.
+
+See further <<proposals#step-0-research, pre-proposal suggestions>> below.
 
 == Infrastructure
 
@@ -34,13 +41,13 @@ The `#proposals` Slack channel is available for discussion and notifications abo
 
 === Submitter
 
-The contributor(s) who write a proposal and carry it through to completion.
+The contributor(s) who write a proposal, submit it to the DAO, and carry it through to completion.
 
 **Submitters are 100% responsible for the success of their proposals.**
 
 === Reviewer
 
-Other contributors who read, discuss and react to proposals.
+Other contributors who read, discuss, react, and vote on proposals.
 
 **Any contributor _may_ review a proposal, but no contributor is obligated to do so.** This intentionally puts the onus on the submitter to ensure their proposal is relevant and well-written per the <<guidelines>> below.
 
@@ -75,20 +82,22 @@ The contributor(s) responsible for proposals <<infrastructure>> and <<process>>.
 
 Before you submit a proposal, **do your homework!**
 
- . Discuss your idea with other contributors to see if a proposal is worth submitting at all;
- . Search through existing proposals (both https://github.com/bisq-network/proposals/issues?utf8=%E2%9C%93&q=is%3Aissue+[open and closed]) to see whether something similar has already been proposed;
- . Notice which among those proposals have been accepted and rejected, and why;
+ . Discuss your idea with other contributors to see if a proposal is worth submitting at all.
+ . Search through existing proposals (both https://github.com/bisq-network/proposals/issues?utf8=%E2%9C%93&q=is%3Aissue+[open and closed]) to see whether something similar has already been proposed.
+ . Notice which among those proposals have been accepted and rejected, and why.
  . Read this document to fully understand the proposal process and guidelines.
 
-=== Step 1. Submit
+=== Step 1. Submit on GitHub
 
 Create a new GitHub issue in the `bisq-network/proposals` repository containing the text of your proposal, written and formatted per the guidelines below.
 
+You will also need to submit your proposal to the Bisq DAO (see below), but that's best done after feedback and discussion on the GitHub issue.
+
 A maintainer will quickly review your proposal and will either (a) assign it to you to indicate your ownership and responsibility over it, or (b) close it and label it as `was:incorrect` if it does not follow the guidelines below.
 
-=== Step 2. Review
+=== Step 2. Discuss on GitHub
 
-Once a proposal is submitted, a two-week review period follows. During this period, interested reviewers should read, discuss and ultimately https://help.github.com/articles/about-conversations-on-github/#reacting-to-ideas-in-comments[react] to the proposal as follows:
+Once a proposal is submitted on GitHub, interested reviewers should read, discuss and https://help.github.com/articles/about-conversations-on-github/#reacting-to-ideas-in-comments[react] to the proposal as follows:
 
  - 👍: I agree with the proposal and want to see it enacted
  - 😕: I am uncertain about the proposal and I need more information
@@ -100,7 +109,15 @@ If you do not understand or care about a given proposal, ignore it.
 
 Use comments on the proposal issue to discuss, ask questions, and get clarifications. Take lengthy discussions offline to Slack or elsewhere and then summarize them back on the issue.
 
-NOTE: Remember that the proposal review process is all about reaching a _rough consensus,_ meaning that there is a broad agreement that the proposal should be enacted, and that any dissenting opinions have been addressed, though not necessarily fully resolved.
+=== Step 3. Submit to the Bisq DAO
+
+If your proposal gets favorable feedback on GitHub, you should submit it to the Bisq DAO for ultimate approval.
+
+Aside from being the designated decision-making mechanism, the Bisq DAO exposes proposals to the broader Bisq community of contributors and users.
+
+To do this, navigate to the `Governance` tab of the `DAO` panel and click `Make Proposal`. Choose your proposal type and complete the form.
+
+
 
 === Step 3. Evaluate
 
