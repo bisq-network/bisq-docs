@@ -303,7 +303,7 @@ Practically, here's how arbitration works:
 
 1. If you're dissatisfied with the mediator's suggestion and sure you are entitled to a better outcome, publish the time-locked transaction as soon as it's possible and request arbitration.
 2. Collaborate with the arbitrator to clarify the details of your case.
-3. If the arbitrator sides with you, they will personally reimburse you (and probably take a small fee for their effort).
+3. If the arbitrator sides with you, they will personally reimburse you.
 4. The arbitrator will then request reimbursement from the Bisq DAO for the reimbursements they've paid. This isn't something you need to worry about as as trader, but it's good to know how the process works on both sides.
 
 Arbitrators are required to respond to messages within 5 days, so it may take a bit longer for them to respond than mediators (you should still respond to messages within 2 days).
@@ -351,4 +351,4 @@ If both peers pass identity verification, the next step is to show a mediator or
 
 ==== Closure
 
-Once a mediator or arbitrator has gathered enough evidence to make a decision, they will either suggest a payout (in the case of a mediator) or publish a new payout transaction (in the case of an arbitrator) from the 2-of-3 multisig deposit according to their findings.
+If the arbitrator decides a payout is deserved by the user who requested arbitration, they will make the payout to the user and then request reimbursement from the Bisq DAO.
