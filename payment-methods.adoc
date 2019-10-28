@@ -193,7 +193,23 @@ Payment account _aging_ is the primary mechanism that determines how much bitcoi
 
 For lower-risk payment accounts, aging begins right away, as soon as the payment account is created in Bisq—no signing is required.
 
-For higher-risk payment accounts, aging begins only when the payment account is signed by a trusted peer. **Until 30 days _after_ this signing, maximum trade size is 0.01 BTC**.
+For higher-risk payment accounts, aging begins only when the payment account is signed by a trusted peer. **Until 30 days _after_ this signing, maximum buy size is 0.01 BTC**.
+
+For all accounts, limits on selling bitcoin follow account aging and are not affected by account signing.
+
+[NOTE]
+.How does account aging work?
+====
+With plain account aging (without account signing), trade limits for buying and selling phase in over 2 months _since the account was created in Bisq_.
+
+* Account age <30 days: trade limit is 25% of the maximum
+* Account age 30-60 days: trade limit is 50% of the maximum
+* Account age >60 days: trade limit is 100% of the maximum
+
+Western Union, for example, has a maximum trade size of 0.5 BTC. Upon creation, and until 30 days have passed since creation, a new Western Union account will be limited to buying and selling 0.125 BTC. After 30 have passed since account creation, the account will be limited to buying and selling 0.25 BTC. Then after 60 days have passed since account creation, the account will be able to trade 0.50 BTC.
+
+You can see details on the `AccountAgeWitness` object that enables this aging mechanism <<payment-account-age-witness#, here>>.
+====
 
 === When Account Signing is Required
 
@@ -244,14 +260,14 @@ All payment accounts that met the 2 criteria above were signed by arbitrators an
 Thirty days after signing, the following will take place:
 +
 --
-* the 0.01 BTC trading limit will be lifted
+* the 0.01 BTC buying limit will be lifted
 * trading limits will apply as if account aging began at the time of signing
 * you will be able to sign other payment accounts
 --
 +
 NOTE: The purpose of the 30-day delay is to allow time for chargebacks, as the typical trade period is often not long enough for fraudulent charges to be detected. This is why you should send payment as quickly as possible when looking to get signed, and why sellers will take as long as possible (within the trade period) to confirm your payment on their end.
 +
-To clarify how trading limits apply, let's look at a concrete example with SEPA. SEPA payments have a maximum trade size of 0.25 BTC, which phases in over 3 months. The limit is 0.0625 BTC in the first month, 0.125 BTC in the second month, and 0.25 BTC afterward. Let's assume we create a SEPA payment account on 01 January 2020. Then let's assume that the account is not signed until 01 March 2020. Even though the account is 60 days old at the time of signing, it will retain its 0.01 BTC trade limit through January, February, _and_ March. Then, on 01 April 2020 (30 days after signing), the payment account will drop its 0.01 BTC limit and take on a 0.125 BTC trade limit. Why? Because at that point, it's over 30 days old _as of the date it was signed_.
+To clarify how trading limits apply, let's look at a concrete example with SEPA. SEPA payments have a maximum trade size of 0.25 BTC. With plain account aging, this limit would phase in over 3 months after account creation. The limit would be 0.0625 BTC in the first month, 0.125 BTC in the second month, and 0.25 BTC afterward. To see how account signing changes this, let's assume we create a SEPA payment account on 01 January 2020. Then let's assume that the account is not signed until 01 March 2020. Even though the account is 60 days old at the time of signing, it will retain its 0.01 BTC buy limit through January, February, _and_ March. Then, on 01 April 2020 (30 days after signing), the payment account will drop its 0.01 BTC limit and take on a 0.125 BTC trade limit. Why? Because at that point, it's over 30 days old _as of the date it was signed_.
 
 3. **Sign other users.** No one likes 0.01 BTC limits, and many users will want to be signed by a peer with a trusted account. Once you're signed, please try to maintain some offers to give unsigned buyers a chance to be signed to broaden the trusted network.
 
