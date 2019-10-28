@@ -10,7 +10,7 @@ This document covers the rules and expectations for both roles, as well as detai
 
 == Trading Rules
 
-Whether making or taking an offer, bitcoin sellers put all the bitcoin they're selling in the multisig escrow transaction, so there's less for them to do and fewer rules they need to follow.
+Whether making or taking an offer, bitcoin sellers put all the bitcoin they're selling in the multisig escrow, so there's less for them to do and fewer rules they need to follow.
 
 The rules below are _default_ rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
 
@@ -248,7 +248,7 @@ If trading peers cannot resolve issues on their own with trader chat, mediation 
 
 ==== How Mediation Works
 
-A mediator's job is to evaluate a trade situation between two users and make a _suggestion_ for a payout. Mediators do not have a key in the multisig escrow transaction, so their suggested payout cannot be authoritative.
+A mediator's job is to evaluate a trade situation between two users and make a _suggestion_ for a payout. Mediators do not have a key in the multisig escrow, so their suggested payout cannot be authoritative.
 
 Trading peers should do their best to cooperate with the mediator and provide information they request, and are required to respond to messages within 48 hours.
 
