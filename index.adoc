@@ -83,7 +83,6 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 == Specifications
 
  * <<payment-account-age-witness#, Payment account age witness specification>>
- * https://docs.google.com/document/d/1DXEVEfk4x1qN6QgIcb2PjZwU4m7W6ib49wCdktMMjLw/edit#heading=h.4nbd0q1s77uq[Bisq arbitration and mediation system] (GDoc)
 
 == Archive
 

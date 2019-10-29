@@ -150,7 +150,7 @@ Bisq will tell you the address of the trade wallet and exactly how much to send 
 [NOTE]
 .A multisig escrow transaction? How does that work?
 ====
-Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-3 multisignature Bitcoin transaction involving you, the seller, and a https://bisq.network/faq/#how-arbitration-works[bonded arbitrator^]. You can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
+Bisq never takes custody of users' bitcoin or national currency funds—indeed there is no way it could, because Bisq is just software, not a company. The "escrow transaction" mentioned above is a _smart contract_—specifically a 2-of-2 multisignature Bitcoin transaction involving you and the seller. You can read more about multisig wallets https://en.bitcoin.it/wiki/Multisignature[here^].
 ====
 
 [sidebar]
