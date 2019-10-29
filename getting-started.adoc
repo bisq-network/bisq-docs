@@ -129,6 +129,20 @@ Back in the `Buy BTC` screen, click the green `Take Offer` button for the offer 
 
 --
 
+[sidebar]
+.Note on Limits for New Payment Accounts
+--
+To secure the network from scammers and other bad actors, _unsigned_ Bisq payment accounts are limited to buying 0.01 BTC until they are _signed_ by another trusted peer.
+
+You can have your new payment account signed by selecting an offer to buy bitcoin from a seller who's capable of signing your account.
+
+Just look for an offer with this check mark:
+
+image::peer-can-sign-offer-listing.png[Look for this indicator.,400,400]
+
+See more details in the <<account-signing, account signing documentation>>.
+--
+
 === 2. Send deposit and fees to trade wallet
 
 [.float-group]
