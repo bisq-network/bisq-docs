@@ -90,7 +90,7 @@ In the past, before the Bisq DAO launch and before the integration of Bisq's new
 
 But since traders can still pay trading fees with BTC, where do those BTC fees go?
 
-BTC fees go to a bitcoin "donation" address held by a https://github.com/bisq-network/roles/issues/83[bonded contributor^], who uses the BTC to buy BSQ on a regular basis to distribute the BTC fees to stakeholders, and the BSQ obtained https://github.com/bisq-network/proposals/issues/55[is burned^].
+BTC fees go to a bitcoin "donation" address held by a https://github.com/bisq-network/roles/issues/80[bonded contributor^], who uses the BTC to buy BSQ on a regular basis to distribute the BTC fees to stakeholders, and the BSQ obtained https://github.com/bisq-network/proposals/issues/55[is burned^].
 --
 
 === Determine strategy
