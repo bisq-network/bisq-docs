@@ -35,7 +35,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{very-low-risk}
 |Not available in the USA
 
-|Alipay
+|Alipay*
 |China
 |1 day
 |{low-risk}
@@ -59,13 +59,13 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{low-risk}
 |
 
-|Faster Payments
+|Faster Payments*
 |UK
 |1 day
 |{high-risk}
 |
 
-|HalCash
+|HalCash*
 |Spain
 |1 day
 |{low-risk}
@@ -77,7 +77,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|Japan Zengin Furikomi
+|Japan Zengin Furikomi*
 |Japan
 |1 day
 |{low-risk}
@@ -101,7 +101,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|Perfect Money
+|Perfect Money*
 |Europe and USA
 |1 day
 |{low-risk}
@@ -113,7 +113,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|PromptPay
+|PromptPay*
 |Thailand
 |1 day
 |{low-risk}
@@ -137,7 +137,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|Swish
+|Swish*
 |Sweden
 |1 day
 |{low-risk}
@@ -167,7 +167,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|WeChat Pay
+|WeChat Pay*
 |China
 |1 day
 |{low-risk}
