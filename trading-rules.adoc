@@ -2,85 +2,137 @@
 :imagesdir: images
 :!figure-caption:
 
-_This document is under development. Subscribe to https://github.com/bisq-network/bisq-docs/issues/80[bisq-network/bisq-docs#80] for updates._
+Follow these rules to make your trades smooth and successful, and be aware of the tools available if you end up with issues.
 
-To trade on Bisq, you assume one of two roles. You either buy bitcoin (BTC buyer) or sell bitcoin (BTC seller).
+To trade on Bisq, you assume one of two roles, no matter what national currency or cryptocurrency you're trading: you either buy bitcoin or sell bitcoin.
 
-This document covers the rules and expectations for each role, as well as details on the process for arbitrating disputes.
+This document covers the rules and expectations for both roles, as well as details on the process for handling disputes.
 
-IMPORTANT: Under **no circumstances** should you try to contact a trader using the contact information in their payment details, even if you have an issue with a trade. Always go through an arbitrator. Many people use Bisq for its high degree of privacy, and discussing Bisq away from Bisq is highly likely to compromise that privacy.
+== Trading Rules
 
-NOTE: The rules listed below are default rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
+Whether making or taking an offer, bitcoin sellers put all the bitcoin they're selling in the multisig escrow, so there's less for them to do and fewer rules they need to follow.
 
-== BTC buyer
+The rules below are _default_ rules for every transaction. Offer makers sometimes specify their own _additional_ terms for handling/arranging payments. For example, a seller using cash deposit might require a picture of a receipt torn in half with "NO REFUND" written on it. Face-to-face traders often specify terms about where and how to meet. Make sure you're okay with an offer-maker's terms **before** you accept an offer!
 
-* Payment should be completed reasonably early within the trade period, such that the seller has time to acknowledge receipt of the payment before the trade period is over. Waiting until the end of the trade period to make a payment is not acceptable, as then the seller cannot reasonably act in time. The lengths of trade periods vary based on payment method. See details https://bisq.network/faq/#trade-periods[here].
-* Must make payment from the account used to make/take the offer. The account information (e.g., name, account number, etc) must match.
-* Must enter the trade ID in the payment transfer "reason for payment" (if possible).
-* Must click the "Payment started" button after making the payment.
-* Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
-* In case of a dispute, buyer must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
+=== Bitcoin Sellers
 
-== BTC seller
+Bitcoin sellers _must_:
 
-* Must click "Confirm payment" after having received payment. Has until the end of the maximum trade period to do so.
-* In case of a dispute, seller must collaborate with the arbitrator, responding to inquiries within 48 hours and providing materials as requested to determine an outcome.
+- **Click `Confirm payment` after receiving payment**
++
+Sellers have until the end of the maximum trade period to do so.
++
+Account signing, introduced in Bisq v1.2, enables a seller with a signed payment account to sign a buyer's payment account when they successfully receive a payment. For such trades, it is recommended that the seller take as long as possible (i.e., wait until close to the end of the trade period) to confirm receipt of payment to reduce the chance of a chargeback.
 
-== Arbitration
+- **Collaborate with mediators and arbitrators**
++
+In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
++
+Mediators may take up to 48 hours to respond to messages, and arbitrators may take up to 5 days to respond to messages.
 
-When trading partners cannot successfully complete a trade on their own, the trade is disputed, and an arbitrator steps in to determine a solution. Arbitrators have the third key in the 2-of-3 multisig escrow transaction, so their decision is authoritative.
+Bitcoin sellers _may_:
 
-The following are possible circumstances and resulting outcomes.
+- **Open a dispute**
++
+If trader chat is not helpful, a seller can engage a mediator by clicking the `Get Support` button on the trade information screen (select the open trade in the `Open Trades` tab of the `Portfolio` screen). See more details in the <<#mediation,mediation section>> below.
 
-**The BTC buyer didn't confirm sending the funds and let the trade duration limit run out**
+- **Respond to trader chat messages**
++
+This is optional. Please see the <<#trader-chat, rules for trader chat>> below.
 
-The arbitrator can release all the escrow funds to the BTC seller.
+Bitcoin sellers _should not_:
 
-**The BTC seller didn't release the trade funds by confirming receipt of the funds and let the trade duration limit run out**
+- **Confirm payments that do not match details in trade contract**
++
+Payer name, payment method, institution, trade ID (if provided), and other details of a payment should _exactly_ match the details in the trade contract. If not, the payment should not be accepted.
 
-The BTC buyer is responsible to provide the arbitrator with proof of their payment. If they fail to do so and the BTC seller says they haven't received any funds, the BTC seller gets all the funds in escrow.
-The BTC seller has 48 hours after the end of the maximum trade period to respond as to whether they have or not received the funds. After that the arbitrator can sign a transaction releasing all funds in escrow to the BTC buyer.
+[CAUTION]
+====
+This is especially relevant for trades in which a signed seller trades with an unsigned buyer, because confirmation of payment receipt signs the buyer's payment account. In case of such an issue, a dispute should be opened.
+====
 
-If you don't hear back from your arbitrator within a reasonable amount of time, your message may not have been delivered successfully by the peer-to-peer network. If this happens, you can ping your arbitrator on link:https://bisq.community/t/arbitrators/8074[the forum]. Simply find your arbitrator's forum handle by searching the forum for your arbitrator's onion address (you'll find this address in the trade information popup), and tag your arbitrator in a new forum post about your issue.
+- **Communicate with buyers away from Bisq**
++
+Using email addresses, phone numbers, and other means to contact traders is strongly discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
++
+At this point, the software itself does not provide a way to relay the message record between 2 traders to a mediator or arbitrator, so other means of sharing the chat record will be used if needed.
 
-CAUTION: Be sure to create an anonymous forum account so your trade data remains private.
+=== Bitcoin Buyers
 
-When facing any issue that stops you, as the BTC seller or buyer, from fulfilling your role during the trade period, a dispute should be opened immediately by pressing Cmd/Ctrl+o on the `Portfolio` > `Open trades` screen.
+WARNING: To avoid unexpected issues, make sure you can actually carry out a payment with the payment method you've set up in Bisq. Examples: Wells Fargo doesn't allow cash deposits into bank accounts not owned by the depositor, and Zelle has weekly and monthly transfer maximums that are easy to overlook. The software will warn you about known issues, but cannot possibly keep up with all the newest banking and money transfer rules.
 
-**The BTC buyer sent the funds to the wrong person**
+Bitcoin buyers _must_:
 
-The BTC seller gets all the escrow funds.
+- **Make payment reasonably early within trade period**
++
+Buyer should complete at a time such that the seller has enough time to acknowledge receipt of the payment before the trade period is over. Waiting until the very end of the trade period to make a payment is not advised, as then the seller cannot reasonably act in time to acknowledge receipt (also, it's annoying). The https://bisq.network/faq/#trade-periods[lengths of trade periods^] vary based on payment method.
 
-**BTC seller receives payment from an account with different details (name, account number, etc) than those on the buyer's Bisq payment account**
+NOTE: This is especially important for buyers with unsigned payment accounts trading with sellers with signed payment accounts. A seller will not want to confirm receipt of a payment made at the last minute from an untrusted account, so if you're a buyer looking to get your payment account signed, you should make the payment _as soon as possible_.
 
-The BTC seller gets all the escrow funds.
+- **Make payment from account used to make or take the offer**
++
+Intermediary banks or other payment methods from the same bank are not acceptable. Account information (e.g., name, account number, etc) of the account used to make the payment must _exactly_ match the information in the Bisq payment account details.
++
+If such a payment cannot be made, please communicate the issue through trader chat, or you'll need to make your case to a mediator or arbitrator.
 
-**The BTC seller received the funds but the BTC buyer didn't enter the correct reference text**
+- **Enter the trade ID in payment's "reason for payment"**
++
+If possible, the trade ID should be included in the payment's "reason for payment" field. The name of this field can vary by payment method; some call it "Message" or "Information for recipient" or similar. Pick the field (if available) that enables the user to tie the payment to the specific trade.
++
+If there us no such field, just send the payment without specifying the trade ID.
 
-The BTC buyer gets the trade amount but loses their security deposit.
+- **Click `Payment started` after sending payment**
++
+Seller cannot mark payment as received until buyer confirms that they have sent it. Don't forget!
 
-== Mediation
+- **Pay any transaction fees**
++
+Any fees incurred to make the payment via the agreed payment method (e.g., bank fees for bank transfer, money-order fees for money orders, etc) are the buyer's responsibility to pay.
++
+The seller should receive the _exact_ amount of the trade. The only exception to this rule is if the receiving institution imposes a fee on incoming payments—these fees are borne by the seller.
 
-Mediators are like arbitrators, in that their job is to evaluate a trade situation between two users. But unlike arbitrators, they do not have a key in the multisig escrow transaction, so their decision on how to resolve a dispute is _not authoritative_—it's merely a _suggestion_.
+- **Collaborate with mediators and arbitrators**
++
+In case of a dispute, users must respond to inquiries within 48 hours and providing materials as requested to determine an outcome.
++
+Mediators may take up to 48 hours to respond to messages, and arbitrators may take up to 5 days to respond to messages.
 
-If both traders agree with the mediator's suggested payout, the payout is completed and the trade is closed. If one or both traders disagree with the suggestion, the situation is then re-evaluated by an arbitrator who makes the payout based on their findings.
+Bitcoin buyers _may_:
 
-Mediation is the cornerstone of Bisq's new trade protocol, which seeks to eventually eliminate the need for arbitrators. This new protocol will be implemented in stages, with trader chat and mediation implemented first in parallel with the existing trade protocol with arbitrators, before an eventual switchover to a protocol without arbitrators.
+- **Respond to trader chat messages**
++
+This is optional. Please see the <<#trader-chat, rules for trader chat>> below.
 
-You can learn more about the new trade protocol in https://github.com/bisq-network/proposals/issues/52[this issue^] or in https://www.youtube.com/watch?v=cZtg2sjXli0[this video^]. Please note that the new trade protocol is a work in progress, so details in those links may have since changed.
+- **Open a dispute**
++
+If trader chat is not helpful, a buyer can engage a mediator by clicking the `Get Support` button on the trade information screen (select the open trade in the `Open Trades` tab of the `Portfolio` screen). See more details in the <<#mediation,mediation section>> below.
 
-== Face-to-Face (F2F) Trading
+Bitcoin buyers _should not_:
+
+- **Add any additional information in payment's "reason for payment"**
++
+Any mentions of _Bisq_ or _Bitcoin_ or any text other than the trade ID is prohibited. The receiver is already expecting a payment from you using the agreed payment method in the amount of the trade, so there is no reason to reveal any more context or information.
+
+WARNING: This is an important rule, and potentially a serious problem if broken: many banks don't like anything related to Bitcoin, and may create serious problems for you (or your trading peer) if they sense such a transacton.
+
+- **Communicate with buyers away from Bisq**
++
+Using email addresses, phone numbers, and other means to contact traders is strongly discouraged. The <<#trader-chat, trader chat>> feature built into Bisq should be used instead: not only is it more private, but the chat record can more easily be made available to mediators and arbitrators (useful in case a trader's chat messages indicate they broke a rule).
++
+At this point, the software itself does not provide a way to relay the message record between 2 traders to a mediator or arbitrator, so other means of sharing the chat record will be used if needed.
+
+=== Face-to-Face (F2F) Trading
 [[f2f-trading]]
 
-On Bisq, F2F trades are very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash.
+On Bisq, F2F trades are _technically_ very similar to online trades. In fact, to carry out a F2F trade, you follow the same process within the Bisq software as you would for any other trade. The difference is in how the buyer pays the seller: instead of paying through a financial intermediary (like a bank or other money transfer service), the buyer meets the seller in real life and pays with cash.
 
-This introduces some important differences.
+This introduces some important _practical_ differences. The rules above still apply, but keep in mind the suggestions and guidelines below.
 
-=== Meeting your trading partner
+==== Meeting your trading partner
 
 Doing a transaction face-to-face means you'll be coming within close proximity of a stranger to exchange relatively substantial value.
 
-==== Be safe
+===== Be safe
 
 People do local, in-person commerce all the time, all over the world. Incidents are rare, but they do happen. You should be cognizant of risks and do your part to minimize potential harm.
 
@@ -92,7 +144,7 @@ People do local, in-person commerce all the time, all over the world. Incidents 
 
 **Bring backup.** Consider bringing a friend with you. Also, depending on the laws in your area & your own comfort, consider carrying a concealed tool for self-defense. Even pepper-spray can hobble a criminal just enough to get you out of immediate danger.
 
-==== Validate payment
+===== Validate payment
 
 Face-to-face trades are usually settled with cash. Cash is wonderfully anonymous, but it can be counterfeited. Be sure you know the basics of detecting counterfeit currency. For example, there are several characteristics of US dollar bills one can examine to quickly determine fakes with high accuracy.
 
@@ -100,18 +152,203 @@ You could look for tools like counterfeit pens to do the work for you, but make 
 
 If you'd rather not take the chance of carrying or accepting cash, consider meeting at a bank where you can validate a buyer's payment on the spot.
 
-==== Ensure you follow Bisq protocol
+===== Ensure you follow Bisq protocol
 
 Ultimately, the deal will be completed in Bisq. Buyers must mark payment as sent before sellers can release assets.
 
-**Buyers** should either bring a laptop with them to mark the payment as sent, or they should click the `Payment sent` button before meeting the seller. Otherwise, the buyer will pay the seller and have to walk away without the assets they paid for.
+**Buyers** should bring a laptop with them so they can mark the payment as sent. Otherwise, the buyer will end up paying the seller and have to walk away without the bitcoin they paid for (since the seller won't be able to acknowledge receipt of payment before the buyer acknowledges they sent payment).
 
 **Sellers** should bring a laptop with their Bisq client running no matter what. Once they receive a legitimate payment, they'll need to mark the payment as received so the assets are released to the buyer. No buyer will want to walk away after paying without proof of a complete deal.
 
+==== Disputes
+
+The lack of verifiable actions makes handling face-to-face disputes much harder.
+
+This is why we highly recommend that both parties bring laptops and acknowledge their ends of the deal on the spot.
+
+Otherwise, the same dispute process is in place for F2F trades (<<#face-to-face-f2f-trading, see below>>), but be advised that mediators and arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
+
+Mediators and arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
+
+== Dispute Resolution
+
+Dispute resolution on Bisq has 3 layers: trader chat, mediation, and arbitration.
+
+Most issues on Bisq are minor and easily resolved when traders communicate with each other. Mediation is intended to resolve the vast majority of remaining issues. Arbitration is a rare last resort measure for extreme scenarios.
+
+Bisq v1.2 introduced a new trade protocol which changed 2 key elements:
+
+* trade funds (deposits, trade amount, and fees) are locked in a **2-of-2 multisig escrow**
+* a time-locked transaction to pay out _all_ trade funds is made which is publishable in 10 days (altcoin trades) and 20 days (fiat trades)
+
+Combined with trader chat, mediation, and arbitration, these 2 elements power Bisq's dispute resolution.
+
+NOTE: If you used Bisq before v1.2, note that arbitration has changed significantly. Arbitrators no longer have a key to sign deposit funds to either peer. Please read the following sections carefully.
+
+=== Trader Chat
+
+Direct end-to-end encrypted chat in Bisq allows traders to communicate with each other throughout the course of a trade to resolve trade issues quickly without involving a third party like a mediator or arbitrator.
+
+.Click this icon to start trader chat.
+image::start-trader-chat.png[Click this icon to start trader chat.]
+
+This functionality was avoided for a while because of the risky nature of having 2 internet strangers communicate with each other, but we aim to mitigate these risks with the following rules:
+
+- **Responding to chat messages is always optional**
++
+If you're not comfortable responding to chat messages, don't respond. You have no obligation to communicate over this medium.
+
+- **Do not send links of any kind**
++
+For safety. If you want to send a link, describe it instead.
++
+_Not allowed:_
++
+`+++https://blockstream.info/tx/4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5+++`
++
+_Allowed:_
++
+`Hey, could you look up txid 4b5417ec5ab6112bedf539c3b4f5a806ed539542d8b717e1c4470aa3180edce5 in your favorite block explorer?`
+
+- **Do not encourage trading away from Bisq**
++
+Trades away from Bisq lack Bisq's security mechanisms. If something goes wrong with an off-Bisq trade, you're on your own.
+
+- **Do not send sensitive information like private keys, passwords, etc**
++
+Such information is never wise to share in general, and is _never_ needed to solve trade disputes on Bisq.
+
+- **Do not attempt social engineering exploits**
++
+Any attempts to engage in foul play are prohibited.
+
+- **Respect a peer's decision to avoid responding**
++
+If a peer seems unresponsive, or has signaled their intention to refrain from chatting, please respect it and don't pressure them.
+
+- **Keep conversation scope limited to the trade**
++
+Please don't use Bisq's trader chat as a general-purpose messenger. Unnecessary exchanges add unnecessary strain to Bisq's peer-to-peer network.
+
+- **Keep conversation friendly and respectful**
++
+Because friendlier traders resolve disputes quicker, and no one wants to deal with a jerk.
+
+Hopefully, by following these rules, you can work directly with your trading peer to solve issues quickly and amicably.
+
+If not, you may need to engage a mediator.
+
+=== Mediation
+
+[.left.text-center]
+.Start mediation.
+image::start-mediation.png[Start mediation,400,400]
+
+If trading peers cannot resolve issues on their own with trader chat, mediation is the next step.
+
+==== How Mediation Works
+
+A mediator's job is to evaluate a trade situation between two users and make a _suggestion_ for a payout. Mediators do not have a key in the multisig escrow, so their suggested payout cannot be authoritative.
+
+Trading peers should do their best to cooperate with the mediator and provide information they request, and are required to respond to messages within 48 hours.
+
+Likewise, **mediators may take up to 48 hours to respond to your messages.** Please don't panic if you don't hear back immediately.
+
+When a mediator suggests a payout:
+
+* if both peers agree with the suggestion, the payout is completed and the trade is closed
+* if one or both peers disagree with the suggestion, a peer can choose to engage an arbitrator to re-evaluate the situation (see <<#arbitration,arbitration>> below)
+
+[NOTE]
+====
+You don't have to wait for the end of a trading period to request help from a mediator. You can engage a mediator at any point during the trading period, for example, if your trading peer's chats make you feel uncomfortable.
+
+But please be patient—for example, it's not strictly against the rules for a buyer to send payment toward the end of the trade period, so engaging a mediator during the trade period (for this reason) may not be productive.
+====
+
+==== Who Are Mediators?
+
+Mediator roles are <<user-dao-intro#ensure-honesty-in-high-trust-roles, bonded roles>> in the Bisq DAO. Anyone can propose to become a mediator, but approval will depend on the network's need for more mediators at the time a proposal is made.
+
+Once a proposal to become a mediator is approved by DAO voting, the mediator must lock a 10 000 BSQ bond to become active. This bond helps to ensure their continued availability and performance in the role, and can be confiscated by DAO voting in extreme circumstances (negligence, foul play, prolonged absence, etc).
+
+You can see more details (current role owners, regular updates, etc) on the https://github.com/bisq-network/roles/issues/83[mediator role issue^].
+
 === Arbitration
 
-The lack of verifiable actions makes arbitrating face-to-face disputes much harder.
+[.left.text-center]
+.Engage an arbitrator.
+image::engage-arbitrator-v116.png[Engage an arbitrator.,500,500]
 
-The same arbitration process is in place for F2F trades, but be advised that arbitrators often won't have a way to settle disputes. This means funds may be held indefinitely, or until both parties can reach an agreement.
+Arbitration is the last layer of dispute resolution on Bisq. **It is meant to be rare.** If the measures described below sound extreme, it's because they are only meant to be employed for extreme circumstances.
 
-Arbitrators may attempt different tactics to get a handle on the situation. For example, they may ask a potential scammer for ID verification, which is a request a real scammer probably wouldn't comply with.
+Arbitration is only available when:
+
+* one or both traders reject a mediator's suggested resolution
+* the time-locked transaction made at the start of the trade is published
+
+The time-locked transaction sends _all_ funds in the multisig escrow (i.e., those of both trading peers) to the Bisq donation address (a https://github.com/bisq-network/roles/issues/80[bonded role] approved by DAO voting). This transaction can only be published 10 days after the deposit transaction is confirmed (for altcoin trades) and 20 days after the deposit transaction is confirmed (for fiat trades).
+
+[NOTE]
+.Why a time-locked transaction? What is this donation address?
+====
+The time-locked transaction is meant to encourage traders to quickly accept the mediator's suggestion and discourage nonsensical appeals to arbitrators.
+
+The https://github.com/bisq-network/roles/issues/80[donation address] is merely a destination for disputed bitcoin funds to be collected. Every month (approximately), this bitcoin is used to buy BSQ on the market and burn it. This reduces BSQ supply, allowing for new BSQ to be issued as reimbursement for deserving traders through arbitration with minimal impact on BSQ supply.
+
+This dynamic essentially makes bitcoin confiscatable, enabling a sort of mutually assured destruction to drive dispute resolution on Bisq without trusted third parties.
+====
+
+Practically, here's how arbitration works:
+
+1. If you're dissatisfied with the mediator's suggestion and sure you are entitled to a better outcome, publish the time-locked transaction as soon as it's possible and request arbitration.
+2. Collaborate with the arbitrator to clarify the details of your case.
+3. If the arbitrator sides with you, they will personally reimburse you.
+4. The arbitrator will then request reimbursement from the Bisq DAO for the reimbursements they've paid. This isn't something you need to worry about as as trader, but it's good to know how the process works on both sides.
+
+Arbitrators are required to respond to messages within 5 days, so it may take a bit longer for them to respond than mediators (you should still respond to messages within 2 days).
+
+=== Dispute Process: What to Expect
+
+When engaging with a mediator or arbitrator, you may be asked to provide various proofs of a payment transaction.
+
+[WARNING]
+====
+Please note that the measures below are for real disputes, that is, when the very existence of a payment is disputed. Such cases are rare.
+
+The vast majority of disputes on Bisq are minor mistakes or issues that don't require the measures below.
+====
+
+==== "Notarized" bank site
+
+https://tlsnotary.org/pagesigner.html[PageSigner^] is a browser extension that allows users to "notarize" web pages, so that you can provide tamper-proof evidence that a particular website rendered particular information. This is helpful for Bisq buyers and sellers to prove whether they did (or didn't) send or receive fiat payments.
+
+A buyer claiming to have made a payment needs to send proof that they transferred the correct amount with the correct reference text. A seller claiming to have _not received_ payment needs to show proof in the form of their transaction history (filtered by the offer ID, with trade period specified for time period).
+
+PageSigner outputs a `.pgsg` file you can send to a mediator or arbitrator.
+
+If it isn't possible to generate the required proof with PageSigner, the user will be asked to request a digitally-signed statement from their bank with evidence of their position.
+
+NOTE: At this point, if there is no obvious resolution, both users will be asked to check with their banks to determine if the transaction was blocked or delayed by the bank. If it was, a mediator or arbitrator may allow the user more time to handle the issue with their bank.
+
+**The following measures are even more rare, but we document them here just in case.** Fiat payment methods are tied tightly to identity, unfortunately, and if other payment verification methods fail, identity verification may be the only possible way to determine the veracity of two peers' claims.
+
+==== Video ID verification
+
+A mediator or arbitrator may ask the user to send a picture of themself ("selfie") holding scans of 2 government-issued IDs (front and back). At least one of the documents must include a photo.
+
+If a user can produce such a photo, they may then be asked to have a video chat with both documents so the mediator or arbitrator can compare the photo on the IDs to the user's face on video.
+
+Mediators and arbitrators are not required to reveal who they are.
+
+NOTE: Remember—people in these roles have locked bonds to ensure their honesty, so knowing their identity isn't necessary. If you suspect foul play, know that <<user-dao-intro#ensure-honesty-in-high-trust-roles, confiscating their bond>> is a possible remedy.
+
+If one peer fails to successfully verify themself, the case will be decide in favor of the other peer (assuming that peer _can_ verify their identity).
+
+==== Video transaction verification
+
+If both peers pass identity verification, the next step is to show a mediator or arbitrator the relevant bank account web page with evidence of the payment in question (or lack thereof) on a screen-share or video-chat.
+
+==== Closure
+
+If the arbitrator decides a payout is deserved by the user who requested arbitration, they will make the payout to the user and then request reimbursement from the Bisq DAO.
