@@ -83,13 +83,14 @@ In this way, there is no need for a central entity to collect and distribute rev
 
 NOTE: The Bisq DAO does not _require_ traders to use BSQ for trading fees. They're free to pay trading fees directly with BTC, but they will pay higher rates than if they bought BSQ with BTC and paid with BSQ instead.
 
-
 [sidebar]
 .Note on BTC revenues
 --
-Currently, Bisq only collects trading fees in BTC, and these fees only go to arbitrators. There is no mechanism to distribute them to other contributors. The DAO solves this distribution problem with BSQ through the process outlined above. But since traders will also be able to pay fees with BTC when the DAO goes live, where will those BTC fees go then?
+In the past, before the Bisq DAO launch and before the integration of Bisq's new trade protocol, trading fees were only collected in BTC and only went to arbitrators. There was no mechanism to distribute them to other contributors. The DAO solves this distribution problem with BSQ through the process outlined above.
 
-For a little while, they will continue going to arbitrators. But shortly after the DAO launches on mainnet, Bisq will implement https://github.com/bisq-network/proposals/issues/52[a new trading protocol^] that removes arbitrators, and BTC fees will be sent to a "donation" address determined by DAO voting. This BTC could then be used to buy BSQ on the market to distribute the fees to stakeholders, and the BSQ obtained https://github.com/bisq-network/proposals/issues/55[will be burned^].
+But since traders can still pay trading fees with BTC, where do those BTC fees go?
+
+BTC fees go to a bitcoin "donation" address held by a https://github.com/bisq-network/roles/issues/80[bonded contributor^], who uses the BTC to buy BSQ on a regular basis to distribute the BTC fees to stakeholders, and the BSQ obtained https://github.com/bisq-network/proposals/issues/55[is burned^].
 --
 
 === Determine strategy

@@ -59,8 +59,8 @@ These and other differences result in a key tradeoff for Bisq users--one in whic
 
  - Bisq is *entirely non-custodial*; users stay in control of fiat and cryptocurrency funds
  - Trades include *security deposits* from buyer and seller to prevent fraud
- - Trading funds and security deposits are locked in a *2-of-3 multisig escrow*
- - Disputes are handled through a *decentralized human arbitration system*
+ - Trading funds and security deposits are locked in a *2-of-2 multisig escrow*
+ - Disputes are handled through a *decentralized human mediation and arbitration system*
 
 === How Bisq keeps data private
 
