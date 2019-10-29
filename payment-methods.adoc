@@ -1,0 +1,303 @@
+= Payment Methods
+:imagesdir: ./images
+:toc:
+:high-risk:     0.25 BTC
+:mid-risk:      0.50 BTC
+:low-risk:      1.00 BTC
+:very-low-risk: 2.00 BTC
+
+There are several payment methods you can use to buy and sell bitcoin with Bisq. This doc covers the details and limitations of each.
+
+Every offer on Bisq designates a payment method for traders to settle payments. The Bisq software does not actually integrate with any payment methods—all non-bitcoin fund transfers are made outside of the Bisq software.
+
+But unlike cryptocurrencies, fiat payment methods are riddled with flaws and limitations that require Bisq to employ several measures to encourage traders to carry out their parts of the deal quickly and honestly.
+
+Among these measures are (1) limits that correspond to payment account risk profiles and (2) an account-signing mechanism to cultivate a network of trusted payment accounts.
+
+== Supported Fiat Payment Methods
+
+Over 20 payment methods are supported to buy and sell bitcoin with Bisq using national currencies. These payment methods vary in chargeback risk, regional availability, transaction size, fees, privacy, verifiability, and other characteristics.
+
+The top consideration for maintaining payment methods is chargeback risk. PayPal, Venmo, and Cash App are not supported on Bisq because chargebacks for payments made with those services are relatively easy.
+
+We welcome suggestions for new payment methods on Bisq, especially for those that enable new markets. Documentation on the criteria and process for adding new payment methods https://github.com/bisq-network/bisq-docs/issues/172[is forthcoming^]. For now, feel free to make suggestions by reaching out on https://bisq.network/slack-invite[Slack^] or https://keybase.io/team/bisq[Keybase^].
+
+Below is a list of fiat payment methods Bisq currently supports.
+
+CAUTION: The maximum trade sizes listed below are not available for most newly-created payment accounts. Please see the <<#account-signing, Account Signing>> section below for details on how to enable bigger trade sizes for your payment accounts.
+
+|===
+|Payment Method |Region |Trading Period |Per-Trade Limit|Notes
+
+|Advanced Cash*
+|Global
+|1 day
+|{very-low-risk}
+|Not available in the USA
+
+|Alipay*
+|China
+|1 day
+|{low-risk}
+|
+
+|Cash Deposit*
+|N/A
+|4 days
+|{high-risk}
+|Some banks don't accept cash deposits from non-customers
+
+|Chase QuickPay
+|USA
+|1 day
+|{high-risk}
+|
+
+|Face-to-Face (F2F)*
+|Global
+|4 days
+|{low-risk}
+|
+
+|Faster Payments*
+|UK
+|1 day
+|{high-risk}
+|
+
+|HalCash*
+|Spain
+|1 day
+|{low-risk}
+|
+
+|Interac e-Transfer
+|Canada
+|1 day
+|{high-risk}
+|
+
+|Japan Zengin Furikomi*
+|Japan
+|1 day
+|{low-risk}
+|
+
+|MoneyBeam (N26)
+|Europe
+|1 day
+|{high-risk}
+|
+
+|MoneyGram*
+|Global
+|4 days
+|{mid-risk}
+|
+
+|National Bank Transfer
+|N/A
+|4 days
+|{high-risk}
+|
+
+|Perfect Money*
+|Europe and USA
+|1 day
+|{low-risk}
+|
+
+|Popmoney
+|USA
+|1 day
+|{high-risk}
+|
+
+|PromptPay*
+|Thailand
+|1 day
+|{low-risk}
+|
+
+|Revolut
+|Global
+|1 day
+|{high-risk}
+|
+
+|SEPA
+|Europe
+|6 days
+|{high-risk}
+|
+
+|SEPA Instant
+|Europe
+|1 day
+|{high-risk}
+|
+
+|Swish*
+|Sweden
+|1 day
+|{low-risk}
+|
+
+|Transfer with Same Bank
+|N/A
+|2 days
+|{high-risk}
+|
+
+|Transfer with Specific Banks
+|N/A
+|4 days
+|{high-risk}
+|
+
+|US Postal Money Order*
+|USA
+|8 days
+|{high-risk}
+|Maximum is $1,000 per money order within the USA
+
+|Uphold
+|Global
+|1 day
+|{high-risk}
+|
+
+|WeChat Pay*
+|China
+|1 day
+|{low-risk}
+|
+
+|Western Union*
+|Global
+|4 days
+|{mid-risk}
+|
+
+|Zelle
+|USA
+|4 days
+|{high-risk}
+|
+
+|===
+
++++* These payment methods do not need to be signed to attain buying limits higher than 0.01 BTC (see account signing below for more details).+++
+
+== Account Signing
+
+Payment account _aging_ is the primary mechanism that determines how much bitcoin can be bought or sold with a particular payment account. For some types of payment accounts, account _signing_ determines when that aging begins.
+
+For lower-risk payment accounts, aging begins right away, as soon as the payment account is created in Bisq—no signing is required.
+
+For higher-risk payment accounts, aging begins only when the payment account is signed by a trusted peer. **Until 30 days _after_ this signing, maximum buy size is 0.01 BTC**.
+
+For all accounts, limits on selling bitcoin follow account aging and are not affected by account signing.
+
+[NOTE]
+.How does account aging work?
+====
+With plain account aging (without account signing), trade limits for buying and selling phase in over 2 months _since the account was created in Bisq_.
+
+* Account age <30 days: trade limit is 25% of the maximum
+* Account age 30-60 days: trade limit is 50% of the maximum
+* Account age >60 days: trade limit is 100% of the maximum
+
+Western Union, for example, has a maximum trade size of 0.5 BTC. Upon creation, and until 30 days have passed since creation, a new Western Union account will be limited to buying and selling 0.125 BTC. After 30 have passed since account creation, the account will be limited to buying and selling 0.25 BTC. Then after 60 days have passed since account creation, the account will be able to trade 0.50 BTC.
+
+You can see details on the `AccountAgeWitness` object that enables this aging mechanism <<payment-account-age-witness#, here>>.
+====
+
+=== When Account Signing is Required
+
+Payment accounts are considered to have higher risk if they meet both of the following conditions:
+
+1. the payment account will be used to buy or sell bitcoin for a major national currency market on Bisq (USD, EUR, CAD, GBP, AUD, BRL)
+2. the payment account has chargeback risk (SEPA, SEPA Instant, Interac e-Transfer, Zelle, Revolut, Chase QuickPay, Popmoney, MoneyBeam, Uphold, and any kind of bank transfer)
+
+In major national currency markets, account signing is not required to enable account aging for face-to-face trading, cash deposits, money orders (US Postal Money Orders, MoneyGram, Western Union) or Advanced Cash.
+
+In other markets, account signing is not currently required for any payment methods.
+
+=== How To Have a Payment Account Signed
+
+A signed payment account indicates that it can be trusted to engage in trades honestly, and as a result, is allowed higher trading limits.
+
+WARNING: Account signing does not _guarantee_ problem-free trading. Instead, it creates a trusted network of accounts where it is _unlikely_ to encounter a scammer.
+
+**Please note that account signing works per payment account.** Having one payment account signed does not affect trading limits on your other payment accounts. You need to go through the account signing process below for each payment account you want to lift limits for.
+
+Here's how to have a payment account signed for higher bitcoin buying limits.
+
+1. **Take an offer to buy bitcoin.** This offer must be from a trading peer with a signed payment account who is able to sign other payment accounts.
++
+If a trading peer is capable of signing your payment account, they'll have a check mark on their offer listing in the `Time since signing` column.
++
+image::peer-can-sign-offer-listing.png[Look for this indicator.,400,400]
++
+You can click the trading peer's avatar to see more details on the account signing.
++
+image::account-signing-details-pop.png[Look for this indicator.,400,400]
++
+[NOTE]
+.How were the first payment accounts signed if there were no peers to sign them?
+====
+Bisq arbitrators signed a collection of accounts that met certain criteria to bootstrap the network of trusted payment accounts just before the v1.2 release.
+
+The following criteria were determined to balance high integrity with volume (so that there were a sufficient number of signed peer accounts available to sign other peer accounts in the beginning):
+
+* payment account must be older than 60 days
+* payment account must have been involved in a dispute as a bitcoin buyer, and received bitcoin as an outcome of that dispute (thereby proving that a successful fiat _payment_ took place)
+
+All payment accounts that met the 2 criteria above were signed by arbitrators and immediately able to sign other payment accounts upon the release of v1.2.
+====
+
+2. **Successfully settle the trade.** When you send your fiat payment to the seller, your payment account will be signed when the seller clicks the `Confirm payment received` button.
++
+Thirty days after signing, the following will take place:
++
+--
+* the 0.01 BTC buying limit will be lifted
+* trading limits will apply as if account aging began at the time of signing
+* you will be able to sign other payment accounts
+--
++
+NOTE: The purpose of the 30-day delay is to allow time for chargebacks, as the typical trade period is often not long enough for fraudulent charges to be detected. This is why you should send payment as quickly as possible when looking to get signed, and why sellers will take as long as possible (within the trade period) to confirm your payment on their end.
++
+To clarify how trading limits apply, let's look at a concrete example with SEPA. SEPA payments have a maximum trade size of 0.25 BTC. With plain account aging, this limit would phase in over 3 months after account creation. The limit would be 0.0625 BTC in the first month, 0.125 BTC in the second month, and 0.25 BTC afterward. To see how account signing changes this, let's assume we create a SEPA payment account on 01 January 2020. Then let's assume that the account is not signed until 01 March 2020. Even though the account is 60 days old at the time of signing, it will retain its 0.01 BTC buy limit through January, February, _and_ March. Then, on 01 April 2020 (30 days after signing), the payment account will drop its 0.01 BTC limit and take on a 0.125 BTC trade limit. Why? Because at that point, it's over 30 days old _as of the date it was signed_.
+
+3. **Sign other users.** No one likes 0.01 BTC limits, and many users will want to be signed by a peer with a trusted account. Once you're signed, please try to maintain some offers to give unsigned buyers a chance to be signed to broaden the trusted network.
+
+=== Things to Note
+
+* Selling limits are unaffected by account signing, and instead follow account aging. This means you can create a payment account to sell bitcoin using a risky payment method and sell 0.0625 BTC right away. You will only be able to _buy_ 0.01 BTC with that account, however, until it is signed.
++
+There's a field in payment account details that specified exactly what your payment account limits are.
++
+image::account-signing-limit-details.png[Payment account limit details.,400,400]
+
+* Additional methods to have a payment account signed without a delay are in discussion (see https://github.com/bisq-network/proposals/issues/93[here^] and https://github.com/bisq-network/proposals/issues/83[here^]).
+
+== Altcoin Payment Methods
+
+Bisq also supports a variety of other cryptocurrencies for buying and selling bitcoin. Because such fund transfers are irreversible and relatively quick, altcoin trade sizes are 2 BTC across the board (no account signing or account aging necessary) with a 1-day trade period.
+
+=== Altcoins Instant
+
+image::altcoins-instant.png[Make an Altcoins Instant account.,400,400]
+
+When creating an altcoin payment account on Bisq, you can opt to make it for Instant offers. Instant offers are just like regular offers—all typical <<trading-rules#,trading rules>> apply—but the **trade period is 1 hour** instead of 1 day.
+
+TIP: Don't forget to disable Instant offers when you're away from your computer!
+
+Instant accounts can only be used to make and take Instant offers, so you'll probably want to create a regular altcoin account to make and take regular offers too.
+
+== See Also
+
+ * https://github.com/bisq-network/bisq/blob/master/core/src/main/java/bisq/core/payment/payload/PaymentMethod.java
+ * https://en.bitcoin.it/wiki/Payment_methods
