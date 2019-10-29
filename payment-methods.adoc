@@ -29,7 +29,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |===
 |Payment Method |Region |Trading Period |Per-Trade Limit|Notes
 
-|Advanced Cash
+|Advanced Cash*
 |Global
 |1 day
 |{very-low-risk}
@@ -41,7 +41,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{low-risk}
 |
 
-|Cash Deposit
+|Cash Deposit*
 |N/A
 |4 days
 |{high-risk}
@@ -53,7 +53,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|Face-to-Face (F2F)
+|Face-to-Face (F2F)*
 |Global
 |4 days
 |{low-risk}
@@ -89,7 +89,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|MoneyGram
+|MoneyGram*
 |Global
 |4 days
 |{mid-risk}
@@ -155,7 +155,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{high-risk}
 |
 
-|US Postal Money Order
+|US Postal Money Order*
 |USA
 |8 days
 |{high-risk}
@@ -173,7 +173,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{low-risk}
 |
 
-|Western Union
+|Western Union*
 |Global
 |4 days
 |{mid-risk}
@@ -186,6 +186,8 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |
 
 |===
+
++++* These payment methods do not need to be signed to attain buying limits higher than 0.01 BTC (see account signing below for more details).+++
 
 == Account Signing
 
