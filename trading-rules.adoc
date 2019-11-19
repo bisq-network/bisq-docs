@@ -79,7 +79,7 @@ If such a payment cannot be made, please communicate the issue through trader ch
 +
 If possible, the trade ID should be included in the payment's "reason for payment" field. The name of this field can vary by payment method; some call it "Message" or "Information for recipient" or similar. Pick the field (if available) that enables the user to tie the payment to the specific trade.
 +
-If there us no such field, just send the payment without specifying the trade ID.
+If there is no such field, just send the payment without specifying the trade ID.
 
 - **Click `Payment started` after sending payment**
 +
@@ -113,7 +113,7 @@ Bitcoin buyers _should not_:
 +
 Any mentions of _Bisq_ or _Bitcoin_ or any text other than the trade ID is prohibited. The receiver is already expecting a payment from you using the agreed payment method in the amount of the trade, so there is no reason to reveal any more context or information.
 
-WARNING: This is an important rule, and potentially a serious problem if broken: many banks don't like anything related to Bitcoin, and may create serious problems for you (or your trading peer) if they sense such a transacton.
+WARNING: This is an important rule, and potentially a serious problem if broken: many banks don't like anything related to Bitcoin, and may create serious problems for you (or your trading peer) if they sense such a transaction.
 
 - **Communicate with buyers away from Bisq**
 +
@@ -304,7 +304,7 @@ Practically, here's how arbitration works:
 1. If you're dissatisfied with the mediator's suggestion and sure you are entitled to a better outcome, publish the time-locked transaction as soon as it's possible and request arbitration.
 2. Collaborate with the arbitrator to clarify the details of your case.
 3. If the arbitrator sides with you, they will personally reimburse you.
-4. The arbitrator will then request reimbursement from the Bisq DAO for the reimbursements they've paid. This isn't something you need to worry about as as trader, but it's good to know how the process works on both sides.
+4. The arbitrator will then request reimbursement from the Bisq DAO for the reimbursements they've paid. This isn't something you need to worry about as a trader, but it's good to know how the process works on both sides.
 
 Arbitrators are required to respond to messages within 5 days, so it may take a bit longer for them to respond than mediators (you should still respond to messages within 2 days).
 
