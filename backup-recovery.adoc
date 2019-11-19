@@ -2,9 +2,9 @@
 :imagesdir: ./images
 :!figure-caption:
 
-All Bisq data is stored right on your computer. It's never sent or stored to a central server. That is great for your privacy and security, but it also means backing up your data is your job. This doc shows you how.
+All Bisq data is stored right on your computer. It's never sent to or stored on a central server. That is great for your privacy and security, but it also means backing up your data is your job. This doc shows you how.
 
-As you use Bisq, you'll accumulate data you will want to save, like your payment account details, onion address, local reputation, and more. Backing up this data not only protects you in case of unexpected events (e.g., computer crash, data corruption, etc), but it also gives you the flexibility to migrate elements of your Bisq environment to another machine.
+As you use Bisq, you'll accumulate data you will want to save, like your payment accounts, onion address, local reputation, and more. Backing up this data not only protects you in case of unexpected events (e.g., computer crash, data corruption, etc), but it also gives you the flexibility to migrate elements of your Bisq environment to another machine.
 
 We will start by covering the simplest, most common scenario—backing up and restoring the whole Bisq data directory—and then cover some more advanced use cases by taking a look at what's actually in the data directory.
 
@@ -45,11 +45,11 @@ There are 2 components to payment accounts on Bisq: account details and account 
 
 **Account aging** is a measure to reduce fraud risk for fiat payments. Newer accounts have lower trading limits. It takes 3 months for a payment account to reach the maximum trading limit. See more details on account aging <<payment-account-age-witness#, here>>. Note that account aging does not apply to altcoin accounts since they don't have chargeback risk.
 
-To restore payment account details, simply import the file you exported earlier through the same interface.
+To restore account details, simply import the file you exported earlier through the same interface.
 
 To include account aging with your account details import, you will also need to replace the `btc_mainnet/keys/sig.key` file with the `sig.key` file from your backup. Be sure you don't have any open offers, trades, or disputes before changing `sig.key`, otherwise you won't be able to respond to those activities.
 
-If you don't have an accounts export file, but you have a full backup of the data directory, you can still fully restore your accounts details and accounts aging by manually copying the following files to your data directory from a backup:
+If you don't have an account export file, but you have a full backup of the data directory, you can still fully restore your account details and account aging by manually copying the following files to your data directory from a backup:
 
 * `btc_mainnet/db/UserPayload` (account details and salt)
 * `btc_mainnet/keys/sig.key` (key for signing p2p messages)
@@ -91,15 +91,15 @@ Your wallet data is stored in `btc_mainnet/wallet`. There are 3 primary ways to 
 
 Wallet issues (e.g., incorrect balance showing, corrupted/out-of-sync SPV file) can often be solved by resyncing the SPV chain and restarting the Bisq program. You can do this by clicking the `Delete SPV file and resync` button on the `Network info` tab of the `Settings` screen. If you can't access this screen, you can just delete the `bisq.spvchain` file in `btc_mainnet/wallet` (just be advised that you will need to manually restart Bisq twice to complete the resync).
 
-The SPV file is a collection of data from the bitcoin blockchain that tells Bisq your wallet's balances. All data in the file is available on the bitcoin network. Deleting this file just forces Bisq to resync with the Bitcoin network and fetch the data it needs to determine your balances again.
+The SPV file is a collection of data from the Bitcoin blockchain that tells Bisq your wallet's balances. All data in the file is available on the Bitcoin network. Deleting this file just forces Bisq to resync with the Bitcoin network and fetch the data it needs to determine your balances again.
 
-NOTE: Resyncs can take a while, depending on how old your wallet it is and how many transactions you did with it. Your CPU may run at 100% and Bisq will appear unresponsive. This is normal. Be patient!
+NOTE: Resyncs can take a while, depending on how old your wallet is and how many transactions you did with it. Your CPU may run at 100% and Bisq will appear unresponsive. This is normal. Be patient!
 
 === Restore wallet backup
 
-If issues persist, you can try to restore a backup wallet file from `btc_mainnet/wallet/backup/backups_bisq_BTC_wallet`. This folder holds your most recent wallet backups made on a rolling basis. Replace the `bisq_BTC.wallet` wallet file in `btc_mainnet/wallet` with a backup wallet file and rename it to `bisq_BTC.wallet`. You'll also need to resync the SPV chain, so be sure to delete `bisq.spvchain` when restoring a wallet backup.
+If issues persist, you can try to restore a wallet backup file from `btc_mainnet/wallet/backup/backups_bisq_BTC_wallet`. This folder holds your most recent wallet backups made on a rolling basis. Replace the `bisq_BTC.wallet` wallet file in `btc_mainnet/wallet` with a recent wallet backup file and rename it to `bisq_BTC.wallet`. You'll also need to resync the SPV chain, so be sure to delete `bisq.spvchain` when restoring a wallet backup.
 
-Start Bisq and see if your issue is fixed. If not, repeat with another backup file.
+Start Bisq and see if your issue is fixed. If not, repeat with another wallet backup file.
 
 === Switch to a new data directory
 
