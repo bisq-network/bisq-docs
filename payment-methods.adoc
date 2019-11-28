@@ -20,7 +20,7 @@ Over 20 payment methods are supported to buy and sell bitcoin with Bisq using na
 
 The top consideration for maintaining payment methods is chargeback risk. PayPal, Venmo, and Cash App are not supported on Bisq because chargebacks for payments made with those services are relatively easy.
 
-We welcome suggestions for new payment methods on Bisq, especially for those that enable new markets. Documentation on the criteria and process for adding new payment methods https://github.com/bisq-network/bisq-docs/issues/172[is forthcoming^]. For now, feel free to make suggestions by reaching out on https://bisq.network/slack-invite[Slack^] or https://keybase.io/team/bisq[Keybase^].
+We welcome suggestions for new payment methods on Bisq, especially for those that enable new markets. Documentation on the criteria and process for adding new payment methods https://github.com/bisq-network/bisq-docs/issues/172[is forthcoming^]. For now, feel free to make suggestions by reaching out on https://keybase.io/team/bisq[Keybase^].
 
 Below is a list of fiat payment methods Bisq currently supports.
 

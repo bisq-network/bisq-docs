@@ -133,7 +133,7 @@ To learn more about the Bisq DAO, please see:
 * <<dao/phase-zero#,Phase Zero: A plan for bootstrapping the Bisq DAO>>, a doc which offers a more comprehensive overview of Bisq and the Bisq DAO.
 * https://www.youtube.com/playlist?list=PLFH5SztL5cYOLdYJj3nQ6-DekbjMTVhCS[Bisq DAO Basics^], a YouTube video series that covers foundational concepts underlying the DAO such as bitcoin transactions, colored coins, etc.
 
-See more resources <<dao#, here>>. Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://bisq.network/slack-invite[Slack^], or https://bisq.community/[the forum^].
+See more resources <<dao#, here>>. Feel free to get in touch with us on https://twitter.com/bisq_network[Twitter^], https://keybase.io/team/bisq[Keybase^], or https://bisq.community/[the forum^].
 
 
 == Improve this doc

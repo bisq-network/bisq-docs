@@ -289,7 +289,7 @@ To solve this problem, you can get https://bisq.network/downloads/[Bisq's mobile
 
 == Get help and stay in touch
 
-If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and the https://bisq.network/slack-invite[Bisq Slack team^].
+If you get stuck, reach out! There's a community of people to help you on the https://bisq.community/[Bisq forum^], the https://www.reddit.com/r/bisq/[/r/bisq subreddit^], and https://keybase.io/team/bisq[Keybase^].
 
 You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^] and https://www.youtube.com/c/bisq-network[YouTube^].
 
