@@ -75,7 +75,7 @@ Once you've documented all details of your request in a new issue on GitHub, mak
 .Make a new compensation request in the Bisq DAO.
 image::make-compensation-request.png[Make a new compensation request in the Bisq DAO]
 
-Make sure you select `Compensation request` as the proposal type. Also make sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Slack, forum, etc).
+Make sure you select `Compensation request` as the proposal type. Also make sure you use a name that stakeholders will recognize (or at least one they can cross-reference with your other online profiles like GitHub, Keybase, forum, etc).
 
 For the proposal link, be sure to use this format: `https://bisq.network/dao-compensation/\#`, where `#` is the number of your GitHub issue. For example, if your compensation request's GitHub URL is `https://github.com/bisq-network/compensation/issues/33`, the URL in your DAO compensation request should be `https://bisq.network/dao-compensation/33`. Don't copy the GitHub link directly—it won't work!
 
@@ -103,7 +103,7 @@ You can see how to take part in voting and the rest of the DAO cycle https://doc
 
 == Questions
 
-If something doesn't make sense, don't hesitate to reach out. There's a community of people to help you on https://bisq.network/slack-invite[Slack^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
+If something doesn't make sense, don't hesitate to reach out. There's a community of people to help you on https://keybase.io/team/bisq[Keybase^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
 
 == Learn more
 

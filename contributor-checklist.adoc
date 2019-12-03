@@ -14,11 +14,11 @@ This can mean anything from fixing typos in documentation, to answering question
 
 [%interactive]
 
- * [ ] Join our https://bisq.network/slack-invite[Slack workspace].
+ * [ ] Join our https://keybase.io/team/bisq[Keybase team].
 
  * [ ] Introduce yourself in the `#general` channel. Say a bit about your skills and interests. This will help others point you in the right direction.
 
- * [ ] Explore the other channels in Slack, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#growth`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
+ * [ ] Explore the other channels on Keybase, and join the ones that are of interest to you. For a start, we recommend joining `#proposals`, `#growth`, `#roles`, `#compensation`, and `#dev` (if you're a developer).
 
  * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified of threaded GitHub issue discussions that happen there.
 
@@ -72,7 +72,7 @@ Ok. You're all set up and ready to work. Here's what to do next.
 --
 It is not required to work on an existing bounty issue to contribute to Bisq, and no one is here to tell you what to do. Contributors who have their own ideas are free to work in their own forks on whatever they wish, however they wish, and without any permission from Bisq stakeholders.
 
-With that said, it's a good idea to consult with stakeholders via Slack, GitHub, the mailing list, or other communication channels before setting out on any serious contribution effort. Do this in order to ensure your contribution is:
+With that said, it's a good idea to consult with stakeholders via Keybase, GitHub, the mailing list, or other communication channels before setting out on any serious contribution effort. Do this in order to ensure your contribution is:
 
  . something that the relevant maintainer(s) would be likely to merge;
  . something that stakeholders would likely vote to approve as a compensation request;

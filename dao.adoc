@@ -39,4 +39,4 @@ Technical details of (1) what BSQ tokens actually are, how they're created, and 
 
 == Still Curious?
 
-We're happy to help. Feel free to reach out on https://bisq.network/slack-invite[Slack^], https://bisq.community[the forum^], or https://twitter.com/bisq_network[Twitter^].
+We're happy to help. Feel free to reach out on https://keybase.io/team/bisq[Keybase^], https://bisq.community[the forum^], or https://twitter.com/bisq_network[Twitter^].

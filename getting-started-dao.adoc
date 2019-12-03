@@ -169,7 +169,7 @@ For more conceptual details, be sure to check out our <<user-dao-intro#,Introduc
 
 == Get help and stay in touch
 
-If you get stuck, reach out! There's a community of people to help you on https://bisq.network/slack-invite[Slack^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
+If you get stuck, reach out! There's a community of people to help you on https://keybase.io/team/bisq[Keybase^], the https://bisq.community/[Bisq forum^], and the https://www.reddit.com/r/bisq/[/r/bisq subreddit^].
 
 You can get news and updates about Bisq via https://twitter.com/bisq_network[Twitter^] and https://www.youtube.com/c/bisq-network[YouTube^].
 
