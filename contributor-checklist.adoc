@@ -22,7 +22,7 @@ This can mean anything from fixing typos in documentation, to answering question
 
  * [ ] Watch the https://github.com/bisq-network/proposals[proposals], https://github.com/bisq-network/roles[roles] and https://github.com/bisq-network/compensation[compensation] repositories to get notified of threaded GitHub issue discussions that happen there.
 
- * [ ] Read the (https://github.com/bisq-network/bisq/blob/master/docs/README.md)[developer docs] to set up a Bisq development environment.
+ * [ ] Read the https://github.com/bisq-network/bisq/blob/master/docs/README.md[developer docs] to set up a Bisq development environment.
 
  * [ ] Read https://chris.beams.io/posts/git-commit[How to Write a Git Commit Message] and follow its https://chris.beams.io/posts/git-commit#7-rules[7 rules] when contributing to Bisq projects.
 
