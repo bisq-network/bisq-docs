@@ -24,6 +24,10 @@ This is good news for users, because centralized services are easy to monitor, b
 This means that if you want to use the Bisq Network, you've got to download and run the software too!
 ====
 
+IMPORTANT: Remember to *verify digital signatures*. With PGP signatures you can verify that the software package you download is actually the one by the developers.
+Every release of Bisq is signed by Christoph Atteneder. You can verify that the PGP public key https://bisq.network/pubkey/29CDFD3B.asc[CB36 D7D2 EBB2 E35D 9B75 500B CD5D C1C5 29CD FD3B] is actually the one of Christoph Atteneder by exploring the Web of Trust.
+When you have a software package that was signed by this PGP public key, then you can be sure that this is an official release. This protects you against malicious man in the middle attacks where bad guys give you a fake version of Bisq with malicious code.
+
 Once the installer is finished, go ahead and open Bisq. It'll take a few moments to open as it connects to the Tor network and syncs with Bisq's peer-to-peer trading network.
 
 When that's done, the first screen you see should look something like this:
