@@ -2,6 +2,8 @@
 :stylesdir: ../../css
 :docinfodir: ../../
 
+IMPORTANT: New asset listings are on hold while a better policy is determined. Please see discussion https://github.com/bisq-network/proposals/issues/166[on this proposal] for background.
+
 == Introduction
 
 This document describes the process for listing a new ("crypto") asset on the Bisq exchange. Anyone with sufficient technical skills to follow the instructions below can list an asset.
