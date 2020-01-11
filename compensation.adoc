@@ -62,7 +62,7 @@ A good rule of thumb, if you are unsure about the value of your contribution: co
 
 For example, it might be reasonable to request 50 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through the doc, will probably be rejected.
 
-**For now, while the BSQ market is still young, we assume 1 BSQ = 1 USD**. This will change to a rate based on the market price of BSQ as the BSQ market matures.
+**You can find the exchange rate of BSQ in real time, open trades, trade history and other information in https://bisq.network/markets/?currency=bsq_btc[Bisq Markets^].
 
 See https://github.com/bisq-network/compensation/issues/277[this link^] for an example compensation request.
 
