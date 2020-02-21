@@ -65,7 +65,7 @@ Discuss with others, and after it is agreed that someone will assign something t
 == Do valuable work and get compensated
 Ok. You're all set up and ready to work. Here's what to do next.
 
- . *Find a problem somewhere in Bisq-land* that (a) needs fixing and (b) is a match for your skills and interests. Browse open bounties, ask around about what other contributors think needs fixing. Because while you don't need anybody's permission and you can work on whatever you want, you'll want to know up front whether anybody else is going to care about the work you do.
+ . *Find a problem somewhere in Bisq-land* that (a) needs fixing and (b) is a match for your skills and interests. Browse https://bisq.wiki/Critical_Bugs[critical bugs], open bounties, ask around about what other contributors think needs fixing. Because while you don't need anybody's permission and you can work on whatever you want, you'll want to know up front whether anybody else is going to care about the work you do.
 
 [sidebar]
 .More on finding work to do
