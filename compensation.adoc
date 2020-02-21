@@ -39,6 +39,7 @@ The issue should go in the https://github.com/bisq-network/compensation[bisq-net
 
 Where N is the number of the current cycle. Please stick to this convention—it's cleaner and much easier to track when looking back in time.
 
+
 ==== List your work
 
 Your issue needs to convince Bisq stakeholders _what_ you did, _how much_ it's worth, and _why_ it's valuable.
@@ -66,7 +67,13 @@ See the current BSQ price, open trades, trade history and other information on t
 
 See https://github.com/bisq-network/compensation/issues/277[this link^] for an example compensation request.
 
+==== Wait for team lead review ====
+
+Per the  https://bisq.wiki/Compensation[compensation request review process], your compensation request will be reviewed by the team lead(s) responsible for the work you delievered. You may be asked for further information or to revise your compensation request. For this reason, please do not submit your compensation request to the DAO in the next step until this review process is complete!
+
 === File your compensation request in the DAO
+
+When the team lead review process is complete, you're ready to file your request for DAO voting.
 
 BSQ is issued on Bisq when a compensation request is approved through DAO voting, so your compensation request needs to be filed there in order for you to actually be paid.
 
