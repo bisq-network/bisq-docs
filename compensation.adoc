@@ -69,7 +69,7 @@ See https://github.com/bisq-network/compensation/issues/277[this link^] for an e
 
 ==== Wait for team lead review ====
 
-Per the  https://bisq.wiki/Compensation[compensation request review process], your compensation request will be reviewed by the team lead(s) responsible for the work you delievered. You may be asked for further information or to revise your compensation request. For this reason, please do not submit your compensation request to the DAO in the next step until this review process is complete!
+Per the  https://bisq.wiki/Compensation[compensation request review process], your compensation request will be reviewed by the team lead(s) responsible for the work you delivered. You may be asked for further information or to revise your compensation request. For this reason, please do not submit your compensation request to the DAO in the next step until this review process is complete!
 
 === File your compensation request in the DAO
 
