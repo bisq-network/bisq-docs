@@ -79,11 +79,11 @@ image::after-adding-fiat-account.png[Configuring a national currency account]
 
 There's just one more thing to do before we can trade with Bisq: we need to send enough bitcoin to our Bisq wallet to cover a security deposit as well as trading and mining fees.
 
-Security deposits help prevent fraud, so Bisq requires both buyers and sellers to post one (in bitcoin) for every trade. On the buyer's side, this is usually 10% of the trade amount.
+Security deposits help prevent fraud, so Bisq requires both buyers and sellers to post one (in bitcoin) for every trade. On the buyer's side, this is usually 15% of the trade amount.
 
-NOTE: Sellers can specify their preferred deposit percentage when creating an offer to sell bitcoin. The default is 10%, but it's possible you'll come across offers that require bigger (or smaller) security deposits.
+NOTE: Sellers can specify their preferred deposit percentage when creating an offer to sell bitcoin. The default is 15%, but it's possible you'll come across offers that require bigger (or smaller) security deposits. A minimum security deposit of .006 BTC applies to both buyers and sellers. 
 
-As of this writing, you would need 0.0012 BTC to take an offer to buy 0.01 BTC that requires a 10% security deposit. But please note that mining fees can fluctuate, some sellers may require bigger security deposits, and you'll need more for bigger trades, so it may be better to acquire more than the bare minimum so you have more flexibility.
+As of this writing, you would need about 0.0061 BTC to take an offer to buy 0.01 BTC that requires a minimum security deposit. But please note that mining fees can fluctuate, some sellers may require bigger security deposits, and you'll need more for bigger trades, so it may be better to acquire more than the bare minimum so you have more flexibility.
 
 If you don't already own the bitcoin you need, you'll need to obtain it. How? You've got options. Friends and family are often the best option—simply buy a small amount of bitcoin directly from someone you trust. Otherwise, you can try a https://coinatmradar.com/[local bitcoin ATM] (many don't require ID for small transactions), https://www.meetup.com/topics/bitcoin/[bitcoin meetups/events], or vouchers.
 
