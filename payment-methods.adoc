@@ -71,7 +71,7 @@ CAUTION: The maximum trade sizes listed below are not available for most newly-c
 |{low-risk}
 |
 
-|Interac e-Transfer
+|Interac e-Transfer*
 |Canada
 |1 day
 |{high-risk}
