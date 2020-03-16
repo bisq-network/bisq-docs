@@ -8,7 +8,7 @@ If you're not sure how to start contributing, check out our <<contributor-checkl
 
 == Background
 
-Compensation requests are generally made for work done in the current DAO cycle—after the end of the last proposal phase, and before the end of the current one—but you can make a request for work done any time in the past.
+Compensation requests should be made for work done in the current DAO cycle—after the end of the last proposal phase, and before the end of the current one. This is important to maintain predictability for https://bisq.network/blog/q1-2020-update/[Bisq's budget^]—so if you plan to make any requests for work that took place in another cycle, please make sure your team lead is aware.
 
 IMPORTANT: Compensation requests can only be made for _delivered work_. Work that's planned or in-progress is not eligible for compensation. See more on what that means https://github.com/bisq-network/proposals/issues/19[here^]. Generally, work merged to the master branch of a repository https://github.com/bisq-network/proposals/issues/38[can be considered delivered^] (if applicable).
 
@@ -19,9 +19,9 @@ Make sure you check the Bisq DAO dashboard to get an idea of the submission dead
 .Estimated timeframe for Bisq DAO Cycle 2.
 image::check-dao-timing.png[Estimated timeframe for Bisq DAO Cycle 2]
 
-Block confirmation times can vary quite a bit, so keep an eye on these dates, and don't wait until the last minute!
+**Bisq's budgeting and priorities framework introduced in Cycle 10 requires that compensation requests be submitted 1 week before the end of the proposal phase.**
 
-You must file a compensation request before the end of the current proposal phase in order to have it evaluated in the current voting cycle. If you miss it, don't worry—you can submit your request in the next proposal phase.
+Please see https://bisq.wiki/Compensation#Contributor[this wiki article^] for details to make sure your request is submitted on time.
 
 == Submit your compensation request
 
@@ -46,7 +46,7 @@ Your issue needs to convince Bisq stakeholders _what_ you did, _how much_ it's w
 
 In order to make your case as strong as possible, your request should include the following information:
 
- - The total amount you are requesting in BSQ
+ - The total amount you are requesting in BSQ and USD
  - Links to issues, pull requests, and other "evidence" for any work you want to be compensated for
  - Comments that help explain what the work is, why it is valuable, etc.
  - Links to role reports, if you hold any roles in the Bisq network
@@ -61,11 +61,11 @@ As mentioned above, Bisq contributions are only eligible for compensation once d
 
 A good rule of thumb, if you are unsure about the value of your contribution: consider what you would charge for your work if you did it as a freelancer.
 
-For example, it might be reasonable to request 50 BSQ for fixing some typos in a doc. But requesting 1000 BSQ for that same task, just because it took you a few hours to read through the doc, will probably be rejected.
+For example, it might be reasonable to request 50 USD for fixing some typos in a doc. But requesting 1000 USD for that same task, just because it took you a few hours to read through the doc, will probably be rejected.
 
-See the current BSQ price, open trades, trade history and other information on the https://bisq.network/markets/?currency=bsq_btc[Bisq Markets^] page.
+The BSQ rate to use for compensation requests is the 90-day average BSQ trading price. This rate is specified at the beginning of every cycle in a new issue in the bisq-network/compensation repository at the beginning of each cycle by the https://bisq.wiki/Compensation#Compensation_Maintainer[compensation maintainer^].
 
-See https://github.com/bisq-network/compensation/issues/277[this link^] for an example compensation request.
+See https://github.com/bisq-network/compensation/issues/493[this link^] for an example compensation request.
 
 ==== Wait for team lead review ====
 
