@@ -2,7 +2,12 @@
 :stylesdir: ../../css
 :docinfodir: ../../
 
-IMPORTANT: New asset listings are on hold while a better policy is determined. Please see discussion https://github.com/bisq-network/proposals/issues/166[on this proposal] for background.
+[IMPORTANT]
+--
+**New asset listings are on hold while a better policy is determined**. Please see discussion https://github.com/bisq-network/proposals/issues/166[on this proposal] for background.
+
+Please do not make any further requests to list assets on Bisq.
+--
 
 == Introduction
 
