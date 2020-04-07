@@ -49,7 +49,7 @@ A Bisq arbitrator must be able to look up transactions in the asset's block expl
 
 If your asset meets the prerequisites listed above, you may open a new issue in the bisq-network/bisq repository using this link:
 
-https://github.com/bisq-network/bisq/issues/new?template=new_asset.md[Create issue to request new asset listing^]
+Create issue to request new asset listing [link removed]
 
 **You must use the link above to create the issue, as it links to a template designed specifically for new asset requests.**
 
