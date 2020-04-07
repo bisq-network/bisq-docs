@@ -6,3 +6,4 @@
  * <<exchange/howto/add-alternative-base-currency#, How to add an alternative base currency>>
  * <<manual-dispute-payout#, How to issue a manual dispute payout>>
  * https://docs.google.com/document/d/1DXEVEfk4x1qN6QgIcb2PjZwU4m7W6ib49wCdktMMjLw/edit#heading=h.4nbd0q1s77uq[Bisq arbitration and mediation system] (GDoc)
+ * <<exchange/howto/list-asset#, How to list an asset>>
