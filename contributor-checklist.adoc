@@ -81,6 +81,7 @@ With that said, it's a good idea to consult with stakeholders via Keybase, GitHu
 Remember: _every contributor_ is free to work on what they want, including maintainers who may or may not want to review and merge your pull request if they don't have any prior context for it, or reason to believe it's worth spending their time on.
 --
 
+[start=2]
  . *Do work to fix that problem.* Submit your fix for review with a pull request (for code and documentation changes) or with a GitHub issue (for everything else).
 
  . *Request that others review your work.* The best way to do this is by writing good commit comments and pull request/issue descriptions that clearly explain the problem your work is intended to solve, why it's important, and why you fixed it the way you did. Make it as easy as possible for others to review your work. Make it a _pleasure_ for others to review your work.
