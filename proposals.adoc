@@ -25,9 +25,9 @@ What's needed is a mechanism that allows any contributor to _propose_ a change, 
 
 Proposals are managed as GitHub issues in the {gh-org}/proposals/issues[bisq-network/proposals] repository.
 
-=== Slack
+=== Keybase
 
-The `#proposals` Slack channel is available for discussion and notifications about proposal issue activity.
+The `#proposals` Keybase channel is available for discussion and notifications about proposal issue activity.
 
 
 == Roles
@@ -60,7 +60,7 @@ The contributor(s) responsible for proposals <<infrastructure>> and <<process>>.
 ==== Duties
 
  * Enforce the proposals <<process>> detailed below.
- * Monitor communications on the `#proposals` Slack channel.footnote:[See link:roles.html#communication[]]
+ * Monitor communications on the `#proposals` Keybase channel.footnote:[See link:roles.html#communication[]]
  * Keep this proposals documentation up to date.footnote:[See link:roles.html#documentation[]]
  * Write a monthly report on the proposals maintainer <<role-issue>>.footnote:[See link:roles.html#reporting[]]
 
@@ -98,7 +98,7 @@ When reacting with a 😕 or 👎, add a comment explaining why. If you don't, t
 
 If you do not understand or care about a given proposal, ignore it.
 
-Use comments on the proposal issue to discuss, ask questions, and get clarifications. Take lengthy discussions offline to Slack or elsewhere and then summarize them back on the issue.
+Use comments on the proposal issue to discuss, ask questions, and get clarifications. Take lengthy discussions offline to Keybase or elsewhere and then summarize them back on the issue.
 
 NOTE: Remember that the proposal review process is all about reaching a _rough consensus,_ meaning that there is a broad agreement that the proposal should be enacted, and that any dissenting opinions have been addressed, though not necessarily fully resolved.
 
