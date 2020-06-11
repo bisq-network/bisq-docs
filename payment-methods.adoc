@@ -208,7 +208,7 @@ With plain account aging (without account signing), trade limits for buying and 
 * Account age 30-60 days: trade limit is 50% of the maximum
 * Account age >60 days: trade limit is 100% of the maximum
 
-Western Union, for example, has a maximum trade size of 0.5 BTC. Upon creation, and until 30 days have passed since creation, a new Western Union account will be limited to buying and selling 0.125 BTC. After 30 have passed since account creation, the account will be limited to buying and selling 0.25 BTC. Then after 60 days have passed since account creation, the account will be able to trade 0.50 BTC.
+Western Union, for example, has a maximum trade size of 0.5 BTC. Upon creation, and until 30 days have passed since creation, a new Western Union account will be limited to buying and selling 0.125 BTC. After 30 days have passed since account creation, the account will be limited to buying and selling 0.25 BTC. Then after 60 days have passed since account creation, the account will be able to trade 0.50 BTC.
 
 You can see details on the `AccountAgeWitness` object that enables this aging mechanism <<payment-account-age-witness#, here>>.
 ====
