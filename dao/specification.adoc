@@ -171,7 +171,7 @@ The full cycle will last 4380 blocks which is about an average month if one bloc
 
 Contributors can create a compensation request for the work they contributed to the project. This can be anything what has added value to the project. The contributors have no guarantee that their request gets accepted. So when they start working they need to be aware that there is no guarantee for a reward.
 
-If not sure about the value of their work for the community, they should make small work packages and discuss at the usual communication channels (Slack, GitHub, Forum,..) to see if the work they are proposing sparks some interest and support. To use upfront payment with escrow would make the process much more complicated (who controls the escrow,...). It also reflects the situation of normal freelance work where work is paid usually after the work is completed and the reputation of the company provides sufficient base for a trust relationship in most cases.
+If not sure about the value of their work for the community, they should make small work packages and discuss at the usual communication channels (Keybase, GitHub, Forum,..) to see if the work they are proposing sparks some interest and support. To use upfront payment with escrow would make the process much more complicated (who controls the escrow,...). It also reflects the situation of normal freelance work where work is paid usually after the work is completed and the reputation of the company provides sufficient base for a trust relationship in most cases.
 
 **To make a request, a contributor must include enough BTC to issue the BSQ he's requesting (amount requested * 100 satoshis)**, and pay a 1 BSQ fee to discourage spam. See example compensation tx for 5000 BSQ below.
 
@@ -407,7 +407,7 @@ To get the privilege to control a private key for one of those messages it requi
  - GitHub account
  - Bisq domain
  - Bisq Trademark
- - Social media accounts (Twitter, Reddit, Slack, IRC, Facebook, Telegram, Mailing List, Newsletter)
+ - Social media accounts (Twitter, Reddit, Keybase, IRC, Facebook, Telegram, Mailing List, Newsletter)
 
 Most of the social media accounts will be operated by community members. The number of "official" Bisq accounts will be low.
 

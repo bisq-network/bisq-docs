@@ -121,7 +121,7 @@ Examples: {role}/19[Forum Operator], {role}/14[Bisq Pricenode Operator].
 
 An _Administrator_ ('Admin') is a contributor responsible for managing a given resource.
 
-Examples: {role}/16[GitHub Admin], {role}/23[Slack Admin].
+Examples: {role}/16[GitHub Admin], {role}/23[Keybase Admin].
 
 ==== Admin Duties
 
@@ -174,7 +174,7 @@ Primary role <<owners>> should document changes to their role by submitting pull
 
 === Communication
 
-Primary role <<owners>> should respond in a timely fashion to feedback comments on their role <<issue>>, issues created in their repositories, @mentions of their <<team>>, and questions in their Slack channel.
+Primary role <<owners>> should respond in a timely fashion to feedback comments on their role <<issue>>, issues created in their repositories, @mentions of their <<team>>, and questions in their Keybase channel.
 
 
 == Compensation
@@ -242,7 +242,7 @@ The following are some common roles-related processes.
 
 Typically, proposing a new role is one part of a larger proposal to introduce some new resource or process.
 
- . Discuss the idea informally with other contributors, e.g. via Slack.
+ . Discuss the idea informally with other contributors, e.g. via Keybase.
  . Follow the <<proposals#, Proposals>> process to formally suggest the new resource or process.
  . Draft documentation for the new resource or process, including a section about the new role as a pull request to the {gh-org}/bisq-docs[bisq-network/bisq-docs] repository.
 
@@ -287,7 +287,7 @@ Roles Maintainers are the contributors responsible for the system of roles descr
  * Follow and enforce the roles <<processes>> detailed above.
  * <<reporting, Report>> monthly on the Roles Maintainer <<roles-maintainer-issue>>.
  * <<documentation, Document>> changes to roles <<processes>>.
- * <<communication, Communicate>> in the `#roles` Slack channel.
+ * <<communication, Communicate>> in the `#roles` Keybase channel.
 
 [[roles-maintainer-rights]]
 === Rights
