@@ -68,7 +68,6 @@ image::quick-link-4.png[alt=Make a Compensation Request,width=200,role=quick-lin
 
  * <<contributor-checklist#, Contributor Checklist>> — _The one-stop doc to help you start contributing to Bisq._
  * <<compensation#, Requesting Compensation and Voting>> — _How to get paid for your contributions to Bisq._
- * <<exchange/howto/list-asset#, How to list an asset>> — _Everything you need to know to list an asset on Bisq._
  * <<proposals#, Proposals>>
  * <<roles#, Roles>>
     ** <<btcnode#operator, Bitcoin Core Node Operator>>
