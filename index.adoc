@@ -2,9 +2,9 @@
 :imagesdir: ./images
 
 [NOTE]
-.These docs are a work in progress (and you can help)
+.These docs are migrating to https://bisq.wiki.
 ====
-Docs without hyperlinks haven't been written yet. If you want to write one, <<contributor-checklist#,let us know>>.
+Many links below redirect to the wiki site, and those that don't will be moved soon.
 ====
 
 == User Docs
