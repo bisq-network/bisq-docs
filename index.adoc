@@ -11,15 +11,15 @@ Many links below redirect to the wiki site, and those that don't will be moved s
 
 === Essentials: Trading on Bisq
 
- * <<intro#, Introduction>> — _Learn what Bisq is, why it exists and how it works_
- * <<getting-started#, Getting Started>> — _Download, set up and start trading with Bisq in minutes_
- * <<secure-wallet#, Wallet Info and Security>> — _Set a password and save your seed words to keep your bitcoin safe_
- * <<backup-recovery#, Backup and Recovery>> — _Maintain backups to keep your settings and history safe_
+ * https://bisq.wiki/Introduction[Introduction] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Learn what Bisq is, why it exists and how it works_
+ * https://bisq.network/getting-started[Getting Started] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Download, set up and start trading with Bisq in minutes_
+ * https://bisq.wiki/Wallet[Wallet Info] image:external-link-ltr-icon-grey.svg[external-link,13,13] and https://bisq.wiki/Encrypting_your_wallet[Security] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Set a password and save your seed words to keep your bitcoin safe_
+ * https://bisq.wiki/Backing_up_application_data[Backup] image:external-link-ltr-icon-grey.svg[external-link,13,13] and https://bisq.wiki/Restoring_application_data[Recovery] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Maintain backups to keep your settings and history safe_
  * Staying Private — _Maximize control over your personal info and trading data_
- * <<trading-rules#, Trading Rules and Dispute Resolution>> — _Know what's expected of you and others when trading_
- * Fees and Security Deposits — _Understand how your bitcoin is used and kept safe when trading_
+ * https://bisq.wiki/Trading_rules[Trading Rules] image:external-link-ltr-icon-grey.svg[external-link,13,13] and https://bisq.wiki/Dispute_resolution[Dispute Resolution] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Know what's expected of you and others when trading_
+ * https://bisq.wiki/Trading_fees[Fees] image:external-link-ltr-icon-grey.svg[external-link,13,13] and Security Deposits — _Understand how your bitcoin is used and kept safe when trading_
  * Support — _Get help from other Bisq users and contributors_
- * <<payment-methods#, Payment Methods>> — _Details on supported fiat currency payment methods and limitations_
+ * https://bisq.wiki/Payment_methods[Payment Methods] image:external-link-ltr-icon-grey.svg[external-link,13,13] — _Details on supported fiat currency payment methods and limitations_
  * Altcoins — _Explore https://bisq.network/markets/[100+] supported cryptocurrencies, tokens and assets_
 
 === Bisq DAO: Governing Bisq
@@ -46,7 +46,7 @@ Many links below redirect to the wiki site, and those that don't will be moved s
 
  * <<contributor-checklist#, Contributor Checklist>> — _The one-stop doc to help you start contributing to Bisq._
  * <<compensation#, Requesting Compensation and Voting>> — _How to get paid for your contributions to Bisq._
- * <<proposals#, Proposals>>
+ * https://bisq.wiki/Proposals[Proposals] image:external-link-ltr-icon-grey.svg[external-link,13,13]
  * <<roles#, Roles>>
     ** <<btcnode#operator, Bitcoin Core Node Operator>>
  * <<exchange/howto/run-seednode#, How to run a seednode>>
