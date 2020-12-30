@@ -124,3 +124,39 @@ IMPORTANT: Before manually making any changes to Bisq data files, please ensure 
 == Trade History
 
 You can export your trade history for your own records in CSV format on the `History` tab of the `Portfolio` screen. Note that there is no way to import this data.
+
+
+== Alternate ways to run Bisq
+
+Want to run Bisq but using a different location than the default path? (For example, off an external hard drive.)
+
+You need a script that launches Bisq but supplied with the path of your "other" location via Bisq's `appDataDir` parameter.
+
+.bash script that runs Bisq on macOS with data on remote drive
+====
+[source,bash]
+----
+#!/bin/bash
+
+open -a Bisq --args --appDataDir=/external/hard/drive/path
+----
+macOS lets you run the `Bisq.app` from the command-line using the `open` utility.
+====
+
+Put this script somewhere on your classpath, like `/usr/local/bin`, and you're all set. Merely tweak it based upon your remote location as well as the OS you are running on.
+
+To prevent yourself from accidentally launching Bisq in it's default mode and leaving an empty wallet, logs, and other data, it's handy to create a "fake" directory. You create it in the <<back-up,default location>>
+
+.Creating a "fake" directory to avoid running Bisq against the default path
+====
+----
+$ cd ~/Library/Application\ Support/
+$ mkdir Bisq
+$ chmod 000 Bisq
+----
+The path for the folder is based upon the platform you run Bisq and must match the defaults.
+====
+
+Launch `Bisq.app` using conventional means, and Bisq will shutdown since it can't write to that directory. Launch it using the command-line script, and things will fire up with no problem.
+
+IMPORTANT: This example shows how to create the "fake" directory on a macOS system. For other platforms, you need to create that folder <<back-up,elsewhere>>.
