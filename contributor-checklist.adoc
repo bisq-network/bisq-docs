@@ -60,7 +60,7 @@ This can mean anything from fixing typos in documentation, to answering question
 
 Discuss with others, and after it is agreed that someone will assign something to you, do the following:
 
- * [ ] Request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/teams/contributors[@bisq-network/contributors] team and to assign you to GitHub issues.
+ * [ ] Request an invite to the https://github.com/bisq-network[@bisq-network] organization. An admin will get you set up. Doing this makes it possible to add you to the https://github.com/orgs/bisq-network/people[@bisq-network/people] team and to assign you to GitHub issues.
 
  * [ ] After accepting your GitHub invitation, please change your https://github.com/orgs/bisq-network/people[membership visibility] from `private` to `public`. This helps others know at a glance roughly how many contributors are involved with Bisq.
 
