@@ -151,6 +151,8 @@ Bisq operates with the following fees:
  - Security deposit (might be used as arbitration fee): 0.1 BTC, which is returned in whole to the trader after the transaction in case he is not found to have behaved dishonestly. The security deposit from dishonest trader will be used to pay the arbitrator for his efforts. In rare cases half the security deposit of each trader may be collected instead. The active arbitration fee is not related to the size of the trade and does not affect the time required to mediate a dispute as the amount of work an arbitrator must perform is roughly constant even when small amounts are exchanged.
  - (only for arbitrators) arbitrator's security deposit: 2 BTC. In addition, a part of each collected arbitration fee from dishonest traders is locked in the security deposit. This (accumulated) amount is returned in whole to the arbitrator upon stepping down from arbitration.
 
+WARNING: This paper is old has been superceded by modern documentation, and many figures are outdated and incorrect. See https://bisq.wiki/Trading_fees[the wiki] for updated trading fees.
+
 === Trading protocol
 
 The desktop application implements the protocol for the trading process. When broadcasting an offer, the offering peer agrees to accept any take-offer request which fulfills the terms defined in the offer. The take-offer process requires that the Bisq applications of both traders are running (it can run in background). They do not need to be physically present at their computer, but the software needs to be online to react to the take offer request.
