@@ -109,7 +109,14 @@ Sending BSQ to another address is a simple transaction without OpReturn. It requ
 as well as a BTC input to cover the miner fee. The outputs are the receiver's BSQ address, an optional BSQ change output,
 and an optional BTC change output.
 
-A transaction to send 10 BSQ could look like this:
+- Inputs [1-n]: Mandatory BSQ inputs for BSQ transfer
+- Inputs [1-n]: Mandatory BTC inputs for miner fee
+- Output  [1]: Mandatory BSQ output
+- Output  [0-1]: Optional BSQ change output
+- Output  [0-1]: Optional BTC change output
+
+
+===== Example:
 
 - Input 1: 30.00 BSQ (BSQ sender)
 - Input 2: 0.01 BTC (required BTC for mining fee)
@@ -122,7 +129,14 @@ A transaction to send 10 BSQ could look like this:
 We invalidate a small amount of BSQ for the trade fee payment. Since the burned amount is used as miner fee and not
 as a regular tx output, we are not restricted by the dust limit of 546 satoshis, and can spend fees as little as 0.01 BSQ (equivalent to 1 BTC satoshi). The fee is the difference of the BSQ input and the BSQ output.
 
-- A BSQ trade fee payment tx could look like this (for a fee with 0.5 BSQ):
+- Inputs [1-n]: Mandatory BSQ input for BSQ fee
+- Inputs [0-n]: Optional BTC inputs for miner fee
+- Output [0-1]: Optional BSQ change output
+- Output [1]: Mandatory BTC output for funding Deposit tx
+- Outputs [0-1]: Optional BTC change AND/OR optional burned BSQ fee
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
+
+===== Example:
 
 - Input 1: 10.00 BSQ
 - Input 2: 0.1 BTC
@@ -136,12 +150,12 @@ In this case, we only used 9.50 BSQ of the 10.00 BSQ from the input. Since the s
 A proposal transaction contains an OpReturn output which indicates the type and carries the hash of the
 proposal payload data.
 
-- Inputs [1-n]: BSQ inputs for BSQ fee
-- Inputs [1-n]: BTC inputs for miner fee
-- Output [1]: Mandatory BSQ output (BSQ input - fee)
-- Outputs [0-1]: BTC change output
-- Output [1]: OP_RETURN with OpReturnData and amount 0
-- Mining fee: BTC mining fee + burned BSQ fee
+- Inputs [1-n]: Mandatory BSQ input for BSQ fee
+- Inputs [0-n]: Optional BTC inputs for miner fee
+- Output [1]: Mandatory BSQ change output
+- Outputs [0-1]: Optional BTC change output
+- Output [1]: Mandatory OP_RETURN with OpReturnData and amount 0
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
 
 OpReturn data:
 
@@ -165,13 +179,14 @@ It is first hashed with Sha256 and then with Ripemd160 to get a 20 byte hash.
 Compensation request tx and reimbursement request txs are technically the same and inherit the properties of a
 proposal tx but have some additional requirements. They add a BTC output which will be interpreted as a BSQ output at the vote result phase in case the request is accepted by voting.
 
-- Inputs [1-n]: BSQ inputs for BSQ fee
-- Inputs [1-n]: BTC inputs BSQ issuance and miner fee
-- Output [1]: Mandatory BSQ output (BSQ input - fee)
-- Outputs [1]: Issuance candidate output; before voted ok it is BTC afterwards newly issued BSQ
-- Outputs [0-1]: BTC change output
+- Inputs [1-n]: Mandatory BSQ inputs for BSQ fee
+- Inputs [0-n]: Optional BTC inputs BSQ issuance and optionally miner fee
+- Output [1]: Mandatory BSQ change output
+- Outputs [1]: Mandatory issuance candidate output; before voted ok it is BTC afterwards newly issued BSQ
+- Outputs [0-1]: Optional BTC change output OR optional burned BSQ
 - Outputs [1]: OP_RETURN with OpReturnData and amount 0
-- Mining fee: BTC mining fee + burned BSQ fee
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
+
 
 OpReturn data:
 
@@ -192,13 +207,13 @@ OpReturn data:
 === Blind vote tx
 The blind vote tx contains the hash of the blind vote payload and uses the vote stake as input. The stake is blocked from spending during this phase and is only unlocked by the vote reveal tx. If another transaction spends the stake, the blind vote becomes invalid. The blind vote requires a fee in BSQ.
 
-- Inputs [1-n]: BSQ inputs for BSQ fee + stake
-- Inputs [1-n]: BTC inputs for miner fee
+- Inputs [1-n]: Mandatory BSQ inputs for BSQ fee + stake
+- Inputs [0-n]: Optional BTC inputs for miner fee
 - Output [1]: Mandatory BSQ output of stake
 - Output [0-1] Optional BSQ change output
-- Outputs [0-1]: BTC change output
+- Outputs [0-1]: Optional BTC change output OR optional burned BSQ as BTC output
 - Output [1]: OP_RETURN with OpReturnData and amount 0
-- Mining fee: BTC mining fee + burned BSQ fee
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
 
 OpReturn data:
 
@@ -228,10 +243,10 @@ The vote reveal tx consumes the stake output from the blind vote tx as the only 
 
 In the OpReturn data we add the secret key for decrypting our blind vote and a hash of the blind vote list to ensure consensus of the P2P network data used in voting. This hash will be used in the vote result phase to determine a majority in case different users get a different list of blind votes, which would lead to different vote results, and therefore cause consensus failures.
 
-- Input [1]: BSQ input -> stake output of blind vote tx
-- Inputs [1-n]: BTC inputs for miner fee
-- Output [1]: BSQ output (unlocked stake)
-- Outputs [0-1]: BTC change output
+- Input [1]: Mandatory BSQ input → stake output of blind vote tx
+- Inputs [1-n]: Mandatory BTC inputs for miner fee
+- Output [1]: Mandatory BSQ output (unlocked stake)
+- Outputs [0-1]: Optional BTC change output
 - Output [1]: OP_RETURN with OpReturnData and amount 0
 - Mining fee: BTC mining fee
 
@@ -257,11 +272,11 @@ The secretKey is the encoded byte representation of the secret key.
 === Lockup tx
 The lock tx can be use for locking up funds for a bonded role or for bonded reputation: a certain amount of BSQ is locked for a defined lock time (in blocks). Only an unlock tx can unlock locked funds. Once the unlock tx is confirmed, the lock time will be used to determine when the funds can be used in a normal transaction again. While funds are locked, they cannot be moved, or they are invalidated. While funds are locked, or are in an unlocking state, funds can be confiscated by voting.
 
-- Inputs [1-n]: BSQ inputs
-- Inputs [1-n]: BTC inputs for miner fee
-- Output [1]: Locked up BSQ
-- Outputs [0-1]: BSQ change output
-- Outputs [0-1]: BTC change output
+- Inputs [1-n]: Mandatory BSQ inputs
+- Inputs [1-n]: Mandatory BTC inputs for miner fee
+- Output [1]: Mandatory Locked up BSQ
+- Outputs [0-1]: Optional BSQ change output
+- Outputs [0-1]: Optional BTC change output
 - Output [1]: OP_RETURN with OpReturnData and amount 0
 - Mining fee: BTC mining fee
 
@@ -291,10 +306,10 @@ The unlock tx takes the lockup tx output and use the lock time encoded in the Op
 The BSQ output cannot be used in another tx until the lock time is over. During that time it is in the unlocking state.
 Afterwards it is in the unlocked state and can be spent like any normal BSQ output.
 
-- Input [1]: BSQ input from lockup tx lockup output (output index 0)
-- Inputs [1-n]: BTC inputs for miner fee
-- Output [1]: BSQ unlock output
-- Outputs [0-1]: BTC change output
+- Input [1]: Mandatory BSQ input from lockup tx lockup output (output index 0)
+- Inputs [1-n]: Mandatory BTC inputs for miner fee
+- Output [1]: Mandatory BSQ unlock output
+- Outputs [0-1]: Optional BTC change output
 - Mining fee: BTC mining fee
 
 ===== Example with unlocking 4000 BSQ:
@@ -309,12 +324,13 @@ Afterwards it is in the unlocked state and can be spent like any normal BSQ outp
 The asset listing fee tx is used for paying listing fees for an asset. The ticker symbol of the asset is specified in the OpReturn data to bind the tx to a specific asset.
 If the BSQ fee is more than the required mining fee, we do not use a BTC input, and add the remaining BTC to the BTC output.
 
-- Inputs [1-n]: BSQ inputs for listing fee
-- Inputs [0-n]: BTC inputs for miner fee
-- Output [0-1]: BSQ change output (BSQ input - fee)
-- Outputs [0-1]: BTC change output
+- Inputs [1-n]: Mandatory BSQ inputs for listing fee
+- Inputs [0-n]: Optional BTC inputs for miner fee
+- Output [1]: Mandatory BSQ change output
+- Outputs [0-1]: Optional BTC change output or optional burn BSQ output (BTC output)
 - Output [1]: OP_RETURN with OpReturnData and amount 0
-- Mining fee: BTC mining fee + burned BSQ fee
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
+
 
 OpReturn data:
 
@@ -338,12 +354,12 @@ A user can put the hash of an arbitrary string (pre-image) into a proof of burn 
 BSQ. He can later use the pre-image to prove to any party that he has created that hash. He can also sign any challenge
 message and the challenger can verify that he is the key holder of the first input used in that tx.
 
-- Inputs [1-n]: BSQ inputs for burned amount
-- Inputs [0-n]: BTC inputs for miner fee
-- Output [0-1]: BSQ change output (BSQ input - burned amount)
-- Outputs [0-1]: BTC change output
+- Inputs [1-n]: Mandatory BSQ inputs for listing fee
+- Inputs [0-n]: Optional BTC inputs for miner fee
+- Output [1]: Mandatory BSQ change output
+- Outputs [0-1]: Optional BTC change output or optional burn BSQ output (BTC output)
 - Output [1]: OP_RETURN with OpReturnData and amount 0
-- Mining fee: BTC mining fee + burned BSQ fee
+- Mining fee: Burned BSQ fee and optional value from BTC inputs
 
 OpReturn data:
 
@@ -398,13 +414,13 @@ Phases are defined by block height. Each phase is separated with a break to avoi
 
 Here are the phases and the initial duration values (they can be changed by voting):
 
- - Proposal phase (compensation requests, etc): 3600 blocks, about 25 days
- - Break: 150 blocks
- - Blind vote phase (approve/decline proposals): 450 blocks, about 3 days
- - Break: 10 blocks
- - Vote reveal phase: 450 blocks, about 3 days
- - Break: 10 blocks
- - Result phase: 10 blocks
+- Proposal phase (compensation requests, etc): 3600 blocks, about 25 days
+- Break: 150 blocks
+- Blind vote phase (approve/decline proposals): 450 blocks, about 3 days
+- Break: 10 blocks
+- Vote reveal phase: 450 blocks, about 3 days
+- Break: 10 blocks
+- Result phase: 10 blocks
 
 The full cycle will last 4680 blocks which is about one month if one block takes an average of 10 minutes.
 
